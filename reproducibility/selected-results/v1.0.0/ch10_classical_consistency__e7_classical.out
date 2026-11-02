@@ -1,0 +1,50 @@
+PASS e7-1: realisation: Clifford relations of R^{3,3}, omega^2=+1, G^2=-1, G acts as i on z=B+iE (exact)
+PASS e7-2: SI form u^2=c^2|g|^2+u0^2 and u0<=u on 200 random SI fields (restated RE Prop. 2.8; max rel. dev. 2.3e-12)
+PASS e7-3: T^mu_mu=0, T^mu_l T^l_nu=E0^2 delta (Rainich), and for E||B||e1: T=diag(u0,-u0,u0,u0): tension u0 along the axis, pressure u0 across (exact, sympy)
+PASS e7-4: <n_i n_j> = delta/3, so an isotropic ensemble of rest-frame field points has p=u/3 (w=1/3) for every u0; FRW continuity gives rho ~ a^-4 (w=1/3) against a^-3 (dust) (exact, sympy)
+    . geomagnetic surface field        B= 5.00e-05 T  u=u0= 9.947e-04 J/m^3 =  6.209e+09 eV/cm^3  rho0= 1.107e-20 kg/m^3
+    . sunspot umbra                    B= 3.00e-01 T  u=u0= 3.581e+04 J/m^3 =  2.235e+17 eV/cm^3  rho0= 3.984e-13 kg/m^3
+    . strongly magnetic white dwarf    B= 1.00e+05 T  u=u0= 3.979e+15 J/m^3 =  2.483e+28 eV/cm^3  rho0= 4.427e-02 kg/m^3
+    . radio pulsar surface             B= 1.00e+08 T  u=u0= 3.979e+21 J/m^3 =  2.483e+34 eV/cm^3  rho0= 4.427e+04 kg/m^3
+    . magnetar (low)                   B= 1.00e+10 T  u=u0= 3.979e+25 J/m^3 =  2.483e+38 eV/cm^3  rho0= 4.427e+08 kg/m^3
+    . magnetar (high)                  B= 1.00e+11 T  u=u0= 3.979e+27 J/m^3 =  2.483e+40 eV/cm^3  rho0= 4.427e+10 kg/m^3
+    . galactic field 3 muG             B= 3.00e-10 T  u=u0= 3.581e-14 J/m^3 =  2.235e-01 eV/cm^3  rho0= 3.984e-31 kg/m^3
+    . galactic field 5 muG             B= 5.00e-10 T  u=u0= 9.947e-14 J/m^3 =  6.209e-01 eV/cm^3  rho0= 1.107e-30 kg/m^3
+    . galactic field 6 muG             B= 6.00e-10 T  u=u0= 1.432e-13 J/m^3 =  8.940e-01 eV/cm^3  rho0= 1.594e-30 kg/m^3
+PASS e7-5: pure magnetic fields: u=u0=B^2/(2mu0), rho0=B^2/(2mu0c^2); geomagnetic 50 muT: 9.9e-4 J/m^3, rho0=1.1e-20 kg/m^3; pulsar 1e8 T: 4.0e21 J/m^3, rho0=4.4e4 kg/m^3; magnetar 1e11 T: rho0=4.4e10 kg/m^3
+    . u_CMB = 4.1747e-14 J/m^3 = 0.2606 eV/cm^3; galactic u_B = 0.224, 0.621, 0.894 eV/cm^3
+PASS e7-6: u_CMB=aT0^4=0.2606 eV/cm^3; galactic field 3-6 muG gives 0.22-0.89 eV/cm^3, within a factor 3.5 of u_CMB and of the cosmic-ray density ~1 eV/cm^3 (arithmetic on cited inputs)
+PASS e7-7: for z with i.i.d. standard complex Gaussian components, |q|=l1-l2, |z|^2=l1+l2 (Gram eigenvalues); t=E0/E6 has density 2t on [0,1], CDF t^2, independent of |z|^2, mean 2/3; hence <E0>/<E6>=2/3 (exact)
+PASS e7-8: Isserlis cross-check: E|q|^2=24, E|z|^4=48, E|q|^4=1920, E|z|^8=5760; ratios 1/2, 1/3 equal the moments 1/2, 1/3 of the density 2t (exact)
+PASS e7-9: Monte Carlo, N=2e6: <t>=0.66652, <|q|>/<|z|^2>=0.66637 (|dev|<1e-3 from 2/3), KS distance to CDF t^2 = 7.5e-04 (<1.5e-3), corr(t,|z|^2)=-1.1e-03
+    . u_CMB=4.1747e-14 J/m^3, <u0>=2.7831e-14 J/m^3, <rho0>=3.0966e-31 kg/m^3, rho_crit=8.5329e-27 kg/m^3, <rho0>/rho_crit=3.629e-05, u_CMB/(rho_crit c^2)=5.444e-05
+PASS e7-10: CMB today: u=4.17e-14 J/m^3 (0.261 eV/cm^3), mean rest-energy density (2/3)u=2.78e-14 J/m^3, <rho0>=3.10e-31 kg/m^3 = 3.6e-05 rho_crit; whole: Mc^2=U >= int E0 = (2/3)U
+    . m_e c^2 = 5.109990e+05 eV; kT0 = 2.3486e-04 eV; E_th(head-on) on <eps>: 4.116e+14 eV, on kT0: 1.112e+15 eV; on EBL 3 eV..0.1 eV: 8.704e+10..2.611e+12 eV
+PASS e7-11: two photons: s=2E1E2(1-cos th) (exact); head-on threshold E*eps>=(m_e c^2)^2: on the CMB 4.1e+14 eV (mean photon) to 1.1e+15 eV (kT0); on EBL photons of 3-0.1 eV: 0.087-2.6 TeV
+PASS e7-12: two null fields: M_pair=|z1.z2|=sqrt(E6 E6')(1-cos th12) (restated RE Thm 8.6(v)): zero iff collinear, as the photon pair mass; but M_pair is linear in (1-cos th), M_photon^2 is (field densities are quadratic)
+PASS e7-13: char. poly of F^mu_nu is l^4+(B^2-E^2)l^2-(E.B)^2, eigenvalues +-eps, +-i beta with eps^2=(|q|-Re q)/2, beta^2=(|q|+Re q)/2, E0=|q|/2=(eps^2+beta^2)/2 (exact; 200 random fields, dev 1e-14); pure B generates rotations, pure E boosts
+    . E_S = 1.3233e+18 V/m, B_Q = 4.4140e+09 T; magnetar/B_Q = 2.27..22.7; pulsar/B_Q = 0.023; exponent at eps = 0.1 E_S: exp(-pi*10) = 2.27e-14
+PASS e7-14: E_S=m_e^2c^3/(e hbar)=1.323e+18 V/m, B_Q=m_e^2c^2/(e hbar)=4.414e+09 T; magnetars (1e10-1e11 T) exceed B_Q by 2.3-23, radio pulsars (1e8 T) are at 0.023 B_Q
+PASS e7-15: six-momenta at mutual rest: M^2=m1^2+m2^2+2m1m2 cos th (additive at 0, quadrature at pi/2, |m1-m2| at pi); its Clifford image squares to M^2 (exact at cos th=3/5); the graded tower is the case th=pi/2 (exact, n=2), the ungraded sum has spectrum {+-m1+-m2}, not that of a vector
+PASS e7-16: uphill decay in signature (3,3) (exact integers, c=1): P=(10,0,0;0,0,0) -> P1=(5,5,0;1,0,0) + P2=(5,-5,0;-1,0,0), masses 10 -> 7+7=14 > 10; eta(P1,P2)=1 < m1 m2=49 (reverse Cauchy-Schwarz fails); the clock e1 reads m4^2=24 each, 2 sqrt(24) < 10
+PASS e7-17: one clock: R u + V^- has signature (1,3), and eta(P1,P2)>=m1 m2 in 20000 random future-timelike pairs (0 violations); without a common clock 12639 of 20000 random pairs violate it
+    . S_n(29Si) = 8.4736 MeV, reduced mass 906.87 MeV, 1 sigma budget 3.73 eV = 1.38e-10 of M0 = 26999.9 MeV; theta < 9.07e-05 rad (n + 28Si); equal masses at the same fraction: theta < 3.32e-05 rad
+PASS e7-18: M=m1+m2-mu theta^2/2+O(theta^4), fractional defect (m1m2/M0^2)theta^2/2, theta^2/8 at equal masses (M=2m cos(theta/2), exact); conditional 1 sigma bounds from Rainville et al.: unexplained defect <= 4.4e-7 S_n = 3.7 eV = 1.4e-10 M0, so theta<9.1e-05 rad for n+28Si (S_n=8.4736 MeV) and theta<3.3e-05 rad for equal masses at that fraction
+    . reduced Compton wavelength   l=3.8616e-13 m  kappa=7.7634e+20 1/s  hbar*kappa=5.1100e+05 eV
+    . Planck length                l=1.6163e-35 m  kappa=1.8549e+43 1/s  hbar*kappa=1.2209e+28 eV
+    . Hubble radius c/H0           l=1.3725e+26 m  kappa=2.1843e-18 1/s  hbar*kappa=1.4377e-33 eV
+PASS e7-19: kappa=c/l: l=hbar/(m_e c) gives 7.763e+20 1/s, hbar kappa=m_e c^2; l=l_P gives 1.855e+43 1/s (1.221e+19 GeV); l=c/H0 gives H0=2.184e-18 1/s, hbar H0=1.44e-33 eV
+PASS e7-20: on a null field with n=B x E/|B x E| (= textbook propagation direction), n x z=-iz and e^(th G)=R_n(-th) on both triples (50 fields x 3 angles, dev 2e-15); z=f(n.x-t)w solves dz/dt=-i curl z (exact); on non-null fields no rotation is a duality rotation
+    . beta_max (2 sigma) = 0.63 deg = 1.0996e-02 rad over t = 4.3508e+17 s: kappa < 2.527e-20 1/s; m_e c^2/hbar = 7.7634e+20 1/s; ratio 10^40.5; 1 deg bound: 4.01e-20 1/s
+    . kappa_max / H0 = 1.157e-02; hbar kappa_max = 1.663e-35 eV
+PASS e7-21: |beta|<0.63 deg (2 sigma) over 13.79 Gyr: a uniform duality rate kappa<2.5e-20 1/s = 1.2e-02 H0 (hbar kappa<1.7e-35 eV), 10^40.5 below m_e c^2/hbar=7.76e+20 1/s (arithmetic on cited inputs)
+PASS e7-22: closure pendulum: p^T N p/2 vanishes identically along e^(-th G)p for null momentum fields (no restoring force on the duality angle), while p^T N p = nu1/m at the field at rest X=e1 (restated RE Prop. 4.3, Cor. 4.5)
+PASS e7-23: three manifolds: plaquette H12H23H31=iJ, J=B12B23B31, det[H,K]=2iJ(k1-k2)(k1-k3)(k2-k3), and B->-B (interior time reversal) sends J->-J (restated RE Thm 9.5(ii),(iv), exact)
+PASS e7-24: a temporal rotation at fixed six-dimensional mass mu: the clock e1 reads m4=mu cos(phi) (= RE Prop. 2.10); for phi=theta0 sin(Omega t), m4/mu = 1-theta0^2/4+(theta0^2/4)cos(2 Omega t)+O(theta0^4); for a uniform rotation about an axis at angle alpha from the clock (p=0, energy along the clock at t=0), m4/mu = 1 - sin^2(alpha)(1-cos nu t) (exact)
+    . quasar: A<=4e-7 -> theta0<1.26e-03; clocks: A*Omega <= 1.85e-16/yr (A<=2.6e-06 at Omega=1/13.8 Gyr, A<=1.8e-16 at Omega=1/yr); MICROSCOPE |eta|<7.0e-15 -> |d theta^2|<1.4e-14, theta<1.2e-07
+PASS e7-25: conditional bounds on differential oscillations m4/mu=1-A+A cos(omega t): quasar methanol |dmu/mu|<4e-7 -> A<4e-7, i.e. theta0<1.3e-03 rad (libration, A=theta0^2/4) or alpha<6.3e-4 rad (A=sin^2 alpha); clocks |mudot/mu|<3.7e-16/yr -> A omega<3.7e-16/yr (A*Omega<1.85e-16/yr for omega=2 Omega); MICROSCOPE |eta|<7.0e-15 -> |theta_A^2-theta_B^2|<1.4e-14, theta<1.2e-07 rad
+    . rho_dm = 2.254e-27 kg/m^3 = 1.2644e+03 eV/cm^3; galactic 6 muG / rho_dm c^2 = 7.07e-04; CMB <u0> / rho_dm c^2 = 1.37e-04
+PASS e7-26: cosmic mean dark-matter energy density Omega_c h^2=0.120: 1264 eV/cm^3; the local galactic field (6 muG) is 7.1e-04 of it and the CMB mean rest-energy density 1.4e-04 (arithmetic on cited inputs)
+    . at E0 = 0.5 E_S^2: rate(beta=0) = 3.484e-04, rate(eps=beta) = 1.495e-04, rate(eps=0) = 0
+PASS e7-27: first Schwinger term eps beta coth(pi beta/eps) exp(-pi E_S/eps)/(4 pi^2): at fixed E0=(eps^2+beta^2)/2 (three values, 41 angles) it varies by more than a factor 10 and vanishes at eps=0, so it is not a function of E0; at fixed eps it increases with beta, and its beta->0 limit is eps^2 exp(-pi/eps)/(4 pi^3) (floating point; limit exact)
+ALL PASS

@@ -1,0 +1,118 @@
+\chapter{Verification and reproducibility}
+\label{app:repro}
+
+This appendix states what the executable checks of the manuscript compute, by which algorithms, under which conventions and with which
+limitations, and maps every labelled statement to the checks that test it. The mathematics of the manuscript does not depend on this
+appendix: every definition, theorem and proof is in the chapters or in \crefrange{app:A}{app:branching}, and a check is evidence for a
+coded assertion, not a proof of the statement it tests. The scripts are supplementary material in the project repository, under \path{verification/chNN_<topic>/} (one directory per chapter, shared code in \path{verification/common/}) of the repository \url{https://github.com/driss-bencheikh/spacetime-electromagnetic-framework}, at the commit of version 1.0.0 recorded in \texttt{release/README.md}; this appendix gives what is needed to rerun and to judge them.
+
+\section{Status vocabulary}
+\label{app:repro:status}
+
+A statement is \emph{analytically established} when its proof is in the text or it is cited, with its hypotheses, from published
+literature (\emph{inherited}); \emph{exactly verified} when a check establishes the coded assertion in exact arithmetic (integers,
+rationals, algebraic numbers, or symbolic expressions simplified to zero); \emph{numerically supported} when the check uses floating-point
+arithmetic, a random sample or a numerical integration, with a stated tolerance; \emph{conditional} when it rests on an explicit
+assumption; \emph{obstructed} or \emph{refuted} when a no-go or a counterexample is proved; \emph{unresolved} otherwise. A \texttt{PASS} line
+certifies only the assertion printed with it: a check on one example verifies that example, and a check of an identity at a point does not
+verify the theory built on it.
+
+\section{Realisations and conventions}
+\label{app:repro:conv}
+
+All checks use the integer realisation of \cref{app:realisation}: $e_1=\sigma_x\otimes\id\otimes\id$, $e_2=\sigma_z\otimes\sigma_x\otimes\id$,
+$e_3=\sigma_z\otimes\sigma_z\otimes\sigma_x$, $e_4=\varepsilon\otimes\id\otimes\id$, $e_5=\sigma_z\otimes\varepsilon\otimes\id$, $e_6=\sigma_z\otimes\sigma_z\otimes\varepsilon$
+with $\varepsilon=\bigl(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr)$, so $e_a^2=\eta_{aa}\id$ with $\eta=\operatorname{diag}(1,1,1,-1,-1,-1)$, every
+blade is a signed permutation matrix and $e_a^{\!\top}=\eta_{aa}e_a$. At $n$ constituents the generators are
+$E_{6k+a}=\omega^{\otimes k}\otimes e_a\otimes\id^{\otimes(n-1-k)}$ with $\omega=e_1\cdots e_6$ ($64\times64$ at $n=2$, $512\times512$ at $n=3$). The
+interior gamma matrices are $\gamma^\mu=(e_1,e_4,e_5,e_6)$ (or the clock four-plane $\langle\widehat W,e_4,e_5,e_6\rangle$ where a statement
+says so), $\gamma_\mu=\eta_{\mu\nu}\gamma^\nu$ with $\eta=\operatorname{diag}(1,-1,-1,-1)$, $\Omega=\gamma^0\gamma^1\gamma^2\gamma^3$ and
+$I_4=\gamma_0\gamma_1\gamma_2\gamma_3=-\Omega$; $J=e_2e_3$ at one constituent and the product of the internal generators at $n$; $\Gamma=J\Omega$;
+two-forms are identified with bivectors by $F\mapsto\frac12F_{ab}\gamma^a\gamma^b$ and $\varepsilon_{0123}=+1$. The kinetic kernels are
+$K^\mu=-\gamma^0\gamma^\mu$ at one constituent (\cref{prop:kernels1}) and $P_*\gamma^0\gamma^\mu P_*$ on the chiral block, an overall sign
+of the fermion Lagrangian that changes no field equation, gauge condition or spectrum (\cref{r1:prop:dirac}).
+
+\section{Algorithms}
+\label{app:repro:alg}
+
+\begin{enumerate}[label=(A\arabic*),leftmargin=2.6em]
+\item \emph{Blade parity.} $e_Ie_J=(-1)^{|I||J|-|I\cap J|}e_Je_I$ (\cref{lem:blade}) decides commutation of blades without matrices; counts over
+all $2^{18}$ blades of $\Cl(9,9)$ (\cref{thm:fourclasses}) are exact enumerations.
+\item \emph{Exact linear solution spaces.} Commutants, intertwiners, invariant forms and gauge conditions ($X^{\!\top}K+KX=0$, $[X,L]=0$,
+$aN+Na^{\!\top}=0$) are linear in the unknown matrix; the conditions are written on the blade basis (or on all matrix entries) and solved by
+exact rational nullspaces. No ansatz is made: the unknown ranges over the whole matrix algebra.
+\item \emph{Gram certificates on the large modules.} For operators $A_k$ on $\R^{512}$ the integer Gram matrix $\Tr(A_k^{\!\top}A_l)$ has the rank of
+their span; commuting subspaces (the nullspace of $X\mapsto[X,P]$), kernels on a block and images are obtained from such Gram matrices in exact
+arithmetic (\cref{thm:table}).
+\item \emph{Modular ranks with explicit solutions.} Where a dimension is asserted for a large integer system, the rank modulo a large prime
+bounds the rational rank from below; explicit exact solutions bound it from above, and the two are made to meet (e.g.\ \cref{thm:survive}).
+Where only ranks modulo two primes are computed (\cref{thm:inertia3}), the check says so.
+\item \emph{Symbolic geometry.} Curvature of the stated metrics by Christoffel symbols, Riemann, Ricci and Einstein tensors in exact
+symbolic arithmetic, with closed-form inverses for Kaluza--Klein coframes; Euler--Lagrange expressions and Poisson brackets by symbolic
+differentiation with general functions.
+\item \emph{Spectra of exact integer matrices.} Characteristic polynomials are computed exactly where possible (\cref{thm:spectra}); joint
+spectra of commuting integer matrices on the $512$-dimensional module are read by floating-point diagonalisation of a generic linear
+combination and accepted only within $10^{-8}$ of the stated rationals (numerical).
+\item \emph{Vacuum minimisation.} The radiative energy $E_x$ on the $272$-dimensional kernel space is minimised from random starts and its
+critical points are classified by the Hessian (\cref{ch:ch07_vacuum}); the stated minimum is numerically supported and its global
+minimality is a conjecture.
+\item \emph{Integrations.} Ordinary differential equations (closure dynamics, orbits) are integrated with stated tolerances
+(\texttt{DOP853} or \texttt{LSODA}, relative tolerance $10^{-12}$) and compared with closed forms where these exist.
+\end{enumerate}
+
+\section{Exact certificates}
+\label{app:repro:cert}
+
+The following identities are certified in exact arithmetic and carry the main structural statements: the Clifford relations of the
+realisation at $n=1,2,3$; the trace-orthogonality $\Tr(\theta_S^{\!\top}\theta_R)=16\,\delta_{SR}$ of the $256$ monomials of the module of
+\cref{thm:module}; the characteristic polynomials of \cref{thm:spectra}; the solution spaces of \cref{thm:C,thm:PT,prop:gauge1,prop:massangle}
+over all of $M_8(\R)$; the commutants and invariant forms of \cref{cor:Gselected,prop:lGhoms,thm:inertiareq}; the grade census of
+\cref{prop:censusint}; $\Tr P_*=64$ and the seven traceless products of \cref{thm:PS}; the projector-family table of \cref{thm:table}; the
+$8192=4\times2048$ blades of \cref{thm:fourclasses}; the centraliser dimensions $72$, $30$ and the Casimir $3\,\id$ of
+\cref{thm:so9C,thm:nocommon}; the curvature identities of \cref{ch:ch11_curvature} for general operators and the stated metrics; the
+first-class bracket algebra of \cref{prop:constraints} for a general metric and potential. The release audit adds: the kernel spaces and
+internal algebras of \cref{thm:subkernels} on the blades of $\Cl(3,3)$; the $CP$, $C$ and $P$ images of $\Phi_0$ in \cref{thm:vacCP}, with $\Phi_0$
+rebuilt in integer arithmetic; the counts of \cref{thm:Bcounts} graded by $F$ and by the $J\Gamma$ charge; the centre and generators of the Lorentz
+commutant (\cref{prop:config}); the basis of $\Pfam\mathcal C\Pfam$ by blade classes and the exact rank of the curvature values in
+\cref{thm:holonomy,prop:chiralpreserved}; the second-rung family of \cref{thm:towervac,thm:S4,thm:towercurved,prop:towermatter}; and the
+weights of the Weyl block at $n=3$ in \cref{prop:spectator} (a6, a7).
+
+\section{Numerical checks and limitations}
+\label{app:repro:num}
+
+About one check in eight is numerical. They concern spectra on the large modules read in floating point (A6), random samples (random
+clocks, random spinors, random points of projector families), numerical integrations (A8), the vacuum minimisation (A7), loop-level
+coefficients, and the electroweak recomputations a8 on the kernel space, whose ranks are read with an asserted spectral gap. Each states its tolerance in its claim text. Their limitations are: a sample does not cover a family; a tolerance does not
+exclude a nearby degenerate case; the minimisation finds the lowest critical points reached from the starts used and does not prove
+global minimality; numerical integrations verify conserved quantities over finite time intervals only. Statements resting on such checks are
+classed as numerically supported, not as exactly verified.
+
+\section{Software and procedure}
+\label{app:repro:soft}
+
+Python~3 with \texttt{numpy}, \texttt{scipy}, \texttt{sympy} and \texttt{mpmath}; no other dependency. Each script prints one
+\texttt{PASS} or \texttt{FAIL} line per check and exits with status zero exactly when all its checks pass. From the repository root:
+{\raggedright
+\begin{itemize}[leftmargin=1.6em]
+\item \texttt{python3} \path{verification/run_all.py} \texttt{-{}-out} \path{<directory>} \texttt{-j 3} runs every script and writes one output file
+per script, a summary and the software environment;
+\item \texttt{python3} \path{verification/tools/make_manifest.py} \texttt{-{}-runs} \path{<directory>} rebuilds \path{verification/MANIFEST.tsv} from
+the outputs; \path{verification/tools/coverage.py} maps statements to cited checks; \path{verification/tools/make_appendix_d.py} regenerates
+\cref{tab:theoremcode,tab:scripts}; and \path{verification/tools/make_reproducibility_index.py} writes \path{reproducibility/manifest.json} and
+the indexes of exact and numerical checks in \path{reproducibility/selected-results/};
+\item the manuscript is built from \path{manuscript/} with \texttt{pdflatex}, \texttt{bibtex} and two further passes of \texttt{pdflatex} on
+\path{main.tex}.
+\end{itemize}\par}
+The run records of this version are in \path{reproducibility/selected-results/v1.0.0/}.
+
+\section{Theorem-to-code table}
+\label{app:repro:table}
+
+In \cref{tab:theoremcode} the column \emph{kind} is the environment; \emph{checks} lists the identifiers that test the statement (cited
+in its text, added by the audit, or related without citation); \emph{evidence} is \emph{exact}, \emph{numerical} or \emph{exact+numerical}
+when checks exist, and otherwise \emph{proof in text}, \emph{inherited}, \emph{conjecture} or \emph{argument in text}. The last means that the
+statement is argued in the surrounding text without a proof environment or a check; the final assessment lists these.
+
+\input{chapters/appendix_d_scripts}
+
+\input{chapters/appendix_d_table}

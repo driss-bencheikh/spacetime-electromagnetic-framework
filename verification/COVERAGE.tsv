@@ -1,0 +1,466 @@
+file	environment	label	provenance	exact_checks	numerical_checks	written_proof	cites_literature	markers	check_ids
+01_clifford_geometry	lemma	lem:blade	tex/s02_arena	0	0	yes	no		
+01_clifford_geometry	example	ex:blades	tex/s02_arena	0	0	no	no		
+01_clifford_geometry	theorem	thm:sig	tex/s02_arena	0	0	no	no		
+01_clifford_geometry	corollary	cor:noboost	tex/s02_arena	0	0	no	no		
+01_clifford_geometry	proposition	prop:grading	tex/s02_arena	0	0	yes	no		
+01_clifford_geometry	example	ex:pairedmode	tex/s02_arena	0	0	no	no		
+01_clifford_geometry	proposition	prop:6plus8plus1	tex/s02_arena	0	0	yes	no		
+01_clifford_geometry	proposition	r3:prop:octants	two_readings/r3_octants	3	0	yes	no		r3-1 r3-2 r3-3
+01_clifford_geometry	proposition	r3:prop:octgroup	two_readings/r3_octants	2	0	yes	no		r3-4 r3-5
+01_clifford_geometry	proposition	r3:prop:clock	two_readings/r3_octants	1	0	yes	no		r3-6
+01_clifford_geometry	proposition	r3:prop:fock	two_readings/r3_octants	1	0	yes	no		r3-7
+01_clifford_geometry	proposition	r3:prop:gl3	two_readings/r3_octants	1	0	yes	no		r3-8
+01_clifford_geometry	theorem	thm:ghost	two_readings/r3_octants	0	0	yes	no		
+02_lorentz_structures	proposition	prop:KC	tex/s03_clock	0	0	no	no		
+02_lorentz_structures	theorem	thm:onec	tex/s03_clock	0	0	yes	no		
+02_lorentz_structures	proposition	prop:twoK	tex/s03_clock	0	0	no	no		
+02_lorentz_structures	lemma	lem:Gclifford	tex/s03_clock	0	0	yes	no		
+02_lorentz_structures	proposition	prop:clock	tex/s03_clock	0	0	no	no		
+02_lorentz_structures	theorem	thm:spectrumBC	tex/s03_clock	0	0	yes	no		
+02_lorentz_structures	corollary	cor:rankclock	tex/s03_clock	0	0	no	no		
+02_lorentz_structures	example	ex:blindclock	tex/s03_clock	0	0	no	no		
+02_lorentz_structures	proposition	r2:prop:planes	two_readings/r2_fourmomentum	3	0	yes	no		r2-1a r2-1b r2-5a
+02_lorentz_structures	proposition	r2:prop:cov	two_readings/r2_fourmomentum	3	0	yes	no		r2-2a r2-2b r2-2c
+02_lorentz_structures	proposition	r2:prop:J	two_readings/r2_fourmomentum	4	0	yes	no		r2-3a r2-3b r2-3c r2-3d
+02_lorentz_structures	theorem	r2:thm:i	two_readings/r2_fourmomentum	4	0	yes	no		r2-0b r2-4a r2-4c r2-4d
+02_lorentz_structures	theorem	thm:i	tex/s04_dirac	0	0	yes	no		
+02_lorentz_structures	theorem	thm:realification	tex/s04_dirac	0	0	yes	no		
+02_lorentz_structures	corollary	cor:nopredict	tex/s04_dirac	0	0	no	no		
+02_lorentz_structures	proposition	prop:kernels1	tex/s04_dirac	0	0	no	no		
+02_lorentz_structures	proposition	prop:massangle	tex/s04_dirac	0	0	no	no		
+02_lorentz_structures	example	ex:Hp	tex/s04_dirac	0	0	no	no		
+02_lorentz_structures	proposition	r1:prop:dirac	two_readings/r1_lagrangians	6	0	yes	no		r1-15 r1-16 r1-17 r1-18 r1-19 r1-37
+02_lorentz_structures	theorem	thm:C	tex/s05_discrete	0	0	yes	no		
+02_lorentz_structures	corollary	(unlabelled, line 669)	tex/s05_discrete	0	0	no	no		
+02_lorentz_structures	theorem	thm:PT	tex/s05_discrete	0	0	no	no		
+02_lorentz_structures	theorem	thm:CPT	tex/s05_discrete	0	0	no	no		
+02_lorentz_structures	proposition	prop:gauge1	tex/s05_discrete	0	0	no	no		
+02_lorentz_structures	theorem	thm:module	tex/s05_discrete	0	0	no	no		
+02_lorentz_structures	theorem	thm:spectra	tex/s05_discrete	0	0	no	no		
+02_lorentz_structures	proposition	prop:Cstates	tex/s05_discrete	0	0	no	no		
+03_readings_of_x	theorem	thm:GLorentz	tex/s12_emfield	0	0	yes	no		
+03_readings_of_x	proposition	prop:notconj	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	theorem	thm:emfield	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	example	ex:emboost	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	corollary	cor:Gselected	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	proposition	prop:emexclusive	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	proposition	prop:bivectorF	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	theorem	thm:twoops	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	corollary	cor:maxwellform	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	proposition	prop:RS	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	example	ex:circular	tex/s12_emfield	0	0	no	no		
+03_readings_of_x	proposition	prop:planes	tex/s12_emfield	0	0	no	yes		
+03_readings_of_x	theorem	r1:thm:type	two_readings/r1_lagrangians	5	0	yes	no		r1-3 r1-31 r1-4 r1-5 r1-6
+03_readings_of_x	proposition	r1:prop:free	two_readings/r1_lagrangians	5	0	yes	no		r1-2 r1-36 r1-7 r1-8 r1-9
+03_readings_of_x	proposition	r1:prop:shift	two_readings/r1_lagrangians	3	0	yes	no		r1-10 r1-11 r1-12
+03_readings_of_x	proposition	r1:prop:mix	two_readings/r1_lagrangians	1	0	yes	no		r1-13
+03_readings_of_x	proposition	r1:prop:maxwell	two_readings/r1_lagrangians	4	0	yes	no		r1-20 r1-21 r1-22 r1-23
+03_readings_of_x	theorem	r1:thm:L0	two_readings/r1_lagrangians	5	0	yes	no		r1-24 r1-25 r1-26 r1-27 r1-28
+03_readings_of_x	proposition	r1:prop:ham	two_readings/r1_lagrangians	1	0	yes	no		r1-29
+03_readings_of_x	proposition	r1:prop:E6	two_readings/r1_lagrangians	3	0	yes	no		r1-30 r1-31 r1-32
+03_readings_of_x	proposition	r1:prop:total	two_readings/r1_lagrangians	3	0	yes	no		r1-33 r1-34 r1-35
+03_readings_of_x	proposition	r2:prop:cons	two_readings/r2_fourmomentum	2	0	yes	no		r2-5b r2-5c
+03_readings_of_x	proposition	r2:prop:shellI	two_readings/r2_fourmomentum	1	0	yes	no		r2-6
+03_readings_of_x	proposition	r2:prop:RE	two_readings/r2_fourmomentum	1	0	yes	no		r2-7
+03_readings_of_x	proposition	r2:prop:shellII	two_readings/r2_fourmomentum	2	0	yes	no		r2-8a r2-8b
+03_readings_of_x	proposition	r2:prop:shellIII	two_readings/r2_fourmomentum	3	0	yes	no		r2-8a r2-9a r2-9b
+03_readings_of_x	proposition	r2:prop:rotate	two_readings/r2_fourmomentum	2	2	yes	no		r2-10a r2-10b r2-10c r2-10d
+03_readings_of_x	proposition	r2:prop:dict	two_readings/r2_fourmomentum	2	0	no	no		r2-12a r2-12b
+03_readings_of_x	proposition	r2:prop:nolinear	two_readings/r2_fourmomentum	2	0	yes	no		r2-11a r2-11b
+03_readings_of_x	proposition	r2:prop:stress	two_readings/r2_fourmomentum	2	0	no	yes		r2-13 r2-14a
+03_readings_of_x	proposition	r2:prop:whole	two_readings/r2_fourmomentum	5	0	yes	no		r2-0b r2-11b r2-15 r2-16 r2-17
+03_readings_of_x	lemma	r2:lem:anti	two_readings/r2_fourmomentum	1	1	yes	no		r2-0a r2-18
+03_readings_of_x	proposition	r2:prop:nogo	two_readings/r2_fourmomentum	0	1	yes	no		r2-18
+03_readings_of_x	proposition	r2:prop:leak	two_readings/r2_fourmomentum	3	0	yes	no		r2-19a r2-19b r2-19c
+03_readings_of_x	proposition	r2:prop:twoalg	two_readings/r2_fourmomentum	2	0	no	no		r2-12b r2-20
+03_readings_of_x	lemma	r3:lem:rot	two_readings/r3_octants	1	0	yes	no		r3-9
+03_readings_of_x	theorem	r3:thm:phi	two_readings/r3_octants	2	0	yes	no		r3-10 r3-11
+03_readings_of_x	proposition	r3:prop:parity	two_readings/r3_octants	1	0	yes	no		r3-12
+03_readings_of_x	proposition	r3:prop:poles	two_readings/r3_octants	1	0	yes	no		r3-13
+03_readings_of_x	theorem	r3:thm:noeven	two_readings/r3_octants	3	0	yes	no		r3-14 r3-15 r4-13
+03_readings_of_x	proposition	r3:prop:odd	two_readings/r3_octants	2	0	yes	no		r3-15 r3-16
+03_readings_of_x	corollary	r3:cor:carries	two_readings/r3_octants	0	0	no	no		
+03_readings_of_x	proposition	r3:prop:energies	two_readings/r3_octants	2	0	yes	no		r3-17 r3-18
+03_readings_of_x	proposition	r3:prop:dk	two_readings/r3_octants	1	0	yes	no		r3-19
+03_readings_of_x	theorem	r3:thm:maxwell	two_readings/r3_octants	4	0	yes	no		r3-20 r3-21 r3-23 r3-24
+03_readings_of_x	proposition	r3:prop:maxunique	two_readings/r3_octants	2	0	yes	no		r3-22 r3-25
+03_readings_of_x	proposition	r4:prop:identity	two_readings/r4_bridge	1	0	yes	no		r4-2
+03_readings_of_x	proposition	r4:prop:rot	two_readings/r4_bridge	2	0	yes	no		r4-3 r4-4
+03_readings_of_x	proposition	r4:prop:perm	two_readings/r4_bridge	5	0	yes	no		r4-3 r4-5 r4-6 r4-7 r4-8
+03_readings_of_x	corollary	r4:cor:senses	two_readings/r4_bridge	1	0	yes	no		r4-8
+03_readings_of_x	theorem	r4:thm:roles	two_readings/r4_bridge	1	0	yes	no		r4-9
+03_readings_of_x	proposition	r4:prop:Jdec	two_readings/r4_bridge	2	0	yes	no		r4-10 r4-11
+03_readings_of_x	proposition	r4:prop:comm	two_readings/r4_bridge	1	0	yes	no		r4-12
+03_readings_of_x	proposition	r4:prop:ineq	two_readings/r4_bridge	2	0	yes	no		r4-13 r4-16
+03_readings_of_x	theorem	r4:thm:couplings	two_readings/r4_bridge	4	0	yes	no		r4-14 r4-15 r4-16 r4-17
+03_readings_of_x	proposition	r4:prop:coupclock	two_readings/r4_bridge	2	0	yes	no		r4-18 r4-19
+03_readings_of_x	proposition	r4:prop:triples	two_readings/r4_bridge	1	0	yes	no		r4-20
+03_readings_of_x	theorem	r4:thm:conj	two_readings/r4_bridge	1	0	yes	no		r4-21
+03_readings_of_x	proposition	r4:prop:fockLR	two_readings/r4_bridge	1	0	yes	no		r4-22
+03_readings_of_x	proposition	r4:prop:clockdep	two_readings/r4_bridge	0	0	yes	no		
+03_readings_of_x	theorem	r4:thm:unique	two_readings/r4_bridge	4	0	yes	no		r4-1 r4-23 r4-24 z1-7c
+03_readings_of_x	proposition	prop:gradeone	tex/s13_spin	0	0	no	no		
+03_readings_of_x	proposition	prop:samerotors	tex/s13_spin	0	0	no	no		
+03_readings_of_x	theorem	thm:nablaF	tex/s13_spin	0	0	no	no		
+03_readings_of_x	example	ex:univectorwave	tex/s13_spin	0	0	no	no		
+03_readings_of_x	proposition	prop:censusint	tex/s13_spin	0	0	no	no		
+03_readings_of_x	proposition	prop:spinmatrices	tex/s13_spin	0	0	no	no		
+03_readings_of_x	proposition	prop:orthframe	tex/s13_spin	0	0	no	no		
+03_readings_of_x	theorem	thm:axis	tex/s13_spin	0	0	yes	no		
+03_readings_of_x	example	ex:threewaves	tex/s13_spin	0	0	no	yes		
+03_readings_of_x	theorem	thm:SS	tex/s13_spin	0	0	no	no		
+03_readings_of_x	example	ex:Gcharge	tex/s13_spin	0	0	no	no		
+03_readings_of_x	proposition	prop:halfspinors	tex/s13_spin	0	0	no	no		
+03_readings_of_x	theorem	thm:klein	tex/s13_spin	0	0	no	no		
+03_readings_of_x	proposition	prop:modes	tex/s14_orth	0	0	no	no		
+03_readings_of_x	proposition	prop:twomodes	tex/s14_orth	0	0	no	no		
+03_readings_of_x	example	ex:counter	tex/s14_orth	0	0	no	no		
+03_readings_of_x	proposition	prop:EBlocal	tex/s14_orth	0	0	no	no		
+03_readings_of_x	theorem	thm:achiral	tex/s14_orth	0	0	yes	no		
+03_readings_of_x	theorem	en:unique	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	proposition	en:u3	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	theorem	en:orbits	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	proposition	en:split	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	proposition	en:rainich	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	theorem	en:min	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	proposition	en:doubly	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	theorem	en:stab	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	proposition	en:onec	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	proposition	en:SI	tex/s14b_energy	0	0	no	no		
+03_readings_of_x	proposition	en:whole	tex/s14b_energy	0	0	yes	no		
+03_readings_of_x	proposition	en:temporal	tex/s14b_energy	0	0	yes	no		
+04_rigid_body	proposition	prop:force	tex/s15_shifted	0	0	yes	no		
+04_rigid_body	theorem	thm:factor	tex/s15_shifted	0	0	yes	no		
+04_rigid_body	proposition	prop:inverted	tex/s15_shifted	0	0	yes	no		
+04_rigid_body	example	ex:convshift	tex/s15_shifted	0	0	no	no		
+04_rigid_body	theorem	thm:virial	tex/s15_shifted	0	0	yes	no		
+04_rigid_body	example	ex:jordan4	tex/s15_shifted	0	0	no	no		
+04_rigid_body	theorem	thm:splitvirial	tex/s16_neutral	0	0	yes	no		
+04_rigid_body	theorem	thm:neutral	tex/s16_neutral	0	0	yes	no		
+04_rigid_body	proposition	prop:howmuch	tex/s16_neutral	0	0	no	no		
+04_rigid_body	example	ex:oneplane	tex/s16_neutral	0	0	no	no		
+04_rigid_body	proposition	prop:orbitsEM	tex/s16_neutral	0	0	no	no		
+04_rigid_body	theorem	thm:EBsplit	tex/s16_neutral	0	0	yes	no		
+04_rigid_body	proposition	en:interior	tex/s16_neutral	0	0	yes	no		
+04_rigid_body	proposition	prop:tear	tex/s16_neutral	0	0	yes	no		
+04_rigid_body	corollary	mb:noground	tex/s16_neutral	0	0	yes	no		
+04_rigid_body	proposition	prop:EAdict	tex/s17_closure	0	0	no	yes		
+04_rigid_body	proposition	prop:EAnotinner	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:EAdichotomy	tex/s17_closure	0	0	no	no		
+04_rigid_body	proposition	prop:lGhoms	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:brackets	tex/s17_closure	0	0	yes	no		
+04_rigid_body	theorem	thm:noframe	tex/s17_closure	0	0	yes	no		
+04_rigid_body	theorem	thm:closureunique	tex/s17_closure	0	0	yes	no		
+04_rigid_body	proposition	prop:LP	tex/s17_closure	0	0	no	no		
+04_rigid_body	proposition	prop:groupred	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:inertiareq	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:drift	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:pendulum	tex/s17_closure	0	0	no	no		
+04_rigid_body	corollary	cor:constrate	tex/s17_closure	0	0	no	yes		
+04_rigid_body	corollary	cor:multiscale	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:freedrift	tex/s17_closure	0	0	yes	no		
+04_rigid_body	example	ex:drift	tex/s17_closure	0	0	no	yes		
+04_rigid_body	proposition	prop:several	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:so9C	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:nocommon	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:PSbinding	tex/s17_closure	0	0	yes	no		
+04_rigid_body	theorem	thm:survive	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	thm:closurechiral	tex/s17_closure	0	0	no	yes		
+04_rigid_body	theorem	thm:inertia3	tex/s17_closure	0	0	no	no		
+04_rigid_body	theorem	cl:frozen	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	corollary	cl:nogen	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	proposition	cl:omega	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	corollary	cl:flat	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	proposition	cl:budget	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	proposition	mb:restflow	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	proposition	cl:norel	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	proposition	cl:scalings	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	proposition	cl:noscale	tex/s17b_rest	0	0	yes	yes		
+04_rigid_body	proposition	cl:halfturn	tex/s17b_rest	0	0	yes	no		
+04_rigid_body	proposition	cl:ladder	tex/s17b_rest	0	0	yes	yes		
+04_rigid_body	theorem	thm:esmap	tex/s17b_rest	10	1	yes	no		rb2-1 rb2-13 rb2-14 rb2-15 rb2-2 rb2-3 rb2-4 rb2-5 rb2-6 rb2-7 rb2-8
+04_rigid_body	proposition	prop:hooke	tex/s17b_rest	6	1	yes	no		rb3-1 rb3-11 rb3-2 rb3-3 rb3-4 rb3-5 rb3-6
+04_rigid_body	proposition	prop:spinmap	tex/s17b_rest	2	3	yes	no		rb3-12 rb3-13 rb3-7 rb3-8 rb3-9
+05_clifford_tower	theorem	thm:centraliser	tex/s06_tower	0	0	yes	no		
+05_clifford_tower	corollary	cor:photon1	tex/s06_tower	0	0	no	no		
+05_clifford_tower	proposition	prop:frame	tex/s06_tower	0	0	no	no		
+05_clifford_tower	theorem	thm:census	tex/s06_tower	0	0	no	no		
+05_clifford_tower	lemma	lem:rank	tex/s06_tower	0	0	no	no		
+05_clifford_tower	corollary	cor:tradeoff	tex/s06_tower	0	0	no	no		
+05_clifford_tower	theorem	thm:diagcent	tex/s10_actions	0	0	yes	no		
+05_clifford_tower	theorem	thm:diagCspec	tex/s10_actions	0	0	yes	no		
+05_clifford_tower	theorem	thm:casid	tex/s10_actions	0	0	yes	no		
+05_clifford_tower	corollary	cor:howe	tex/s10_actions	0	0	no	no		
+05_clifford_tower	theorem	thm:blockgamma	tex/s10_actions	0	0	yes	no		
+05_clifford_tower	theorem	thm:diagvectorlike	tex/s10_actions	0	0	yes	no		
+05_clifford_tower	theorem	thm:algebra	tex/s10_actions	0	0	yes	no		
+05_clifford_tower	proposition	prop:orthospin	tex/s10_actions	0	0	no	no		
+05_clifford_tower	proposition	prop:diagtower	tex/s10_actions	0	0	no	yes		
+05_clifford_tower	lemma	lem:nochiral	tex/s10_actions	0	0	yes	no		
+05_clifford_tower	proposition	prop:spectator	tex/s10_actions	3	1	no	no		a7-6 e5-3a e5-3b e5-3c
+05_clifford_tower	proposition	d5:prop:graded	rest_energy/d5_duplication	2	0	yes	no		d5-1a d5-1d
+05_clifford_tower	proposition	d5:prop:fock	rest_energy/d5_duplication	1	0	no	no		d5-1e
+05_clifford_tower	proposition	d5:prop:cmrel	rest_energy/d5_duplication	3	0	yes	no		d5-1f d5-2a d5-2c
+05_clifford_tower	proposition	d5:prop:energysym	rest_energy/d5_duplication	2	0	no	no		d5-3a d5-3b
+05_clifford_tower	theorem	d5:thm:dup	rest_energy/d5_duplication	4	0	yes	yes		d5-3c d5-3e d5-3f d5-3i
+05_clifford_tower	proposition	d5:prop:cx	rest_energy/d5_duplication	2	0	yes	no		d5-3g d5-3h
+05_clifford_tower	proposition	d5:prop:so6C	rest_energy/d5_duplication	2	0	no	no		d5-4a d5-4c
+05_clifford_tower	proposition	d5:prop:balance	rest_energy/d5_duplication	1	0	no	no		d5-9f
+05_clifford_tower	proposition	d5:prop:spin	rest_energy/d5_duplication	3	0	no	no		d5-6a d5-6b d5-6c
+05_clifford_tower	proposition	d5:prop:vacuum	rest_energy/d5_duplication	4	0	no	no		d5-7a d5-7c d5-7d d5-8
+05_clifford_tower	theorem	d5:thm:bfield2	rest_energy/d5_duplication	3	2	yes	yes		d5-9a d5-9c d5-9d d5-9e d5-9g
+05_clifford_tower	proposition	e1:prop:copies	emergence/e1_two_from_one	2	0	yes	no		e1-1a e1-1d
+05_clifford_tower	proposition	e1:prop:rest	emergence/e1_two_from_one	2	0	yes	no		e1-2a e1-2g
+05_clifford_tower	proposition	e1:prop:W	emergence/e1_two_from_one	3	0	yes	no		e1-3a e1-3b e1-3f
+05_clifford_tower	proposition	e1:prop:select	emergence/e1_two_from_one	3	1	yes	no		e1-3c e1-3e e1-3g e1-3h
+05_clifford_tower	corollary	e1:cor:nocx	emergence/e1_two_from_one	0	0	no	no		
+05_clifford_tower	proposition	e1:prop:Nbiv	emergence/e1_two_from_one	3	0	yes	no		e1-4a e1-4b e1-4g
+05_clifford_tower	theorem	e1:thm:Nrule	emergence/e1_two_from_one	2	0	yes	no		e1-4c e1-4d
+05_clifford_tower	proposition	e1:prop:Nlorentz	emergence/e1_two_from_one	1	1	yes	no		e1-4e e1-4f
+05_clifford_tower	proposition	e1:prop:swap	emergence/e1_two_from_one	3	0	yes	no		e1-5a e1-5b e1-5c
+05_clifford_tower	proposition	e1:prop:stat	emergence/e1_two_from_one	2	0	yes	no		e1-5d e1-5f
+05_clifford_tower	proposition	e2:prop:vertex	emergence/e2_processes	2	3	yes	no		e2-2 e2-3 e2-4 e2-5 e2-6
+05_clifford_tower	proposition	e2:prop:threshold	emergence/e2_processes	3	1	yes	no		e2-7 e2-8 y2-8 z1-2a
+05_clifford_tower	corollary	e2:cor:field	emergence/e2_processes	1	0	no	yes		e2-9
+05_clifford_tower	lemma	e2:lem:N	emergence/e2_processes	6	1	yes	no		e2-10 e2-11 e2-12 e2-13 e2-26 y2-13 y2-14
+05_clifford_tower	proposition	e2:prop:bogo	emergence/e2_processes	1	2	yes	no		e2-14 e2-16 y2-17
+05_clifford_tower	proposition	e2:prop:copyboost	emergence/e2_processes	0	1	yes	no		e2-17
+05_clifford_tower	proposition	e2:prop:invstates	emergence/e2_processes	1	0	yes	no		e2-18
+05_clifford_tower	theorem	e2:thm:invnumber	emergence/e2_processes	17	9	yes	no		e2-1 e2-10 e2-11 e2-12 e2-13 e2-14 e2-16 e2-17 e2-18 e2-19 e2-2 e2-20 e2-21 e2-22 e2-23 e2-25 e2-26 e2-3 e2-4 e2-5 e2-6 e2-7 e2-8 e2-9 y2-8 z1-2a
+05_clifford_tower	proposition	e2:prop:hop	emergence/e2_processes	1	2	yes	no		e2-23 e2-24 e2-25
+05_clifford_tower	theorem	d6:thm:balance	rest_energy/d6_pair	2	0	yes	no		d6-1a d6-1c
+05_clifford_tower	corollary	d6:cor:nopair	rest_energy/d6_pair	1	0	yes	no		d6-3
+05_clifford_tower	proposition	d6:prop:pairs	rest_energy/d6_pair	2	0	yes	no		d6-4d d6-4e
+05_clifford_tower	proposition	d6:prop:covariant	rest_energy/d6_pair	0	0	yes	yes		
+05_clifford_tower	theorem	d6:thm:pair	rest_energy/d6_pair	1	0	yes	no		d6-6a
+05_clifford_tower	example	d6:ex:bw	rest_energy/d6_pair	1	0	no	yes	inherited	d6-7
+05_clifford_tower	example	d6:ex:R1	rest_energy/d6_pair	2	0	no	yes	inherited,interpretive	d6-8 x6-8a
+05_clifford_tower	proposition	d6:prop:gauge	rest_energy/d6_pair	6	0	yes	no		d6-10 d6-11 d6-12 d6-9a d6-9b d6-9c
+05_clifford_tower	proposition	d6:prop:dirac	rest_energy/d6_pair	0	0	yes	no		
+05_clifford_tower	proposition	d6:prop:zpe	rest_energy/d6_pair	2	0	yes	no		d6-14a d6-14c
+05_clifford_tower	proposition	e3:prop:rung	emergence/e3_ladder	3	1	yes	no		e3-1a e3-1b e3-1c e3-6c
+05_clifford_tower	proposition	e3:prop:mass	emergence/e3_ladder	0	3	yes	no		e3-2a e3-2b e3-6c
+05_clifford_tower	proposition	e3:prop:spin	emergence/e3_ladder	1	3	yes	no		e3-3a e3-3b e3-3c e3-6b
+05_clifford_tower	theorem	e3:thm:dual	emergence/e3_ladder	4	2	yes	no		e3-4a e3-4b e3-4c e3-4d e3-4e e3-4f
+05_clifford_tower	proposition	e3:prop:joint	emergence/e3_ladder	0	1	yes	no		e3-4d
+05_clifford_tower	proposition	e3:prop:koszul	emergence/e3_ladder	3	1	yes	no		e3-5a e3-5b e3-5c e3-5e
+05_clifford_tower	proposition	e3:prop:ungraded	emergence/e3_ladder	1	0	yes	no		e3-5d
+05_clifford_tower	proposition	prop:commutantsn	tex/s13_spin	0	0	no	no		
+05_clifford_tower	theorem	thm:copyparity	tex/s13_spin	0	0	yes	no		
+05_clifford_tower	proposition	prop:mixed	tex/s13_spin	0	0	no	no		
+05_clifford_tower	proposition	prop:mixedcost	tex/s13_spin	0	0	no	no		
+05_clifford_tower	theorem	thm:mixeddirac	tex/s13_spin	0	0	no	no		
+05_clifford_tower	theorem	thm:coupled	tex/s13_spin	0	0	no	no		
+06_chiral_matter	proposition	prop:vectorlike	tex/s07_projectors	0	0	no	no		
+06_chiral_matter	proposition	prop:axialtriple	tex/s07_projectors	0	0	no	no		
+06_chiral_matter	example	ex:annihilator	tex/s07_projectors	0	0	no	no		
+06_chiral_matter	theorem	thm:table	tex/s07_projectors	0	0	no	no		
+06_chiral_matter	corollary	cor:nocolour	tex/s07_projectors	0	0	no	no		
+06_chiral_matter	theorem	thm:su3	tex/s07_projectors	0	0	no	no		
+06_chiral_matter	theorem	thm:p1	tex/s07_projectors	0	0	no	no		
+06_chiral_matter	theorem	thm:p1chiral	tex/s07_projectors	0	0	yes	no		
+06_chiral_matter	theorem	thm:PS	tex/s08_pstar	0	0	no	no		
+06_chiral_matter	theorem	thm:PSalg	tex/s08_pstar	0	0	yes	no		
+06_chiral_matter	corollary	cor:PSfamily	tex/s08_pstar	0	0	no	yes		
+06_chiral_matter	proposition	prop:PSledger	tex/s08_pstar	0	0	no	no		
+06_chiral_matter	proposition	prop:PSanom	tex/s08_pstar	0	0	no	yes		
+06_chiral_matter	proposition	prop:orbits	tex/s08_pstar	0	0	no	no		
+06_chiral_matter	theorem	thm:pairing	tex/s09_charges	0	0	yes	no		
+06_chiral_matter	example	ex:multiset	tex/s09_charges	0	0	no	yes		
+06_chiral_matter	proposition	prop:escape	tex/s09_charges	0	0	no	no		
+06_chiral_matter	theorem	thm:variety	tex/s09_charges	0	0	no	no		
+06_chiral_matter	theorem	thm:nonu	tex/s09_charges	0	0	no	no		
+06_chiral_matter	proposition	prop:integrality	tex/s09_charges	0	0	no	no		
+06_chiral_matter	theorem	thm:fock	tex/s09_charges	0	1	yes	no		z3-9
+07_mass_vacuum	proposition	mb:Tinv	tex/s14c_mass	0	0	yes	no		
+07_mass_vacuum	proposition	mb:massless	tex/s14c_mass	0	0	yes	no		
+07_mass_vacuum	proposition	mb:senses	tex/s14c_mass	0	0	yes	no		
+07_mass_vacuum	lemma	mb:oneminusGamma	tex/s14c_mass	0	0	yes	no		
+07_mass_vacuum	proposition	en:parity	tex/s14b_energy	0	0	yes	no		
+07_mass_vacuum	theorem	thm:subdichotomy	tex/s18_subfields	0	0	yes	no		
+07_mass_vacuum	theorem	thm:subkernels	tex/s18_subfields	1	0	no	no		a6-1
+07_mass_vacuum	corollary	cor:fullmass	tex/s18_subfields	0	0	no	no		
+07_mass_vacuum	lemma	lem:tracepot	tex/s18_subfields	0	0	yes	no		
+07_mass_vacuum	theorem	thm:twophases	tex/s18_subfields	0	0	no	no		
+07_mass_vacuum	theorem	thm:subfs	tex/s18_subfields	0	0	no	no		
+07_mass_vacuum	theorem	thm:subfock	tex/s18_subfields	0	0	yes	no		
+07_mass_vacuum	example	ex:subC	tex/s18_subfields	0	0	no	no		
+07_mass_vacuum	theorem	thm:kernelspace	tex/s19_kernels	0	3	yes	no		v2-1 v2-3 z3-8
+07_mass_vacuum	theorem	thm:symcrit	tex/s19_kernels	0	0	yes	no		
+07_mass_vacuum	proposition	prop:fermionnumber	tex/s19_kernels	0	0	no	no		
+07_mass_vacuum	proposition	prop:coupled3	tex/s19_kernels	1	0	no	yes		a6-3
+07_mass_vacuum	proposition	prop:tensor	tex/s20_selection	0	1	no	no		a8-1
+07_mass_vacuum	theorem	thm:potential	tex/s20_selection	1	3	no	no		v1-5 v1-6 v1-7 z4-4
+07_mass_vacuum	lemma	lem:hw	tex/s20_selection	0	1	no	no		v1-3
+07_mass_vacuum	theorem	thm:select0	tex/s20_selection	0	1	yes	no		v1-4
+07_mass_vacuum	theorem	thm:selectk	tex/s20_selection	0	1	no	no		v3-1
+07_mass_vacuum	theorem	thm:secondvar	tex/s20_selection	0	2	no	no		v1-11 v1-9
+07_mass_vacuum	example	ex:sumrule	tex/s20_selection	0	0	no	no		
+07_mass_vacuum	theorem	thm:tracepot	tex/s20_selection	0	0	no	no		
+07_mass_vacuum	theorem	thm:oneloop1013	tex/s20_selection	0	4	no	no		v1-12 v1-13 v1-14 v3-2
+07_mass_vacuum	proposition	prop:LR	tex/s20_selection	0	1	no	no		v2-10
+07_mass_vacuum	theorem	thm:fullsecond	tex/s20_selection	1	2	no	no		v2-4 v2-8 v2-9
+07_mass_vacuum	proposition	prop:randomstart	tex/s20_selection	0	2	no	no		v3-3 v3-7
+07_mass_vacuum	theorem	thm:compat	tex/s21_matter	0	0	no	yes		
+07_mass_vacuum	proposition	prop:EW	tex/s21_matter	0	4	no	yes		a8-2 a8-3 a8-4 a8-5
+07_mass_vacuum	example	ex:EWspectrum	tex/s21_matter	0	0	no	no		
+07_mass_vacuum	proposition	prop:mirror	tex/s21_matter	0	0	no	no		
+07_mass_vacuum	proposition	prop:rankfive	tex/s21_matter	0	1	no	no		a8-7
+07_mass_vacuum	proposition	prop:alignment	tex/s21_matter	0	0	no	no		
+07_mass_vacuum	proposition	prop:global	tex/s22_goldstone	0	0	no	no		
+07_mass_vacuum	theorem	thm:nomajoron	tex/s22_goldstone	0	0	no	no		
+07_mass_vacuum	theorem	thm:axion	tex/s22_goldstone	0	0	no	no		
+07_mass_vacuum	proposition	prop:bidoublet	tex/s22_goldstone	0	1	no	no		a8-8
+07_mass_vacuum	theorem	thm:mA	tex/s22_goldstone	1	1	yes	no		a6-5 a8-6
+07_mass_vacuum	theorem	thm:fourclasses	tex/s22_goldstone	0	0	no	no		
+07_mass_vacuum	theorem	thm:vacCP	tex/s22_goldstone	1	0	no	no		a6-2
+07_mass_vacuum	theorem	thm:Bcounts	tex/s22_goldstone	3	1	no	no		a6-4 a6-5 a8-9 z4-3
+07_mass_vacuum	theorem	thm:strings	tex/s22_goldstone	0	0	no	no		
+08_gauge_photon	proposition	prop:config	tex/s11_fields	1	0	yes	no		a7-1
+08_gauge_photon	example	ex:ghostPi	tex/s11_fields	0	0	no	no		
+08_gauge_photon	theorem	thm:holonomy	tex/s11_fields	1	0	yes	no		a7-2
+08_gauge_photon	proposition	prop:chiralpreserved	tex/s11_fields	1	0	no	no		a7-2
+08_gauge_photon	proposition	p1:prop:n2	photon_selection/p1_families	5	0	yes	no	restated	p1-1 p1-4 p1-5 p1-6 p1-7
+08_gauge_photon	lemma	p1:lem:census	photon_selection/p1_families	3	0	yes	no		p1-10 p1-8 p1-9
+08_gauge_photon	lemma	p1:lem:transpose	photon_selection/p1_families	1	0	yes	no		p1-13
+08_gauge_photon	lemma	p1:lem:colour	photon_selection/p1_families	2	0	yes	no		p1-12 p1-15
+08_gauge_photon	theorem	p1:thm:classify	photon_selection/p1_families	4	0	yes	no		p1-11 p1-14 p1-16 p1-42
+08_gauge_photon	proposition	p1:prop:spheres	photon_selection/p1_families	3	0	yes	no		p1-19 p1-32 p1-47
+08_gauge_photon	proposition	p1:prop:duality	photon_selection/p1_families	2	0	yes	no		p1-20 p1-46
+08_gauge_photon	theorem	p1:thm:vacuum	photon_selection/p1_families	4	0	yes	no		p1-21 p1-22 p1-23 p1-35
+08_gauge_photon	theorem	p1:thm:tangent	photon_selection/p1_families	4	0	yes	no		p1-24 p1-25 p1-26 p1-37
+08_gauge_photon	proposition	p1:prop:block	photon_selection/p1_families	3	0	yes	yes	restated	p1-18 p1-27 p1-28
+08_gauge_photon	lemma	p1:lem:vector	photon_selection/p1_families	2	0	yes	no		p1-29 p1-30
+08_gauge_photon	theorem	p1:thm:kinetic	photon_selection/p1_families	2	0	yes	no		p1-31 p1-32
+08_gauge_photon	theorem	p1:thm:curved	photon_selection/p1_families	2	0	yes	no		p1-33 p1-35
+08_gauge_photon	proposition	p1:prop:K	photon_selection/p1_families	2	0	yes	no		p1-34 p1-42
+08_gauge_photon	theorem	p1:thm:fixed	photon_selection/p1_families	4	0	yes	no		p1-36 p1-37 p1-38 p1-39
+08_gauge_photon	proposition	p1:prop:strata	photon_selection/p1_families	2	0	yes	no		p1-39 p1-40
+08_gauge_photon	corollary	p1:cor:critical	photon_selection/p1_families	5	0	yes	no		p1-38 p1-41 p1-43 p1-44 p1-45
+08_gauge_photon	proposition	p2:prop:mass	photon_selection/p2_alignment	4	0	no	no		p2-13 p2-2 p2-3 p2-4
+08_gauge_photon	proposition	p2:prop:allk	photon_selection/p2_alignment	0	1	no	no		p2-6
+08_gauge_photon	proposition	p2:prop:zero	photon_selection/p2_alignment	2	2	no	no		p2-14 p2-15 p2-16 p2-18
+08_gauge_photon	proposition	p2:prop:metastable	photon_selection/p2_alignment	4	1	no	no		p2-10 p2-17 p2-20 p2-5 p2-8
+08_gauge_photon	proposition	p3:prop:charges	photon_selection/p3_identification	3	0	yes	no	restated	p3-1 p3-2 p3-3
+08_gauge_photon	corollary	p3:cor:notem	photon_selection/p3_identification	4	0	yes	yes	inherited,restated	p1-28 p3-4 p3-5 z2-2
+08_gauge_photon	proposition	p3:prop:jointfixed	photon_selection/p3_identification	1	0	yes	no		p3-6
+08_gauge_photon	proposition	p3:prop:torus	photon_selection/p3_identification	1	0	yes	no		p3-7
+08_gauge_photon	theorem	p3:thm:photon	photon_selection/p3_identification	3	1	yes	no		p3-4 p3-8 p3-9 z2-6
+08_gauge_photon	lemma	p3:lem:plucker	photon_selection/p3_identification	1	0	yes	no		p3-10
+08_gauge_photon	proposition	p3:prop:overlaps	photon_selection/p3_identification	3	0	yes	no		p3-11 p3-12 p3-13
+08_gauge_photon	lemma	p3:lem:comass	photon_selection/p3_identification	1	0	yes	no		p3-14
+08_gauge_photon	corollary	p3:cor:extremes	photon_selection/p3_identification	0	0	yes	no		
+08_gauge_photon	proposition	p3:prop:klein	photon_selection/p3_identification	2	0	yes	no		p3-16 p3-17
+08_gauge_photon	proposition	p3:prop:normaliser	photon_selection/p3_identification	1	0	yes	no		p3-18
+08_gauge_photon	lemma	p3:lem:robust	photon_selection/p3_identification	0	0	yes	no	inherited	
+08_gauge_photon	proposition	p3:prop:invariants	photon_selection/p3_identification	1	0	no	no		p3-19
+08_gauge_photon	corollary	p3:cor:matter	photon_selection/p3_identification	1	0	yes	no	inherited	p3-20
+08_gauge_photon	proposition	p3:prop:hessian	photon_selection/p3_identification	1	1	yes	no		p3-21 z2-3
+08_gauge_photon	theorem	p3:thm:selection	photon_selection/p3_identification	0	1	yes	yes	inherited	p3-22
+08_gauge_photon	proposition	p3:prop:neutral	photon_selection/p3_identification	1	0	yes	no		z2-5
+08_gauge_photon	proposition	p3:prop:restated	photon_selection/p3_identification	1	0	yes	no	restated	p3-15
+08_gauge_photon	theorem	thm:photonmass	tex/s26_photon	1	0	yes	no		g3-7
+08_gauge_photon	corollary	cor:massless	tex/s26_photon	0	0	no	no		
+08_gauge_photon	theorem	thm:massless1	tex/s26_photon	0	0	no	no		
+08_gauge_photon	proposition	prop:rigid	tex/s26_photon	0	0	no	no		
+08_gauge_photon	theorem	thm:towervac	tex/s26_photon	0	0	yes	no		
+08_gauge_photon	theorem	thm:S4	tex/s26_photon	1	0	no	no		a7-3
+08_gauge_photon	theorem	thm:towercurved	tex/s26_photon	1	0	no	no		a7-4
+08_gauge_photon	proposition	prop:towermatter	tex/s26_photon	1	0	no	no		a7-5
+09_b_field	theorem	bf:covariant	tex/s17c_bfield	0	0	yes	no		
+09_b_field	proposition	bf:lp	tex/s17c_bfield	0	0	yes	no		
+09_b_field	lemma	bf:M	tex/s17c_bfield	0	0	no	no		
+09_b_field	theorem	bf:criterion	tex/s17c_bfield	0	0	yes	no		
+09_b_field	proposition	bf:larmor	tex/s17c_bfield	0	0	yes	no		
+09_b_field	theorem	bf:lG	tex/s17c_bfield	0	0	yes	no		
+09_b_field	theorem	bf:pG	tex/s17c_bfield	0	0	yes	no		
+09_b_field	proposition	bf:remove	tex/s17c_bfield	0	0	yes	no		
+09_b_field	theorem	bf:screen	tex/s17c_bfield	0	0	yes	no		
+09_b_field	proposition	bf:gyro	tex/s17c_bfield	0	0	yes	no		
+09_b_field	proposition	bf:alone	tex/s17c_bfield	0	0	yes	no		
+09_b_field	theorem	bf:krein	tex/s17c_bfield	0	0	yes	no		
+09_b_field	corollary	bf:nofock	tex/s17c_bfield	0	0	yes	no		
+09_b_field	lemma	bf:su2	tex/s17c_bfield	0	0	yes	no		
+09_b_field	proposition	bf:so4spec	tex/s17c_bfield	0	0	yes	no		
+09_b_field	proposition	bf:qym	tex/s17c_bfield	0	0	no	yes	inherited	
+09_b_field	conjecture	bf:transmute	tex/s17c_bfield	0	0	no	no	conjecture	
+09_b_field	proposition	en:transport	tex/s14b_energy	0	0	yes	no		
+09_b_field	proposition	d7:prop:exist	rest_energy/d7_between	1	1	no	no		d7-1a d7-1d
+09_b_field	proposition	d7:prop:rotor	rest_energy/d7_between	1	1	no	no		d7-2a d7-2b
+09_b_field	theorem	d7:thm:schr	rest_energy/d7_between	7	0	yes	no		d7-3a d7-3b d7-3c d7-3d d7-3e d7-3f x7-3d
+09_b_field	proposition	d7:prop:boost	rest_energy/d7_between	2	0	no	no		d7-4a d7-4b
+09_b_field	theorem	d7:thm:three	rest_energy/d7_between	6	0	yes	no		d7-5a d7-5b d7-5c d7-5d d7-5e d7-5f
+09_b_field	proposition	d7:prop:isospin	rest_energy/d7_between	2	0	no	no		d7-6a d7-6c
+09_b_field	proposition	d7:prop:so4unequal	rest_energy/d7_between	2	0	no	no		d7-7a d7-7b
+09_b_field	theorem	e4:thm:fock	emergence/e4_bfield_ladder	5	1	yes	no		e4-1b e4-1c e4-1d e4-1e e4-1f e4-3a
+09_b_field	corollary	e4:cor:transfer	emergence/e4_bfield_ladder	0	0	yes	no		
+09_b_field	theorem	e4:thm:cycles	emergence/e4_bfield_ladder	5	0	yes	no		e4-2a e4-2b e4-2c e4-2d e4-2f
+09_b_field	proposition	e4:prop:jarlskog	emergence/e4_bfield_ladder	1	0	yes	no		e4-2e
+09_b_field	theorem	e4:thm:so4	emergence/e4_bfield_ladder	2	2	yes	no		e4-3a e4-3b e4-3c e4-3d
+09_b_field	corollary	e4:cor:nospinor	emergence/e4_bfield_ladder	2	0	yes	no		e4-3a e4-3e
+09_b_field	proposition	e4:prop:rates	emergence/e4_bfield_ladder	2	0	yes	no		e4-4a e4-4b
+09_b_field	proposition	e4:prop:rotor	emergence/e4_bfield_ladder	2	3	yes	no		e4-5a e4-5b e4-5c e4-5d e4-5e
+09_b_field	proposition	e5:prop:so6C	emergence/e5_closure_two	1	0	no	no		e5-1a
+09_b_field	proposition	e5:prop:quad	emergence/e5_closure_two	1	0	yes	no		e5-1b
+09_b_field	theorem	e5:thm:pair	emergence/e5_closure_two	3	1	yes	no		e5-1c e5-1d e5-1e z1-5b
+09_b_field	proposition	e5:prop:nocommon	emergence/e5_closure_two	2	1	yes	no		e5-2a e5-2b e5-2c
+09_b_field	proposition	e5:prop:noPS	emergence/e5_closure_two	4	0	no	yes		e5-3a e5-3e e5-3h e5-3i
+09_b_field	proposition	e5:prop:spectator	emergence/e5_closure_two	4	1	yes	yes		e5-3a e5-3b e5-3c e5-3d e5-3j
+09_b_field	proposition	e5:prop:diagonal	emergence/e5_closure_two	3	0	yes	no		e5-3e e5-3f e5-3g
+09_b_field	proposition	e5:prop:mixed	emergence/e5_closure_two	2	0	yes	no		e5-3h e5-3i
+09_b_field	theorem	e5:thm:inertia	emergence/e5_closure_two	2	0	yes	no		e5-4a e5-4b
+09_b_field	proposition	e5:prop:rotorlaw	emergence/e5_closure_two	1	0	yes	no		e5-5a
+09_b_field	proposition	e5:prop:Bgeom	emergence/e5_closure_two	1	0	yes	no		e5-5f
+09_b_field	theorem	e5:thm:stab	emergence/e5_closure_two	2	1	yes	yes		e5-5b e5-5e e5-5i
+09_b_field	proposition	e5:prop:exchange	emergence/e5_closure_two	2	0	yes	no		e5-5g e5-5j
+09_b_field	proposition	e5:prop:carry	emergence/e5_closure_two	1	0	yes	no		e5-5h
+09_b_field	proposition	e6:prop:Tform	emergence/e6_bfield_triples	2	0	yes	no		e6-1a e6-1c
+09_b_field	proposition	e6:prop:dirac	emergence/e6_bfield_triples	3	0	yes	no		e6-2a e6-2b e6-2c
+09_b_field	proposition	e6:prop:twosu2	emergence/e6_bfield_triples	1	0	yes	no		e6-2d
+09_b_field	proposition	e6:prop:binding	emergence/e6_bfield_triples	2	0	yes	no		e6-3a e6-3e
+09_b_field	proposition	e6:prop:polar	emergence/e6_bfield_triples	4	0	yes	no		e6-4a e6-4c e6-4e e6-4f
+09_b_field	proposition	e6:prop:clock	emergence/e6_bfield_triples	3	0	yes	no		e6-5a e6-5b e6-5c
+09_b_field	proposition	e6:prop:copyrot	emergence/e6_bfield_triples	3	0	yes	no		e6-6a e6-6c e6-6e
+09_b_field	proposition	e6:prop:transfer	emergence/e6_bfield_triples	3	0	yes	no		e6-6b e6-6d e6-6f
+09_b_field	theorem	e6:thm:ladder	emergence/e6_bfield_triples	2	0	yes	no		e6-7a e6-7e
+10_classical_consistency	proposition	e7:prop:stress	emergence/e7_classical	2	0	yes	no		e7-3 e7-4
+10_classical_consistency	corollary	e7:cor:dm	emergence/e7_classical	5	0	yes	no	inherited	e7-10 e7-26 e7-5 e7-6 z5-1
+10_classical_consistency	proposition	e7:prop:gauss	emergence/e7_classical	4	1	yes	no		e7-10 e7-7 e7-8 e7-9 z5-2
+10_classical_consistency	proposition	e7:prop:canon	emergence/e7_classical	2	1	yes	no		e7-13 e7-14 e7-27
+10_classical_consistency	proposition	e7:prop:sixmass	emergence/e7_classical	0	1	yes	no		e7-15
+10_classical_consistency	proposition	e7:prop:uphill	emergence/e7_classical	4	0	yes	no		e7-16 e7-17 e7-18 z5-3
+10_classical_consistency	proposition	e7:prop:dualrot	emergence/e7_classical	4	0	yes	no		e7-20 e7-21 e7-22 z5-4
+11_curvature_gravity	proposition	prop:parahermitian	tex/s23_curved	1	0	no	yes		g3-1
+11_curvature_gravity	lemma	lem:JN	tex/s23_curved	1	0	yes	no		g3-2
+11_curvature_gravity	proposition	prop:kk	tex/s23_curved	1	0	no	no		g2-1
+11_curvature_gravity	proposition	prop:constraints	tex/s23_curved	1	0	no	no		c2-5
+11_curvature_gravity	theorem	thm:ein6	tex/s23_curved	1	0	yes	no		g2-2
+11_curvature_gravity	corollary	cor:ein6	tex/s23_curved	1	0	no	no		g2-3
+11_curvature_gravity	example	ex:nullwave	tex/s23_curved	2	0	no	no		g2-4 g2-5
+11_curvature_gravity	example	ex:landau	tex/s23_curved	1	0	no	no		g2-6
+11_curvature_gravity	proposition	prop:curvop	tex/s24_curvop	2	0	no	no		g1-1 g1-2
+11_curvature_gravity	theorem	thm:phase	tex/s24_curvop	1	0	yes	yes		g1-3
+11_curvature_gravity	example	ex:dS	tex/s24_curvop	1	0	no	no		g1-4
+11_curvature_gravity	corollary	cor:phasesel	tex/s24_curvop	1	0	no	no		g1-5
+11_curvature_gravity	theorem	thm:helmholtz	tex/s24_curvop	1	0	yes	no		g1-6
+11_curvature_gravity	proposition	prop:holst	tex/s24_curvop	2	0	no	yes		g1-7 g1-8
+11_curvature_gravity	proposition	prop:obstruct	tex/s25_transport	1	0	yes	no		g3-4
+11_curvature_gravity	proposition	prop:adapted	tex/s25_transport	2	0	yes	no		g3-5 g3-6
+11_curvature_gravity	example	ex:stueckelberg	tex/s25_transport	1	0	no	yes		g3-7
+12_causality	proposition	prop:toy	tex/s27_baseline	1	0	no	yes		c2-1
+12_causality	proposition	prop:orient	tex/s27_baseline	1	0	no	no		c2-2
+12_causality	example	ex:tachyons	tex/s27_baseline	2	0	no	no		c2-3 c2-4
+12_causality	theorem	thm:selector	tex/s28_selector	1	0	yes	no		c1-1
+12_causality	theorem	thm:cone	tex/s28_selector	2	0	no	no		c1-2 c1-3
+12_causality	theorem	thm:selector3	tex/s28_selector	0	2	no	no		c1-4 c1-5
+12_causality	proposition	prop:types	tex/s29_typesel	1	0	no	no		c1-6
+12_causality	theorem	thm:degree	tex/s29_typesel	1	1	yes	no		c1-7 c1-8
+12_causality	theorem	thm:flat	tex/s29_typesel	1	0	no	no		c1-9
+12_causality	proposition	prop:kineticB	tex/s29_typesel	1	0	no	no		c1-10
+12_causality	proposition	prop:positivealt	tex/s29_typesel	1	0	no	no		c1-11
+12_causality	theorem	thm:wlgauge	tex/s30_constraints	3	0	no	yes		c2-5 c2-6 c2-7
+12_causality	proposition	prop:isometryonly	tex/s30_constraints	1	0	no	no		c2-9
+12_causality	corollary	cor:weak	tex/s30_constraints	0	0	no	yes	inherited	
+12_causality	theorem	thm:ghostvec	tex/s30_constraints	1	0	no	no		g2-7
+12_causality	proposition	prop:wltau	tex/s30_constraints	1	0	yes	no		c2-8

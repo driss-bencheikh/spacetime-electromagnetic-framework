@@ -1,0 +1,45 @@
+PASS x7-0: conventions: lG = Cent(G) in so(3,3) is 6-dim and contains d4's L_i, K_i
+PASS x7-1a: prop:exist(i): commutant of diag lG and G_n in so(3n,3n) = {B(x)1+B'(x)G} dims 0,2,6,12, compact parts 0,1,3,6
+PASS x7-1a2: prop:exist(i): copy boost eps(x)G squares to +1 and is Euclidean symmetric (noncompact)
+PASS x7-1b: prop:exist(ii): diag lint & G_n -> copy rotations only (0,1,3); no copy boost commutes with lint; diag lint alone gives 1,7,18 (Prop. 13.14 row 2)
+PASS x7-1c: prop:exist(ii): C^12 = eps(x)P_int + eps(x)P_surp, both commute with diag lint, neither with G_2
+PASS x7-1cN: sign: the paper's M_12 = 1/2 sum eta^{mu mu} g^(1)_mu g^(2)_mu acts on vectors as (E_12-E_21)(x)P_int = -eps(x)P_int, so C^12 = -M_12 + C_surp in the paper's sign
+PASS x7-1d: prop:exist(iii): spectator lG^(1) or lint^(1) with G_n -> so(3n-3,C) of copies 2..n (6, 30), zero on and into copy 1
+PASS x7-1dN: proof of (iii): V is reducible under lint (End_lint(V) has dim 5, not 1); the commutant of lint^(1) in so(3n,3n) (dims 28, 91) has components into copy 1; only G_n removes them (Schur alone covers lG^(1) only)
+PASS x7-2a: prop:rotor: End_{diag lG}(V_n) = gl(n)(x){1,G} (2n^2); Euclidean-antisymmetric part u(n) = so(n)(x)1 + Sym(n)(x)G (n^2), eta-antisym + eta-selfadjoint; centre spanned by G_n
+PASS x7-2b: prop:rotor: X = exp(-theta A) x gives exp(-theta A) xdot = Xdot + Omega A X, so S = Omega A
+PASS x7-2cN: per-constituent action: non-dilating rotors are exactly K(x)G with K diagonal arbitrary (unequal rates allowed); common action + common rate admits G_2 + eps(x)1 != G_2
+PASS x7-2d: beta0 (complex cross product) is lG-equivariant and G-bilinear: beta0(GX,Y) = G beta0(X,Y)
+PASS x7-2e: Jacobi (rotor,X,Y) under the common action: equivariant frame brackets on V_2 form a 12-dim space; none survive for A = G_2, diag(1,3)(x)G or the copy rotation eps(x)1, so [X,Y]=0 there
+PASS x7-2fN: REFUTES '[X,Y]=0' for non-central rotors: A = diag(1,2)(x)G in u(2) (rates 1:2) admits the lG-equivariant, non-dilating closure [ghat,X]=AX, [X,Y]=(0, beta0(X_1,Y_1)) (all Jacobi identities hold; 2-dim family)
+PASS x7-2gN: Hom_lG(Lambda^2 V_n, R) is 0 at n=1 but 2-dim at n=2 under the common action (eta and eta G between copies): the step 'the ghat-component vanishes by Prop. 17.4' of Thm 17.7 does not transfer to n>=2
+PASS x7-3a: thm:schr(i): Cent(G_3) in so(9,9) is 72-dim; b acts on z as R+iQ (R,Q in so(9)); S acts as iH, z(tau) = exp(-iH tau) z(0) for compact and noncompact b
+PASS x7-3b: thm:schr(ii): compact b gives Q=0, H Hermitian, |X|^2 conserved; generic noncompact b does not conserve it
+PASS x7-3c: thm:schr(iii): under eta-isometric frame changes on a Cayley curve the eta-selfadjoint part is U^-1 (K(x)G) U, spectrum {+-i kappa_k} unchanged (compact and noncompact b)
+PASS x7-3d: thm:schr(iv): tr H = 3 sum kappa, tr H^2 = 3 sum kappa^2 + ||R||^2; variance and range widen (but an individual gap can shrink: rates (1,2,4) upper gap 2 -> 1.916)
+PASS x7-3e: thm:schr(v): compact binding-compatible fields 36-dim; removable 36/18/9 for rates (k,k,k)/(k,k,k')/distinct; in copy so3 3/1/0
+PASS x7-3f: thm:schr(vi): exact Jordan test, bilinear criterion and growth of ||e^{Mt}|| agree on the five cases of the text and two new ones with a coincidence lambda=+-1 (one bounded, one not)
+PASS x7-3f2: thm:schr(vi) text: (1,2,3), B=(1,1,1) has spec H = {0,2,4} and zero mode with v.v != 0
+PASS x7-3g: thm:schr(vi) on 4 random compact b (general R in so(9)) tuned to a coincidence: criterion <=> bounded growth
+PASS x7-3hN: n=2 remark: at k1=k2=0 the coincidence is lambda_+ = -lambda_- = beta (not lambda_- = 0); 'the only coincidence is lambda_-=0' needs k1+k2>0
+PASS x7-4a: prop:boost: b = beta' eps(x)G acts with H = K + beta' eps; eigenvalues (k1+k2)/2 +- sqrt((k1-k2)^2/4 - beta'^2)
+PASS x7-4b: prop:boost(i): rates (1,4), beta'=1/2, 1, 6/5: M exactly semisimple, imaginary spectrum, bounded; a positive Q with H^dag Q = QH is conserved (ODE) while |z|^2 is not
+PASS x7-4c: prop:boost(ii)-(iii): at beta'=3/2 M is not semisimple; at beta'=2 every eigenvalue of M has real part +-sqrt(7)/2; at rates (2,2), beta'=1/3 b commutes with K(x)G, growth rate 1/3, removable by the unbounded frame exp(-b tau)
+PASS x7-4dN: caveat on 'copy analogue of the pairing boosts of Prop. 16.7': the pairing boost has Jordan blocks below its threshold (M^2-(c^2-k^2) nilpotent, nonzero), the copy boost is bounded below its threshold
+PASS x7-5a: thm:three(i): det(x-K+iB) formula; couplings enter only through squares
+PASS x7-5b: thm:three(ii): plaquette H12 H23 H31 = iJ, det[H,K] = 2iJ(k1-k2)(k1-k3)(k2-k3)
+PASS x7-5bN: plaquette phase: per-copy duality rotations change each H_kl but leave H12 H23 H31 invariant (a Wilson loop), so they could not 'move' the phase; it is +-pi/2 because the compact field is real
+PASS x7-5c: thm:three(iii): commutant of G_3, diag lG, K(x)G (distinct rates) = sum_k (a_k+b_k G); eta-isometries: a=+-1, b=0 (8 reflections); B_kl -> s_k s_l B_kl, J invariant
+PASS x7-5d: thm:three(iv): P G P^-1 = -G, P: (K,B)->(-K,B); interior time reversal X(t)->TX(-t), pi(t)->-T pi(-t) maps solutions of (K,B) to solutions of (K,-B) (checked on the full (X,pi) flow)
+PASS x7-5e: thm:three(iv): (K,B) ~ (K,-B) by a copy reflection iff the coupling graph is bipartite (all graphs n<=5)
+PASS x7-5f: thm:three(v): P_k(tau;-B) = P_k(-tau;B), P1 equal, P2 = 0.2929 vs 0.1159, P3 = 0.0822 vs 0.2591 at (1,2,4), B=1, tau=1/2
+PASS x7-6a: prop:isospin(i): lift -1/2 sum eta_aa e^(k)_a e^(l)_a acts as the copy rotation of D; spectra i{-3..3}, i{-2..2}, i{+-1/2,+-3/2}; exp(2 pi .) = (-1)^|D|; binding-compatible <=> D closed under partners (|D| even)
+PASS x7-6b: prop:isospin(ii): n=3 binding copy rotations close on so3; Casimir 0,2,6,12 on 40,216,200,56; exp(2 pi C12)=+1; frames are j=1
+PASS x7-6c: prop:isospin(iii): u(2) real forms; only i sigma_y (= -eps(x)1) eta-antisymmetric; lines k+-|beta|, rates k+-sqrt(bx^2+bz^2)
+PASS x7-6dN: 'doublets only under the spectator action' fails at n=4: with lG diagonal on copies 1,2 (coupled by C^12) and copies 3,4 free, the binding-compatible algebra so(2,C)+so(6,C) (32-dim, compact 16) contains weight-1/2 generators
+PASS x7-7a0: so4_Delta conventions: rot(i,j) = 1/2 ad(e_i'e_j' - e_ie_j) (checked on R^512); T^+-_i obey [T1,T2]=-T3 cyclically, [T+,T-]=0; T^+_3 eigenvalues +-i/2 (x4), 0 (x10)
+PASS x7-7a: prop:so4unequal(i): commutant with K(x)G (k2 != k3) = span rot(13,14), rot(13,15), rot(14,15) = graph of an iso su2+ -> su2-; rot(7,13..15) not removable; the surviving so3 is the rotation algebra of lG^(3)
+PASS x7-7bN: 'four of its six generators join constituent two to three' is false: 3 of the 6 rot(i,j) do (6 of the 6 T's; the joining part has rank 3)
+PASS x7-7b: prop:so4unequal(ii): kappa=(5,3,5), b=2T+_3: exact char poly as stated, M exactly semisimple and bounded, lines 4+-sqrt2; at (5,5,5): (l^2+25)^5(l^2+16)^2(l^2+36)^2
+PASS x7-8: rem:verdict(e): [K(x)G, B(x)1] = [K,B](x)G, [K,B]_kl = (k_k-k_l)B_kl, ||.||^2 = 6 sum_{k!=l}(k_k-k_l)^2 B_kl^2
+x7_check: 0 failures, 8.3 s

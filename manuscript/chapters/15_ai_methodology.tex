@@ -1,0 +1,147 @@
+\chapter{AI-Assisted Research and Verification Methodology}
+\label{ch:ch15_methodology}
+
+The question of this chapter is how the statements of this manuscript were produced and what kind of evidence stands behind each of them.
+\Cref{sec:ai} describes the AI-assisted workflow, the author's role and the limits of AI review. \Cref{app:methods} describes the verification:
+the classes of evidence, the scripts and what a passing check shows, and the parts that have no executable evidence. The verification
+manifest, one row per check with its script, command, method and supporting label, is \cref{app:manifest}.
+
+\section{The AI-assisted workflow}
+\label{sec:ai}
+
+\paragraph{How the work was done.} By the author's account, the programme was developed over roughly three years in an iterative
+process with AI systems. The questions, the starting hypothesis and the direction of the programme are the author's. Claude models
+assisted extensively: with candidate theorems, exploratory proofs, alternative constructions, code, calculations and drafting of the prose.
+ChatGPT assisted with discussion, methodology and referee-style criticism; the five reviews and the temporal audit consolidated in the review
+checklist that governs the present revision were AI-assisted reviews of this kind. The author examined the results throughout, raised
+objections and asked for corrections; several of the corrected statements are recorded in \cref{app:methods}. The model versions changed over
+the period, and no particular version was in use throughout. The repository history of the programme begins in June 2026.
+
+\paragraph{Roles in the present revision.} In the revision that produced this manuscript, AI sessions under the author's direction:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item wrote derivation scripts together with the sections they check;
+\item wrote referee scripts in separate sessions, instructed to refute the claims, not to import the derivation code, and to use a different
+method where possible (the surviving instructions are kept in the author's records);
+\item adjudicated the items of the review checklist, each with a recorded outcome and evidence;
+\item read and compared the literature of \cref{ch:ch14_related}, recording what was read where;
+\item assembled and edited this manuscript.
+\end{enumerate}
+The independence of a referee script is therefore an independence of code and method, not of a second human checker. None of the check
+scripts is known to have been written by a second human, and the manuscript does not claim that every result was checked by a human or by a
+second implementation.
+
+\paragraph{What AI review is not.} The reviews that shaped the revision were AI-assisted. They are not formal external peer review, they
+certify nothing, and agreement between models, or between runs of one model, is not a proof. A statement of this manuscript is supported
+by its own evidence, of one of the classes of \cref{app:methods}, and not by the fact that an AI system produced or accepted it. The
+manuscript has not been peer reviewed.
+
+\paragraph{Responsibility.} The author is responsible for the manuscript, its verification and its conclusions. The disclosure above is meant
+to say how the work was done; it implies no endorsement, coauthorship or guarantee by any AI system or its provider.
+
+\section{How the statements were verified}
+\label{app:methods}
+\label{s9:sec:methods}
+\label{r9:sec:main}
+
+\subsection{Classes of evidence}
+
+Each statement belongs to one of the following classes, and the class is a property of the evidence, not of the confidence in it.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{Written proof.} An argument given in the text, which a reader can check line by line. Many of these were first drafted with AI
+assistance; they stand or fall with the argument as written.
+\item \emph{Exact certificate.} An identity, rank, dimension, spectrum or decomposition computed in integer or rational arithmetic, or as a
+polynomial identity in symbolic variables. Every generator of the realisation of \cref{app:realisation} is a signed permutation matrix, so
+every blade at every rung is one, and products, commutators and traces involve no rounding. Kernel dimensions such as $272$, centraliser and
+stabiliser dimensions and the orbit dimensions $34$ and $20$ are exact ranks.
+\item \emph{Numerical check.} A floating-point computation with a stated tolerance: integrations of the interior and orbital dynamics,
+eigenvalue computations, random tests at seeded inputs, and minimisations. It confirms an exact formula or supports a statement that is
+labelled numerical; it proves nothing beyond the sampled inputs.
+\item \emph{Independent re-check.} A referee script, written without importing the derivation script and where possible by a different
+method. The two share the definitions of the realisation and the conventions of the text, so a convention error common to both would not be
+caught; what they derive separately is the code and the method of computation.
+\item \emph{Citation.} An established result of the literature, used with its hypotheses and not recomputed: anomaly cancellation of the
+Standard Model, the Vafa--Witten theorem, Michel's theorem, the Helmholtz conditions, Lanczos's identity, O'Neill's formulas and the others
+marked inherited.
+\item \emph{AI review.} A report of an AI-assisted reviewer. It produced objections, which were adjudicated with evidence of the classes
+above; it is not itself evidence.
+\end{enumerate}
+
+\subsection{The scripts}
+
+Each script prints one line \texttt{PASS <id>: <claim>} or \texttt{FAIL <id>: <claim>} per check and exits with status zero only if every check
+passes. They need Python~3 with NumPy, SciPy, SymPy and mpmath and run from any directory, for example
+\begin{center}
+\texttt{python3 verification/run\_all.py --out reproducibility/selected-results/v1.0.0 -j 3}
+\end{center}
+which runs all of them and writes one record per script. The scripts are kept by chapter in \path{verification/chNN_<topic>/}; by origin they are:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{Two readings} (\cref{ch:ch03_readings}): derivation scripts \texttt{r1}--\texttt{r4} and referee scripts \texttt{s1}--\texttt{s4}. The
+Grassmann-valued Dirac field is handled by an exact Grassmann jet algebra in \texttt{r1}, and independently in \texttt{s1} by polarisation, which
+encodes a quadratic Grassmann expression as an antisymmetric bilinear in two commuting fields. Nine checks are floating-point: r2-10c, r2-10d
+and the random part of r2-18; s1-15, s1-31, s1-38; s2-10b, the random part of s2-14b, and s2-15.
+\item \emph{Rest energy} (\cref{ch:ch03_readings,ch:ch04_rigidbody,ch:ch05_tower,ch:ch09_bfield}): derivation scripts \texttt{d1}--\texttt{d7} and
+referee scripts \texttt{x1}--\texttt{x7}. Spectra and Jordan structure are checked with rational data, since floating-point inputs give false
+negatives in semisimplicity tests; dynamics is integrated with relative tolerances $10^{-11}$ to $10^{-12}$, and elliptic and Mathieu quantities
+use \texttt{mpmath} and \texttt{scipy.special}. The referee findings of the second part, fifty in number, were each re-examined by a second
+referee session: forty confirmed, ten in part, none rejected, and no theorem refuted.
+\item \emph{Emergence} (\cref{ch:ch05_tower,ch:ch09_bfield,ch:ch10_classical}): derivation scripts \texttt{e1}--\texttt{e7}; referee scripts
+\texttt{y1}, \texttt{y2}, \texttt{y5}, \texttt{y6} for four of the seven sections; the review adjudications \texttt{z1} and \texttt{z5}, which also hold the
+exact rank certificate for LAD-02 in place of an earlier floating-point rank. Two sections were refereed by reading only. The classical section
+was corrected and reviewed in two passes; its observational inputs were checked against the primary papers where these were reachable, and the
+others were not rechecked.
+\item \emph{Photon selection} (\cref{ch:ch08_photon}): derivation scripts \texttt{p1}--\texttt{p3} and the adjudication script \texttt{z2}, which
+rebuilds the $512$-dimensional realisation independently. No referee script exists for \texttt{p1} or \texttt{p2}. The global minimisations
+p2-16 and p3-22 are numerical.
+\item \emph{Global manuscript} (\cref{ch:ch01_clifford,ch:ch06_chiral,ch:ch07_vacuum}): the scripts \texttt{z3} and \texttt{z4} (\path{verification/ch06_chiral_matter}, \path{verification/ch07_mass_vacuum}), written to adjudicate the CORE review items; \texttt{z4} computes the Molien--Weyl counts of invariants on the
+kernel space in exact integer arithmetic.
+\item \emph{Rigid body} (\cref{ch:ch04_rigidbody}): \path{verification/ch04_rigid_body/rb1}--\texttt{rb3}, including the numerical orbital examples with
+their inputs, solver and tolerances.
+\item \emph{Release audit} (\cref{ch:ch05_tower,ch:ch07_vacuum,ch:ch08_photon}): \texttt{a6}--\texttt{a8}, written for version 1.0.0 for the statements
+that the audit of \cref{app:repro} had left without a recomputation. \texttt{a6} and \texttt{a7} are exact (blade parity, integer arithmetic on the
+$512$-dimensional module, exact modular ranks, Molien--Weyl integrals); \texttt{a8} is numerical, on the kernel space of \cref{ch:ch07_vacuum}, and
+asserts a spectral gap at every rank it reads.
+\end{enumerate}
+The independent review checks (\path{verification/ch15_ai_methodology}) add $22$ checks, the vacuum checks (\path{verification/ch07_mass_vacuum},
+v1--v3) $31$, the gravity and causality checks (g1--g3, c1--c2) $43$, the adversarial audit (a1--a5, \cref{app:repro}) $58$ and the release audit
+(a6--a8) $20$, of which $9$ are numerical. The complete suite, $61$ scripts, is run by \path{verification/run_all.py}; in the runs of
+\path{reproducibility/selected-results/v1.0.0/} the manifest of \cref{app:manifest} lists $1389$ checks, all passing, of which $169$ are numerical, and
+every script with an earlier recorded run reproduces its identifiers and outcomes. The runs record the interpreter and library versions. Of the
+$1389$ checks, $643$ are cited in the manuscript by identifier; \cref{tab:theoremcode} maps the others to the statements they test.
+
+\paragraph{What a passing check shows.} A \texttt{PASS} line shows that the coded assertion holds: exactly, for identities, ranks and symbolic
+derivations, and within the printed tolerance at the sampled inputs, for numerical checks. It validates a statement of the text only to the
+extent that the assertion is the statement. A pass does not change the class of a claim: an inherited statement that a script re-derives
+remains inherited, and an interpretive reading is not tested at all. The number of \texttt{PASS} lines is not a number of independent claims,
+since derivation and referee scripts check many statements twice.
+
+\subsection{What has no executable evidence}
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{Statements without a cited check.} Of the $438$ theorems, propositions, lemmas and corollaries of the manuscript, the
+claim-by-claim map \path{verification/COVERAGE.tsv} lists those that cite a current check, those with a written proof in the text, and those
+that rest on the argument given where they are stated, on the review adjudications of \cref{ch:ch13_compatibility}, or on a check that the
+text does not yet cite. The algebraic identities and the explicit reductions of \cref{ch:ch11_curvature,ch:ch12_causal} are checked exactly by
+the scripts of \path{verification/ch11_curvature_gravity} and \path{verification/ch12_causality} (g1--g3, c1--c2); their gravitational and causal
+readings are not, since no gravitational action, interacting causal theory or stability analysis is constructed.
+\item \emph{The vacuum analysis.} Since the audit of this version, the second variation on the tensor model, the $271$-dimensional angular
+Hessian, the random-start minimisations on $\mathcal T$ and on $\mathcal M$ and the crossing value $x_*$ are reproduced by
+\path{verification/ch07_mass_vacuum/} (v1, v2, v3), with archived seeds and tolerances; the audit found and corrected one wrong entry of
+\cref{thm:secondvar}. The minimisations remain numerical experiments, and the global statements that rest on them remain conjectures
+(\cref{prop:randomstart}). The invariant-theory multiplicities quoted after \cref{thm:potential} are certified exactly by z4-4.
+\item \emph{What the release audit leaves.} The electroweak statements of \cref{ch:ch07_vacuum} (\cref{prop:tensor,prop:EW,prop:rankfive,prop:bidoublet}
+and the structural part of \cref{thm:mA}) are recomputed numerically (a8), not certified exactly. In \cref{prop:tensor} the identification of the
+spectrum of $\Phi^{\!\top}\Phi$ with that of $S^\dagger S$ uses an explicit isomorphism that no check reproduces; the one-loop formula of
+\cref{prop:coupled3} is inherited; and \cref{ex:subC} has no check.
+\item \emph{Literature.} Bibliographic data were confirmed on publisher, repository or citing pages; where only secondary confirmation was
+possible, the author's literature record says so. One attribution, the precise theorem for Howe's skew duality, could
+not be checked against the primary source.
+\end{enumerate}
+
+\subsection{Corrections found by the checks}
+
+The checks changed the mathematics, not only its presentation. Examples, each recorded with its evidence in the review register: the
+surplus-time constraints remove every surplus mode, not only the unstable band (CORE-07); the ordering in the bilinear identity
+$Y^{\!\top}TY=-TY^2$ (LAD-01); the binding gap is not a binding energy, and an earlier deficit formula was false (LAD-04); two false statements
+about which duplications preserve $|q_2|$; a proposed sign change of the copy-rotation convention was rejected (z1-1d); the factor between
+the vector-mass conventions (CORE-01); the counterexample to the vacuum-minimum hypotheses (CORE-02); and the local-stability exception in the
+photon family (PH-02). A list of this kind is evidence that the procedure finds errors; it is not evidence that none remain.

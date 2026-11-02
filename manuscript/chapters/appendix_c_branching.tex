@@ -1,0 +1,58 @@
+\chapter{Branching and charge tables}
+\label{app:branching}
+
+\section{One family of the chiral block}
+\label{app:branching:family}
+
+The block $V_*=\operatorname{im}P_*$ carries $(\mathbf4,\mathbf2,\mathbf1)_L\oplus(\mathbf4,\mathbf1,\mathbf2)_R$ of
+$\su4\oplus\su2_L\oplus\su2_R$ (\cref{thm:PS}; proved, checks in \cref{app:manifest}). Its decomposition under
+$\su3\oplus\su2_L\oplus\uu1_Y$, with $\mathbf4=\mathbf3_{1/3}\oplus\mathbf1_{-1}$ under $\su3\oplus\uu1_{B-L}$ and
+$Q=T^L_3+T^R_3+\tfrac12(B-L)$, is the standard one \cite{PatiSalam}; it is inherited, and the charge operators of the block reproduce it
+(\cref{ch:ch08_photon}).
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Pati--Salam component & states & $\su3$ & $T^L_3$ or $T^R_3$ & $B-L$ & $Q$\\
+\midrule
+$(\mathbf4,\mathbf2,\mathbf1)_L$ & $u_L$, $d_L$ & $\mathbf3$ & $\pm\tfrac12$ & $\tfrac13$ & $\tfrac23$, $-\tfrac13$\\
+ & $\nu_L$, $e_L$ & $\mathbf1$ & $\pm\tfrac12$ & $-1$ & $0$, $-1$\\
+$(\mathbf4,\mathbf1,\mathbf2)_R$ & $u_R$, $d_R$ & $\mathbf3$ & $\pm\tfrac12$ & $\tfrac13$ & $\tfrac23$, $-\tfrac13$\\
+ & $\nu_R$, $e_R$ & $\mathbf1$ & $\pm\tfrac12$ & $-1$ & $0$, $-1$\\
+\bottomrule
+\end{tabular}
+\caption{One family in the chiral block: $16$ complex, $64$ real dimensions with the Lorentz spinor components.}
+\label{tab:app:family}
+\end{table}
+
+\section{The space of mass kernels}
+\label{app:branching:kernels}
+
+With the complex structure $\mathcal C$ of \cref{thm:kernelspace}, the $272$-dimensional real space $\mathcal M$ of Lorentz-invariant mass
+kernels is a complex space $V$ of dimension $136$, and $\mathcal M\otimes\C=V\oplus\bar V$. \Cref{tab:app:kernels} lists its
+components (proved: \cref{thm:kernelspace}; the invariant counts built on them are checked exactly by z4). Replacing $\mathcal C$ by
+$-\mathcal C$ conjugates every label. Fermion number acts with charge $2$ on the Majorana-type components and $0$ on the Dirac-type
+ones (\cref{prop:fermionnumber}).
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+component of $V$ & complex dimension & type & fermion number\\
+\midrule
+$(\mathbf{10},\mathbf3,\mathbf1)$ & $30$ & Majorana & $2$\\
+$(\mathbf{10},\mathbf1,\mathbf3)$ & $30$ & Majorana & $2$\\
+$(\mathbf{15},\mathbf2,\mathbf2)$ & $60$ & Dirac & $0$\\
+$2\,(\mathbf6,\mathbf1,\mathbf1)$ & $12$ & Majorana & $2$\\
+$(\mathbf1,\mathbf2,\mathbf2)$ & $4$ & Dirac & $0$\\
+\midrule
+total & $136$ & & \\
+\bottomrule
+\end{tabular}
+\caption{The mass kernels of the chiral block. In the language of $\so{10}$ the content is that of $\mathbf{10}\oplus\mathbf{126}$:
+$\mathbf{10}=(\mathbf6,\mathbf1,\mathbf1)\oplus(\mathbf1,\mathbf2,\mathbf2)$ and
+$\mathbf{126}=(\mathbf6,\mathbf1,\mathbf1)\oplus(\mathbf{10},\mathbf3,\mathbf1)\oplus(\overline{\mathbf{10}},\mathbf1,\mathbf3)\oplus(\mathbf{15},\mathbf2,\mathbf2)$
+(inherited), with the conjugation convention of \cref{thm:kernelspace}.}
+\label{tab:app:kernels}
+\end{table}

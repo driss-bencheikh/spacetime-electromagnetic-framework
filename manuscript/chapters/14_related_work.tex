@@ -1,0 +1,133 @@
+\chapter{Comparison with Related Geometric Approaches}
+\label{ch:ch14_related}
+
+The question of this chapter is where the constructions of this manuscript stand among other attempts to read particle physics off an
+algebraic or geometric structure. Comparisons that concern a single statement are made where the statement occurs, and this chapter only
+points to them. It then treats in more detail the two programmes closest in method: Krasnov's realisation of one generation on the forms of
+a doubled split space, which shares the split signature and the $64$-dimensional generation (\cref{sec:rel:krasnov}), and the spectral
+programme of Chamseddine and Connes, which shares the strategy of reading the gauge symmetry off an algebra (\cref{sec:rel:connes}). The last
+section separates what is inherited, what is a new realisation, what is a new classification or obstruction, and what would be a prediction
+(\cref{sec:rel:novelty}). The comparisons rest on the sources as read and recorded by the author; equal
+dimensions are never taken as equivalence.
+
+\section{Related work}
+\label{sec:rel:work}
+
+\paragraph{Clifford and division algebras.} The classification of real Clifford algebras and their gradings is classical
+\cite{LawsonMichelsohn,Lounesto,Porteous}, and the use of Clifford algebras as a language for relativistic physics goes back to Hestenes'
+space-time algebra \cite{Hestenes66,Hestenes67}; the one-equation form of Maxwell's equations used on the octants in \cref{ch:ch03_readings} is
+Hestenes' form transferred to another module. Several programmes extract Standard-Model structure from division and Clifford algebras
+\cite{Furey,Gresnigt}, and the representation-theoretic limits of embedding all of it in a single exceptional group are discussed in
+\cite{DistlerGaribaldi}. This manuscript shares the method of reading internal symmetry off centralisers of a Lorentz action in a Clifford
+algebra. It differs in the algebra, the split real algebras $\Cl(3n,3n)$, and in its emphasis: it records which choices the algebra removes and
+which it leaves, and treats a fit of Standard-Model content as a consistency result, not as evidence (\cref{cor:nopredict}).
+
+\paragraph{Pati--Salam and $SO(10)$.} The content of the chiral block, one Pati--Salam family with a right-handed neutrino
+(\cref{thm:PS}), is that of the Pati--Salam model \cite{PatiSalam} and of the spinor $\mathbf{16}$ of $SO(10)$ \cite{FritzschMinkowski}; its
+anomaly freedom is inherited \cite{GeorgiGlashow72}. The reading of the $272$ mass kernels through the $SO(10)$ representations $\mathbf{10}$ and $\mathbf{126}$
+(\cref{thm:kernelspace}) and the seesaw and Georgi--Jarlskog structures of \cref{ch:ch07_vacuum} are standard model building. What is specific here is that
+they occur inside the realisation $V_*=\operatorname{im}P_*$ and are computed in it.
+
+\paragraph{Gravity and unification in split signature.} Embeddings of one generation together with the Lorentz group into a single orthogonal
+group, $SO(3,11)$ and $SO(7,7)$, were proposed by Nesti and Percacci \cite{NestiPercacci10} and by Maraner \cite{Maraner04}, and Krasnov's
+construction (\cref{sec:rel:krasnov}) realises the $SO(7,7)$ case on forms. The tower $\Cl(3n,3n)$ at $n=3$ has eighteen generators, not
+fourteen, and its matter block is selected by a projector rather than by a Weyl condition, so none of these embeddings is reproduced here;
+nor does this manuscript derive gravitational dynamics (\cref{sec:gravlimits}).
+
+\paragraph{Forms as spinors.} The realisation of the spinor module of a split space on the exterior algebra of a null half-space is
+Chevalley's \cite{Chevalley54}, and the reading of the operator $d-\delta$ on forms as a Dirac operator is the Dirac--K\"ahler construction
+\cite{Kahler62,Graf78,BecherJoos82,BennTucker83}. Both are inherited at one constituent (\cref{r3:prop:fock}); at three constituents the manuscript
+uses no form realisation.
+
+\paragraph{Electromagnetism.} The comparisons for the field-strength reading are made in \cref{ch:ch03_readings}, each with its class: the
+Chevalley--Mukai pairing and the pure-spinor criterion \cite{Chevalley54,Gualtieri03}, Rainich's identity \cite{Rainich1925}, the ModMax family
+\cite{BandosLechnerSorokinTownsend20,Kosyakov20}, and the textbook Pauli and electric-dipole couplings \cite{Pauli41}, whose real forms and count at
+every clock are given in \cref{r4:thm:couplings}. The duality between the copy algebra and the diagonal Lorentz algebra along the tower is an
+instance of Howe duality \cite{Howe89} (\cref{cor:howe}).
+
+\section{Krasnov's construction}
+\label{sec:rel:krasnov}
+
+Krasnov \cite{Krasnov18} realises the spinors of $SO(n,n)$ on the inhomogeneous forms of a null $n$-plane, in the setting of doubled
+geometry, where the Dirac operator acts by wedge in one half of the coordinates and by contraction in the other. The Lorentz group is
+selected by a second splitting, a choice that the paper does not make dynamical, and all fields depend on four of the $2n$ coordinates. At
+$SO(3,3)$ the commutant of the Lorentz group is $SO(2)$ and the kinetic term reduces to that of one charged two-component Weyl fermion. At
+$SO(7,7)$ the commutant is $SO(4,6)$, whose compact part $SO(4)\times SO(6)$ is the Pati--Salam group, and one generation with $\nu_R$ is a real
+even form on $\R^7$, of real dimension $64$; in the kinetic term the $SU(2)_L$ and $SU(2)_R$ sectors enter with opposite signs. Bosons and
+symmetry breaking are left open. \Cref{tab:krasnov} compares the two constructions along the axes that matter.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{3.6cm}@{}}
+\toprule
+axis & Krasnov \cite{Krasnov18} & this manuscript & relation\\
+\midrule
+ambient algebra & $\R^{7,7}$ doubled, $\Cl(7,7)$ & $\R^{3,3}$ and the tower $\Cl(3n,3n)$; at $n=3$, $\Cl(9,9)$ on $\R^{512}$ (\cref{sec:tower}) & analogous (split); different ambient (14 vs 18 generators)\\
+module & $\Lambda^\bullet\R^7=\R^{128}$; Weyl half $\Lambda^{\rm even}\R^7=\R^{64}$ & $V_*=\operatorname{im}P_*$, real dimension $64$ (\cref{sec:pstar}) & same dimension; no equivalence shown\\
+forms or Clifford module & forms on a null half (Chevalley); $D$ by wedge and contraction & Kronecker realisation; forms used at $n=1$ only (\cref{r3:prop:fock}) & the same Chevalley construction at $n=1$\\
+complex structure, chirality & fixed even parity; real Weyl spinor & $J$, the product of the 14 internal generators; $\Gamma=J\Omega$ (\cref{thm:selector3}) & analogous; mechanisms differ\\
+Lorentz embedding & a second splitting, not dynamical & the interior $\so{1,3}$ after a clock, imposed (\cref{assum:clockred}) & analogous: both are choices\\
+lowest rung & $SO(3,3)$: commutant $SO(2)$, one charged Weyl fermion & $n=1$: internal centraliser $\uu1=\langle J\rangle$, $J$ the imaginary unit of the Dirac module (\cref{prop:6plus8plus1,thm:i}) & equivalent as a Lie-algebra statement; field content differs\\
+Pati--Salam rung & $SO(4,6)\supset SO(4)\times SO(6)$ acts on the whole $64$ & $P_*$ preserved by the $21$ compact generators only; each of the $24$ non-compact ones maps $V_*$ to its complement (\cref{rem:krasnovpointer}, z3-9) & not the same action\\
+one generation & SM generation with $\nu_R$ & one Pati--Salam family with $\nu_R$ (\cref{thm:PS}) & same count; equivalence as modules not constructed\\
+projector & Weyl condition & $P_*=\tfrac18(\id+\mathcal X)(\id+\mathcal Z)(\id+\mathcal U)$, \cref{eq:Pstar} & different mechanisms\\
+kinetic term & $SU(2)_L$ and $SU(2)_R$ with opposite signs & $K^\mu=P_*\gamma^0\gamma^\mu P_*$, $K^0=\id$ on $V_*$, one sign & different; comparison needs a dictionary\\
+mass bilinears & none for the Weyl Lagrangian & $272$-dimensional kernel space (\cref{thm:kernelspace}) & treated here only\\
+bosons and actions & proposed $D\to D+C$; not derived & adopted action \eqref{eq:Saction} and potential & neither derives the bosonic action\\
+\bottomrule
+\end{tabular}
+\caption{Krasnov's construction and the chiral block of this manuscript. ``Equivalent'' is used only where a statement is proved in both; equal
+dimensions are not equivalence.}
+\label{tab:krasnov}
+\end{table}
+
+\paragraph{What is shared and what is not.} Two statements are equivalent: the Chevalley realisation of the spinors of a split space on the forms
+of a null half-space, which both constructions inherit, and the commutant $\so2$ of a Lorentz subalgebra in $\so{3,3}$. Three are analogous:
+Lorentz and Pati--Salam in one split-signature Clifford algebra with a $64$-dimensional one-generation module; the non-dynamical selection of the
+Lorentz subgroup; and the imposed reduction to four coordinates. The two $64$-dimensional modules carry different actions: Krasnov's carries
+$\so{4,6}$, the block $V_*$ only its compact part.
+
+\paragraph{No representation map has been constructed.} No intertwiner between $V_*$ and $\Lambda^{\rm even}\R^7$ is written down here, and
+none is claimed. An explicit map would need a common embedding of $\so{1,3}\oplus\so4\oplus\so6$, an identification of the relevant
+$\Cl(9,9)$ block with $\Cl(7,7)$ that drops or absorbs the extra positive four-plane on which the normal charge $Q_A$ lives, and intertwining
+identities for the kinetic kernels, including the relative sign of Krasnov's two sectors. That construction is open.
+
+\section{The spectral programme of Chamseddine and Connes}
+\label{sec:rel:connes}
+
+Chamseddine and Connes obtain the Standard Model from a spectral triple. An algebra $\mathcal A=C^\infty(M)\otimes\mathcal A_F$ acts on a
+Hilbert space with a Dirac operator $D$, a real structure $J_{\rm C}$ and a grading $\gamma$; the finite algebra $\C\oplus\mathbb H\oplus M_3(\C)$ is
+singled out among the irreducible finite geometries of KO-dimension $6$ that satisfy the order-one condition, under a symplectic--unitary
+hypothesis, which also fixes $16$ fermions per generation \cite{ChamseddineConnes07,ChamseddineConnes08}. Gauge and Higgs fields arise as inner
+fluctuations $D\mapsto D+A+J_{\rm C}AJ_{\rm C}^{-1}$, and the spectral action $\Tr f(D/\Lambda)$ yields, in the Euclidean formulation of
+\cite{ChamseddineConnes96,ChamseddineConnes}, the bosonic Standard-Model action coupled to gravity, with the gauge couplings related at the
+cut-off scale. Its inputs are the number of generations, the finite Dirac operator with its Yukawa and Majorana data, the cut-off function and
+scale, and the hypotheses of the classification. This manuscript shares with that programme the strategy of reading the gauge symmetry off
+an algebraic structure, and none of its objects. It has no algebra subject to order-zero and order-one conditions, no real structure of
+KO-dimension $6$ and no spectral action: its gauge algebras are centralisers in a split Clifford algebra, its matter block is the image of a
+chosen projector, and its actions are adopted, not derived from a spectral principle. Its inputs are the clock, the projector, the Lorentz
+action, the actions and potential, and the scales. It is therefore not a spectral-triple theory, and no number of the spectral-action
+programme transfers to it. The two meet the normalisation $\sin^2\theta_W=\tfrac38$ only through the grand-unified relation of couplings at a
+high scale, which is a normalisation and not a prediction without a matching scale, a spectrum and running (PH-09).
+
+\section{What is inherited and what is new}
+\label{sec:rel:novelty}
+
+The statements of this manuscript fall into four kinds, and the comparisons above place them (CORE-13).
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{Known identities, restated in the arena's variables.} Ordinary complex Dirac theory (\cref{thm:realification}); the Chevalley
+realisation; the Lagrange and Rainich identities of the field energy; Maxwell's equations and their duality; the Pati--Salam and $SO(10)$
+content and its anomaly freedom; Kaluza--Klein reduction, O'Neill's formulas, Lanczos's identity and the Holst action; Howe duality; the
+reparametrisation invariance of a worldline.
+\item \emph{New realisations.} The tower $\Cl(3n,3n)$ as a setting for these structures; the chiral projector $P_*$ built from three commuting
+involutions, with the normal charge on an extra positive four-plane; the field-strength reading with $G$ as the Hodge star and the duality
+phase of the curvature as a Barbero--Immirzi angle; the interior dynamics, its closure and its rigid-body realisation.
+\item \emph{New classifications and obstructions, within this realisation.} The internal centralisers along the tower; the $272$-dimensional
+kernel space and the vacuum analysis on it; the exclusion of the two readings from one another; the obstructions to hypercharge from anomaly
+cancellation in the class of three involutions, to colour in the five-projector family, to the normal $U(1)$ as the photon, and to type
+selection by invariant scalar dynamics.
+\item \emph{Predictions of a specified model.} None is claimed.
+\end{enumerate}
+The novelty of the items in (ii) and (iii) is relative to the sources read for this chapter. It rests on a targeted search, not on a survey of
+the literature, and no blanket claim of originality follows from it.

@@ -1,0 +1,38 @@
+{
+  "title": "The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature Clifford Geometry",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "version": "1.0.0",
+  "publication_date": "2026-11-02",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Bencheikh, Driss",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "description": "<p><strong>Version 1.0.0 — Preprint, not peer reviewed.</strong></p><p>A study of the real Clifford algebra Cl(3,3) of the split space R<sup>3,3</sup> — three temporal directions paired with three spatial ones — and of its graded tower Cl(3n,3n): which ingredients of relativistic field theory the algebra fixes, which it merely admits, and which it obstructs. The manuscript states every selection beyond the algebra (clock, projector, potential, couplings, gauge principle) as an assumption, proves the obstructions it finds, and is accompanied by a chapter-organized verification package of 61 scripts with 1389 exact or numerical checks. It is a mathematical research manuscript, not a completed unified physical theory: no gravitational dynamics is derived and no experimental confirmation is claimed.</p>",
+  "keywords": [
+    "split-signature Clifford algebra",
+    "Cl(3,3)",
+    "three times",
+    "Lorentz structures",
+    "complex structure",
+    "Dirac theory",
+    "Pati-Salam",
+    "vacuum selection",
+    "curvature identities",
+    "obstructions",
+    "computer-verified mathematics"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/driss-bencheikh/spacetime-electromagnetic-framework",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Preprint, not peer reviewed. The manuscript, its LaTeX source and the documentation are licensed under CC BY 4.0; the verification software (Python scripts, Makefile, workflow files) under the MIT licence; LICENSE.md in the repository states which files each licence covers."
+}

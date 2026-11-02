@@ -1,0 +1,68 @@
+\chapter{Units and normalisation dictionaries}
+\label{app:units}
+
+\section{Units of the two readings}
+\label{app:units:readings}
+
+The displacement reading of $X$ is written in SI units with $c$ explicit. The computations of the field-strength reading use
+Heaviside--Lorentz units with $c=1$, and with $\hbar=c=1$ for the Dirac field. Throughout, $\bB$ is minus the textbook magnetic field,
+$\Btext=-\bB$, and $\bE$ and $c\bB$ share the unit $\mathrm{V\,m^{-1}}$. \Cref{tab:app:units} collects the objects that the readings
+compare; \cref{r1:tab:objects} adds their Lagrangians, canonical conjugates and Noether charges.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{3.0cm}@{}}
+\toprule
+object & module & Lorentz action & SI unit & computed in\\
+\midrule
+$Y=X_{\rm cl}$, displacement & $V=\R^{3,3}$: times $ct^i$ on $V^+$, lengths on $V^-$ & $\lint(\hat n)$ on $E_{\hat n}=\R\hat n\oplus V^-$ after a clock; the rest of $V^+$ scalar & m & SI, $c$ explicit\\
+$X_{\rm EM}=(c\bB;\bE)$, field strength & $V$ as the fibre $\Lambda^2E_{\hat n}^*$ & $\lG$ by the commutator, $(1,0)\oplus(0,1)$ & $\mathrm{V\,m^{-1}}$ & Heaviside--Lorentz, $c=1$\\
+field octants & $S\cong\Lambda^*(\mathsf L)\cong\R^8$; $\bE$ on weight one, $\bB$ on weight two & $\rho_{\rm oct}$: $L_i$ and the odd $Q_i=-TL_i$ & $\mathrm{V\,m^{-1}}$ & Heaviside--Lorentz, $c=1$\\
+$\psi$, Dirac field & real Grassmann field on $\R^{1,3}$ with values in $S$ & $\rho_{\hat n}$, $(\tfrac12,0)\oplus(0,\tfrac12)$ & $\mathrm m^{-3/2}$ & Heaviside--Lorentz, $\hbar=c=1$\\
+$A_\mu$, potential & one-form on $E_{\hat n}$ & $\lint$, $(\tfrac12,\tfrac12)$ & $\mathrm{V\,s\,m^{-1}}$ & Heaviside--Lorentz, $c=1$\\
+$E_6$, $E_0$, $\mathbf S$ & quadratic in $X_{\rm EM}$ & $E_6=\Theta^{00}$, $-\mathbf S=\Theta^{0a}$; $E_0$ invariant & $\mathrm{J\,m^{-3}}$ & both\\
+$\mu_{\rm m}$, $d$ & Pauli and electric-dipole couplings & -- & $\mathrm{J\,T^{-1}}$, $\mathrm{C\,m}$ & mass dimension $-1$\\
+\bottomrule
+\end{tabular}
+\caption{Representations and units of the objects compared by the two readings.}
+\label{tab:app:units}\label{r9:tab:dict}
+\end{table}
+
+\section{Normalisation of gauge, scalar and mass terms}
+\label{app:units:norm}
+
+The action of the kernel field is written for gauge generators that are orthonormal for the module metric
+$\modG_{ab}=\Tr(t_a^{\!\top}t_b)/512$, with unit gauge coupling; the coupling $g_A$ is restored through the kinetic term
+$-\frac1{4g_A^2}\modG_{ab}F^a_{\mu\nu}F^{b\,\mu\nu}$. Generators of the conventional normalisation $\Tr_{\rm fund}TT=\tfrac12$ (such as
+$t^L_i$, $t^R_i$ and the colour generator $\tfrac14(E_{10}E_{16}-E_{11}E_{17})$) have module norm $\tfrac18$, so the conventionally normalised
+coupling is $g=\sqrt8\,g_A$. With $v=\lvert\Phi\rvert/\sqrt2$ the vector masses at the selected vacuum are $m^2=8g_A^2v^2$ and
+$40g_A^2v^2$, that is $g^2v^2$ and $5g^2v^2$ (\cref{thm:compat}; checks z3-5, z3-6). The photon analysis uses $-\Tr/128$ for the same
+generators, a factor $4$ from $-\Tr/512$; its weak and hypercharge norms are $\lvert t^L_3\rvert^2=\tfrac18$ and $\lvert t_Y\rvert^2=\tfrac5{24}$ in $-\Tr/512$.
+
+\section{Symbols of the matter, vacuum and photon chapters}
+\label{app:units:symbols}
+
+\Cref{tab:app:symbols} lists the symbols that \cref{ch:ch06_chiral,ch:ch07_vacuum,ch:ch08_photon} fix, with their normalisation and the
+name they carry in the source notes and in the verification scripts, which were not renamed (\cref{app:manifest}).
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.4cm}@{}}
+\toprule
+symbol & meaning and normalisation & where & in the scripts\\
+\midrule
+$\mathcal X,\mathcal Z,\mathcal U$ & the commuting involutions $\Gamma\chi_W$, $-J\chi_C$, $-Jq_A$; $P_*=\tfrac18(\id+\mathcal X)(\id+\mathcal Z)(\id+\mathcal U)$, rank $64$ & \cref{sec:pstar} & $X$, $Z$, $U$\\
+$t_a$ & gauge generators acting on the module & \cref{ch:ch07_vacuum,ch:ch08_photon} & $T_a$\\
+$\modG_{ab}$ & module metric $\Tr(t_a^{\!\top}t_b)/512$; unit coupling $g_A$, conventional coupling $g=\sqrt8\,g_A$ & \cref{eq:Saction}, \cref{app:units:norm} & $G_{ab}$\\
+$\langle X,Y\rangle$ on $\mathfrak k$ & $-\Tr(XY)/128$ in the alignment analysis, in which the rotations $\tfrac12e_ie_j$ are orthonormal; $4$ times $-\Tr(XY)/512$ & \cref{p2:sec:main} & same\\
+$\Sigma^{0a}$ & boosts $\tfrac12\gamma^0\gamma^a$ of the interior Lorentz algebra & \cref{thm:kernelspace} & $K^a$\\
+$\mathcal M$ & the real $272$-dimensional space of Lorentz-invariant mass kernels; complex structure $\mathcal C$ & \cref{thm:kernelspace}, \cref{app:branching} & $\mathsf K$\\
+$v_R,v_u,v_d$ & amplitudes of $\Phi=v_R\Phi_0+v_uK_{1u}+v_dK_{1d}$; $v=\lvert\Phi\rvert/\sqrt2$ in the vector masses & \cref{ex:EWspectrum} & $v_R$, $\kappa_u$, $\kappa_d$\\
+$\xi_1,\xi_2,\xi_3$ & weights, all $\ge0$, of the three terms $V_{\mathfrak h_{\rm SM}}$, $-\Tr(\Pi P_L)$ and $-\Tr(\Pi\Pfam)$ of the selecting potential & \cref{p3:prop:hessian} & $\kappa$, $\lambda$, $\mu$\\
+$Q$ & $T^L_3+T^R_3+\tfrac12(B-L)$ on the block & \cref{app:branching} & same\\
+\bottomrule
+\end{tabular}
+\caption{Symbols of \cref{ch:ch06_chiral,ch:ch07_vacuum,ch:ch08_photon} and their names in the source notes. In \cref{ch:ch08_photon} the
+letters $T_a$ keep their meaning of tangent directions in the material on the projector as a field.}
+\label{tab:app:symbols}
+\end{table}

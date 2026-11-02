@@ -1,0 +1,47 @@
+PASS y1-0a: the word encoding reproduces the realisation (1) of ES17 (sx, sz, ep=sx sz) for e1..e6
+PASS y1-0b: omega=e1..e6 is diagonal, omega^2=1, omega=J Omega, omega=-(-1)^{#ones}: Appendix A of ES17
+PASS y1-0c: tower words at n=2 equal the dense e_a(x)1, omega(x)e_a, 1(x)e_a
+PASS y1-1a: the twelve E_(k,a) satisfy the Clifford relations of R^{6,6}
+PASS y1-1b: u_a=1(x)e_a satisfy Cl(3,3), commute with all E_(1,b), and u_a=Gamma1 E_(2,a)=E_(1,1)..E_(1,6)E_(2,a)
+PASS y1-1c: commutant of Cl(3,3)(x)1 has dimension 64 (character count 2^(12-6)) and is spanned by 1(x)e_J
+PASS y1-1d: Gamma^(1)=(J Omega)(x)1=-(-1)^{N^(1)} with N^(1) the occupation of copy 1 (bit count)
+PASS y1-1e: the 4096 E-blades and the 4096 e_I(x)e_J coincide up to sign; (e1(x)1+u1)^2=2+2 e1(x)e1 is not scalar
+PASS y1-1f: at n=3,4: ungraded generator of copy k = Gamma1..Gamma(k-1) E_(k,a) (grade 6(k-1)+1); ungraded generators of distinct copies commute, graded ones anticommute
+PASS y1-2a: H_g=3E11+4E21: H_g^2=25, Tr H_g=0, so spec {+-5} each on 32 dimensions
+PASS y1-2b: B=E21E11 is antisymmetric with B^2=-1 and U_phi (M E11) U_phi^-1=H_g at tan2phi=m2/m1 (exact, m=(3,4))
+PASS y1-2c: H_u with (m1,m2)=(1,2): spec {-3,-1,1,3} each 16, H_u=m1E11+m2 Gamma1 E21, minimal polynomial of degree 4
+PASS y1-2d: corrected: at m1=m2 H_u has spec {-2m,0,2m} with multiplicities 16,32,16 (not 'each 16'); with three distinct eigenvalues it is not conjugate to a vector either, so the restriction m1!=m2 in (iii) is unnecessary
+PASS y1-2e: no joint eigenvector of E11,E21 (all four sign pairs, by rank); joint signs of e1(x)1,1(x)e1 on 16 each; graded Dirac operators anticommute with (D1+D2)^2=p1.p1+p2.p2 (random p), ungraded ones commute
+PASS y1-2f: J1,J2 commute with H_g,H_u; T1,T2 commuting complex structures with T(k)=J(k)x(mass term k); Z_u has eigenvalues i{+-1+-2}; Z_g^2=-M^2 and exp(-lam Z_g)=cos(M lam)-sin(M lam)Z_g/M (tol 1e-10)
+PASS y1-2g: rung 3: graded sum with m=(1,2,2) squares to 9 (spec +-3, 256 each); ungraded sum with m=(1,2,4) has the 8 values sum +-m_k, 64=4^3 each; corrected detail: for m=(1,2,2) the value +-1 has multiplicity 128, so '4^n each' holds per sign pattern (generic masses); rung 4: anticommute/commute and traceless subset products
+PASS y1-3a: J1,J2 commute, square -1, J1J2=omega_S symmetric traceless involution; W=ker(omS+1) of dim 32 is where J1=J2; Wbar=ker(J1+J2)=ker(omS-1)=im(J1-J2), orthogonal to W
+PASS y1-3b: an E-blade commutes with omega_S iff it has an even number of surplus indices (all 4096); 1(x)e2 and E11E22 anticommute with omega_S, so they exchange W and Wbar
+PASS y1-3c: J1 and J2 commute with lint(1), lint(2), the 8 graded and 8 ungraded interior gammas, H_g, H_u and M12
+PASS y1-3c2: corrected proof detail: the unique E-blade equal to u_mu is E11..E16 E_(2,mu), which DOES contain the surplus indices E12,E13 (an even number, so it still commutes with J1); 'none of these contains a surplus index' is false for the ungraded gammas and H_u
+PASS y1-3d: E13E23=E12E22 omega_S; C_b=M12 on W; the four cross surplus bivectors preserve W and anticommute with J1,J2
+PASS y1-4a: commutant of the 8 ungraded gammas: dim 16 by characters (2^(12-8)), spanned by 16 blades, trace form signature (10,6) so it is M4(R)=H(x)H; adding T1,T2 leaves dim 4 = span{1,J1,J2,omega_S}
+PASS y1-4b: in span{1,J1,J2,omega_S} (products from the matrices) x^2=-1 has exactly the solutions +-J1, +-J2
+PASS y1-4c: J_sel=E12E13E21..E26=J(x)omega=J1 Gamma2; equals +-J1 on Gamma2=+-1 and +-J2 on Gamma2 omega_S=-+1 (32 each), J on 16 and -J on 16 dims of W; anticommutes with all graded and ungraded copy-2 generators; commutes with E11 but not with H_g, H_u
+PASS y1-4d: graded interior gammas: commutant dim 16 by characters, trace form (6,10) so M2(H); with the six surplus bivectors dim 2 = span{1,omega_S}, omega_S^2=+1 (R+R); on W (and on Wbar) the commutant is R (character average of Tr(g P_W)^2 over 2048 group representatives)
+PASS y1-4e: rungs n=2,3,4: commutant of the 4n graded interior gammas and the surplus bivectors has dim 2 (characters), omega_S=J1..Jn is the product of the 2n surplus generators and omega_S^2=(-1)^n
+PASS y1-4f: common subspace J1=..=Jn has dimension 2*4^n at n=2,3; at n=3 omega_S acts there as (-1)^((n-1)/2) J = -J
+PASS y1-5a: N=3n/2-(1/2)sum E_(k,i)E_(k,i+3) equals the bit count (spectrum 0..6, multiplicities 1,6,15,20,15,6,1); (-1)^N=Gamma1 Gamma2 = E1..E12, the volume element
+PASS y1-5b: [N,v]=Kv on all 12 generators; ad N on the 66 bivectors has eigenvalues 0,+2,-2 on 36,15,15; (-1)^N commutes with bivectors and anticommutes with generators
+PASS y1-5c: vector level, exact ranks over Q: dim Cent(K_n) cap so = 9,36,81,144 and dim Cent(G_n) cap so = 6,30,72,132 at n=1..4; on random elements of Cent(G_n): K X K=-X^T, and [X,K]=0 iff the boost block S vanishes
+PASS y1-5d: spinor level, entry by entry over the occupation basis at n=1..4: every paired rotation e_ie_j-e_(i+3)e_(j+3) conserves N, every paired boost e_ie_(j+3)-e_je_(i+3) has only dN=+2 and dN=-2 entries, both present (within one constituent and across two)
+PASS y1-5e: the vector action of the spinor elements used in 5d commutes with G_2 and is antisymmetric for the paired rotations, symmetric (a boost) for the paired boosts
+PASS y1-6a: C_b commutes with N, not with N^(1); U=(1/8)prod(1+eta_aa E1aE2a)=exp(pi C_b/2) (tol 1e-10) is orthogonal, U E1a U^-1=-E2a for every a, and U N^(1) U^-1=N^(2)
+PASS y1-6b: the spin lift of the copy boost eps(x)G (solved, then checked exactly) changes N by +-2 only, with both signs
+PASS y1-6c: in lint only R e1e4 commutes with N; e1e4=1-2N_1 is symmetric (a boost); e4e5,e4e6,e5e6,e1e5,e1e6 and J=e2e3 do not
+PASS y1-6d: in lG (n=1) the N-commuting elements are exactly the 3 paired rotations (antisymmetric); no nonzero boost commutes
+PASS y1-6e: corrected: N commutes with gl(3,R) (dim 9) of which 6 dimensions are boosts (symmetric, e.g. e1e4, e2e5, e3e6); so N IS invariant under boosts, contrary to 'under nothing that contains a boost'
+PASS y1-6f: corrected: the compact (gauge-admissible) charge J=e2e3 and the compact rotation e1e2 have dN=+2 and dN=-2 parts (besides dN=0), i.e. create and annihilate pairs of quanta; pair creation of quanta needs a non-compact field only within the binding-compatible algebra Cent(G_n)
+PASS y1-7a: P(e_a(x)1)P=u_a; P commutes with the diagonal Delta_mu nu, N, omega_S, H_u(m1=m2) and not with H_g
+PASS y1-7b: tau_K=DP: tau_K E1a tau_K=E2a, tau_K^2=1, commutes with Delta, N, omega_S, H_g(m1=m2), not with H_u; 2D=1+Gamma1+Gamma2-Gamma1Gamma2
+PASS y1-7c: diagonal Casimir: 3/2 on one constituent, C(C-3)(C-4)=0 on S_2; e1e4=J Gamma e5e6, e1e5=J Gamma e6e4, e1e6=J Gamma e4e5
+PASS y1-7d: Table e1:tab:stat reproduced exactly (Casimir content of P and tau_K sectors on W, Wbar, S_2)
+PASS y1-7e: on W: Gamma1=Gamma2=+-1 carries spin one (C=4, 6 dims) in P=+1 and spin zero (2 dims) in P=-1; the mixed sector (16 dims, C=3) splits 8+8 under P
+PASS y1-7f: P and tau_K are J1-linear on W, P is antilinear on Wbar; spin one of tau_K=+1 lies in Gamma1=Gamma2=+1, that of tau_K=-1 in Gamma1=Gamma2=-1
+PASS y1-7g: on the spin-one part of tau_K=+1 and of tau_K=-1 in W, the boost Delta_14 equals s J Delta_56 with opposite signs s (tol 1e-9): the tau_K sectors differ in complex Lorentz content (self-dual vs anti-self-dual), so tau_K does sort by Lorentz content once J is i
+
+y1: 45 PASS, 0 FAIL
