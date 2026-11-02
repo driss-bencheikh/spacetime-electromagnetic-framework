@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature Clifford Geometry"
+type: software
+version: "1.0.0"
+date-released: "2026-11-02"
+license:
+  - CC-BY-4.0
+  - MIT
+authors:
+  - family-names: Bencheikh
+    given-names: Driss
+    affiliation: "Independent Researcher"
+repository-code: "https://github.com/driss-bencheikh/spacetime-electromagnetic-framework"
+abstract: >-
+  A study of the real Clifford algebra Cl(3,3) of the split space R^{3,3} and its graded tower Cl(3n,3n): which ingredients of
+  relativistic field theory the algebra fixes, which it admits and which it obstructs, with a complete computational verification package.
+  Version 1.0.0, preprint, not peer reviewed. Manuscript and documentation under CC BY 4.0; verification software under MIT
+  (see LICENSE.md).
+keywords:
+  - split-signature Clifford algebra
+  - Cl(3,3)
+  - three times
+  - Lorentz structures
+  - Dirac theory
+  - Pati-Salam
+  - obstructions
+  - computer-verified mathematics
+preferred-citation:
+  type: report
+  title: "The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature Clifford Geometry"
+  authors:
+    - family-names: Bencheikh
+      given-names: Driss
+      affiliation: "Independent Researcher"
+  status: preprint
+  version: "1.0.0"
+  year: 2026
+  notes: "Preprint, not peer reviewed."
+  url: "https://github.com/driss-bencheikh/spacetime-electromagnetic-framework"

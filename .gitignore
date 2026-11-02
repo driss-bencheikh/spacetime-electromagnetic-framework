@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+runs/
+manuscript/**/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.bbl
+manuscript/*.blg
+manuscript/main.pdf

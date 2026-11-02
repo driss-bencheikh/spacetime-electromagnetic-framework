@@ -1,0 +1,39 @@
+file	label	checks naming the label	checks citing its 26 October theorem number
+ch01_clifford	lem:blade		y6-0
+ch02_lorentz	prop:gauge1		e5-3d e6-2d
+ch02_lorentz	prop:kernels1		r1-14
+ch02_lorentz	prop:twoK		s3-10a
+ch02_lorentz	thm:PT		r4-9
+ch02_lorentz	thm:i		e1-3c r2-4a s2-4
+ch02_lorentz	thm:module		d2-15a
+ch02_lorentz	thm:spectra		d2-16 r1-37 s1-38
+ch02_lorentz	thm:spectrumBC		r3-6
+ch03_readings	prop:notconj		r2-20
+ch03_readings	thm:emfield	d2-5a	r2-12a s3-11
+ch04_rigidbody	cl:norel	rb2-10	
+ch04_rigidbody	cor:constrate		d6-1a
+ch04_rigidbody	prop:several		x6-16
+ch04_rigidbody	thm:EBsplit		r1-11
+ch04_rigidbody	thm:inertiareq		e5-5a
+ch04_rigidbody	thm:nocommon		e5-2a
+ch04_rigidbody	thm:pendulum		d3-8
+ch04_rigidbody	thm:survive		p2-19
+ch05_tower	prop:diagtower		e1-3h
+ch05_tower	prop:mixed		e5-3h
+ch05_tower	prop:mixedcost		e5-3h
+ch05_tower	prop:orthospin		d6-10
+ch05_tower	thm:copyparity		e3-6b
+ch07_vacuum	cor:fullmass		e6-1a
+ch07_vacuum	lem:tracepot	z3-2	
+ch07_vacuum	mb:Tinv	e6-2a	
+ch07_vacuum	prop:alignment		p2-7
+ch07_vacuum	thm:axion		d2-24
+ch07_vacuum	thm:compat	z3-5	
+ch07_vacuum	thm:kernelspace	z3-8	
+ch07_vacuum	thm:nomajoron		d2-21
+ch07_vacuum	thm:oneloop1013		E3e
+ch07_vacuum	thm:potential	z4-4	
+ch07_vacuum	thm:subfs		d2-18 d6-14a
+ch07_vacuum	thm:twophases	z3-4	
+ch11_curvature	prop:constraints		r2-8b s2-8
+ch12_causal	prop:orient		r1-9

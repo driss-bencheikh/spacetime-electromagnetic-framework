@@ -1,0 +1,23 @@
+file	claims	with_check	numerical_only	proof_no_check	neither
+01_clifford_geometry	11	5	0	4	2
+02_lorentz_structures	25	5	0	6	14
+03_readings_of_x	85	47	1	15	23
+04_rigid_body	48	3	0	26	19
+05_clifford_tower	68	43	3	11	14
+06_chiral_matter	19	1	1	3	15
+07_mass_vacuum	41	19	12	9	13
+08_gauge_photon	50	44	2	3	3
+09_b_field	56	37	0	16	3
+10_classical_consistency	7	7	1	0	0
+11_curvature_gravity	13	13	0	0	0
+12_causality	15	14	1	0	1
+TOTAL	438	238	21	93	107
+provenance	claims	with_check	proof_no_check	neither
+tex	249	58	86	105
+rest_energy	26	24	2	0
+two_readings	60	57	2	1
+emergence	64	62	1	1
+photon_selection	39	37	2	0
+hand	0	0	0	0
+manifest checks cited inside claim spans: 559 of 1363
+identifiers cited in the manuscript but absent from the manifest: none

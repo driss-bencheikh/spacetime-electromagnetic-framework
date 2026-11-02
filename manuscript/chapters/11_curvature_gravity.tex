@@ -1,0 +1,608 @@
+\chapter{Curvature, Geometry and Gravitational Obstructions}
+\label{ch:ch11_curvature}
+
+The question of this chapter is what survives when the metric of the arena is no longer flat. Three constructions are made. A curved
+arena of signature $(3,3)$ carries an almost para-Hermitian structure, and an explicit model with a normal $U(1)$ has a six-dimensional
+Einstein tensor in closed form (\cref{sec:curved}). In the field-strength reading the curvature operator of a four-metric lives on the frame,
+and the duality rotation of the curvature ends at the Einstein tensor (\cref{sec:curvop}). An observation projector carried by the spin
+connection meets two competing curvatures (\cref{sec:transport}). Each of these is an identity of a \emph{given} metric. None of them is a
+field equation for the metric, and \cref{sec:gravlimits} states, reading by reading, what a gravitational interpretation would still need: the
+dynamics of the metric or tetrad, an action, its constraints and physical degrees of freedom, the signs of the kinetic terms, the coupling to
+matter and a low-energy limit. The chapter relies on the clock and the interior four-plane of \cref{ch:ch02_lorentz}, the binding root and
+the field-strength reading of \cref{ch:ch03_readings}, and the paired-mode projector of \cref{ch:ch01_clifford}; the causal analysis of
+\cref{ch:ch12_causal} uses its normal-plane model.
+
+% --- source: tex/s23_curved#0 ((head))
+
+
+% --- source: tex/s23_curved#1 (A curved arena)
+\section{A curved arena}
+\label{sec:curved}
+
+Nothing in the algebra requires the ambient metric to be flat. Promoting the metric to a field of signature $(3,3)$, the generators to an
+orthonormal frame with a spin connection, and the pairing to a field of endomorphisms, one obtains a curved arena. This section describes its
+geometry, builds one explicit curved model against which statements can be tested, and computes the six-dimensional Einstein tensor of that
+model exactly. The two readings of $\R^{3,3}$ then each produce the Einstein tensor of a four-metric, in quite different ways, and neither
+determines the metric.
+
+% --- source: tex/s23_curved#2 (The pairing as a para-complex structure)
+\subsection{The pairing as a para-complex structure}
+
+\begin{proposition}[The arena is almost para-Hermitian]
+\label{prop:parahermitian}
+Let $(M,g)$ have signature $(3,3)$ and let $\cK\in\End(TM)$ satisfy $\cK^2=\id$ and $g(\cK\cdot,\cK\cdot)=-g$. Then $(M,g,\cK)$ is almost
+para-Hermitian: the eigendistributions $T^\pm M$ are isotropic of rank three, since $g(X,Y)=-g(\cK X,\cK Y)=-g(X,Y)$ on $T^+M$. It is
+para-K\"ahler, equivalently bi-Lagrangian, if and only if $\nabla^{\rm LC}\cK=0$ for the Levi-Civita connection \cite{CruceanuFortunyGadea96,EtayoSantamaria06};
+then each eigendistribution is parallel, involutive and totally geodesic, and $\Omega(X,Y)=g(\cK X,Y)$ is skew and closed.
+\end{proposition}
+
+\noindent Executable check: g3-1 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+The para-complex structure need not be posited: it is the grading root of \cref{prop:twoK}, $\cK(v)=\tfrac12[\varpi,v]$ with $\varpi=\sum_ie_ie_{i+3}$,
+whose eigenspaces are the two totally null three-planes spanned by $e_i\mp e_{i+3}$. The null $3{+}3$ splitting it induces is a different
+decomposition from the physical $4{+}2$ splitting into the interior four-plane and the surplus plane, and conflating them is the first thing to avoid. A
+connection with torsion can preserve $\cK$ without making the eigendistributions integrable or $\Omega$ closed, so a $\cK$-preserving connection does not
+deliver the para-K\"ahler conclusion \cite{MarottaSzabo21,LoustauSanders22}. Para-K\"ahler geometry is the world of $\cK^2=+\id$, while chirality is
+comfortable in the world of $J^2=-\id$; this is one way of naming the difficulty that runs through the whole construction.
+
+% --- source: tex/s23_curved#3 (An explicit model with a normal U(1))
+\subsection{An explicit model with a normal $U(1)$}
+\label{sec:curvedmodel}
+
+Split the tangent space as $TM=E\oplus N$ with $E=\operatorname{span}\{\widehat W,e_4,e_5,e_6\}$ of signature $(1,3)$, the symmetric clock of
+\cref{prop:clock} playing the role of $\gamma^0$, and $N=\operatorname{span}\{u_1,u_2\}$ with
+\[
+u_1=\tfrac1{\sqrt2}(e_1-e_2),\qquad u_2=\tfrac1{\sqrt6}(e_1+e_2-2e_3),
+\]
+which complete the clock inside the positive triple: the relative times of \cref{sec:clocksimplex}. The metric does not select this split; it is extra
+data.
+
+\begin{lemma}[The normal plane carries a commuting rotation]
+\label{lem:JN}
+$J_N:=u_1u_2=\tfrac1{\sqrt3}(e_2e_3+e_3e_1+e_1e_2)$ satisfies $J_N^2=-\id$ and commutes with $\widehat W$, $e_4$, $e_5$ and $e_6$.
+\end{lemma}
+
+\begin{proof}
+$J_N$ is a sum of time--time bivectors and has no spatial index, so it commutes with $e_4,e_5,e_6$ by \eqref{eq:bladecomm}; it is the unit bivector of
+the plane orthogonal to $\widehat W$ inside the positive triple, so it commutes with $\widehat W$; and $u_1,u_2$ are orthonormal of square $+\id$, so
+$(u_1u_2)^2=-u_1^2u_2^2=-\id$.
+\end{proof}
+
+\noindent Executable check: g3-2 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+The normal plane therefore carries a compact $\uu1$ commuting with the physical generators. Give it a connection, $\nabla^\perp u_1=-Au_2$,
+$\nabla^\perp u_2=Au_1$, with spin connection $\Omega_N=\tfrac12AJ_N$. The model metric is
+\begin{equation}
+\label{eq:kk}
+ds_6^2=g^{(4)}_{\mu\nu}(x)\,dx^\mu dx^\nu+(du+vA)^2+(dv-uA)^2,\qquad A=A_\mu(x)\,dx^\mu .
+\end{equation}
+
+\begin{proposition}[The model]
+\label{prop:kk}
+The metric \eqref{eq:kk} has signature $(3,3)$; its restriction to $\Sigma=\{u=v=0\}$ is $g^{(4)}$; the induced normal connection is $A$; and
+$R^u{}_{v\mu\nu}|_\Sigma=(dA)_{\mu\nu}$. For $g^{(4)}$ flat and $A=Bx\,dz$ one finds $R^u{}_{vxz}|_\Sigma=B$ while every component $R^\mu{}_{\nu\rho\sigma}|_\Sigma$
+vanishes.
+\end{proposition}
+
+\noindent Executable check: g2-1 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+This is the Kaluza--Klein construction for a rank-two real bundle with structure group $SO(2)$, and $R^u{}_{v\mu\nu}=F_{\mu\nu}$ is the standard formula for
+the curvature of a normal bundle \cite{AppelquistChodosFreund87,ONeill83}. Two consequences are easy to misread in either direction: ambient curvature does
+not imply observable curvature, since the last example has a curved six-geometry with a flat induced four-metric; and a four-dimensional distribution is not
+a spacetime until an integral submanifold or a quotient is produced, which here $\Sigma$ supplies.
+
+\begin{proposition}[The surplus constraints are first class]
+\label{prop:constraints}
+For a geodesic test particle in \eqref{eq:kk} put $\ell=vp_u-up_v$, $k_\mu=p_\mu-A_\mu\ell$, so that $H=\tfrac12(g_{(4)}^{\mu\nu}k_\mu k_\nu+p_u^2+p_v^2)$. With
+$\phi_1=p_u$, $\phi_2=p_v$ and $C:=A_\mu g_{(4)}^{\mu\nu}k_\nu$,
+\[
+\{\phi_1,\phi_2\}=0,\qquad \{\phi_1,H\}=-C\phi_2,\qquad \{\phi_2,H\}=+C\phi_1 ,
+\]
+so the constraints are first class for every $A_\mu(x)$ and every $g^{(4)}$. The reduced phase space has dimension $12-2\times2=8$, that of $T^*M^4$, and
+$H_{\rm red}=\tfrac12g_{(4)}^{\mu\nu}p_\mu p_\nu$.
+\end{proposition}
+
+\noindent Executable check: c2-5 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+The potential has cancelled from the reduced Hamiltonian, and not by accident: the constraints generate translations in $(u,v)$, so the normal $U(1)$
+acts trivially on the reduced phase space and a spinless test particle cannot see it. Whatever makes the normal connection physical must come from the
+spinor sector, which \cref{sec:transport} examines. This is a first instance of the constraint structure that \cref{sec:constraints} derives from a
+worldline gauge symmetry.
+
+% --- source: tex/s23_curved#4 (The six-dimensional Einstein tensor)
+\subsection{The six-dimensional Einstein tensor}
+\label{sec:ambientEin}
+
+In polar normal coordinates $u+iv=re^{i\phi}$ the model reads $ds_6^2=h_{\mu\nu}dx^\mu dx^\nu+dr^2+r^2(d\phi-A)^2$ with $h=g^{(4)}$. Write
+$W_{\mu\nu}=F_{\mu\rho}F_\nu{}^\rho-\tfrac14h_{\mu\nu}F^2$. In signature $(+,-,-,-)$, $-W_{00}=\tfrac12(|\bE|^2+|\bB|^2)$, so a physical Maxwell field enters
+Einstein's equation as $\mathcal G=-2W$ in units where the coupling is absorbed.
+
+\begin{theorem}[The ambient Einstein tensor]
+\label{thm:ein6}
+For every $r>0$, and not as a series in $r$,
+\[
+\mathcal G^{(6)}_{\mu\nu}=\mathcal G_{\mu\nu}[h]-\tfrac{r^2}2W_{\mu\nu},\qquad \mathcal G^{(6)}_{rr}=-\tfrac12R[h]+\tfrac{r^2}8F^2,\qquad
+\mathcal G^{(6)}_{\hat\phi\hat\phi}=-\tfrac12R[h]+\tfrac{3r^2}8F^2,
+\]
+\[
+\mathcal G^{(6)}_{\mu\hat\phi}=\tfrac r2\nabla^\rho F_{\rho\mu},\qquad \mathcal G^{(6)}_{\mu r}=\mathcal G^{(6)}_{r\hat\phi}=0,\qquad R^{(6)}=R[h]-\tfrac{r^2}4F^2,
+\]
+with indices and $\nabla$ referring to $h$. On the slice $\Sigma$ the Einstein tensor is
+\[
+\mathcal G^{(6)}\big|_\Sigma=\operatorname{diag}\bigl(\mathcal G_{\mu\nu}[h],\,-\tfrac12R[h],\,-\tfrac12R[h]\bigr):
+\]
+its tangential block is the four-dimensional Einstein tensor exactly, with no stress term from $F$.
+\end{theorem}
+
+\begin{proof}
+The projection onto $(M,h)$ is a semi-Riemannian submersion with flat, totally geodesic fibres: for $U,V\in\{\partial_r,\partial_\phi\}$ and the horizontal lifts
+$E_\mu=\partial_\mu+A_\mu\partial_\phi$ one has $[U,E_\mu]=0$ and $E_\mu\,g(U,V)=0$, so the Koszul formula gives $g(\nabla_UV,E_\mu)=0$. The integrability tensor is
+$\tfrac12[E_\mu,E_\nu]^{\rm vert}=\tfrac12F_{\mu\nu}\partial_\phi$ with $|\partial_\phi|^2=r^2$. O'Neill's formulas, valid for semi-Riemannian submersions with nondegenerate
+fibres \cite{ONeill66,ONeill83,Besse87}, then give $R^{(6)}_{\mu\nu}=R_{\mu\nu}[h]-\tfrac{r^2}2F_{\mu\rho}F_\nu{}^\rho$, $R^{(6)}_{\mu\hat\phi}=\tfrac r2\nabla^\rho F_{\rho\mu}$,
+$R^{(6)}_{\hat\phi\hat\phi}=\tfrac{r^2}4F^2$ and $R^{(6)}_{rr}=0$, from which the Einstein components follow. They have also been checked symbolically on a Friedmann base
+$h=\operatorname{diag}(1,-t^2,-t^2,-t^2)$ with $A=z\,dt+\tfrac12x^2dy$, which carries both electric and magnetic fields.
+\end{proof}
+
+\noindent Executable check: g2-2 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+\begin{corollary}[Sign, reduction and rigidity]
+\label{cor:ein6}
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item The tangential equation $\mathcal G[h]=+\tfrac{r^2}2W$ has the opposite sign to $\mathcal G=-2W$: the normal field strength gravitates with negative energy.
+The sign is forced: a Lorentzian four-plane in $\R^{3,3}$ uses one positive and three negative directions, so its normal plane has signature $(2,0)$, the
+sign of time.
+\item Over a normal disc of radius $r_c$, $\int\!\!\int\sqrt{|g_6|}\,R^{(6)}\,d\phi\,dr=\sqrt{|h|}\bigl(\pi r_c^2R[h]-\tfrac{\pi r_c^4}8F^2\bigr)$. The Euler--Lagrange
+equation of $\int\sqrt{|h|}(a_1R+a_2F^2)$ is $a_1\mathcal G+2a_2W=0$, so Einstein--Maxwell theory has $a_2/a_1=+1$ while the reduced action has $a_2/a_1=-r_c^2/8$: the
+wrong relative sign.
+\item The vacuum is rigid: $\mathcal G^{(6)}=0$ if and only if $F=0$ and $h$ is Ricci-flat. The internal equations differ by $\tfrac{r^2}4F^2$, which forces $F^2=0$ and
+then $R[h]=0$; the tangential equation must hold at every $r$ while $\mathcal G[h]$ and $W$ do not depend on $r$, so $\mathcal G[h]=0$ and $W=0$ separately, and $W=0$
+forces $F=0$ because $-W_{00}$ is positive definite.
+\end{enumerate}
+\end{corollary}
+
+\noindent Executable check: g2-3 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+Reduction on directions of timelike sign is known to give fields whose kinetic terms have the wrong sign \cite{Hull98}, and the negative-energy vector
+found here is an instance. The two mechanisms of rigidity can be separated by changing the fibre. With a normal fibre of constant size,
+$ds_6^2=h+\ell^2(d\psi-A)^2+m^2d\chi^2$, still of signature $(3,3)$, the internal equations force only $F^2=0$, and null fields survive.
+
+\begin{example}[Negative-energy null radiation]
+\label{ex:nullwave}
+Take $h=2\,dU\,dV-H\,dU^2-dX^2-dY^2$ and $A=a(U)X\,dU$, so $F=a(U)\,dX\wedge dU$ is null. The only nonzero component of the six-dimensional Einstein tensor is
+$\mathcal G^{(6)}_{UU}=-\tfrac12(H_{XX}+H_{YY}-\ell^2a^2)$, so
+\[
+H=\tfrac14\ell^2a(U)^2(X^2+Y^2)
+\]
+solves the six-dimensional vacuum with $F\neq0$. In four-dimensional terms $\mathcal G_{UU}[h]=-\tfrac12\ell^2a^2<0$, whereas a physical null Maxwell wave has
+$\mathcal G_{UU}=-2W_{UU}=+2a^2>0$: the wave is negative-energy radiation. With the fibre size the coordinate $r$, as in \eqref{eq:kk}, the same field gives a
+tangential component graded in $r$ that forces $a=0$.
+\end{example}
+
+\noindent Executable check: g2-4, g2-5 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+More generally, with $ds_6^2=h+e^{2\alpha(x)}(d\psi-A)^2+e^{2\beta(x)}d\chi^2$,
+\[
+\mathcal G^{(6)}_{\hat\psi\hat\psi}-\mathcal G^{(6)}_{\hat\chi\hat\chi}=\tfrac14e^{2\alpha}F^2-\Box(\alpha-\beta)-\nabla(\alpha-\beta)\cdot\nabla(\alpha+\beta).
+\]
+For a breathing mode $\alpha=\beta$ the difference is a pure constraint and only null $F$ survives; for a relative modulus it is a field equation for $\alpha-\beta$,
+and $F^2\neq0$ becomes admissible. Non-null $F$ therefore needs the ratio of the two normal sizes to be a dynamical field. None of these escapes repairs
+the sign.
+
+% --- source: tex/s23_curved#5 (Off the slice)
+\subsection{Off the slice}
+
+On $\Sigma$ the $F$-couplings, which all carry $r$, switch off. Taking the four-geometry off the zero section requires care, because the level set
+$\{r=r_0\}$ is five-dimensional. Its quotient by the $U(1)$ is four-dimensional and carries $h$, and the ambient Einstein tensor in the horizontal frame is
+$\mathcal G[h]-\tfrac{r_0^2}2W$, with the sign above. A section $\phi=\chi(x)$ of $\{r=r_0\}$ is a four-dimensional submanifold with induced metric
+\[
+h_\chi=h+r_0^2\,B\otimes B,\qquad B:=d\chi-A ,
+\]
+where $B$ is the St\"uckelberg combination, invariant under $A\mapsto A+d\lambda$, $\chi\mapsto\chi+\lambda$; $\det h_\chi=\det h\,(1+r_0^2|B|^2)$, so $h_\chi$ is Lorentzian
+only where $1+r_0^2|B|^2>0$, and the section is totally geodesic on an open set only where $B=0$, which requires $F=0$.
+
+\begin{example}[A uniform magnetic field]
+\label{ex:landau}
+Take $h=\eta$ and $F=b\,dx\wedge dz$. On a static section the circulation of $B$ around a circle of radius $R_c$ in an $x$--$z$ plane is $-\pi bR_c^2$, whatever $\chi$,
+so $\sum_iB_i^2\ge b^2R_c^2/4$ somewhere on it, and the section metric has signature $(2,2)$ there as soon as $R_c>2/(r_0b)$. In the gauge $A=bx\,dz$ with $\chi=0$,
+\[
+h_\chi=dt^2-dx^2-dy^2-(1-k^2x^2)\,dz^2,\qquad R[h_\chi]=-\frac{2k^2}{(1-k^2x^2)^2},\qquad k=r_0b,
+\]
+which degenerates at $|x|=1/k$, where its curvature diverges, and has signature $(2,2)$ beyond. The Lorentzian region of a static section in a uniform field
+contains no circle of radius larger than $2/(r_0b)$.
+\end{example}
+
+\noindent Executable check: g2-6 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+% --- source: tex/s23_curved#6 (Holonomy acting on the bound orbits)
+\subsection{Holonomy acting on the bound orbits}
+
+The interior dynamics of \cref{sec:neutral} can now be transported around a loop of the model. A circuit enclosing normal flux $\Phi$ rotates the frame by
+$h=\exp(\Phi R_N)$, with $R_N$ the rotation of the normal plane $N$. $R_N$ preserves $\eta$, but it rotates a temporal plane without its spatial partner, so it is not
+among the diagonal rotations of \cref{thm:GLorentz}, and exactly
+\[
+h=\id+\sin\Phi\,R_N+(1-\cos\Phi)R_N^2,\qquad hGh^{-1}-G=\sin\Phi\,A_1+(1-\cos\Phi)\,A_2
+\]
+with $A_1,A_2$ linearly independent, so $hGh^{-1}=G$ if and only if $\Phi\in2\pi\Z$. The second-order equation $\ddot X=-\kappa^2X$ does not see this, but the momentum
+does: a zero-momentum orbit $X(\tau)=e^{-\kappa G\tau}X_0$ carried once around becomes $hX(\tau)$, and
+\[
+\alpha_+(hX)=\kappa\,(G-hGh^{-1})\,hX ,
+\]
+which vanishes for every $X_0$ only when $\Phi\in2\pi\Z$. Normal curvature therefore converts bound orbits of zero momentum into orbits that carry momentum, through
+exactly the failure of the normal $U(1)$ to centralise the binding root. Executable check: g3-3 (exact symbolic arithmetic; \cref{app:methods}).
+
+% --- source: tex/s23_curved#7 (Flows do not transfer)
+\subsection{Flows do not transfer}
+
+In DeTurck gauge Ricci flow reads $\partial_tg_{MN}=\Delta_gg_{MN}+Q(g,\partial g)$, and short-time existence requires the principal symbol $g^{PQ}\xi_P\xi_Q$ to be
+definite \cite{Hamilton82,DeTurck83}. In signature $(3,3)$ it has signature $(3,3)$: the operator is ultrahyperbolic, the gauge-fixed flow is not parabolic, and the
+standard Ricci--DeTurck theory does not apply. In the para-K\"ahler case the metric comes locally from a potential depending on coordinates along both
+foliations, $g_{i\bar\jmath}=\partial^2\Phi/\partial x^i\partial y^j$ \cite{Shima07}, but suppressing one set of variables degenerates the metric rather than producing a Hessian
+one; a real Monge--Amp\`ere flow on a convex locus \cite{Cao85} would need its own domain, data and a proof that it preserves the arena's structures, and is a
+programme rather than a result.
+
+% --- source: tex/s24_curvop#0 ((head))
+
+
+% --- source: tex/s24_curvop#1 (Curvature in the field-strength reading)
+\section{Curvature in the field-strength reading}
+\label{sec:curvop}
+
+In the field-strength reading the six directions are $\Lambda^2\R^{1,3}$, $\eta$ is the induced metric and $G$ the Hodge star (\cref{thm:emfield}). A
+tensor $R_{abcd}$ antisymmetric in each pair is then an operator $\cR$ on the frame, $(\cR\omega)_{ab}=\tfrac12R_{ab}{}^{cd}\omega_{cd}$ \cite{SingerThorpe69,Besse87},
+and the conditions that make it a Riemann tensor become conditions stated with $\eta$ and $G$. Write $\Ric(\cR)_{bd}=R^a{}_{bad}$.
+
+\begin{proposition}[The curvature operator lives on the frame]
+\label{prop:curvop}
+$\cR$ comes from a pair-symmetric tensor, $R_{abcd}=R_{cdab}$, if and only if $\cR$ is $\eta$-self-adjoint, a $21$-dimensional space $\mathcal S$; the
+$\eta$-antisymmetric operators give $R_{abcd}=-R_{cdab}$ instead. On $\mathcal S$, $\Tr\cR=\tfrac12R$ and
+\[
+R_{abcd}+R_{acdb}+R_{adbc}=-\tfrac12\Tr(G\cR)\,\varepsilon_{abcd},\qquad \varepsilon_{0123}=+1,
+\]
+so the first Bianchi identity is the single linear condition $\Tr(G\cR)=0$, and the algebraic curvature operators form a $20$-dimensional subspace $\mathcal V$,
+the dimension of the space of Riemann tensors in four dimensions.
+\end{proposition}
+
+\noindent Executable check: g1-1, g1-2 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+Pair symmetry is the same condition $G=G^\dagger$ that makes the interior shift factorise (\cref{thm:neutral}), imposed on an operator of another type: the frame
+is shared, not the object. The binding root, which is $\eta$-self-adjoint, is itself in $\mathcal S$ but not in $\mathcal V$, since $\Tr(G\cdot G)=-6$; it is the one
+direction of $\mathcal S$ that violates the Bianchi identity.
+
+% --- source: tex/s24_curvop#2 (A phase family that ends at the Einstein tensor)
+\subsection{A phase family that ends at the Einstein tensor}
+
+\begin{theorem}[The phase family]
+\label{thm:phase}
+For every $\cR\in\mathcal S$, on or off the Bianchi shell, and every $\theta$, the operator $\cR_\theta:=e^{\theta G}\cR\,e^{\theta G}$ lies in $\mathcal S$ and
+\[
+\Ric(\cR_\theta)_{ab}=R_{ab}-\tfrac12\sin^2\theta\,R\,g_{ab}+\tfrac12\sin2\theta\,\Tr(G\cR)\,g_{ab}.
+\]
+At $\theta=\pi/2$ the operator is the double dual $G\cR G$ of Lanczos \cite{Lanczos38,MTW}, and its contraction is the Einstein tensor $R_{ab}-\tfrac12Rg_{ab}$.
+\end{theorem}
+
+\begin{proof}
+Two lemmas hold on all of $\mathcal S$: $\Ric(G\cR G)=\Ric(\cR)-\tfrac12Rg$, and $\Ric(G\cR)+\Ric(\cR G)=\Tr(G\cR)\,g$. With $e^{\theta G}=\cos\theta+\sin\theta\,G$,
+\[
+\cR_\theta=\cos^2\theta\,\cR+\sin\theta\cos\theta\,(G\cR+\cR G)+\sin^2\theta\,G\cR G ,
+\]
+and the lemmas contract this to the formula. It has also been checked as a polynomial identity in the $21$ entries, modulo $\cos^2\theta+\sin^2\theta=1$. Since $G$ is
+$\eta$-self-adjoint, so is $e^{\theta G}$, and $\cR_\theta\in\mathcal S$.
+\end{proof}
+
+\noindent Executable check: g1-3 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+\begin{example}[A maximally symmetric curvature]
+\label{ex:dS}
+For de Sitter space of curvature $k$, $R_{abcd}=k(g_{ac}g_{bd}-g_{ad}g_{bc})$, the curvature operator is $\cR=k\,\id$ on the frame up to the sign convention of the
+induced metric, so $\Tr\cR=6k=\tfrac12R$ gives $R=12k$ and $\Tr(G\cR)=k\Tr G=0$. Then $G\cR G=kG^2=-k\,\id$, and the formula gives
+$\Ric(\cR_{\pi/2})=R_{ab}-\tfrac12Rg_{ab}=3kg_{ab}-6kg_{ab}=-3kg_{ab}$, the Einstein tensor of de Sitter space, which is $-\Lambda g_{ab}$ with $\Lambda=3k$. The double
+dual of a constant-curvature operator is minus itself, and the trace reversal that turns Ricci into Einstein is the sign change $G^2=-\id$.
+\end{example}
+
+\noindent Executable check: g1-4 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+\begin{corollary}[What selects the endpoint]
+\label{cor:phasesel}
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item For the curvature operator of a metric and a constant phase, the contracted Bianchi identity gives $\nabla^aH_{ab}(\theta)=\tfrac12\cos^2\theta\,\nabla_bR$ for
+$H(\theta):=\Ric(\cR_\theta)$, so divergence-freedom for every metric selects $\theta\equiv\pi/2\pmod\pi$.
+\item $\Tr(G\cR_\theta)=\cos2\theta\,\Tr(G\cR)-\tfrac12\sin2\theta\,R$, so on the Bianchi shell and for $R\neq0$, $\cR_\theta$ is itself a curvature operator only at
+$\sin2\theta=0$, compatible with (i) and narrowing nothing further.
+\item $Q(\cR):=\tfrac12\Tr(\cR G\cR G)=-\tfrac18\bigl(R^2-4R_{ab}R^{ab}+R_{abcd}R^{abcd}\bigr)$ for every pair-symmetric $\cR$, and $dQ[\mathcal D]=\Tr(G\cR G\mathcal D)$: the
+double dual is the algebraic gradient of the Gauss--Bonnet density, exactly so on $\mathcal V$, where $G\cR G=\operatorname{grad}_{\mathcal V}Q$.
+\end{enumerate}
+\end{corollary}
+
+\noindent Executable check: g1-5 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+The gradient in (iii) does not lift to a field equation. The spacetime integral of the Gauss--Bonnet density has identically vanishing metric variation in four
+dimensions, which is Lanczos's identity \cite{Lanczos38,Lovelock71}: the Euler--Lagrange tensor $P_a{}^{cde}R_{bcde}-\tfrac12g_{ab}\mathcal E_{\rm GB}-2\nabla^c\nabla^dP_{acdb}$ with
+$P=-2\,{*R*}$ vanishes because the double dual is divergence-free and $(*R*)_a{}^{cde}R_{bcde}=-\tfrac14g_{ab}\mathcal E_{\rm GB}$ in four dimensions. The two facts sit one
+Lovelock degree apart: the algebraic gradient of the quadratic density contracts to the metric gradient of the linear density $\Tr\cR=\tfrac12R$, and the quadratic
+density itself is inert. Which members of the family are variational at all is a sharper question, and it has a sharp answer.
+
+\begin{theorem}[Only the Einstein phase is variational]
+\label{thm:helmholtz}
+Consider the operators $g\mapsto H(\theta)[g]_{ab}=R_{ab}-\tfrac12\sin^2\theta\,Rg_{ab}$. There is a Lagrangian $L(g,\partial g,\partial^2g,\dots)$, covariant or not, defined
+on a neighbourhood of flat space, whose Euler--Lagrange expression is $H(\theta)$ if and only if $\cos\theta=0$; then $R\sqrt{|g|}$ is one.
+\end{theorem}
+
+\begin{proof}
+An Euler--Lagrange operator has a formally self-adjoint Fr\'echet derivative at every point of its domain, the necessity half of the Helmholtz conditions
+\cite{Vainberg64,Olver93}. At $g=\eta$, $H(\theta)[\eta]=0$, so the density factor does not contribute and the linearisation acts on plane waves $h_{ab}e^{ik\cdot x}$ with a
+symbol quadratic in $k$. Pairing it with a second perturbation $q_{ab}$, the antisymmetric part of the bilinear form is
+\[
+q^{ab}\,\delta H_{ab}[h]-h^{ab}\,\delta H_{ab}[q]=\tfrac12\cos^2\theta\bigl[(k\cdot q\cdot k)\,\tr h-(k\cdot h\cdot k)\,\tr q\bigr],
+\]
+which vanishes identically only when $\cos\theta=0$. There the operator is the Einstein tensor, and $\delta(R\sqrt{|g|})=\sqrt{|g|}\,\mathcal G_{ab}\,\delta g^{ab}$ up to a
+divergence.
+\end{proof}
+
+\noindent Executable check: g1-6 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+For a diffeomorphism-invariant action Noether's second theorem makes the Euler--Lagrange tensor divergence-free, so \cref{cor:phasesel}(i) is the covariant
+necessary condition and \cref{thm:helmholtz} the full condition, obtained without assuming covariance. Both select the same phase.
+
+% --- source: tex/s24_curvop#3 (The first-order form: the phase is a Barbero--Immirzi angle)
+\subsection{The first-order form: the phase is a Barbero--Immirzi angle}
+
+Let $e^a$ be a coframe, $\omega$ a Lorentz connection with curvature $F^{ab}$, and $\Sigma^{ab}=e^a\wedge e^b$. Both $\Sigma$ and $F$ are two-forms valued in
+$\Lambda^2\R^{1,3}$, which is the frame by \cref{thm:emfield}. Pair them by $\langle\Sigma\wedge X\rangle=\tfrac12\Sigma_{ab}\wedge X^{ab}$, orient by
+$\mathrm{vol}=e^0\wedge e^1\wedge e^2\wedge e^3$, and let $\cR$ be the curvature operator of $\omega$ in the frame $e$.
+
+\begin{proposition}[Palatini and Holst on the frame]
+\label{prop:holst}
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item $\tfrac14\varepsilon_{abcd}\,e^a\wedge e^b\wedge F^{cd}=\langle G\Sigma\wedge F\rangle=\Tr(\cR)\,\mathrm{vol}$: the Palatini Lagrangian, which on the torsion-free
+locus is $\tfrac12R\,\mathrm{vol}$.
+\item $e_a\wedge e_b\wedge F^{ab}=2\langle\Sigma\wedge F\rangle=-2\Tr(G\cR)\,\mathrm{vol}$: the Holst term is the first-Bianchi datum of \cref{prop:curvop}.
+\item For the phase family, $\langle e^{\theta G}\Sigma\wedge e^{\theta G}F\rangle=\cos2\theta\,\langle\Sigma\wedge F\rangle+\sin2\theta\,\langle G\Sigma\wedge F\rangle=-\Tr(G\cR_\theta)\,\mathrm{vol}$.
+In the normalisation $\tfrac12\varepsilon_{abcd}e^ae^bF^{cd}-\gamma^{-1}e_ae_bF^{ab}$ this is the Holst action \cite{Holst96} with
+\[
+\gamma=-\tan2\theta ,
+\]
+the Barbero--Immirzi parameter.
+\item The connection equation of $\int\langle e^{\theta G}\Sigma\wedge e^{\theta G}F\rangle$ is $e^{2\theta G}D\Sigma=0$, so the torsion vanishes, and the coframe equation is
+$-2\sin2\theta\,\mathcal G^{af}=0$ on the torsion-free locus. The vacuum equations are Einstein's for every $\theta\notin\tfrac\pi2\Z$ and empty for $\theta\in\tfrac\pi2\Z$.
+\end{enumerate}
+\end{proposition}
+
+\noindent Executable check: g1-7, g1-8 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=11.5cm,height=6.8cm,xmin=0,xmax=3.1416,ymin=-0.75,ymax=0.75,axis lines=middle,
+  xtick={0,0.7854,1.5708,2.3562,3.1416},xticklabels={$0$,$\frac\pi4$,$\frac\pi2$,$\frac{3\pi}4$,$\pi$},
+  ytick={-0.5,0.5},yticklabels={$-\frac12$,$\frac12$},xlabel={$\theta$},
+  xlabel style={anchor=west},x tick label style={yshift=-2pt},
+  legend style={at={(0.5,-0.12)},anchor=north,font=\footnotesize,draw=none,legend columns=1},legend cell align=left]
+\addplot[tcol,very thick,domain=0:3.1416,samples=120] {-0.5*sin(deg(x))^2};
+\addlegendentry{second order: trace coefficient $-\frac12\sin^2\theta$ in $H(\theta)=\Ric(e^{\theta G}\cR e^{\theta G})$}
+\addplot[scol,very thick,dashed,domain=0:3.1416,samples=120] {0.5*sin(deg(2*x))};
+\addlegendentry{first order: weight $\frac12\sin2\theta$ of $R\,\mathrm{vol}$, with $\gamma=-\tan2\theta$}
+\addplot[only marks,mark=*,mark size=2.6pt,tcol,forget plot] coordinates {(1.5708,-0.5)};
+\addplot[only marks,mark=*,mark size=2.6pt,scol,forget plot] coordinates {(0.7854,0.5)};
+\addplot[only marks,mark=o,mark size=2.8pt,scol,very thick,forget plot] coordinates {(1.5708,0)};
+\node[tcol,anchor=north,font=\footnotesize,align=center] at (axis cs:1.5708,-0.53) {Einstein: divergence-free, variational};
+\node[scol,anchor=south,font=\footnotesize] at (axis cs:0.7854,0.53) {Palatini};
+\node[scol,anchor=south west,font=\footnotesize,align=left] at (axis cs:1.62,0.04) {pure Holst,\\ equations empty};
+\end{axis}
+\end{tikzpicture}
+\caption{Two uses of one duality rotation of the curvature (\cref{thm:phase,thm:helmholtz,prop:holst}). In the second-order family $H(\theta)=\Ric(e^{\theta G}\cR e^{\theta G})$
+the endpoint $\theta=\pi/2$ is the Einstein tensor, the only divergence-free and the only variational member. In the first-order family the same rotation weights the
+Einstein--Hilbert term by $\tfrac12\sin2\theta$: Einstein's equations follow for every $\theta\notin\tfrac\pi2\Z$, the Palatini point is $\pi/4$, and at $\theta=\pi/2$ the Lagrangian
+degenerates to the pure Holst term, with $\gamma=-\tan2\theta$.}
+\label{fig:phase}
+\end{figure}
+
+The roles of the phase differ between the two formalisms, as \cref{fig:phase} shows. In the second-order family the variational point is $\theta=\pi/2$; in the
+first-order family Einstein's equations hold for every $\theta\notin\tfrac\pi2\Z$, the Palatini point is $\theta=\pi/4$, and the endpoint $\theta=\pi/2$, where $\cR_\theta=G\cR G$, is
+exactly where the first-order Lagrangian degenerates to the pure Holst term. These are two uses of one rotation and must not be conflated. The self-dual value
+$\gamma=\pm i$ of Ashtekar's variables is not attained for any complex $\theta$; it is approached as $\Im\theta\to\mp\infty$, where $e^{2\theta G}$ becomes proportional to a
+projector onto an eigenspace of $G$. With torsion sources such as fermions the Holst term is no longer inert and the phase would enter an effective four-fermion
+interaction \cite{PerezRovelli06,FreidelMinicTakeuchi05}; nothing here fixes it.
+
+Both readings of $\R^{3,3}$ therefore construct the Einstein tensor of a given four-metric: the interior reading by restricting the six-dimensional Einstein tensor to
+the slice (\cref{thm:ein6}), the field-strength reading as the contraction of $G\cR G$ (\cref{thm:phase}). Neither determines the metric. No gravitational coupling,
+source or equation of motion for $G$ follows, the selection criteria come from Riemannian geometry rather than from the Clifford structure, and the coefficient
+$\tfrac12$ of the trace reversal comes from the algebra of the Hodge star.
+
+% --- source: tex/s25_transport#0 ((head))
+
+
+% --- source: tex/s25_transport#1 (The projector under transport)
+\section{The projector under transport}
+\label{sec:transport}
+
+In a curved arena an observation projector becomes a field $\Pi(x)=\Pi(x)^2$ that is carried around by the spin connection, $D\Pi=d\Pi+[\Omega,\Pi]$. Two
+curvatures then compete on its image, and their competition decides whether the normal $U(1)$ of the model of \cref{sec:curvedmodel} can be electromagnetism.
+
+% --- source: tex/s25_transport#2 (Two curvatures on the selected bundle)
+\subsection{Two curvatures on the selected bundle}
+
+Differentiating $\Pi^2=\Pi$ gives $\Pi(D\Pi)\Pi=0$ and $(\id-\Pi)(D\Pi)(\id-\Pi)=0$: the covariant derivative of a projector is purely off-diagonal, which is the
+configuration-space statement of \cref{sec:fields} in covariant form. The induced connection $D^{\rm obs}s=\Pi Ds$ on the selected bundle has curvature
+\begin{equation}
+\label{eq:Fobs}
+\mathcal F_{\rm obs}=\Pi\,\mathcal R\,\Pi+\Pi\,(D\Pi\wedge D\Pi)\,\Pi ,
+\end{equation}
+with $\mathcal R_{MN}=\tfrac14R_{MNAB}\gamma^A\gamma^B$ the ambient spin curvature \cite{LawsonMichelsohn}. The two terms have distinct origins: ambient curvature, and the
+motion of the selected subspace relative to ambient transport. The flat case of \cref{sec:fields} keeps only the second.
+
+\begin{proposition}[Transport obstruction]
+\label{prop:obstruct}
+If ambient transport preserves the projector, $D\Pi=0$, then $[\mathcal R_{MN},\Pi]=0$. For the paired-mode projector $\Pi=\tfrac12\id-\tfrac14(\varpi+\mathcal V)$ of
+\cref{ex:pairedmode}, $\rank[J_N,\Pi]=4$, and in the model \eqref{eq:kk} with $g^{(4)}$ flat, $\mathcal R_{\mu\nu}=\tfrac12(F_N)_{\mu\nu}J_N$ on $\Sigma$, so
+$[\mathcal R_{\mu\nu},\Pi]=\tfrac12(F_N)_{\mu\nu}[J_N,\Pi]\neq0$ wherever the normal curvature $F_N=dA$ is nonzero.
+\end{proposition}
+
+\begin{proof}
+$D^2\Pi=[\mathcal R,\Pi]$ for any section of the endomorphism bundle, so $D\Pi=0$ forces the condition. The rank is a direct computation in the $8\times8$ realisation.
+\end{proof}
+
+\noindent Executable check: g3-4 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+This statement is about the spinor projector and the spin curvature, and the corresponding tangent-level statement is false; the two must not be run together.
+At the tangent level $J_N$ commutes with every generator of $E$ (\cref{lem:JN}), so the rotation it generates fixes $E$ pointwise, and in \eqref{eq:kk} every
+mixed Christoffel symbol vanishes on $\Sigma$: the splitting $TM=E\oplus N$ is Levi-Civita parallel there although $F_N\neq0$. At the spinor level the same rotation is
+not trivial, since $\rank[J_N,\Pi]=4$. Both statements hold simultaneously, and together they are the content of the remark after \cref{prop:constraints}: a
+spinless test particle cannot see the normal connection, and whatever makes it physical has to come from the spinor sector. The general principle that a
+normal-bundle curvature commutes with the projector is a statement about $TM$ and does not transfer to $\End$ of the spinor bundle. Curvature cannot be chosen
+independently of the selection.
+
+\begin{proposition}[The adapted connection]
+\label{prop:adapted}
+Set $\mathcal C:=[\Pi,D\Pi]$ and $\widehat D:=D+\mathcal C$. Then $\widehat D\Pi=0$. For the paired-mode projector, with the Levi-Civita spin connection,
+$D\mathcal V=0$ and $\mathcal V$ commutes with bivectors, so $\mathcal C=\tfrac1{16}[\varpi,D\varpi]$, again a bivector: the correction stays inside $\mathfrak{spin}(3,3)$. The
+corresponding tangent connection is $\widehat\nabla_XY=\nabla_XY+\tfrac12\cK(\nabla_X\cK)Y$, metric-compatible and $\cK$-preserving, hence generically with torsion.
+\end{proposition}
+
+\begin{proof}
+Write $\delta=D\Pi$, which is off-diagonal. Direct expansion gives $[[\Pi,\delta],\Pi]=-\delta$ for such $\delta$, so $\widehat D\Pi=\delta+[\mathcal C,\Pi]=\delta+[[\Pi,\delta],\Pi]=0$.
+The form of $\mathcal C$ follows from $D\Pi=-\tfrac14D\varpi$ and $[\mathcal V,D\varpi]=0$. On tangent vectors $\cK^2=\id$ gives $\cK(\nabla\cK)\cK=-\nabla\cK$, so the
+correction $\tfrac12\cK\nabla\cK$ satisfies $\nabla\cK+[\tfrac12\cK\nabla\cK,\cK]=0$, and it is $\eta$-antisymmetric because $\cK$ and $\nabla\cK$ are $\eta$-antisymmetric and
+anticommute. The Levi-Civita connection is the unique torsion-free metric connection, so a metric connection preserving a structure that Levi-Civita transport
+does not preserve carries torsion.
+\end{proof}
+
+\noindent Executable check: g3-5, g3-6 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+The adapted generator is not an internal charge. In the model, with $\Omega=\tfrac12AJ_+$ and $J_+=J_N$, the adapted connection on $\Sigma$ is
+$\widehat\Omega=\tfrac A4(J_+-J_-)$ with $J_-=\tfrac1{\sqrt3}(e_5e_6+e_6e_4+e_4e_5)$, and indeed $[J_+-J_-,\Pi]=0$; but $\bigl[\tfrac12(J_+-J_-),e_4\bigr]=\tfrac1{\sqrt3}(e_6-e_5)\neq0$,
+and likewise for $e_5$ and $e_6$. Preserving the projector has bought commutation with $\Pi$ at the cost of commutation with the physical generators, which is the
+first of the four conditions of \cref{sec:ym}. The identification of the normal $U(1)$ with electromagnetism is not available on this route.
+
+Nor is the observed curvature the field-strength module of \cref{prop:bivectorF}. $\mathcal F_{\rm obs}$ takes values in $\End(\operatorname{im}\Pi)$, and the interior
+bivectors are not elements of that space: all six bivectors of the model's four-plane $E=\langle\widehat W,e_4,e_5,e_6\rangle$ fail to commute with $\Pi$, for instance
+$[e_4e_5,\Pi]=\tfrac12(e_2e_4-e_1e_5)$ (g3-6). For the axial clock $e_1$ one of them, the boost $e_1e_4$, does commute with $\Pi$, being one of the pole operators
+whose sum is $\varpi$; the other five do not. Their compressions $\Pi B\Pi$
+are endomorphisms of the image, but compression is not an algebra map and carries no Lie brackets. The model supplies a direct counterexample: with $\Pi$
+constant and $\Omega=\tfrac12AJ_N$, $\mathcal F_{\rm obs}=\tfrac12\,dA\,\Pi J_N\Pi$, and exact expansion gives
+\[
+\begin{aligned}
+4\sqrt3\;\Pi J_N\Pi=\;&e_1e_2-e_1e_3+e_2e_3-e_4e_5+e_4e_6-e_5e_6\\
+&-\bigl(e_1e_2e_3e_4+e_1e_2e_3e_5+e_1e_2e_3e_6\bigr)+\bigl(e_1e_4e_5e_6+e_2e_4e_5e_6+e_3e_4e_5e_6\bigr),
+\end{aligned}
+\]
+with grade-four terms of the same size as the bivector terms. An electromagnetic two-form and a Lorentz-algebra-valued curvature two-form carry different
+kinds of index, and identifying them needs structure that is not supplied.
+
+% --- source: tex/s25_transport#3 (Projector dynamics is adapted transport)
+\subsection{Projector dynamics is adapted transport}
+
+With the kinetic term $S_\Pi=\tfrac{f^2}2\int\sqrt{|g|}\,\Tr(D_\mu\Pi\,D^\mu\Pi)$ varied along the spin orbit, the Euler--Lagrange equation is \eqref{eq:Pieom} in
+curved form,
+\[
+[\Pi,\Box_D\Pi]=0\qquad\Longleftrightarrow\qquad D_\mu\mathcal C^\mu=0,\qquad \mathcal C_\mu=[\Pi,D_\mu\Pi],
+\]
+so the conserved matrix current of the projector \emph{is} the connection correction of \cref{prop:adapted}: projector dynamics and adapted transport are the same
+data. Built with $\widehat D$ instead of $D$ the functional vanishes identically, which is the same statement read backwards. By \cref{thm:ghost} and
+\cref{ex:ghostPi}, the trace form on the spin orbit of the paired-mode projector has three positive and three negative directions, the compact and the boost
+generators, and on the manifold of orthogonal projectors it is positive definite.
+
+\begin{example}[The angle mode is a St\"uckelberg field]
+\label{ex:stueckelberg}
+The $U(1)$ direction is one of the healthy three: $T=[\tfrac12J_N,\Pi]$ is symmetric with $\Tr(T^2)=+1$. But $T$ is a tangent vector, not a generator, and conjugating by
+$e^{\theta T}$ with $T$ symmetric leaves the orthogonal projectors; the correct one-angle ansatz conjugates by the compact generator itself,
+\[
+\Pi(\theta)=e^{\theta J_N/2}\,\Pi_0\,e^{-\theta J_N/2}.
+\]
+The one-angle geodesic condition $[\Pi,[B,[B,\Pi]]]=0$ with $B=\tfrac12J_N$ holds at $\Pi_0$ and hence along the orbit, so the ansatz is consistent with the
+projector equation, which reduces to an equation for $b_\mu=\partial_\mu\theta+A_\mu$. The action reduces to $\mathcal L_\theta=\tfrac{f^2}2b_\mu b^\mu$, invariant under
+$\theta\mapsto\theta-\lambda$, $A\mapsto A+d\lambda$: the projector angle is a St\"uckelberg field for the normal frame rotation \cite{RueggRuizAltaba04}. Adjoining a
+Maxwell term by hand gives a Proca field with $m_A^2=g_A^2f^2$.
+\end{example}
+
+\noindent Executable check: g3-7 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+Read strictly, this is a constraint and not a prediction: neither the Maxwell term nor the scales $g_A$ and $f$ is derived, and a massive normal vector is not the
+photon. Together with the failure of the adapted generator to commute with the physical generators it leaves a dichotomy: either the normal $U(1)$ is not
+electromagnetic, or the paired-mode projector is not the observation projector. The next section resolves it in one direction.
+
+% --- source: tex/s25_transport#4 (Is the flat obstruction a torsion statement?)
+\subsection{Is the flat obstruction a torsion statement?}
+
+The factorisation condition $a=\tfrac12(G-G^{\!\top})=0$ of \cref{thm:factor} survives covariantisation, and requiring transport to preserve the observation projector
+adds to the Levi-Civita connection a frame-antisymmetric correction, which is contorsion. One may conjecture that these are the same object: that in a first-order
+formulation with an independent connection \cite{Peldan94} $G$ is not a background but the connection's own shift. The types do not yet match, and that is part of the
+work: $a$ is an endomorphism while contorsion is a one-form valued in metric-skew endomorphisms, so a relation such as $a=K_\mu\dot x^\mu$ needs a stated contraction and
+normalisation before it is even a proposition. And the flat exclusion cannot be borrowed for it: by \cref{thm:virial} and \cref{thm:neutral}, what repairs binding is
+the split form, not curvature or torsion, so the antisymmetric part $a$ is not what binding was waiting for.
+
+\section{What the curvature results do and do not establish}
+\label{sec:gravlimits}
+
+An identity that contains the Einstein tensor is not a derivation of Einstein's equations. The results of this chapter construct the
+Einstein tensor of a four-metric that is given, in two different ways, and they find two sectors whose sign is wrong. They do not supply
+an equation that determines the metric. \Cref{tab:gravlimits} sorts the readings by what each constructs and what it lacks.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{6.0cm}@{}}
+\toprule
+reading & what is constructed & what is missing\\
+\midrule
+ambient Einstein tensor on the slice (\cref{thm:ein6}) & for the given model \eqref{eq:kk}, the tangential block of $\mathcal G^{(6)}$ on $\Sigma$ is $\mathcal G[h]$ exactly &
+an action for $g_6$; the six-dimensional vacuum equations force $F=0$ and $\Ric[h]=0$ (\cref{cor:ein6}(iii)), and the reduced Einstein--Hilbert action has the wrong
+relative sign (\cref{cor:ein6}(ii)); no source, no coupling constant, no field equation for $h$ with matter\\
+double dual in the field-strength reading (\cref{thm:phase,cor:phasesel,thm:helmholtz}) & for every metric, $\Ric(G\cR G)$ is the Einstein tensor; divergence-freedom and
+variationality select $\theta=\pi/2$ & the selection criteria are those of Riemannian geometry and of the Helmholtz conditions, not of the Clifford structure; the
+variational principle $R\sqrt{|g|}$ is the classical one; no equation $\mathcal G=8\pi G_{\rm N}T$ and no matter stress tensor\\
+first-order form (\cref{prop:holst}) & the Palatini--Holst action, with the duality phase as Barbero--Immirzi parameter $\gamma=-\tan2\theta$; vacuum equations
+are Einstein's for $\theta\notin\tfrac\pi2\Z$ & the action is adopted, not derived, and it is ordinary general relativity; the phase is not fixed; with fermionic torsion it
+enters a four-fermion interaction that nothing here determines\\
+normal-plane vectors (\cref{cor:ein6}(i), \cref{ex:nullwave,thm:ghostvec}) & a Kaluza--Klein vector from the normal plane & healthy sign: every such vector gravitates with
+negative energy, and a spinless particle does not couple to it (\cref{prop:constraints,thm:wlgauge})\\
+projector under transport (\cref{prop:obstruct,prop:adapted,ex:stueckelberg}) & an adapted connection with torsion; the projector angle as a St\"uckelberg field & a
+gravitational role is not proposed; the vector it gives mass to is the normal one, not the photon and not a graviton\\
+\bottomrule
+\end{tabular}
+\caption{The gravitational readings of this chapter: what each constructs for a given metric and what a gravitational theory would still need.}
+\label{tab:gravlimits}
+\end{table}
+
+\paragraph{The missing dynamics.} Against the requirements that a gravitational interpretation has to meet, the chapter stands as follows.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{Metric or tetrad dynamics and action.} No action for the six-dimensional metric, the pairing $\cK$, the connection and the projector
+is derived. The only gravitational action that appears, the Palatini--Holst action of \cref{prop:holst}, is adopted; the arena contributes the
+reading of the Hodge star as $G$ and of the Barbero--Immirzi parameter as a duality phase. If the six-dimensional Einstein--Hilbert action is
+adopted instead, its reduction over the normal disc has the wrong relative sign between curvature and field strength (\cref{cor:ein6}(ii)),
+and its vacuum equations leave no Maxwell field (\cref{cor:ein6}(iii)).
+\item \emph{Constraints and physical degrees of freedom.} No constraint analysis of a gravitational field is made, and no count of
+physical degrees of freedom follows from the arena. The constraints that do appear, $p_u=p_v=0$ of \cref{prop:constraints}, belong to a test
+worldline in a given metric. For the adopted Palatini--Holst action the count is the inherited one of general relativity, two in
+vacuum, and the Holst term does not change it.
+\item \emph{Kinetic signs.} The vectors of the normal plane gravitate with negative energy (\cref{cor:ein6}(i), \cref{thm:ghostvec}). The
+remark below shows that this sign is not a convention.
+\item \emph{Matter coupling.} After the reduction a spinless test particle moves on the geodesics of $h$, $H_{\rm red}=\tfrac12h^{\mu\nu}p_\mu p_\nu$
+(\cref{prop:constraints}), which is the minimal coupling of a test particle to a given metric. No stress tensor of the arena's matter is shown to
+source $h$. The Dirac operator of the chiral block on a curved base is not computed here; its spectrum and index are listed as open in
+\cref{ch:ch13_compatibility}.
+\item \emph{Low-energy limit.} No Newtonian or post-Newtonian limit is derived, since $h$ is given and no equation determines it.
+\end{enumerate}
+
+\begin{remark}[The wrong sign is not a convention]
+\label{rem:signconv}
+Reversing the overall sign of the metric, $\eta\mapsto-\eta$, does not remove the negative energy of the normal-plane vectors. Under
+$g\mapsto-g$ the Ricci tensor and the Einstein tensor are unchanged, $R$ and $W_{\mu\nu}$ change sign, and $F^2$ is unchanged. The physical
+Einstein--Maxwell equation reads $\mathcal G=-2W$ in signature $(+,-,-,-)$ and $\mathcal G=+2W$ in $(-,+,+,+)$, so the healthy ratio of the
+Lagrangian $a_1R+a_2F^2$ changes sign with the convention, $a_2/a_1=+1$ in one and $-1$ in the other. The reduced ratio changes sign with it:
+$-r_c^2/8$ in the first convention and $+r_c^2/8$ in the second. The mismatch between the two is therefore the same in both conventions. The
+same conclusion follows without any action: a Lorentzian four-plane of $\R^{3,3}$ of either signature, $(1,3)$ or $(3,1)$, has a definite
+normal plane of the sign of its own time direction (\cref{thm:selector}(ii)), and the coefficient of $F^2$ in the six-dimensional scalar curvature
+is odd in that sign (\cref{thm:ghostvec}). Choosing the normal plane of the sign of space would make the four-plane of signature $(2,2)$, which is
+not Lorentzian.
+\end{remark}
+
+\noindent Executable check: g2-8 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+The results of this chapter are therefore of two kinds. The fixed ones are identities: the para-Hermitian structure, the closed-form
+Einstein tensor of the model, the curvature operator on the frame with the Bianchi identity as one trace, the phase family and its two
+selection criteria, and the first-order reading of the phase. The obstructed ones are the normal $U(1)$ as electromagnetism, on three counts,
+the healthy sign of every normal-plane vector, and the transfer of Ricci flow to split signature. A gravitational theory in the arena would
+need an action relating metric, pairing, connection and projector from which the metric follows rather than being given; that is the
+largest open problem of the curved arena, and it is listed with the others in \cref{ch:ch13_compatibility}. The binding, topological and
+quantum-stability qualifications of the same review item (CORE-12) are stated where the interior dynamics is developed, in
+\cref{sec:esmap:distinctions}.

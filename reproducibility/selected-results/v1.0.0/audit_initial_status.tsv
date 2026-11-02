@@ -1,0 +1,125 @@
+chapter	environment	label	status
+ch01_clifford	theorem	thm:sig	verified (exact): a1-1
+ch01_clifford	corollary	cor:noboost	verified (exact): a1-1
+ch02_lorentz	proposition	prop:KC	verified (exact): a1-3
+ch02_lorentz	proposition	prop:twoK	verified (exact): a1-4
+ch02_lorentz	proposition	prop:clock	verified (exact): a1-5
+ch02_lorentz	corollary	cor:rankclock	verified (exact): a1-6
+ch02_lorentz	corollary	cor:nopredict	verified (exact): a1-7
+ch02_lorentz	proposition	prop:kernels1	verified (exact): a1-8
+ch02_lorentz	proposition	prop:massangle	verified (exact): a1-9
+ch02_lorentz	corollary	(unlabelled, line 674)	argument read (unlabelled corollary; a1-11)
+ch02_lorentz	theorem	thm:PT	verified (exact): a1-12
+ch02_lorentz	theorem	thm:CPT	verified (exact): a1-13
+ch02_lorentz	proposition	prop:gauge1	verified (exact): a1-14
+ch02_lorentz	theorem	thm:module	verified (exact): a1-15
+ch02_lorentz	theorem	thm:spectra	verified (exact+numerical): a1-16
+ch02_lorentz	proposition	prop:Cstates	verified (exact): a1-17
+ch03_readings	proposition	prop:notconj	verified (exact): a2-1
+ch03_readings	theorem	thm:emfield	verified (exact): a2-1
+ch03_readings	corollary	cor:Gselected	verified (exact): a2-1
+ch03_readings	proposition	prop:emexclusive	verified (exact): a2-1
+ch03_readings	proposition	prop:bivectorF	verified (exact): a2-2
+ch03_readings	theorem	thm:twoops	verified (exact): a2-3
+ch03_readings	corollary	cor:maxwellform	verified (exact): a2-4
+ch03_readings	proposition	prop:RS	verified (exact): a2-4
+ch03_readings	proposition	prop:planes	verified (exact): a2-6
+ch03_readings	corollary	r3:cor:carries	argument read (summary of a checked proposition: r3-15, r3-16)
+ch03_readings	proposition	prop:gradeone	verified (exact): a2-7
+ch03_readings	proposition	prop:samerotors	verified (exact): a2-7
+ch03_readings	theorem	thm:nablaF	verified (exact): a2-8
+ch03_readings	proposition	prop:censusint	verified (exact): a2-7
+ch03_readings	proposition	prop:spinmatrices	verified (exact): a2-7
+ch03_readings	proposition	prop:orthframe	verified (exact): a2-5
+ch03_readings	theorem	thm:SS	verified (exact): a2-9
+ch03_readings	proposition	prop:halfspinors	verified (exact): a2-7
+ch03_readings	theorem	thm:klein	verified (exact): a2-10
+ch03_readings	proposition	prop:modes	verified (exact): a2-6
+ch03_readings	proposition	prop:twomodes	verified (exact): a2-6
+ch03_readings	proposition	prop:EBlocal	verified (exact): a2-5
+ch03_readings	proposition	en:SI	verified (exact): a2-11
+ch04_rigidbody	proposition	prop:howmuch	verified (exact): a3-2
+ch04_rigidbody	proposition	prop:orbitsEM	verified (exact): a3-2
+ch04_rigidbody	proposition	prop:EAdict	verified (exact): a3-3
+ch04_rigidbody	proposition	prop:EAnotinner	verified (exact): a3-3
+ch04_rigidbody	theorem	thm:EAdichotomy	verified (exact): a3-3
+ch04_rigidbody	proposition	prop:lGhoms	verified (exact): a3-4a
+ch04_rigidbody	proposition	prop:LP	verified (exact): a3-5
+ch04_rigidbody	proposition	prop:groupred	verified (exact): a3-5
+ch04_rigidbody	theorem	thm:inertiareq	verified (exact): a3-4b
+ch04_rigidbody	theorem	thm:drift	verified (exact): a3-5
+ch04_rigidbody	theorem	thm:pendulum	verified (exact): a3-5
+ch04_rigidbody	corollary	cor:constrate	covered by related checks d3-7, x1-10-iff-unstable/stable, x1-10-ab0
+ch04_rigidbody	corollary	cor:multiscale	verified (exact): a3-5
+ch04_rigidbody	proposition	prop:several	verified (exact): a3-5
+ch04_rigidbody	theorem	thm:so9C	verified (exact): a3-6
+ch04_rigidbody	theorem	thm:nocommon	verified (exact): a3-7a a3-7b
+ch04_rigidbody	theorem	thm:survive	verified (exact): a3-8
+ch04_rigidbody	theorem	thm:closurechiral	verified (numerical): a3-9
+ch04_rigidbody	theorem	thm:inertia3	verified (exact): a3-10
+ch05_tower	corollary	cor:photon1	argument read
+ch05_tower	proposition	prop:frame	verified (exact): a4-1
+ch05_tower	theorem	thm:census	verified (exact): a4-1
+ch05_tower	lemma	lem:rank	verified (exact): a4-1
+ch05_tower	corollary	cor:tradeoff	verified (exact): a4-1
+ch05_tower	corollary	cor:howe	covered by related checks e3-3c, e3-4d
+ch05_tower	proposition	prop:orthospin	covered by related checks d6-10
+ch05_tower	proposition	prop:diagtower	covered by related checks e1-3h
+ch05_tower	proposition	prop:spectator	verified (exact+numerical): a7-6 a7-6 e5-3a e5-3b e5-3c
+ch05_tower	corollary	e1:cor:nocx	covered by related checks e1-3b, e1-3c, e1-3h
+ch05_tower	proposition	prop:commutantsn	covered by related check e3-6a
+ch05_tower	proposition	prop:mixed	covered by related checks e5-3h
+ch05_tower	proposition	prop:mixedcost	covered by related checks e5-3h
+ch05_tower	theorem	thm:mixeddirac	verified (numerical): a4-2
+ch05_tower	theorem	thm:coupled	verified (exact): a4-3
+ch06_chiral	proposition	prop:vectorlike	argument read
+ch06_chiral	proposition	prop:axialtriple	argument read
+ch06_chiral	theorem	thm:table	verified (exact): a4-4
+ch06_chiral	corollary	cor:nocolour	argument read (subalgebras of so(5): inherited)
+ch06_chiral	theorem	thm:su3	verified (exact): a4-5
+ch06_chiral	theorem	thm:p1	verified (exact): a4-5
+ch06_chiral	theorem	thm:PS	verified (exact): a4-6
+ch06_chiral	corollary	cor:PSfamily	verified (exact+numerical): a4-6 a4-7
+ch06_chiral	proposition	prop:PSledger	verified (exact): a4-6
+ch06_chiral	proposition	prop:PSanom	verified (numerical): a4-7
+ch06_chiral	proposition	prop:orbits	verified (exact): a4-8
+ch06_chiral	proposition	prop:escape	argument read
+ch06_chiral	theorem	thm:variety	verified (exact): a4-9
+ch06_chiral	theorem	thm:nonu	verified (exact): a4-9
+ch06_chiral	proposition	prop:integrality	verified (exact): a4-9
+ch07_vacuum	theorem	thm:subkernels	verified (exact): a6-1 a6-1
+ch07_vacuum	corollary	cor:fullmass	covered by related checks e6-1a
+ch07_vacuum	theorem	thm:twophases	covered by related checks z3-4
+ch07_vacuum	theorem	thm:subfs	covered by related checks d2-18 d6-14a
+ch07_vacuum	proposition	prop:fermionnumber	verified (exact): a5-3
+ch07_vacuum	proposition	prop:coupled3	verified (exact): a6-3
+ch07_vacuum	proposition	prop:tensor	verified (numerical): a8-1 a8-1
+ch07_vacuum	theorem	thm:tracepot	verified (exact): a5-4
+ch07_vacuum	theorem	thm:compat	covered by related checks z3-5
+ch07_vacuum	proposition	prop:EW	verified (numerical): a8-2 a8-3 a8-4 a8-5 a8-2 a8-3 a8-4 a8-5
+ch07_vacuum	proposition	prop:mirror	verified (exact): a5-2
+ch07_vacuum	proposition	prop:rankfive	verified (numerical): a8-7 a8-7
+ch07_vacuum	proposition	prop:alignment	covered by related checks p2-7
+ch07_vacuum	proposition	prop:global	verified (exact): a5-3
+ch07_vacuum	theorem	thm:nomajoron	covered by related checks d2-21
+ch07_vacuum	theorem	thm:axion	covered by related checks d2-24
+ch07_vacuum	proposition	prop:bidoublet	verified (numerical): a8-8 a8-8
+ch07_vacuum	theorem	thm:mA	verified (exact+numerical): a6-5 a8-6 a6-5 a8-6
+ch07_vacuum	theorem	thm:fourclasses	verified (exact): a5-1
+ch07_vacuum	theorem	thm:vacCP	verified (exact): a6-2 a6-2
+ch07_vacuum	theorem	thm:Bcounts	verified (exact+numerical): a6-4 a6-5 a8-9 a6-4 a6-5 a8-9 z4-3
+ch07_vacuum	theorem	thm:strings	verified (numerical): a5-5
+ch08_photon	proposition	prop:config	verified (exact): a7-1 a7-1
+ch08_photon	theorem	thm:holonomy	verified (exact): a7-2 a7-2
+ch08_photon	proposition	prop:chiralpreserved	verified (exact): a7-2 a7-2
+ch08_photon	theorem	thm:photonmass	verified (exact): g3-7
+ch08_photon	corollary	cor:massless	argument read (definition-level criterion)
+ch08_photon	theorem	thm:massless1	verified (numerical): a5-6
+ch08_photon	proposition	prop:rigid	verified (numerical): a5-6
+ch08_photon	theorem	thm:S4	verified (exact): a7-3 a7-3
+ch08_photon	theorem	thm:towercurved	verified (exact): a7-4 a7-4
+ch08_photon	proposition	prop:towermatter	verified (exact): a7-5 a7-5
+ch09_bfield	lemma	bf:M	argument read
+ch09_bfield	proposition	bf:qym	verified (exact): a5-7
+ch09_bfield	conjecture	bf:transmute	conjecture (labelled as such)
+ch12_causal	corollary	cor:weak	inherited (Klein-Gordon theory on (M^4,h))
