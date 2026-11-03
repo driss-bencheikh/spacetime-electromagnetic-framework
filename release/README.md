@@ -11,6 +11,6 @@ Prepared 2 November 2026.
 - **Build checks:** no undefined references or citations; no overfull boxes. Embedded PDF metadata: title, author, subject
   ("Version 1.0.0. Preprint, not peer reviewed"), keywords.
 - **Verification:** 61 scripts, 1389 checks (1220 exact, 169 numerical), all PASS in `reproducibility/selected-results/v1.0.0/`.
-- **SHA-256:** `4fd6ffa39b38911bfd4c550e630f564aec404a930d5173e2f3e9dbd928af9bcb` (3 243 693 bytes). A rebuild changes the embedded
+- **SHA-256:** `8238cb0fb77ec4d9d5cea1b0c901aa9e6ce7772ed76adb46a26c6b58eda42a8a` (3 243 698 bytes). A rebuild changes the embedded
   creation date and therefore the checksum.
 - **Licence:** CC BY 4.0 (`LICENSE-CC-BY-4.0.txt`); the verification software is under MIT. See `LICENSE.md`.
