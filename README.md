@@ -2,7 +2,9 @@
 
 **Mathematical Structures and Obstructions in Split-Signature Clifford Geometry** — Driss Bencheikh, Independent Researcher.
 
-**Version 1.0.0 — Preprint, not peer reviewed** (2 November 2026). No DOI has been assigned.
+**Version 1.0.0 — Preprint, not peer reviewed** (2 November 2026).
+
+**DOI:** [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (reserved on Zenodo; the link resolves once the Zenodo record is published).
 
 This repository contains one research manuscript, its LaTeX source, and the computational verification package that checks its
 statements.
@@ -67,7 +69,8 @@ the workflow, the author's role and the limits of AI review. All results are the
 ## How to cite
 
 Driss Bencheikh, *The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature Clifford
-Geometry*, version 1.0.0, preprint (not peer reviewed), 2026, https://github.com/driss-bencheikh/spacetime-electromagnetic-framework.
+Geometry*, version 1.0.0, preprint (not peer reviewed), 2026, doi:10.5281/zenodo.23900465.
+Zenodo record: https://doi.org/10.5281/zenodo.23900465. Source repository: https://github.com/driss-bencheikh/spacetime-electromagnetic-framework.
 Machine-readable metadata: [`CITATION.cff`](CITATION.cff).
 
 ## Licence

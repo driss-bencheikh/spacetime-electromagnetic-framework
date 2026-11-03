@@ -4,6 +4,7 @@ title: "The Spacetime–Electromagnetic Framework: Mathematical Structures and O
 type: software
 version: "1.0.0"
 date-released: "2026-11-02"
+doi: "10.5281/zenodo.23900465"
 license:
   - CC-BY-4.0
   - MIT
@@ -35,6 +36,7 @@ preferred-citation:
       affiliation: "Independent Researcher"
   status: preprint
   version: "1.0.0"
+  doi: "10.5281/zenodo.23900465"
   year: 2026
   notes: "Preprint, not peer reviewed."
   url: "https://github.com/driss-bencheikh/spacetime-electromagnetic-framework"
