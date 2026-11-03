@@ -4,7 +4,7 @@
 
 **Version 1.0.0 — Preprint, not peer reviewed** (2 November 2026).
 
-**DOI:** [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (reserved on Zenodo; the link resolves once the Zenodo record is published).
+**DOI:** [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (Zenodo record).
 
 This repository contains one research manuscript, its LaTeX source, and the computational verification package that checks its
 statements.

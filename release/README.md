@@ -6,7 +6,7 @@ notation and dependency map, Chapters 1–16, Appendices A–E (Appendix D: veri
 Prepared 2 November 2026.
 
 - **Status:** preprint, not peer reviewed.
-- **DOI:** [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (reserved on Zenodo; the link resolves once the Zenodo record is published).
+- **DOI:** [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (Zenodo record).
 - **Cite as:** Driss Bencheikh, *The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in
   Split-Signature Clifford Geometry*, version 1.0.0, preprint (not peer reviewed), 2026, doi:10.5281/zenodo.23900465.
 - **Source:** `manuscript/main.tex` in the same commit as this file. Build from `manuscript/` with
