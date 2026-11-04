@@ -15,6 +15,7 @@ statements.
 - **Results:** [`reproducibility/manifest.json`](reproducibility/manifest.json) and [`reproducibility/selected-results/`](reproducibility/selected-results/)
 - **Documentation:** [`docs/mathematical-assumptions.md`](docs/mathematical-assumptions.md),
   [`docs/known-obstructions.md`](docs/known-obstructions.md), [`docs/research-status.md`](docs/research-status.md)
+- **Errata:** [`docs/errata.md`](docs/errata.md) — known issues in version 1.0.0, to be corrected in version 1.0.1
 
 ## What the manuscript investigates
 
