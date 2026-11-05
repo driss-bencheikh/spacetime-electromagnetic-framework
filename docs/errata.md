@@ -1,15 +1,57 @@
 # Errata for version 1.0.0
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
-independent AI-assisted reviews of Chapters 2, 3, 4 and 5 and checked by the author. They will be corrected in version 1.0.1. Page numbers are
+independent AI-assisted reviews of Chapters 1 to 7, and by an AI-assisted chapter-by-chapter
+derivation check, and checked by the author. They will be corrected in version 1.0.1. Page numbers are
 the printed page numbers.
 
-**None of these issues invalidates a main theorem.** Each correction is local: no later chapter depends on the incorrect part of a statement.
-Where a later chapter uses an affected result, it uses it in a case where the result holds, or it already states the missing hypothesis.
+**None of these issues invalidates a main theorem.** Each correction is local. Where a later chapter repeats an affected statement or cites
+it as justification, the item says so (items 53, 65 and 68); in every such case the later results hold once the correction is made.
+Otherwise a later chapter that uses an affected result uses it in a case where the result holds, or already states the missing hypothesis.
 
-Items are marked **Error** (a statement false as written), **Hypothesis** (a missing condition or domain restriction), **Wording**
+Items are numbered in the order in which they were recorded and listed by chapter. Items are marked **Error** (a statement false as written), **Hypothesis** (a missing condition or domain restriction), **Wording**
 (imprecise or misleading phrasing), **Attribution** (a missing or incomplete reference) or **Evidence** (a proof or check weaker
 than the statement it supports).
+
+## Chapter 1 — Split-Signature Clifford Geometry
+
+65. **Error. Corollary 1.4 and the paragraph after it (p. 18).** That exp(θB) = cosh θ·1 + sinh θ·B generates ℝ and not U(1) is correct. The
+    paragraph's inference, that a positive-definite kinetic metric on the gauge algebra excludes a gauge field along a boost, fails for an
+    abelian algebra: on ℝB every scalar product is invariant, and A_μ = a_μB has the ordinary healthy abelian kinetic term. The valid
+    obstruction concerns the action on S: no positive-definite H satisfies BᵀH + HB = 0 (if Bv = ±v then v·Hv = 0), so a boost is not
+    unitary for a fixed positive form on the module, and the gauge form −Tr has the wrong sign on B. "Gauge-admissible" should be defined as
+    compact, as a condition of the model or through unitarity on the matter module, and the corollary retitled "A mixed bivector generates
+    no compact U(1)". Theorem 5.39(iii) (p. 154), the gauge-admissibility paragraph of Chapter 9 (p. 267) and its later citations, and
+    Chapter 13 use the corollary in exactly this sense; their conclusions stand under that definition.
+66. **Wording. p. 18.** "Square −1 gauges and square +1 grades, and no bivector does both" is too strong: conjugation by J = e₂e₃ (J² = −1)
+    is an involutive automorphism of Cl(3,3) with ±1 eigenspaces of dimension 32 each. The distinction is between operators on S (J is a
+    complex structure, each ωᵢ has real ±1 eigenspaces) and conjugation on the algebra (either kind induces an involution). Proposition 1.5
+    is unaffected.
+67. **Wording. Figure 1.1, caption.** "J … will become the electromagnetic charge" anticipates more than is proved. Proposition 1.7 shows that
+    J spans the centraliser of the interior so(1,3) in so(3,3) (in End(S) the centraliser is eight-dimensional, as the text notes). J is the
+    compact internal rotation used as complex structure in Chapter 2; the electromagnetic generator is constructed in Chapter 8. Later chapters
+    use "the charge J" for the U(1) of the Dirac reading and do not identify it with electromagnetism.
+68. **Wording. Chapter opening (p. 17) and Theorem 1.13 (p. 23).** "This decides the sign of every kinetic term later on" holds only for
+    actions built on this trace metric; the theorem does not fix an arbitrary action, spacetime contraction, constraint or propagator residue.
+    Theorems 1.3 and 1.13 classify bivectors relative to the fixed Cartan decomposition (compact = antisymmetric for the chosen positive form);
+    a mixed generator gives a tangent to the orthogonal projectors exactly when its symmetric part commutes with P, so generators should be
+    counted modulo the stabiliser. The same qualification applies to the sentence "exactly when B is compact" in Theorem 8.54 (p. 259), whose
+    dimension counts are unaffected. The opening's "makes no physical reading" should also note that Proposition 1.10 uses the Fisher–Rao clock
+    of Chapter 2 and equation (1.6) uses the E/B reading of Chapter 3.
+69. **Wording. Example 1.6 (p. 19).** The paired-mode projector should carry its limitation where it is introduced: among the interior Lorentz
+    generators (e₁e₄, e₁e₅, e₁e₆, e₄e₅, e₄e₆, e₅e₆) only e₁e₄ commutes with Π (commutator ranks 0, 4, 4, 4, 4, 4), and [Π, J] has rank four. Its
+    stabiliser in so(3,3) is nine-dimensional, which counts linear combinations, not only commuting basis bivectors.
+70. **Wording. p. 19.** The four-sector grading of Proposition 1.5(iii) is the coordinate parity Q(D₃)/2ℤ³, of order four, not the quotient of
+    the root lattice by twice itself, Q(D₃)/2Q(D₃), of order eight.
+71. **Wording. Proposition 1.10 (p. 22).** If k coordinates of x vanish, the top eigenspace of B_x has dimension 2^k (8 at x = 0), and the map
+    from the clock sphere to the simplex has 2^{3−k} preimages over a face: a quotient with boundary stabilisers, not an eight-sheeted covering.
+    The radius-two coordinates xᵢ = 2√wᵢ give B_x = 2ϖ/√3 at the symmetric point, the unit clock ϖ/√3; the top eigenspaces agree.
+72. **Wording. Proposition 1.12 (p. 22).** The spin lift acts as the derived action dΛ^w(A) − ½ tr A, not the exterior power of the matrix A;
+    for A = 1 the eigenvalue on degree r is r − 3/2. On GL⁺(L) the integrated action is ρ(g) = (det g)^{−1/2}Λ*(g).
+73. **Wording. Notation in Chapter 1.** The identity ω = 𝒱 = Γ should be stated once, with a different symbol for the vector space V. The
+    paragraph after Proposition 1.8 writes I = −ω₁ω₂ω₃ for what the proposition calls Γ. The letter w is 3 − N in Proposition 1.8(v) and N in
+    Proposition 1.11; T is e₁e₂e₃ in the proof of Proposition 1.9 (defined only in Chapter 2), the commutator [B, P] in Theorem 1.13 and the
+    boosts T_a. In Proposition 1.8(v), the antecedent of "which is the chirality γ₅" should be made explicit.
 
 ## Chapter 2 — Lorentz Structures, Complex Units and Observational Spacetime
 
@@ -34,6 +76,12 @@ than the statement it supports).
 10. **Error. Proposition 2.32 (p. 37).** "A product of four integral reflections" holds for the representative C = e₂, not for every
     C = cos θ e₂ + sin θ e₃; in general four orthogonal reflections suffice. The stated dimensions 8 and 3 are real dimensions on R¹⁶; on the
     complexified space F they are complex dimensions.
+
+Added from the derivation check (5 November 2026):
+
+74. **Wording. Theorem 2.27 (p. 35).** "Anticommutes with every vector C of the clock plane" should read "of the surplus plane U".
+75. **Wording. Theorems 2.27 and 2.28.** T denotes both the temporal trivector e₁e₂e₃ and the time-reversal operator; in P = γ⁰J the two
+    meanings meet in one formula.
 
 ## Chapter 3 — Classical and Electromagnetic Readings of X
 
@@ -121,12 +169,96 @@ than the statement it supports).
     interpretations or spin-parity statements under the stated assumptions, as the chapter's closing synthesis says. "No interacting
     theory is constructed" means no derived quantum theory of tower-changing processes; Theorem 5.77 constructs a classical interacting model.
 
+## Chapter 6 — Chiral Matter and Internal Symmetries
+
+43. **Error. Figure 6.1, caption (p. 194).** "Every rotation inside each group survives the projection" is false for the auxiliary group:
+    it enters P_* through the two-plane volume q_A = e₂⁽¹⁾e₃⁽¹⁾, not through the volume of its four directions, and only the plane rotations
+    E₂E₃ and E₈E₉ survive (E₂E₈ anticommutes with −Jq_A and P_*E₂E₈P_* = 0). The surviving bivectors are the 15 colour rotations, the 6
+    weak rotations, E₂E₃ and E₈E₉, which is the 23-dimensional algebra of Theorem 6.11; the theorem is unaffected.
+44. **Error. Proposition 6.22 (p. 198).** The values λ = 0 and λ = −1 give (Q_u, Q_d, Q_ν, Q_e) = (2/3, −1/3, 0, −1) and
+    (1/3, −2/3, 1, 0). Exchanging ν and e alone does not map one to the other; charge conjugation together with u ↔ d and ν ↔ e does. The
+    integrality and neutrality statements are correct.
+45. **Hypothesis. Several generations (p. 198).** "With N_g generations the standard branch has 2N_g parameters" needs the family to be
+    specified. If anomalies cancel only after summing over generations, the anomaly variety has local dimension 6N_g − 4 at the
+    Standard-Model point (14 for three generations). A 2N_g-dimensional family is obtained with one common Yukawa difference h
+    (y_u = q_i + h, y_d = q_i − h, y_ν = l_i + h, y_e = l_i − h, and Σ_i(N_c q_i + l_i) = 0), which contains L_e − L_μ; imposing the one-family
+    branch generation by generation also gives 2N_g but excludes L_e − L_μ.
+46. **Wording. Electric charge of the dressed benchmark (p. 198).** From Q_em = t³ + B₀ only the projectors P_L, P_R on the weak axis
+    cancel; B₀ = (ε/6)Γ(q₁ + q₂ + q₃) still contains Γ. "The chirality dressing cancels identically" should be narrowed accordingly.
+47. **Wording. Theorem 6.23 (p. 199).** The twelve solutions are the six differences N_i − N_j (c = 0) and the six signed sums
+    ±(N_i + N_j − 1) (c = ∓1); the printed "Q = N_i + N_j − 1 with c = −1" names only one sign of the second orbit. Hodge conjugation maps
+    exterior degree k to 3 − k and so exchanges the even and odd halves: the relation CQC⁻¹ = −Q, equivalent to Σq_i + 2c = 0, holds on the
+    whole exterior algebra, not as an operation inside the even four-state sector, and the charge skeleton alone does not identify neutrinos
+    and electrons.
+48. **Hypothesis. Proposition 6.14 (p. 196).** "The largest anomaly-free gauge algebra containing Pati–Salam" is proved inside the
+    23-dimensional effective bivector algebra of Theorem 6.11 and for this matter content, as Chapter 7 states it; it is not a classification
+    of all algebras acting on the block. The restriction belongs in the statement.
+49. **Wording. Proposition 6.14 and the following paragraph (p. 196).** The fermion-number current has a triangle anomaly with SU(2)_L and
+    SU(2)_R already in perturbation theory (Adler 1969); what holds to all orders of perturbation theory is the corresponding charge selection
+    rule about the trivial topological sector, violated nonperturbatively by instantons ('t Hooft 1976). The two central directions are
+    classical global symmetries with mixed anomalies, not exact quantum symmetries. The coefficients are correct.
+50. **Hypothesis. Theorems 6.20 and 6.21 (p. 198).** Theorem 6.20 assumes N_c ≥ 2 (for N_c = 1 there is no colour mixed condition), and the
+    title of Theorem 6.21 should carry the qualification "on the generic branch" already present in its statement.
+51. **Wording. §6.1 (p. 191).** "To obtain chiral matter one must project" holds for the undressed internal bivector action of
+    Propositions 6.1 and 6.2; Theorem 6.9 already obtains a chiral interaction with dressing and spectator states.
+52. **Evidence. Theorems 6.5 and 6.11 and Corollary 6.12.** The decisive step is the statement that a nullspace has the stated dimension.
+    Exact certificates will be added: the 23-generator basis of item 43 and the completeness argument (every blade commutes or anticommutes
+    with each of the three involutions), the centre and derived-algebra dimensions for each row of Theorem 6.5, and the colour-volume sign
+    rather than the quadratic Casimir to tell 4 from 4̄. The statements themselves have been confirmed by an independent exact computation.
+
+## Chapter 7 — Mass Kernels and Conditional Vacuum Selection
+
+53. **Error. Theorem 7.17(ii) and the paragraph after it (pp. 212–213).** With the complex structure 𝒞(M) = JM on Majorana-type and JMΓ on
+    Dirac-type kernels, the two colour tens carry the same conjugation, so the complex representation is not the Pati–Salam branching of
+    10 ⊕ 126, nor of its conjugate. A label-independent test: for the SU(4) charge h = diag(1,1,1,−3), tr h³ = −192 on 10, and the cubic trace
+    over the kernel space is ±1152 for 𝒞, while it vanishes on Sym²(16). The repair is 𝒞̃(M) = JMΓ on every kernel. It preserves the kernel
+    space, squares to −1, commutes with the Pati–Salam action and conjugates the left ten, giving
+    (10̄,3,1) ⊕ (10,1,3) ⊕ (15,2,2) ⊕ 2(6,1,1) ⊕ (1,2,2), the conjugate of the all-left branching; with 𝒞̃ the cubic trace is 0. The labels
+    will be updated in Theorem 7.17, its figure, the Introduction (p. 12), Chapter 14 (p. 368) and Table C.2 (p. 384), whose caption already
+    writes (10̄,1,3) inside the 126. The real kernel space, the potentials, the Hessians and Φ₀ ∈ (10,1,3) are unaffected.
+54. **Error. Lemma 7.11(iv) (pp. 208–209).** "Otherwise V is unbounded below, or flat along a ray, and has no isolated minimum" fails on the
+    boundary min{a(1/8), a(1/4)} = 0 with μ² < 0: for μ² = −1, α = β = 0, V = N has the isolated minimum M = 0. On that boundary μ² < 0 gives
+    the unique minimum M = 0, μ² = 0 flat rays and μ² > 0 unboundedness. The phase results with both a(q) > 0 are unaffected.
+55. **Hypothesis. Theorem 7.14 (p. 210).** The unique Fock ground state needs E > 0: A = 0, E = 0 satisfies every printed hypothesis and all
+    sixteen states have zero energy. The proof divides by E.
+56. **Error. Theorem 7.42, table (p. 226).** The row v_R = 0 describes the generic point of that stratum. When |v_u| = |v_d| the stabiliser
+    among the 21 generators enlarges from 16 to 18 (a diagonal SU(2)), and at the zero vacuum it is 21. The strata will be listed.
+57. **Hypothesis. Theorem 7.44 (p. 227).** The formula |P_⊥t|² = 16n_Kv_u²v_d²/(v_u² + v_d²) needs v_u² + v_d² > 0 (its continuous extension
+    is 0). At v_R = 0 the gauge tangent space has no Majorana component, so its part in span{a, e_u, e_d} is span{z}, not span{a, z}; the
+    formula still holds there because ⟨t, a⟩ = 8v_R = 0.
+58. **Wording. Theorem 7.32(i) (p. 220).** Π_ν has rank 32 on the 272-dimensional kernel space and rank 31 on the 271-dimensional tangent
+    space of the sphere.
+59. **Evidence. Proposition 7.22 (p. 215).** As the text states, the identification of the spectrum of ΦᵀΦ with that of S†S uses an explicit
+    isomorphism of the original computation that the version 1.0.0 suite does not reproduce. The map and its adjoint and product identities
+    will be published with an exact check.
+60. **Evidence. Theorem 7.23(ii) (p. 216).** The reduction of |𝒟| ≤ (3/8)I₄ to one constant is exact (Schur's lemma), but the constant 3/8 is
+    obtained numerically; an exact contraction will replace it.
+61. **Wording. Theorem 7.12(b) (p. 209) and Proposition 7.20 (p. 214).** J − JΓ is called "the left-handed fermion number" in Theorem 7.12,
+    while its charge 1 − Γ is "twice the left-handed fermion number" in Proposition 7.20; the latter is correct.
+62. **Wording. Model assumptions (§§7.5–7.6).** The thresholds x < 27 and x_* ≈ 24.884, and the ratios M_N/M_{W_R} < 27^{1/4} ≈ 2.280
+    (local) and ≈ 2.233 (conjectured global) for one dominant family, hold within the stated model: an O(272)-symmetric tree potential at the
+    matching scale, the trace kinetic normalisation, a common gauge coupling, a universal Yukawa coupling, fermion number, and the
+    leading-logarithm approximation. The invariant counts (18 quadratic and 686 quartic invariants, 12 and 402 with fermion number) show that
+    symmetry does not force this small potential; its special coefficients are matching conditions, and their stability under running and
+    finite corrections is not analysed.
+63. **Wording. p. 216 and p. 214.** The value 4.7 × 10⁸ s is the free-neutron oscillation time inferred from the Super-Kamiokande search
+    with neutrons bound in ¹⁶O, not a lifetime of bound neutrons. By the Nielsen identities the value of the effective potential at a
+    stationary point is independent of the gauge fixing; the background coordinates and the raw Hessian are not.
+64. **Wording. Notation in Chapter 7.** Several symbols carry more than one meaning: κ (the frame rate c/ℓ, the holomorphic-quartic
+    coupling, the bidoublet values κ₁, κ₁₅, κ_{u,d}); Q (the quartic invariant Tr(MᵀM)², the electric charge, the charge of Theorem 7.14);
+    H (a Hamiltonian and the colour generator, both in Theorem 7.34); T (the mass form e₁e₂e₃ and T(û) in §7.6); K (kinetic kernels,
+    bidoublet kernels K_{1u}, K_{1d}, frame boosts).
+
 ## Related work to be added (all chapters)
 
 The comparison of Chapter 14 will be extended to: two-time physics (I. Bars and collaborators); an SO(3,3) BF gauge theory on a
 six-dimensional spacetime of signature (3,3) (arXiv:2602.19151, 2026); three-dimensional time (quant-ph/0510010); real Clifford algebras
 and spinors in all signatures (arXiv:1908.02235); and Atiyah, Bott and Shapiro, *Clifford modules* (1964). Hestenes, *Real spinor fields* (1967), already cited, will be
-compared directly with Chapter 2. For Chapter 5: Neergård (2019, 2020) and Howe (1989) on orthogonal dual pairs and their Casimir
+compared directly with Chapter 2. For Chapter 1: Gualtieri, *Ann. of Math.* 174 (2011) 75, for split spinors as forms and the half-density factor, and Krasnov (2018, §4) for SO(3,3) with its Lorentz embedding and extra SO(2). For Chapter 5: Neergård (2019, 2020) and Howe (1989) on orthogonal dual pairs and their Casimir
 relations; the Jordan–Wigner construction for the chirality strings; Gaillard and Zumino (1981) on duality rotations of several Maxwell
 fields; and Kaiser (2011) and Thompson (1979, singular values and diagonal entries of complex symmetric matrices) for the pair invariant
-of Theorem 5.57, whose priority is not yet established.
+of Theorem 5.57, whose priority is not yet established. For Chapter 6: the constructions of one chiral family by Maraner (2004), Nesti and
+Percacci (2010) and Krasnov (2018, §§6.4–6.7), compared in Chapter 14, will be cited where the Pati–Salam block is constructed
+(Theorems 6.10–6.13), with a statement of what this realisation adds; Remark 6.24 distinguishes the ambient actions only. For Chapter 7: Bertolini, Di Luzio and Malinsky (2010, 2012) on the quantum vacuum of
+nonsupersymmetric SO(10), as the comparison for the radiative vacuum analysis; Konaka et al. (1986) and Peccei, Wu and Yanagida (1986) for the
+exclusion of an electroweak-scale axion.
