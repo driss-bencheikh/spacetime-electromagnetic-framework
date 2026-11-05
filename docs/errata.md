@@ -1,14 +1,15 @@
 # Errata for version 1.0.0
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
-independent AI-assisted reviews of Chapters 2, 3 and 4 and checked by the author. They will be corrected in version 1.0.1. Page numbers are
+independent AI-assisted reviews of Chapters 2, 3, 4 and 5 and checked by the author. They will be corrected in version 1.0.1. Page numbers are
 the printed page numbers.
 
 **None of these issues invalidates a main theorem.** Each correction is local: no later chapter depends on the incorrect part of a statement.
 Where a later chapter uses an affected result, it uses it in a case where the result holds, or it already states the missing hypothesis.
 
 Items are marked **Error** (a statement false as written), **Hypothesis** (a missing condition or domain restriction), **Wording**
-(imprecise or misleading phrasing) or **Attribution** (a missing or incomplete reference).
+(imprecise or misleading phrasing), **Attribution** (a missing or incomplete reference) or **Evidence** (a proof or check weaker
+than the statement it supports).
 
 ## Chapter 2 — Lorentz Structures, Complex Units and Observational Spacetime
 
@@ -87,9 +88,45 @@ Items are marked **Error** (a statement false as written), **Hypothesis** (a mis
     the representation content in Theorem 4.38 is read by floating-point diagonalisation. The values of Theorem 4.39 have since been confirmed
     by independent exact rational elimination; exact certificates will be added.
 
+## Chapter 5 — The Clifford Tower and Constituent Duplication
+
+33. **Attribution. Theorem 5.11 (p. 134) and Theorem 5.68(iii) (p. 180).** The constants n(n+2)/2 and 3n(n+4)/4, and the general form
+    nd(d+n−2)/8, are special cases of the relation C_o(d) + C_o(2k) = ¼kd(d+2k−2) between the Casimirs of the o(d)–o(2k) dual pair on a
+    fermionic Fock space, K. Neergård, *J. Math. Phys.* 60 (2019) 081705, eq. (73). The statement that 3n(n+4)/4 is new is withdrawn, here
+    and in the claims table of Chapter 9 (p. 319). The Clifford-algebra proof stands as an independent derivation in the real realisation.
+34. **Error. Theorem 5.77 (p. 186).** The identity ∂_μj^μ + ψᵀJ₁𝓔_ψ = 0 holds with 𝓔_ψ the Euler–Lagrange derivative of the action,
+    𝓔_ψ = 2γ̂⁰(J₁γ̂^μD_μψ − mψ), not with the Dirac expression J₁γ̂^μD_μψ − mψ itself. The field equations are unaffected.
+35. **Error. Proposition 5.44(ii) (p. 160).** "Each on 16 dimensions when b > 0" holds when the four values ±E₊, ±E₋ are distinct; when
+    they coincide the multiplicities add. E₋ = 0 exactly when m₁m₂ = 0 and E₁ = E₂: for m₁ = m₂ = 0 and p = q = (1,0,0) the spectrum is
+    −2 (16), 0 (32), 2 (16). The eigenvalue formulas are correct.
+36. **Error. Theorem 5.57 and Example 5.58 (pp. 171–172).** M_pair, the infimum over observers of the momentum density of the summed
+    stress tensor at a point, is a local rest-energy density, not the invariant mass of two photons. For two null fields it equals
+    √(u₁u₂)(1 − cos ϑ), whereas two photons have invariant mass √(2E₁E₂(1 − cos ϑ)); for z₁ = (1,i,0) and z₂ = (0,1,i) the values are 1
+    and √2, and the counter-propagating example agrees only by coincidence. The sentence "the invariant mass of the pair is M_pair" is
+    withdrawn, the Breit–Wheeler passages are kinematic analogies, not a production process, and Chapter 9 uses the same name in the same
+    sense. Theorem 5.57 itself is unaffected.
+37. **Evidence. Theorem 5.13 (p. 135).** The proof asserts {Q_μ,Q_ν}|_D = −72η_μν and ¼[G_a,G_b] = Δ_ab|_D without deriving them. Both are
+    correct (confirmed by an independent construction); a derivation or an exact certificate will be added.
+38. **Wording. Theorem 5.39(ii) (p. 154).** "Conserves no part of it" means that a nonzero paired boost X has no component commuting with N,
+    so [N,X] ≠ 0. It may still conserve partial occupation numbers: (e₃e₅ − e₂e₆)/2 conserves N₁ and N₂ − N₃.
+39. **Wording. p. 148.** "Copying it is impossible" refers to the cloning of an unknown quantum state (Wootters–Zurek); the linear map
+    z ↦ (z,z) of classical field data is well defined.
+40. **Hypothesis. Proposition 5.63 (p. 175).** The cancellation of zero-point contributions concerns the nonzero-frequency lines of a
+    Hamiltonian that is unbounded below; at the zero-frequency resonance there is no oscillator vacuum. No vacuum-energy conclusion follows
+    (compare Theorem 4.12).
+41. **Wording. Theorem 5.15 (p. 136).** "Compact" means contained in the chosen compact orthogonal subgroup, the one compatible with a
+    positive kinetic form, in the stated embedding; it is not a statement about abstract Lie algebras. A compact candidate centraliser is
+    not by itself a gauge theory.
+42. **Wording. Particle language (e.g. p. 156, p. 176).** "The rung carries one particle" and "the composite is a fermion" are
+    interpretations or spin-parity statements under the stated assumptions, as the chapter's closing synthesis says. "No interacting
+    theory is constructed" means no derived quantum theory of tower-changing processes; Theorem 5.77 constructs a classical interacting model.
+
 ## Related work to be added (all chapters)
 
 The comparison of Chapter 14 will be extended to: two-time physics (I. Bars and collaborators); an SO(3,3) BF gauge theory on a
 six-dimensional spacetime of signature (3,3) (arXiv:2602.19151, 2026); three-dimensional time (quant-ph/0510010); real Clifford algebras
 and spinors in all signatures (arXiv:1908.02235); and Atiyah, Bott and Shapiro, *Clifford modules* (1964). Hestenes, *Real spinor fields* (1967), already cited, will be
-compared directly with Chapter 2.
+compared directly with Chapter 2. For Chapter 5: Neergård (2019, 2020) and Howe (1989) on orthogonal dual pairs and their Casimir
+relations; the Jordan–Wigner construction for the chirality strings; Gaillard and Zumino (1981) on duality rotations of several Maxwell
+fields; and Kaiser (2011) and Thompson (1979, singular values and diagonal entries of complex symmetric matrices) for the pair invariant
+of Theorem 5.57, whose priority is not yet established.
