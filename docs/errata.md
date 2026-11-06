@@ -1,7 +1,7 @@
 # Errata for version 1.0.0
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
-independent AI-assisted reviews of Chapters 1 to 8, and by an AI-assisted chapter-by-chapter
+independent AI-assisted reviews of Chapters 1 to 9, and by an AI-assisted chapter-by-chapter
 derivation check, and checked by the author. They will be corrected in version 1.0.1. Page numbers are
 the printed page numbers.
 
@@ -290,6 +290,39 @@ Added from the derivation check (5 November 2026):
     the colour group and an element of the Klein group; D the duality map and the covariant derivative; T the tangents T_i, T_aw and the
     trivector.
 
+## Chapter 9 — Inter-Constituent Dynamics and the b-Field
+
+86. **Error. Proposition 9.22 (pp. 279–280).** With the nonnegative rates allowed in §9.2, item (i) fails at (κ₁, κ₂, β′) = (0, 1, 0), which
+    is below the threshold although the first copy is free and M is not semisimple, and item (ii) fails at (1, 1, 0), which is at the
+    threshold although the two copies are uncoupled oscillators and M is semisimple. Item (i) needs κ₁κ₂ + β′² > 0, item (ii) needs β′ ≠ 0,
+    and the statement that the preserved positive form is not E₆ also needs β′ ≠ 0. The eigenvalue formula is correct.
+87. **Error. Remark 9.57(a) (p. 310).** "The two factors coincide exactly in the isotropic case" is false: CCᵀ = CᵀC holds exactly when C is
+    normal (after identifying the two triples), for instance C = diag(2, 3, 4). Isotropy is sufficient, not necessary. The orbit and energy
+    statements do not use the converse.
+88. **Error. Proposition 9.60(ii) (p. 312).** "Rotating (m₁, m₂) changes the spectrum unless sin 2θ = 0" holds for the initial pair (M, 0)
+    only. For (m₁, m₂) = (2, 1) and cos θ = 4/5 the rotated pair is (1, 2), with the same spectrum, although sin 2θ = 24/25. In general the
+    spectrum is unchanged exactly when the unordered pair (|m₁|, |m₂|) is. The conclusion that no continuous family at fixed spectrum changes
+    (|m₁|, |m₂|) stands.
+89. **Wording. Theorem 9.6(iv) (p. 268).** For the commuting boost the exponents are ±β ± iκ and also ±iκ, from the factor λ² + κ² of (ii).
+90. **Wording. Theorem 9.9 (p. 270).** The necessary condition a·d = 0 has codimension one in the six-dimensional space of compact
+    connections, so bounded motion is not robust under compact perturbations: for κ = 1, a = (0, 0, 2), d = (1, 0, ε),
+    tr(η(S†)²) = −8a·d = −16ε, and M is not semisimple at ε = 1/10 although S is real antisymmetric. A physical model must explain what
+    restricts the connection to this set.
+91. **Evidence. Proposition 9.10 (p. 270).** The ten-dimensional bounded set and its singular locus rest on finite-difference Jacobian ranks,
+    and rank loss of a defining map does not by itself make its zero set singular (x² = 0). These statements are numerical observations until an
+    exact rank and local-geometry argument is given.
+92. **Hypothesis. Theorem 9.49 (p. 300).** In (i), "dF is onto" needs nonzero momentum (at p = 0, dF = 0); (ii) and (iii) divide by κ₀² and
+    need h(0) ≠ 0; in (iv) a frame with N_k p^{(k)}(0) = 0 is stationary, not unbounded. The secular-instability result stands.
+93. **Wording. Theorem 9.27 (p. 284) and the copy field.** Nonnegative rates do not make H positive: for the bounded seesaw example, rates
+    (0, 3, 5) and couplings (1, ½, ⅓), H has the eigenvalue −0.326115, so the empty state is not the lowest state of dΓ(H), which is bounded
+    below with its negative modes filled. This exterior-algebra model is distinct from the canonical bosonic system of Theorem 9.12 and is not
+    its quantisation. The removability of b refers to removing it while keeping the prescribed constant binding tensor.
+94. **Wording. Proposition 9.36(ii) (p. 290).** "Dimension 8 for (1, 2, 3, 4)" counts the space of resonant coefficients; the Jacobi identity
+    (ad = bc, item (v)) leaves a bracket variety of real dimension 6.
+95. **Wording. Notation in Chapter 9.** b denotes an index and the connection; S_n the spinor module and, in Theorem 9.62, the spatial volume;
+    N the number operator, the inertias N_k and a nilpotent part; H the Noether energy, the copy Hamiltonian and the operator 𝖧; C the
+    conversion, the copy rotations C_±, C^{kl}, Ĉ, C_v, C_b and a complex symmetric matrix; M the phase-space generator and masses.
+
 ## Related work to be added (all chapters)
 
 The comparison of Chapter 14 will be extended to: two-time physics (I. Bars and collaborators); an SO(3,3) BF gauge theory on a
@@ -303,4 +336,6 @@ Percacci (2010) and Krasnov (2018, §§6.4–6.7), compared in Chapter 14, will 
 (Theorems 6.10–6.13), with a statement of what this realisation adds; Remark 6.24 distinguishes the ambient actions only. For Chapter 7: Bertolini, Di Luzio and Malinsky (2010, 2012) on the quantum vacuum of
 nonsupersymmetric SO(10), as the comparison for the radiative vacuum analysis; Konaka et al. (1986) and Peccei, Wu and Yanagida (1986) for the
 exclusion of an electroweak-scale axion. For Chapter 8: Coleman, Wess and Zumino, and Callan, Coleman, Wess and Zumino (1969), for
-sigma models on homogeneous spaces and their gauging; Preskill (1991) on anomalies and massive anomalous gauge fields.
+sigma models on homogeneous spaces and their gauging; Preskill (1991) on anomalies and massive anomalous gauge fields. For Chapter 9: Flanders and Wimmer (1977) for an invariant proof of Roth's theorem; Bravyi (2005) on
+quadratic fermion dynamics; Zusmanovich (2010) on current Lie algebras, which contain the truncated graded brackets of Proposition 9.36; and
+Alekseevsky and Cortés (1997) on invariant bilinear forms of spinor modules (Theorem 9.62).
