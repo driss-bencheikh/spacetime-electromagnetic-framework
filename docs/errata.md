@@ -1,7 +1,7 @@
 # Errata for version 1.0.0
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
-independent AI-assisted reviews of Chapters 1 to 9, and by an AI-assisted chapter-by-chapter
+independent AI-assisted reviews of Chapters 1 to 10, and by an AI-assisted chapter-by-chapter
 derivation check, and checked by the author. They will be corrected in version 1.0.1. Page numbers are
 the printed page numbers.
 
@@ -323,6 +323,43 @@ Added from the derivation check (5 November 2026):
     N the number operator, the inertias N_k and a nilpotent part; H the Noether energy, the copy Hamiltonian and the operator 𝖧; C the
     conversion, the copy rotations C_±, C^{kl}, Ĉ, C_v, C_b and a complex symmetric matrix; M the phase-space generator and masses.
 
+## Chapter 10 — Classical and Astrophysical Consistency
+
+96. **Error. "The analogy with the tower" (p. 325).** The paragraph says that every element outside the centraliser of K_n, "every boost
+    included", creates quanta in pairs, and that "one algebraic dichotomy, compact against non-compact, decides both questions". The dichotomy
+    of Lemma 5.46 is commuting against anticommuting with K_n, not compact against non-compact: the compact charge J = e₂e₃ creates a pair from
+    the Fock vacuum, while the pole operators ωᵢ are boosts that commute with N. The paragraph will state the commutator criterion; the warning
+    that tower quanta are not electrons stands.
+97. **Error. Atomic clocks (p. 329).** With the bound Aω < 3.7×10⁻¹⁶ yr⁻¹ as printed, the amplitudes are A < 5.1×10⁻⁶ for ω equal to the
+    inverse age and A < 3.7×10⁻¹⁶ for ω = 1 yr⁻¹. The printed values 2.6×10⁻⁶ and 1.8×10⁻¹⁶ are those for the libration frequency Ω = ω/2.
+    Note also that ω = 1 yr⁻¹ is a period of about 6.3 years, which is not long compared with the years of comparison.
+98. **Hypothesis. Clock and quasar constraints (p. 329).** A bound on a drift constrains Aω only under an assumption on the phase: for
+    R = 1 − A + A cos(ωt + φ) the slope vanishes at an extremum. For two epochs, R(t₂) − R(t₁) = −2A sin(ω(t₁+t₂)/2 + φ) sin(ω(t₂−t₁)/2),
+    which vanishes whenever the separation is a whole number of periods. The figures are order-of-magnitude sensitivities; a constraint on an
+    oscillation needs a frequency-dependent analysis of a time series.
+99. **Hypothesis. Birefringence rate (p. 328).** Dividing the angle by the age assumes the unwrapped, small-angle branch: a rotation by β and
+    by β + nπ leaves linear polarisation unchanged, so for β = 0.35° the first alias is κ = 7.2×10⁻¹⁸ s⁻¹, about 290 times the quoted bound.
+    The bound refers to that branch; excluding the others needs the visibility function, reionisation and the observation window. A
+    time-dependent duality rotation is moreover not a symmetry of the free Maxwell equations, so the coupling hypothesis needs a stated
+    propagation law.
+100. **Wording. Proton stability (p. 327).** "A weak decay with MeV energy release has a lifetime of minutes unless it is forbidden" is not a
+     general statement: lifetimes depend on matrix elements, selection rules and couplings. The argument is kinematic and motivates, but does
+     not derive, the one-clock selection.
+101. **Wording. Rainville et al. (p. 326).** The value (−1.4 ± 4.4)×10⁻⁷ combines silicon and sulfur; silicon alone gives (−9.7 ± 8.0)×10⁻⁷.
+     The angle derived from it is a sensitivity estimate, not a silicon-specific bound.
+102. **Wording. Smeared fields (p. 323).** Components smeared with different test functions "need not commute" (concentric radial test
+     functions can commute); the smeared quantum distribution includes vacuum fluctuations and is not by itself a statement about a renormalised
+     local rest-energy observable.
+103. **Wording. p. 324.** Pair-production thresholds are not "the edges of the gamma-ray horizon": the horizon is an optical-depth condition
+     that also needs the background spectrum, the cross section, the distance and cosmological evolution.
+104. **Wording. Closing paragraph (p. 331).** A length and a coupling would not by themselves make the angles and the rate predicted; the
+     dynamics and the states or boundary conditions that fix amplitudes, phases and clock orientations are needed as well.
+105. **Evidence. Check e7-26.** The archived output of e7-26 still compares the local galactic magnetic energy density with the cosmological
+     mean, the comparison that the text replaced by the local-with-local comparison of z5-1. The output will be corrected or marked as
+     superseded.
+106. **Attribution. Proposition 10.3 (p. 323).** The law f(t) = 2t is the eigenvalue law of a real Wishart matrix (N = 2, K = 3): Życzkowski and
+     Sommers, *J. Phys. A* 34 (2001) 7111, eq. (4.5). It should be presented as inherited; the electromagnetic reading is the arena's.
+
 ## Related work to be added (all chapters)
 
 The comparison of Chapter 14 will be extended to: two-time physics (I. Bars and collaborators); an SO(3,3) BF gauge theory on a
@@ -338,4 +375,6 @@ nonsupersymmetric SO(10), as the comparison for the radiative vacuum analysis; K
 exclusion of an electroweak-scale axion. For Chapter 8: Coleman, Wess and Zumino, and Callan, Coleman, Wess and Zumino (1969), for
 sigma models on homogeneous spaces and their gauging; Preskill (1991) on anomalies and massive anomalous gauge fields. For Chapter 9: Flanders and Wimmer (1977) for an invariant proof of Roth's theorem; Bravyi (2005) on
 quadratic fermion dynamics; Zusmanovich (2010) on current Lie algebras, which contain the truncated graded brackets of Proposition 9.36; and
-Alekseevsky and Cortés (1997) on invariant bilinear forms of spinor modules (Theorem 9.62).
+Alekseevsky and Cortés (1997) on invariant bilinear forms of spinor modules (Theorem 9.62). For Chapter 10: Fedderke, Graham and Rajendran (2019) on oscillating
+birefringence and its washout; Van Tilburg et al. (2015) on searches for oscillations with atomic clocks; and the ACT DR6 analysis of
+Diego-Palazuelos and Komatsu (2026), 0.215° ± 0.074°, with its authors' caution on systematics.
