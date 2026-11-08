@@ -1,7 +1,7 @@
 # Errata for version 1.0.0
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
-independent AI-assisted reviews of Chapters 1 to 10, and by an AI-assisted chapter-by-chapter
+independent AI-assisted reviews of Chapters 1 to 12, and by an AI-assisted chapter-by-chapter
 derivation check, and checked by the author. They will be corrected in version 1.0.1. Page numbers are
 the printed page numbers.
 
@@ -360,6 +360,82 @@ Added from the derivation check (5 November 2026):
 106. **Attribution. Proposition 10.3 (p. 323).** The law f(t) = 2t is the eigenvalue law of a real Wishart matrix (N = 2, K = 3): Życzkowski and
      Sommers, *J. Phys. A* 34 (2001) 7111, eq. (4.5). It should be presented as inherited; the electromagnetic reading is the arena's.
 
+## Chapter 11 — Curvature, Geometry and Gravitational Obstructions
+
+107. **Error. p. 339.** "In (11.1) every mixed Christoffel symbol vanishes on Σ" is false: on Σ, Γ^u_{zv} = A_z and Γ^v_{zu} = −A_z (for A = bx dz,
+     Γ^u_{zv} = bx); these are the normal connection coefficients. What vanishes are the symbols that mix E with N, so the conclusion that the
+     splitting TM = E ⊕ N is Levi-Civita parallel along Σ stands.
+108. **Wording. Proposition 11.14 and Figure 11.1 (pp. 338–339).** At the pure-Holst points the vacuum equations are not "empty": no equation for the
+     metric or coframe remains after the connection is eliminated, but the connection variation still gives DΣ = 0 and, for an invertible tetrad,
+     vanishing torsion.
+109. **Hypothesis. p. 339 and Table 11.1.** That the phase enters an effective four-fermion interaction assumes minimal coupling of the fermions
+     (Perez and Rovelli 2006); with a non-minimal coupling the Holst term can combine into the Nieh–Yan term and γ can drop out (Mercuri 2006).
+110. **Wording. Theorem 11.13 (p. 337).** The density normalisation and the variables varied should be stated. The theorem concerns the displayed
+     operator H(θ) = Ric − ½ sin²θ R g: since tr H = cos 2θ R, for cos 2θ ≠ 0 the equations H = 0 and Ric = 0 have the same solutions, and at
+     sin²θ = ½ the equation is the traceless (unimodular) one. It does not exclude other actions, constrained variations or equivalent
+     formulations of the vacuum equations.
+111. **Wording. §11.1 (p. 332).** "The para-complex structure need not be posited": 𝒦 is identified with the grading root once a pairing of
+     positive and negative directions is chosen; the pairing is not canonical given the neutral metric alone, and a global construction needs the
+     bundle reductions and spin assumptions stated.
+112. **Wording. Theorem 11.10 and Corollary 11.12.** ℛ ↦ e^{θG}ℛe^{θG} is a congruence, not a similarity, and is not a map between metrics or
+     solutions; the gradient of the Gauss–Bonnet density is taken with respect to the pairing Tr(AB).
+113. **Wording. Theorem 11.5, Corollary 11.6 and §11.4.** The wrong sign is relative to the adopted Einstein–Hilbert action and the stated
+     connection-metric ansatz, and integrating over a finite normal disc is not a consistent compactification (boundary terms and the
+     discarded equations are not treated). These hypotheses should appear in every summary of the result.
+114. **Wording. Example 11.8 (p. 335).** The radii should be written with |b| and |k| (or b > 0 fixed by orientation).
+115. **Wording. Example 11.17 (pp. 340–341).** A Maxwell term added by hand does not cure the wrong-sign term obtained from the ambient
+     Einstein–Hilbert action, and the positive norm of the angle mode does not make the projector sector stable (its trace form has signature
+     (3,3)). The two Stückelberg combinations of the chapter use opposite conventions, B = dχ − A with χ ↦ χ + λ (p. 335) and b = dθ + A with
+     θ ↦ θ − λ (p. 340); one convention, or the relation θ = −χ, should be stated.
+116. **Wording. Notation in Chapter 11.** B denotes the magnetic constant, the Stückelberg combination, a generic bivector and ½J_N; G the Hodge
+     star, the shift of Theorem 4.2 and G_N; Ω the para-Hermitian two-form and the spin connection; 𝒱 the volume element and the space of
+     curvature operators; T a tangent vector and the stress tensor; Q the Gauss–Bonnet functional.
+
+## Chapter 12 — Three Temporal Directions and Causal Reduction
+
+117. **Error. Theorem 12.12 (p. 350) and Proposition 12.16 (p. 352).** With the action ∫dτ (p·ẋ − NH − λ₁p_u − λ₂p_v), varying N gives H = 0, not
+     the mass shell 2H = m². The action should read ∫dτ (p·ẋ − N(H − m²/2) − λ₁p_u − λ₂p_v); the brackets and the gauge symmetry are unchanged.
+     Then dτ_h = |N|m dτ, the gauge N = 1/m needs m > 0, and reparametrisations are generated on shell by the total first-class Hamiltonian,
+     including the multipliers. The check c2-8 inserts the mass shell instead of deriving it; a test of the N-variation will be added.
+118. **Attribution. §12.6 (p. 353).** The statement that no proposal for a universal evolution parameter was found and that the concept is
+     introduced here as an original proposal is withdrawn. An invariant evolution parameter is the subject of Horwitz and Piron (1973), cited
+     in the same paragraph, and a universal parameter for many-body systems is stated in Horwitz, *Entropy* 22 (2020) 804. What may be specific
+     here is its relation to the clock reduction of this framework.
+119. **Error. §12.6, item (3).** If the action is not reparametrisation invariant, τ_U need not be a preferred time that breaks the Lorentz
+     algebra or SO(3,3): ∫dτ_U (p·dX/dτ_U − η^{AB}p_Ap_B/2M) is SO(3,3)-invariant with τ_U a scalar. A self-adjoint generator gives unitary
+     evolution in τ_U even when it is unbounded below, so unitarity and the existence of a ground state remain separate requirements.
+120. **Hypothesis. Theorem 12.4(iii) (p. 346).** The centraliser of dimension seven requires N nondegenerate: for the totally null plane
+     ⟨e₁+e₄, e₂+e₅⟩, C₀ = (e₁+e₄)(e₂+e₅) has C₀² = 0 and a nine-dimensional centraliser. The degenerate strata should be treated separately.
+121. **Hypothesis. After Theorem 12.6 (p. 348).** The Dirac current at three constituents is null on product states whose first factor is
+     chiral; for |000⟩ + |100⟩ in the first factor it is (2, 0, 0, 0), timelike. The check of the untwisted square in Theorem 12.6(iii) samples
+     the whole module and will be restricted to S⁺.
+122. **Wording. Closing paragraph (p. 355).** That a gauge mechanism "would make the would-be ghosts gauge … and remove the six flat ones" is a
+     research direction, not a result: the linearised gauge variation [ε, J] has rank eight, and the six so(1,3) directions are not among the
+     gauge directions. Likewise, the suggestion that positivity of the Hilbert-space norm fixes causal order is a conjecture.
+123. **Wording. After Proposition 12.2 (p. 345).** "Causal order … is absent" should read that the split metric supplies no canonical future cone
+     invariant under the connected group; a cone or order can be introduced by additional data.
+124. **Wording. Proposition 12.1 (p. 344).** Plane waves and a sin(qu) are not of finite norm on the noncompact Cauchy surface; the ill-posedness
+     argument should use wave packets concentrated at large surplus momentum, or a periodic box.
+125. **Wording. Proposition 12.7, Theorem 12.9 and Proposition 12.10 (pp. 348–350).** "No invariant potential can prefer (1,3) to (3,1)" holds for
+     invariant polynomials; smooth invariant functions can separate the two orientations, and the stronger obstruction is the orbit closure of
+     Theorem 12.9. The six modes of Theorem 12.9 are non-Goldstone flat directions (their vanishing masses are enforced by invariance and
+     stability). Proposition 12.10 concerns an unconstrained adjoint scalar with a factorised kinetic term, which should be stated.
+126. **Hypothesis. Corollary 12.14 and Theorem 12.15 (p. 351).** The reduced Hilbert space and the choice of positive frequencies should be
+     specified (constant functions of u, v are not normalisable). The vanishing of the mixed kernel follows from translation invariance in the
+     flat product; the rotating normal metric with general A is not translation invariant and needs the reduced operator itself. Theorem 12.15
+     concerns normal vectors obtained by the Einstein–Hilbert and Kaluza–Klein route, and its statement about spinless matter the
+     zero-normal-momentum sector.
+127. **Wording. Identifiers in the printed text (Chapters 3, 10, 12, 13, 15).** Codes such as CORE-07, X-03, TIME-08 and CLASS-08, and LAD-01,
+     LAD-04, PH-02, z1-1d in Chapter 15, refer to an internal review register that is not published; they will be removed from the printed text
+     or listed with one-line descriptions.
+128. **Evidence. Verification READMEs.** The READMEs of `ch04_rigid_body`, `ch06_chiral_matter`, `ch11_curvature_gravity` and `ch12_causality`
+     give paths that no longer exist (for example `verification/ch12_causal/…` for `verification/ch12_causality/…`, and helpers now in
+     `verification/common/` and `verification/tools/`). The scripts and the version 1.0.0 record are unaffected. Tests will be added for the
+     N-variation of item 117, the null centraliser of item 120 and a chiral sample at three constituents.
+129. **Wording. Notation in Chapter 12.** In Theorem 12.8, f is both the degree-eight function and a coefficient of the proof, beside e, g, m;
+     B denotes the order parameter, the Kaluza–Klein potentials and the magnetic field; C the selector and the constraint function; N the normal
+     plane and the lapse; n the null rotation and a lattice vector; K = ½e₁e₄ beside 𝒦 and the kernels.
+
 ## Related work to be added (all chapters)
 
 The comparison of Chapter 14 will be extended to: two-time physics (I. Bars and collaborators); an SO(3,3) BF gauge theory on a
@@ -377,4 +453,8 @@ sigma models on homogeneous spaces and their gauging; Preskill (1991) on anomali
 quadratic fermion dynamics; Zusmanovich (2010) on current Lie algebras, which contain the truncated graded brackets of Proposition 9.36; and
 Alekseevsky and Cortés (1997) on invariant bilinear forms of spinor modules (Theorem 9.62). For Chapter 10: Fedderke, Graham and Rajendran (2019) on oscillating
 birefringence and its washout; Van Tilburg et al. (2015) on searches for oscillations with atomic clocks; and the ACT DR6 analysis of
-Diego-Palazuelos and Komatsu (2026), 0.215° ± 0.074°, with its authors' caution on systematics.
+Diego-Palazuelos and Komatsu (2026), 0.215° ± 0.074°, with its authors' caution on systematics. For Chapter 11: Mercuri (2006) on non-minimal fermion coupling in the Holst
+action; Henneaux and Teitelboim (2005) on duality-invariant linearised gravity and (1989) on the unimodular formulation. For Chapter 12: Penrose
+(1960) on spinor coordinates of the null cone; Richardson and Slodowy (1990) and Jablonski (2012) for real orbits and invariants; Bars, Deliduman
+and Andreev (1998) on gauge constraints in two-time physics; Horwitz (2020) on a universal evolution parameter; and Dartora and Cabrera (2010),
+a split-signature six-dimensional Dirac model with local selection of a time direction, as prior art for the general architecture.
