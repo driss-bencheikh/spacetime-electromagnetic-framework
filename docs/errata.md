@@ -1,7 +1,7 @@
 # Errata for version 1.0.0
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
-independent AI-assisted reviews of Chapters 1 to 14 and 16, and by an AI-assisted chapter-by-chapter
+independent AI-assisted reviews of the abstract, the Introduction and Chapters 1 to 14 and 16, and by an AI-assisted chapter-by-chapter
 derivation check, and checked by the author. They will be corrected in version 1.0.1. Page numbers are
 the printed page numbers.
 
@@ -12,6 +12,46 @@ Otherwise a later chapter that uses an affected result uses it in a case where t
 Items are numbered in the order in which they were recorded and listed by chapter. Items are marked **Error** (a statement false as written), **Hypothesis** (a missing condition or domain restriction), **Wording**
 (imprecise or misleading phrasing), **Attribution** (a missing or incomplete reference) or **Evidence** (a proof or check weaker
 than the statement it supports).
+
+## Abstract and Introduction
+
+153. **Wording. Abstract.** Several statements need their scope: the imaginary unit is fixed up to sign under stated commutation requirements
+     with the chosen gamma matrices; "no equivariant map joins" the two readings means no nonzero Lorentz-equivariant linear intertwiner between
+     the specified modules; binding "only in neutral signature" and the unique rotor closure hold for the factorised shift model and within the
+     closure ansatz; the electric charge is identified at selected vacua and the anomaly is computed on the chosen matter block; selection results
+     hold for specified potentials and sectors while the global radiative claims are conjectural; "without a gravitational action" means that no
+     gravitational dynamics is derived (a Palatini–Holst action is adopted in Chapter 11); and the gauge principle removing the surplus times is
+     formulated for a test worldline. The keyword "computer-verified mathematics" overstates the evidence (Chapter 15). The abstract will be
+     rewritten in version 1.0.1.
+154. **Error. §I.1.2 (p. 11).** "The finite-dimensional statements are exact: every blade … is a signed permutation matrix, so products,
+     commutators, traces and ranks are integer computations" is false as a universal statement: linear combinations such as
+     (e₁+e₂+e₃)/√3, parameter-dependent spectra, minimisations and numerical ranks are not integer computations, and 169 of the 1389 checks are
+     numerical (Chapter 15).
+155. **Error. §I.2.4 (p. 16).** "Each section has a verification script … and a second, adversarial check script … exit with status zero only if
+     all pass" contradicts Chapter 15: two sections were refereed by reading only, no referee script exists for p1 and p2, and `p2_alignment.py`
+     has no exit statement (items 84, 144).
+156. **Wording. §I.1.3 (p. 11).** The gauging/grading dichotomy needs the restrictions of items 65 and 66. "At one constituent this centraliser is
+     the single bivector J, so the photon is not one symmetry of the interior structure but the only one", and "the electromagnetic u(1)", identify
+     the interior U(1) with the photon, which is not proved (item 67): a compact U(1) candidate still needs a connection, a kinetic term, a matter
+     coupling and physical degrees of freedom. "The kinetic forms alone fix the massless gauge algebra" is subject to item 8.
+157. **Wording. §I.1.3 (p. 12).** E₀ is the infimum of E₆ over boosts, attained for non-null fields only (item 130), and a field-point identity is not
+     a particle mass; the extension of the force law is unique within its ansatz; and "the quantum state space must be formed by complexifying
+     from outside" concerns the real CAR representation and observables constructed in Chapter 2 (item 9).
+158. **Wording. §I.1.3 (pp. 12–13).** The kernel decomposition is subject to item 53; the spectrum of the 271 angular modes holds within the adopted
+     leading-logarithm model (item 62); "an electroweak stage" (a given bidoublet value in the kernel model) and the electroweak-symmetric vacuum of
+     the projector model (Chapter 8) belong to different models, whose common realisation is not established; and numerics support, not locate,
+     the transition between the sufficient and necessary conditions.
+159. **Wording. §I.1.3 (p. 13).** Ill-posedness concerns unrestricted six-dimensional evolution (constrained ultrahyperbolic problems can be well
+     posed, Craig and Weinstein 2009); "no bounded-below invariant potential" means invariant polynomial, and "every invariant kinetic term"
+     the unconstrained adjoint-scalar ansatz (item 125); and the surplus-time constraints follow from a worldline gauge symmetry that is chosen,
+     not derived, and is shown for a test worldline only (Chapter 12).
+160. **Wording. §I.1.2 and §I.2.4.** The manuscript uses three classification schemes: four classes with three provenance labels (§I.1.2), six
+     classes (§I.2.4) and five link statuses (Chapter 13); they will be reconciled. The principle that a statement "carries information only if it
+     could have come out otherwise" is a requirement on physical claims (that they add a constraint beyond a change of notation or a freely chosen
+     embedding), not a definition of mathematical content.
+161. **Wording. §I.2 (pp. 14–16).** The second section restarts under the heading "The question" and gives the historical rest-energy hypothesis
+     prominence without saying at once what survived the tests (Chapter 13, §13.5); its dictionary entries (c² as a symmetric component, b as the
+     Yang–Mills field) are conjectural readings. It will be retitled as historical motivation and shortened.
 
 ## Chapter 1 — Split-Signature Clifford Geometry
 
@@ -537,4 +577,5 @@ action; Henneaux and Teitelboim (2005) on duality-invariant linearised gravity a
 (1960) on spinor coordinates of the null cone; Richardson and Slodowy (1990) and Jablonski (2012) for real orbits and invariants; Bars, Deliduman
 and Andreev (1998) on gauge constraints in two-time physics; Horwitz (2020) on a universal evolution parameter; and Dartora and Cabrera (2010),
 a split-signature six-dimensional Dirac model with local selection of a time direction, as prior art for the general architecture. For Chapters 13–16: Chamseddine, Connes and Marcolli (2007) for the coupling relation at the
-cut-off of the spectral action; Bär and Strohmaier (2019) for an index theorem on Lorentzian manifolds; Kaiser (2011), item 21.
+cut-off of the spectral action; Bär and Strohmaier (2019) for an index theorem on Lorentzian manifolds; Kaiser (2011), item 21. For Chapter 12 and the Introduction: Feynman, *Rev. Mod. Phys.* 20 (1948) 367, for the
+sum-over-histories motivation of the causal programme (motivation only), and Krasnov (2018) retained in the Introduction.
