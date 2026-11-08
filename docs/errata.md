@@ -1,7 +1,7 @@
 # Errata for version 1.0.0
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
-independent AI-assisted reviews of Chapters 1 to 12, and by an AI-assisted chapter-by-chapter
+independent AI-assisted reviews of Chapters 1 to 14 and 16, and by an AI-assisted chapter-by-chapter
 derivation check, and checked by the author. They will be corrected in version 1.0.1. Page numbers are
 the printed page numbers.
 
@@ -425,7 +425,8 @@ Added from the derivation check (5 November 2026):
      flat product; the rotating normal metric with general A is not translation invariant and needs the reduced operator itself. Theorem 12.15
      concerns normal vectors obtained by the Einstein–Hilbert and Kaluza–Klein route, and its statement about spinless matter the
      zero-normal-momentum sector.
-127. **Wording. Identifiers in the printed text (Chapters 3, 10, 12, 13, 15).** Codes such as CORE-07, X-03, TIME-08 and CLASS-08, and LAD-01,
+127. **Wording. Identifiers in the printed text (Chapters 3, 10, 12–16).** Codes such as CORE-07, X-03, TIME-08 and CLASS-08 (PH-07, PH-09 and
+     CORE-13 in Chapters 14 and 16), and LAD-01,
      LAD-04, PH-02, z1-1d in Chapter 15, refer to an internal review register that is not published; they will be removed from the printed text
      or listed with one-line descriptions.
 128. **Evidence. Verification READMEs.** The READMEs of `ch04_rigid_body`, `ch06_chiral_matter`, `ch11_curvature_gravity` and `ch12_causality`
@@ -435,6 +436,84 @@ Added from the derivation check (5 November 2026):
 129. **Wording. Notation in Chapter 12.** In Theorem 12.8, f is both the degree-eight function and a coefficient of the proof, beside e, g, m;
      B denotes the order parameter, the Kaluza–Klein potentials and the magnetic field; C the selector and the constraint function; N the normal
      plane and the lapse; n the null rotation and a lattice vector; K = ½e₁e₄ beside 𝒦 and the kernels.
+
+## Chapter 13 — Compatibility of the Mathematical Constructions
+
+130. **Error. §13.5 (pp. 363, 365–366) and Table 13.4.** "The minimum of E₆ over boosts, attained exactly in the rest frame" fails for nonzero null
+     fields, which have no rest frame: for E = (1,0,0), B = (0,1,0), E₀ = 0 while a boost along the propagation direction gives E₆ = e^{−2r} > 0 for
+     every finite rapidity. The correct statement is E₀ = inf over boosts of E₆, attained exactly at vanishing Poynting vector for non-null fields
+     and not attained for nonzero null fields (Theorem 3.95 states this correctly). Likewise E₀ classifies the Lorentz-and-duality orbits of
+     nonzero fields; the zero field is a separate orbit.
+131. **Error. §13.5 (p. 364).** "A field point with E₀ ≠ 0 keeps only {±1} of [the duality group]": under duality alone a nonzero field has trivial
+     stabiliser, since e^{πG}F = −F. The ℤ₂ is the stabiliser of the invariant q, or of the Lorentz orbit it labels, as the preceding paragraph says.
+132. **Hypothesis. §13.5 (pp. 363–365).** U(3) is the group of transformations that preserve E₆ and commute with G (Theorem 3.91); the full linear
+     symmetry group of E₆ is O(6). Within U(3) the real structure is preserved by O(3) and E₀ by U(1)·O(3).
+133. **Hypothesis. §13.6 and Table 13.5 (pp. 366–367).** The connection between manifolds of unequal rates is not removable while the rate matrix
+     is kept fixed; on an open interval of the worldline the gauge e^{−τb} removes it at the price of a time-dependent rate matrix, with
+     d/dτ K′ = [b, K] at τ = 0. That the rates are constant follows from the fixed-rate model, not from gauge invariance; closed worldlines need
+     a holonomy statement.
+134. **Error. §13.3, item (v) (p. 362).** The transported projector field Π(x) of Chapter 11 acts on the spinor module ℝ⁸, the observational
+     projection pr_n̂ on the vector space ℝ⁶; Π(x) is not its curved counterpart, and Chapter 11 shows that the two behave differently under
+     transport. They will be listed separately.
+135. **Wording. Figure 13.1 and Table 13.2 (p. 359).** The link "field-strength reading → charge and gauge geometry" marked established combines
+     a representation theorem of Chapter 3 with the charge identification of Chapter 8 without a map or common action between them; it should be
+     marked conditional, in line with the figure's stated rule of drawing the weakest status.
+136. **Wording. §13.5 (pp. 364–367).** Schur's lemma fixes the isotropic form C = c·1 of the conversion, not the value of c; for the explicit
+     Dirac mass, the three broken directions are directions of the mass orbit, not Goldstone excitations; and a linear copy z ↦ (z, z) of classical
+     field data is not forbidden by the no-cloning theorem, which concerns unknown quantum states (item 39).
+137. **Wording. Summaries in §§13.1–13.4.** The corrections of items 8, 22, 62, 65, 66 and 125 apply to their summaries here. In addition: §13.1.3
+     says the repair at the second rung costs "the whole internal algebra" (p. 357), while §13.4 (p. 362) correctly keeps the rotation of one
+     surplus pair; "the electroweak stage" means the analysis with a given bidoublet value (Proposition 7.35) on p. 357 and the missing breaking
+     mechanism on pp. 357, 359 and 362; and the gap between the sufficient and the necessary conditions of Chapter 7 is supported, not resolved,
+     by numerics.
+138. **Wording. Tables 13.2 and 13.3.** "The gauge action (45)" refers to equation (7.4). In the field-octant row of Table 13.3 the complex
+     structure entry "none" should say whether it means no additional choice, since the duality lift of Chapter 3 exists.
+
+## Chapter 14 — Comparison with Related Geometric Approaches
+
+139. **Error. §14.2 (p. 369).** An intertwiner between V_* and Krasnov's even forms does not require identifying a block of Cl(9,9) with Cl(7,7):
+     Cl(7,7) ≅ M₁₂₈(ℝ) has no nonzero module of dimension below 128, and the 64-dimensional half-spin space carries only the even part
+     Cl⁰(7,7) ≅ M₆₄(ℝ) ⊕ M₆₄(ℝ). What is needed is an invertible map intertwining the explicitly identified common generators, then a comparison
+     of the kinetic forms. The absence of the non-compact so(4,6) generators on V_* obstructs that ambient extension only.
+140. **Error. §14.2 (p. 369).** Dropping a positive four-plane from (9,9) leaves signature (5,9), not (7,7); an orthogonal complement of signature
+     (7,7) requires removing a (2,2)-plane.
+141. **Wording. §14.2 (p. 369).** SO(4) × SO(6) is the Pati–Salam group only as Lie-algebra shorthand: Spin(4) ≅ SU(2) × SU(2), Spin(6) ≅ SU(4), and
+     on the family (4,2,1) ⊕ (4̄,1,2) the faithful group is (SU(4) × SU(2)_L × SU(2)_R)/ℤ₂.
+142. **Attribution. §14.3 (pp. 369–370).** The selection of 𝒜_F in Chamseddine and Connes also uses the condition [D, Z(𝒜)] ≠ 0 and maximality
+     among the admissible subalgebras of 𝒜^ev (Why the Standard Model, §4); the order-one condition alone is vacuous at D = 0.
+143. **Wording. §14.4.** The novelty labels should separate the graded tensor-product identity, standard centraliser computations, the count
+     2 dim_ℂ Sym²(ℂ¹⁶) = 272 and the energy–inertia identities (Kaiser 2011, item 21) from the explicit realisations, projectors, obstructions and
+     coefficient-dependent selections; a universal evolution parameter keeps its Horwitz–Piron comparison (item 118).
+
+## Chapter 15 — AI-Assisted Research and Verification Methodology
+
+144. **Wording. §15.2 (p. 373).** "Exits with status zero only if every check passes" is not true of `p2_alignment.py` until the fix of item 84.
+145. **Wording. §15.2 (p. 374).** "Fifty referee findings … none rejected, and no theorem refuted" describes the internal review step of the rest-energy
+     scripts; the external reviews later found false statements in the same chapters (for example items 22 and 86–88).
+146. **Wording. §15.2.3 (p. 375).** "The review adjudications of Chapter 13": Chapter 13 contains no review adjudications; the reference should be
+     replaced (see item 127).
+
+## Chapter 16 — Conclusions and Open Mathematical Problems
+
+147. **Error. §16.4 (p. 379).** sin²θ_W = 3/8 does not follow from the charge content: with the same charges, g_Y = g₂ gives 1/2. The value 3/8
+     needs g_Y² = (3/5)g₂² (equal normalised couplings g₁ = g₂) at a stated scale; the traces Tr Y² = 10/3 and Tr (T³_L)² = 2 per family give the
+     ratio only under a common kinetic normalisation. Chapter 14 states this correctly.
+148. **Error. §16.3, item (5), and the next steps (p. 378).** An index is a signed count of zero modes, not a spectrum: on flat four-tori the index
+     is zero while the eigenvalues depend on the radii. A Lorentzian Dirac operator is not elliptic, so the base, signature, bundles, domain and
+     boundary conditions must be specified before an index theorem applies (for example Bär and Strohmaier 2019); the spectrum is a separate
+     problem.
+149. **Wording. §16.3, item (4), and the next steps (p. 378).** No finiteness of the relevant embeddings has been proved, so the "finite search"
+     is not yet a decision procedure; and an algebraic answer would not by itself settle a shared physical theory, which also needs compatible
+     dynamics.
+150. **Wording. §16.2, items (5)–(7) (p. 377).** The four objections to the normal U(1) concern different models and should be attributed each
+     to its own; the scalar no-go concerns an unconstrained adjoint scalar with an invariant bilinear kinetic term (item 125); ill-posedness concerns
+     unrestricted ultrahyperbolic data (Craig and Weinstein treat constrained evolution); and the failure of the Ricci–DeTurck method is not the
+     non-existence of every split-signature flow.
+151. **Wording. §16.4 (p. 378).** "The arena is derived" should read that the arena is chosen and its consequences derived. A theorem need not
+     remove a choice without adding another to be new mathematics; reducing the independent choices is the programme's aim, not a definition.
+152. **Attribution. §16.1, items (2) and (6) (pp. 376–377), and §13.1.1 (p. 357).** The reductive dual pair and the identity
+     C_cop + C_Δ = ½n(n+2) are inherited (Howe 1989; Neergård 2019, item 33) and should be marked so in these summaries; the explicit complex
+     structure of the kernel space is the corrected 𝒞̃ of item 53.
 
 ## Related work to be added (all chapters)
 
@@ -457,4 +536,5 @@ Diego-Palazuelos and Komatsu (2026), 0.215° ± 0.074°, with its authors' cauti
 action; Henneaux and Teitelboim (2005) on duality-invariant linearised gravity and (1989) on the unimodular formulation. For Chapter 12: Penrose
 (1960) on spinor coordinates of the null cone; Richardson and Slodowy (1990) and Jablonski (2012) for real orbits and invariants; Bars, Deliduman
 and Andreev (1998) on gauge constraints in two-time physics; Horwitz (2020) on a universal evolution parameter; and Dartora and Cabrera (2010),
-a split-signature six-dimensional Dirac model with local selection of a time direction, as prior art for the general architecture.
+a split-signature six-dimensional Dirac model with local selection of a time direction, as prior art for the general architecture. For Chapters 13–16: Chamseddine, Connes and Marcolli (2007) for the coupling relation at the
+cut-off of the spectral action; Bär and Strohmaier (2019) for an index theorem on Lorentzian manifolds; Kaiser (2011), item 21.
