@@ -6,8 +6,11 @@ version: "1.0.1"
 date-released: "2026-11-08"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.24087606"
+    description: "DOI of version 1.0.1"
+  - type: doi
     value: "10.5281/zenodo.23900465"
-    description: "DOI of version 1.0.0; version 1.0.1 receives its own DOI when it is deposited"
+    description: "DOI of version 1.0.0"
 license:
   - CC-BY-4.0
   - MIT
