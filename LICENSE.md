@@ -15,5 +15,5 @@ Notes.
   scripts import (NumPy, SciPy, SymPy, mpmath) and the TeX Live packages used to build the PDF are installed separately under their own
   licences.
 - Attribution for CC BY 4.0: *Driss Bencheikh, “The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in
-  Split-Signature Clifford Geometry”, version 1.0.0 (preprint, not peer reviewed), 2026, doi:10.5281/zenodo.23900465*, with an indication of any
+  Split-Signature Clifford Geometry”, version 1.0.1 (preprint), 2026, doi:10.5281/zenodo.24087606*, with an indication of any
   changes.

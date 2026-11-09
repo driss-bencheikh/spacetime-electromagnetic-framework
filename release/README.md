@@ -1,11 +1,11 @@
-# Version 1.0.1 — Preprint, not peer reviewed
+# Version 1.0.1 — Preprint
 
 `manuscript-v1.0.1.pdf` — *The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature
 Clifford Geometry*, Driss Bencheikh (Independent Researcher). 428 pages: title, abstract and keywords, contents, introduction with
 notation and dependency map, Chapters 1–16, Appendices A–E (Appendix D: verification and reproducibility), bibliography (326 entries).
 Prepared 8 November 2026. `manuscript-v1.0.0.pdf`, the first version, is kept unchanged.
 
-- **Status:** preprint, not peer reviewed.
+- **Status:** preprint.
 - **What changed:** the issues listed in `docs/errata.md` are corrected (all items; items 59 and 60 by new exact checks). In particular:
   - errors, missing hypotheses, imprecise wording and missing attributions are corrected in every chapter;
   - a new abstract and a new opening of the Introduction; the rest-energy hypothesis is presented as historical motivation, with what
@@ -27,11 +27,11 @@ Prepared 8 November 2026. `manuscript-v1.0.0.pdf`, the first version, is kept un
   differ.
 - **DOI:** version 1.0.1: [10.5281/zenodo.24087606](https://doi.org/10.5281/zenodo.24087606); version 1.0.0: [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (Zenodo records).
 - **Cite as:** Driss Bencheikh, *The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in
-  Split-Signature Clifford Geometry*, version 1.0.1, preprint (not peer reviewed), 2026.
+  Split-Signature Clifford Geometry*, version 1.0.1, preprint, 2026.
 - **Source:** `manuscript/main.tex` in the same commit as this file. Build from `manuscript/` with
   `pdflatex main && bibtex main && pdflatex main && pdflatex main` (TeX Live 2023, pdfTeX 1.40.25).
 - **Build checks:** no undefined references or citations; no overfull boxes. Embedded PDF metadata: title, author, subject
-  ("Version 1.0.1. Preprint, not peer reviewed"), keywords.
+  (version and status), keywords.
 - **Verification:** 66 scripts, 1405 checks (1234 exact, 171 numerical), all PASS in `reproducibility/selected-results/v1.0.1/`.
 - **SHA-256:** `c0e86ccf9a4aa180e823d5d17fb0bddf857ec16648e0e5e0e78239a15ca3d7a2` (3 413 923 bytes). A rebuild changes the embedded creation date and therefore the checksum.
 - **Licence:** CC BY 4.0 (`LICENSE-CC-BY-4.0.txt`); the verification software is under MIT. See `LICENSE.md`.

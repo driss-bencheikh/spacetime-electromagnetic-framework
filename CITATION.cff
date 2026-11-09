@@ -22,7 +22,7 @@ repository-code: "https://github.com/driss-bencheikh/spacetime-electromagnetic-f
 abstract: >-
   A study of the real Clifford algebra Cl(3,3) of the split space R^{3,3} and its graded tower Cl(3n,3n): which ingredients of
   relativistic field theory the algebra fixes, which it admits and which it obstructs, with a complete computational verification package.
-  Version 1.0.1 (corrections of version 1.0.0), preprint, not peer reviewed. Manuscript and documentation under CC BY 4.0; verification software under MIT
+  Version 1.0.1 (corrections of version 1.0.0), preprint. Manuscript and documentation under CC BY 4.0; verification software under MIT
   (see LICENSE.md).
 keywords:
   - split-signature Clifford algebra
@@ -43,5 +43,5 @@ preferred-citation:
   status: preprint
   version: "1.0.1"
   year: 2026
-  notes: "Preprint, not peer reviewed."
+  notes: "Preprint."
   url: "https://github.com/driss-bencheikh/spacetime-electromagnetic-framework"
