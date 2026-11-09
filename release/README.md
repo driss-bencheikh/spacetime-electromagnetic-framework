@@ -25,8 +25,7 @@ Prepared 8 November 2026. `manuscript-v1.0.0.pdf`, the first version, is kept un
 - **Numbering:** theorem, proposition, lemma, corollary, definition, example, remark, table and figure numbers are those of version 1.0.0;
   Figure 13.2 is new, Section D.7 and Tables D.1–D.2 are removed; Sections 14.2–14.4 of version 1.0.0 are now 14.3, 14.4 and 14.6; equations (7.6)–(7.7) are now (7.7)–(7.8). Page numbers
   differ.
-- **DOI:** version 1.0.0: [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (Zenodo record). Version 1.0.1 receives its
-  own DOI when it is deposited.
+- **DOI:** version 1.0.1: [10.5281/zenodo.24087606](https://doi.org/10.5281/zenodo.24087606); version 1.0.0: [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465) (Zenodo records).
 - **Cite as:** Driss Bencheikh, *The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in
   Split-Signature Clifford Geometry*, version 1.0.1, preprint (not peer reviewed), 2026.
 - **Source:** `manuscript/main.tex` in the same commit as this file. Build from `manuscript/` with

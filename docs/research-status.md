@@ -1,6 +1,6 @@
 # Research status (version 1.0.1)
 
-**Status: preprint, not peer reviewed.** Version 1.0.1, prepared 8 November 2026, corrects version 1.0.0 (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465), Zenodo record); the corrections are listed in [`errata.md`](errata.md) and [`../release/README.md`](../release/README.md). This is a mathematical research
+**Status: preprint, not peer reviewed.** Version 1.0.1, prepared 8 November 2026, DOI [10.5281/zenodo.24087606](https://doi.org/10.5281/zenodo.24087606), corrects version 1.0.0 (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)); the corrections are listed in [`errata.md`](errata.md) and [`../release/README.md`](../release/README.md). This is a mathematical research
 manuscript; it is **not** a completed unified physical theory, and it claims no experimental confirmation.
 
 ## What the manuscript establishes (mathematically)
