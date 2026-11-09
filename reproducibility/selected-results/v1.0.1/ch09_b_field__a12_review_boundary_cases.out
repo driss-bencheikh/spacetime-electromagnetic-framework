@@ -1,0 +1,3 @@
+PASS a12-1: along z(t) = (1, i+t, 0), z.z = t^2 + 2it and E_0 = |t| sqrt(t^2+4)/2: the one-sided derivatives at the null field t = 0 are -1 and +1, so E_0 is not smooth there, while E_0^2 = (t^4 + 4t^2)/4 is a polynomial (exact)
+PASS a12-2: so(3): tr(J^2) = -2 and tr((2J)^2) = -8, so J and 2J are not conjugate; a rotation taking e_1 to e_2 conjugates J(e_1) to J(e_2): the Cartan directions, not all elements, are conjugate (exact)
+PASS a12-3: rates (1,2,3): the lower central series of the frame has real dimensions [18, 6, 0] for (a, b) = (1, 0), with V_3 central and decoupled, against [18, 12, 6, 0] for (a, b) = (1, 1), the truncated current algebra; not every resonant coefficient choice is the standard truncation (exact)

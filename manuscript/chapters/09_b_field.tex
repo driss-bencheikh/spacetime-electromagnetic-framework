@@ -6,10 +6,15 @@ shift and the gauge transport of the two energies, the $b$-field between manifol
 constituents, the $b$-field on the temporal triple with $c$ on the spatial triple, and, in \cref{sec:ladder}, the ladder table and what changes
 up the ladder. The connection part of the shift splits the binding (its part commuting with $G$) or destabilises it (its anticommuting part),
 and never creates it. A compact field between constituents is a one-body operator: it moves quanta and keeps their number, so it does not
-take one particle to two. It is removable between equal rates and physical exactly between unequal ones, and it changes no rate. From three
+take one particle to two. It is removable between equal rates and, with the prescribed binding tensor kept fixed, non-removable exactly between unequal ones, and it changes no rate. From three
 constituents it carries time-odd plaquette invariants. Copy isospin is integral at two and three constituents under a common Lorentz action;
 doublets appear from four. The algebra is proved and checked. Reading a rate as a mass, $mc^2=\hbar\kappa$, is an identification, and reading the
 plaquette as CP violation is an analogy; neither is a result.
+
+Several letters carry more than one meaning in this chapter, each fixed by its context: $b$ is an index and the connection; $S_n$ is the spinor
+module and, in \cref{e6:thm:ladder}, the spatial volume; $N$ is the number operator, the inertias $N_k$ and a nilpotent part; $H$ is the Noether
+energy, the copy Hamiltonian and the operator $\mathsf H$; $C$ is the conversion, the copy rotations $C_\pm$, $C^{kl}$, $\hat C$, $C_v$, $C_b$ and a complex
+symmetric matrix; and $M$ is the phase-space generator and a mass.
 
 % --- source: tex/s17c_bfield#0 ((head))
 
@@ -108,8 +113,9 @@ $b^\dagger=-b$ gives the symmetry types. The Killing form of $\so{3,3}$ is $4\Tr
 This is fixed; the description of $\lG$ restates \cref{thm:GLorentz}. The pairing boosts that tear the binding at a threshold in \cref{prop:tear}
 are anticommuting, and so is the grading root.
 
-\paragraph{Gauge admissibility.} By \cref{thm:sig} and \cref{cor:noboost}, a Yang--Mills potential with a positive kinetic term takes values in
-the compact part $\so3\oplus\so3$ of $\so{3,3}$, spanned by the $R_{ab}$ with $a,b$ in the same triple. On the two triples,
+\paragraph{Gauge admissibility.} A gauge-admissible potential is compact in the sense fixed after \cref{cor:noboost}: its generators are
+unitary for a positive form on the module (\cref{thm:sig}). It therefore takes values in the compact part $\so3\oplus\so3$ of $\so{3,3}$, spanned
+by the $R_{ab}$ with $a,b$ in the same triple. On the two triples,
 \begin{equation}
 \label{bf:eq:compact}
 b=\operatorname{diag}(A+D,\,A-D),\qquad A=[\mathbf a]_\times,\quad D=[\mathbf d]_\times,
@@ -153,7 +159,7 @@ $\eta$-null space.
 
 \begin{proof}
 $M$ is semisimple if and only if $-S$ (its restriction to $\pi=0$) and $S^\dagger$ (the induced map on the quotient) are semisimple and $M$ is
-similar to $\operatorname{diag}(-S,S^\dagger)$, which by Roth's theorem \cite{Roth52} means that $-S\Xi-\Xi S^\dagger=-\id/m$ is solvable. With
+similar to $\operatorname{diag}(-S,S^\dagger)$, which by Roth's theorem \cite{Roth52} (for an invariant proof see \cite{FlandersWimmer77}) means that $-S\Xi-\Xi S^\dagger=-\id/m$ is solvable. With
 $-S=F_1\Lambda_1F_1^{-1}$ and $S^\dagger=F_2\Lambda_2F_2^{-1}$ diagonal, this holds if and only if $(F_1^{-1}F_2)_{ij}=0$ whenever
 $(\Lambda_1)_i=(\Lambda_2)_j=:\mu$. A row $r^{\!\top}$ of $F_1^{-1}$ with eigenvalue $\mu$ has $S^{\!\top}r=-\mu r$, and $S^{\!\top}=\eta S^\dagger\eta^{-1}$
 puts $\eta^{-1}r$ in $\mathcal E_{-\mu}(S^\dagger)$; the condition is $r^{\!\top}y=\eta(\eta^{-1}r,y)=0$ for $y\in\mathcal E_\mu(S^\dagger)$. (ii) A linear
@@ -197,8 +203,8 @@ $G^\dagger=G$ and $[b,G]=0$.
 $w\cdot w>0$. The frequencies are then $\kappa$ and $|\kappa\pm s|$ with $s=\sqrt{w\cdot w}$. For $w\cdot w=0\neq w$ the zero-momentum flow grows
 like $\tau^2$; for $w\cdot w\notin[0,\infty)$ it grows exponentially. For a gauge-admissible $b$, $w=\mathbf a$ is real and every solution is bounded.
 \item For the rotation $b=\beta(R_{12}-R_{45})=-\beta L_3$ the spectrum of $M$ is $\pm i\kappa$, $\pm i(\kappa+\beta)$, $\pm i(\kappa-\beta)$, each
-double. For the boost $b=\beta K_3$ the exponents are $\pm\beta\pm i\kappa$: complex rather than real, so the orbits spiral outward at the binding
-frequency. The growth is the boost factor $e^{-\beta K_3\tau}$ of \cref{bf:larmor}, and $K_3$ is not a gauge generator (\cref{cor:noboost}).
+double. For the boost $b=\beta K_3$ the exponents are $\pm\beta\pm i\kappa$, together with $\pm i\kappa$ from the factor $\lambda^2+\kappa^2$ of (ii): complex
+rather than real, so the orbits spiral outward at the binding frequency. The growth is the boost factor $e^{-\beta K_3\tau}$ of \cref{bf:larmor}, and $K_3$ is not a gauge generator (\cref{cor:noboost}).
 \end{enumerate}
 \end{theorem}
 
@@ -294,6 +300,11 @@ $\eta(X_0,X_0)=-2|\mathbf d|^2|\mathbf n|^2/\kappa^2\neq0$, and some solutions d
 For $\mathbf a=0$ and $\mathbf d\neq0$, \cref{bf:pG} applies.
 \end{theorem}
 
+Bounded motion is not robust under compact perturbations: the necessary condition $\mathbf a\cdot\mathbf d=0$ of (i) has codimension one in the
+six-dimensional space of compact connections. For $\kappa=1$, $\mathbf a=(0,0,2)$ and $\mathbf d=(1,0,\epsilon)$ one has $\tr\bigl(\eta(S^\dagger)^2\bigr)=-8\,\mathbf a\cdot\mathbf d=-16\epsilon$,
+and $M$ is not semisimple at $\epsilon=\tfrac1{10}$ although $S$ is real antisymmetric. A physical model has to explain what restricts the connection to
+this set.
+
 \begin{proof}
 $S=b+\kappa G$ is real antisymmetric, since $b$ and $G$ are; so $S$ and $S^\dagger=-\eta S\eta=-b+\kappa G$ are normal with imaginary spectrum, and
 by \cref{bf:criterion} the motion is bounded if and only if $P_\mu\eta P_\mu=0$ for the orthogonal spectral projectors $P_\mu$ of $S^\dagger$.
@@ -330,8 +341,9 @@ $\Sigma=\bigl(\begin{smallmatrix}y_1&y_2&0\\y_2&-y_1&0\\0&0&0\end{smallmatrix}\b
 \]
 If $\alpha\neq0$ and $r<\min(|\kappa-\alpha|,|\kappa+\alpha|)$, every solution is bounded; for $\alpha=0$ and for $|\kappa-\alpha|<r<|\kappa+\alpha|$ some
 are not. Numerically, near bounded points at which the five conditions of the proof are independent, the set of $b\in\so{3,3}$ with all motion
-bounded is a $10$-dimensional submanifold; at the tested points of $\lG$ and of this family the conditions are degenerate, so these points lie on
-its singular locus.
+bounded appears to be a $10$-dimensional submanifold, and at the tested points of $\lG$ and of this family the conditions are degenerate. Both
+statements rest on finite-difference Jacobian ranks, and rank loss of a defining map does not by itself make its zero set singular (as for
+$x^2=0$); they are numerical observations until an exact rank and local-geometry argument is given.
 \end{proposition}
 
 \begin{proof}
@@ -784,15 +796,17 @@ orthogonal for the bilinear form, so at zero rates the orbits are unbounded for 
 Let $n=2$ and $b=\beta'\varepsilon\otimes G$, so that $H=K+\beta'\varepsilon$ on the copy index (\cref{d7:thm:schr}(i)), real and not symmetric. Its eigenvalues are
 $\tfrac12(\kappa_1+\kappa_2)\pm\sqrt{\tfrac14(\kappa_1-\kappa_2)^2-\beta'^2}$.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item Below the exceptional point, $|\beta'|<\tfrac12|\kappa_1-\kappa_2|$, the spectrum is real, $M$ is semisimple with imaginary spectrum, and every orbit
-is bounded. The flow then preserves a positive form $z^\dagger\mathcal Qz$ with $H^\dagger\mathcal Q=\mathcal QH$, which is not $E_6$.
-\item At $|\beta'|=\tfrac12|\kappa_1-\kappa_2|$, $M$ is not semisimple; above it, $M$ has eigenvalues with real part $\pm\sqrt{\beta'^2-\tfrac14(\kappa_1-\kappa_2)^2}$.
+\item Below the exceptional point, $|\beta'|<\tfrac12|\kappa_1-\kappa_2|$, and provided $\kappa_1\kappa_2+\beta'^2>0$, the spectrum is real, $M$ is semisimple with
+imaginary spectrum, and every orbit is bounded. The flow then preserves a positive form $z^\dagger\mathcal Qz$ with $H^\dagger\mathcal Q=\mathcal QH$, which for
+$\beta'\neq0$ is not $E_6$. (At $(\kappa_1,\kappa_2,\beta')=(0,1,0)$ the first copy is free and $M$ is not semisimple.)
+\item At $|\beta'|=\tfrac12|\kappa_1-\kappa_2|$ with $\beta'\neq0$, $M$ is not semisimple (at $\beta'=0$ and $\kappa_1=\kappa_2>0$ the copies are uncoupled
+oscillators and $M$ is semisimple; at $\kappa_1=\kappa_2=\beta'=0$ the motion is free and $M$ has nilpotent Jordan blocks); above it, $M$ has eigenvalues with real part $\pm\sqrt{\beta'^2-\tfrac14(\kappa_1-\kappa_2)^2}$.
 \item At equal rates the threshold is zero: every $\beta'\neq0$ grows exponentially, although $b$ commutes with $K\otimes G$ and is removable, by a
 boosted frame $e^{-b\tau}$ that is itself unbounded.
 \end{enumerate}
 \end{proposition}
 
-This is fixed, checked exactly at rates $(1,4)$ with $\beta'=\tfrac12,1,\tfrac32,2$, and at $(2,2)$ with $\beta'=\tfrac13$ (d7-4a, d7-4b). Its threshold is the
+This is fixed, checked exactly at rates $(1,4)$ with $\beta'=\tfrac12,1,\tfrac32,2$, and at $(2,2)$ with $\beta'=\tfrac13$ (d7-4a, d7-4b); the boundary cases at $\beta'=0$, rates $(1,1)$ and $(0,0)$, are d7-4c. Its threshold is the
 copy analogue of the homogeneous threshold of the pairing boosts of \cref{prop:tear}, with the rate difference
 $\tfrac12|\kappa_1-\kappa_2|$ in the place of $\kappa$. The analogy stops there. A pairing boost anticommutes with $G$ and gives Jordan blocks for
 every $\nu\neq0$, below the threshold as well (\cref{bf:pG}(iii)), whereas the copy boost commutes with $G_2$ and keeps every orbit bounded
@@ -836,8 +850,9 @@ The statements are fixed. Their pattern is inherited three times over. With two 
 there is one, the Kobayashi--Maskawa phase \cite{KobayashiMaskawa73}, whose invariant measure is Jarlskog's commutator determinant
 \cite{Jarlskog85}, the form of (ii). A purely imaginary hopping around a triangle is a flux $\pm\pi/2$ through the plaquette, the Peierls phase
 \cite{Peierls33} of a lattice gauge field. And time-reversal-odd hopping makes a quantum walk chiral \cite{Zimboras13}. What the arena adds is
-the identification. The copy field is an $\eta$-compatible gauge field on the three-site ``lattice'' of manifolds, with $\plaq $ its Wilson loop. Its
-phase is fixed at $\pm\pi/2$ because the field is real, $H_{kl}=-iB_{kl}$. Like any Wilson loop it is unchanged by per-copy duality rotations, which multiply each $H_{kl}$ by a phase and are in any case not $\eta$-isometries
+the identification. The copy field is an $\eta$-compatible connection on the three-site ``lattice'' of manifolds in copy space, with $\plaq $ its
+holonomy around the triangle, the copy-space analogue of a Wilson loop; it is not the Wilson loop of a spacetime connection, and its sign is not
+by itself a physical CP phase (\cref{e4:thm:cycles}). Its phase is fixed at $\pm\pi/2$ because the field is real, $H_{kl}=-iB_{kl}$. Like a Wilson loop it is unchanged by per-copy duality rotations, which multiply each $H_{kl}$ by a phase and are in any case not $\eta$-isometries
 (Proposition~\ref{cl:norel}(ii)). On one manifold the binding is odd under parity and even under interior time reversal. At two manifolds the
 copy field is even under both, up to relabelling. From three on, a field whose couplings close a triangle is odd under interior time reversal,
 and no relabelling removes it.
@@ -1045,6 +1060,12 @@ $(B_{12},B_{23},B_{31})=(\tfrac12,\tfrac13,\tfrac15)$, and the additivity on $\{
 as in \cref{e2:prop:hop}(iii). Under $z\mapsto\sum_pz_pa^+_p|0\rangle$ the one-quantum sector of $e^{-i\mathsf Ht}$ is the frame flow $z(t)=e^{-iHt}z(0)$ of
 \cref{d7:thm:schr}(i).
 
+Quadratic fermion dynamics of this kind is standard \cite{Bravyi05}. Nonnegative rates do not make $H$ positive: for the bounded seesaw example,
+rates $(0,3,5)$ and couplings $(1,\tfrac12,\tfrac13)$, $H$ has the eigenvalue $-0.326115$, so the empty state is not the lowest state of
+$\mathsf H=\mathcal N(H)$, which is bounded below with its negative modes filled. This exterior-algebra model is distinct from the canonical bosonic
+system of \cref{bf:krein} and is not its quantisation; the removability of $b$ refers to removing it while keeping the prescribed constant binding
+tensor.
+
 \begin{corollary}[Transfer, not creation]
 \label{e4:cor:transfer}
 Let $b$ be a compact element of $\Cent(G_n)\cap\so{3n,3n}$, the class of gauge-admissible fields between the constituents (\cref{d7:thm:schr}(ii); \cref{cor:noboost}).
@@ -1072,7 +1093,7 @@ when the copy rotation is gauged, as \cref{e2:prop:hop} found at $n=2$. How many
 Pair creation across constituents needs a copy boost, which is a metric connection and not a gauge field (\cref{d7:prop:boost}).
 Because $\mathsf H$ is one-body, its many-quantum lines carry no interaction energy. The field mixes quanta; it does not bind them. This is a
 statement about the number-preserving one-body class $\mathcal N(H)$ (the second quantisation $d\Gamma(H)$); it says nothing about extensions
-of the framework with two-body terms, which are not constructed here (LAD-07).
+of the framework with two-body terms, which are not constructed here.
 
 % --- source: emergence/e4_bfield_ladder#3 (Time-odd invariants on n constituents)
 \subsection{\texorpdfstring{Time-odd invariants on $n$ constituents}{Time-odd invariants on n constituents}}
@@ -1121,7 +1142,7 @@ families of quarks \cite{KobayashiMaskawa73,BrancoLavouraSilva99} (inherited). H
 constant copy connection around the triangles of the complete graph of constituents. These are discrete holonomies in copy space, not Wilson
 loops of a spacetime gauge field, and ``time-odd'' refers to the interior time reversal $(K,B)\mapsto(K,-B)$. The comparison with quark mixing
 is a count of phases only: no mixing matrix between mass and interaction states, no CP operation on a state space and no gauge connection on
-spacetime is specified, so the signs are not shown to be physical CP violation (LAD-07).
+spacetime is specified, so the signs are not shown to be physical CP violation.
 
 \begin{remark}[Couplings that vanish]
 \label{e4:rem:graphs}
@@ -1289,7 +1310,8 @@ $\omega_k$ are the rates. With a copy field, $A$ acts on $z$ as $iH$, and the co
 \item The real bilinear maps $V\times V\to V$ equivariant under $\lG$ form the two-dimensional space spanned by $\beta_0$ and $G\beta_0$, and all of them
 are antisymmetric. The equivariant antisymmetric brackets on $V_n$ are the maps above, a space of real dimension $n^2(n+1)=12,36,80$ for $n=2,3,4$.
 \item $A=K\otimes G$ is a derivation of the bracket iff $\Gamma^k_{ij}=0$ unless $\kappa_k=\kappa_i+\kappa_j$. The rotor-compatible brackets have real dimension
-$0$, $0$, $2$ for rates $(1,1)$, $(1,3)$, $(1,2)$; $0$, $4$, $0$, $4$ for $(1,1,1)$, $(1,2,3)$, $(1,3,5)$, $(1,2,4)$; and $8$ for $(1,2,3,4)$. For the
+$0$, $0$, $2$ for rates $(1,1)$, $(1,3)$, $(1,2)$; $0$, $4$, $0$, $4$ for $(1,1,1)$, $(1,2,3)$, $(1,3,5)$, $(1,2,4)$; and $8$ for $(1,2,3,4)$. These count the
+resonant coefficients; for $(1,2,3,4)$ the Jacobi identity ($ad=bc$, item (v)) leaves a bracket variety of real dimension $6$. For the
 harmonic ladder $\kappa_k=k$ the dimension is $2\sum_{k\le n}\lfloor k/2\rfloor=2,4,8,12,18$ for $n=2,\dots,6$.
 \item Rates $(1,2,3)$. The rotor-compatible brackets are $[X,Y]_2=a\,\beta_0(X_1,Y_1)$, $[X,Y]_3=b\,(\beta_0(X_1,Y_2)+\beta_0(X_2,Y_1))$, $(a,b)\in\C^2$. Every one of them
 satisfies the Jacobi identity. For $ab\neq0$ the frame is a nilpotent Lie algebra $V_1\oplus V_2\oplus V_3$, graded by the rate and generated by $V_1$, with
@@ -1308,7 +1330,7 @@ $A$ acts as $i\kappa_k$ on copy $k$, and the bracket is complex bilinear, so $A[
 $\kappa_k=k$ the pairs $i\le j$ with $i+j=k$ number $\lfloor k/2\rfloor$. (iii) The only composite is $[[X,Y]_2,Z]_3$, so the Jacobiator is
 $ab\sum_{\rm cyc}\beta_0(\beta_0(X_1,Y_1),Z_1)$, which vanishes by the Jacobi identity of the complex cross product, the bracket of $\so{3,\C}$.
 $\beta_0(V_1,V_1)=V_2$ and $\beta_0(V_1,V_2)=V_3$ for $ab\neq0$. The Jacobiator is trilinear and alternating, and inputs of rates $r_1,r_2,r_3$ give an output of rate $r_1+r_2+r_3$, so each of its components is fixed
-by inputs whose rates add to the target rate. (iv) The only composite is $[[X,Y]_2,Z]_3=ab\,\beta_0(\beta_0(X_1,Y_1),Z_2)$, with inputs of rates $1,1,2$. For $X,Y\in V_1$ and $Z\in V_2$
+by inputs whose rates add to the target rate; for $a\neq0=b$ the series is $18,6,0$ (a12-3). (iv) The only composite is $[[X,Y]_2,Z]_3=ab\,\beta_0(\beta_0(X_1,Y_1),Z_2)$, with inputs of rates $1,1,2$. For $X,Y\in V_1$ and $Z\in V_2$
 the other two cyclic terms vanish, because $V_1\times V_2$ brackets to zero. For $ab=0$ there is no composite. (v) The $V_3$-component is as in (iii)
 and vanishes. For $X,Y\in V_1$ and $Z\in V_2$, $[[X,Y],Z]_4=ad\,\beta_0(\beta_0(X,Y),Z)$, while
 $[[Y,Z],X]_4+[[Z,X],Y]_4=bc\,(\beta_0(\beta_0(Y,Z),X)+\beta_0(\beta_0(Z,X),Y))=-bc\,\beta_0(\beta_0(X,Y),Z)$ by the Jacobi identity of $\beta_0$.
@@ -1316,10 +1338,16 @@ $[[Y,Z],X]_4+[[Z,X],Y]_4=bc\,(\beta_0(\beta_0(Y,Z),X)+\beta_0(\beta_0(Z,X),Y))=-
 
 The proposition is fixed. (i) restates the space of \cref{d7:sec:rotor} at $n=2$ (e4-5a). (ii) is exact, block by block, for the listed rates and
 for the harmonic ladder up to $n=4$; for $n=5,6$ the count is the number of resonant blocks (e4-5b). At $n=2$ it restates the bracket of
-$\operatorname{diag}(1,2)\otimes G$ of \cref{d7:sec:rotor}. (iii) to (v) are checked on random samples to $10^{-10}$: antisymmetry,
-$\lG$-equivariance, the rotor as a derivation and the Jacobi identity; at $(1,2,4)$ and $(1,2,3,4)$ the samples off the stated conditions fail (e4-5c,
-e4-5d, e4-5e). That every rotor-compatible frame is nilpotent when all rates are positive is inherited: $A$ is then a nonsingular derivation, and a
+$\operatorname{diag}(1,2)\otimes G$ of \cref{d7:sec:rotor}. (iii) to (v) are checked on random samples to $10^{-10}$ (e4-5c, e4-5d, e4-5e):
+antisymmetry, $\lG$-equivariance, the rotor as a derivation and the Jacobi identity; at $(1,2,4)$ and $(1,2,3,4)$ the samples off the stated
+conditions fail. That every rotor-compatible frame is nilpotent when all rates are positive is inherited: $A$ is then a nonsingular derivation, and a
 Lie algebra with a nonsingular derivation is nilpotent \cite{Jacobson55}.
+
+The graded brackets of (iii)--(v) are of current type, $\mathfrak g\otimes A$ with $\mathfrak g$ the complex cross product and $A$ a graded commutative
+coefficient algebra without unit, $t_it_j=\sum_k\Gamma^k_{ij}t_k$; Lie algebras extended over commutative algebras without unit are treated by
+Zusmanovich \cite{Zusmanovich10}. The truncated current algebra $\mathfrak g\otimes t\C[t]/(t^{n+1})$ is a particular case, not the general one: at
+rates $(1,2,3)$ it is the case $ab\neq0$ of (iii), up to rescaling, while $a\neq0$, $b=0$ gives a two-step nilpotent frame with $V_3$ central and
+decoupled, against the three-step lower central series of the truncation.
 
 The reading is constructed. A harmonic ladder of rates admits a non-abelian frame, from $n=3$ on and already for $\operatorname{diag}(1,2)$ at $n=2$. Its
 bracket joins two frames whose rates add into the frame of the summed rate, so the frame algebra is graded by rate. With three constituents
@@ -1350,7 +1378,7 @@ under interior time reversal. The triangle traces measure them at every $n$, Jar
 \item \emph{It acts on doublets from the fourth rung on} (fixed). At $n=4$ the copy isospin is half-integral exactly on odd $N$, and above it under the
 $\so4$ of any four constituents, on an odd number of quanta in them. At every rung the copy algebra acts through $SO(n)$, so no spinor of it
 occurs (\cref{e4:thm:so4,e4:cor:nospinor}).
-\item \emph{It is physical exactly between unequal rates} (fixed). The physical directions number $\sum_{i<j}n_in_j$; equal-rate constituents stay
+\item \emph{It is non-removable exactly between unequal rates} (fixed), with the prescribed binding tensor kept fixed. The non-removable directions number $\sum_{i<j}n_in_j$; equal-rate constituents stay
 gauge-equivalent (\cref{e4:prop:rates}). The reading as symmetry breaking by the rate matrix is interpretive (\cref{e4:rem:higgs}).
 \item \emph{It admits non-abelian frames on a harmonic ladder of rates} (constructed). The rotor must be non-central and its rates resonant, and
 nothing in the closure selects either (\cref{e4:prop:rotor}).
@@ -1366,7 +1394,7 @@ from the fixed statements above.
 \footnotesize
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.4cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{2.3cm}@{}}
 \toprule
-$n$ & copy algebra, group on $S_n$ & physical directions, distinct rates & independent signs $c_n$ & half-integral copy isospin & rotor brackets, rates $1,\dots,n$\\
+$n$ & copy algebra, group on $S_n$ & non-removable directions, distinct rates & independent signs $c_n$ & half-integral copy isospin & rotor brackets, rates $1,\dots,n$: resonant coefficients\\
 \midrule
 $2$ & $\so2$, $SO(2)$ & $1$ & $0$ & no; charges $i\{-3,\dots,3\}$ & $2$\\
 $3$ & $\so3$, $SO(3)$ & $3$ & $1$ & no; $j=0,\dots,3$ & $4$\\
@@ -1376,7 +1404,9 @@ $6$ & $\so6\cong\su4$, $SO(6)$ & $15$ & $10$ & as for $n=5$; no $\mathbf 4$ of $
 \bottomrule
 \end{tabular}
 \caption{The field between constituents, rung by rung. The $n=2,3$ isospin entries restate \cref{d7:prop:isospin}. The others follow from
-\cref{e4:thm:cycles,e4:thm:so4,e4:cor:nospinor,e4:prop:rates,e4:prop:rotor}; the rotor column counts real dimensions.}
+\cref{e4:thm:cycles,e4:thm:so4,e4:cor:nospinor,e4:prop:rates,e4:prop:rotor}; the rotor column gives the real dimension of the space of resonant
+coefficients before the Jacobi identity is imposed (at $n=4$ the Jacobi identity cuts it to the variety $ad=bc$; at $n=5,6$ the Lie-bracket varieties are
+not determined here). Non-removable: with the prescribed binding tensor kept fixed.}
 \label{e4:tab:ladder}
 \end{table}
 
@@ -1445,8 +1475,8 @@ lines of \texttt{e5\_closure\_two.py} (\cref{e5:tab:claims}).
 the binding root $G_2=G\oplus G$. The temporal directions are $e^{(k)}_1,e^{(k)}_2,e^{(k)}_3$, each with its partner $e^{(k)}_{i+3}$, and the
 paired rotations and boosts $\mathrm{rot}(i,j)$, $\mathrm{bst}(i,j)$ of temporal $i<j$ are those of \cref{sec:closurethree}. A vector $X$ of
 $V_2$ gives $Z=(z_1,z_2)\in\C^6$, $z_k=z(X^{(k)})$, on which $G_2$ acts as $i$; $q_k=z_k\cdot z_k$, $q_{\rm tot}=q_1+q_2$, $Q_{kl}=z_k\cdot z_l$ is the
-complex Gram matrix with singular values $\sigma_1\ge\sigma_2$, and $M_{\rm pair}=\half(\sigma_1+\sigma_2)$ is the rest energy of the pair
-(\cref{d6:thm:pair}). $C_v=\varepsilon\otimes\id_6$ is the copy rotation and $\varepsilon\otimes G$ the copy boost,
+complex Gram matrix with singular values $\sigma_1\ge\sigma_2$, and $M_{\rm pair}=\half(\sigma_1+\sigma_2)$ is the rest-energy density of the pair, a local
+invariant of the summed stress tensor and not an invariant mass (\cref{d6:thm:pair}). $C_v=\varepsilon\otimes\id_6$ is the copy rotation and $\varepsilon\otimes G$ the copy boost,
 $\varepsilon=\bigl(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr)$. $\lG^{(k)}$ and $\lint^{(k)}$ are the frame and interior Lorentz
 algebras of constituent $k$, and $\lG^\Delta$ is the diagonal $\lG$. On $S_2=\R^{64}$ the tower generators are $E_{(1,a)}=e_a\otimes\id$,
 $E_{(2,a)}=\omega\otimes e_a$, the spin lift of $M\in\so{6,6}$ is $S(M)=\tfrac14\sum_{a,b}(M\eta_2)_{ab}E_aE_b$, and $\Gamma_{12}=E_{(1,1)}\cdots E_{(2,6)}$.
@@ -1506,7 +1536,7 @@ symmetry only $q_{\rm tot}=\tr Q$ is invariant.
 is $\lG^\Delta\oplus\R C_v$, of real dimension $7$.
 \item The closure symmetry does not preserve $M_{\rm pair}$. The copy boost has the eigenvector $(e_1,ie_1)$ with eigenvalue $1$, and maps the
 balanced pair $(e_1,ie_1)$, with $q_{\rm tot}=0$ and $M_{\rm pair}=1$, to $e^t(e_1,ie_1)$, with $M_{\rm pair}=e^{2t}$. The compact rotation
-$R^{(1)}_\varphi\in SO(6)$ of \cref{d6:ex:R1} takes $((1,i,0),0)$ from $M_{\rm pair}=0$ to $M_{\rm pair}=\sin\varphi$.
+$R^{(1)}_\varphi\in SO(6)$ of \cref{d6:ex:R1} takes $((1,i,0),0)$ from $M_{\rm pair}=0$ to $M_{\rm pair}=|\sin\varphi|$.
 \item For each $c\in\C$ the set $\{Z\neq0:\ q_{\rm tot}(Z)=c\}$ is a single orbit of $SO(6,\C)$, and on it $M_{\rm pair}$ takes every value in
 $[\half|c|,\infty)$. The bound $M_{\rm pair}\ge\half|q_{\rm tot}|$ of \cref{d6:thm:pair}(iii) is attained at $(z,0)$, and the copy boost
 carries $(z,0)$ to $(\cosh t\,z,\,i\sinh t\,z)$, with $q_{\rm tot}=q(z)$ and $M_{\rm pair}=\half|q(z)|\cosh2t$.
@@ -1804,18 +1834,19 @@ $\operatorname{rank}d(w_1,w_2)=4$ on the all-null part, and $\operatorname{rank}
 Let $c_1,c_2\neq0$ and let $(\theta,h,p,x)$ solve the two-constituent closure with $\theta(0)=0$, $\kappa_0=h(0)/I_0$ and $\psi_0=\varphi_{\rm eff}$.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item $R_{\rm eff}$ is a constant of motion for every datum. The balance surface and every level set $\{R_{\rm eff}=r\}$ are invariant, so the
-surface is neither attracting nor repelling. A perturbation $\delta p$ of a balanced datum has imbalance $|dF(\delta p)|+O(|\delta p|^2)$, and since $dF$ is onto
-every small imbalance occurs.
-\item The rate is stable. With $\varepsilon=R_{\rm eff}/(I_0\kappa_0^2)$, $\kappa^2=\kappa_0^2[1+\varepsilon(\cos\psi_0-\cos\psi)]$ and
+surface is neither attracting nor repelling. A perturbation $\delta p$ of a balanced datum with nonzero momentum has imbalance $|dF(\delta p)|+O(|\delta p|^2)$, and
+since $dF$ is onto there every small imbalance occurs (at $p=0$, $dF=0$).
+\item Let $h(0)\neq0$. The rate is stable. With $\varepsilon=R_{\rm eff}/(I_0\kappa_0^2)$, $\kappa^2=\kappa_0^2[1+\varepsilon(\cos\psi_0-\cos\psi)]$ and
 $|\kappa^2/\kappa_0^2-1|\le2\varepsilon$ for all $\tau$, and the rotor turns for all time when $\varepsilon<\half$.
-\item The bounded frame orbits are not stable. In the rotating regime, during each period of the rate frame $k$ is displaced by
+\item Let $h(0)\neq0$. The bounded frame orbits are not stable. In the rotating regime, during each period of the rate frame $k$ is displaced by
 $\lambda\,e^{-\varphi_{\rm eff}G}N_kp^{(k)}(0)$, with $\lambda$ of \cref{thm:freedrift}, and its mean velocity is
 \[
 \bar v_k=\tfrac\varepsilon4\bigl(1-\varepsilon\cos\psi_0\bigr)\,e^{-\varphi_{\rm eff}G}N_kp^{(k)}(0)+O(\varepsilon^3),
 \]
 of first order in the imbalance. A perturbation off the surface therefore moves the frames by a distance that grows linearly in $\tau$, at a rate linear
 in the perturbation. A perturbation along the surface, or of $h(0)$, keeps them on circles.
-\item If $h(0)=0$, a balanced datum is an equilibrium of the rotor, and each frame moves uniformly, $x_k=x_k(0)+\tau N_kp^{(k)}(0)$, without bound.
+\item If $h(0)=0$, a balanced datum is an equilibrium of the rotor, and each frame moves uniformly, $x_k=x_k(0)+\tau N_kp^{(k)}(0)$, without bound unless
+$N_kp^{(k)}(0)=0$, in which case the frame is stationary.
 Off the surface, unless $\psi_0\in\pi\Z$ (an equilibrium, at which the frames move uniformly), the rotor librates about $\psi=\pi$ with
 $\Omega^2=2R_{\rm eff}/I_0$, amplitude $\xi_0\in(0,\pi)$ given by $\cos\xi_0=-\cos\psi_0$, and period $4\mathrm K(m)/\Omega$, $m=\sin^2(\xi_0/2)$,
 which diverges as $R_{\rm eff}\to0$; $\mathrm K$ and $\mathrm E$ are the complete elliptic integrals in the parameter $m$ \cite{DLMF}. The
@@ -1883,7 +1914,8 @@ For one rotor on two constituents with Lorentz-class inertias:
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item (\cref{cl:frozen}.) A function of $p$ is a Casimir iff it is invariant under $p\mapsto e^{tG_2}p$. At $p\neq0$ the leaves are
 two-dimensional, so there are $11$ local Casimirs, against $5$ at $n=1$, and the real and imaginary parts of $\bar z_az_b$, $a,b=1,\dots,6$, with $z\in\C^6$ the pair of
-momentum fields, provide them. They include $E_6$, $E_0$ and $\mathbf S$ of each $\pi^{(k)}$ and the moduli $|Q_{kl}|$; no Hamiltonian moves rest energy
+momentum fields, provide them. They include $E_6$, $E_0^2$ and $\mathbf S$ of each $\pi^{(k)}$ and the squared moduli $|Q_{kl}|^2$, which are smooth
+everywhere; $E_0$ and $|Q_{kl}|$ are conserved invariant functions, smooth where they do not vanish (as for $E_0$ in \cref{cl:frozen}; a12-1). No Hamiltonian moves rest energy
 between the constituents (\cref{d6:cor:nopair}).
 \item (\cref{thm:pendulum}--4.8.) The pendulum, its small oscillations, the energy budget and the multiscale criterion hold with $R_0/m$ replaced
 by $R_{\rm eff}$, which depends on the data only through $F(p(0))$. What changes is \cref{cl:flat}(i): a constant nonzero rate no longer
@@ -1952,7 +1984,7 @@ statement & class & checks\\
 \cref{e5:prop:so6C}: $\Cent(G_2)=\so{6,\C}$, paired rotations and boosts, $R-iS$, compact part $\so6$ & restated (\cref{d5:prop:so6C}(i); \cref{thm:so9C} at $n=2$) & e5-1a\\
 \cref{e5:prop:quad}: quadratic invariants $q_{\rm tot}$; $q_1,q_2$; $q_1,q_2,z_1\cdot z_2$ & inherited (invariant theory); dimensions fixed & e5-1b\\
 \cref{e5:thm:pair}(i): $M_{\rm pair}$ through the Gram entries; diagonal against per-constituent invariance & fixed (partly restated, \cref{d6:thm:pair}) & e5-1e\\
-\cref{e5:thm:pair}(ii): stabiliser of $M_{\rm pair}$ is $\lG^\Delta\oplus\R C_v$, dimension $7$ & fixed (numerical rank) & e5-1c\\
+\cref{e5:thm:pair}(ii): stabiliser of $M_{\rm pair}$ is $\lG^\Delta\oplus\R C_v$, dimension $7$ & fixed (exact rational rank $23$) & z1-5b, e5-1c\\
 \cref{e5:thm:pair}(iii),(iv): $\so{6,\C}$ does not preserve $M_{\rm pair}$; range $[\half|c|,\infty)$ on each orbit & fixed (\cref{d6:ex:R1} restated; transitivity inherited) & e5-1d\\
 \cref{e5:prop:nocommon}: no common Lorentz algebra; $\lG^{(2)}$; $16(\half,\half)$; integer spin under $\lG^\Delta$ & fixed (restated: \cref{d5:prop:so6C}(iv), \cref{d7:prop:exist}(iii); \cref{thm:nocommon}) & e5-2a to e5-2c\\
 \cref{e5:prop:noPS}: no Pati--Salam algebra at $n=2$ & obstructed (dimension count) & e5-3a, 3e, 3h, 3i\\
@@ -2250,7 +2282,8 @@ $C$ and $C'$ lie in one orbit of the orthogonal group of the temporal triple iff
 a flow in $SO(3)$, can change anything about the conversion except this and the sign of $\det C$ (e6-4f). The paper's $c$ is the isotropic case $CC^{\!\top}=c^2\id$, which is also $C^{\!\top}C=c^2\id$, and that
 is exactly the case in which the binding root preserves the weighted energy (\cref{e6:prop:polar}(ii)). In this sense, which is the reading of (c),
 $c^2$ sits on the spatial triple and the temporal $b$-field cannot reach it. The energy $E_C$ sees the other symmetric factor $C^{\!\top}C$, a form on
-the temporal triple that the temporal rotations conjugate (\cref{e6:prop:polar}(i), (iv)); the two factors coincide exactly in the isotropic case. What the temporal $b$-field moves is the orthogonal factor $R$. The energy $E_c$ does not see
+the temporal triple that the temporal rotations conjugate (\cref{e6:prop:polar}(i), (iv)). After the two triples are identified, the two factors coincide
+exactly when $C$ is normal, $CC^{\!\top}=C^{\!\top}C$, for instance $C=\operatorname{diag}(2,3,4)$: isotropy is sufficient, not necessary. What the temporal $b$-field moves is the orthogonal factor $R$. The energy $E_c$ does not see
 $R$; the binding root $G_{cR}$ (which spatial direction is paired with which temporal one), the pseudoscalar $\Im q_C$ and the rest energy
 $\tfrac12|q_C|$ do.
 \item \emph{Fixed: a mirror.} With the triples exchanged the statement still holds: a spatial $b$-field keeps $C^{\!\top}C$ on the temporal triple and
@@ -2306,7 +2339,7 @@ the projection of the undivided temporal energy, and the $b$-field moves energy 
 dynamical form of the obstruction of \cref{en:temporal}: splitting the temporal energy lowers the mass. The six-dimensional mass is
 constant throughout. The rotation about the clock is the charge $J(\hat n)$ and changes nothing; the two clock rotations are what make $m_4$ oscillate, and
 they are also what the kinetic term breaks (\cref{e6:prop:dirac}). On the reduced shell, the gauge-fixed reading of \cref{sec:constraints}, a temporal $b$-field
-transverse to the clock is not admissible at fixed clock. Two clocks must be kept apart (LAD-09). For a \emph{fixed} clock $\hat n$, $m_4(\hat n)^2c^4=M_6^2c^4-|\hat n\times\boldsymbol{\mathsf E}(t)|^2$ oscillates and is negative whenever $|\hat n\times\boldsymbol{\mathsf E}|>M_6 c^2$, as in (iv), where $m_4^2$ reaches $-9$; then the projected four-momentum is spacelike and $m_4$ is not a rest mass of anything. For a \emph{co-rotating} clock, $\hat n(t)=R_{\hat{\mathbf e}}(\nu t)\hat n$, $|\hat n\times\boldsymbol{\mathsf E}|$ is constant and so is $m_4$. Which clock is physical is the open clock-selection question; the oscillation is a statement about a fixed reading, not a derived variation of a particle mass.
+transverse to the clock is not admissible at fixed clock. Two clocks must be kept apart. For a \emph{fixed} clock $\hat n$, $m_4(\hat n)^2c^4=M_6^2c^4-|\hat n\times\boldsymbol{\mathsf E}(t)|^2$ oscillates and is negative whenever $|\hat n\times\boldsymbol{\mathsf E}|>M_6 c^2$, as in (iv), where $m_4^2$ reaches $-9$; then the projected four-momentum is spacelike and $m_4$ is not a rest mass of anything. For a \emph{co-rotating} clock, $\hat n(t)=R_{\hat{\mathbf e}}(\nu t)\hat n$, $|\hat n\times\boldsymbol{\mathsf E}|$ is constant and so is $m_4$. Which clock is physical is the open clock-selection question; the oscillation is a statement about a fixed reading, not a derived variation of a particle mass.
 
 % --- source: emergence/e6_bfield_triples#7 (Between constituents)
 \subsection{Between constituents}
@@ -2354,7 +2387,9 @@ Let $H_g=m_1E_{(1,1)}+m_2E_{(2,1)}$, $M=(m_1^2+m_2^2)^{1/2}$, $u_1=e_1\otimes\id
 $\Ad(e^{\theta C_+})H_g=m_1(\theta)E_{(1,1)}+m_2(\theta)E_{(2,1)}$, where $(m_1(\theta),m_2(\theta))$ is $(m_1,m_2)$ rotated through $\theta$. The spectrum stays $\{\pm M\}$, and
 $(M,0)$ goes to $(M\cos\theta,M\sin\theta)$. $C_-$ commutes with $H_g$.
 \item The ungraded $H_u=m_1u_1+m_2u_2$ has spectrum $\{\pm m_1\pm m_2\}$, each value $16$ times, and this multiset determines $\{|m_1|,|m_2|\}$. Rotating
-$(m_1,m_2)$ inside the ungraded family changes the spectrum unless $\sin2\theta=0$, from $\{\pm M\}$ at $(M,0)$ to $\{\pm M(\cos\theta+\sin\theta),\pm M(\cos\theta-\sin\theta)\}$.
+the initial pair $(M,0)$ inside the ungraded family changes the spectrum unless $\sin2\theta=0$, from $\{\pm M\}$ to
+$\{\pm M(\cos\theta+\sin\theta),\pm M(\cos\theta-\sin\theta)\}$. In general the spectrum is unchanged exactly when the unordered pair $(|m_1|,|m_2|)$ is: $(2,1)$
+rotated with $\cos\theta=\tfrac45$ becomes $(1,2)$, with the same spectrum, although $\sin2\theta=\tfrac{24}{25}$.
 $(\cos\theta\,u_1+\sin\theta\,u_2)^2=\id+\sin2\theta\,u_1u_2$, so for $\sin2\theta\neq0$ no invertible matrix conjugates $u_1$ into $\cos\theta\,u_1+\sin\theta\,u_2$,
 whereas $(\cos\theta\,E_{(1,1)}+\sin\theta\,E_{(2,1)})^2=\id$. The product $u_1u_2$ of the two ungraded clocks squares to $\id$ and commutes with both. The flip $P(x\otimes y)=y\otimes x$ is orthogonal with
 $Pu_1P^{-1}=u_2$: the exchange $(m_1,m_2)\mapsto(m_2,m_1)$ keeps the spectrum, it is the only change of $(|m_1|,|m_2|)$ that does, and no continuous
@@ -2383,7 +2418,7 @@ used there is one of the three terms of $2C_+$, and the other two leave the cloc
 The algebra is fixed. The temporal copy rotation turns the clock $E_{(1,1)}$ of the first constituent into the clock $E_{(2,1)}$ of the second, and
 from $(M,0)$ it produces $(M\cos\theta,M\sin\theta)$ at fixed graded mass: a massless second copy acquires mass from the first. Reading this as ``a
 second particle acquires mass from the first through the $b$-field'' needs two further structures. One is a clock per copy, $E_{(k,1)}$ as the
-$\gamma^0$ of copy $k$. The other is the graded reading, and there \cref{e1:prop:rest} applies: the copies have no joint mass shell, and the rest energy is
+$\gamma^0$ of copy $k$. The other is the graded reading, and there \cref{e1:prop:rest} applies: the copies admit no simultaneous nonzero-mass Dirac constraints of the graded form, and the rest energy is
 the single value $M$. In that reading the process is a rotation of the mass direction of one particle between two internal clock directions,
 the masses adding in quadrature as in \cref{d6:prop:dirac}(iv). It is not the creation of a second massive particle. In the ungraded
 reading, where energies add and there are two particles (\cref{e1:prop:rest}(iii)--(iv)), the continuous transfer is obstructed: no conjugation turns
@@ -2444,6 +2479,9 @@ the diagonal action the mass is not unique from $n=2$ on, and under the temporal
 antisymmetric invariant kernels pair the temporal volume of one constituent with the spatial volume of the other (iii): no invariant mass kernel
 belongs to one constituent alone.
 
+The invariant bilinear forms of spinor modules of $\mathrm{Spin}(p,q)$, with their symmetry types by signature, are classified by Alekseevsky and
+Cort\'es \cite{AlekseevskyCortes97}; (i) and (ii) are that classification in the realisation of the tower.
+
 % --- source: emergence/e6_bfield_triples#9 (The two assignments compared)
 \subsection{The two assignments compared}
 \label{e6:sec:compare}
@@ -2459,7 +2497,7 @@ $\kappa G_{e^{-\theta R}}$ without changing the rates, and it tears the binding 
 temporal copy rotation (\cref{e6:prop:copyrot}(iv)), which lies outside the Schr\"odinger class of \cref{d7:thm:schr}.
 \item \emph{A non-abelian Yang--Mills $\su2$ with Cartan direction $J$} (fixed; the Cartan choice is the clock's). $\so3_+\cong\su2$ is compact. It acts on
 $V$ as isospin one on $V^+$ and trivially on $V^-$, and on spinors as isospin one-half (\cref{e6:prop:dirac}(iii)). The algebra fixes no Cartan direction,
-since all elements of $\so3_+$ are conjugate. The kinetic term fixes it to $J=J(e_1)$, the rotation about the clock, which it keeps. The two
+since all Cartan directions of $\so3_+$ are conjugate (all its elements of a fixed nonzero norm are; a12-2). The kinetic term fixes it to $J=J(e_1)$, the rotation about the clock, which it keeps. The two
 off-diagonal directions are the clock rotations; they flip the charge, and their half turn acts as $\mathsf{CP}$.
 \item \emph{A mass term for the off-diagonal components} (identity fixed; reading interpretive; mechanism open). The breaking of the kinetic forms
 by $Y\in\so3_+$ is $Y^{\!\top}K^a+K^aY=2Y(\hat n)\gamma^a$, with total weight $96|Y(\hat n)|^2$ (\cref{e6:prop:dirac}(i)). This is a quadratic form on $\so3_+$ with
@@ -2468,7 +2506,7 @@ term $g^2|[b,\langle\Phi\rangle]|^2$ of the Georgi--Glashow $SO(3)$ model \cite{
 \cite{EnglertBrout64,Higgs64,Kibble67}: the two charge-flipping components would be massive and $J(\hat n)$ massless. That needs a clock field $\hat n(x)$ with a
 covariant kinetic term, and the arena supplies none: a dynamics that selects the clock is open (\cref{r2:sec:main}). Gauge invariance forbids a
 bare mass term (inherited), and the Dirac mass gives none, since $\so3_+$ preserves $T$ (\cref{e6:prop:Tform}). In \cref{d7:rem:verdict}(e) the rate matrix
-played the role of the adjoint vacuum value; here the clock does. The pattern is that of an adjoint $SO(3)\to U(1)$ breaking, not of the electroweak $SU(2)_L\times U(1)_Y\to U(1)_{\rm em}$ by a doublet, and nothing here derives an electroweak Higgs mechanism (LAD-09).
+played the role of the adjoint vacuum value; here the clock does. The pattern is that of an adjoint $SO(3)\to U(1)$ breaking, not of the electroweak $SU(2)_L\times U(1)_Y\to U(1)_{\rm em}$ by a doublet, and nothing here derives an electroweak Higgs mechanism.
 \item \emph{What the assignment fixes, constructs, obstructs and leaves open.} Fixed: every finite-dimensional statement of
 \cref{e6:sec:Tform,e6:sec:dirac,e6:sec:binding,e6:sec:polar,e6:sec:clock,e6:sec:copies,e6:sec:ladder}. Constructed: the clock, which fixes the Cartan
 direction and the kinetic term, and the temporal $b$-field itself. Obstructed: its removal along a worldline, bounded binding under it, continuous mass
@@ -2615,13 +2653,13 @@ state or an element of rung $n$, and the tensor embedding $\psi\mapsto\psi\otime
 claim & class & location & evidence\\
 \midrule
 $\Cl(3n,3n)=M_{8^n}(\R)$; step with multiplicity $8$; commuting copy unique up to conjugation & proved algebra & \cref{e1:prop:copies,e3:prop:rung} & e1-1a--d, e3-1a--c, y1-1a--f\\
-graded masses in quadrature, no joint mass shell; ungraded spectra additive & proved algebra & \cref{e1:prop:rest,e3:prop:mass} & e1-2a--g, e3-2a--b, y1-2a--g, z1-1c\\
+graded masses in quadrature, no simultaneous nonzero-mass graded Dirac constraints; ungraded spectra additive & proved algebra & \cref{e1:prop:rest,e3:prop:mass} & e1-2a--g, e3-2a--b, y1-2a--g, z1-1c\\
 common complex structure only on $W_n$; selection by actions; none at even $n$ & proved algebra; obstruction & \cref{e1:prop:W,e1:prop:select,e1:cor:nocx} & e1-3a--h, y1-3a--4f\\
 $N$ conserved exactly by $\mathfrak{gl}(3n,\R)$; compact $\Leftrightarrow$ paired rotation (in $\so{3n}\oplus\so{3n}$); no odd change & proved algebra & \cref{e1:prop:Nbiv,e1:thm:Nrule,e2:lem:N} & e1-4a--g, e2-10--13, y2-11--14, z1-1a\\
 compact fields outside $\Cent(G_n)$ ($J$, $e_1e_2$, $S_k$) create pairs of quanta & proved algebra & \cref{e1:prop:Nlorentz,e2:prop:bogo} & e2-14--16, z1-1b\\
 $N$ not Lorentz invariant; invariant number iff $n$ even (binding action) & proved algebra & \cref{e2:thm:invnumber} & e2-19--22, y2-20--24\\
 no equivariant vertex $S\to S_n$ for even $n$ (interior action) & proved algebra (selection rule inherited) & \cref{e2:prop:vertex} & e2-2--6, y2-2--6\\
-$C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$; Howe duality; Koszul $\mathfrak S_n$ & proved algebra (constant new; duality inherited) & \cref{e3:thm:dual,e3:prop:koszul} & e3-4a--f, e3-5a--e, z1-3a--d\\
+$C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$; Howe duality; Koszul $\mathfrak S_n$ & proved algebra (constant and duality inherited, Neerg{\aa}rd, Howe) & \cref{e3:thm:dual,e3:prop:koszul} & e3-4a--f, e3-5a--e, z1-3a--d\\
 compact copy field $=d\Gamma(H)$: transfer, not creation; no binding in this class & proved algebra & \cref{e4:thm:fock,e4:cor:transfer} & e4-1a--f\\
 $c_n$ triangle signs; $SO(4)$ doublets on odd $N$; no copy spinor & proved algebra; CP reading not established & \cref{e4:thm:cycles,e4:thm:so4,e4:cor:nospinor} & e4-2a--3e, z1-4a--b\\
 pair invariant: stabiliser exactly $\lG^\Delta\oplus\R C_v$ & proved (exact certificate) & \cref{e5:thm:pair} & e5-1c, y5, z1-5b\\

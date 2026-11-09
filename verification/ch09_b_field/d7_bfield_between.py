@@ -618,6 +618,18 @@ def _():
     return ok
 
 
+@claim("d7-4c", "copy boost, boundary cases of the threshold |beta'| = |k1-k2|/2 at beta' = 0 (review of version 1.0.1): at rates "
+                "(1,1) the phase-space generator M is semisimple (uncoupled oscillators); at rates (0,0) the shift vanishes, "
+                "M = [[0, 1], [0, 0]] with M^2 = 0, M != 0, rank 12, so M is not semisimple and nonzero momentum drifts (exact)")
+def _():
+    M1 = phase_gen(shift([1, 1], None, [[0, 0], [0, 0]]))
+    ok = is_semisimple(M1)
+    M0 = phase_gen(shift([0, 0], None, [[0, 0], [0, 0]]))
+    ok &= (M0 * M0).is_zero_matrix and not M0.is_zero_matrix and M0.rank() == 12 and not is_semisimple(M0)
+    ok &= (M0[:12, 12:] - sp.eye(12)).is_zero_matrix and M0[:, :12].is_zero_matrix
+    return ok
+
+
 @claim("d7-4b", "below the exceptional point the copy-boost flow conserves a positive form Q != E_6: for beta' = 1, "
                 "Q = (V V^dagger)^-1 with V the eigenvectors of H satisfies H^dagger Q = Q H, Q > 0, and Q is not a "
                 "multiple of the identity (pseudo-Hermiticity)")

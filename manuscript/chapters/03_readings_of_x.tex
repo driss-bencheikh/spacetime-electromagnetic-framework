@@ -46,7 +46,8 @@ conjugate to the three lengths of $V^-$ and $E/c$ conjugate to the time read by 
 the six-dimensional one (\cref{r2:prop:cons,r2:prop:rotate}); the field's four-momentum comes from its stress tensor and is a four-vector
 only for an isolated whole (\cref{r2:sec:field}). On the octants, the joint eigenlines of the pole operators, $\bE$ sits on the three
 octants of Fock weight one and $\bB$ on the three of weight two; Maxwell's four equations become one first-order equation with the two
-Gauss laws on the two poles; and the boosts and the duality rotation of the field act on the octants only through odd operators, so that
+Gauss laws on the two poles; and the infinitesimal generators of the boosts and of the duality rotation of the field act on the octants
+through odd operators (their finite transformations generally have mixed Clifford parity), so that
 the octant representation of the field is not the spin representation in which a Dirac field transforms (\cref{r3:thm:noeven,r3:prop:odd}).
 
 \paragraph{Conventions and classes.} The conventions are those of \cref{sec:conventions}: $\eta=\operatorname{diag}(1,1,1,\allowbreak-1,-1,-1)$, the temporal
@@ -230,9 +231,10 @@ in the remaining $(\tfrac32,\tfrac12)\oplus(\tfrac12,\tfrac32)$.
 \label{cor:maxwellform}
 Within this class the two available equations are $dF=\mathcal J_m$ and $d\star F=\mathcal J_e$. Covariance does not rule out a
 magnetic current, which is a covariant field exactly as an electric current is; it identifies the two operators and leaves open
-which equations are imposed and which sources are admitted. The source-free system $dF=\delta F=0$ is the only choice that needs no
-external data, and within this linear class it is the only one invariant under duality, because the Hodge star $G$ exchanges the two
-operators. Finally, on a contractible region $dF=0$ gives $F=dA$ by the Poincar\'e lemma, so the gauge potential is a consequence of
+which equations are imposed and which sources are admitted. Every source-free choice needs no external data; the equation $\delta F=0$
+alone qualifies as well. What duality selects is the pair: among the nonzero real subspaces of the two operator equations, only the whole
+space is invariant under the continuous duality rotation, because the Hodge star $G$ exchanges the two operators. Within this linear class
+the source-free system $dF=\delta F=0$ is therefore the only duality-invariant choice. Finally, on a contractible region $dF=0$ gives $F=dA$ by the Poincar\'e lemma, so the gauge potential is a consequence of
 the first equation rather than an assumption.
 \end{corollary}
 
@@ -531,7 +533,7 @@ Bounded solutions do not make the energy bounded below. Every solution oscillate
 two signs of energy are decoupled; $\mathcal E$ and $H$ have signature $(6,6)$, so once the length oscillators are coupled to a system of positive
 energy, or quantised with a positive norm, they are ghosts whose excitation lowers the energy. The surplus constraints of \cref{r2:sec:main} concern the
 free worldline and do not remove these interior modes. Which constraints of the coupled interior system, if any, remove the negative-energy
-oscillators, and which modes are physical, is not derived here (X-04).
+oscillators, and which modes are physical, is not derived here.
 
 Item (i) is restated (equations~\eqref{eq:splitL} and~\eqref{eq:splitEg}, and \cref{thm:neutral}); in particular the
 raised momentum obeys $\pi'=\kappa G\pi$ for constant $G$. Item (ii) is \cref{thm:EBsplit} read on lengths: the
@@ -608,7 +610,8 @@ For a Lagrangian $L(S,P)$ put $\mathbf D=\partial L/\partial\bE$ and $\mathbf H=
 \label{r1:thm:L0}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item $L_0$ is Lorentz invariant (annihilated by $\lG$), homogeneous of degree two, and invariant pointwise under the duality rotation
-$z\mapsto e^{i\theta}z$, which does not leave $L_M=-\tfrac12\Re q$ invariant. It is not differentiable at null fields: along
+$z\mapsto e^{i\theta}z$, which does not leave $L_M=-\tfrac12\Re q$ invariant. It is not differentiable at nonzero null fields (at $F=0$ its
+derivative vanishes): along
 $\Btext=(1,0,0)$, $\bE=(0,e,0)$ it equals $\tfrac12|1-e^2|$, with one-sided derivatives $-1$ and $+1$ at $e=1$.
 \item $\mathbf D=(S\bE+P\Btext)/E_0$, $\mathbf H=(S\Btext-P\bE)/E_0$, and the Hamiltonian density is
 $\mathbf D\cdot\bE-L_0=\tfrac S{E_0}E_6=-\cos(\arg q)\,E_6$, which ranges over $[-E_6,E_6]$ and equals $-\tfrac12$ on the magnetic field
@@ -642,7 +645,7 @@ duality invariance and conformality of ModMax are inherited
 \cite{BandosLechnerSorokinTownsend20,Kosyakov20}, as is the Gaillard--Zumino criterion \cite{GaillardZumino81,GibbonsRasheed95} (\cref{sec:orth}) and the generation of ModMax by the root-$T\bar T$ flow \cite{BabaeiAghbolagh22}; the scripts re-derive them. Calling $L_0$
 ``the rest-energy Lagrangian'' is interpretive, and the theorem says what the name costs. $E_0$ is a pointwise invariant, the energy density in the
 local rest frame of a non-null field; the invariant mass of a localised configuration is the Lorentz length of the integrated $T^{0\mu}$, which is at least
-$\int E_0$, with equality only when all points share one rest frame. The mass $m$ of the Dirac Lagrangian below is an input, not generated (X-05). $L_0$ is an admissible Lagrangian, Lorentz invariant
+$\int E_0$, with equality only when all points share one rest frame. The mass $m$ of the Dirac Lagrangian below is an input, not generated. $L_0$ is an admissible Lagrangian, Lorentz invariant
 and conformal, but it is not duality invariant although $E_0$ is pointwise duality invariant; its energy density is indefinite; and it is
 singular exactly on the null fields that carry radiation. A positive-energy field theory with Lagrangian $\lambda E_0$ is obstructed. What the
 rest energy is, in the Lagrangian formalism, is the operator that deforms Maxwell's theory into ModMax: $L_0=\partial_\gamma L_\gamma|_0$,
@@ -679,7 +682,8 @@ and $|\mathbf S|$, and the rest energy is admissible only together with $E_6$, n
 \label{r1:prop:E6}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item Used as a Lagrangian of the potential, $E_6=\tfrac12(|\bE|^2+|\bB|^2)$ with $\bE=\partial_t\mathbf a-\nabla A_0$, $\bB=\curl\mathbf a$
-gives $\nabla\cdot\bE=0$ and $\partial_t\bE=+\curl\bB$; a transverse plane wave then needs $\omega^2+k^2=0$. The equations are elliptic.
+gives $\nabla\cdot\bE=0$ and $\partial_t\bE=+\curl\bB$; a transverse plane wave then needs $\omega^2+k^2=0$. In gauge-fixed (transverse)
+form the equations are elliptic.
 \item The first-order action $L_H=\bE\cdot\partial_t\mathbf a-E_6+A_0\nabla\cdot\bE$, with $\bE$ independent, has Euler--Lagrange equations
 $\bE=\partial_t\mathbf a-\nabla A_0$, $\partial_t\bE=-\curl\bB$, $\nabla\cdot\bE=0$, and on the first of them
 $L_H=L_M+\nabla\cdot(A_0\bE)$: $E_6$ is the Legendre transform of $L_M$, with $\bE$ conjugate to $\mathbf a$.
@@ -757,7 +761,7 @@ symbol & reading & SI unit & natural Lorentz action & Lagrangian & canonical con
 \midrule
 $Y=X_{\rm cl}$ & displacement; lengths on $V^-$ & m & $\lint$ on $(ct^1;x)$ after the clock; $ct^2,ct^3$ scalars & $-Mc\sqrt{\eta(Y',Y')}$ &
 $K_A$, $\mathrm{kg\,m\,s^{-1}}$ & $K_A$ (translations), $\so{3,3}$ charges $Y_AK_B-Y_BK_A$\\
-$Y$, interior & configuration & m & none preserving a Lorentzian four-plane & $\tfrac m2\eta(Y'+\kappa GY,Y'+\kappa GY)$ & $p=m\eta(Y'+\kappa GY)$ & energy, signature $(6,6)$\\
+$Y$, interior & configuration & m & strict fixed-$G$ invariance supplies none; the oscillator action is $O(3,3)$-invariant up to a boundary term & $\tfrac m2\eta(Y'+\kappa GY,Y'+\kappa GY)$ & $p=m\eta(Y'+\kappa GY)$ & energy, signature $(6,6)$\\
 $A_\mu=(A_0;\mathbf a)$ & potential & $\mathrm{V\,s\,m^{-1}}$ ($A_0=\phi/c$) & $\lint$, $(\tfrac12,\tfrac12)$ & $L_M$ through $F=dA$ & $\varepsilon_0\bE$ conjugate to $\mathbf a$ & $P^\mu=\int T^{0\mu}d^3x$\\
 $X_{\rm EM}=(c\bB;\bE)$ & field strength & $\mathrm{V\,m^{-1}}$ & $\lG$, $(1,0)\oplus(0,1)$ & $L_M=-\tfrac{\varepsilon_0}2\eta(X_{\rm EM},X_{\rm EM})$ &
 none: a phase-space point & observables $E_6$, $\mathbf S$, $q$, $\Theta^{\mu\nu}$\\
@@ -982,8 +986,9 @@ E(\hat n):=c\,\eta(K^\sharp,\hat n),\qquad m_4(\hat n)^2c^4:=E(\hat n)^2-|\bp|^2
 \[
 m_4(\hat n)^2c^4=\mu^2c^4-|\hat n\times\boldsymbol{\mathsf E}|^2=\mu^2c^4-|\boldsymbol{\mathsf E}|^2\sin^2\angle(\hat n,\boldsymbol{\mathsf E}) .
 \]
-Hence $m_4(\hat n)^2\le\mu^2$, with equality iff $\hat n\parallel\boldsymbol{\mathsf E}$ (in either orientation), and $E(\hat n)\le|\boldsymbol{\mathsf E}|$, with equality iff
-$\hat n=\boldsymbol{\mathsf E}/|\boldsymbol{\mathsf E}|$: the clock that reads the largest energy is the direction of the temporal part of $K$, and there $m_4=\mu$.
+Hence $m_4(\hat n)^2\le\mu^2$. For $\boldsymbol{\mathsf E}\neq0$, equality holds iff $\hat n\parallel\boldsymbol{\mathsf E}$ (in either orientation), and $E(\hat n)\le|\boldsymbol{\mathsf E}|$, with equality iff
+$\hat n=\boldsymbol{\mathsf E}/|\boldsymbol{\mathsf E}|$: the clock that reads the largest energy is the direction of the temporal part of $K$, and there $m_4=\mu$. For $\boldsymbol{\mathsf E}=0$ every clock reads
+zero energy and the same $m_4^2=\mu^2$, and no clock is distinguished.
 \item On the Fisher--Rao octant, $E(\hat n)=\sum_i\sqrt{w_i}\,\mathsf E_i$ and $m_4^2c^4=\bigl(\sum_i\sqrt{w_i}\,\mathsf E_i\bigr)^2-|\bp|^2c^2$. Let
 $\boldsymbol{\mathsf E}^+$ be the componentwise positive part. If $\boldsymbol{\mathsf E}^+\neq0$, $\max E(\hat n)=|\boldsymbol{\mathsf E}^+|$, attained at
 $w_i=(\mathsf E_i^+)^2/|\boldsymbol{\mathsf E}^+|^2$; if $\boldsymbol{\mathsf E}^+=0$, the maximum is $\max_i\mathsf E_i\le0$, at a vertex, and no clock of the
@@ -1302,8 +1307,9 @@ $\mathfrak{gl}(3)$, and $\so3_\Delta=\lG\cap\mathfrak{gl}(3)$. In Fock form
 \[
 L_i=a^+_ka^-_j-a^+_ja^-_k,\qquad K_i=\tfrac12(e_ke_{j+3}-e_je_{k+3})=a^-_ja^-_k-a^+_ja^+_k .
 \]
-The spin lift of $L_i$ (left multiplication) satisfies $L_i^3=-L_i$, so $\exp(2\pi L_i)=\id$ on $S$; it annihilates exactly
-$\operatorname{span}\{|\mathrm{vac}\rangle,|\mathrm{full}\rangle\}$ and acts as $L_if_m=\epsilon_{imn}f_n$, $L_ig_m=\epsilon_{imn}\mathsf g_n$ on
+The spin lift of $L_i$ (left multiplication) satisfies $L_i^3=-L_i$, so $\exp(2\pi L_i)=\id$ on $S$. Each $L_i$ annihilates the
+four-dimensional space $\operatorname{span}\{|\mathrm{vac}\rangle,|\mathrm{full}\rangle,f_i,\mathsf g_i\}$, the joint kernel of $L_1,L_2,L_3$ is
+exactly $\operatorname{span}\{|\mathrm{vac}\rangle,|\mathrm{full}\rangle\}$, and $L_i$ acts as $L_if_m=\epsilon_{imn}f_n$, $L_ig_m=\epsilon_{imn}\mathsf g_n$ on
 \[
 f_k:=a^+_k|\mathrm{vac}\rangle,\qquad \mathsf g_m:=\tfrac12\epsilon_{mjk}\,a^+_ja^+_k|\mathrm{vac}\rangle .
 \]
@@ -1459,7 +1465,7 @@ Lie algebra. The scope is the realisation chosen here: the theorem says that the
 does not implement the Lorentz action of $\lG$ on the field values placed in the octants by the map $\Phi$. It does not say that electromagnetic
 fields fail to be Lorentz covariant: they transform covariantly as two-forms, through $\lG$ acting on $V$, with no reference to spinors. Nor does a
 shared operator identify the two modules: that the same temporal volume element enters both the spin-$\tfrac12$ module $S$ and the octant
-representation of the spin-one field strengths does not make these modules equivalent, and they are not (\cref{r3:prop:odd} and r4-13; X-06).
+representation of the spin-one field strengths does not make these modules equivalent, and they are not (\cref{r3:prop:odd} and r4-13).
 The intertwiners that do exist are odd:
 
 \begin{proposition}[Odd intertwiners and the octant representation]
@@ -1503,6 +1509,8 @@ $e_{k+3}\omega$: this is the reason the boosts are odd. Which symmetries of the 
 By even elements of $\Cl(3,3)$ the field octants carry the rotations $\so3_\Delta$ and the premetric $\mathfrak{gl}(3)$ of \cref{r3:thm:phi}(iii),
 through their spin lifts, and the parity, through $(-1)^N=-\omega$. They do not carry the boosts or the duality
 rotations, which act only through the odd operators $Q_k$ and $-T$ of the representation $\rho_{\rm oct}$, the Pauli algebra of the temporal triple.
+The generators are odd; the finite transformations they generate are in general of mixed parity, for example
+$e^{-\theta T}=\cos\theta\,\id-\sin\theta\,T$.
 The spin-lifted Lorentz algebra $\lG$ makes the field octants parts of two four-vectors, not of a field strength.
 \end{corollary}
 
@@ -1672,7 +1680,8 @@ not realise the pair: it places the light-cone sums $\bB\pm\bE$ on the octants (
 of duality. The construction is a representation of the classical field strength; it is not a quantisation of the field.
 
 \paragraph{The main obstruction.} On the octants the rotations act through the spin representation, but the boosts and the duality rotation
-of the field act only through the odd operators $Q_k$ and $-T$ of $\rho_{\rm oct}$ (\cref{r3:thm:noeven,r3:prop:odd}), whereas a Dirac field transforms
+of the field have the odd generators $Q_k$ and $-T$ of $\rho_{\rm oct}$, their finite transformations being of mixed parity in general
+(\cref{r3:thm:noeven,r3:prop:odd}), whereas a Dirac field transforms
 under the spin lift of the interior Lorentz algebra. A covariant theory containing both the Dirac field and the field octants must say how
 $\rho_{\rm oct}$, the spin lift acting on Dirac spinors and the map $\Phi$ coexist. This is the principal question the octant picture leaves, and the
 element $T$, which is at once the mass form of the Dirac reading and the duality operator on the octants, is where the two meet
@@ -1889,7 +1898,8 @@ On the eigenspaces $\hat n=\pm1$ of any clock, $T=\pm J(\hat n)$, so the rest fl
 senses of the charge rotation that are particle and antiparticle there (\cref{mb:senses}). An odd temporal permutation carries the
 Dirac data $(K^\mu_{\hat n},T,J(\hat n))$, with $K^\mu_{\hat n}=-\hat n\gamma^\mu_{\hat n}$, to $(K^\mu_{\sigma \hat n},-T,-J(\sigma \hat n))$: the transported Lagrangian \cref{r1:eq:LD} has mass $-m$ and
 charge $-q$. The axial rotation by $\Omega_{\sigma \hat n}$, which preserves every $K^\mu$ and $J$ and reverses $T$ (\cref{mb:massless}(iv)), restores the
-mass, leaving $q\mapsto-q$, the effect of $C$.
+mass, leaving $q\mapsto-q$, the effect of $C$. This is a classical change of variables; in a quantum theory the axial rotation must also
+account for the measure, that is for the axial anomaly and possible topological terms.
 \end{corollary}
 
 \begin{proof}
@@ -2027,7 +2037,7 @@ with $F_X^{\mu\nu}$ in place of $(F_X)_{\mu\nu}$ is $S_{\hat n}(\eta X)$ (r4-16)
 \label{r4:thm:couplings}
 Let $Y\in\lG$ act by $\rho_{\hat n}(Y)$ on $\psi$ and by $\rho_{\rm oct}(Y)$ on $\Phi_{\rm oct}(X)$, that is, by $Y\cdot X=[Y,X]$ on $X$. The class classified is that of
 couplings linear in the field strength $X$, bilinear in $\psi$, without derivatives and invariant under $\lG$; minimal coupling to a potential
-$A_\mu$ through a covariant derivative, couplings with derivatives and couplings nonlinear in $X$ lie outside it (X-07).
+$A_\mu$ through a covariant derivative, couplings with derivatives and couplings nonlinear in $X$ lie outside it.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item No nonzero bilinear form $\psi^{\!\top}M\Phi_{\rm oct}(X)$ is invariant, nor one on all of $S$ with $\rho_{\rm oct}$.
 \item The invariant trilinear couplings $\psi^{\!\top}M(X)\psi$, $M:V\to\End(S)$ linear with $\rho_{\hat n}(Y)^{\!\top}M(X)+M(X)\rho_{\hat n}(Y)+M(Y\cdot X)=0$, are exactly
@@ -2223,14 +2233,15 @@ theories built from the structures of this chapter a change of clock is a change
 sector'' is interpretive); whether a dynamics singles out a clock is open, as in \cref{r2:rem:projection}. Equivalence under a global symmetry is
 not gauge redundancy: symmetry-related configurations can be distinct physical states, and a gauge reading would need an action, a
 redundancy of its solutions and gauge-invariant observables. A position-dependent clock rotor adds $R^{-1}\partial_\mu R$ to the Dirac operator and
-so needs a connection that is not constructed here (X-02, TIME-08).
+so needs a connection that is not constructed here.
 
 \begin{theorem}[Uniqueness of $T$]
 \label{r4:thm:unique}
 Let $Y\in\Cl(3,3)$.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item If $\hat n^{-1}Y$ commutes with $\gamma^0_{\hat n},\dots,\gamma^3_{\hat n}$ for three linearly independent clocks, then $Y\in\R T$. Three clocks of the Fisher--Rao octant suffice,
-e.g.\ $e_1$, $(1,2,2)/3$, $(2,3,6)/7$. For two clocks $\hat n,\hat n'$ the solutions are $\operatorname{span}\{T,\,(\hat n\times \hat n')\,e_4e_5e_6\}$.
+e.g.\ $e_1$, $(1,2,2)/3$, $(2,3,6)/7$. For two linearly independent clocks $\hat n,\hat n'$ the solutions are $\operatorname{span}\{T,\,(\hat n\times \hat n')\,e_4e_5e_6\}$; for $\hat n'=\pm\hat n$ the
+conditions are those of one clock.
 \item If $\hat n^{-1}Y$ lies, for two independent clocks, in the joint commutant $\operatorname{span}\{\id,\Omega_{\hat n},J(\hat n),\Omega_{\hat n}J(\hat n)\}$ of $\lint(\hat n)$ and $J(\hat n)$ in which \cref{thm:i} selects the imaginary unit, then $Y\in\operatorname{span}\{T,e_4e_5e_6\}=\operatorname{span}\{T,T\Gamma\}$, the two $\mathrm{Spin}(3,3)$-invariant forms. Indeed $\hat nJ(\hat n)=T$ and
 $\hat n\Omega_{\hat n}=e_4e_5e_6$ for every clock.
 \item Consequently $T$ is, up to scale, the only element of $\Cl(3,3)$ that is the product of the clock with a Dirac complex structure (a square root of $-\id$ in
@@ -2252,7 +2263,7 @@ $\hat w$ the unit vector along $\hat n\times \hat n'$, meet the conditions at bo
 Fixed; by the two-clock exception in (i) two clocks do not single out $T$, and three are needed. At a single fixed clock the theorem gives no
 uniqueness. The commutant $\operatorname{span}\{\id,J(\hat n),u_1\Omega_{\hat n},u_2\Omega_{\hat n}\}$ is a quaternion algebra, and its square roots of $-\id$ form the
 two-sphere $aJ(\hat n)+b\,u_1\Omega_{\hat n}+c\,u_2\Omega_{\hat n}$, $a^2+b^2+c^2=1$; for instance $e_2\Omega_{e_1}$ is a Dirac complex structure at $\hat n=e_1$ other than
-$\pm J(e_1)$ (X-01; z1-7c). So ``a square root of $-\id$ in the commutant'' selects $\pm J(\hat n)$ only with an extra datum: pointwise, the
+$\pm J(e_1)$ (z1-7c). So ``a square root of $-\id$ in the commutant'' selects $\pm J(\hat n)$ only with an extra datum: pointwise, the
 joint commutant with $\lint(\hat n)$ and $J(\hat n)$ of \cref{thm:i} (or commutation with $T$); globally, the two hypotheses of (iii),
 that the product with the clock be the same element for three independent clocks. The second element of (ii), $e_4e_5e_6$, is the
 clock times the other complex structure $\Omega_{\hat n}$, which \cref{thm:i} excludes because it anticommutes with the $\gamma^\mu_{\hat n}$.
@@ -2649,7 +2660,7 @@ planes of $X$ and of $GX$ meet in the null line $[\kappa]$, as two lines of proj
 \node[draw=tcol,thick,rounded corners=4pt,fill=tcol!6,text width=6.0cm,align=left,inner sep=6pt] (int) at (0,0) {%
 \textbf{\textcolor{tcol}{interior reading}}, Lorentz algebra $\lint$\\[3pt]
 grade 1: potential $A$, $(\tfrac12,\tfrac12)_0$; surplus pair $(0,0)_{\pm1}$\\
-grade 2: field strength $F$, $(1,0)\oplus(0,1)$; $\Omega=\star$\\
+grade 2: field strength $F$, $(1,0)\oplus(0,1)$; $I_4=-\Omega=\star$\\
 spinors: Weyl, $2(\tfrac12,0)\oplus2(0,\tfrac12)$\\
 equation: $\nabla F=\mathcal J$ (\cref{thm:nablaF})};
 \node[draw=scol,thick,rounded corners=4pt,fill=scol!6,text width=6.0cm,align=left,inner sep=6pt] (bin) at (7.8,0) {%
@@ -2847,15 +2858,18 @@ $\tfrac12\sin2\vartheta\,|\mathbf b|^2$ for the second.
 vector-valued function of the value of $F$ at a point vanishes, because a non-null field is fixed by a rotation and a boost about a common
 axis that have no common fixed vector, and every tensor power of $(1,0)\oplus(0,1)$ contains only representations $(j_1,j_2)$ with integer
 $j_1,j_2$. A mass term in $\partial_\mu F^{\mu\nu}=j^\nu$ must therefore involve the potential, other fields or derivatives of $F$; no
-function of the two invariants can serve. Derivatives give a massive mode that is a ghost, as Podolsky's Lagrangian shows. A constant
-nonlinear background moves the light cone without opening a gap, $\det W(s\omega,s\bk)=s^6\det W(\omega,\bk)$, and to first order the two
-phase velocities are $1-c_i\Theta^{\mu\nu}k_\mu k_\nu$ for $L=\cF+c_1\cF^2+c_2\cG^2$, which is duality invariant and blind to orthogonality.
+function of the two invariants can serve. The Podolsky-type higher-derivative extension introduces an additional massive pole with opposite residue, a ghost \cite{Podolsky42}. A constant
+nonlinear background moves the light cone without opening a gap, $\det W(s\omega,s\bk)=s^6\det W(\omega,\bk)$. For $L=\cF+c_1\cF^2+c_2\cG^2$
+and a normalised propagation direction $k$, the two phase velocities are to first order $1-c_i\Theta^{\mu\nu}k_\mu k_\nu$. This Lagrangian is not
+duality invariant in general: its duality defect is $4(c_1-c_2)\cF\cG+4c_1(c_1-2c_2)\cF^2\cG-4c_2^2\cG^3$, which vanishes to first order only
+if $c_1=c_2$.
 Written into the field equations, the binding rotation of \cref{sec:neutral} gives the frequencies $\kappa\pm|\bk|$ to the two circular
 polarisations, a frequency offset that the time-dependent duality rotation $z=e^{-i\kappa t}w$ removes.
 
 \emph{Charged matter.} The invariant $\epsilon_E$ vanishes exactly when $\bE\cdot\bB=0$ and $|\bB|\ge|\bE|$, so every non-orthogonal field
-has $\epsilon_E>0$ and makes the vacuum of spinor electrodynamics decay into pairs \cite{Schwinger51}, converting field energy into
-particles whose mass is a given parameter. For massless fermions the same field pumps chirality, $dN_5/dt=(e^2/2\pi^2)\int\bE\cdot\Btext$,
+has $\epsilon_E>0$. In a constant background, or one controlled as locally constant, this makes the vacuum of spinor electrodynamics decay
+into pairs \cite{Schwinger51}, converting field energy into particles whose mass is a given parameter; for general backgrounds the spatial
+extent, the time dependence and the available energy also matter. For massless fermions the same field pumps chirality, $dN_5/dt=(e^2/2\pi^2)\int\bE\cdot\Btext$,
 the axial anomaly \cite{Adler69,BellJackiw69,NielsenNinomiya83}; a fermion mass relaxes it, and none is produced. The background that does
 catalyse a fermion mass is a pure magnetic field, which is orthogonal \cite{GusyninMiranskyShovkovy95}.
 
@@ -2917,7 +2931,10 @@ vanishes. This section asks how the second is contained in the first: which quad
 how that energy differentiates into a Lorentz-invariant rest part and a part carried by motion without any interaction or second field, where
 the conversion constant $c$ enters, and which of the arena's own structures can carry the name of a mass. The relation $E=mc^2$
 \cite{Einstein1905} is inherited; what is at stake is only how the arena realises its ingredients. Most of the answers are inherited
-electrodynamics written in the arena's variables, and are said to be so; the arena adds which of its forms plays which role. Throughout, $c$
+electrodynamics written in the arena's variables, and are said to be so. In particular, the local invariant $E_0=\tfrac12|z\cdot z|$ read as a
+rest energy and an inertia, the energy-flow velocity $|\mathbf S|/E_6$ and the standing-wave examples below appear in Kaiser's analysis of
+electromagnetic inertia and reactive energy \cite{Kaiser11}, which this section restates and compares in the arena's variables. The arena adds
+which of its forms plays which role. Throughout, $c$
 enters only as the conversion between the two triples of \cref{thm:onec}, never as a symmetry.
 
 \paragraph{Notation.} We use the field-strength reading of \cref{thm:emfield}: $X=\sum_i(B_ie_i+E_ie_{i+3})$, $z=\bB+i\bE\in\C^3$, the
@@ -2975,9 +2992,10 @@ electric one nor, as \cref{sec:energy-identity} shows, rest from motion.
 \begin{proposition}[The pointwise symmetry of the undivided energy]
 \label{en:u3}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item The maps of $V$ that preserve $E_6$ and commute with $G$ form $\uu3$, of dimension $9$: $A=\bigl(\begin{smallmatrix}P&Q\\-Q&P\end{smallmatrix}\bigr)$
+\item The infinitesimal maps of $V$ that preserve $E_6$ and commute with $G$ form the Lie algebra $\uu3$, of dimension $9$, of the group $U(3)$: $A=\bigl(\begin{smallmatrix}P&Q\\-Q&P\end{smallmatrix}\bigr)$
 acts on $z$ by the anti-Hermitian matrix $P-iQ$.
-\item The Lie algebra of $O(3,\C)\times U(1)_G$, the $G$-linear maps preserving $q$ up to a phase, is $\lG\oplus\R G$, of dimension $7$.
+\item The $G$-linear maps preserving $q$ up to a phase form the group $O(3,\C)\cdot U(1)_G$, whose two factors meet in $\{\pm\id\}$; its Lie
+algebra is $\lG\oplus\R G$, of dimension $7$.
 \item The intersection of the two is $\so3\oplus\R G$, of dimension $4$, the maximal compact subalgebra of $\lG\oplus\R G$; and $\uu3\cap\lG=\so3$.
 \item The stabiliser of the function $E_0$ in $U(3)$ is $U(1)\cdot O(3)=\{e^{i\varphi}O\}$. For instance the unitary map
 \[
@@ -3101,10 +3119,12 @@ energy and momentum of a field point.
 \item For non-null $z$, $E_0$ is the minimum of $E_6$ over the Lorentz orbit, and over the orbit of Lorentz transformations and duality,
 attained exactly where $\mathbf S=0$; for null $z\neq0$ the infimum $0$ is not attained. Moreover $E_6=E_0/\sqrt{1-v_E^2}$ with $v_E:=|\mathbf S|/E_6<1$.
 \item If $\bB\parallel\bE\parallel\mathbf n$ and the boost $e^{\chi K}$ of rapidity $\chi$ has axis orthogonal to $\mathbf n$, then
-$E_6=E_0\cosh2\chi$, $|\mathbf S|=E_0\sinh2\chi$ and $v_E=\tanh2\chi=2\beta/(1+\beta^2)$ with $\beta=\tanh\chi$. A boost along $\mathbf n$ changes
+$E_6=E_0\cosh2\chi$, $|\mathbf S|=E_0|\sinh2\chi|$ and $v_E=|\tanh2\chi|=2|\beta|/(1+\beta^2)$ with $\beta=\tanh\chi$ (for $\chi\ge0$ the absolute
+values can be dropped). A boost along $\mathbf n$ changes
 neither $E_6$ nor $\mathbf S=0$.
 \item The observer moving with velocity $\mathbf v_{\rm rest}=\mathbf S_{\rm t}/(E_6+E_0)$ sees $\mathbf S=0$ and $E_6=E_0$, and
-$|\mathbf v_{\rm rest}|=|\mathbf S|/(E_6+E_0)$, which is $\beta$ in the setting of (ii).
+$|\mathbf v_{\rm rest}|=|\mathbf S|/(E_6+E_0)$, which is $|\beta|$ in the setting of (ii). For a nonzero null field the formula gives unit
+speed, and there is no timelike rest observer.
 \end{enumerate}
 \end{theorem}
 
@@ -3114,7 +3134,7 @@ $z$ the boost of \cref{en:orbits}(ii) drives $E_6$ to $0$. Dividing \eqref{en:la
 and $X=\sigma_1e_1+\sigma_2e_4$. By \cref{ex:emboost} and the same computation for the other basis vectors, $[K_3,e_1]=e_5$, $[K_3,e_5]=e_1$,
 $[K_3,e_4]=-e_2$ and $[K_3,e_2]=-e_4$, so $\ad_{K_3}^3=\ad_{K_3}$ and $e^{\chi\ad_{K_3}}=\id+\sinh\chi\,\ad_{K_3}+(\cosh\chi-1)\ad_{K_3}^2$. Hence
 $\bB=(\sigma_1\cosh\chi,-\sigma_2\sinh\chi,0)$, $\bE=(\sigma_2\cosh\chi,\sigma_1\sinh\chi,0)$ and $\mathbf S=-E_0\sinh2\chi\,e_3$; likewise for $K_2$,
-while $K_1$ fixes $e_1$ and $e_4$. (iii) $|\mathbf S|/(E_6+E_0)=\sinh2\chi/(\cosh2\chi+1)=\tanh\chi$. For the direction, $e^{\chi K_3}$ is the passage to
+while $K_1$ fixes $e_1$ and $e_4$. (iii) $|\mathbf S|/(E_6+E_0)=|\sinh2\chi|/(\cosh2\chi+1)=|\tanh\chi|$; for a null field $E_0=0$ and $|\mathbf S|=E_6$. For the direction, $e^{\chi K_3}$ is the passage to
 a frame moving with velocity $-\tanh\chi\,e_3$ (after \cref{thm:emfield}), in which the rest frame moves along $+e_3$, and so does
 $\mathbf S_{\rm t}=-\mathbf S$.
 \end{proof}
@@ -3164,7 +3184,7 @@ Let $z\neq0$.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item $\Stab_{\lG}(z)=\{(\zeta z)\times\cdot\,:\,\zeta\in\C\}$ is abelian of real dimension two. If $q\neq0$ and $\hat z=z/\sqrt q$, then
 $R=\hat z\times\cdot$ satisfies $R^3=-R$ (a rotation) and $(GR)^3=GR$ (a boost) about the common complex axis $\hat z$: the stabiliser is
-$\so2\oplus\so{1,1}$. If $q=0$, every element $N$ of the stabiliser has $N^3=0\neq N^2$: null rotations, $\R^2$.
+$\so2\oplus\so{1,1}$. If $q=0$, every nonzero element $N$ of the stabiliser has $N^3=0\neq N^2$: null rotations, $\R^2$.
 \item In $\lG\oplus\R G$ a non-null $z$ has the same stabiliser, with no $G$ component. A null $z=\mathbf n_1+i\mathbf n_2$ has a three-dimensional
 stabiliser $\cong\mathfrak e(2)$, spanned by the null rotations and $L_{\mathbf n}+G$, with $\mathbf n=\mathbf n_1\times\mathbf n_2/|\mathbf n_1|^2=\bB\times\bE/|\bB\times\bE|$
 the propagation axis, which acts on the null rotations with eigenvalues $\pm i$. For $z=(1,i,0)$, $(L_3+G)z=0$ and $e^{\vartheta G}z=e^{-\vartheta L_3}z$.
@@ -3249,7 +3269,8 @@ examples locate $M$ relative to the rest energies of the field points.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item $M^2=U^2-|\mathbf P|^2\ge U\int(u-|\mathbf S|)\,d^3x\ge0$, and in every frame $M\ge\int E_0\,d^3x$, with equality iff the densities
 $(u,\mathbf S_{\rm t})(x)$ are all proportional.
-\item A plane wave has $M=0$. In SI units the waves $E_x=a\cos(kz\mp\omega t)$, $cB_{{\rm t}y}=\pm a\cos(kz\mp\omega t)$ superpose to
+\item An infinite monochromatic plane wave has no finite integrated $U$, $\mathbf P$ or $M$; its energy-momentum density is null, and in a
+finite mode volume the integrated tuple is null, $M=0$ (a finite wave packet with angular spread can have timelike total four-momentum). In SI units the waves $E_x=a\cos(kz\mp\omega t)$, $cB_{{\rm t}y}=\pm a\cos(kz\mp\omega t)$ superpose to
 $E_x=2a\cos kz\cos\omega t$, $cB_{{\rm t}y}=2a\sin kz\sin\omega t$. Per cell (unit area, length $2\pi/k$) one has $U=2\pi\varepsilon_0a^2/k$ and
 $\mathbf P=0$, so $Mc^2=U$, although each constituent has $q_c=0$ and $U_\pm=|\mathbf P_\pm|c$. The total has $q_c=-2a^2(\cos2kz+\cos2\omega t)$,
 $\int_{\rm cell}\Theta^{zz}=U$ and $\int_{\rm cell}\Theta^{xx}=-U\cos2\omega t$, and the integrated rest energy $\int_{\rm cell}u_0$ oscillates between
@@ -3345,7 +3366,8 @@ equation on $S$, with the two Gauss laws on the two poles and the evolution laws
 \cref{r3:thm:maxwell}); the spatial derivatives in it multiply the temporal generators, a property of the representation and not a
 derivation of space from time. The mass form pairs each electric octant with its magnetic antipode and gives $-\bE\cdot\bB$ (fixed,
 \cref{r3:prop:energies}). Clifford multiplication by the field point mixes the two members of the pair and does not realise it
-(\cref{r3:prop:poles}). Boosts and the duality rotation act on the octants only through odd operators (obstructed for even operators,
+(\cref{r3:prop:poles}). The infinitesimal generators of the boosts and of the duality rotation are odd on the octants, their finite transformations generally of
+mixed parity (obstructed for even operators,
 \cref{r3:thm:noeven,r3:prop:odd}). The construction represents the classical field strength; it quantises nothing.
 
 \paragraph{The bridge.} The element shared by the two readings is $T=e_1e_2e_3=\hat nJ(\hat n)$: for every clock it is the Dirac mass form of the
@@ -3356,6 +3378,7 @@ of the field and the spin lift of $\lG$ are three inequivalent Lorentz represent
 scalars; no bilinear coupling of a Dirac field to the field octants is covariant, while the trilinear couplings are exactly the Pauli
 term and its dual, at every clock (fixed and inherited, \cref{r4:prop:ineq,r4:thm:couplings}). The answer to the question whether $T=\hat nJ(\hat n)$
 incorporates consistently into both readings is therefore yes at the level of the module: the two readings keep their Lorentz
-representations, and they meet in $T$ and in the Pauli coupling. A covariant Dirac--Maxwell dynamics in the arena, with the minimal coupling
-through the potential and the charge $J(\hat n)$, a dynamics that selects the clock, and the quantisation of either reading remain open.
+representations, and they meet in $T$ and in the Pauli coupling. The classical minimally coupled Maxwell--Dirac sector, through the potential
+and the charge $J(\hat n)$, is written down (\cref{r1:prop:total}); what remains open is its selection from the arena rather than its adoption,
+its extension to the further sectors, a common parent dynamics, a dynamics that selects the clock, and a quantisation derived from the construction.
 

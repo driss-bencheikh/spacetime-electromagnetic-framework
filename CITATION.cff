@@ -2,9 +2,12 @@ cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
 title: "The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature Clifford Geometry"
 type: software
-version: "1.0.0"
-date-released: "2026-11-02"
-doi: "10.5281/zenodo.23900465"
+version: "1.0.1"
+date-released: "2026-11-08"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23900465"
+    description: "DOI of version 1.0.0; version 1.0.1 receives its own DOI when it is deposited"
 license:
   - CC-BY-4.0
   - MIT
@@ -16,7 +19,7 @@ repository-code: "https://github.com/driss-bencheikh/spacetime-electromagnetic-f
 abstract: >-
   A study of the real Clifford algebra Cl(3,3) of the split space R^{3,3} and its graded tower Cl(3n,3n): which ingredients of
   relativistic field theory the algebra fixes, which it admits and which it obstructs, with a complete computational verification package.
-  Version 1.0.0, preprint, not peer reviewed. Manuscript and documentation under CC BY 4.0; verification software under MIT
+  Version 1.0.1 (corrections of version 1.0.0), preprint, not peer reviewed. Manuscript and documentation under CC BY 4.0; verification software under MIT
   (see LICENSE.md).
 keywords:
   - split-signature Clifford algebra
@@ -26,7 +29,7 @@ keywords:
   - Dirac theory
   - Pati-Salam
   - obstructions
-  - computer-verified mathematics
+  - computer-assisted algebra
 preferred-citation:
   type: report
   title: "The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature Clifford Geometry"
@@ -35,8 +38,7 @@ preferred-citation:
       given-names: Driss
       affiliation: "Independent Researcher"
   status: preprint
-  version: "1.0.0"
-  doi: "10.5281/zenodo.23900465"
+  version: "1.0.1"
   year: 2026
   notes: "Preprint, not peer reviewed."
   url: "https://github.com/driss-bencheikh/spacetime-electromagnetic-framework"

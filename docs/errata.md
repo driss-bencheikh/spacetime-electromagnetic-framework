@@ -2,8 +2,13 @@
 
 Known issues in `release/manuscript-v1.0.0.pdf` (DOI [10.5281/zenodo.23900465](https://doi.org/10.5281/zenodo.23900465)), found by
 independent AI-assisted reviews of the abstract, the Introduction and Chapters 1 to 14 and 16, and by an AI-assisted chapter-by-chapter
-derivation check, and checked by the author. They will be corrected in version 1.0.1. Page numbers are
-the printed page numbers.
+derivation check, the author's review of the comparison with the literature and reviews of the prepared version 1.0.1 (Chapters 4
+and 9, items 168–179; Chapters 1–3, 5–16 and the Introduction, items 180–191), and checked by the author. Page numbers are the printed
+page numbers of version 1.0.0.
+
+**Status (9 November 2026):** every item is corrected in version 1.0.1 (`release/manuscript-v1.0.1.pdf`); items 59 and 60 by the exact
+checks a13-2 and a13-1 of `verification/ch07_mass_vacuum/a13_tensor_certificates.py`. Theorem, proposition, table and
+figure numbers are those of version 1.0.0 (Figure 13.2 is new); page numbers differ.
 
 **None of these issues invalidates a main theorem.** Each correction is local. Where a later chapter repeats an affected statement or cites
 it as justification, the item says so (items 53, 65, 68 and 77); in every such case the later results hold once the correction is made.
@@ -151,7 +156,9 @@ Added from the derivation check (5 November 2026):
     (1,1) (it can be totally null), and for non-diagonalisable G the bounded oscillating subspace need not have signature (k,k). Counterexample:
     η = [[0,K],[K,0]] with K = diag(1,−1) and G = [[J,I],[0,J]], whose bounded motions lie in a plane on which η vanishes. Correct statement:
     for diagonalisable G the oscillating subspace is nondegenerate of signature (k,k) with k ≤ min(P,Q), so the conclusions for G² = −I,
-    which are the only ones used later, stand.
+    which are the only ones used later, stand. *Amended after a review of the prepared version 1.0.1:* the oscillating subspace is the
+    real span of the eigenvectors with nonzero purely imaginary eigenvalues; a non-real spectrum is not enough (η = diag(1,−1),
+    G = [[1,−1],[1,1]], eigenvalues 1 ± i, gives X = e^τ(cos τ, sin τ) for κ = 1).
 23. **Error. Canonical transformation after Theorem 4.12 (p. 106).** The shift that removes the boundary term is p ↦ p − mκηGX, not
     p ↦ p + 2mκηGX (the latter relates the +κ and −κ gauges). Theorem 4.12 and the absence of a ground state are unaffected.
 24. **Hypothesis. Proposition 4.33 (p. 113).** "Every frame moves on a bounded orbit" on the balance surface requires h(0) ≠ 0; with
@@ -175,6 +182,18 @@ Added from the derivation check (5 November 2026):
 32. **Evidence. Theorems 4.38 and 4.39.** The check of Theorem 4.39 uses ranks modulo two primes without an exact kernel certificate, and
     the representation content in Theorem 4.38 is read by floating-point diagonalisation. The values of Theorem 4.39 have since been confirmed
     by independent exact rational elimination; exact certificates will be added.
+168. **Hypothesis. Theorem 4.21 (p. 109).** The state-dependent rate must not vanish identically on the open set being compared; a rate
+     that vanishes there and not elsewhere would let the zero Hamiltonian coincide with the force law locally. The Casimir argument proves the
+     local statement (continuity gives an open subset on which the rate is nonzero); the computation at twelve null vectors is a check, not the
+     proof.
+169. **Hypothesis. Theorem 4.53(vi) (p. 125).** "H is unbounded below" needs ν ≠ 0: at ν = 0, N = 0 and H = h²/(2I₀) is bounded below.
+170. **Wording. §4.2.3 (p. 103).** The stress tensor is the usual one when the fibre metric and the bundle connection are held fixed in the
+     metric variation (a metric-dependent connection needs further terms), and its trace "vanishes only in D = 2" should read "vanishes
+     identically for arbitrary fields only in D = 2".
+171. **Wording. Opening of §4.2 (p. 101).** "One piece of interior dynamics without further input" and "a single choice" overstate what the
+     algebra gives: for the adopted shifted quadratic action, the comparison concerns the choice of a positive or a split quadratic form.
+172. **Attribution. After Theorem 4.53 (p. 124).** The conserved total momentum J_s is the momentum map of semidirect-product mechanics (Holm,
+     Marsden and Ratiu 1998); "new" should read "computed here for this closure".
 
 ## Chapter 5 — The Clifford Tower and Constituent Duplication
 
@@ -270,9 +289,9 @@ Added from the derivation check (5 November 2026):
     space of the sphere.
 59. **Evidence. Proposition 7.22 (p. 215).** As the text states, the identification of the spectrum of ΦᵀΦ with that of S†S uses an explicit
     isomorphism of the original computation that the version 1.0.0 suite does not reproduce. The map and its adjoint and product identities
-    will be published with an exact check.
+    will be published with an exact check. *Done:* a13-2 gives the map exactly (v ↦ (ε⊗S)v̄ in a Weyl basis of the Γ = +1 half).
 60. **Evidence. Theorem 7.23(ii) (p. 216).** The reduction of |𝒟| ≤ (3/8)I₄ to one constant is exact (Schur's lemma), but the constant 3/8 is
-    obtained numerically; an exact contraction will replace it.
+    obtained numerically; an exact contraction will replace it. *Done:* a13-1 (Q G⁻¹ Q = (3/8)² G on an integer basis of the (20′,1) component).
 61. **Wording. Theorem 7.12(b) (p. 209) and Proposition 7.20 (p. 214).** J − JΓ is called "the left-handed fermion number" in Theorem 7.12,
     while its charge 1 − Γ is "twice the left-handed fermion number" in Proposition 7.20; the latter is correct.
 62. **Wording. Model assumptions (§§7.5–7.6).** The thresholds x < 27 and x_* ≈ 24.884, and the ratios M_N/M_{W_R} < 27^{1/4} ≈ 2.280
@@ -362,6 +381,19 @@ Added from the derivation check (5 November 2026):
 95. **Wording. Notation in Chapter 9.** b denotes an index and the connection; S_n the spinor module and, in Theorem 9.62, the spatial volume;
     N the number operator, the inertias N_k and a nilpotent part; H the Noether energy, the copy Hamiltonian and the operator 𝖧; C the
     conversion, the copy rotations C_±, C^{kl}, Ĉ, C_v, C_b and a complex symmetric matrix; M the phase-space generator and masses.
+173. **Error. Theorem 9.40(iii) (p. 294) and Example 5.59 (p. 172).** M_pair, half a sum of singular values, is |sin φ|, not sin φ: at
+     φ = −π/2 the singular values are 1 and 1. The chain E₆ ≥ M_pair ≥ ΣE₀ of Example 5.59 holds with |sin φ|.
+174. **Wording. Proposition 9.51(i) (p. 301).** E₀ and |Q_kl| are conserved invariant functions, smooth only where they do not vanish (along
+     z(t) = (1, i+t, 0), E₀ = |t|√(t²+4)/2); the globally smooth Casimirs are E₀² and |Q_kl|², as in item 27 for Theorem 4.40.
+175. **Error. Remark 9.63(b) (p. 315).** "All elements of so(3)₊ are conjugate" is false (J and 2J are not); all Cartan directions, or all
+     elements of a fixed nonzero norm, are. The conclusion that the algebra selects no Cartan direction stands.
+176. **Wording. Table 9.3 (p. 292).** The rotor column gives the real dimension of the space of resonant coefficients before the Jacobi
+     identity; the entries at n = 5, 6 are not dimensions of Lie-bracket varieties.
+177. **Wording. Chapter 9 opening, §9.4 summary and Table 9.3 (pp. 265, 291–292); also the subsection "The copy rotation moves one quantum" of Chapter 5 (p. 167).** "Physical exactly between unequal
+     rates" means non-removable while the prescribed binding tensor is kept fixed; a spacetime gauge action, observables and physical states
+     are further structure.
+178. **Wording. §9.3.5 (p. 281).** The plaquette is the holonomy of the copy connection around a triangle in copy space, the copy-space
+     analogue of a Wilson loop, not the Wilson loop of a spacetime connection, as §9.4 already says.
 
 ## Chapter 10 — Classical and Astrophysical Consistency
 
@@ -477,6 +509,9 @@ Added from the derivation check (5 November 2026):
      B denotes the order parameter, the Kaluza–Klein potentials and the magnetic field; C the selector and the constraint function; N the normal
      plane and the lapse; n the null rotation and a lattice vector; K = ½e₁e₄ beside 𝒦 and the kernels.
 
+167. **Wording. Table 12.1 (p. 354), row "universal τ_U".** "No proposal" repeats the claim withdrawn in item 118. It should read: prior art
+     (Horwitz–Piron); no mechanism in this arena; requirements listed.
+
 ## Chapter 13 — Compatibility of the Mathematical Constructions
 
 130. **Error. §13.5 (pp. 363, 365–366) and Table 13.4.** "The minimum of E₆ over boosts, attained exactly in the rest frame" fails for nonzero null
@@ -525,6 +560,39 @@ Added from the derivation check (5 November 2026):
      2 dim_ℂ Sym²(ℂ¹⁶) = 272 and the energy–inertia identities (Kaiser 2011, item 21) from the explicit realisations, projectors, obstructions and
      coefficient-dependent selections; a universal evolution parameter keeps its Horwitz–Piron comparison (item 118).
 
+162. **Wording. Table 14.1 (p. 370), row "one generation", and Remark 6.24 (p. 199).** "Same count; equivalence as modules not constructed"
+     understates what is known. Under so(1,3) ⊕ so(4) ⊕ so(6), the block V_* (Corollary 6.12) and Krasnov's Λ^even ℝ⁷ (his §6) are both the real
+     form of (2,1) ⊗ [(4,2,1) ⊕ (4̄,1,2)]. By complete reducibility they are equivalent representations of that algebra, once its two embeddings
+     are identified compatibly with the labels. What is open is the explicit identification of the generators and conventions, the map itself,
+     and whether it carries the kinetic structures. Remark 6.24 should say the same. The non-compact generators of so(4,6) obstruct only an
+     extension to the ambient action (item 139).
+163. **Wording. Table 14.1 (p. 370), row "kinetic term".** "Different" should read "kinetic equivalence not established". The opposite signs of
+     Krasnov's eq. (219), which he states coincide with the Standard-Model kinetic term, and K⁰ = id on V_* can be compared only after common
+     choices of complex structure, conjugation, Grassmann ordering and field variables. The displayed signs establish neither a ghost on one
+     side nor its absence on the other.
+164. **Attribution. §14.3 (p. 369).** The classification of Chamseddine and Connes makes the dimension per generation a square, k². Sixteen
+     fermions (k = 4) do not follow from the symplectic–unitary hypothesis alone: they follow from the quaternionic hypothesis together with the
+     choice of its simplest non-trivially graded case, of quaternionic dimension two (Why the Standard Model, §3). The finite algebra is, up to
+     an automorphism of 𝒜^ev, the unique involutive subalgebra of maximal dimension that admits off-diagonal Dirac operators satisfying the
+     order-one condition (ibid., Theorem 4.1; see item 142).
+165. **Wording. §14.3 (p. 370), last sentence; also the paragraph after Theorem 7.34 (p. 223).** "A normalisation and not a prediction" conflates
+     three steps:
+     - normalising the hypercharge generator, T_Y = √(3/5) Y, which is a convention and gives g₁ = √(5/3) g_Y;
+     - the equality g₁ = g₂ at a scale, which is a physical boundary condition;
+     - the spectrum, thresholds and running.
+
+     In the spectral action the boundary condition follows from the action's gauge kinetic coefficients, so it is a conditional prediction at
+     the cut-off (Chamseddine, Connes and Marcolli 2007). In this manuscript it comes from the single gauge coupling of the adopted action
+     (7.4), which is a choice. Chapter 7's phrase "this is a normalisation statement" should name that choice. Its conclusion, that no low-energy
+     angle is predicted, stands.
+166. **Attribution. §14.3.** The spectral Pati–Salam model of Chamseddine, Connes and van Suijlekom should be compared:
+     - *Beyond the spectral Standard Model: emergence of Pati–Salam unification*, JHEP 11 (2013) 132;
+     - the inner fluctuations without the first-order condition, arXiv:1304.7583;
+     - the one-loop running of its couplings, JHEP 11 (2015) 011.
+
+     It has the same family, (2,1,4) ⊕ (1,2,4), so the Pati–Salam content is shared prior art there as well. The distinguishing questions are
+     realisation, selection and bosonic dynamics.
+
 ## Chapter 15 — AI-Assisted Research and Verification Methodology
 
 144. **Wording. §15.2 (p. 373).** "Exits with status zero only if every check passes" is not true of `p2_alignment.py` until the fix of item 84.
@@ -554,6 +622,71 @@ Added from the derivation check (5 November 2026):
 152. **Attribution. §16.1, items (2) and (6) (pp. 376–377), and §13.1.1 (p. 357).** The reductive dual pair and the identity
      C_cop + C_Δ = ½n(n+2) are inherited (Howe 1989; Neergård 2019, item 33) and should be marked so in these summaries; the explicit complex
      structure of the kernel space is the corrected 𝒞̃ of item 53.
+179. **Wording. §13.1 and §16.1 (pp. 357, 376); Appendix A (p. 380).** "The force law closes in one way" holds within the stated equivariant
+     one-generator ansatz. The opening of Appendix A should distinguish the integer realisation of the generators from parameter-dependent
+     spectral, variational and numerical statements, as §I.1.2 does (item 154).
+
+## Corrections from the reviews of the prepared version 1.0.1
+
+These were found in independent reviews of the prepared version 1.0.1 (8–9 November 2026) and corrected before its release; where the same
+text stood in version 1.0.0 it is affected as well. Statement numbers are those of both versions.
+
+180. **Chapter 1.** After Corollary 1.4: an indefinite matter form removes the positive-metric obstruction, and whether ghosts occur depends on
+     the action and its constraint reduction; gauge-admissibility is defined relative to the matter metric H (XᵀH + HX = 0). Theorem 1.3 is
+     retitled "The signature rule for coordinate bivectors"; three paired planes (eᵢ, eᵢ₊₃), not six; the grading root is defined in
+     Proposition 1.12; the blade identities concern coordinate blades.
+181. **Chapter 2.** Probability weights alone do not fix the Fisher–Rao metric: compatibility with congruent Markov embeddings is a stated
+     requirement (Ay, Jost, Lê and Schwachhöfer 2015). Theorem 2.19 identifies the algebras; the Maxwell–Dirac and QED statements of
+     Corollary 2.20 transport the standard action and quantisation (Hestenes 1967). Moretti and Oppio's result has its own hypotheses
+     (Remark 2.18). The involution S induces the Cartan involution.
+182. **Chapter 3.** Table 3.1: the interior oscillator action is O(3,3)-invariant up to a boundary term. Figure 3.2: I₄ = −Ω = ⋆, not Ω = ⋆.
+     Theorem 3.95(iii): |v_rest| = |β|, and a null field has no timelike rest observer. Proposition 3.31(i) needs E ≠ 0; Theorem 3.70(i) needs
+     two linearly independent clocks. Summaries: generators of boosts and duality are odd, finite transformations of mixed parity. The
+     higher-derivative ghost is the Podolsky-type extension (Podolsky 1942). Proposition 3.100(ii): an infinite plane wave has no finite
+     integrated four-momentum. The classical/quantum status of the Maxwell–Dirac sector and of the axial rotation in Corollary 3.59 is stated.
+183. **Chapter 5.** The raw duplication z ↦ (z,z) doubles E₆; z ↦ (z,z)/√2 divides it. Table 5.9: constant *nonzero* rate. An invariant number
+     operator exists exactly at even rungs *under the common binding action* (Theorem 5.50(iii) gives another action). Interior boosts also
+     mix sectors differing by two quanta (Proposition 5.47). Neergård's parameters are d_N = n, k_N = d/2. "No joint mass shell" means no
+     simultaneous nonzero-mass graded Dirac constraints; zero masses and zero lines are treated separately (Propositions 5.34, 5.63);
+     Corollary 5.2 is scoped to the grade-two connection algebra; centralisers on vectors versus the O(n) duality on spinors; T(z₁)+T(z₂) is
+     not T(z₁+z₂) (Example 5.58); Theorem 5.57(ii),(iv): priority unestablished.
+184. **Chapter 6.** The charge table of §6.3.2 uses ε = +1; Remark 6.24: underlying real representation (realification); Theorem 6.20 concerns
+     the perturbative hypercharge-anomaly variety, of dimension 6N_g − 4 before an overall normalisation.
+185. **Chapter 7.** Theorem 7.42 lacked the stratum v_R ≠ 0, v_u = v_d = 0 (stabiliser 12 in 21, 14 in 23, nine massive vectors; a11-3), and
+     Proposition 7.35(iv) needs v_u² + v_d² > 0. C = e₂ fixes Π_W only when e₂ ∈ W (§7.3.2), and Table 7.3 is a selection of representatives.
+     Proposition 7.40: an anomaly allows a pseudo-Goldstone mass but does not compute it. The first loss of positivity is the left-handed
+     triplet at x = 27, not "the lowest line"; zero-quartic boundary in the summary of Lemma 7.11; v = √2|r|; Fock-vacuum summaries need E > 0.
+186. **Chapter 8.** Proposition 8.27 and the summaries need a nonempty fixed set of the gauged subalgebra. Remark 8.29: the cutoff term is
+     3Λ²f²V_𝔥/(32π²). Theorem 8.54: the eight charged directions are the image of ad_Q on the orbit tangent space. Anomaly cancellation in
+     the larger spectator block is one completion, not the only one; the normal-connection field couples to half the fermion number; the
+     extra critical set leaves a massless neutral vector; the coefficient 128c_SM sin²θ is in the conventions of §8.4.
+187. **Chapter 10.** The birefringence bound holds on the unwrapped small-angle branch of the stated propagation hypothesis; the aliases
+     β + nπ (first alias 7.2 × 10⁻¹⁸ s⁻¹) are not excluded by dividing the angle by the age, so the exclusion of particle-linked rates is
+     restricted to that branch (synopsis, §10.1.5, Table 10.2, answer). Uphill kinematics motivates the imposed common clock but bounds no
+     proton lifetime. The time-odd invariant is scoped to the three-copy interior model. u₀ is the infimum over frames, attained for non-null
+     fields. Table 10.2 labels the pair row by number conservation, [X,N] = 0.
+188. **Chapter 11.** The vacuum count of general relativity needs sin 2θ ≠ 0 (an invertible tetrad and a nonzero Palatini coefficient); at the
+     pure-Holst points the coframe equation is empty (§11.4(ii)). Spinless matter decouples from the normal connection only in the
+     zero-normal-momentum reduced sector (Table 11.1, §11.1). The dichotomy after §11.3 is left open, not resolved by the torsion discussion.
+189. **Chapter 12.** Corollary 12.14 states its background and quantisation: flat h with a time orientation and m² ≥ 0 for the Fock statements;
+     for globally hyperbolic curved h only the microcausality of the algebraic construction follows (Fewster and Verch 2012). The proper-time
+     gauge of Proposition 12.16 is N = ±1/m on a segment with nonvanishing lapse. The no-go summary of §12.5.1 is scoped to an unconstrained
+     adjoint order parameter with an invariant potential and the factorised kinetic term. Theorem 12.4(ii): the degenerate case follows from (i).
+190. **Introduction, Chapters 13, 15 and 16.** Chapter 13 repeated the duplication error of item 183 (z ↦ (z,z) doubles the energy; z ↦ (az,bz)
+     with |a|² + |b|² = 1 preserves it) and said "the algebra fixes c" (only the isotropic form of the conversion map is fixed). Figure 13.2
+     put the faithful 23-dimensional algebra under "anomaly-free gauge action" (the anomaly-free gauged algebra is Pati–Salam, dimension 21).
+     The restricted tensor-potential selection, the full 272-mode local result and the conjectural global minimality are separated. The
+     qualifications of items 186, 188 and 189 (reduced-sector decoupling, flat h, sin 2θ ≠ 0, nonzero linear intertwiner, closure ansatz,
+     fixed-rate model, Ricci–DeTurck method) are carried into the figure and the summaries of Chapters 13 and 16; a Lorentzian four-plane
+     corresponds to a normalised simple bivector with an orientation; the classification "fixed by the algebra" reads "proved from explicitly
+     stated hypotheses"; a decision procedure needs an effective enumeration, not finiteness alone; the run command of Chapter 15 is typeset
+     with literal hyphens.
+191. **Chapter 14.** §14.6(iv): the colour obstruction concerns the effective bivector algebras of the axial members of the five-projector
+     family (Corollary 6.6); P₁ carries colour (Theorem 6.7). An intertwiner for the common Lorentz–Pati–Salam algebra exists after compatible
+     identification; what is open is an explicit map and the comparison of kinetic forms (§14.3, §14.6(v), Table 14.1); "realification" for
+     "real form". §14.4: the fermion count is k², the finite Hilbert space has complex dimension 2k² (32 for k = 4). The birefringence entry
+     points to §10.1.5; the vacuum-selection status separates the conjecture of Chapter 7 from the conditional global result of Theorem 8.48;
+     the worldline gauge removal is an input of the selected model, not "rather than by fiat".
 
 ## Related work to be added (all chapters)
 
@@ -577,5 +710,5 @@ action; Henneaux and Teitelboim (2005) on duality-invariant linearised gravity a
 (1960) on spinor coordinates of the null cone; Richardson and Slodowy (1990) and Jablonski (2012) for real orbits and invariants; Bars, Deliduman
 and Andreev (1998) on gauge constraints in two-time physics; Horwitz (2020) on a universal evolution parameter; and Dartora and Cabrera (2010),
 a split-signature six-dimensional Dirac model with local selection of a time direction, as prior art for the general architecture. For Chapters 13–16: Chamseddine, Connes and Marcolli (2007) for the coupling relation at the
-cut-off of the spectral action; Bär and Strohmaier (2019) for an index theorem on Lorentzian manifolds; Kaiser (2011), item 21. For Chapter 12 and the Introduction: Feynman, *Rev. Mod. Phys.* 20 (1948) 367, for the
+cut-off of the spectral action, derived there from the action; Chamseddine, Connes and van Suijlekom (2013, 2015) for the spectral Pati–Salam model; Bär and Strohmaier (2019) for an index theorem on Lorentzian manifolds; Kaiser (2011), item 21. For Chapter 12 and the Introduction: Feynman, *Rev. Mod. Phys.* 20 (1948) 367, for the
 sum-over-histories motivation of the causal programme (motivation only), and Krasnov (2018) retained in the Introduction.

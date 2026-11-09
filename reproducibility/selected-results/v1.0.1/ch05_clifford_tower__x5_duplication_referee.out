@@ -1,0 +1,49 @@
+PASS x5-1a: realisation: e_a satisfy Cl(3,3), signed permutations; omega^2=1, omega^T=omega, Tr omega=0, omega anticommutes with e_a; omega=-sz(x)sz(x)sz is diagonal
+PASS x5-1b: tower: the twelve e^(k)_a satisfy the Clifford relations of R^{6,6}
+PASS x5-1c: the 4096 blades of Cl(6,6) are signed permutation matrices, all but id traceless, and trace-orthogonal (Gram = 64 id), so they span M_64(R)
+PASS x5-1d: e^(1)_I e^(2)_J=(e_I w^{|J|})(x)e_J, e^(2)_J e^(1)_I=(-1)^{|I||J|}e^(1)_I e^(2)_J (all 4096 pairs); a^b -> a w^{|b|}(x)b multiplicative for the graded product (60 random homogeneous quadruples)
+PASS x5-1e: commutant of {e_a(x)1} in M_64 is 1(x)M_8 (64 blades), anticommutant is omega(x)M_8 (64 blades)
+PASS x5-1f: Klein factor forced: 1(x)e_a commutes with e_a(x)1; a random Skolem-Noether alternative omega(x)(u e_a u^-1) is the tower conjugated by 1(x)u
+PASS x5-2a: n^pm_i=(e_i pm e_{i+3})/2 satisfy the CAR with (n^+)^T=n^-; N_i=(1-omega_i)/2; (-1)^{N1+N2+N3}=-omega; the eight coordinate (pole) eigenlines are the eight Fock states
+PASS x5-2b: n=2: six modes (copy-2 modes omega(x)n^pm_i) satisfy the CAR; total number spectrum 0..6 with multiplicities 1,6,15,20,15,6,1; (-1)^N = E_1...E_12, the volume element
+PASS x5-3a: {f_a,f_b}={g_a,g_b}=2 eta_ab, {f_a,g_b}=0
+PASS x5-3b: C_b: e1->-e2, e2->e1 (ad C_b = -C_v on vectors); six commuting terms of square -1/4; exp(2pi C_b)=1; exp(pi/4 C_b) conjugates e^(1)->g, e^(2)->f; C_b=-1/2 sum eta f g
+PASS x5-3c: Koszul swap tau_K=D tau: tau_K e^(1) tau_K=e^(2), tau_K^2=1, Tr=0, tau_K=+g1...g6; commutes with f, anticommutes with g; the naive swap tau fails
+PASS x5-3d: diagonal bivectors = f_a f_b + g_a g_b, J^(1)+J^(2)=f2f3+g2g3, G_2 preserves both halves; C_b and M_12 anticommute with tau_K
+PASS x5-4a: commutant of diagonal rotations and G_2 in gl(12): dim 8 = gl(2,C); in so(12): u(2)=span{C_v,1(x)G,sz(x)G,sx(x)G}; in so(6,6): so(2,C)=span{C_v,eps(x)G}; in both: R C_v; 1(x)G, sz(x)G, sx(x)G eta_2-self-adjoint
+PASS x5-4b: u(6)=so(12) cap Cent(G_2) has dim 36; diagonal u(3) and u(2)(x)1 are mutual commutants in it (dims 9, 4)
+PASS x5-5a: G-linear rotation-equivariant maps V->V_2 are iota_{alpha,beta} (dim 4); L^T L=(|a|^2+|b|^2)1 and L^T eta_2 L = Re(a^2+b^2) eta + Im(a^2+b^2) eta G (symbolic)
+PASS x5-5b: CORRECTED thm:dup(i): eta-isometry alone means alpha^2+beta^2=1 over C (non-compact conic; e.g. (cosh t, i sinh t) is an isometry, not real, not energy-preserving); only with |a|^2+|b|^2=1 does it force the real circle
+PASS x5-5c: on S^3: q_2=(a^2+b^2)q, E0^(1)+E0^(2)=E0, T(az)=|a|^2T(z), T_tot=T, Rainich (T eta)^2=E0^2 1, E_pair=E0, E6+E6=E6 (20 random points)
+PASS x5-5d: CORRECTED thm:dup(ii)/assessment: |q_2|^2=|q|^2[(|a|^2+|b|^2)^2-4 Im(a conj b)^2]; on S^3 |q_2| sweeps [0,|q|] and |q_2|=|q| exactly on the 2-dim set e^{i phi}(cos th, sin th) (e.g. (i,0)), not only on the circle; q_2=q only on the circle; equal split |q_2|=|cos th||q|
+PASS x5-5e: thm:dup(iii): duality phases preserve T, O(3) preserves q, generic U(3) neither, +-1 both; W*W - W^T W = 2V^TV - 2iV^TU
+PASS x5-5f: rem:twoE0: so(2,C) preserves Tr Q and det Q, not Q_11; z1=(1,i,0), z2=(1,-i,0): E0^(k)=0, q_2=0, counter-propagating, E_pair^2=2; non-collinear null pairs have E_pair>0, collinear ones 0; null stays null
+PASS x5-6a: prop:cx(i) via the lemma 'J-invariant symmetric forms have even signature' (300 random J, forms), so no J in O(3,3) has J^2=-1; (ii) C_v^2=-1, orthogonal, eta_2-isometric, commutes with G_2 and diagonal lG
+PASS x5-6b: u(6) cap so(6,6)=so(6), dim 15, paired rotations; n=1: u(3) cap so(3,3) dim 3; centraliser of C_v in so(6) = {1(x)diag(A,A)+eps(x)diag(B,B)} dim 9; its part commuting with diagonal boosts = R C_v
+PASS x5-7a: centraliser of G_n in so(3n,3n): dims [6, 30, 72], compact parts [3, 15, 36]; at n=2 every element is [[R,S],[-S,R]] (temporal, partners) with R,S antisymmetric
+PASS x5-7b: so(6,C)=lG^(1)+lG^(2)+(C^3(x)C^3): dims 6+6+18; diagonal-rotation Casimir on the cross part 0,2,6 on 2,6,10
+PASS x5-7c: commutant of diagonal lG in so(6,6) = span{C_v, eps(x)G} (0 at n=1); C_v^2=-1, (eps(x)G)^2=+1; eps(x)G acts on (z1,z2) as [[0,-i],[i,0]], preserves q_2, not E6+E6
+PASS x5-7d: Cent(G_2) meets lint^(1) in 0; so(6,6) cap Cent(G_2) cap Cent(lint^(1)) = lG^(2) (dim 6)
+PASS x5-8a: w1+w2=(a^2+b^2)w(pi); p^(2)=-Gp^(1) <=> pi^(2)=G pi^(1), w2=-w1; the one-rotor torque vanishes for all theta on the balance (not for one non-null constituent); equal split: E0(pi^(k))=E0(pi)/2
+PASS x5-9a: tab:actions: lint and lG spinor bases have equal structure constants; centralisers in so(6,6) of spectator/binding+spectator/diagonal/mixed/both: dims [28, 15, 7, 1, 2], compact [13, 6, 7, 1, 1]
+PASS x5-9b: tab:actions content of R^{6,6} by Lorentz Casimir (3=V, 4=Lambda^2V, 0=trivial): spectator {0: 8, 3: 4}; binding+spectator {0: 6, 4: 6}; diagonal {0: 4, 3: 8}; mixed {0: 2, 3: 4, 4: 6}; binding {4: 12}
+PASS x5-9c: tab:actions/prop:spin(ii): exp(2pi R_3) on S_2 = [-1, 1, 1, -1, 1] (half-integer, integer, integer, half-integer, integer)
+PASS x5-9d: mixed rung: (C_mix-3/2)(C_mix-11/2)=0 with the Dirac value on 16 and 11/2 on 48 dimensions
+PASS x5-9e: grade-three invariants of the mixed action: 4 in all, 2 in Lambda^2(E_1)(x)V^(2) (Theta_F and Theta_F followed by G, both invariant), 2 in Lambda^3 V^(2)
+PASS x5-10a: M_12 and C_b have eigenvalues i{-2..2}, i{-3..3}; exp(2pi M_12)=exp(2pi C_b)=1; surplus exp(pi e_s e_t)=-1
+PASS x5-10b: spin Casimir: 0 on 16 and 2 on 48 (diagonal interior), 3/4 on all of S_2 (spectator)
+PASS x5-10c: diagonal action: C_Delta 0,3,4 on 8,32,24; C_cop 0,1,4 on 24,32,8; C_cop+C_Delta=4; tau_K commutes with the diagonal Lorentz action, anticommutes with M_12; each tau_K sector carries 0,3,4 on 4,16,12
+PASS x5-11a: n=1: commutant of lint and Q=e2e3/2 in M_8 has dim 4, symmetric part span{1, V}; rank-4 projectors (1 pm V)/2; every bivector commutes with V (rigid)
+PASS x5-11b: H=abcd: H^2=1, H^T=H, Tr H=0; Pi_0 commutes with Q, the four gammas and the internal volume; [be/2,Pi_0]=-acde/2 symmetric, Tr pi^2=16, [Q,pi]=bcde/2
+PASS x5-11c: Z_i=I5 v_i symmetric, {Z_i,Z_j}=2 delta; Pi(n) rank-32 projector commuting with the gammas (n=(2,3,6,0,0)/7 and random); T_i=[v_i e/2,Pi_0]=I5 v_i/2, Tr T_iT_j=16 delta, [Q,T_a]=-T_b, [Q,T_b]=T_a, [Q,T_c]=[Q,T_d]=0
+PASS x5-11d: grade-four blades in a..e commuting with Q are exactly abcd, abce, abde (all straddle the copies)
+PASS x5-11e: product of the 8 internal generators J=(e2e3)(x)omega, J^2=-1; joint commutant of lint^(1) and the 28 internal bivectors = span{1,Omega,J,Omega J}; x^2=-1 there exactly at +-Omega, +-J; only +-J commute with the gammas
+PASS x5-12a: thm:bfield2(i): S^dag = K(x)G - b (symbolic); uniqueness of b = R C_v is x5-4a
+PASS x5-12b: thm:bfield2(ii): S is three identical 4x4 blocks; det(lambda-S)=(lambda^4+(k1^2+k2^2+2b^2)lambda^2+(k1k2-b^2)^2)^3; spec S={+-i w_pm}, w_pm = eigenvalues of [[k1,ib],[-ib,k2]]
+PASS x5-12c: thm:bfield2(iii): [K(x)G,b]=b(k2-k1) sx(x)G; centraliser of K(x)G in so(6,6): [30, 12, 21, 21] for (k1,k2)=(1,1),(1,2),(0,2),(2,0); non-removable iff k1!=k2 and beta!=0
+PASS x5-12d: thm:bfield2(iv): (M^2+w_+^2)(M^2+w_-^2)=0 identically (symbolic on the 8x8 block, numeric on 24x24)
+PASS x5-12e: thm:bfield2(v): exact semisimplicity (square-free char. poly over QQ) bounded at the six listed points, unbounded at the four; criterion agrees at 45 further rational points; Jordan block at k1!=k2, k1k2=b^2 because ker S is not eta_2-isotropic
+PASS x5-12f: thm:bfield2(vi): k1=0: w+w-=-b^2, w++w-=k2; |w-|=b^2/k2-b^4/k2^3+...; w_pm/b -> +-1 as b>>k2
+PASS x5-12g: numbers: w_-(0,5,1/2)=-0.04951, sup_(t<=600)||e^Mt||=19.86 vs 1/|w_-|=20.2; (0,1/100,1): lines 1.00501, -0.99501, sup over a beat period 200.0=2/(m k2); sup*m*k2/2 = [1.0, 1.001, 1.0] at (k2,m)=(0.02,1),(0.05,1),(0.01,2)
+PASS x5-13a: context for rem:dealbreaker: already at n=1 the admissible b=diag(A+C,A-C), a=e3, c=e1, kappa=1 is bounded (exact), changes the spectrum and has [b,G]!=0 (not removable, d4:thm:screen); at n=2 b alone still does not bind (k1=k2=0 unbounded)
+# x5_check: all checks passed; 12.6 s

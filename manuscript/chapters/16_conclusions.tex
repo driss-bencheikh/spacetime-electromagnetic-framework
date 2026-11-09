@@ -17,27 +17,29 @@ only complex structures commuting with the gamma matrices are $\pm J$ (\cref{thm
 Dirac theory, exactly (\cref{thm:realification}). The second statement is the reason for the deflationary test of \cref{cor:nopredict}.
 \item \emph{Centralisers along the tower.} The bivectors commuting with the interior Lorentz action of $\Cl(3n,3n)$ form $\so{3n-1,3n-3}$,
 nested along the tower; at one constituent this is the single generator $J$ (\cref{thm:centraliser,cor:photon1}). The diagonal action instead
-gives a compact algebra forming a reductive dual pair with the Lorentz algebra (\cref{thm:casid,cor:howe}).
+gives a compact algebra forming a reductive dual pair with the Lorentz algebra, with the Casimir identity $C_{\rm cop}+C_\Delta=\tfrac12n(n+2)$; the dual
+pair and the identity are inherited \cite{Howe89,Neergard19} and are realised here explicitly (\cref{thm:casid,cor:howe}).
 \item \emph{Two readings of six directions.} Under the centraliser of $G$, $\R^{3,3}$ is $\Lambda^2\R^{1,3}$ with $G$ the Hodge star
 (\cref{thm:emfield}), and covariance fixes the form of Maxwell's equations (\cref{cor:maxwellform}). The displacement and field-strength readings
-share the metric and the Clifford action, and no equivariant map joins them (\cref{prop:emexclusive,r1:thm:type}).
-\item \emph{Interior dynamics.} Factorisation and binding coexist exactly in neutral signature (\cref{thm:neutral}); the force law closes in one
-way into a rotor, whose free motion is a pendulum in the duality angle (\cref{thm:closureunique,thm:pendulum}); and the closure has a precise
+share the metric and the Clifford action, and no nonzero Lorentz-equivariant linear intertwiner joins the specified modules (\cref{prop:emexclusive,r1:thm:type}).
+\item \emph{Interior dynamics.} Factorisation and binding with $G^2=-\id$ coexist exactly in neutral signature (\cref{thm:neutral}); within the stated equivariant one-generator ansatz the force law closes in one
+way into a rotor, unique within that closure ansatz, whose free motion is a pendulum in the duality angle (\cref{thm:closureunique,thm:pendulum}); and the closure has a precise
 rigid-body form, whose equations, brackets and conserved quantities are compared with those of the rigid body (\cref{thm:esmap}).
 \item \emph{Chiral matter.} The projector $P_*$ of rank $64$ carries one Pati--Salam family with a right-handed neutrino (\cref{thm:PS}); its two
 central $\uu1$s cannot be gauged on it (\cref{prop:PSanom}).
-\item \emph{Mass kernels.} The Lorentz-invariant mass kernels of the block form a $272$-dimensional space with an explicit complex structure
-and Pati--Salam decomposition (\cref{thm:kernelspace}); an adopted potential selects the Standard-Model orbit on a stated open set of couplings
+\item \emph{Mass kernels.} The Lorentz-invariant mass kernels of the block form a $272$-dimensional space with the complex structure $\widetilde{\mathcal C}$
+and its Pati--Salam decomposition (\cref{thm:kernelspace}); an adopted potential selects the Standard-Model orbit on a stated open set of couplings
 (\cref{thm:select0,thm:compat}).
 \item \emph{Charge identification.} At the aligned vacua the electric charge is identified among the compact generators, and the normal charge is
 half the fermion number on the chiral block and anomalous (\cref{p3:thm:photon,rem:photonn3}).
 \item \emph{Curvature.} The curvature operator of a four-metric lives on the frame, the first Bianchi identity is one trace, and the duality
 rotation of the curvature ends at the Einstein tensor, the only divergence-free and variational member of its family; in first-order form the
 phase is a Barbero--Immirzi angle (\cref{thm:phase,thm:helmholtz,prop:holst}). These are identities of given metrics.
-\item \emph{Causal kinematics.} Choosing a Lorentzian four-plane in $\R^{3,3}$ is choosing a complex structure, and at one constituent the light
+\item \emph{Causal kinematics.} Choosing a Lorentzian four-plane in $\R^{3,3}$ is choosing its definite orthogonal two-plane, represented by a
+normalised simple bivector whose two signs encode an orientation, a complex structure, and at one constituent the light
 cone is the set of chiral spinors squared with the help of $J$ (\cref{thm:selector,thm:cone}).
 \item \emph{Several constituents.} Massive constituents can turn at an exactly constant rate on a balance surface (\cref{d6:thm:balance}), and a
-field between manifolds acts on frequencies and never on rates (\cref{d7:thm:schr}).
+field between manifolds acts on frequencies and, in the fixed-rate model, never on rates (\cref{d7:thm:schr}).
 \end{enumerate}
 
 \section{Mechanisms that fail}
@@ -51,13 +53,18 @@ omissions, and each removes a route that would otherwise look open.
 \item A positive-form interior binds only at zero momentum (\cref{thm:virial}); no Lie--Poisson closure lives on the frame alone
 (\cref{thm:noframe}).
 \item Non-orthogonality of $\bE$ and $\bB$ generates no mass (\cref{sec:orth:nomass}); momentum along the surplus times lowers the mass
-(\cref{en:temporal}); and the $b$-field splits or tears the binding but never creates a rate (\cref{bf:alone,d7:thm:schr}).
-\item The normal $U(1)$ of the curved model is not the photon, on four independent counts (\cref{sec:incompatible}), and every normal-plane vector
-gravitates with negative energy, in either sign convention (\cref{thm:ghostvec,rem:signconv}).
-\item No $SO(3,3)$-invariant scalar order parameter selects the Lorentzian type cleanly: below degree eight it is blind, at every degree the minimum
-is degenerate with Lorentz-violating configurations, and its kinetic term has ghosts (\cref{thm:degree,thm:flat,prop:kineticB}).
-\item The six-dimensional free field is ill-posed and has no time orientation (\cref{prop:toy,prop:orient}); compact surplus times give
-infinitely many tachyons (\cref{ex:tachyons}); Ricci flow does not transfer to split signature (\cref{sec:curved}).
+(\cref{en:temporal}); and, in the fixed-rate model, the $b$-field splits or tears the binding but never creates or changes a rate (\cref{bf:alone,d7:thm:schr}).
+\item The normal $U(1)$ is not the photon, on four counts that concern different models (\cref{sec:incompatible}): in the curved model it is
+invisible to spinless matter in the zero-normal-momentum reduced sector and its adapted generator does not commute with the physical generators (\cref{sec:transport}); as a Kaluza--Klein
+vector, relative to the ambient Einstein--Hilbert action and the stated ansatz, it gravitates with negative energy, in either sign convention
+(\cref{thm:ghostvec,rem:signconv}); and on the chiral block its charge is half the fermion number and anomalous (\cref{rem:photonn3}).
+\item No unconstrained $SO(3,3)$-invariant adjoint scalar order parameter with an invariant bilinear kinetic term selects the Lorentzian type
+cleanly: below degree eight an invariant polynomial potential is blind, at every degree the minimum is degenerate with Lorentz-violating
+configurations, and the kinetic term has ghosts (\cref{thm:degree,thm:flat,prop:kineticB}).
+\item For unrestricted ultrahyperbolic data the six-dimensional free field is ill-posed, and it has no time orientation
+(\cref{prop:toy,prop:orient}); constrained evolution can be well posed \cite{CraigWeinstein09}. Compact surplus times give infinitely many tachyons
+(\cref{ex:tachyons}). The Ricci--DeTurck method does not transfer to split signature (\cref{sec:curved}), which does not exclude every
+split-signature flow.
 \end{enumerate}
 
 \section{Open problems}
@@ -66,17 +73,21 @@ infinitely many tachyons (\cref{ex:tachyons}); Ricci flow does not transfer to s
 The problems below are sharply posed by the results. For each, the step that would settle it is named.
 \begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
 \item \emph{Selection among the compact vacua.} A coupling that distinguishes the points of the compact family of vacua at $n\ge3$, where colour
-survives, would turn the photon construction into a selection; the present potential encodes its target in its couplings (PH-07).
+survives, would turn the photon construction into a selection; the present potential encodes its target in its couplings.
 \item \emph{The electroweak stage.} The selected vacuum is electroweak symmetric and the adopted potential opposes the neutral deformation
 (\cref{p3:prop:neutral}); a justified contribution that breaks it, with masses, mixing and the fate of the remaining scalar modes, is missing.
 \item \emph{Global minimality.} The global structure of the potential on all $272$ mass kernels, the choice between the Standard-Model vacuum and
 its mirror, the electroweak hierarchy, and the explicit breaking of the left-handed fermion number that the axion bound requires are open;
 the local statements are reproduced (\cref{thm:fullsecond}), while the global ones rest on archived numerical searches (\cref{prop:randomstart}) and
 need a proof.
-\item \emph{One theory for both readings.} A finite search over non-diagonal pairings of the two Lorentz bases at the second rung and above would
-settle whether the two readings of $\R^{3,3}$ can share one theory at an acceptable price.
-\item \emph{The Dirac operator of the blocks on a curved base.} Its spectrum and index are ordinary index-theorem calculations; a nonvanishing
-index would not contradict vector-likeness.
+\item \emph{One theory for both readings.} A search over non-diagonal pairings of the two Lorentz bases at the second rung and above could
+settle whether the two readings of $\R^{3,3}$ admit a common algebraic realisation at an acceptable price. No finiteness of the relevant embeddings
+has been proved, so the search is not yet a decision procedure; and an algebraic answer would not by itself give a shared physical theory,
+which also needs compatible dynamics.
+\item \emph{The Dirac operator of the blocks on a curved base.} An index is a signed count of zero modes, not a spectrum: on flat four-tori
+the index vanishes while the eigenvalues depend on the radii. A Lorentzian Dirac operator is not elliptic, so the base, the signature, the
+bundles, the domain and the boundary conditions must be specified before an index theorem applies, for example that of B\"ar and Strohmaier
+\cite{BarStrohmaier19}; the spectrum is a separate problem. A nonvanishing index would not contradict vector-likeness.
 \item \emph{The interior and time.} A mechanism placing the interior momenta on the null cone or on the balance surface, the only places where a
 constant rate and a bounded frame coexist; the quantisation of the rotor, whose angle would then have to be related to an external time; and
 an origin of the scale $\ell$ and of the rate differences between constituents.
@@ -87,11 +98,14 @@ with its constraints, degrees of freedom, signs, matter coupling and low-energy 
 \item \emph{Causal order.} A gauge mechanism for type selection, an $SO(3,3)$ analogue of the MacDowell--Mansouri breaking; a principle that
 makes the normal translations gauge rather than adding them by hand; constraint preservation for interacting fields; a local clock symmetry
 with its connection; a construction of the cone at three constituents without the positive inner product, or a proof that none exists
-(\cref{sec:causalverdict}). The universal-evolution hypothesis is open with the requirements of \cref{sec:universaltau}.
+(\cref{sec:causalverdict}); these are research directions. A universal evolution parameter, prior art in the theory of Horwitz and Piron, is
+open in this arena with the requirements of \cref{sec:universaltau}.
 \end{enumerate}
 
-\paragraph{Realistic next steps.} One of these is a finite computation that the existing tools can carry: the finite search over non-diagonal
-pairings. The index computation is standard. The others are research problems,
+\paragraph{Realistic next steps.} One of these is a computation that the existing tools can begin: the search over non-diagonal pairings,
+which becomes a decision procedure once, for a specified rung or class of embeddings, an effective exhaustive parametrisation or enumeration
+of them and decidable compatibility tests are available; finiteness alone does not supply one. Once the base, the bundles and the boundary
+conditions are fixed, the index computation is standard; the spectrum is a separate problem. The others are research problems,
 and a common local action for a compatible subset of the sectors would be a milestone, not a prerequisite for the mathematical results
 stated here.
 
@@ -99,14 +113,18 @@ stated here.
 \label{sec:testapplied}
 
 The largest gap is the same in every sector, and it is one of selection rather than absence. The gauge algebra is derived and the gauge
-field is not; the arena is derived and its dynamics is not; the Einstein tensor of a given metric is constructed and the metric is not
+field is not; the arena is chosen and its consequences are derived, but its dynamics is not; the Einstein tensor of a given metric is constructed and the metric is not
 determined; the projector is a field whose equation follows once an action is adopted, but no action is derived and none of its admissible
 orbits is singled out; the vacuum of the kernel field is selected, but only on a stated open set of couplings and with the field content
-given; and the four-plane on which all of this is built rests on a clock reduction that is imposed. Recovering the hypercharge table, the
-anomaly conditions or $\sin^2\theta_W=\tfrac38$ is a consistency result, not evidence, since any construction with that charge content gives
-them.
+given; and the four-plane on which all of this is built rests on a clock reduction that is imposed. Recovering the hypercharge table or the
+anomaly conditions is a consistency result, not evidence, since any construction with that charge content gives them. The value
+$\sin^2\theta_W=\tfrac38$ needs more than the charges: with the same charges $g_Y=g_2$ gives $\tfrac12$. The traces $\Tr Y^2=\tfrac{10}3$ and
+$\Tr(T^3_L)^2=2$ per family give $\tfrac38$ only under a common kinetic normalisation, that is with equal normalised couplings $g_1=g_2$,
+$g_Y^2=\tfrac35g_2^2$, at a stated scale; here that equality comes from the single coupling of the adopted action \eqref{eq:Saction}, which is a
+choice (\cref{sec:rel:connes}).
 
-New mathematics would be a theorem that removes one of the choices of \cref{tab:choices} without adding another. New physics would require a
+Reducing the independent choices of \cref{tab:choices} is the aim of the programme: a theorem that removes one of them without adding another
+would serve it, although new mathematics need not take that form. New physics would require a
 selected spectrum, a coupling or scale relation, a mass restriction, or a deviation that survives re-expression in the complex language of
 \cref{thm:realification}. None of these is claimed. What the manuscript does claim is a precise map of where the split-signature Clifford
 algebra decides and where it leaves the decision to the physicist: the fixed results, the constructions, the obstructions and the open

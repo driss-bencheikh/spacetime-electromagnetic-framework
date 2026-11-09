@@ -754,17 +754,21 @@ def claim_8():
     ok &= sp.simplify(zz1 - sp.Matrix([sp.cos(phi), sp.I, 0])).is_zero_matrix and sp.simplify(zz2 - sp.Matrix([sp.sin(phi), 0, 0])).is_zero_matrix
     ok &= sp.simplify(q1 + sp.sin(phi) ** 2) == 0 and sp.simplify(q2 - sp.sin(phi) ** 2) == 0 and sp.simplify(e6tot - 1) == 0
     ok &= sp.simplify(S1 + S2 - sp.Matrix([0, 0, -sp.cos(phi)])).is_zero_matrix
-    # M_pair after: singular values of Q' are |sin phi| twice -> M_pair = sin phi (0 < phi < pi)
+    # M_pair after: singular values of Q' are |sin phi| twice -> M_pair = |sin phi|
     Qp = sp.Matrix([[q1, zz1.dot(zz2)], [zz1.dot(zz2), q2]]).applyfunc(sp.simplify)
     ev = (Qp * Qp.conjugate().T).applyfunc(sp.simplify)
     ok &= sp.simplify(ev - sp.sin(phi) ** 2 * sp.eye(2)).is_zero_matrix
+    # M_pair, half the sum of the singular values, is |sin phi|: at phi = -pi/2 it is 1, not sin(phi) = -1
+    Qm = Qp.subs(phi, -sp.pi / 2)
+    svals = [sp.sqrt(e) for e in (Qm * Qm.conjugate().T).eigenvals(multiple=True)]
+    ok &= sp.simplify(sum(svals) / 2 - 1) == 0
     # not Lorentz covariant, not in g(0,2,0), not in the commutant of lG on copy 1 (g(0,1,1) = so(3,3), dim 15)
     ok &= any(not (A1 * r - r * A1).is_zero_matrix for r in LGD)
     ok &= span_rank([A1, ECOP, ECOP * G2]) == 3
     c1 = commutant_in_so66(LG1)
     ok &= len(c1) == 15 and span_rank(c1 + [A1]) == 16
     report("d6-8", ok, "exact: the paired rotation of the e_1/e_4 directions of the two copies (compact, in Cent(G_2) cap so(6,6)) maps "
-           "((1,i,0),0) to ((cos,i,0),(sin,0,0)): q = -+sin^2, E6_tot = 1, q_tot = 0, S_sum = -cos(phi) e3, M_pair 0 -> sin(phi); it does not "
+           "((1,i,0),0) to ((cos,i,0),(sin,0,0)): q = -+sin^2, E6_tot = 1, q_tot = 0, S_sum = -cos(phi) e3, M_pair 0 -> |sin(phi)| (1 at phi = -pi/2); it does not "
            "commute with lG_Delta and lies in neither g(0,2,0) nor g(0,1,1) (dim 15)")
 
 

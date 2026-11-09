@@ -53,3 +53,21 @@ python3 verification/ch07_mass_vacuum/a8_electroweak_numerical.py
 The Chapter 8 counterpart is `verification/ch08_gauge_photon/a7_projector_geometry_certificates.py` (exact: prop:config, thm:holonomy,
 prop:chiralpreserved, thm:towervac, thm:S4, thm:towercurved, prop:towermatter, and prop:spectator at n = 3). What remains without a
 check is listed in `docs/research-status.md` ("Partial evidence that remains").
+
+## Corrections audit (v1.0.1)
+
+```bash
+python3 verification/ch07_mass_vacuum/a11_kernel_structure.py
+```
+
+a11-1 and a11-2, numerical (float64 on exactly specified integer matrices, about one minute): the complex structure C~(M) = J M Gamma of
+thm:kernelspace and its vanishing cubic trace (the structure of version 1.0.0 gives +-1152), and the rows with v_R = 0 of the strata table of
+thm:axion.
+a11-3 (numerical): the stratum v_R != 0, v_u = v_d = 0 of the same table (stabilisers 12 and 14).
+
+```bash
+python3 verification/ch07_mass_vacuum/a13_tensor_certificates.py
+```
+
+a13-1 and a13-2, exact (rational arithmetic, about three minutes): the constant 3/8 of thm:potential (ii) on an integer basis of the (20',1)
+component, and the explicit isomorphism iota of prop:tensor with its norm and spectral identities (errata items 59 and 60).

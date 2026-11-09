@@ -159,7 +159,7 @@ reversal is $\mathsf{CPT}$-odd.
 \subsection{Two vacua}
 \label{sec:masstwovacua}
 
-The Fock vacuum of one Dirac momentum is unique and neutral, with energy $-2E$, and charge conjugation lifts to a unitary operator on
+For $E>0$ the Fock vacuum of one Dirac momentum is unique and neutral, with energy $-2E$, and charge conjugation lifts to a unitary operator on
 the Fock space that anticommutes with the charge and carries $H(\bp)$ to $H(-\bp)$ (\cref{thm:spectra,prop:Cstates}). At rest its energy,
 $-2m$ ($-2mc^2$ in restored units), is minus half the sum of the rest energies of the four modes. Only in that sense does the vacuum
 carry the rest energy with the opposite sign, and only this vacuum does.
@@ -364,8 +364,9 @@ $M_{12b}$ & $\langle e_2,e_4,e_5\rangle$ & $(1,2)$ & a surplus direction and two
 $M_{12c}$ & $\langle e_1,e_5,e_6\rangle$ & $(1,2)$ & a $2{+}1$ slice of the interior spacetime; no partner pair\\
 \bottomrule
 \end{tabular}
-\caption{Representatives of the coordinate three-planes of $\R^{3,3}$, classified by signature and by their position relative to the
-clock, the surplus plane, the interior four-plane and the pairing.}
+\caption{A selection of representatives of the coordinate three-planes of $\R^{3,3}$, by signature and by their position relative to the
+clock, the surplus plane, the interior four-plane and the pairing; the list of positional classes is not exhaustive (for instance $\langle e_1,e_2,e_6\rangle$,
+of signature $(2,1)$, contains the clock and no partner pair).}
 \label{tab:subfields}
 \end{table}
 
@@ -405,7 +406,8 @@ Under $\so{3,3}$ the volume elements $\omega_T$ and $\omega_S$ have six-dimensio
 compact bivector moves them; only the nine boosts do, and by \cref{thm:ghost} boost-generated variations leave the orthogonal projectors.
 Each mixed volume element, by contrast, has a two-dimensional compact stabiliser and a four-dimensional compact orbit: the mixed planes are
 the only subfields whose vacuum projector or complex structure admits admissible fluctuations. Charge conjugation $C=e_2$ exchanges $\Pi_S$
-and $\Pi_\Gamma$ with their complements and fixes the $(2,1)$ projectors, and the full volume element $\Gamma$ commutes with all of $\so{3,3}$:
+and $\Pi_\Gamma$ with their complements; on a coordinate three-plane $W$ it fixes $\Pi_W$ when $e_2\in W$ and reverses it when $e_2\notin W$ (so it fixes the two
+$(2,1)$ representatives of \cref{tab:subfields}, which contain $e_2$, but not, for instance, $\Pi$ of $\langle e_1,e_3,e_4\rangle$), and the full volume element $\Gamma$ commutes with all of $\so{3,3}$:
 its projector is the rigid, Lorentz-invariant vacuum $\tfrac12(\id\pm\Gamma)$ that will reappear in \cref{sec:photon}.
 
 % --- source: tex/s18_subfields#4 (The order-parameter vacuum)
@@ -480,8 +482,10 @@ $a(q)=\alpha+\beta q$, so that $V=-\mu^2N+a(q)N^2$.
 \item If $\mu^2>0$ and both $a(\tfrac18),a(\tfrac14)>0$, the minimum on each ray of angular type $q$ is at $N=\mu^2/(2a(q))$ with value $-\mu^4/(4a(q))$, and the
 global minima are the kernels with $q=q_*$ minimising $a$: $q_*=\tfrac18$ for $\beta>0$, $q_*=\tfrac14$ for $\beta<0$, at $N_*=\mu^2/(2(\alpha+\beta q_*))$. For
 $\beta=0$ every direction of $\mathcal M$ is a minimum direction.
-\item Otherwise $V$ is unbounded below, or flat along a ray, and has no isolated minimum. For example, at $\mu^2=1$, $\alpha=-1$, $\beta=1$ one has
-$a<0$ on the whole range, and on the ray $M=t\,\gamma^0J$, $V=-8t^2-56t^4$.
+\item On the boundary $\min\{a(\tfrac18),a(\tfrac14)\}=0$: for $\mu^2<0$ the unique minimum is $M=0$ (for instance $\mu^2=-1$, $\alpha=\beta=0$ gives
+$V=N$), for $\mu^2=0$ the potential is flat along the rays with $a(q)=0$, and for $\mu^2>0$ it is unbounded below. If
+$\min\{a(\tfrac18),a(\tfrac14)\}<0$, $V$ is unbounded below; for example, at $\mu^2=1$, $\alpha=-1$, $\beta=1$ one has $a<0$ on the whole range, and on
+the ray $M=t\,\gamma^0J$, $V=-8t^2-56t^4$.
 \end{enumerate}
 \end{lemma}
 
@@ -492,8 +496,8 @@ dimensions, $|d|\le\tfrac N8$, which gives the range of $q$ and its endpoints. F
 minimising it; on $t\,\gamma^0J$, $N=8t^2$ and $Q=8t^4$.
 \end{proof}
 
-So the Dirac and Majorana phases below need $\mu^2>0$ and $a>0$ at both ends of the range; outside that region the potential selects
-nothing. Inside it, the minimum set at $N_*$ is the three-dimensional set of the lemma, and the kernels named in the theorem are representatives of it: in the
+So the Dirac and Majorana phases below need $\mu^2>0$ and $a>0$ at both ends of the range; outside that region the potential keeps
+$M=0$, is not bounded below, or, on the zero-quartic boundary at $\mu^2=0$, is flat along the rays with $a(q)=0$ (\cref{lem:tracepot}(iv)), and selects no phase. Inside it, the minimum set at $N_*$ is the three-dimensional set of the lemma, and the kernels named in the theorem are representatives of it: in the
 Majorana phase the minima are all null $z$, not only the complex line supported on $\Gamma=+1$, and the other minima are obtained from that line by the
 elements $e_2\Omega$, $e_3\Omega$ of $\mathfrak g_I$, which anticommute with $\Gamma$.
 
@@ -507,7 +511,7 @@ $\uu1_\Omega\oplus\su2$ breaks to $\uu1_J$ with three Goldstone directions. Ferm
 distinct.
 \item \emph{Majorana phase} ($\beta<0$). The kernels supported on the $\Gamma=+1$ half form a complex line; each anticommutes with $J$, has
 rank four, $Q/N^2=\tfrac14$ and $M^{\!\top}M\propto\tfrac12(\id+\Gamma)$, and its stabiliser in $\mathfrak g_I$ is exactly $\langle J-J\Gamma\rangle$,
-the left-handed fermion number, again with three Goldstone directions.
+whose charge $1-\Gamma$ is twice the left-handed fermion number, again with three Goldstone directions.
 \end{enumerate}
 \end{theorem}
 
@@ -562,7 +566,8 @@ A subfield with three anticommuting generators can carry a first-order Hamiltoni
 
 \begin{theorem}[A universal Fock vacuum]
 \label{thm:subfock}
-Let $A$ be an antisymmetric first-order generator built from three anticommuting generators of a subfield, with $A^2=-E^2$, and let $Q$ be a
+Let $A$ be an antisymmetric first-order generator built from three anticommuting generators of a subfield, with $A^2=-E^2$ for some $E>0$
+(at $E=0$ all sixteen states have energy zero), and let $Q$ be a
 commuting charge, antisymmetric with $Q^2=-\id$ and balanced against $A$, $\Tr(AQ)=0$. On the sixteen-dimensional Fock space the joint spectrum of
 energy and charge is
 \[
@@ -653,6 +658,12 @@ and the colour $\su3$ is the part of $\so6$ commuting with $H$. The charge table
 commutes with all $91$ internal bivectors, with $J$ and with the rotations, and anticommutes with $\Gamma$ and the boosts, so it maps $V_*$
 onto an orthogonal rank-$64$ \emph{mirror} on which the same internal algebra acts with $\Gamma$ reversed (\cref{rem:PSsettles}).
 
+Several letters of this chapter carry more than one meaning, each fixed by its context: $\kappa$ is the frame rate $c/\ell$ in
+\cref{sec:massbreaks}, the coupling of the holomorphic quartic in \cref{sec:selection} and, with indices, the bidoublet values $\kappa_1$, $\kappa_{15}$,
+$\kappa_{u,d}$ in \cref{sec:matter}; $Q$ is the quartic invariant $\Tr(M^{\!\top}M)^2$, the charge of \cref{thm:subfock} and the electric charge; $H$ is the
+colour generator above, and the block Hamiltonian is written $\mathcal H(p)$; $T$ is the mass form $e_1e_2e_3$ and, in \cref{sec:fullK}, the function $T(\hat u)$;
+and $K$ denotes the kinetic kernels, the bidoublet kernels $K_{1u}$, $K_{1d}$ and the frame boosts.
+
 % --- source: tex/s19_kernels#3 (The kernel space)
 \subsection{The kernel space}
 
@@ -676,20 +687,24 @@ two conditions. A kernel is exactly a Lorentz-invariant mass term of the block.
 \item $\dim_\R\mathcal M=272$. A basis is given by the compressions $P_*BP_*$ of the blades $B=\gamma^0e_I$ and $B=\gamma^1\gamma^2\gamma^3e_I$, $e_I$ an
 internal blade, that are antisymmetric and commute with the three involutions defining $P_*$: there are $2176$ such blades and $272$ distinct,
 mutually orthogonal compressions, and they span all solutions of \cref{def:kernel}.
-\item $\mathcal M$ is a complex vector space for the complex structure $\mathcal C$, with $\mathcal C(M)=JM$ on the Majorana-type kernels and $\mathcal C(M)=JM\Gamma$ on the Dirac-type kernels
-of (iii); $\mathcal C$ commutes with the action of the $23$ generators. (Left multiplication by $J$ alone does not preserve $\mathcal M$: on a Dirac-type kernel $JM$ is
-symmetric.) As a complex representation of $\su4\oplus\su2_L\oplus\su2_R$, with the real dimensions of the summands under the braces,
+\item $\mathcal M$ is a complex vector space for the complex structure $\widetilde{\mathcal C}(M)=JM\Gamma$, defined on every kernel: $\widetilde{\mathcal C}$
+preserves $\mathcal M$, squares to $-\id$ and commutes with the action of the $23$ generators. (Left multiplication by $J$ alone does not preserve $\mathcal M$:
+on a Dirac-type kernel $JM$ is symmetric.) As a complex representation of $\su4\oplus\su2_L\oplus\su2_R$, with the real dimensions of the summands under
+the braces,
 \[
 \begin{aligned}
-\mathcal M\cong{}&\underbrace{(\mathbf{10},\mathbf3,\mathbf1)}_{60}\oplus\underbrace{(\mathbf{10},\mathbf1,\mathbf3)}_{60}\oplus\underbrace{(\mathbf{15},\mathbf2,\mathbf2)}_{120}\\
+\mathcal M\cong{}&\underbrace{(\bar{\mathbf{10}},\mathbf3,\mathbf1)}_{60}\oplus\underbrace{(\mathbf{10},\mathbf1,\mathbf3)}_{60}\oplus\underbrace{(\mathbf{15},\mathbf2,\mathbf2)}_{120}\\
 &\oplus\underbrace{2(\mathbf6,\mathbf1,\mathbf1)}_{24}\oplus\underbrace{(\mathbf1,\mathbf2,\mathbf2)}_{8},
 \end{aligned}
 \]
-the components being identified by their Casimir labels, $(-36,-2,0)$, $(-36,0,-2)$, $(-32,-\tfrac34,-\tfrac34)$, $(-20,0,0)$ and
-$(0,-\tfrac34,-\tfrac34)$ respectively. Replacing $\mathcal C$ by $-\mathcal C$ conjugates every label. As a real representation the two components with $\mathbf{10}$ are irreducible of
-complex type, while $(\mathbf{15},\mathbf2,\mathbf2)$, $(\mathbf6,\mathbf1,\mathbf1)$ and $(\mathbf1,\mathbf2,\mathbf2)$ are of real type and occur with multiplicities $2$, $4$ and $2$.
+the conjugate of the Pati--Salam branching of $\mathrm{Sym}^2(\mathbf{16})$ with $\mathbf{16}=(\mathbf4,\mathbf2,\mathbf1)\oplus(\bar{\mathbf4},\mathbf1,\mathbf2)$. The Casimir labels
+$(-36,-2,0)$, $(-36,0,-2)$, $(-32,-\tfrac34,-\tfrac34)$, $(-20,0,0)$ and $(0,-\tfrac34,-\tfrac34)$ identify the components in this order, and the cubic $SU(4)$
+trace identifies the conjugation of the two tens, which Casimir labels cannot see: for $h=\operatorname{diag}(1,1,1,-3)$, $\tr h^3=-192$ on
+$\mathbf{10}$, and the cubic trace of $h$ over $(\mathcal M,\widetilde{\mathcal C})$ vanishes, as on $\mathrm{Sym}^2(\mathbf{16})$. Replacing $\widetilde{\mathcal C}$ by
+$-\widetilde{\mathcal C}$ conjugates every label. As a real representation the two components with $\mathbf{10}$ are irreducible of complex type, while
+$(\mathbf{15},\mathbf2,\mathbf2)$, $(\mathbf6,\mathbf1,\mathbf1)$ and $(\mathbf1,\mathbf2,\mathbf2)$ are of real type and occur with multiplicities $2$, $4$ and $2$.
 \item Every basis kernel either anticommutes with $J$ and commutes with $\Gamma$ (\emph{Majorana type}, pairing fermions of equal chirality, $144$ of
-them, spanning $(\mathbf{10},\mathbf3,\mathbf1)\oplus(\mathbf{10},\mathbf1,\mathbf3)\oplus2(\mathbf6,\mathbf1,\mathbf1)$), or commutes with $J$ and anticommutes with
+them, spanning $(\bar{\mathbf{10}},\mathbf3,\mathbf1)\oplus(\mathbf{10},\mathbf1,\mathbf3)\oplus2(\mathbf6,\mathbf1,\mathbf1)$), or commutes with $J$ and anticommutes with
 $\Gamma$ (\emph{Dirac type}, pairing opposite chiralities, $128$ of them, spanning $(\mathbf{15},\mathbf2,\mathbf2)\oplus(\mathbf1,\mathbf2,\mathbf2)$).
 \item No nonzero kernel is invariant under the $21$ Pati--Salam generators.
 \item The kernels invariant under the twelve Standard-Model generators form the plane spanned by $\Phi_0$ and $J\Phi_0$, where
@@ -712,14 +727,17 @@ A kernel commuting with $\Gamma$ preserves the two chirality halves, which carry
 $\Gamma$ exchanges them. A bilinear in two $(\mathbf4,\mathbf2,\mathbf1)$ is an $\su2_R$ singlet and one in two $(\mathbf4,\mathbf1,\mathbf2)$ an $\su2_L$ singlet, while a
 bilinear between the halves is a doublet of both. So $(\mathbf{15},\mathbf2,\mathbf2)$ and $(\mathbf1,\mathbf2,\mathbf2)$ are of the second type and the others of
 the first, and $60+60+24=144$ and $120+8=128$ agree with the counts. The dimension, the components with their Casimir labels and types,
-and $\Phi_0$ are checked in v2-1 to v2-3 and z3-8.
+and $\Phi_0$ are checked in v2-1 to v2-3 and z3-8, and the complex structure $\widetilde{\mathcal C}$ with its cubic trace in a11-1. A complex structure
+that acts as $J$ on the Majorana-type kernels and as $\widetilde{\mathcal C}$ on the Dirac-type ones also preserves $\mathcal M$ and commutes with the $23$
+generators, but it gives both tens the same conjugation and a cubic trace $\pm1152$, so it does not realise a branching of $\mathrm{Sym}^2(\mathbf{16})$ or of its
+conjugate.
 \end{proof}
 
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[x=0.055cm,y=1cm,font=\footnotesize]
 \def\kbar#1#2#3#4#5{\fill[#4] (#1,0) rectangle (#2,0.9); \draw (#1,0) rectangle (#2,0.9); \node at ({(#1+#2)/2},0.45) {#3}; \node[below,font=\footnotesize] at ({(#1+#2)/2},0) {#5};}
-\kbar{0}{60}{$(\mathbf{10},\mathbf3,\mathbf1)$}{tcol!20}{$60$}
+\kbar{0}{60}{$(\bar{\mathbf{10}},\mathbf3,\mathbf1)$}{tcol!20}{$60$}
 \kbar{60}{120}{$(\mathbf{10},\mathbf1,\mathbf3)$}{tcol!40}{$60$}
 \kbar{120}{144}{\scriptsize$2(\mathbf6,\mathbf1,\mathbf1)$}{tcol!10}{$24$}
 \kbar{144}{264}{$(\mathbf{15},\mathbf2,\mathbf2)$}{scol!20}{$120$}
@@ -737,11 +755,12 @@ Standard-Model invariant kernels form a single complex line, the right-handed ne
 
 The complex dimension of $\mathcal M$ is $136=\dim\mathrm{Sym}^2(\C^{16})$: a Lorentz-invariant mass term of sixteen Weyl fermions is a complex
 symmetric $16\times16$ matrix. In the language of $\so{10}$, $\mathrm{Sym}^2(\mathbf{16})=\mathbf{10}\oplus\mathbf{126}$ \cite{Slansky}, and the
-decomposition (ii), read with the complex structure $\mathcal C$, is the Pati--Salam branching of $\mathbf{10}_\C\oplus\mathbf{126}$ (or of its conjugate for $-\mathcal C$), of complex
-dimension $136=\tfrac12\cdot272$; the $(\mathbf{10},\mathbf1,\mathbf3)\subset\mathbf{126}$ is the field which, in
-minimal left--right and Pati--Salam models, gives the right-handed neutrino a Majorana mass \cite{MohapatraSenjanovic80,MohapatraSenjanovic81}.
+decomposition (ii), read with the complex structure $\widetilde{\mathcal C}$, is the Pati--Salam branching of $\mathbf{10}\oplus\overline{\mathbf{126}}$, the dual of
+$\mathrm{Sym}^2(\mathbf{16})$, as befits the coefficients of mass bilinears (for $-\widetilde{\mathcal C}$, of $\mathbf{10}\oplus\mathbf{126}$), of complex dimension
+$136=\tfrac12\cdot272$; the $(\mathbf{10},\mathbf1,\mathbf3)$ component is the field which, in minimal left--right and Pati--Salam models, gives the right-handed
+neutrino a Majorana mass \cite{MohapatraSenjanovic80,MohapatraSenjanovic81}.
 Here this content has been obtained from \cref{def:kernel}, with only the Pati--Salam algebra acting. The only component containing a
-Standard-Model singlet is $(\mathbf{10},\mathbf1,\mathbf3)$: the colour-singlet parts of $(\mathbf{10},\mathbf3,\mathbf1)$, $(\mathbf{15},\mathbf2,\mathbf2)$ and $(\mathbf1,\mathbf2,\mathbf2)$ carry
+Standard-Model singlet is $(\mathbf{10},\mathbf1,\mathbf3)$: the colour-singlet parts of $(\bar{\mathbf{10}},\mathbf3,\mathbf1)$, $(\mathbf{15},\mathbf2,\mathbf2)$ and $(\mathbf1,\mathbf2,\mathbf2)$ carry
 $Y=\pm1$ or $\pm\tfrac12$, and $(\mathbf6,\mathbf1,\mathbf1)$ has none.
 
 \begin{theorem}[Symmetric criticality]
@@ -792,7 +811,7 @@ operators have eigenvalues $\pm\tfrac12$ on a doublet. The conventionally normal
 g=\sqrt8\,g_A ,
 \]
 and every vector mass from \cref{sec:selection} on is quoted in $g$; \eqref{eq:Saction} as written is the case $g_A=1$, $g=2\sqrt2$. The kernel field is normalised
-by $\tfrac12\langle D\Phi,D\Phi\rangle$ with $\langle M,N\rangle=\Tr M^{\!\top}N$, and $v:=|\Phi|/\sqrt2$. Ratios of masses do not depend on these choices.
+by $\tfrac12\langle D\Phi,D\Phi\rangle$ with $\langle M,N\rangle=\Tr M^{\!\top}N$, and $v:=|\Phi|/\sqrt2$ (so $v=\sqrt2\,|r|$ at $\Phi=r\Phi_0$). Ratios of masses do not depend on these choices.
 
 \begin{proposition}[Fermion number]
 \label{prop:fermionnumber}
@@ -823,19 +842,21 @@ Pati--Salam invariant; at one loop
 V_1=\frac1{64\pi^2}\,\mathrm{STr}\Bigl[\mathcal M^4\Bigl(\ln\frac{\mathcal M^2}{\mu_R^2}-c\Bigr)\Bigr],\qquad
 \mathrm{STr}=\textstyle\sum_{\rm scalars}+3\sum_{\rm vectors}-2\sum_{\rm Weyl},
 \end{equation}
-the fermion term being the determinant of the Dirac operator of the first equation \cite{ColemanWeinberg73,Jackiw74}; at stationary points it
-does not depend on the gauge fixing \cite{Nielsen75}.
+the fermion term being the determinant of the Dirac operator of the first equation \cite{ColemanWeinberg73,Jackiw74}. By the Nielsen identities the
+value of the effective potential at a stationary point does not depend on the gauge fixing \cite{Nielsen75}; the background coordinates and the raw
+Hessian do.
 \end{proposition}
 
 The fermions, classically zero, act on the vacuum only through the effective potential, and the matter content enters through the Yukawa
 coupling $y$. That there is one such coupling is part of \cref{ass:field}, not a consequence of calling $\Phi$ one field: $\Phi$ is reducible under the
 Pati--Salam algebra, and symmetry alone allows an independent Yukawa coupling and an independent kinetic normalisation for each of its five irreducible
 components, with a mixing between the two copies of $(\mathbf6,\mathbf1,\mathbf1)$. The same is true of the common gauge coupling of $\su4$ and $\su2_R$ used in
-\cref{sec:selection}. In the vacuum the block Hamiltonian is $H(p)=p_iK^i+iy\,r\,\Phi_0$; since $\{K^i,K^j\}=2\delta^{ij}$,
+\cref{sec:selection}. In the vacuum the block Hamiltonian is $\mathcal H(p)=p_iK^i+iy\,r\,\Phi_0$; since $\{K^i,K^j\}=2\delta^{ij}$,
 $\{K^i,\Phi_0\}=0$ and $-\Phi_0^2=P_\nu$,
-\[
-H(p)^2=|p|^2+y^2r^2P_\nu :
-\]
+\begin{equation}
+\label{eq:blockH}
+\mathcal H(p)^2=|p|^2+y^2r^2P_\nu :
+\end{equation}
 one Majorana fermion, the right-handed neutrino, with four real components and mass $|y|r$, and sixty massless real components.
 Executable check: a6-3 for the three identities used here (exact symbolic or integer arithmetic; \cref{app:methods}). The Euler--Lagrange
 equations are a direct variation of \eqref{eq:Saction}, and \eqref{eq:V1} is the inherited Coleman--Weinberg formula; neither is the subject of a check.
@@ -882,8 +903,12 @@ N:=\Tr\Phi^{\!\top}\Phi=4|S|^2,\qquad Q:=\Tr(\Phi^{\!\top}\Phi)^2=4\Tr(S^\dagger
 \noindent Executable check: a8-1 (numerical; \cref{app:methods}). It recomputes that the component is $J$-invariant of dimension $60$, that its
 Pati--Salam commutant is spanned by $\id$ and $J$, so that it is irreducible over $\C$ and $\iota$ is unique up to a complex scale, which the normalisation
 fixes up to a phase, that $\Phi_0$ lies in it with $\Phi_0^{\!\top}\Phi_0=P_\nu$, and that $\Phi^{\!\top}\Phi$ is supported on $\Gamma=+1$ with every eigenvalue
-four times. The identification of these eigenvalues with those of $S^\dagger S$ uses the explicit isomorphism $\iota$ of the original computation, which the
-verification suite of this version does not reproduce.
+four times. The map $\iota$ is explicit and checked exactly in a13-2. On the $\Gamma=+1$ half $V_+$ of the block, with $J$ as the imaginary unit, an
+intertwiner $U$ identifies $V_+$ with $\C^2\otimes\C^4\otimes\C^2$ (Lorentz Weyl index, colour, $\su2_R$), as a scaled isometry. In this basis every kernel
+of the component is the real antilinear map $v\mapsto(\varepsilon\otimes S)\bar v$, $\varepsilon=\bigl(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\bigr)$, with
+$S\in\mathcal T$, and $\iota(\Phi)=S$. Then $\Phi^{\!\top}\Phi$ is the realification of $\id_2\otimes SS^\dagger$, whose eigenvalues are those of $S^\dagger S$,
+each four times; $\Tr\Phi^{\!\top}\Phi=4|S|^2$ holds exactly on a basis, and $\iota(\Phi_0)$ is of rank one with $\BmL=-2$, $T^R_3=1$, the tensor $S_0$ up to
+scale (a13-2, exact).
 
 Let $P_1,\dots,P_5$ be the orthogonal projectors of $\mathrm{Sym}^2\mathcal T$ onto its five irreducible components
 \[
@@ -914,8 +939,11 @@ under fermion number if and only if $\kappa=0$. $\mathcal D$ has $\BmL=0$ and fe
 
 The bound in (ii) follows from Schur's lemma. The $(\mathbf{20}',\mathbf1)$ component carries, up to scale, one invariant complex-bilinear symmetric
 form $\beta$; $\mathcal D(S)=c\,\beta(w,w)$ with $w$ the $(\mathbf{20}',\mathbf1)$ component of $S\otimes S$; and $\beta^\dagger\beta$ commutes with the irreducible action,
-so all singular values of $\beta$ are equal and $|\mathcal D(S)|\le|c|\,\sigma\,|w|^2=|c|\,\sigma\,I_4(S)$. The constant $|c|\sigma$ and the uniqueness of $\beta$ are
-computed numerically, $|c|\sigma=\tfrac38$, and equality holds at $\id_4\otimes\id_2$ (v1-5, v1-6). The invariance and the phase degree of $\mathcal D$ are checked in v1-5,
+so all singular values of $\beta$ are equal and $|\mathcal D(S)|\le|c|\,\sigma\,|w|^2=|c|\,\sigma\,I_4(S)$. The constant is computed exactly
+(a13-1): the $(\mathbf{20}',\mathbf1)$ component is the $\su2_R$ singlet $\varepsilon_{su}\varepsilon_{tv}+\varepsilon_{sv}\varepsilon_{tu}$ times the tensors of
+$\mathrm{Sym}^2(\mathrm{Sym}^2\C^4)$ with vanishing total symmetrisation, which has an integer basis; on it the matrix $Q$ of the quartic form and the Gram
+matrix $G$ satisfy $QG^{-1}Q=(\tfrac38)^2G$, so $|c|\sigma=\tfrac38$, and $\mathcal D(\id_4\otimes\id_2)=4$, $I_4(\id_4\otimes\id_2)=\tfrac{32}3$, so equality holds
+there (also v1-5, v1-6 in floating point). The invariance and the phase degree of $\mathcal D$ are checked in v1-5,
 the vanishing of $\mathcal D$ to second order at $S_0$ in v1-7.
 
 The trivial representation occurs in $\mathcal T\otimes\bar{\mathcal T}$, $\mathrm{Sym}^2\mathcal T$, $\mathrm{Sym}^3\mathcal T$, $\mathrm{Sym}^2\mathcal T\otimes\bar{\mathcal T}$,
@@ -942,8 +970,8 @@ with $U$, $M$, $D$ the symmetric $3\times3$ matrices of the colour sextets $u_Ru
 nothing to the masses and produces the cubic couplings $\kappa v\,\epsilon\epsilon\,\Delta_{uu}\Delta_{dd}\Delta_{dd}$ and $\kappa v\,\epsilon\epsilon\,\Delta_{ud}\Delta_{ud}\Delta_{dd}$ of
 diquarks of hypercharges $\tfrac43,\tfrac13,-\tfrac23$, each of baryon number two. With the Yukawa couplings of the diquarks to quark pairs, here the
 single coupling $y$ of \eqref{eq:Saction}, the vertex closes into a six-quark $\Delta B=2$ operator, the Pati--Salam mechanism of neutron--antineutron
-oscillation; the present limits on the oscillation time are $8.6\times10^7$\,s for free neutrons \cite{BaldoCeolin94} and $4.7\times10^8$\,s from
-neutrons bound in oxygen \cite{SuperK21}.
+oscillation; the present limits on the free-neutron oscillation time are $8.6\times10^7$\,s from free neutrons \cite{BaldoCeolin94} and
+$4.7\times10^8$\,s inferred from the search with neutrons bound in $^{16}$O \cite{SuperK21}, which is not a lifetime of bound neutrons.
 
 % --- source: tex/s20_selection#3 (Where the Standard-Model orbit is the global minimum)
 \subsection{Where the Standard-Model orbit is the global minimum}
@@ -1069,7 +1097,9 @@ generate $\kappa$ in perturbation theory. Write $L=\ln(\Lambda_{\rm UV}^2/v^2)$.
 \[
 \delta V=\frac L{64\pi^2}\Bigl[2\sum_{\rm fam}\Tr(M_F^\dagger M_F)^2-3\Tr M_V^4-\Tr M_S^4\Bigr],
 \]
-where for the degenerate tree potential $\Tr M_S^4$ depends on $|S|$ only. Here and in \cref{sec:fullK} the field is normalised canonically. All radiative statements
+where for the degenerate tree potential $\Tr M_S^4$ depends on $|S|$ only. Here and in \cref{sec:fullK} the field is normalised canonically. The analysis is
+to be compared with that of the quantum vacuum of the minimal non-supersymmetric $SO(10)$ models \cite{BertoliniDiLuzioMalinsky10,BertoliniDiLuzioMalinsky12},
+in which one-loop corrections likewise decide the vacuum. All radiative statements
 of this section share four limitations: they keep the leading logarithm only, with orbit-independent and non-logarithmic terms dropped and their effect not
 estimated; vectors are counted with three polarisations, as in Landau gauge, and the scheme dependence away from stationary points is not examined; the
 masses are curvature masses of the effective potential, not pole masses; and the couplings are taken equal where stated, as in \cref{ass:field}. By
@@ -1114,7 +1144,7 @@ real polynomials of degrees $1,2,3,4$ are $0,18,0,686$, and with fermion number 
 Let $O=E_1E_7E_8$ restricted to $V_*$. It commutes with $P_*$ and with the rotations, satisfies $O^{\!\top}K^0O=K^0$, $O^{\!\top}K^iO=-K^i$, $O\Gamma O^{\!\top}=-\Gamma$ and
 $OJO^{\!\top}=J$, and maps $t^L_i$ to $\pm t^R_i$ and each colour bivector to $\pm$ itself. Hence $\psi(t,\mathbf x)\mapsto O\psi(t,-\mathbf x)$, $\Phi\mapsto O\Phi O^{\!\top}$,
 with the corresponding map of the gauge fields, is a symmetry of the kinetic, Yukawa and gauge terms of \eqref{eq:Saction}, and of the trace invariants. The image
-$\Phi_0'=O\Phi_0O^{\!\top}$ is a kernel in $(\mathbf{10},\mathbf3,\mathbf1)$ orthogonal to $\Phi_0$, the mirror vacuum of left--right models, and along the great circle
+$\Phi_0'=O\Phi_0O^{\!\top}$ is a kernel in $(\bar{\mathbf{10}},\mathbf3,\mathbf1)$ orthogonal to $\Phi_0$, the mirror vacuum of left--right models, and along the great circle
 $\hat u(\theta)=\cos\theta\,\hat u_0+\sin\theta\,\hat u_0'$, $Q=\tfrac14-\tfrac18\sin^22\theta$ (v2-10).
 \end{proposition}
 
@@ -1135,8 +1165,8 @@ $\delta V=\tfrac L{64\pi^2}g^4v^4E_x(\Phi/|\Phi|)$ with $v=|\Phi|/\sqrt2$, and a
 \label{thm:fullsecond}
 Let $H(x)$ be the second variation of $E_x$ at $\hat u_0$ on the $271$-dimensional tangent space of the unit sphere.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item $H(x)=H_G+xH_F$ with $H_F=-8(\id-\Pi_\nu)$, where $\Pi_\nu$ is the orthogonal projector of rank $32$ onto the kernels that pair $\nu_R$ with a Weyl fermion of the
-block. $H_G$ preserves each Pati--Salam component of $\mathcal M$.
+\item $H(x)=H_G+xH_F$ with $H_F=-8(\id-\Pi_\nu)$, where $\Pi_\nu$ is the orthogonal projector onto the kernels that pair $\nu_R$ with a Weyl fermion of the
+block, of rank $32$ on the $272$-dimensional kernel space and of rank $31$ on the $271$-dimensional tangent space. $H_G$ preserves each Pati--Salam component of $\mathcal M$.
 \item With $m^2=\tfrac12\times$(eigenvalue of $H(x)$) in units of $\tfrac L{64\pi^2}g^4v^2$, the $271$ angular modes have the masses of \cref{tab:271}.
 \item $H(x)$ is non-negative with kernel exactly the nine Goldstone directions if and only if $x<27$. At $x=27$ the six modes of $\ell_L\ell_L$, the left-handed triplet,
 become massless, and for $x>27$ they are tachyonic.
@@ -1145,8 +1175,8 @@ become massless, and for $x>27$ they are tachyonic.
 
 The second variation is computed from the definitions on the $272$-dimensional kernel space, and every entry of \cref{tab:271} is reproduced at
 several values of $x$ (v2-4 to v2-8); its restriction to $(\mathbf{10},\mathbf1,\mathbf3)$ reproduces the tensor-model spectrum of \cref{thm:oneloop1013}, which ties
-the two normalisations together (v2-9). This is floating-point linear algebra on exactly specified matrices; (iii) follows from the table, whose
-lowest line is $108-4x$.
+the two normalisations together (v2-9). This is floating-point linear algebra on exactly specified matrices; (iii) follows from the table, in which the
+left-handed triplet, $108-4x$, gives the first loss of positivity, at $x=27$ (at small $x$ another line is lower, $84$ at $x=0$).
 
 \begin{table}[t]
 \centering
@@ -1165,9 +1195,9 @@ $d_Rd_R$ & $(6,1)_{2/3}$ & $12$ & $(\mathbf{10},\mathbf1,\mathbf3)$ & $120-4x$\\
 $u_Re_R\pm d_R\nu_R$ & $(3,1)_{1/3}$ & $6+6$ & $(\mathbf{10},\mathbf1,\mathbf3)$, $(\mathbf6,\mathbf1,\mathbf1)_R$ & eigenvalues of $M_3$\\
 $u_Rd_R$ (antisymmetric) & $(3,1)_{1/3}$ & $6$ & $(\mathbf6,\mathbf1,\mathbf1)_R$ & $180-4x$\\
 $u_Le_L-d_L\nu_L$, $u_Ld_L$ & $(3,1)_{1/3}$ & $6+6$ & $(\mathbf6,\mathbf1,\mathbf1)_L$ & $180-4x$\\
-$\ell_L\ell_L$ & $(1,3)_1$ & $6$ & $(\mathbf{10},\mathbf3,\mathbf1)$ & $108-4x$\\
-$q_L\ell_L$ & $(3,3)_{1/3}$ & $18$ & $(\mathbf{10},\mathbf3,\mathbf1)$ & $156-4x$\\
-$q_Lq_L$ & $(6,3)_{1/3}$ & $36$ & $(\mathbf{10},\mathbf3,\mathbf1)$ & $180-4x$\\
+$\ell_L\ell_L$ & $(1,3)_1$ & $6$ & $(\bar{\mathbf{10}},\mathbf3,\mathbf1)$ & $108-4x$\\
+$q_L\ell_L$ & $(3,3)_{1/3}$ & $18$ & $(\bar{\mathbf{10}},\mathbf3,\mathbf1)$ & $156-4x$\\
+$q_Lq_L$ & $(6,3)_{1/3}$ & $36$ & $(\bar{\mathbf{10}},\mathbf3,\mathbf1)$ & $180-4x$\\
 $q_L$--$u_R$, $q_L$--$d_R$ (octet) & $(8,2)_{1/2}$ & $64$ & $(\mathbf{15},\mathbf2,\mathbf2)$ & $174-4x$\\
 $\ell_L$--$u_R$, $q_L$--$e_R$ & $(3,2)_{7/6}$ & $24$ & $(\mathbf{15},\mathbf2,\mathbf2)$ & $162-4x$\\
 $\ell_L$--$d_R$ & $(3,2)_{1/6}$ & $12$ & $(\mathbf{15},\mathbf2,\mathbf2)$ & $114-4x$\\
@@ -1256,8 +1286,8 @@ left to the optimiser (the energies of the end points agree to $10^{-9}$ between
 minimisations with tolerance $10^{-10}$, giving $24.8840501$. The fraction of runs that reaches the competitor depends on the start distribution; with standard Gaussian starts it is $22\%$. At $x=24.5$ no run of forty ends below the Standard-Model energy. Only the local statement,
 \cref{thm:fullsecond}, is a theorem about the stated approximation; a random search does not establish a global minimum.
 
-We conjecture that in the radiative scenario on $\mathcal M$ the Standard-Model orbit and its mirror are the global minima exactly for $x<x_*$, and that for $x_*<x<27$ the
-Standard-Model vacuum is metastable. The competitor again spreads the Majorana mass, now over four right-handed fermions instead of one, which is what the fermion loop
+We conjecture that, within the model stated below, in the radiative scenario on $\mathcal M$ the Standard-Model orbit and its mirror are the global minima
+exactly for $x<x_*$, and that for $x_*<x<27$ the Standard-Model vacuum is metastable. The competitor again spreads the Majorana mass, now over four right-handed fermions instead of one, which is what the fermion loop
 rewards, at the price of breaking colour, which the gauge loop penalises. In terms of masses the local condition and the conjectured global one read
 \[
 \begin{aligned}
@@ -1265,8 +1295,11 @@ rewards, at the price of breaking colour, which the gauge loop penalises. In ter
 &M_N<9^{1/4}M_{W_R}=1.732\,M_{W_R}\quad\text{and}\quad M_N<1.697\,M_{W_R}&&\text{(three degenerate families)}.
 \end{aligned}
 \]
-They hold under the following restrictions: a tree potential degenerate on $\mathcal M$ at the matching scale, one loop at leading logarithm, $\kappa=0$, which fermion number
-makes automatic, a common gauge coupling for $\su4$ and $\su2_R$, and a single Yukawa coupling for all components of the kernel field (\cref{ass:field}). The masses of
+They hold, like the thresholds $x<27$ and $x_*\approx24.884$, only within the stated model: an $O(272)$-symmetric tree potential, degenerate on $\mathcal M$ at the
+matching scale; the trace kinetic normalisation; one loop at leading logarithm; $\kappa=0$, which fermion number makes automatic; a common gauge coupling
+for $\su4$ and $\su2_R$; and a single Yukawa coupling for all components of the kernel field (\cref{ass:field}). The invariant counts of \cref{sec:fullK}, $18$
+quadratic and $686$ quartic invariants ($12$ and $402$ with fermion number), show that symmetry does not force this small potential: its special coefficients
+are matching conditions, and their stability under running and finite corrections is not analysed. The masses of
 \cref{tab:271} are curvatures of the leading-logarithm effective potential divided by the kinetic norm; pole masses would need the wave-function renormalisation and a
 gauge-consistent perturbative expansion, which are not attempted. The bounds are therefore statements about this model and approximation, not bounds on heavy-neutrino
 masses outside it. Within it, the result is that gauge fluctuations make the Standard-Model orientation of the
@@ -1280,7 +1313,7 @@ the condensation of the left-handed triplet, and the configuration that overtake
 \section{Matter in the selected vacuum}
 \label{sec:matter}
 
-We return to the vacuum $\Phi=r\Phi_0$, $r\neq0$, with $v=|\Phi|/\sqrt2=\sqrt2\,r$, and ask whether the matter of the block is compatible with
+We return to the vacuum $\Phi=r\Phi_0$, $r>0$ (for $r<0$ read $|r|$ in the formulas), with $v=|\Phi|/\sqrt2=\sqrt2\,r$, and ask whether the matter of the block is compatible with
 it in the sense stated at the beginning of \cref{sec:kernels}.
 
 \begin{theorem}[Compatibility with matter]
@@ -1298,7 +1331,8 @@ $X$) and $\pm1$ (the two $W_R^\pm$); the one at $5g^2v^2$ is neutral, a $Z'$.
 \sin^2\theta_W=\frac{|t^L_3|^2}{|t^L_3|^2+|t_Y|^2}=\frac38
 \]
 at the matching scale, the value of the Pati--Salam and $\so{10}$ embeddings \cite{GeorgiQuinnWeinberg74}.
-\item \emph{Dirac operator.} The kinetic kernels are symmetric with $K^0=\id$ and are preserved by the twelve unbroken generators, and $H(p)^2=|p|^2+y^2r^2P_\nu$.
+\item \emph{Dirac operator.} The kinetic kernels are symmetric with $K^0=\id$ and are preserved by the twelve unbroken generators, and the block Hamiltonian
+$\mathcal H(p)$ of \eqref{eq:blockH} satisfies $\mathcal H(p)^2=|p|^2+y^2r^2P_\nu$.
 \item \emph{Chirality.} The massless fermions are $(3,2)_{1/6}\oplus(1,2)_{-1/2}$ with $\Gamma=-1$ and $(3,1)_{2/3}\oplus(3,1)_{-1/3}\oplus(1,1)_{-1}$ with $\Gamma=+1$:
 the unbroken $\su2_L$ acts on one Lorentz chirality only.
 \item \emph{Anomalies.} On the block the $Y^3$, mixed gravitational, $SU(2)^2Y$, $SU(3)^2Y$ and $SU(3)^3$ anomalies vanish, with and without $\nu_R$, and there are
@@ -1322,7 +1356,7 @@ scale and a light doublet requires a tuning that we do not derive.
 \begin{proposition}[Electroweak stage]
 \label{prop:EW}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item The kernels commuting with $\su3$ and with $Q=T^L_3+Y$ form a $12$-dimensional space: two each in $(\mathbf{10},\mathbf1,\mathbf3)$ and $(\mathbf{10},\mathbf3,\mathbf1)$ and four
+\item The kernels commuting with $\su3$ and with $Q=T^L_3+Y$ form a $12$-dimensional space: two each in $(\mathbf{10},\mathbf1,\mathbf3)$ and $(\bar{\mathbf{10}},\mathbf3,\mathbf1)$ and four
 each in $(\mathbf{15},\mathbf2,\mathbf2)$ and $(\mathbf1,\mathbf2,\mathbf2)$. In each bidoublet the up-type kernels (no $d,e$ entries) and the down-type kernels (no $u,\nu$ entries)
 form two-dimensional spaces.
 \item On the charge sectors $u$ ($Q=\tfrac23$), $d$ ($-\tfrac13$), $\nu$ ($0$) and $e$ ($-1$), the $(\mathbf1,\mathbf2,\mathbf2)$ kernels give $m_u=m_\nu^D$ and $m_d=m_e$; the
@@ -1334,7 +1368,8 @@ m_{\rm quark}=|\kappa_1+\kappa_{15}|,\qquad m_{\rm lepton}=|\kappa_1-3\kappa_{15
 the Georgi--Jarlskog factor \cite{GeorgiJarlskog79} used in fits of fermion masses with $\mathbf{10}\oplus\mathbf{126}$ \cite{BabuMohapatra93}.
 \item With $\Phi=v_R\Phi_0+\kappa K_{1u}$ the neutral sector has singular values $\tfrac12\bigl(\sqrt{v_R^2+4\kappa^2}\mp v_R\bigr)$, each four times: the seesaw pair
 \cite{Minkowski77,MohapatraSenjanovic80}, with light mass $\approx\kappa^2/v_R$.
-\item For $\Phi=v_R\Phi_0+v_uK_{1u}+v_dK_{1d}$ the stabiliser among the $21$ generators is nine-dimensional, $\su3\oplus\uu1_Q$, and $Q$ annihilates $\Phi$.
+\item For $\Phi=v_R\Phi_0+v_uK_{1u}+v_dK_{1d}$ with $v_R\neq0$ and $v_u^2+v_d^2>0$ the stabiliser among the $21$ generators is nine-dimensional, $\su3\oplus\uu1_Q$,
+and $Q$ annihilates $\Phi$ (at $v_u=v_d=0$ it is twelve-dimensional, \cref{thm:axion}).
 \end{enumerate}
 \end{proposition}
 
@@ -1443,7 +1478,9 @@ lies in the kernel of the Hessian; the gauge bosons eat the tangents of the $21$
 
 The count is classical, and it counts the Goldstone directions attached to the $23$ specified generators, not all massless scalars: a potential with an
 accidental symmetry has more zero modes, as the degenerate tree potential of \cref{sec:fullK} has $271$ against a gauge orbit of dimension nine. Since $J$
-and $J\Gamma$ are anomalous, an uneaten direction is a pseudo-Goldstone boson, massive once the anomaly is accounted for.
+and $J\Gamma$ are anomalous, an uneaten direction loses its Goldstone protection: the anomaly allows a mass, generated by the relevant quantum
+dynamics through a nonconstant phase-dependent effective potential (in the QCD normalisation $m_a^2f_a^2=\chi_{\rm top}$, a dynamical input
+\cite{GrilliDiCortona16}); the classical count does not compute it.
 
 \begin{theorem}[No Majoron]
 \label{thm:nomajoron}
@@ -1464,17 +1501,23 @@ For $\Phi=v_R\Phi_0+v_uK_{1u}+v_dK_{1d}$:
 \small
 \begin{tabular}{@{}lccccc@{}}
 \toprule
-vacuum & stabiliser in $21$ & stabiliser in $23$ & massive vectors & $23$-orbit & Goldstone directions\\
+vacuum & stab.\ in $21$ & stab.\ in $23$ & massive vectors & $23$-orbit & Goldstones\\
 \midrule
-generic, $v_uv_d\neq0$ & $9$ & $10$ & $12$ & $13$ & $\mathbf1$\\
-$v_d=0$ or $v_u=0$ & $9$ & $11$ & $12$ & $12$ & $0$\\
-$v_R=0$ & $16$ & $17$ & $5$ & $6$ & $1$\\
+generic, $v_R\neq0$, $v_uv_d\neq0$ & $9$ & $10$ & $12$ & $13$ & $\mathbf1$\\
+$v_R\neq0$, exactly one of $v_u,v_d$ zero & $9$ & $11$ & $12$ & $12$ & $0$\\
+$v_R\neq0$, $v_u=v_d=0$ & $12$ & $14$ & $9$ & $9$ & $0$\\
+$v_R=0$, $v_uv_d\neq0$, $|v_u|\neq|v_d|$ & $16$ & $17$ & $5$ & $6$ & $1$\\
+$v_R=0$, $|v_u|=|v_d|\neq0$ & $18$ & $19$ & $3$ & $4$ & $1$\\
+$v_R=0$, one of $v_u,v_d$ zero & $16$ & $18$ & $5$ & $5$ & $0$\\
+$v_R=v_u=v_d=0$ & $21$ & $23$ & $0$ & $0$ & $0$\\
 \bottomrule
 \end{tabular}
 \end{center}
-At the electroweak vacuum the tangents of $J$ and $J+\tfrac13H$ lie in the gauge orbit and those of $J\Gamma$ and $J-J\Gamma$ do not; $J+\tfrac13H$ annihilates $\Phi$
+At the generic electroweak vacuum ($v_R\neq0$, both bidoublet values nonzero) the tangents of $J$ and $J+\tfrac13H$ lie in the gauge orbit and those of $J\Gamma$ and $J-J\Gamma$ do not; $J+\tfrac13H$ annihilates $\Phi$
 and $J-J\Gamma$, of charge $1-\Gamma$, does not.
 \end{theorem}
+
+\noindent Executable check: d2-24 (exact); the rows with $v_R=0$, a11-2; the row $v_u=v_d=0$, a11-3 (numerical; \cref{app:methods}).
 
 The mechanism is simple. $J\Gamma$ acts on every Dirac-type kernel as the complex structure $2J\Gamma$, so it rotates the up-type and the down-type lines by the
 same phase, while the only Standard-Model generator that moves within these lines, the $Z$ direction, rotates them by opposite phases. When both values are
@@ -1492,7 +1535,7 @@ $4B=1+(\BmL)$ & $0$ & $2$ & $-2$ & --- & $0$ & unbroken\\
 \end{center}
 The current of the broken charge has a colour anomaly, so its classical Goldstone direction is a pseudo-Goldstone boson of Peccei--Quinn--Weinberg--Wilczek
 type \cite{PecceiQuinn77,Weinberg78,Wilczek78}: an axion. Since its only order parameter is the bidoublet, its decay constant is of the electroweak scale, and such an
-axion is excluded experimentally \cite{PDG}. Within this field content, leaving $U(1)_{1-\Gamma}$ intact is therefore a phenomenological obstruction, and the
+axion is excluded experimentally \cite{Konaka86,PecceiWuYanagida86,PDG}. Within this field content, leaving $U(1)_{1-\Gamma}$ intact is therefore a phenomenological obstruction, and the
 electroweak-stage potential must break it explicitly. The trace potential and the one-loop gauge and Yukawa potential of \cref{sec:selection} are invariant
 under every orthogonal conjugation commuting with the Pati--Salam algebra, hence under $\exp\theta(J-J\Gamma)$, and the holomorphic quartic lives on the
 $\Gamma=+1$ half, where $J-J\Gamma=0$; none of them lifts the axion.
@@ -1515,8 +1558,9 @@ display are a choice of normalisation of $B_e$, $B_o$ and of the relative phase 
 \begin{theorem}[The kinetic norm of the axion direction]
 \label{thm:mA}
 Let $a=J\Phi_0$, $e_u=J\Gamma K_{1u}$, $e_d=J\Gamma K_{1d}$; these are mutually orthogonal with $|a|^2=4$ and $|e_u|^2=|e_d|^2=n_K=32$, and
-$t=[J\Gamma,\Phi]=2v_Ra+2v_ue_u+2v_de_d$. The gauge tangent space splits orthogonally into its part in $\operatorname{span}\{a,e_u,e_d\}$, spanned by $a$ and
-$z=v_ue_u-v_de_d$, and its part orthogonal to that span, and for all $v_R,v_u,v_d$
+$t=[J\Gamma,\Phi]=2v_Ra+2v_ue_u+2v_de_d$. The gauge tangent space splits orthogonally into its part in $\operatorname{span}\{a,e_u,e_d\}$ and its part
+orthogonal to that span; the first is spanned by $a$ and $z=v_ue_u-v_de_d$ when $v_R\neq0$, and by $z$ alone when $v_R=0$, where the gauge tangent space
+has no Majorana component. For $v_u^2+v_d^2>0$ (the continuous extension to $v_u=v_d=0$ is $0$)
 \[
 \bigl|P_\perp t\bigr|^2=|t|^2-\frac{\langle t,a\rangle^2}{|a|^2}-\frac{\langle t,z\rangle^2}{|z|^2}=\frac{16\,n_K\,v_u^2v_d^2}{v_u^2+v_d^2}.
 \]
@@ -1526,9 +1570,9 @@ $z=v_ue_u-v_de_d$, and its part orthogonal to that span, and for all $v_R,v_u,v_
 $J$ and $J\Gamma$ are orthogonal, so $|a|^2=|\Phi_0|^2=4$ and $|e_{u,d}|^2=|K_{1u,1d}|^2=n_K$. The three vectors are orthogonal because $a$ lies in
 $(\mathbf{10},\mathbf1,\mathbf3)$ and $e_u,e_d$ in $(\mathbf1,\mathbf2,\mathbf2)$, and the up- and down-type kernels have disjoint charge sectors. $\Phi_0$
 anticommutes with $J$ and is supported on $\Gamma=+1$, and $K_{1u},K_{1d}$ anticommute with $J\Gamma$, which gives the expression for $t$. These facts and
-the orthogonal splitting of the gauge tangent space, with the part in the span equal to $\operatorname{span}\{a,z\}$, are recomputed in a8-6 (numerical;
-\cref{app:methods}). Given them, $t$ lies in the span, so its projection onto the gauge tangent space is its projection onto $\operatorname{span}\{a,z\}$,
-with $a\perp z$; and $\langle t,a\rangle=8v_R$, $\langle t,z\rangle=2n_K(v_u^2-v_d^2)$, $|z|^2=n_K(v_u^2+v_d^2)$, $|t|^2=16v_R^2+4n_K(v_u^2+v_d^2)$, so
+the orthogonal splitting of the gauge tangent space, with the part in the span equal to $\operatorname{span}\{a,z\}$ for $v_R\neq0$, are recomputed in a8-6
+(numerical; \cref{app:methods}). Given them, $t$ lies in the span, so its projection onto the gauge tangent space is its projection onto $\operatorname{span}\{a,z\}$,
+with $a\perp z$; at $v_R=0$ the span is that of $z$ alone, and since $\langle t,a\rangle=8v_R=0$ the same expression results; and $\langle t,a\rangle=8v_R$, $\langle t,z\rangle=2n_K(v_u^2-v_d^2)$, $|z|^2=n_K(v_u^2+v_d^2)$, $|t|^2=16v_R^2+4n_K(v_u^2+v_d^2)$, so
 \[
 \bigl|P_\perp t\bigr|^2=4n_K(v_u^2+v_d^2)-\frac{4n_K(v_u^2-v_d^2)^2}{v_u^2+v_d^2}=\frac{16\,n_K\,v_u^2v_d^2}{v_u^2+v_d^2}.\qedhere
 \]
@@ -1593,7 +1637,7 @@ $\bar{\mathbf4}$. $P=O$ is parity composed with an $SU(2)$ Weyl reflection, and 
 \begin{theorem}[$CP$ fixes the order parameter; $C$ and $P$ move it]
 \label{thm:vacCP}
 $CP\,\Phi_0\,CP^{\!\top}=\Phi_0$. $C\Phi_0C^{\!\top}$ is the $\nu_L\nu_L$ kernel, which commutes with $\su3$, $\su2_R$ and $Q$ but not with $\su2_L$, and
-$P\Phi_0P^{\!\top}$ is the $e_Le_L$ kernel. Both images lie on the mirror orbit in $(\mathbf{10},\mathbf3,\mathbf1)$: the degeneracy of \cref{prop:LR} is realised by two distinct
+$P\Phi_0P^{\!\top}$ is the $e_Le_L$ kernel. Both images lie on the mirror orbit in $(\bar{\mathbf{10}},\mathbf3,\mathbf1)$: the degeneracy of \cref{prop:LR} is realised by two distinct
 discrete symmetries.
 \end{theorem}
 

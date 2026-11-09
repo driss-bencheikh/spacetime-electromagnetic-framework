@@ -1,16 +1,17 @@
 # Known obstructions
 
 The manuscript proves a number of no-go results. They are part of its content, not defects to be repaired, and every one of them is kept
-in version 1.0.0. Numbers refer to `release/manuscript-v1.0.0.pdf`; labels in brackets are the LaTeX labels in `manuscript/`. Each
-statement is proved in the text or certified by a check listed in Appendix D (theorem-to-code table).
+in version 1.0.1, with the hypotheses stated where it is proved. Numbers refer to `release/manuscript-v1.0.1.pdf` (the numbering of
+version 1.0.0 is unchanged); labels in brackets are the LaTeX labels in `manuscript/`. Each statement is proved in the text or certified by a
+check listed in the theorem-to-code table `verification/THEOREM_CODE.tsv` (Appendix D).
 
 ## Arena, Lorentz structure and readings
 
 | obstruction | where |
 |---|---|
-| No gauge boson is a boost | Corollary 1.4 [cor:noboost] |
+| A mixed bivector generates no compact U(1): a boost is not unitary for a positive form on the module | Corollary 1.4 [cor:noboost] |
 | A pairing alone does not give isotropy | Proposition 2.1 [prop:KC] |
-| The real module is not a state space | Theorem 2.30 [thm:module] |
+| The real module is not a state space (for the chosen real representation) | Theorem 2.30 [thm:module] |
 | Two Lorentz algebras, not conjugate | Proposition 3.2 [prop:notconj] |
 | No covariant map from the field to a four-vector: the field-strength reading of a vector of R^{3,3} does not reduce to the displacement reading (Chapter 3) | Proposition 3.34 [r2:prop:nolinear] |
 | No Lorentzian plane is G-invariant | Proposition 3.40 [r2:prop:nogo] |
@@ -61,10 +62,10 @@ statement is proved in the text or certified by a check listed in Appendix D (th
 
 | obstruction | where |
 |---|---|
-| The normal field gravitates with negative energy (sign, reduction and rigidity) | Corollary 11.6 [cor:ein6] |
+| The normal field gravitates with negative energy relative to the ambient Einstein–Hilbert action and the stated ansatz (sign, reduction and rigidity) | Corollary 11.6 [cor:ein6] |
 | Transport obstruction | Proposition 11.15 [prop:obstruct] |
-| No clean type selection below degree eight | Theorem 12.8 [thm:degree] |
+| No clean type selection by an unconstrained invariant adjoint scalar below degree eight | Theorem 12.8 [thm:degree] |
 | Gauging the isometry is not enough | Proposition 12.13 [prop:isometryonly] |
-| Every normal-plane vector is a ghost, in every sign convention | Theorem 12.15 [thm:ghostvec] |
+| Every normal-plane vector obtained by the Einstein–Hilbert and Kaluza–Klein route is a ghost, in either sign convention | Theorem 12.15 [thm:ghostvec] |
 
 Chapter 16 ("Mechanisms that fail") and the table of research chains in Chapter 13 summarise how these results bound the programme.

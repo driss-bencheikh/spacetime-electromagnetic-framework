@@ -12,6 +12,11 @@ matter and a low-energy limit. The chapter relies on the clock and the interior 
 the field-strength reading of \cref{ch:ch03_readings}, and the paired-mode projector of \cref{ch:ch01_clifford}; the causal analysis of
 \cref{ch:ch12_causal} uses its normal-plane model.
 
+Several letters carry more than one meaning in this chapter, each fixed by its context: $B$ is the magnetic constant, the St\"uckelberg combination, a
+generic bivector and $\tfrac12J_N$; $G$ is the Hodge star, the shift of \cref{ch:ch04_rigidbody} and $G_N$; $\Omega$ is the para-Hermitian two-form and the spin
+connection; $\mathcal V$ is the space of algebraic curvature operators (not the volume element of \cref{ch:ch01_clifford}); $T$ is a tangent vector and the
+stress tensor; and $Q$ is the Gauss--Bonnet functional.
+
 % --- source: tex/s23_curved#0 ((head))
 
 
@@ -38,8 +43,9 @@ then each eigendistribution is parallel, involutive and totally geodesic, and $\
 
 \noindent Executable check: g3-1 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
-The para-complex structure need not be posited: it is the grading root of \cref{prop:twoK}, $\cK(v)=\tfrac12[\varpi,v]$ with $\varpi=\sum_ie_ie_{i+3}$,
-whose eigenspaces are the two totally null three-planes spanned by $e_i\mp e_{i+3}$. The null $3{+}3$ splitting it induces is a different
+The para-complex structure is identified with the grading root of \cref{prop:twoK}, $\cK(v)=\tfrac12[\varpi,v]$ with $\varpi=\sum_ie_ie_{i+3}$, once a pairing of the
+positive and negative directions is chosen; its eigenspaces are the two totally null three-planes spanned by $e_i\mp e_{i+3}$. The pairing is not canonical
+given the neutral metric alone, and a global construction needs the bundle reductions and spin assumptions to be stated. The null $3{+}3$ splitting it induces is a different
 decomposition from the physical $4{+}2$ splitting into the interior four-plane and the surplus plane, and conflating them is the first thing to avoid. A
 connection with torsion can preserve $\cK$ without making the eigendistributions integrable or $\Omega$ closed, so a $\cK$-preserving connection does not
 deliver the para-K\"ahler conclusion \cite{MarottaSzabo21,LoustauSanders22}. Para-K\"ahler geometry is the world of $\cK^2=+\id$, while chirality is
@@ -105,7 +111,8 @@ $H_{\rm red}=\tfrac12g_{(4)}^{\mu\nu}p_\mu p_\nu$.
 \noindent Executable check: c2-5 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
 The potential has cancelled from the reduced Hamiltonian, and not by accident: the constraints generate translations in $(u,v)$, so the normal $U(1)$
-acts trivially on the reduced phase space and a spinless test particle cannot see it. Whatever makes the normal connection physical must come from the
+acts trivially on the reduced phase space and a spinless test particle in the reduced sector ($p_u=p_v=0$) cannot see it; before the reduction,
+$H=\tfrac12g_{(4)}^{\mu\nu}(p_\mu-A_\mu\ell)(p_\nu-A_\nu\ell)+\tfrac12(p_u^2+p_v^2)$ with $\ell=vp_u-up_v$ couples to $A$ whenever $\ell\neq0$. Whatever makes the normal connection physical must come from the
 spinor sector, which \cref{sec:transport} examines. This is a first instance of the constraint structure that \cref{sec:constraints} derives from a
 worldline gauge symmetry.
 
@@ -148,12 +155,14 @@ $h=\operatorname{diag}(1,-t^2,-t^2,-t^2)$ with $A=z\,dt+\tfrac12x^2dy$, which ca
 \begin{corollary}[Sign, reduction and rigidity]
 \label{cor:ein6}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item The tangential equation $\mathcal G[h]=+\tfrac{r^2}2W$ has the opposite sign to $\mathcal G=-2W$: the normal field strength gravitates with negative energy.
+\item The tangential equation $\mathcal G[h]=+\tfrac{r^2}2W$ has the opposite sign to $\mathcal G=-2W$: relative to the ambient Einstein--Hilbert action and the stated
+connection-metric ansatz, the normal field strength gravitates with negative energy.
 The sign is forced: a Lorentzian four-plane in $\R^{3,3}$ uses one positive and three negative directions, so its normal plane has signature $(2,0)$, the
 sign of time.
 \item Over a normal disc of radius $r_c$, $\int\!\!\int\sqrt{|g_6|}\,R^{(6)}\,d\phi\,dr=\sqrt{|h|}\bigl(\pi r_c^2R[h]-\tfrac{\pi r_c^4}8F^2\bigr)$. The Euler--Lagrange
 equation of $\int\sqrt{|h|}(a_1R+a_2F^2)$ is $a_1\mathcal G+2a_2W=0$, so Einstein--Maxwell theory has $a_2/a_1=+1$ while the reduced action has $a_2/a_1=-r_c^2/8$: the
-wrong relative sign.
+wrong relative sign. Integrating over a finite normal disc is not a consistent compactification: the boundary terms and the discarded equations are not
+treated.
 \item The vacuum is rigid: $\mathcal G^{(6)}=0$ if and only if $F=0$ and $h$ is Ricci-flat. The internal equations differ by $\tfrac{r^2}4F^2$, which forces $F^2=0$ and
 then $R[h]=0$; the tangential equation must hold at every $r$ while $\mathcal G[h]$ and $W$ do not depend on $r$, so $\mathcal G[h]=0$ and $W=0$ separately, and $W=0$
 forces $F=0$ because $-W_{00}$ is positive definite.
@@ -203,12 +212,12 @@ only where $1+r_0^2|B|^2>0$, and the section is totally geodesic on an open set 
 \begin{example}[A uniform magnetic field]
 \label{ex:landau}
 Take $h=\eta$ and $F=b\,dx\wedge dz$. On a static section the circulation of $B$ around a circle of radius $R_c$ in an $x$--$z$ plane is $-\pi bR_c^2$, whatever $\chi$,
-so $\sum_iB_i^2\ge b^2R_c^2/4$ somewhere on it, and the section metric has signature $(2,2)$ there as soon as $R_c>2/(r_0b)$. In the gauge $A=bx\,dz$ with $\chi=0$,
+so $\sum_iB_i^2\ge b^2R_c^2/4$ somewhere on it, and the section metric has signature $(2,2)$ there as soon as $R_c>2/(r_0|b|)$. In the gauge $A=bx\,dz$ with $\chi=0$,
 \[
 h_\chi=dt^2-dx^2-dy^2-(1-k^2x^2)\,dz^2,\qquad R[h_\chi]=-\frac{2k^2}{(1-k^2x^2)^2},\qquad k=r_0b,
 \]
-which degenerates at $|x|=1/k$, where its curvature diverges, and has signature $(2,2)$ beyond. The Lorentzian region of a static section in a uniform field
-contains no circle of radius larger than $2/(r_0b)$.
+which degenerates at $|x|=1/|k|$, where its curvature diverges, and has signature $(2,2)$ beyond. The Lorentzian region of a static section in a uniform field
+contains no circle of radius larger than $2/(r_0|b|)$.
 \end{example}
 
 \noindent Executable check: g2-6 (exact symbolic or integer arithmetic; \cref{app:methods}).
@@ -289,6 +298,9 @@ and the lemmas contract this to the formula. It has also been checked as a polyn
 $\eta$-self-adjoint, so is $e^{\theta G}$, and $\cR_\theta\in\mathcal S$.
 \end{proof}
 
+The map $\cR\mapsto e^{\theta G}\cR\,e^{\theta G}$ is a congruence, not a similarity, and it acts on algebraic curvature operators at a point: it is not a map
+between metrics or between solutions. Duality rotations of linearised gravity are a different structure \cite{HenneauxTeitelboim05}.
+
 \noindent Executable check: g1-3 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
 \begin{example}[A maximally symmetric curvature]
@@ -309,7 +321,8 @@ $H(\theta):=\Ric(\cR_\theta)$, so divergence-freedom for every metric selects $\
 \item $\Tr(G\cR_\theta)=\cos2\theta\,\Tr(G\cR)-\tfrac12\sin2\theta\,R$, so on the Bianchi shell and for $R\neq0$, $\cR_\theta$ is itself a curvature operator only at
 $\sin2\theta=0$, compatible with (i) and narrowing nothing further.
 \item $Q(\cR):=\tfrac12\Tr(\cR G\cR G)=-\tfrac18\bigl(R^2-4R_{ab}R^{ab}+R_{abcd}R^{abcd}\bigr)$ for every pair-symmetric $\cR$, and $dQ[\mathcal D]=\Tr(G\cR G\mathcal D)$: the
-double dual is the algebraic gradient of the Gauss--Bonnet density, exactly so on $\mathcal V$, where $G\cR G=\operatorname{grad}_{\mathcal V}Q$.
+double dual is the algebraic gradient of the Gauss--Bonnet density with respect to the pairing $\Tr(AB)$, exactly so on $\mathcal V$, where
+$G\cR G=\operatorname{grad}_{\mathcal V}Q$.
 \end{enumerate}
 \end{corollary}
 
@@ -338,6 +351,11 @@ which vanishes identically only when $\cos\theta=0$. There the operator is the E
 divergence.
 \end{proof}
 
+The theorem concerns the displayed operator, with Euler--Lagrange expressions taken for variations of the metric at the density weight of
+$\sqrt{|g|}\,L$. It does not exclude other actions, constrained variations or equivalent formulations of the vacuum equations: since
+$\tr H(\theta)=\cos2\theta\,R$, for $\cos2\theta\neq0$ the equations $H(\theta)=0$ and $\Ric=0$ have the same solutions, and at $\sin^2\theta=\tfrac12$ the equation is
+the traceless one of the unimodular formulation \cite{HenneauxTeitelboim89}.
+
 \noindent Executable check: g1-6 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
 For a diffeomorphism-invariant action Noether's second theorem makes the Euler--Lagrange tensor divergence-free, so \cref{cor:phasesel}(i) is the covariant
@@ -363,7 +381,9 @@ In the normalisation $\tfrac12\varepsilon_{abcd}e^ae^bF^{cd}-\gamma^{-1}e_ae_bF^
 \]
 the Barbero--Immirzi parameter.
 \item The connection equation of $\int\langle e^{\theta G}\Sigma\wedge e^{\theta G}F\rangle$ is $e^{2\theta G}D\Sigma=0$, so the torsion vanishes, and the coframe equation is
-$-2\sin2\theta\,\mathcal G^{af}=0$ on the torsion-free locus. The vacuum equations are Einstein's for every $\theta\notin\tfrac\pi2\Z$ and empty for $\theta\in\tfrac\pi2\Z$.
+$-2\sin2\theta\,\mathcal G^{af}=0$ on the torsion-free locus. The vacuum equations are Einstein's for every $\theta\notin\tfrac\pi2\Z$. At the pure-Holst points
+$\theta\in\tfrac\pi2\Z$ no equation for the metric or coframe remains after the connection is eliminated, but the connection variation still gives $D\Sigma=0$
+and, for an invertible tetrad, vanishing torsion.
 \end{enumerate}
 \end{proposition}
 
@@ -386,7 +406,7 @@ $-2\sin2\theta\,\mathcal G^{af}=0$ on the torsion-free locus. The vacuum equatio
 \addplot[only marks,mark=o,mark size=2.8pt,scol,very thick,forget plot] coordinates {(1.5708,0)};
 \node[tcol,anchor=north,font=\footnotesize,align=center] at (axis cs:1.5708,-0.53) {Einstein: divergence-free, variational};
 \node[scol,anchor=south,font=\footnotesize] at (axis cs:0.7854,0.53) {Palatini};
-\node[scol,anchor=south west,font=\footnotesize,align=left] at (axis cs:1.62,0.04) {pure Holst,\\ equations empty};
+\node[scol,anchor=south west,font=\footnotesize,align=left] at (axis cs:1.62,0.04) {pure Holst,\\ no metric equation};
 \end{axis}
 \end{tikzpicture}
 \caption{Two uses of one duality rotation of the curvature (\cref{thm:phase,thm:helmholtz,prop:holst}). In the second-order family $H(\theta)=\Ric(e^{\theta G}\cR e^{\theta G})$
@@ -400,8 +420,9 @@ The roles of the phase differ between the two formalisms, as \cref{fig:phase} sh
 first-order family Einstein's equations hold for every $\theta\notin\tfrac\pi2\Z$, the Palatini point is $\theta=\pi/4$, and the endpoint $\theta=\pi/2$, where $\cR_\theta=G\cR G$, is
 exactly where the first-order Lagrangian degenerates to the pure Holst term. These are two uses of one rotation and must not be conflated. The self-dual value
 $\gamma=\pm i$ of Ashtekar's variables is not attained for any complex $\theta$; it is approached as $\Im\theta\to\mp\infty$, where $e^{2\theta G}$ becomes proportional to a
-projector onto an eigenspace of $G$. With torsion sources such as fermions the Holst term is no longer inert and the phase would enter an effective four-fermion
-interaction \cite{PerezRovelli06,FreidelMinicTakeuchi05}; nothing here fixes it.
+projector onto an eigenspace of $G$. With torsion sources such as fermions the Holst term is no longer inert: for minimally coupled fermions the phase enters an
+effective four-fermion interaction \cite{PerezRovelli06,FreidelMinicTakeuchi05}, while with a non-minimal coupling the Holst term can combine into the Nieh--Yan
+term and the phase can drop out \cite{Mercuri06}. Nothing here fixes either.
 
 Both readings of $\R^{3,3}$ therefore construct the Einstein tensor of a given four-metric: the interior reading by restricting the six-dimensional Einstein tensor to
 the slice (\cref{thm:ein6}), the field-strength reading as the contraction of $G\cR G$ (\cref{thm:phase}). Neither determines the metric. No gravitational coupling,
@@ -432,7 +453,7 @@ motion of the selected subspace relative to ambient transport. The flat case of 
 
 \begin{proposition}[Transport obstruction]
 \label{prop:obstruct}
-If ambient transport preserves the projector, $D\Pi=0$, then $[\mathcal R_{MN},\Pi]=0$. For the paired-mode projector $\Pi=\tfrac12\id-\tfrac14(\varpi+\mathcal V)$ of
+If ambient transport preserves the projector, $D\Pi=0$, then $[\mathcal R_{MN},\Pi]=0$. For the paired-mode projector $\Pi=\tfrac12\id-\tfrac14(\varpi+\omega)$ of
 \cref{ex:pairedmode}, $\rank[J_N,\Pi]=4$, and in the model \eqref{eq:kk} with $g^{(4)}$ flat, $\mathcal R_{\mu\nu}=\tfrac12(F_N)_{\mu\nu}J_N$ on $\Sigma$, so
 $[\mathcal R_{\mu\nu},\Pi]=\tfrac12(F_N)_{\mu\nu}[J_N,\Pi]\neq0$ wherever the normal curvature $F_N=dA$ is nonzero.
 \end{proposition}
@@ -444,23 +465,25 @@ $D^2\Pi=[\mathcal R,\Pi]$ for any section of the endomorphism bundle, so $D\Pi=0
 \noindent Executable check: g3-4 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
 This statement is about the spinor projector and the spin curvature, and the corresponding tangent-level statement is false; the two must not be run together.
-At the tangent level $J_N$ commutes with every generator of $E$ (\cref{lem:JN}), so the rotation it generates fixes $E$ pointwise, and in \eqref{eq:kk} every
-mixed Christoffel symbol vanishes on $\Sigma$: the splitting $TM=E\oplus N$ is Levi-Civita parallel there although $F_N\neq0$. At the spinor level the same rotation is
+At the tangent level $J_N$ commutes with every generator of $E$ (\cref{lem:JN}), so the rotation it generates fixes $E$ pointwise, and in \eqref{eq:kk} the
+Christoffel symbols that mix $E$ with $N$ vanish on $\Sigma$: the splitting $TM=E\oplus N$ is Levi-Civita parallel there although $F_N\neq0$. The symbols with two
+normal indices do not all vanish: on $\Sigma$, $\Gamma^u_{zv}=A_z$ and $\Gamma^v_{zu}=-A_z$ (for $A=bx\,dz$, $\Gamma^u_{zv}=bx$), the normal connection coefficients. At the spinor level the same rotation is
 not trivial, since $\rank[J_N,\Pi]=4$. Both statements hold simultaneously, and together they are the content of the remark after \cref{prop:constraints}: a
-spinless test particle cannot see the normal connection, and whatever makes it physical has to come from the spinor sector. The general principle that a
+spinless test particle in the zero-normal-momentum reduced sector cannot see the normal connection, and whatever makes it physical has to
+come from the spinor sector (the absence of that coupling does not establish a general spin requirement for Kaluza--Klein charge). The general principle that a
 normal-bundle curvature commutes with the projector is a statement about $TM$ and does not transfer to $\End$ of the spinor bundle. Curvature cannot be chosen
 independently of the selection.
 
 \begin{proposition}[The adapted connection]
 \label{prop:adapted}
 Set $\mathcal C:=[\Pi,D\Pi]$ and $\widehat D:=D+\mathcal C$. Then $\widehat D\Pi=0$. For the paired-mode projector, with the Levi-Civita spin connection,
-$D\mathcal V=0$ and $\mathcal V$ commutes with bivectors, so $\mathcal C=\tfrac1{16}[\varpi,D\varpi]$, again a bivector: the correction stays inside $\mathfrak{spin}(3,3)$. The
+$D\omega=0$ and $\omega$ commutes with bivectors, so $\mathcal C=\tfrac1{16}[\varpi,D\varpi]$, again a bivector: the correction stays inside $\mathfrak{spin}(3,3)$. The
 corresponding tangent connection is $\widehat\nabla_XY=\nabla_XY+\tfrac12\cK(\nabla_X\cK)Y$, metric-compatible and $\cK$-preserving, hence generically with torsion.
 \end{proposition}
 
 \begin{proof}
 Write $\delta=D\Pi$, which is off-diagonal. Direct expansion gives $[[\Pi,\delta],\Pi]=-\delta$ for such $\delta$, so $\widehat D\Pi=\delta+[\mathcal C,\Pi]=\delta+[[\Pi,\delta],\Pi]=0$.
-The form of $\mathcal C$ follows from $D\Pi=-\tfrac14D\varpi$ and $[\mathcal V,D\varpi]=0$. On tangent vectors $\cK^2=\id$ gives $\cK(\nabla\cK)\cK=-\nabla\cK$, so the
+The form of $\mathcal C$ follows from $D\Pi=-\tfrac14D\varpi$ and $[\omega,D\varpi]=0$. On tangent vectors $\cK^2=\id$ gives $\cK(\nabla\cK)\cK=-\nabla\cK$, so the
 correction $\tfrac12\cK\nabla\cK$ satisfies $\nabla\cK+[\tfrac12\cK\nabla\cK,\cK]=0$, and it is $\eta$-antisymmetric because $\cK$ and $\nabla\cK$ are $\eta$-antisymmetric and
 anticommute. The Levi-Civita connection is the unique torsion-free metric connection, so a metric connection preserving a structure that Levi-Civita transport
 does not preserve carries torsion.
@@ -511,14 +534,17 @@ $e^{\theta T}$ with $T$ symmetric leaves the orthogonal projectors; the correct 
 The one-angle geodesic condition $[\Pi,[B,[B,\Pi]]]=0$ with $B=\tfrac12J_N$ holds at $\Pi_0$ and hence along the orbit, so the ansatz is consistent with the
 projector equation, which reduces to an equation for $b_\mu=\partial_\mu\theta+A_\mu$. The action reduces to $\mathcal L_\theta=\tfrac{f^2}2b_\mu b^\mu$, invariant under
 $\theta\mapsto\theta-\lambda$, $A\mapsto A+d\lambda$: the projector angle is a St\"uckelberg field for the normal frame rotation \cite{RueggRuizAltaba04}. Adjoining a
-Maxwell term by hand gives a Proca field with $m_A^2=g_A^2f^2$.
+Maxwell term by hand gives a Proca field with $m_A^2=g_A^2f^2$. Here $b=d\theta+A$ with $\theta\mapsto\theta-\lambda$, whereas the sections of the level set in the subsection ``Off the slice''
+used $B=d\chi-A$ with $\chi\mapsto\chi+\lambda$; the two conventions are related by $\theta=-\chi$.
 \end{example}
 
 \noindent Executable check: g3-7 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
 Read strictly, this is a constraint and not a prediction: neither the Maxwell term nor the scales $g_A$ and $f$ is derived, and a massive normal vector is not the
-photon. Together with the failure of the adapted generator to commute with the physical generators it leaves a dichotomy: either the normal $U(1)$ is not
-electromagnetic, or the paired-mode projector is not the observation projector. The next section resolves it in one direction.
+photon. A Maxwell term added by hand does not cure the wrong-sign term obtained from the ambient Einstein--Hilbert action (\cref{cor:ein6}), and the positive norm
+of the angle mode does not make the projector sector stable, since its trace form has signature $(3,3)$. Together with the failure of the adapted generator to commute with the physical generators it leaves a dichotomy: either the normal $U(1)$ is not
+electromagnetic, or the paired-mode projector is not the observation projector. Which alternative holds is left open here; the torsion
+discussion below concerns the nature of the flat obstruction, not this choice.
 
 % --- source: tex/s25_transport#4 (Is the flat obstruction a torsion statement?)
 \subsection{Is the flat obstruction a torsion statement?}
@@ -552,9 +578,9 @@ variationality select $\theta=\pi/2$ & the selection criteria are those of Riema
 variational principle $R\sqrt{|g|}$ is the classical one; no equation $\mathcal G=8\pi G_{\rm N}T$ and no matter stress tensor\\
 first-order form (\cref{prop:holst}) & the Palatini--Holst action, with the duality phase as Barbero--Immirzi parameter $\gamma=-\tan2\theta$; vacuum equations
 are Einstein's for $\theta\notin\tfrac\pi2\Z$ & the action is adopted, not derived, and it is ordinary general relativity; the phase is not fixed; with fermionic torsion it
-enters a four-fermion interaction that nothing here determines\\
-normal-plane vectors (\cref{cor:ein6}(i), \cref{ex:nullwave,thm:ghostvec}) & a Kaluza--Klein vector from the normal plane & healthy sign: every such vector gravitates with
-negative energy, and a spinless particle does not couple to it (\cref{prop:constraints,thm:wlgauge})\\
+enters a four-fermion interaction under minimal coupling, and can drop out under a non-minimal one; nothing here determines it\\
+normal-plane vectors (\cref{cor:ein6}(i), \cref{ex:nullwave,thm:ghostvec}) & a Kaluza--Klein vector from the normal plane & healthy sign: relative to the ambient Einstein--Hilbert action and the stated connection-metric ansatz, every such vector
+gravitates with negative energy, and spinless matter in the zero-normal-momentum reduced sector ($p_u=p_v=0$, hence $\ell=0$) does not couple to it; a spinless trajectory with $\ell\neq0$ does (\cref{prop:constraints,thm:wlgauge})\\
 projector under transport (\cref{prop:obstruct,prop:adapted,ex:stueckelberg}) & an adapted connection with torsion; the projector angle as a St\"uckelberg field & a
 gravitational role is not proposed; the vector it gives mass to is the normal one, not the photon and not a graviton\\
 \bottomrule
@@ -572,9 +598,12 @@ adopted instead, its reduction over the normal disc has the wrong relative sign 
 and its vacuum equations leave no Maxwell field (\cref{cor:ein6}(iii)).
 \item \emph{Constraints and physical degrees of freedom.} No constraint analysis of a gravitational field is made, and no count of
 physical degrees of freedom follows from the arena. The constraints that do appear, $p_u=p_v=0$ of \cref{prop:constraints}, belong to a test
-worldline in a given metric. For the adopted Palatini--Holst action the count is the inherited one of general relativity, two in
-vacuum, and the Holst term does not change it.
-\item \emph{Kinetic signs.} The vectors of the normal plane gravitate with negative energy (\cref{cor:ein6}(i), \cref{thm:ghostvec}). The
+worldline in a given metric. For the adopted Palatini--Holst action with an invertible tetrad and a nonzero Palatini coefficient,
+$\sin2\theta\neq0$, the count is the inherited one of general relativity, two in vacuum, and the Holst term does not change it. At the pure-Holst
+points $\theta\in\tfrac\pi2\Z$ the coframe equation on the torsion-free locus, $-2\sin(2\theta)G_{ab}=0$, is empty (a torsion-free metric with
+$R_{ab}=3Kg_{ab}$, $K\neq0$, satisfies it although $G_{ab}\neq0$), and the count of general relativity does not apply (\cref{prop:holst}).
+\item \emph{Kinetic signs.} Relative to the ambient Einstein--Hilbert action and the stated connection-metric ansatz, the vectors of the normal
+plane gravitate with negative energy (\cref{cor:ein6}(i), \cref{thm:ghostvec}). The
 remark below shows that this sign is not a convention.
 \item \emph{Matter coupling.} After the reduction a spinless test particle moves on the geodesics of $h$, $H_{\rm red}=\tfrac12h^{\mu\nu}p_\mu p_\nu$
 (\cref{prop:constraints}), which is the minimal coupling of a test particle to a given metric. No stress tensor of the arena's matter is shown to
@@ -604,5 +633,5 @@ selection criteria, and the first-order reading of the phase. The obstructed one
 the healthy sign of every normal-plane vector, and the transfer of Ricci flow to split signature. A gravitational theory in the arena would
 need an action relating metric, pairing, connection and projector from which the metric follows rather than being given; that is the
 largest open problem of the curved arena, and it is listed with the others in \cref{ch:ch13_compatibility}. The binding, topological and
-quantum-stability qualifications of the same review item (CORE-12) are stated where the interior dynamics is developed, in
+quantum-stability qualifications of the interior dynamics are stated where it is developed, in
 \cref{sec:esmap:distinctions}.

@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 """Write the claim-level manifests of Chapters 11 and 12 (Phase 9C, 2 November 2026).
 
-    python3 verification/make_claims_ch11_ch12.py
+    python3 verification/tools/make_claims_ch11_ch12.py [--runs reproducibility/selected-results/v1.0.1]
 
 For every check of verification/ch11_curvature_gravity and verification/ch12_causality it writes one row of CLAIMS.tsv in that directory: the manuscript
 label, the source code, the mathematical assumptions, the method, the expected output, the observed output (the PASS/FAIL line of the most
-recent run record in reproducibility/selected-results/v1.0.0), the software dependencies, the verification status and the remaining limitations.
+run record given by --runs, by default reproducibility/selected-results/v1.0.1), the software dependencies, the verification status and the remaining limitations.
 Status vocabulary: exactly verified (an identity over the stated general parameters), verified on the stated example, numerically supported,
 conditional, obstructed (a no-go that is itself verified), unresolved. A PASS is never read as more than its coded assertion.
 """
 import pathlib
 import re
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-RUNS = ROOT / "reproducibility" / "selected-results" / "v1.0.0"
+RUNS = ROOT / (sys.argv[sys.argv.index("--runs") + 1] if "--runs" in sys.argv else "reproducibility/selected-results/v1.0.1")
 DEPS = "Python 3, sympy (numpy for c1-4, c1-5)"
 X = "exactly verified"
 META = {
@@ -73,20 +74,23 @@ META = {
     ],
     "ch12_causality": [
         ("c1-1", "thm:selector", "c1_selector_types.py", "8x8 realisation; six test planes", "exact",
-         "(a^b)^2 = -det Gram; types; centraliser dim 7; orthogonality of coordinate complex structures", X, "planes beyond the six tested follow from the identity and Witt"),
+         "(a^b)^2 = -det Gram; types; centraliser dim 7 for nondegenerate planes; orthogonality of coordinate complex structures", X,
+         "planes beyond the six tested follow from the identity and Witt; the totally null stratum is c1-12"),
         ("c1-2", "omega_S pairing; thm:cone (i)-(ii)", "c1_selector_types.py", "8x8 realisation", "exact",
          "invariant pairing S+ x S-; m_A span Lambda^2(S+)*; J^2 = -1 on S+", X, ""),
         ("c1-3", "thm:cone (iii)-(v)", "c1_selector_types.py", "general psi in S+; six planes", "exact symbolic",
          "v_C in N-perp, null, image dim 3; definite/indefinite components; v_J = -j", X,
          "nappe-filling is the Klein correspondence (inherited); an algebraic cone is not a causal theory"),
-        ("c1-4", "thm:selector3", "c1_selector_types.py", "512x512 signed permutations", "exact (integer); random spinors numerical",
-         "J, Omega, Gamma relations; all 3060 four-planes; 97 = 6 + 91; beta pairings; untwisted square not null", "exactly verified (numerical part: 5 samples)", ""),
-        ("c1-5", "Dirac current at n = 3 (after thm:selector3)", "c1_selector_types.py", "512x512", "exact matrix identities; 20 random spinors",
-         "gamma^0 gamma^k symmetric anticommuting involutions; j future causal", X, "uses the positive inner product, as the text states"),
+        ("c1-4", "thm:selector3", "c1_selector_types.py", "512x512 signed permutations", "exact (integer); random spinors of S+ numerical",
+         "J, Omega, Gamma relations; all 3060 four-planes; 97 = 6 + 91; beta pairings; untwisted square not null on S+",
+         "exactly verified (numerical part: 5 samples of S+)", ""),
+        ("c1-5", "Dirac current at n = 3 (after thm:selector3)", "c1_selector_types.py", "512x512", "exact matrix identities; 20 random spinors; product states",
+         "gamma^0 gamma^k symmetric anticommuting involutions; j future causal; null on product states with a chiral first factor, (2,0,0,0) for |000> + |100>",
+         X, "uses the positive inner product, as the text states"),
         ("c1-6", "prop:types", "c1_selector_types.py", "restriction to S+ = sl(4,R)", "exact", "invariants and characteristic polynomials; opposite orientations", X, ""),
         ("c1-7", "thm:degree (i)-(iii)", "c1_selector_types.py", "test elements of the proof", "exact",
          "stated invariants; e = g = 0; B_w invariants and non-simplicity", "exactly verified (inputs of the proof)", "the bounded-below argument is the written proof"),
-        ("c1-8", "thm:degree (iv)", "c1_selector_types.py", "f on so(3,3)", "exact symbolic", "f(J) = 0; Hessian rank 1", X, ""),
+        ("c1-8", "thm:degree (iv)", "c1_selector_types.py", "F on so(3,3)", "exact symbolic", "F(J) = 0; Hessian rank 1", X, ""),
         ("c1-9", "thm:flat", "c1_selector_types.py", "8x8 realisation", "exact symbolic",
          "n commutes, n^2 = 0; centraliser dim 3; e^{tK} conjugation; invariant forms dim 2, signature (3,3)", "obstructed (verified no-go)",
          "invariant classification, not a dynamical selection mechanism"),
@@ -95,6 +99,8 @@ META = {
          "signature of a quadratic kinetic form; ghost freedom of an interacting theory not addressed"),
         ("c1-11", "prop:positivealt", "c1_selector_types.py", "positive form tr(XY^T)/8", "exact symbolic",
          "invariance algebra so3_T + so3_S; Hessian 8, 0^2, 2^12; boosts not symmetries", X, ""),
+        ("c1-12", "thm:selector (iii), degenerate stratum", "c1_selector_types.py", "totally null plane <e1+e4, e2+e5>", "exact",
+         "C0^2 = 0; centraliser in so(3,3) of dimension 9, against 7 for C = J", X, "one representative of the degenerate strata"),
         ("c2-1", "prop:toy", "c2_dynamics_brackets.py", "free scalar on R^{3,3}", "exact symbolic", "dispersion; energy density; growth beats Sobolev weights", X,
          "Hadamard ill-posedness inherited from the growth"),
         ("c2-2", "prop:orient", "c2_dynamics_brackets.py", "R^{3,3}", "exact", "connecting path with eta = 1", X, ""),
@@ -109,7 +115,8 @@ META = {
          "antisymmetry, Leibniz, Jacobi; d p_u/d tau ~ 0", X, "constraint preservation for interacting fields not established"),
         ("c2-7", "thm:wlgauge (gauge invariance)", "c2_dynamics_brackets.py", "general h, A", "exact symbolic", "delta L = 0 identically", X,
          "the gauge principle is chosen; a consistent constrained Hamiltonian theory of interacting fields is not constructed"),
-        ("c2-8", "prop:wltau", "c2_dynamics_brackets.py", "general h, A", "exact symbolic", "x' = N h k; d tau_h = N m d tau; reparametrisation", X,
+        ("c2-8", "prop:wltau", "c2_dynamics_brackets.py", "general h, A; action with N (H - m^2/2)", "exact symbolic",
+         "varying N gives the mass shell 2H = m^2 (derived, not inserted); x' = N h k; d tau_h = |N| m d tau; reparametrisation", X,
          "a universal evolution parameter remains an open hypothesis"),
         ("c2-9", "prop:isometryonly", "c2_dynamics_brackets.py", "polar normal coordinates", "exact symbolic", "l = -p_phi; p_u^2+p_v^2; Bessel modes", X, ""),
     ],

@@ -7,6 +7,13 @@ electric charge $B_{\rm em}$, and the sources and masslessness of the photon. Th
 charge $Q_A$ is anomalous with the matter of $P_*$ and is not the photon. The Maxwell term and the selecting potential are adopted, not
 derived, and electroweak breaking is missing; the adopted potential opposes it.
 
+Several letters carry more than one meaning in this chapter, each fixed by its context: $\Omega$ is the interior volume and, in the curved
+setting, the connection $\Omega_{\rm Lorentz}+A^aT_a$; $Q$ is the second-rung charge $\tfrac12ab$, the electric charge, and with indices $Q_A$, $Q_c$, $Q_v$;
+$H$ is the second-rung vacuum blade, $H_C$ a colour generator and $H(p)$ a Hamiltonian; $\mathcal C$ is the Lorentz commutant and $\mathcal C_\mu$ a current, $C$
+the colour group and $\mathsf C$ an element of the Klein group; $D$ is the duality map and the covariant derivative; and $T$ denotes the tangents $T_i$, $T_{aw}$ and
+the temporal trivector. Two invariant forms on the compact algebra are used, $-\Tr(XY)/128$ in \cref{p2:sec:main} and $-\Tr(XY)/512$ in \cref{p3:sec:main}; the
+conversion between them is given in the conventions of \cref{p2:sec:main}.
+
 % --- source: tex/s11_fields#0 ((head))
 
 
@@ -18,7 +25,9 @@ Up to this point a projector has been a choice made once and for all. A choice o
 allowed to vary from point to point, and the selection problem then changes character: instead of asking which projector is
 right we ask which configurations an action prefers. Before any action can be written, three things must be known: the space in
 which the projector moves, the connection it induces on its own image, and the sign of the natural metric on its variations. All
-three can be computed exactly, and each of them carries a surprise.
+three can be computed exactly, and each of them carries a surprise. A field valued in a homogeneous space of the symmetry group, and its
+gauging, is the setting of the nonlinear sigma models of Coleman, Wess and Zumino and of Callan, Coleman, Wess and Zumino
+\cite{ColemanWessZumino69,CallanColemanWessZumino69}; what follows computes that space and its metric for the projectors of the arena.
 
 % --- source: tex/s11_fields#2 (Configuration space)
 \subsection{Configuration space}
@@ -45,7 +54,8 @@ Consequently
 \mathcal P_r\cong\mathrm{Gr}_\C\bigl(\tfrac r4,128\bigr),\qquad
 \dim_\R\mathcal P_r=2\,\frac r4\Bigl(128-\frac r4\Bigr),
 \]
-which is $3584$ at $r=64$ and $6144$ at $r=128$, against $\dim\mathrm{Gr}_\R(64,512)=28672$ for the unconstrained real Grassmannian.
+which is $3584$ at $r=64$ and $6144$ at $r=128$, against $\dim\mathrm{Gr}_\R(64,512)=28672$ for the unconstrained real Grassmannian. $\mathcal P_r$ is
+non-empty only for ranks $r$ divisible by four.
 \end{proposition}
 
 \begin{proof}
@@ -446,7 +456,9 @@ representatives and at random $K$-translates.
 At $n=3$ the stabiliser of the four-positive type is the row of \cref{prop:towermatter}. The same proof covers all even grades: a $\theta$-stable plane of type $(p,q)$
 with $r(r-1)/2+q$ even gives a $K$-orbit of dimension $p(8-p)+q(6-q)$. Among them only $\mathrm{vol}_+=-\mathcal Z$ is $K$-fixed (\cref{p1:lem:census}). No compact generator moves
 $\tfrac12(\id+\mathrm{vol}_+)$, as for the chirality projectors of \cref{prop:rigid}; only the boosts do. \Cref{p1:lem:transpose} agrees with \cref{thm:ghost}, by which a
-variation $[B,\Pi]$ stays among the orthogonal projectors exactly when $B$ is compact: a noncompact generator tilts $P$ out of $V_+$, and $\Pi_P$ stops being symmetric.
+variation $[B,\Pi]$ stays among the orthogonal projectors exactly when $[B+B^{\!\top},\Pi]=0$, that is, when $B$ is compact modulo the stabiliser: a noncompact
+generator that does not commute with $\Pi$ tilts $P$ out of $V_+$, and $\Pi_P$ stops being symmetric. At $\Pi_A$, for instance, the boost $E_{13}E_{10}/2$ commutes
+with the projector, so the non-compact $E_2E_7/2+E_{13}E_{10}/2$ gives the same tangent as $E_2E_7/2$; the dimension counts are unaffected.
 
 \begin{proposition}[Clifford spheres in $F_3$; fixed]
 \label{p1:prop:spheres}
@@ -817,16 +829,25 @@ supplies it only in a cutoff scheme (inherited; scheme dependent). Identifiers p
 
 \paragraph{Conventions.} As in \cref{p1:sec:main,p3:sec:main}. On $\mathfrak k$ the invariant form here is $\langle X,Y\rangle=-\Tr(XY)/128$, in which the unit-rate
 rotations $\tfrac12e_ie_j$ are orthonormal (p2-1). This differs by a factor $4$ from the form $-\Tr(XY)/512$ of \cref{p3:sec:main}; norms below are quoted in the
-form of this section.
+form of this section. In it the Standard-Model generators $t^L_i$ and $t_Y$ have squared norms $\tfrac12$ and $\tfrac56$, so the orthonormal basis of
+$\mathfrak h_{\rm SM}$ used below is $(\sqrt2\,t^L_i,\ \sqrt{6/5}\,t_Y)$, with couplings $g_2$ and $g_Y$. In the form of \cref{p3:sec:main} every squared norm is divided
+by four ($\tfrac18$ and $\tfrac5{24}$, the module metric of \eqref{eq:Saction}), the orthonormal generators are doubled, and the entries of $M^2$ gain a factor four;
+thresholds expressed through ratios of couplings are unchanged. Physical masses are $M^2_{\rm phys}=f^2M^2$ with the kinetic scale $f$, and Hessians are quoted relative
+to $\Tr(d\Pi^2)$ unless stated otherwise.
 
 \begin{proposition}[The alignment energy is the trace of the mass matrix; fixed]
 \label{p2:prop:mass}
 For $\mathfrak h$ with orthonormal basis $t_a$ and couplings $g_a>0$, put $M^2_{ab}(\Pi)=g_ag_b\Tr([t_a,\Pi][t_b,\Pi])$. Then $M^2$ is symmetric and positive
-semidefinite, $\Tr M^2=V_{\mathfrak h}(\Pi)$, $\dim\ker M^2$ is the dimension of the stabiliser of $\Pi$ in $\mathfrak h$, and $V_{\mathfrak h}$ is invariant under the
-group generated by $\mathfrak h$ (p2-2, p2-3). On $F_3$, $V_{\mathfrak h}(\Pi_P)=64\sum_ag_a^2\|[\rho_+t_a,p_P]\|^2$ is computed on $V_+=\R^8$, and the colour couplings drop
+semidefinite, $\Tr M^2=V_{\mathfrak h}(\Pi)$, and $\dim\ker M^2$ is the dimension of the stabiliser of $\Pi$ in $\mathfrak h$. If the couplings form an $\Ad(H)$-invariant
+quadratic form, one coupling on each simple ideal of $\mathfrak h$ and any couplings on its abelian centre, $V_{\mathfrak h}$ is invariant under the group generated by
+$\mathfrak h$ (p2-2, p2-3). On $F_3$, $V_{\mathfrak h}(\Pi_P)=64\sum_ag_a^2\|[\rho_+t_a,p_P]\|^2$ is computed on $V_+=\R^8$, and the colour couplings drop
 out (p2-4). For $\mathfrak h=\uu1_A,\uu1_{\rm em},\mathfrak h_{\rm SM},\mathfrak h_{\rm PS},\dots$ it has the closed forms of p2-13 in the principal angles between $P$ and the
 planes $U_A$, $U_{\rm em}$ and $W$.
 \end{proposition}
+
+The invariance needs the hypothesis on the couplings. For arbitrary positive $g_a$ it fails: with $\mathfrak h=\so{}\langle E_2,E_3,E_8\rangle$,
+$t=\tfrac12(E_2E_3,E_2E_8,E_3E_8)$ and $g=(1,2,3)$, the two planes $\langle E_2,E_7,E_{13},E_{14}\rangle$ and $\langle E_3,E_7,E_{13},E_{14}\rangle$, related by the group,
+give $V_{\mathfrak h}=640$ and $1280$. The Standard-Model and Pati--Salam calculations below use one coupling per simple ideal.
 
 \begin{proposition}[Gauging all of $\mathfrak k$ selects nothing; fixed]
 \label{p2:prop:allk}
@@ -838,7 +859,8 @@ So the selection of a point needs a proper subalgebra, as \cref{p1:prop:K} alrea
 
 \begin{proposition}[Zero sets and Goldstone counts; fixed]
 \label{p2:prop:zero}
-For each $\mathfrak h$ the global minimum of $V_{\mathfrak h}\ge0$ on $F_3$ is its zero set, the $\mathfrak h$-fixed points of \cref{p1:thm:fixed}: for $\uu1_A$ and $\uu1_{\rm em}$ (with or
+For each $\mathfrak h$ listed here, whose fixed set on $F_3$ is nonempty, the global minimum of $V_{\mathfrak h}\ge0$ on $F_3$ is its zero set, the $\mathfrak h$-fixed points
+of \cref{p1:thm:fixed}: for $\uu1_A$ and $\uu1_{\rm em}$ (with or
 without $\su3_C$) the two components $P\supset U$ and $P\perp U$, for $\mathfrak h_{\rm SM}$, $\mathfrak h_{\rm PS}$ and $\mathfrak h_{\rm PS}\oplus\uu1_A$ the four points
 $\Pi_{\pm A},\Pi_{\pm W}$ (p2-16: $60$ random starts per algebra, random couplings, all reaching $V_{\mathfrak h}<10^{-12}$ relative). At $\Pi_A$ the Hessian of $V_{\mathfrak h}$ is
 positive semidefinite with kernel $[\mathfrak c_{\mathfrak k}(\mathfrak h),\Pi_A]$: $\uu1_A$ and $\uu1_{\rm em}$ leave eight Goldstone directions, and every $\mathfrak h$
@@ -848,20 +870,23 @@ containing $\su2_L$ or $\so4_W$ leaves none (p2-14, p2-15, p2-18).
 \begin{proposition}[A second critical set of $\mathfrak h_{\rm SM}$; fixed]
 \label{p2:prop:metastable}
 $P_0=\operatorname{span}(E_2,E_3,E_7,E_{13})$ is a critical point of $V_{\mathfrak h_{\rm SM}}$, on a critical set $\widetilde{\mathrm{Gr}}_2(A)\times\C P^1$. Relative to
-$\Tr(d\Pi^2)$ its Hessian has eigenvalues $0$ ($\times6$, along the critical set), $\tfrac12(g_Y^2-g_2^2)$ ($\times8$) and $2g_Y^2$ ($\times2$). So it is a saddle for
-$g_Y<g_2$ and a local, non-global minimum for $g_Y>g_2$. There the unbroken algebra is $\su3_C\oplus\uu1_{T^3_L}\oplus\uu1_Y$, of dimension $10$ and containing
+$\Tr(d\Pi^2)$ its Hessian has eigenvalues $0$ ($\times6$, along the critical set), $\tfrac35g_Y^2-g_2^2$ ($\times8$) and $\tfrac{12}5g_Y^2$ ($\times2$), for the orthonormal
+basis of the conventions above (for the raw generators $t^L_i$, $t_Y$ they read $\tfrac12(g_Y^2-g_2^2)$ and $2g_Y^2$). So it is a saddle for $g_Y<\sqrt{5/3}\,g_2$ and a
+local, non-global minimum for $g_Y>\sqrt{5/3}\,g_2$. There the unbroken algebra is $\su3_C\oplus\uu1_{T^3_L}\oplus\uu1_Y$, of dimension $10$ and containing
 $B_{\rm em}$, and only the $W^\pm$ are massive (p2-17, p2-20).
 \end{proposition}
 
-This metastable point is not electroweak breaking: the $Z$ stays massless, and it exists only for $g_Y>g_2$, a ratio of couplings that is
-not physical at low energies and that the equal-coupling convention of \cref{p3:thm:photon}(d) excludes (interpretive comparison).
+This metastable point is not electroweak breaking: the $Z$ stays massless, and it exists only for $g_Y>\sqrt{5/3}\,g_2$, a ratio of couplings that is
+not physical at low energies and that the equal-coupling convention of \cref{p3:thm:photon}(d) excludes: equal normalised couplings remain outside the
+metastable region (interpretive comparison).
 
 \begin{remark}[The sign hypothesis (H3); inherited, scheme dependent]
 \label{p2:rem:sign}
 In the one-loop effective potential with a Euclidean momentum cutoff $\Lambda$, a real degree of freedom of mass $m$ contributes
 $\tfrac{\Lambda^2m^2}{32\pi^2}+\tfrac{m^4}{64\pi^2}\bigl(\log\tfrac{m^2}{\Lambda^2}-\tfrac12\bigr)+O(m^6/\Lambda^2)$, and a massive vector in Landau gauge counts three (p2-5,
-inherited \cite{ColemanWeinberg73}). The leading term is $\tfrac{3\Lambda^2}{32\pi^2}\Tr M^2=\tfrac{3\Lambda^2}{32\pi^2}V_{\mathfrak h}$, so in this scheme $\xi_1>0$ at order
-$\Lambda^2$. The coefficient is regulator dependent (it is absent in dimensional regularisation), the $m^4\log m^2$ terms are not controlled, and the fermion
+inherited \cite{ColemanWeinberg73}). With the physical masses $M^2_{\rm phys}=f^2M^2$ of the conventions above, the leading term is
+$\tfrac{3\Lambda^2}{32\pi^2}\Tr M^2_{\rm phys}=\tfrac{3\Lambda^2f^2}{32\pi^2}V_{\mathfrak h}$, so in this scheme $\xi_1=\tfrac{3\Lambda^2f^2}{32\pi^2}>0$ at order
+$\Lambda^2$, of mass dimension four. The coefficient is regulator dependent (it is absent in dimensional regularisation), the $m^4\log m^2$ terms are not controlled, and the fermion
 loops of the matter enter with the opposite sign. The sign is proved for vector-like theories \cite{Witten83}. Here (H3) therefore remains a hypothesis;
 the curvature masses of $M^2$ are not pole masses, and no gauge-fixing or scheme dependence of the vacuum energy has been examined.
 \end{remark}
@@ -873,10 +898,18 @@ $g_3^2<\tfrac12g_Q^2$, and the charged circle (photon massive, $\so3$ unbroken) 
 (p2-8 to p2-10). Which charge is massless is decided by the ratio of the couplings, not by the algebra.
 \end{remark}
 
-\paragraph{What this section establishes.} Gauging a proper subalgebra with a positive alignment coefficient selects the points that leave it unbroken
-(fixed). The positivity of the coefficient is a hypothesis with one-loop support in a cutoff scheme only (inherited). The vacua selected by $\mathfrak h_{\rm SM}$ are
-the electroweak-symmetric points $\Pi_{\pm A},\Pi_{\pm W}$, and the only other critical set of $V_{\mathfrak h_{\rm SM}}$ breaks $\su2_L$ to $\uu1_{T^3_L}$, which is not
-the observed pattern. Electroweak breaking is not produced by alignment, in agreement with \cref{p3:prop:neutral}.
+\paragraph{What this section establishes.} Gauging a proper subalgebra that has fixed points on $F_3$, with a positive alignment coefficient, selects the
+points that leave it unbroken (fixed). The hypothesis is needed: for a subalgebra without fixed points on $F_3$ the zero set is empty, and the
+minimum set is not determined by this argument. The positivity of the coefficient is a hypothesis with one-loop support in a cutoff scheme only (inherited). The vacua selected by $\mathfrak h_{\rm SM}$ are
+the electroweak-symmetric points $\Pi_{\pm A},\Pi_{\pm W}$. A further critical set of $V_{\mathfrak h_{\rm SM}}$ breaks $\su2_L$ to $\uu1_{T^3_L}$; it breaks part of the electroweak
+group but leaves an extra massless neutral vector, so it is not the observed electroweak-breaking pattern (\cref{p2:prop:metastable}). Another critical point, for all positive couplings, is the plane $P_e=\langle E_2,E_3,E_9,E_{14}\rangle$, the
+$\theta=\pi/2$ member of the neutral deformation of \cref{p3:prop:neutral}: it is critical for the $SU(2)_L$ term and for the hypercharge term separately and
+leaves $\su3_C\oplus\uu1_{\rm em}$ unbroken, with massive $W$ and $Z$ and a massless photon (with unit raw couplings and $f=1$ its electroweak mass matrix
+has eigenvalues $0,32,32,64$). It is a saddle: relative to $\Tr(d\Pi^2)$ its Hessian has eigenvalues $-2$ (once), $0$ (nine times) and $1$ (six times), and
+along the deformation $V_{\mathfrak h_{\rm SM}}(\Pi_\theta)=128c_{\rm SM}\sin^2\theta$, in the conventions of \cref{p3:sec:main} (with the couplings of
+\cref{p2:sec:main} the coefficient is $128(\tfrac32g_2^2+\tfrac3{10}g_Y^2)$), is maximal there. Random-start minimisation cannot certify the absence of
+saddles, so no complete list of critical sets is claimed. Electroweak breaking is not produced by alignment as a stable vacuum, in agreement with
+\cref{p3:prop:neutral}.
 
 % --- source: photon_selection/p3_identification#0 ((head))
 % New references: sections/bib_p3.tex.
@@ -1000,10 +1033,12 @@ shared charge is half the fermion number.
 \label{p3:rem:anomaly}
 The normal $SO(2)$ connection of the curved extension \cref{thm:towercurved} is the component of the connection along $Q_A$ (\cref{p3:thm:photon}(c)).
 With $P_*$ as the matter and $\su2_L$ gauged it is anomalous, so before it can be treated as a physical gauge field it must be excluded, cancelled or
-decoupled (PH-05). \emph{Cancelled}: on the whole spectator Weyl block $\tfrac12(\id-\Gamma)$ the mixed trace is $0$, because the rest of the block, two mirror
-families with $\hat Q_A=-\tfrac12$, contributes $-4$ (z2-2); cancellation therefore needs the mirror matter that $P_*$ removes. \emph{Excluded}: the
-connection is kept flat or non-dynamical; the curved extension then loses its normal gauge field. \emph{Decoupled}: a mass for it, for instance by a
-Green--Schwarz or St\"uckelberg mechanism, which is not constructed. None of the three is established here, and the normal field is not treated as physical.
+decoupled. \emph{Cancelled}: on the whole spectator Weyl block $\tfrac12(\id-\Gamma)$ the mixed trace is $0$, because the rest of the block, two mirror
+families with $\hat Q_A=-\tfrac12$, contributes $-4$ (z2-2); cancellation occurs in that larger block, with the mirror matter that $P_*$ removes. \emph{Excluded}: the
+connection is kept flat or non-dynamical; the curved extension then loses its normal gauge field. \emph{Decoupled}: a St\"uckelberg mass does not by itself
+cancel the anomalous Ward identity; decoupling needs a specified Green--Schwarz or Wess--Zumino completion, with its transformations and coefficients
+\cite{Preskill91}, which is not constructed. Cancellation by the mirror block is one available completion, not a statement excluding other anomaly-cancelling
+matter. None of the three is established here, and the normal field is not treated as physical.
 \end{remark}
 
 % --- source: photon_selection/p3_identification#3 (The counts against the normal U(1)U(1), and the dichotomy)
@@ -1028,7 +1063,7 @@ count & normal $U(1)$, generator $Q_A$ & $\uu1_{\rm em}$, generator $B_{\rm em}$
 & removed: $[Q_A,\Pi_0]=0$, $D\Pi_0=0$, and the adapted correction is compact and commutes with the interior gammas \cref{thm:towercurved}, \cref{p1:thm:curved}
 & removed in the same way
 & none at $n=3$; removed already at $n=2$ (fixed)\\
-(iii) it gravitates with the wrong sign \cref{cor:ein6} and \cref{thm:ghostvec}
+(iii) it gravitates with the wrong sign for the ambient Einstein--Hilbert action (\cref{cor:ein6,thm:ghostvec})
 & holds for the Kaluza--Klein vector of the normal plane
 & not covered: the Maxwell term is adopted, and a positive one exists since $\langle B_{\rm em},B_{\rm em}\rangle>0$; read as a Kaluza--Klein vector, the plane $U_{\rm em}$ has the sign of time, like the normal plane
 & from forced to adopted (constructed); the Kaluza--Klein reading is interpretive\\
@@ -1043,8 +1078,8 @@ does, and the colour generators to $-\id$ (p3-4).}
 \label{p3:tab:counts}
 \end{table}
 
-Row (iii) rests on \cref{cor:ein6} and \cref{thm:ghostvec}: there a vector obtained by reduction on a plane of the sign of time has a kinetic term of the wrong sign
-\cite{Hull98}. That theorem is about a metric origin of the field. An internal gauge field with an adopted Maxwell term is not covered by it. For a compact generator
+Row (iii) rests on \cref{cor:ein6} and \cref{thm:ghostvec}: there a vector obtained from the ambient Einstein--Hilbert action, with the stated connection-metric ansatz, by
+reduction on a plane of the sign of time has a kinetic term of the wrong sign \cite{Hull98}. That theorem is about a metric origin of the field. An internal gauge field with an adopted Maxwell term is not covered by it. For a compact generator
 the invariant form is positive (\cref{thm:sig}, \cref{p3:tab:counts}), so a Maxwell term of the healthy sign exists, as in ordinary Yang--Mills theory. If $\uu1_{\rm em}$
 were itself obtained by reduction, its weak part would rotate the plane $U_{\rm em}$, of the sign of time, and the same mechanism would apply to that part and not to the
 colour part $\tfrac16H_C$ (interpretive). The same holds for $Q_A$, whose plane $U_A$ also has the sign of time. Count (iii) therefore separates the two fields only by
@@ -1117,7 +1152,7 @@ mass matrix of $\mathfrak h_{\rm SM}$ has the eigenvalue $0$ nine times (gluons 
 and its massless electroweak combination is $B_{\rm em}$ (p3-9). At $g_Y=g_2$ the ratio is $\tfrac58=1-\tfrac38$, the value $\cos^2\theta_W$ for the
 $\sin^2\theta_W=\tfrac38$ of \cref{thm:compat}. That value reflects the normalisation $|t^L_3|^2=\tfrac18$, $|t_Y|^2=\tfrac5{24}$ of the invariant form together with
 the assumption $g_Y=g_2$ for the orthonormalised generators (z2-6). It is the familiar unification-scale value. A physical prediction would need the scale at
-which the couplings are equal, the particle spectrum, the running down to the electroweak scale and the thresholds, none of which is given (PH-09).
+which the couplings are equal, the particle spectrum, the running down to the electroweak scale and the thresholds, none of which is given.
 \end{enumerate}
 \end{theorem}
 
@@ -1140,8 +1175,8 @@ $U(1)$ is a separate abelian field. What is established is a charge identificati
 commutes with the vacuum and couples to charged scalar fluctuations with the electron's unit. What is adopted is the Maxwell term (positive, since the
 invariant form is positive on compact generators). Gauge redundancy, a conserved current, two physical polarisations, massless spin-one states and
 quantisation then follow as in ordinary Yang--Mills theory for the adopted action: inherited, not derived from the Clifford data. That the field is the
-physical photon also requires the electroweak stage, which \cref{p3:prop:neutral} shows the present potential does not supply (PH-06). On
-the block that field couples to fermion number, and with $\su2_L$ gauged it cannot be gauged on that matter (\cref{p3:cor:notem}). The construction's
+physical photon also requires the electroweak stage, which \cref{p3:prop:neutral} shows the present potential does not supply. On
+the block the normal-connection field along $Q_A$ couples to half the fermion number, and with $\su2_L$ gauged it cannot be gauged on that matter (\cref{p3:cor:notem}). The construction's
 identification of its photon with the normal connection is therefore not compatible with the matter at $n=3$ (obstructed). What the second rung established survives
 with $B_{\rm em}$ in place of $Q_A$: the massless criterion of \cref{cor:massless} at a Lorentz-invariant vacuum, the charged-scalar current, and a curved extension in which
 the vacuum is parallel (\cref{p1:thm:curved}). The theorem rests on the choice of the gauged generator, and $B_{\rm em}$ is fixed only once the Standard-Model embedding of
@@ -1359,12 +1394,13 @@ At each of the four points $V_{\mathfrak h_{\rm SM}}(\Pi(x))=128\,c_{\rm SM}|x|^
 \Tr(\Pi(x)\Pfam)=\begin{cases}64-16|x|^2+\cdots&\text{at }\Pi_A,\\ 16|x|^2+\cdots&\text{at }\Pi_{-A},\\ 32+O(x^4)&\text{at }\Pi_{\pm W}\end{cases}
 \]
 (p3-21). For $V=\xi_1 V_{\mathfrak h_{\rm SM}}-\xi_2\Tr(\Pi P_L)-\xi_3\Tr(\Pi\Pfam)$, $\xi_1,\xi_2,\xi_3\ge0$, every Hessian at the four points is a multiple of the
-identity, with coefficient $128\xi_1 c_{\rm SM}+h$, where $h=8\xi_2+16\xi_3$ at $\Pi_A$, $8\xi_2$ at $\Pi_{-W}$, $-8\xi_2$ at $\Pi_W$ and $-8\xi_2-16\xi_3$ at $\Pi_{-A}$.
+identity: the coefficient of $|x|^2$ in $V$ is $128\xi_1 c_{\rm SM}+h$ (the coordinate Hessian is twice it, and canonical scalar masses are the Hessian divided by
+the kinetic metric $128f^2$), where $h=8\xi_2+16\xi_3$ at $\Pi_A$, $8\xi_2$ at $\Pi_{-W}$, $-8\xi_2$ at $\Pi_W$ and $-8\xi_2-16\xi_3$ at $\Pi_{-A}$.
 Hence $\Pi_A$ is a nondegenerate local minimum unless $\xi_1=\xi_2=\xi_3=0$, and $\Pi_{-W}$ is one iff $\xi_1>0$ or $\xi_2>0$. At $\xi_1=\xi_2=0<\xi_3$ the
 Hessian at $\Pi_{-W}$ vanishes, and $\Pi_{-W}$ is \emph{not} a local minimum: along the curve that turns each $w_j$ towards $a_j$ through the same angle $t$, with
 orientation such that $p_A=\sin^4t$, $V=-32\xi_3(1+\sin^4t)<V(\Pi_{-W})$ (z2-3). $\Pi_W$ is a nondegenerate local minimum iff $\xi_2<16\xi_1 c_{\rm SM}$, and $\Pi_{-A}$ iff
 $\xi_2+2\xi_3<16\xi_1 c_{\rm SM}$; for the opposite strict inequalities all sixteen directions are unstable at once. On the boundaries the Hessian vanishes, and the
-quadratic test decides nothing (PH-02).
+quadratic test decides nothing.
 \end{proposition}
 
 \begin{proof}
@@ -1397,9 +1433,11 @@ Assume:
 \item the vacuum couples to the block by $-\xi_2\Tr(\Pi P_L)$ with $\xi_2>0$ (constructed, sign chosen);
 \item optionally, it couples to the family block by $-\xi_3\Tr(\Pi\Pfam)$ with $\xi_3>0$ (constructed).
 \end{enumerate}
-Let $V=\xi_1 V_{\mathfrak h_{\rm SM}}-\xi_2\Tr(\Pi P_L)-\xi_3\Tr(\Pi\Pfam)$, with $\xi_3=0$ when (H5) is not assumed.
+Let $V=\xi_1 V_{\mathfrak h_{\rm SM}}-\xi_2\Tr(\Pi P_L)-\xi_3\Tr(\Pi\Pfam)$, with $\xi_3=0$ when (H5) is not assumed. Minima, and global minima, are taken over the
+sixteen-dimensional family $F_3$, not over the manifold $\mathcal P_{256}\cong\mathrm{Gr}_\C(64,128)$ of all Lorentz-compatible rank-$256$ projectors, of real dimension
+$8192$.
 \begin{enumerate}[label=(\alph*),leftmargin=2.2em]
-\item Under (H1)--(H3) with $\xi_1>0$ the minimum set is $\{\Pi_{\pm A},\Pi_{\pm W}\}$. At $\xi_1=0$, $V\equiv0$ and every point of $F_3$ is a minimum (PH-01). Overlaps with $P_*$, $P_{\rm lep}$ and $\tfrac12(\id\pm\Gamma)$, linear or quadratic, take equal values at
+\item Under (H1)--(H3) with $\xi_1>0$ the minimum set is $\{\Pi_{\pm A},\Pi_{\pm W}\}$. At $\xi_1=0$, $V\equiv0$ and every point of $F_3$ is a minimum. Overlaps with $P_*$, $P_{\rm lep}$ and $\tfrac12(\id\pm\Gamma)$, linear or quadratic, take equal values at
 these points and do not separate them.
 \item Under (H1)--(H4) the global minimum value is $-32\xi_2$, attained exactly at $\Pi_A$ and $\Pi_{-W}$, for every $\xi_1\ge0$. These two points coincide on the half
 $\mathcal Z=+1$ that contains $P_*$, and they are exchanged by $\mathsf E$, which preserves every term of $V$ except the one of (H5). $\Pi_W$ and $\Pi_{-A}$ remain critical, and are
@@ -1407,13 +1445,14 @@ nondegenerate local minima iff $\xi_2<16\xi_1 c_{\rm SM}$ (with $\xi_3=0$; bound
 \item Under (H1)--(H5) the global minimum is $\Pi_A$ alone, with value $-32\xi_2-64\xi_3$.
 \item At the selected vacuum all of $\mathfrak h_{\rm SM}$ is unbroken. $\Pi_A$ is the electroweak-symmetric point, not the observed electroweak-broken vacuum:
 the generator $B_{\rm em}$ is massless there, but so are the $W^\pm$ and the $Z$, and a photon distinguished from them by mass needs the electroweak stage of
-\cref{p3:thm:photon}(d), which the potential $V$ disfavours (\cref{p3:prop:neutral}). The field along $Q_A$ is a second abelian field (PH-03).
+\cref{p3:thm:photon}(d), which the potential $V$ disfavours (\cref{p3:prop:neutral}). The field along $Q_A$ is a second abelian field.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-(a) is \cref{p1:prop:K,p1:thm:fixed} and \cref{p3:tab:overlaps}. (b) $V\ge\xi_1\cdot0-32\xi_2$ by \cref{p3:cor:extremes}, with equality iff $V_{\mathfrak h_{\rm SM}}=0$ and
-$\Tr(\Pi P_L)=32$, that is iff $\Pi\in\{\Pi_A,\Pi_{-W}\}$, where both conditions hold. The coincidence and the role of $\mathsf E$ are \cref{p3:prop:klein}; the overlap with $P_L$
+(a) is \cref{p1:prop:K,p1:thm:fixed} and \cref{p3:tab:overlaps}. (b) $V\ge\xi_1\cdot0-32\xi_2$ by \cref{p3:cor:extremes}. Equality requires $\Tr(\Pi P_L)=32$, and, when
+$\xi_1>0$, also $V_{\mathfrak h_{\rm SM}}=0$; by the overlap maxima of \cref{p3:cor:extremes} the first condition already fixes $\Pi\in\{\Pi_A,\Pi_{-W}\}$, where
+$V_{\mathfrak h_{\rm SM}}=0$ holds as well, so the conclusion is the same at $\xi_1=0$. The coincidence and the role of $\mathsf E$ are \cref{p3:prop:klein}; the overlap with $P_L$
 depends on $\Pi$ only through $\Pi\tfrac12(\id+\mathcal Z)$. Stability is \cref{p3:prop:hessian}. (c) With $\xi_3>0$ equality requires in addition $\Tr(\Pi\Pfam)=64$, which holds only at
 $\Pi_A$ (\cref{p3:cor:extremes}). (d) is \cref{p1:thm:vacuum} and \cref{p3:thm:photon}. p3-22 minimises $V$ from random starts for several couplings, including
 $\xi_2>16\xi_1 c_{\rm SM}$ and $\xi_1=0$, and finds exactly these minima.
@@ -1443,13 +1482,13 @@ The mass matrix of \cref{p3:thm:photon}(d) is nonzero for $\theta\notin\pi\Z$.
 
 So the electroweak stage that \cref{p3:thm:photon}(d) exhibits is not reached by this potential. A transition to $\Pi_\theta$ needs a further contribution with the
 opposite sign along the neutral doublet direction, for instance a negative mass term for the doublets. No such term is derived here, and none is adopted:
-the mechanism of electroweak breaking is missing (PH-04).
+the mechanism of electroweak breaking is missing.
 
 \begin{remark}[Status of the selecting potential and of the scalar fluctuations]
 \label{p3:rem:status}
-(a) \emph{Origin} (PH-07). The alignment term rests on the sign hypothesis (H3). The overlaps with $P_L$ and $\Pfam$, and their signs, are adopted. Since
+(a) \emph{Origin}. The alignment term rests on the sign hypothesis (H3). The overlaps with $P_L$ and $\Pfam$, and their signs, are adopted. Since
 $\Tr(\Pi\Pfam)=\tfrac14\Tr(\Pi\Pi_A)$ on $F_3$, the $\xi_3$-term encodes its target. \Cref{p3:thm:selection} is therefore a conditional selection given an
-adopted potential, not a first-principles selection mechanism. (b) \emph{The four doublets} (PH-08). At each aligned point the sixteen real tangent directions
+adopted potential, not a first-principles selection mechanism. (b) \emph{The four doublets}. At each aligned point the sixteen real tangent directions
 form four complex doublets of $\su2_L$ (\cref{p1:thm:tangent}). That is representation content. If all sixteen modes propagated and an electroweak stage removed
 three as longitudinal gauge modes, thirteen real scalars would remain. Their masses (with $V$ above, all sixteen share one Hessian coefficient at $\Pi_A$), their
 mixing, their Yukawa couplings and any constraint that removes them are not determined, so no scalar phenomenology is claimed.
@@ -1484,12 +1523,12 @@ charges, and the sign count changes from forced to adopted; a fourth count, the 
 permutes them simply transitively; no alignment energy, kinetic term or current separates them (fixed). The weak-chirality overlap $-\xi_2\Tr(\Pi P_L)$, $\xi_2>0$, selects
 $\{\Pi_A,\Pi_{-W}\}$, which is one projector on the matter half (fixed under constructed hypotheses). A single point requires a coupling off that half, such as
 $-\xi_3\Tr(\Pi\Pfam)$, which selects $\Pi_A$ (constructed). With only alignment ($\xi_2=\xi_3=0$) the four points need $\xi_1>0$, and at $\xi_1=0$ every point
-is a minimum (PH-01). The selected $\Pi_A$ preserves all of $\mathfrak h_{\rm SM}$: it is the electroweak-symmetric point, not the observed vacuum (PH-03), and the
-adopted potential opposes the neutral electroweak deformation (\cref{p3:prop:neutral}; PH-04).
+is a minimum. The selected $\Pi_A$ preserves all of $\mathfrak h_{\rm SM}$: it is the electroweak-symmetric point, not the observed vacuum, and the
+adopted potential opposes the neutral electroweak deformation (\cref{p3:prop:neutral}).
 \item \emph{Robustness.} $\mathfrak h_{\rm SM}$- or $\mathfrak h_{\rm PS}$-invariant couplings, including matter couplings, keep the four points critical, because their
 tangent spaces carry no invariant vector (fixed; principle inherited). They can only change the Hessians, which for the couplings considered are multiples of the identity;
 $\Pi_W$ and $\Pi_{-A}$ lose stability for $\xi_2>16\xi_1 c_{\rm SM}$ and $\xi_2+2\xi_3>16\xi_1 c_{\rm SM}$, and $\Pi_{-W}$ is not a local minimum at
-$\xi_1=\xi_2=0<\xi_3$ (fixed; corrected, PH-02).
+$\xi_1=\xi_2=0<\xi_3$ (fixed; corrected).
 \item \emph{Open.} The dynamical origin and sign of the overlap couplings, the scales $f$, $g$, $\xi_1$, $\xi_2$, $\xi_3$, the electroweak stage and its mechanism, the coupling of the second abelian field and how its anomaly is
 excluded, cancelled or decoupled (\cref{p3:rem:anomaly}), whether the
 half $\mathcal Z=-1$ is physical, and the origin of the Maxwell term of $\uu1_{\rm em}$ are open.
@@ -1505,7 +1544,7 @@ statement & class & checks\\
 \cref{p3:def:plep}, \cref{p3:prop:restated}: $P_{\rm lep}$, $P_1=\Pi_A$, the table of \cref{prop:alignment} & restated (\cref{thm:table}, \cref{prop:alignment}) & p3-15\\
 \cref{p3:prop:charges}: $\hat Q_A=\tfrac12\mathcal U$, $q_AP_*=JP_*$, charge table, Weyl block & fixed; $q_AP_*=JP_*$ and the $\hat Y$, $\hat Q_{\rm em}$ columns restated & p3-1 to p3-3\\
 \cref{p3:cor:notem}: $Q_A$ is $\tfrac12F$ on the block, not the electric charge, anomalous; $\uu1_{\rm em}$ anomaly free & fixed; obstructed; anomaly restated; anomaly conditions inherited & p3-4, p3-5, z2-1\\
-\cref{p3:rem:anomaly}: the normal connection must be excluded, cancelled (needs the mirror matter) or decoupled & fixed (cancellation trace); options open & z2-2\\
+\cref{p3:rem:anomaly}: the normal connection must be excluded, cancelled (for instance in the larger spectator block, with mirror matter) or decoupled & fixed (cancellation trace); options open & z2-2\\
 \cref{p3:tab:counts}: the four counts and the dichotomy & restated (i); fixed (ii), (iv); constructed and interpretive (iii) & p3-4, p3-5\\
 \cref{p3:prop:jointfixed}: joint fixed points of $Q_A$ and $B_{\rm em}$ & fixed & p3-6\\
 \cref{p3:prop:torus}: torus weights of the fluctuations & fixed & p3-7\\
@@ -1516,8 +1555,8 @@ statement & class & checks\\
 \cref{p3:prop:normaliser}: normalisers of $\mathfrak h_{\rm SM}$, $\mathfrak h_{\rm PS}$; $g_{AW}$ & fixed & p3-18\\
 \cref{p3:lem:robust}: invariant couplings keep fixed critical points & inherited \cite{Michel71,Palais79}, proof given & ---\\
 \cref{p3:prop:invariants}, \cref{p3:cor:matter}: invariant tangent vectors, matter couplings & fixed; invariance of induced energies inherited & p3-19, p3-20\\
-\cref{p3:prop:hessian}: Hessians and stability conditions; $\Pi_{-W}$ not a minimum at $\xi_1=\xi_2=0<\xi_3$; boundary cases degenerate & fixed (corrected, PH-02) & p3-21, z2-3, z2-4\\
-\cref{p3:thm:selection}: selection of $\{\Pi_A,\Pi_{-W}\}$, and of $\Pi_A$ with (H5) & fixed under (H1), (H2), (H4), (H5) constructed and (H3) inherited; (a) needs $\xi_1>0$ (PH-01); conditional selection, not first-principles & p3-22\\
+\cref{p3:prop:hessian}: Hessians and stability conditions; $\Pi_{-W}$ not a minimum at $\xi_1=\xi_2=0<\xi_3$; boundary cases degenerate & fixed (corrected) & p3-21, z2-3, z2-4\\
+\cref{p3:thm:selection}: selection of $\{\Pi_A,\Pi_{-W}\}$, and of $\Pi_A$ with (H5) & fixed under (H1), (H2), (H4), (H5) constructed and (H3) inherited; (a) needs $\xi_1>0$; conditional selection, not first-principles & p3-22\\
 \cref{p3:prop:neutral}: the potential opposes the electroweak deformation & fixed; electroweak mechanism missing & z2-5\\
 \cref{p3:rem:status}: origin of the potential adopted; four doublets as representation content only & constructed; open & ---\\
 unique vacuum for physics on the block; Kaluza--Klein reading of the sign count & interpretive & ---\\
@@ -1587,17 +1626,17 @@ still carry the current $-f^2\Tr(Q[\pi,D^\mu\pi])+\cdots$. If $[Q,\Pi(x)]=0$ is 
 In $\Cl(3,3)$ with $Q=J_N/2$ ($J_N$ of \cref{lem:JN}, which commutes with the four-plane $\langle\widehat W,e_4,e_5,e_6\rangle$ of the symmetric clock) the rank-four orthogonal projectors commuting with $Q$ form $\mathrm{Gr}_\C(2,4)$, of real dimension eight, since $2Q$ is a complex structure.
 For a generic member $\Pi_0$,
 \[
-\dim\{[B,\Pi_0]:B\in\so{3,3}\}=14,\qquad \dim\{\pi\ \text{in that span with}\ [Q,\pi]\neq0\}=8,
+\dim\{[B,\Pi_0]:B\in\so{3,3}\}=14,\qquad \operatorname{rank}\bigl(\ad_Q|_{T}\bigr)=\dim[Q,T]=8\quad(T\ \text{that span}),
 \]
 so the vacuum is massless and not rigid; the mechanism is the Jacobi identity $[Q,[B,\Pi_0]]=[[Q,B],\Pi_0]$, with $\ad_Q$ of rank eight on $\so{3,3}$. But only two of the eight
-charged directions are admissible: by \cref{thm:ghost} a variation $[B,\Pi_0]$ stays among the orthogonal projectors exactly when $B$ is compact, and of the fourteen orbit
-directions only five are compact-generated, of the eight charged ones only two.
+charged directions are admissible: by \cref{thm:ghost} a variation $[B,\Pi_0]$ stays among the orthogonal projectors exactly when $[B+B^{\!\top},\Pi_0]=0$, that is,
+when $B$ is compact modulo the stabiliser of $\Pi_0$, and of the fourteen orbit directions only five are compact-generated, of the eight charged ones only two.
 \end{theorem}
 
 \begin{proposition}[Lorentz invariance makes the first rung rigid]
 \label{prop:rigid}
-With $\lint$ the interior Lorentz algebra of $\langle\widehat W,e_4,e_5,e_6\rangle$, the commutant of $\{\lint,Q\}$ in $\End(\R^8)$ has dimension four, with symmetric part spanned by $\id$ and $\mathcal V$. So the only rank-four orthogonal projectors commuting
-with both the interior Lorentz action and $Q$ are $\tfrac12(\id\pm\mathcal V)$, the chirality projectors of \cref{thm:subdichotomy}. Every bivector commutes with $\mathcal V$, so
+With $\lint$ the interior Lorentz algebra of $\langle\widehat W,e_4,e_5,e_6\rangle$, the commutant of $\{\lint,Q\}$ in $\End(\R^8)$ has dimension four, with symmetric part spanned by $\id$ and $\omega$. So the only rank-four orthogonal projectors commuting
+with both the interior Lorentz action and $Q$ are $\tfrac12(\id\pm\omega)$, the chirality projectors of \cref{thm:subdichotomy}. Every bivector commutes with $\omega$, so
 these have a spin-orbit tangent space of dimension zero: they are rigid, and by \cref{cor:massless} their current vanishes identically.
 \end{proposition}
 
@@ -1736,7 +1775,8 @@ must go, and \cref{thm:towervac} shows what can replace it. At one constituent, 
 \label{rem:photonn3}
 At $n=3$ the shared charge becomes $Q_A=\tfrac12E_2E_3$, the generator of the normal $SO(2)$ connection, and on the chiral block of \cref{sec:pstar} its charge operator
 satisfies $-JQ_AP_*=\tfrac12P_*$: it is half the fermion number. Its mixed trace with weak isospin, $\Tr\bigl(P_L(-JQ_A)(-Jt^L_3)^2\bigr)=4$, is nonzero, so with $\su2_L$ gauged
-it cannot be gauged on that matter. The trace cancels only on the whole spectator Weyl block, against mirror families that $P_*$ removes. The electric charge
+it cannot be gauged on that matter. Within the block, the trace cancels on the whole spectator Weyl block, against mirror families that $P_*$ removes; other anomaly-cancelling
+completions are not excluded. The electric charge
 $B_{\rm em}=-\tfrac12E_7E_{13}+\tfrac16H_C$ carries the Standard-Model charges without anomaly. It commutes with four aligned vacua $\Pi_{\pm A},\Pi_{\pm W}$ of the compact
 family of vacuum projectors at $n=3$, and it couples to four charged complex scalar fluctuations with the electron's unit of charge. On these counts the normal
 $U(1)$ is not electromagnetism at $n=3$, and $B_{\rm em}$ is the charge of the photon candidate (charge identification fixed; the Maxwell term adopted). Vacuum alignment
@@ -1761,24 +1801,25 @@ mixed anomaly $\Tr(P_L\hat Q_A(\hat T^3_L)^2)=4$. The electric charge $B_{\rm em
 (\cref{p3:prop:charges,p3:cor:notem}). The normal $U(1)$ is not electromagnetism on this matter for any vacuum (obstructed). Its anomaly cancels only
 together with the mirror families of the spectator Weyl block (\cref{p3:rem:anomaly}). Whether its connection is excluded, cancelled or decoupled is open.
 \item \emph{Vacuum family and alignment (fixed, given hypotheses).} The compact family $F_3$ of vacuum projectors carries no selection under $\mathfrak k$-invariant
-couplings (\cref{p1:prop:K,p2:prop:allk}). A gauged proper subalgebra with a positive alignment coefficient selects its fixed points
+couplings (\cref{p1:prop:K,p2:prop:allk}). A gauged proper subalgebra with fixed points on $F_3$ and a positive alignment coefficient selects those fixed points
 (\cref{p2:prop:mass,p2:prop:zero}). The positivity is the hypothesis (H3), with one-loop support in a cutoff scheme only (\cref{p2:rem:sign}).
 \item \emph{Selection of $\Pi_A$ (conditional).} With $\mathfrak h_{\rm SM}$ gauged and $\xi_1>0$ the minima are $\Pi_{\pm A},\Pi_{\pm W}$. At $\xi_1=0$ nothing is
-selected (PH-01). Adopted overlaps $-\xi_2\Tr(\Pi P_L)$ and $-\xi_3\Tr(\Pi\Pfam)$ with positive coefficients select $\{\Pi_A,\Pi_{-W}\}$ and then $\Pi_A$. Their
+selected. Adopted overlaps $-\xi_2\Tr(\Pi P_L)$ and $-\xi_3\Tr(\Pi\Pfam)$ with positive coefficients select $\{\Pi_A,\Pi_{-W}\}$ and then $\Pi_A$. Their
 origin and signs are adopted, and the $\xi_3$-term encodes its target (\cref{p3:thm:selection,p3:rem:status}). Local stability needs the conditions of
-\cref{p3:prop:hessian}: $\Pi_{-W}$ is not a local minimum when $\xi_1=\xi_2=0<\xi_3$ (PH-02).
-\item \emph{Electroweak symmetry (not obtained).} $\Pi_A$ preserves all of $\mathfrak h_{\rm SM}$, so it is the electroweak-symmetric point (PH-03). The neutral
+\cref{p3:prop:hessian}: $\Pi_{-W}$ is not a local minimum when $\xi_1=\xi_2=0<\xi_3$.
+\item \emph{Electroweak symmetry (not obtained).} $\Pi_A$ preserves all of $\mathfrak h_{\rm SM}$, so it is the electroweak-symmetric point. The neutral
 doublet direction $\Pi_\theta$ would give the one-doublet pattern $m_W^2/m_Z^2=(1+\tfrac35g_Y^2/g_2^2)^{-1}$ with $B_{\rm em}$ massless. But the adopted potential
-increases along it by $\xi_1 V_{\mathfrak h_{\rm SM}}+(16\xi_2+32\xi_3)(1-\cos\theta)$ (\cref{p3:prop:neutral}). The only other critical set of
-$V_{\mathfrak h_{\rm SM}}$ leaves the $Z$ massless (\cref{p2:prop:metastable}). The electroweak mechanism is missing (PH-04).
+increases along it by $\xi_1 V_{\mathfrak h_{\rm SM}}+(16\xi_2+32\xi_3)(1-\cos\theta)$ (\cref{p3:prop:neutral}). Of the other critical sets found, one leaves the
+$Z$ massless (\cref{p2:prop:metastable}) and the plane $P_e$, which has the observed pattern, is a saddle (\cref{p2:sec:main}); no complete list of critical sets
+is claimed. The electroweak mechanism is missing.
 \item \emph{Photon dynamics (adopted, not derived).} With $B_{\rm em}$ gauged and a Maxwell term adopted, a positive kinetic term exists because the invariant
 form is positive on compact generators. The field is massless at the aligned vacua and couples to the block and to four charged complex scalars with
 the electron's unit (\cref{p3:thm:photon}). Gauge redundancy, a conserved current, two physical polarisations and quantisation are those of the adopted
-Yang--Mills action. A physical photon distinguished from $W^\pm$ and $Z$ requires the missing electroweak stage (PH-06).
+Yang--Mills action. A physical photon distinguished from $W^\pm$ and $Z$ requires the missing electroweak stage.
 \item \emph{Scalars and weak angle (representation content only).} The sixteen tangent directions at an aligned vacuum form four complex doublets. After an
-electroweak stage thirteen real scalars would remain, with masses, mixing and Yukawa couplings undetermined (PH-08). The value $\sin^2\theta_W=\tfrac38$
+electroweak stage thirteen real scalars would remain, with masses, mixing and Yukawa couplings undetermined. The value $\sin^2\theta_W=\tfrac38$
 follows from the normalisation $|t^L_3|^2:|t_Y|^2=3:5$ and the assumption $g_Y=g_2$. A prediction would need a matching scale, the spectrum, running and
-thresholds (PH-09).
+thresholds.
 \end{enumerate}
 
 % --- source: photon_selection/p5_synthesis#3 (Two routes to the photon)
@@ -1787,7 +1828,7 @@ thresholds (PH-09).
 Two routes to a Maxwell field have been examined, here and in the global manuscript, and their obstructions are kept.
 \begin{itemize}
 \item \emph{The normal-plane vector.} Its connection is the $SO(2)$ of the surplus pair. As a Kaluza--Klein vector of a plane of the sign of time it
-gravitates with the wrong sign (ghost), it does not couple to spinless matter (\cref{cor:ein6} and \cref{thm:ghostvec} and \cref{prop:constraints} and \cref{thm:wlgauge}), and at $n=3$ its charge is anomalous half fermion
+gravitates with the wrong sign (ghost) relative to the ambient Einstein--Hilbert action, it does not couple to spinless matter (\cref{cor:ein6} and \cref{thm:ghostvec} and \cref{prop:constraints} and \cref{thm:wlgauge}), and at $n=3$ its charge is anomalous half fermion
 number on the block (obstructed on three counts).
 \item \emph{The internal $\uu1_{\rm em}$ and the field-strength reading.} The internal connection along $B_{\rm em}$ with an adopted Maxwell term is healthy and
 carries the right charges (constructed, with the charge identification fixed). Separately, the field-strength reading $\R^{3,3}=\Lambda^2\R^{1,3}$ gives the

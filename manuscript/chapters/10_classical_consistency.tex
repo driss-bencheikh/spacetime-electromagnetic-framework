@@ -42,12 +42,13 @@ which the arena does not supply. The vacuum pair rate depends on the canonical e
 so magnetar fields above $B_Q$ create no pairs from the vacuum; the pairs of magnetised environments are made by photons converting in the
 field, and the photons supply the energy (inherited; \cref{e7:sec:pairs}). (4) Two six-momenta at mutual rest with temporal angle $\vartheta$
 have $M^2=m_1^2+m_2^2+2m_1m_2\cos\vartheta$. In three times ``uphill'' decays are kinematically open, and one clock closes them (inherited, with
-an exact example). Under the reading, and under assumptions about the reaction that the arena does not derive, the $E=mc^2$ test of neutron
+an exact example); without amplitudes this motivates the reduction and bounds no lifetime. Under the reading, and under assumptions about the reaction that the arena does not derive, the $E=mc^2$ test of neutron
 capture on $^{28}$Si corresponds to a temporal angle of order $10^{-4}$~rad between the neutron and the nucleus; this is a conditional
 sensitivity estimate, not a measured angle (\cref{e7:sec:sixmomenta}). (5) A duality rotation of a null field is a rotation about its
 propagation axis (fixed). If the interior flow acted on free light as a duality rotation at a constant rate in cosmic time, a coupling the arena
-does not supply, CMB polarisation would bound that rate by $2.5\times10^{-20}\,{\rm s^{-1}}$, $10^{40.5}$ below $m_ec^2/\hbar$; the rate
-$m_ec^2/\hbar$ is excluded within that model, and the bound concerns the model, not the arena (\cref{e7:sec:rate}). (6) The three-manifold time-odd invariant (\cref{d7:thm:three}) parallels the Jarlskog invariant only as a reading. A temporal $b$-field acting on the clocks of matter is
+does not supply, CMB polarisation would bound that rate by $2.5\times10^{-20}\,{\rm s^{-1}}$, $10^{40.5}$ below $m_ec^2/\hbar$, on the unwrapped
+small-angle branch of that propagation hypothesis; the aliases $\beta+n\pi$ are not excluded by this division, and the bound concerns the model,
+not the arena (\cref{e7:sec:rate}). (6) The three-manifold time-odd invariant (\cref{d7:thm:three}) parallels the Jarlskog invariant only as a reading. A temporal $b$-field acting on the clocks of matter is
 bounded by the constancy of $m_p/m_e$ and by the equivalence principle, as conditional constraints on differential effects, under stated
 couplings of the masses to clocks and to gravity (\cref{e7:sec:timeodd}). \Cref{e7:sec:summary} collects the claims (\cref{e7:tab:claims}).
 Identifiers e7-$n$ refer to the \texttt{PASS} lines of \texttt{e7\_classical.py}, and z5-$n$ to those of the adjudication checks
@@ -62,8 +63,9 @@ $E_0=\half|q|$, $q=z\cdot z=|\Btext|^2-|\bE|^2-2i\,\bE\cdot\Btext$. The realisat
 \subsection{The rest energy of a field point in the sky}
 \label{e7:sec:point}
 
-The minimum of $u$ over frames is $u_0$. It is attained exactly in the frames where the Poynting vector vanishes, and there $\bE\parallel\Btext$
-or one of them vanishes; for $q\neq0$ such frames exist (\cref{en:min}). This is inherited: the classification of a field at a point
+The infimum of $u$ over frames is $u_0$. For a non-null field ($q\neq0$) it is an attained minimum, exactly in the frames where the Poynting
+vector vanishes, and there $\bE\parallel\Btext$ or one of them vanishes (\cref{en:min}). For a nonzero null field $u_0=0$ is approached but not
+attained: a boost along a plane wave gives $u(v)=u(0)(1-v)/(1+v)>0$ for $|v|<1$. This is inherited: the classification of a field at a point
 \cite{Synge56} and the problem of the frame with parallel fields in \S25 of \cite{LandauLifshitz2}. Let
 $\Theta^{00}=u$, $\Theta^{0i}=(\bE\times\Btext)_i$, $\Theta^{ij}=-(E_iE_j+B_{{\rm t}i}B_{{\rm t}j})+u\,\delta_{ij}$ be the stress--energy tensor of the field
 (Heaviside--Lorentz, $c=1$).
@@ -168,7 +170,8 @@ factor being the $\chi^2_6$ law of $|z|^2/\sigma^2$. So $t$ has density $2t$ and
 $\langle ts\rangle/\langle s\rangle=\langle t\rangle=\tfrac23$.
 \end{proof}
 
-Fixed: symbolically (e7-7); by Isserlis' theorem, $\langle|q|^2\rangle=24\sigma^4$, $\langle|z|^4\rangle=48\sigma^4$,
+The law is inherited: $f(t)=2t$ is the eigenvalue law of a real Wishart matrix with $N=2$, $K=3$ \cite[eq.~(4.5)]{ZyczkowskiSommers01}; what the arena adds
+is the electromagnetic reading of $t$ as $E_0/E_6$. Checked symbolically (e7-7); by Isserlis' theorem, $\langle|q|^2\rangle=24\sigma^4$, $\langle|z|^4\rangle=48\sigma^4$,
 $\langle|q|^4\rangle=1920\sigma^8$ and $\langle|z|^8\rangle=5760\sigma^8$, whose ratios are the moments $\half$ and $\tfrac13$ of the density $2t$
 (e7-8); and by Monte Carlo with $2\times10^6$ samples, with mean $0.6665$, Kolmogorov distance $7.5\times10^{-4}$ to $t^2$ and correlation
 $-1.1\times10^{-3}$ between $t$ and $|z|^2$ (e7-9).
@@ -180,15 +183,16 @@ and parity invariance gives $\langle\bE\cdot\Btext\rangle=0$. The six components
 is the hypothesis of \cref{e7:prop:gauss}, and $\langle E_6\rangle=u$, $\langle E_0\rangle=\tfrac23u$. The distribution $2t$ is a statement of this
 classical Gaussian model, and only of it; it is not a prediction of the arena.
 
-\emph{Scope of the model} (CLASS-02). For the quantised radiation field the statement needs a coarse-graining and a measurement model, and in
+\emph{Scope of the model}. For the quantised radiation field the statement needs a coarse-graining and a measurement model, and in
 general an operator ordering. A quantum field has no value at a point, so the fields must be smeared. If all six components are smeared with
 one spherically symmetric test function $f$ at one time, they commute, since $[E_i(f),B_{{\rm t}j}(f)]$ is proportional to
 $\epsilon_{ijk}\int f\,\partial_kf\,d^3x=0$ (z5-2). A joint measurement of them then has a distribution. In a thermal state, which is Gaussian
 \cite{Glauber63}, that distribution is Gaussian, and by isotropy, parity and duality invariance its six components are independent with a
 common variance. The law $2t$ then holds for the smeared ratio. Since it does not depend on the variance, it holds in the vacuum as well: it
-describes the shape of a Gaussian ensemble, not a property of the CMB. With different test functions, or at different times, the components do
-not commute (z5-2), $|q|$ is not a polynomial in them, and an ordering or a quasi-probability must be chosen, which is then not a distribution
-of measured ratios. Nor is the law a statement about photons: every mode is null, and nothing here gives the photon a rest mass.
+describes the shape of a Gaussian ensemble, not a property of the CMB. With different test functions, or at different times, the components need
+not commute (z5-2; concentric radial test functions can commute), $|q|$ is not a polynomial in them, and an ordering or a quasi-probability must be
+chosen, which is then not a distribution of measured ratios. The smeared distribution includes the vacuum fluctuations and is not by itself a
+statement about a renormalised local rest-energy observable. Nor is the law a statement about photons: every mode is null, and nothing here gives the photon a rest mass.
 
 \emph{The reading.} Every plane wave is null, $q=0$ (\cref{thm:axis}). A random superposition has $q\neq0$ almost everywhere, with
 mean rest-energy density $\tfrac23u$ in the classical model. To say that the CMB is ``locally massive'' is a reading. Its content is
@@ -206,8 +210,9 @@ $H_0=67.4\,{\rm km\,s^{-1}Mpc^{-1}}$ \cite{Planck18VI}. Like the whole CMB ($\Om
 \emph{Two photons.} For null four-momenta $k_1,k_2$ with energies $E_1,E_2$ at angle $\vartheta$, $s=(k_1+k_2)^2=2E_1E_2(1-\cos\vartheta)$, and
 $\gamma\gamma\to e^+e^-$ needs $s\ge4m_e^2c^4$ \cite{BreitWheeler34}. Head-on, $E_1E_2\ge(m_ec^2)^2$ (e7-11). On CMB photons of mean energy
 $\pi^4kT_{\rm CMB}/30\zeta(3)=6.3\times10^{-4}$~eV the threshold is $4.1\times10^{14}$~eV, and on photons of energy $kT_{\rm CMB}$ it is $1.1\times10^{15}$~eV. On
-optical and near-infrared extragalactic background light, $0.1$--$3$~eV, it is $0.09$--$2.6$~TeV. These are the edges of the gamma-ray horizon
-\cite{Nikishov62,GouldSchreder67,DwekKrennrich13}; Gould and Schr\'eder predicted the cut-off of the cosmic photon spectrum above $10^{14}$~eV by
+optical and near-infrared extragalactic background light, $0.1$--$3$~eV, it is $0.09$--$2.6$~TeV. These thresholds enter the gamma-ray horizon
+\cite{Nikishov62,GouldSchreder67,DwekKrennrich13}, which is an optical-depth condition and needs in addition the background spectrum, the cross
+section, the distance and the cosmological evolution; Gould and Schr\'eder predicted the cut-off of the cosmic photon spectrum above $10^{14}$~eV by
 the $3$~K photons. The process has been observed with quasi-real, linearly polarised photons of ultraperipheral Au+Au collisions, with angular
 distributions in accord with QED \cite{STAR21}. All of this is inherited.
 
@@ -259,7 +264,7 @@ $\bE\cdot\Btext\neq0$, which accelerate the primary particles \cite{RudermanSuth
 pairs in the strong magnetic field \cite{Sturrock71}. That one-photon conversion takes its energy from the photon; the magnetic field supplies
 momentum, not rest energy (inherited).
 
-\emph{Three mechanisms kept apart} (CLASS-03). (a) Vacuum creation by an electric field, the Schwinger process: non-perturbative, with the
+\emph{Three mechanisms kept apart}. (a) Vacuum creation by an electric field, the Schwinger process: non-perturbative, with the
 rate above, and absent in a constant, purely magnetic field. (b) Photon--photon creation, the Breit--Wheeler process: a threshold
 $s\ge4m_e^2c^4$ and a QED cross section. (c) One-photon creation in a magnetic field, $\gamma\to e^+e^-$, possible only with the field present: the
 photon supplies the energy and must have $\hbar\omega\sin\theta>2m_ec^2$, with $\theta$ the angle between its direction and the field, and its
@@ -270,10 +275,11 @@ creates no pairs from the vacuum, and the pairs of magnetised environments are p
 the field.
 
 \emph{The analogy with the tower.} A magnetic field acts on momenta as a rotation, which is compact; an electric field acts as a boost, which is
-non-compact (\cref{e7:prop:canon}). In the tower the compact elements that commute with the binding root conserve the Fock number, and every
-element outside the centraliser of $K_n$, every boost included, creates quanta in pairs from the Fock vacuum (\cref{e2:lem:N}(iii),(iv),
-\cref{e2:prop:bogo}). The analogy is interpretive. It shows that one algebraic dichotomy, compact against non-compact, decides both questions. It
-does not identify the two. The Schwinger generator acts on the four-momentum of a charged particle in spacetime; the generators of
+non-compact (\cref{e7:prop:canon}). In the tower the criterion is commutation with $K_n$, not compactness: elements that commute with $K_n$
+conserve the Fock number, and elements that anticommute with it create quanta in pairs from the Fock vacuum (\cref{e2:lem:N}(iii),(iv),
+\cref{e2:prop:bogo}). The two criteria differ: the compact charge $J=e_2e_3$ creates a pair from the Fock vacuum, while the pole operators
+$\omega_i$ are boosts that commute with $N$. The analogy is interpretive and rests on the commutator criterion. It does not identify the two
+questions. The Schwinger generator acts on the four-momentum of a charged particle in spacetime; the generators of
 \cref{e2:lem:N} act on the interior Fock space, whose number $N$ is not the number of electrons. The pairs of \cref{e2:prop:bogo} appear at first
 order in the rapidity, with no threshold and no exponent, as in a change of reference vacuum, whereas the Schwinger rate is non-perturbative,
 with an exponent fixed by $e$ and $m_e$, neither of which the arena contains.
@@ -331,26 +337,28 @@ for (iv), with no violation among $20000$ random pairs, against $12639$ violatio
 paradox. ``Uphill'' is uphill in the six-dimensional mass $M_6$ and downhill in the mass $m_4$ read by a clock, since $m_4(\hat n)\le M_6$ with equality iff
 the temporal momentum is parallel to the clock (\cref{r2:prop:rotate}; \cref{en:temporal}).
 
-\emph{What survives the clock reduction} (CLASS-08). Under the reduction to one selected clock $\hat n$, the reduced shell $\boldsymbol{\mathsf E}\parallel\hat n$ of \cref{thm:wlgauge}, with the surplus temporal momenta removed by the constraints of \cref{sec:constraints} (\cref{r2:prop:shellII}), every momentum lies in $\R\hat n\oplus V^-$, of signature $(1,3)$. There $M_6=m_4(\hat n)$, the observable energy is the ordinary four-dimensional one, and by (iv) the inequality (i) holds: no uphill decay survives. Examples (ii)--(iii) use temporal momenta transverse to the clock, which the reduction removes; they are warnings about the unreduced six-dimensional kinematics and must not be read as predictions, and the ambient temporal momenta are not observable energies. The reduction itself is imposed, not derived (\cref{assum:clockred}), and it also removes stable surplus-momentum modes, not only the unstable band (CORE-07).
+\emph{What survives the clock reduction}. Under the reduction to one selected clock $\hat n$, the reduced shell $\boldsymbol{\mathsf E}\parallel\hat n$ of \cref{thm:wlgauge}, with the surplus temporal momenta removed by the constraints of \cref{sec:constraints} (\cref{r2:prop:shellII}), every momentum lies in $\R\hat n\oplus V^-$, of signature $(1,3)$. There $M_6=m_4(\hat n)$, the observable energy is the ordinary four-dimensional one, and by (iv) the inequality (i) holds: no uphill decay survives. Examples (ii)--(iii) use temporal momenta transverse to the clock, which the reduction removes; they are warnings about the unreduced six-dimensional kinematics and must not be read as predictions, and the ambient temporal momenta are not observable energies. The reduction itself is imposed, not derived (\cref{assum:clockred}), and it also removes stable surplus-momentum modes, not only the unstable band.
 
-\emph{A sensitivity estimate} (conditional; CLASS-04). Adopt the reading in which particles are labelled by $M_6$ and observed through one
+\emph{A sensitivity estimate} (conditional). Adopt the reading in which particles are labelled by $M_6$ and observed through one
 clock. Then a temporal angle between the constituents of ordinary matter would show as a mass defect. At mutual rest
 $M=m_1+m_2-\mu_{12}\vartheta^2/2+O(\vartheta^4)$, with $\mu_{12}=m_1m_2/(m_1+m_2)$; the fractional defect is $(m_1m_2/M_0^2)\vartheta^2/2$ with
 $M_0=m_1+m_2$, which is $\vartheta^2/8$ at equal masses, where $M=2m\cos(\vartheta/2)$ exactly. Rainville \emph{et al.} compared mass differences
-with $\gamma$-ray energies and found $1-\Delta mc^2/E=(-1.4\pm4.4)\times10^{-7}$ \cite{Rainville05}. For neutron capture on $^{28}$Si,
+with $\gamma$-ray energies and found $1-\Delta mc^2/E=(-1.4\pm4.4)\times10^{-7}$ \cite{Rainville05}, a value that combines silicon and sulfur; silicon alone
+gives $(-9.7\pm8.0)\times10^{-7}$. For neutron capture on $^{28}$Si,
 $S_n=8.4736$~MeV from the AME2020 masses \cite{AME2020}. One standard uncertainty is $3.7$~eV, a fraction $1.4\times10^{-10}$ of $M_0$, and the
 angle whose defect equals it is $9.1\times10^{-5}$~rad between the neutron and the nucleus, or $3.3\times10^{-5}$~rad for an equal-mass system at
 the same fractional precision (e7-18). A defect $\Delta_{\rm def}$ lowers the photon energy, $E=\Delta mc^2-\Delta_{\rm def}$, so $1-\Delta mc^2/E=-\Delta_{\rm def}/E$ and the central value
 lies on the side of a defect: the upper values of $\Delta_{\rm def}$ at $1\sigma$ and $2\sigma$ are $4.9$ and $8.6$~eV, and the corresponding angles
-$1.0\times10^{-4}$ and $1.4\times10^{-4}$~rad (z5-3). These angles are sensitivity estimates, not bounds derived from a model. They assume that
+$1.0\times10^{-4}$ and $1.4\times10^{-4}$~rad (z5-3). These angles are sensitivity estimates, not bounds derived from a model and not
+silicon-specific bounds. They assume that
 the free neutron and the $^{28}$Si nucleus meet at mutual rest with temporal angle $\vartheta$, that the defect enters only that initial
 two-body system, that the trap masses and the $\gamma$ energy are otherwise those of ordinary physics, and that ordinary nuclear binding is
 entirely accounted for by the measured masses. The arena supplies no model of the initial and final energies of the reaction that derives these
 assumptions, and the experimental residual measures an energy, not an internal angle. Proton stability enters differently. With off-clock final states accessible, the baryon-number-conserving
 channel $p\to n\,e^+\nu_e$, closed in one time since $m_n>m_p$, opens kinematically by \cref{e7:prop:uphill}(ii), with a non-compact phase space. The
-proton mean life exceeds $10^{29}$ years in every mode searched and $\tau/B(p\to e^+\pi^0)>2.4\times10^{34}$ years \cite{PDG,Takenaka20}. A weak
-decay with MeV energy release has a lifetime of minutes unless it is forbidden, so this observation asks for a selection, one clock for all matter,
-not for a small angle. The arena does not compute the rate, since it has no amplitudes. This is the classical content of the clock selection
+proton mean life exceeds $10^{29}$ years in every mode searched and $\tau/B(p\to e^+\pi^0)>2.4\times10^{34}$ years \cite{PDG,Takenaka20}. Allowed weak
+decays with MeV energy release are typically fast, although lifetimes depend on matrix elements, selection rules and couplings. The argument is
+kinematic: it motivates, but does not derive, a selection, one clock for all matter, rather than a small angle. The arena does not compute the rate, since it has no amplitudes. This is the classical content of the clock selection
 (\cref{prop:clock}; the reduced shell of \cref{thm:wlgauge}, \cref{r2:prop:shellII}). Classes: (i) and the
 kinematics of (ii) inherited; the angles are sensitivity estimates, conditional on the reading and on the assumptions about the reaction.
 
@@ -394,7 +402,7 @@ duality on null fields \cite{Calkin65,PenroseRindler84}, \cref{ex:Gcharge}, pull
 $\vartheta$ turns the plane of linear polarisation of a freely propagating wave about its line of sight by $\vartheta$, the same for all
 frequencies, and only multiplies a circularly polarised wave by a phase.
 
-\emph{A coupling model and its bound} (CLASS-05). The arena does not say that its interior flow acts on free light. Suppose, as a model, that
+\emph{A coupling model and its bound}. The arena does not say that its interior flow acts on free light. Suppose, as a model, that
 it does: radiation in flight is carried by the flow $X(\tau)=e^{\mp\kappa G\tau}X_0$ (\cref{sec:resttworot}(ii)), with $\tau$ the cosmic
 time and $\kappa$ constant. By \cref{e7:prop:dualrot} linearly polarised light then arrives with its plane turned about the line of sight by
 $\kappa$ times its propagation time, the same at all frequencies; the sign depends on orientation conventions that a bound on $|\kappa|$ does not
@@ -404,11 +412,17 @@ Komatsu find $\beta=0.35^\circ\pm0.14^\circ$ (68\%) from the Planck 2018 data, d
 foreground; their baseline assumes no intrinsic $EB$ correlation of the CMB at last scattering or of the foreground, and a frequency-independent
 foreground $EB$ of rotation form, an angle $\gamma$, would be read as $\beta-\gamma$ \cite{MinamiKomatsu20}. The joint WMAP and Planck analysis of
 Eskilt and Komatsu finds $\beta=0.342^\circ{}^{+0.094^\circ}_{-0.091^\circ}$, $3.6\sigma$ from zero, with no evidence of frequency dependence
-\cite{EskiltKomatsu22}. Distant radio galaxies bound a uniform rotation over cosmological distances to a few degrees \cite{CarrollFieldJackiw90}.
+\cite{EskiltKomatsu22}, and the ACT DR6 analysis of Diego-Palazuelos and Komatsu finds $\beta=0.215^\circ\pm0.074^\circ$, with its authors' caution that the
+systematics of those data are not yet understood \cite{DiegoPalazuelosKomatsu26}. Distant radio galaxies bound a uniform rotation over cosmological distances to a few degrees \cite{CarrollFieldJackiw90}.
 With $|\beta|<0.63^\circ$ ($|$central value$|+2\sigma$ of \cite{MinamiKomatsu20}), $\kappa<2.5\times10^{-20}\,{\rm s^{-1}}=1.2\times10^{-2}H_0$, that is
 $\hbar\kappa<1.7\times10^{-35}$~eV, $10^{40.5}$ below $m_ec^2/\hbar=7.8\times10^{20}\,{\rm s^{-1}}$ (e7-21); with $|\beta|<0.53^\circ$ from
-\cite{EskiltKomatsu22}, $\kappa<2.1\times10^{-20}\,{\rm s^{-1}}$ (z5-4). Within the model, a rate tied to the electron mass by $mc^2=\hbar\kappa$,
-or to any particle heavier than $1.7\times10^{-35}$~eV, is excluded, and even the Hubble rate is excluded by a factor $86$. These are bounds on
+\cite{EskiltKomatsu22}, $\kappa<2.1\times10^{-20}\,{\rm s^{-1}}$ (z5-4). Dividing the angle by the age assumes the unwrapped, small-angle branch: rotations by $\beta$
+and by $\beta+n\pi$ leave linear polarisation unchanged, so for $\beta=0.35^\circ$ the first alias is $\kappa=7.2\times10^{-18}\,{\rm s^{-1}}$, about $290$ times the
+quoted bound. The bound refers to that branch; excluding the others needs the visibility function, reionisation and the observation window. A
+time-dependent duality rotation is moreover not a symmetry of the free Maxwell equations, so the coupling hypothesis needs a stated propagation
+law. An oscillating rotation is, in addition, averaged over the visibility function, which washes it out \cite{FedderkeGrahamRajendran19}. Within the model and on the unwrapped branch, a rate tied to the electron mass by $mc^2=\hbar\kappa$, or to any particle heavier than
+$1.7\times10^{-35}$~eV, lies above the bound, and the Hubble rate does by a factor $86$; a separate high-rate calculation (visibility,
+reionisation, observation window, propagation law) would be needed to exclude the aliased branches, and it is not done here. These are bounds on
 the coupling model, given a negligible foreground $EB$; they neither confirm nor exclude the arena, which does not couple its interior flow to
 light.
 
@@ -428,8 +442,10 @@ reversal sends $\plaq$ to $-\plaq$, which no copy reflection undoes at $n=3$ (\c
 quark mixing has the same shape: a rephasing-invariant plaquette of the mixing matrix, nonzero only for three generations, with
 $\det[M_uM_u^\dagger,M_dM_d^\dagger]$ equal to $2iJ$ times the two Vandermonde products of squared masses \cite{Jarlskog85,KobayashiMaskawa73}. The
 parallel is a reading. It says that in both cases a time-odd invariant of a Hermitian $3\times3$ structure needs three labels, and that the
-commutator determinant factorises through it. It does not establish CP violation in particle physics: the arena has no baryons, no C, no
-CP, and its $\plaq$ is a property of the interior $b$-field between manifolds, with a free magnitude. Sakharov's conditions for a baryon asymmetry,
+commutator determinant factorises through it. It does not establish CP violation in particle physics: within the three-copy interior model
+the invariant $\plaq$ is a property of the interior $b$-field between manifolds, with a free magnitude, not identified with the physical CKM
+invariant and not connected to a baryon-number-violating, out-of-equilibrium process (the matter and charge constructions of
+\cref{ch:ch06_chiral,ch:ch07_vacuum} do not supply such a process either). Sakharov's conditions for a baryon asymmetry,
 baryon-number violation, C and CP violation and departure from equilibrium \cite{Sakharov67}, are not touched. At most $\plaq$ is a candidate source
 of time-odd effects, and only under a reading that identifies interior time reversal with physical time reversal.
 
@@ -439,11 +455,11 @@ $e_1$, $m_4=M_6|\cos\phi|$, which for $\theta_0<\pi/2$ is $M_6\cos\phi$, and $m_
 rotation at rate $\nu$ about an axis at angle $\alpha$ from the clock, with the temporal energy initially on the clock, the energy read by the clock is
 $E(\hat n)/M_6=1-\sin^2\alpha\,(1-\cos\nu t)$ (fixed, e7-24), and the projected mass is its modulus, $m_4/M_6=|1-\sin^2\alpha\,(1-\cos\nu t)|$, since
 $m_4^2=E(\hat n)^2$ at rest. The signed expression is the clock energy, not a mass: it becomes negative near $\nu t=\pi$ when $\sin^2\alpha>\tfrac12$, and the
-modulus may be dropped exactly when $\sin^2\alpha\le\tfrac12$, which includes the small-angle regime of the bounds below (CLASS-06; z1-6a). In that
+modulus may be dropped exactly when $\sin^2\alpha\le\tfrac12$, which includes the small-angle regime of the bounds below (z1-6a). In that
 regime both are $m_4/M_6=1-A+A\cos\omega t$. A rotation common to all matter cancels in dimensionless mass ratios, so the bounds concern differential
 oscillations; all are conditional on the reading (e7-25).
 
-\emph{Assumed couplings} (CLASS-07). The bounds below translate data into the parameters of the reading only under couplings that the arena
+\emph{Assumed couplings}. The bounds below translate data into the parameters of the reading only under couplings that the arena
 does not derive. Atomic and molecular spectra are those of ordinary physics, with the masses $m_4$ read by a clock common to the apparatus, and
 their dependence on $m_p/m_e$ is the one used in the cited analyses. For the equivalence principle, inertia is $m_4$ and gravity couples to
 $M_6$. A common rescaling of all masses, such as a temporal rotation shared by all matter, cancels in every dimensionless ratio and leaves
@@ -456,7 +472,12 @@ $\theta_0<1.3\times10^{-3}$~rad for the libration and $\alpha<6.3\times10^{-4}$~
 coincidence of phases.
 \item \emph{Atomic clocks.} Yb$^+$ against Cs gives $\dot\mu_{pe}/\mu_{pe}=(-0.5\pm1.6)\times10^{-16}\,{\rm yr^{-1}}$ \cite{Huntemann14}, consistent with
 $(0.2\pm1.1)\times10^{-16}\,{\rm yr^{-1}}$ \cite{Godun14}. At $2\sigma$, $A\omega<3.7\times10^{-16}\,{\rm yr^{-1}}$ for periods long compared with the
-years of comparison: $A<2.6\times10^{-6}$ for $\omega$ equal to the inverse age, and $A<1.8\times10^{-16}$ for $\omega=1\,{\rm yr^{-1}}$.
+years of comparison and a phase at which the drift is maximal: $A<5.1\times10^{-6}$ for $\omega$ equal to the inverse age, and $A<3.7\times10^{-16}$ for
+$\omega=1\,{\rm yr^{-1}}$, a period of about $6.3$ years, which is not long compared with the years of comparison.
+\item \emph{Phases.} A bound on a drift constrains $A\omega$ only under an assumption on the phase: for $R=1-A+A\cos(\omega t+\varphi)$ the slope vanishes
+at an extremum, and for two epochs $R(t_2)-R(t_1)=-2A\sin\bigl(\tfrac\omega2(t_1+t_2)+\varphi\bigr)\sin\bigl(\tfrac\omega2(t_2-t_1)\bigr)$, which vanishes whenever the
+separation is a whole number of periods. The figures above are order-of-magnitude sensitivities; a constraint on an oscillation needs a
+frequency-dependent analysis of a time series, as in the searches for oscillating constants with atomic clocks \cite{VanTilburg15}.
 \item \emph{Equivalence principle.} Add the hypothesis that inertia is $m_4$ read by the clock while gravity couples to the undivided $M_6$. Then
 $m_g/m_i=1/\cos\vartheta\approx1+\vartheta^2/2$, and the E\"otv\"os parameter of two bodies is $\eta_{\rm E}\approx\half(\vartheta_A^2-\vartheta_B^2)$.
 MICROSCOPE measured $\eta_{\rm E}({\rm Ti},{\rm Pt})=[-1.5\pm2.3({\rm stat})\pm1.5({\rm syst})]\times10^{-15}$ \cite{Touboul22}, so $|\eta_{\rm E}|<7.0\times10^{-15}$
@@ -483,7 +504,7 @@ finding & classical counterpart & class & check & what an observation could deci
 \endhead
 \bottomrule
 \endfoot
-$u_0$ of a field point (\cref{en:SI}) & energy density where $\bE\parallel\Btext$; minimum over frames & restated; inherited & e7-2 & nothing (identity)\\
+$u_0$ of a field point (\cref{en:SI}) & energy density where $\bE\parallel\Btext$; infimum over frames, attained for non-null fields & restated; inherited & e7-2 & nothing (identity)\\
 traceless stress, tension and pressure $u_0$ (\cref{e7:prop:stress}) & radiation, $w=\tfrac13$; von Laue & inherited & e7-3, e7-4 & nothing\\
 $\rho_0$ as dark matter (\cref{e7:cor:dm}) & pressureless dark matter; local with local, mean with mean & obstructed & e7-26, z5-1 & already decided: dark matter has $w\approx0$\\
 $u_0$ of astronomical fields (\cref{e7:tab:fields}) & magnetic energy densities; ISM equipartition & inherited arithmetic & e7-5, e7-6 & nothing for the arena\\
@@ -492,13 +513,13 @@ CMB ``locally massive'', $\langle u_0\rangle=\tfrac23u$ & photon gas, $Mc^2=U$ &
 $M_{\rm pair}$ of two null fields (\cref{d6:thm:pair}) & Breit--Wheeler, gamma-ray horizon & restated; same zero set; an identity, not a threshold, cross section or rate; thresholds inherited & e7-11, e7-12 & horizon tests QED and background light\\
 canonical fields, $E_0=\half(\epsilon_{\rm can}^2+\beta_{\rm can}^2)$ (\cref{e7:prop:canon}) & Schwinger rate, $E_S$, $B_Q$ & inherited & e7-13, e7-14 & strong-field QED\\
 rest energy materialises as pairs & magnetars above $B_Q$; vacuum, two-photon and one-photon creation kept apart & obstructed & e7-27 & already decided (Schwinger; photon-assisted pairs in magnetospheres)\\
-compact/boost and pairs (\cref{e2:lem:N}) & magnetic against electric fields & interpretive (analogy) & e7-13 & nothing\\
+number conservation, $[X,N]=0$, and pairs (\cref{e2:lem:N}) & magnetic against electric fields & interpretive (analogy); interior Fock number not identified with electron number & e7-13 & nothing\\
 $M^2=m_1^2+m_2^2+2m_1m_2\cos\vartheta$ (\cref{e7:prop:sixmass}) & graded quadrature, additive copies & fixed; identification interpretive & e7-15 & nothing\\
-uphill decays (\cref{e7:prop:uphill}) & Dorling's instability & inherited; example fixed & e7-16, e7-17 & proton stability: one clock\\
+uphill decays (\cref{e7:prop:uphill}) & Dorling's instability & inherited; example fixed & e7-16, e7-17 & off-clock channels kinematically open; motivates the imposed reduction (no lifetime bound derived)\\
 one clock for matter & mass additivity, $E=mc^2$ test & sensitivity estimate, conditional on the reading and on a reaction model not derived & e7-18, z5-3 & $\vartheta\sim10^{-4}$~rad scale; a residual measures an energy, not an angle\\
 $\kappa=c/\ell$, three lengths & Compton, Planck, Hubble & interpretive & e7-19 & nothing until $\ell$ is fixed\\
 duality $=$ rotation about $\hat{\mathbf k}$ (\cref{e7:prop:dualrot}) & helicity, polarisation rotation & fixed; inherited & e7-20 & nothing\\
-interior flow on light at $\kappa=m_ec^2/\hbar$ & cosmic birefringence & excluded within a coupling model (flow on free light, cosmic time, constant rate); $\kappa<2.5\times10^{-20}$~s$^{-1}$ ($2.1\times10^{-20}$ with \cite{EskiltKomatsu22}) & e7-21, z5-4 & CMB polarisation, given a negligible foreground $EB$\\
+interior flow on light at $\kappa=m_ec^2/\hbar$ & cosmic birefringence & bounded within a coupling model (flow on free light, cosmic time, constant rate) on the unwrapped small-angle branch; aliases not excluded; $\kappa<2.5\times10^{-20}$~s$^{-1}$ ($2.1\times10^{-20}$ with \cite{EskiltKomatsu22}) & e7-21, z5-4 & CMB polarisation, given a negligible foreground $EB$\\
 flat duality angle of radiation (\cref{cl:flat}) & axion-like birefringence & open; restated & e7-22 & $\beta$ fixes a datum, tests nothing\\
 three-manifold $\plaq$ (\cref{d7:thm:three}) & Jarlskog, Sakharov & reading & e7-23 & nothing, unless manifolds become families\\
 oscillating $m_4$ (\cref{e6:prop:clock}) & constancy of $m_p/m_e$, equivalence principle & fixed; bounds conditional on stated couplings, differential only & e7-24, e7-25, z5-5 & quasars, clocks, EP tests\\
@@ -508,13 +529,14 @@ oscillating $m_4$ (\cref{e6:prop:clock}) & constancy of $m_p/m_e$, equivalence p
 pointwise rest fraction $\tfrac23$ of a Gaussian ensemble of fields, pair kinematics and the gamma-ray horizon, the canonical fields and the
 Schwinger rate, the kinematics of several times, and the identity of duality and helicity on light. There the arena agrees with ordinary physics
 and adds nothing measurable. Excluded as readings are field rest energy as dark matter and the materialisation of rest energy into pairs;
-excluded within explicit coupling models are the interior flow acting on free light at the rate $m_ec^2/\hbar$ and six-dimensional kinematics
-without a common clock. The numerical angles and rates are sensitivity estimates or bounds on those models, not measurements of quantities of
+bounded within an explicit coupling model, on its unwrapped small-angle branch, is the interior flow acting on free light at the rate
+$m_ec^2/\hbar$; unrestricted off-clock kinematics permits problematic channels and motivates the imposed common-clock reduction, but no
+proton-lifetime exclusion or uniqueness of that cure is derived. The numerical angles and rates are sensitivity estimates or bounds on those models, not measurements of quantities of
 the arena. Unconstrained, or open, are $\ell$ and with it
 $\kappa$, the origin of a cosmic birefringence angle, the magnitude and meaning of the three-manifold invariant, and the readings that identify
 the interior with particles. Two structures are missing before the arena can make an astronomical or cosmological prediction. One is a fixed
 length $\ell$, equivalently a mass through $mc^2=\hbar\kappa$. The other is a coupling of the interior to spacetime: on which fields the interior
-flow acts, how the temporal part of the six-momentum couples to clocks and to gravity, and which clock ordinary matter shares. With them, the
-constraints above become tests: the angles of \cref{e7:sec:sixmomenta,e7:sec:timeodd} and the rate of \cref{e7:sec:rate} would be predicted
+flow acts, how the temporal part of the six-momentum couples to clocks and to gravity, and which clock ordinary matter shares. With them, and with
+the dynamics and the states or boundary conditions that fix amplitudes, phases and clock orientations, the constraints above could become tests: the angles of \cref{e7:sec:sixmomenta,e7:sec:timeodd} and the rate of \cref{e7:sec:rate} would be predicted
 rather than bounded.
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """c2: dispersion, tachyon counts, the surplus constraints and the worldline brackets of Chapters 11-12 (Phase 9C).
 
-    python3 verification/ch12_causal/c2_dynamics_brackets.py
+    python3 verification/ch12_causality/c2_dynamics_brackets.py
 
 prop:toy, prop:orient, ex:tachyons, the mode content of p_u = p_v = 0 (CORE-07), prop:constraints, thm:wlgauge (brackets, closure, Jacobi,
 gauge invariance of the extended action), prop:wltau, prop:isometryonly. Exact symbolic arithmetic (sympy) with general functions h^{mu nu}(x)
@@ -122,10 +122,11 @@ G1 = u * X4[1]
 ok &= sp.expand(PB(F1, F2_ * G1) - (PB(F1, F2_) * G1 + F2_ * PB(F1, G1))) == 0
 Nf = sp.Function("N"); l1, l2 = sp.Function("lambda1"), sp.Function("lambda2")
 tau = sp.symbols("tau", real=True)
-weak = sp.expand(PB(pu, Nf(tau) * H + l1(tau) * pu + l2(tau) * pv))
+mm = sp.symbols("m_mass", positive=True)
+weak = sp.expand(PB(pu, Nf(tau) * (H - mm ** 2 / 2) + l1(tau) * pu + l2(tau) * pv))
 ok &= sp.expand(weak + Nf(tau) * C * pv) == 0
 report("6", ok, "9C.9: the canonical bracket is antisymmetric, satisfies the Leibniz rule and the Jacobi identity (checked on the triple p_u, H, u p_0 + A_1 p_v "
-       "with general h, A); the total Hamiltonian N H + lambda1 p_u + lambda2 p_v preserves the constraints weakly, d p_u/d tau = -N C p_v ~ 0 (exact). "
+       "with general h, A); the total Hamiltonian N (H - m^2/2) + lambda1 p_u + lambda2 p_v preserves the constraints weakly, d p_u/d tau = -N C p_v ~ 0 (exact). "
        "This is constraint preservation for one test worldline in a background; it says nothing about interacting fields")
 
 # gauge invariance of the extended action (thm:wlgauge), flat or general h
@@ -134,13 +135,13 @@ qf = [sp.Function(f"q{i}")(tau) for i in range(6)]; pf = [sp.Function(f"P{i}")(t
 sub = {Q[i]: qf[i] for i in range(6)}; sub.update({Pm[i]: pf[i] for i in range(6)})
 Hf = H.subs(sub, simultaneous=True); Cf = C.subs(sub, simultaneous=True)
 N_, L1, L2 = Nf(tau), l1(tau), l2(tau)
-Lag = sum(pf[i] * sp.diff(qf[i], tau) for i in range(6)) - N_ * Hf - L1 * pf[4] - L2 * pf[5]
+Lag = sum(pf[i] * sp.diff(qf[i], tau) for i in range(6)) - N_ * (Hf - mm ** 2 / 2) - L1 * pf[4] - L2 * pf[5]
 dl1 = sp.diff(e1, tau) + N_ * Cf * e2; dl2 = sp.diff(e2, tau) - N_ * Cf * e1
 var = (sum(pf[i] * sp.diff(dq, tau) for i, dq in ((4, e1), (5, e2)))
        - N_ * (sp.diff(Hf, qf[4]) * e1 + sp.diff(Hf, qf[5]) * e2) - dl1 * pf[4] - dl2 * pf[5])
 ok = sp.simplify(sp.expand(var)) == 0
 report("7", ok, "thm:wlgauge: under delta u = eps1(tau), delta v = eps2(tau), delta lambda1 = eps1' + N C eps2, delta lambda2 = eps2' - N C eps1 (all other variables "
-       "fixed) the first variation of the extended Lagrangian p.x' - N H - lambda1 p_u - lambda2 p_v vanishes identically, not only up to a boundary term, "
+       "fixed) the first variation of the extended Lagrangian p.x' - N (H - m^2/2) - lambda1 p_u - lambda2 p_v vanishes identically, not only up to a boundary term, "
        "for general h(x) and A(x) (exact). The gauge principle is chosen: the multipliers are added by hand")
 
 # ------------------------------------------------------------------ prop:wltau
@@ -155,8 +156,20 @@ norm = sp.simplify(sum(hl[i, j] * xdot[i] * xdot[j] for i in range(4) for j in r
 ok &= norm == 0
 tp = sp.symbols("tau_p")
 ok &= sp.simplify((Nf(tau) / sp.diff(f(tau), tau)) * sp.diff(f(tau), tau) - Nf(tau)) == 0
-report("8", ok, "prop:wltau: Hamilton's equation for x^mu is x'^mu = N h^{mu nu} k_nu (general h, A); on the reduced shell (l = 0, k = p) h_{mu nu} x'^mu x'^nu = "
-       "N^2 h^{mu nu} p_mu p_nu = N^2 m^2 for a general metric, so d tau_h = N m d tau; N d tau is invariant under tau -> f(tau), N -> N/f' (exact)")
+# v1.0.1: the mass shell is derived by varying the lapse, not inserted
+dN_new = sp.expand(sp.diff(Lag, N_))                                   # Euler-Lagrange for N (no N' in the Lagrangian)
+ok &= sp.expand(dN_new + (Hf - mm ** 2 / 2)) == 0
+Lag_old = Lag + N_ * (Hf - mm ** 2 / 2) - N_ * Hf
+ok &= sp.expand(sp.diff(Lag_old, N_) + Hf) == 0                          # with -N H alone the variation gives H = 0, the massless shell
+Hsym = sp.Symbol("H_val")
+ok &= sp.solve(-(Hsym - mm ** 2 / 2), Hsym) == [mm ** 2 / 2] and sp.solve(-Hsym, Hsym) == [0]
+# on the reduced shell (l = 0, k = p) with 2H = h^{mu nu} p p = m^2: h_{mu nu} x' x' = N^2 m^2 and d tau_h = |N| m d tau
+Nr = sp.symbols("N_r", real=True)
+ok &= sp.simplify(sp.sqrt(Nr ** 2 * mm ** 2) - sp.Abs(Nr) * mm) == 0
+report("8", ok, "prop:wltau: varying N in p.x' - N (H - m^2/2) - lambda1 p_u - lambda2 p_v gives the mass shell 2H = m^2, while -N H alone would give "
+       "H = 0 (the shell is derived, not inserted); Hamilton's equation for x^mu is x'^mu = N h^{mu nu} k_nu (general h, A); on the reduced shell "
+       "(l = 0, k = p) h_{mu nu} x'^mu x'^nu = N^2 h^{mu nu} p_mu p_nu = N^2 m^2 for a general metric, so d tau_h = |N| m d tau; N d tau is invariant under "
+       "tau -> f(tau), N -> N/f' (exact)")
 
 # ------------------------------------------------------------------ prop:isometryonly
 r, ph = sp.symbols("r phi", positive=True)

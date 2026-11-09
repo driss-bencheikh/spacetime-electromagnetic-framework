@@ -1042,3 +1042,6 @@ M2W = np.array([[np.sum(a_ * b_) for b_ in C] for a_ in C])
 evW = np.sort(np.linalg.eigvalsh(M2W))
 ok = ok and np.allclose(evW, [0, 64, 64])
 report(20, ok, f"n=3: at Pi_+-A, Pi_+-W u(1)_em and su(3)_C are unbroken (restated p1-21); on the u(1)_A-selected components u(1)_em is broken at generic points (min s_em at random points {min(sem_on_A):.3f} > 0), on the u(1)_em-selected components su(2)_L is broken at generic points (min f {min(f_on_em):.3f} > 0); on the metastable component A'+W' of h_SM the unbroken algebra is su(3)+u(1)_(T3L)+u(1)_Y (dim {stab0}), containing B_em, and only W^+- are massive (su(2)_L mass matrix eigenvalues {evW.round(9).tolist()} g_2^2 f^2)")
+
+# v1.0.1: exit status on the aggregate result (errata item 84)
+sys.exit(0 if RESULTS and all(RESULTS) else 1)

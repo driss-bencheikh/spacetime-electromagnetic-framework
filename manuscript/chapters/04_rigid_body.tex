@@ -99,10 +99,10 @@ of space.
 \section{The shifted Lagrangian in a positive form}
 \label{sec:shifted}
 
-Everything in the arena so far has been kinematics. The arena supplies one piece of interior dynamics without further input: a first-order shift
-operator built from the conversion between times and lengths (\cref{sec:clock}). This part asks what motion that operator
-generates. The answer depends on a single choice, whether the quadratic form in the Lagrangian is positive definite or the split form
-$\eta$ of the arena itself, and the two answers are opposite. This section treats the positive form, where the verdict is negative and
+Everything in the arena so far has been kinematics. The arena supplies a candidate first-order shift operator, built from the conversion
+between times and lengths (\cref{sec:clock}), and this part adopts a shifted quadratic action for it and asks what motion it generates. For the
+adopted shifted quadratic action, the comparison concerns the choice of the quadratic form, positive definite or the split form $\eta$ of the
+arena itself, and the two answers are opposite. This section treats the positive form, where the verdict is negative and
 sharp; \cref{sec:neutral} treats the split form, where bound motion appears exactly in neutral signature.
 
 % --- source: tex/s15_shifted#2 (Momentum and force)
@@ -242,11 +242,12 @@ $\int\tfrac m2g_{AB}(\alpha_+X)^A(\alpha_+X)^B\,d\tau$ gives $Dp_B/D\tau=\kappa 
 \]
 the factorisation computation goes through verbatim, since the extra term appears on both sides, so $a=0$ remains the factorisation
 condition. Second, for a field $X$ in a bundle with fibre metric $h$ and $D_M=\nabla_M+\kappa G_M$, the action
-$\int\sqrt{|g|}\,\tfrac m2h_{AB}g^{MN}(D_MX)^A(D_NX)^B$ has
+$\int\sqrt{|g|}\,\tfrac m2h_{AB}g^{MN}(D_MX)^A(D_NX)^B$ has, when $g$ is varied with the fibre metric $h$ and the bundle connection held fixed
+(a connection that depends on $g$, such as the Levi-Civita connection on $TM$, needs further terms),
 \[
 T_{MN}=m\Bigl[h_{AB}(D_MX)^A(D_NX)^B-\tfrac12g_{MN}\,h_{AB}\,g^{PQ}(D_PX)^A(D_QX)^B\Bigr],
 \]
-whose trace $m(1-\tfrac D2)|DX|^2$ vanishes only in $D=2$, the same dimension in which the projector sigma model of \cref{sec:ym} is
+whose trace $m(1-\tfrac D2)|DX|^2$ vanishes identically for arbitrary fields only in $D=2$, the same dimension in which the projector sigma model of \cref{sec:ym} is
 renormalisable. This is the stress tensor of the shifted kinetic term only, with $G$ a background, and \cref{thm:virial} is a warning about
 it: a matter sector whose only oscillations sit at zero momentum, with an energy unbounded below, is not yet a source one can couple to
 gravity.
@@ -324,6 +325,10 @@ $\eta(Ge_i,e_{i+3})=\eta(e_{i+3},e_{i+3})=-1=\eta(e_i,-e_i)=\eta(e_i,Ge_{i+3})$,
 has $a=0$ and becomes $\ddot X=-\kappa^2X$.
 \end{proof}
 
+The linear algebra is inherited: a complex structure that is anti-isometric for $\eta$ is a Norden, or anti-K\"ahler, structure, and its
+existence forces neutral signature \cite{BorowiecFrancavigliaVolovich00}. What the arena adds is the reading of \eqref{eq:Gpair} as the binding
+root of the pairing.
+
 This reverses the verdict of \cref{sec:shifted} at its root. In definite signature the factorised branch is an inverted oscillator and
 nothing binds; in neutral signature the same factorisation condition $G=G^\dagger$ admits operators of purely imaginary spectrum, and the
 maximal one makes the whole interior a harmonic well of one frequency. The obstruction of \cref{thm:virial} was a theorem about the
@@ -334,10 +339,27 @@ $G$ is adopted, and calling its consequences a selection would be premature.
 
 \begin{proposition}[How much can bind]
 \label{prop:howmuch}
-For $G=G^\dagger$ an eigenvector $v$ with non-real eigenvalue satisfies $\eta(v,\bar v)=0$, so each conjugate pair $\pm i\mu$ spans an
-$\eta$-neutral two-plane. The oscillating subspace has signature $(k,k)$ with $k\le\min(P,Q)$. On Minkowski space $\R^{1,3}$ at most a
-single two-plane can bind; on $\R^{3,3}$ all six directions can, simultaneously and at one frequency.
+Let $G=G^\dagger$ be diagonalisable over $\C$ and $\kappa\neq0$. An eigenvector $v$ with non-real eigenvalue satisfies $\eta(v,\bar v)=0$, and
+eigenvectors of different eigenvalues are $\eta$-orthogonal. The real span of the eigenvectors with non-real eigenvalues is therefore the
+$\eta$-orthogonal complement of the real eigenspaces; it is nondegenerate of signature $(k',k')$. Let $V_{\rm osc}$ be its part belonging to the
+nonzero purely imaginary eigenvalues. $V_{\rm osc}$ is nondegenerate of signature $(k,k)$ with $k\le\min(P,Q)$, $\eta$-orthogonal to the remaining
+spectral subspaces, and every solution of $\ddot X=\kappa^2G^2X$ with position and velocity in $V_{\rm osc}$ is bounded (quasi-periodic; periodic when
+the frequencies are commensurate). Zero eigenvalues give constant solutions and linear drift, and eigenvalues with nonzero real part give no
+nonzero solution bounded for all times. On Minkowski space $\R^{1,3}$ at most a single two-plane can bind; on $\R^{3,3}$ all six directions can,
+simultaneously and at one frequency.
 \end{proposition}
+
+A non-real spectrum is not enough. For $\eta=\operatorname{diag}(1,-1)$ the operator $G=\bigl(\begin{smallmatrix}1&-1\\1&1\end{smallmatrix}\bigr)$ is
+$\eta$-self-adjoint and diagonalisable with eigenvalues $1\pm i$, and $X(\tau)=e^{\kappa\tau}(\cos\kappa\tau,\sin\kappa\tau)$ solves $\ddot X=\kappa^2G^2X$:
+the oscillation is exponentially modulated, and no nonzero solution of this block is bounded on $\R$. Hence the restriction to the purely
+imaginary spectrum, $\operatorname{spec}G\subset\R\cup i\R$ being the case in which the two subspaces agree (a3-11, exact).
+
+The statement concerns the whole subspace $V_{\rm osc}$. Let $\eta=\bigl(\begin{smallmatrix}0&K\\K&0\end{smallmatrix}\bigr)$ on $\R^4$, with
+$K=\operatorname{diag}(1,-1)$. For the diagonalisable $G=\operatorname{diag}(J_2,J_2)$, which is $\eta$-self-adjoint, the plane of one conjugate
+pair is totally null, although the whole of $V_{\rm osc}$ has signature $(2,2)$. For the non-diagonalisable
+$G=\bigl(\begin{smallmatrix}J_2&\id\\0&J_2\end{smallmatrix}\bigr)$ even the subspace statement fails: $G$ is $\eta$-self-adjoint and its bounded
+motions lie in a plane on which $\eta$ vanishes. The conclusions used later concern $G^2=-\id$, which is
+diagonalisable, and stand.
 
 \begin{example}[One pairing plane]
 \label{ex:oneplane}
@@ -428,8 +450,8 @@ $PGP^{-1}=-G$ and $P$ acts on $z$ as complex conjugation.
 \end{proof}
 
 The binding term carries the one parity-odd ingredient of the interior, the sign of $\kappa$, and it sits entirely in a total derivative.
-Since $\bE\cdot\bB$ is a single-valued function on the configuration space, the canonical transformation $p\mapsto p+2m\kappa\,\eta GX$ removes it,
-classically and as a phase of wave functions. The structure is that of the $\theta$-term of electrodynamics, a parity-odd coefficient times a
+Since $\bE\cdot\bB$ is a single-valued function on the configuration space, the canonical transformation $p\mapsto p-m\kappa\,\eta GX$ removes it,
+classically and as a phase of wave functions; the shift by $2m\kappa\,\eta GX$ of \cref{thm:EBsplit} relates the two gauges $\pm\kappa$. The structure is that of the $\theta$-term of electrodynamics, a parity-odd coefficient times a
 total derivative, with the difference that here it has no topological sector in which to act. In the positive form the same cross term is
 gyroscopic, with Euler--Lagrange expression $2m\kappa G\dot X$, and the sign of $\kappa$ enters the equations of motion; that is another way of
 seeing why the two forms behave so differently.
@@ -636,14 +658,16 @@ $\beta_L(\beta_L(X,Y),Z)=L^2\beta_0(\beta_0(X,Y),Z)$, and $\beta_L$ inherits the
 Let $L=a+bG\neq0$. For every symmetric $N$, with $\mathfrak g^*$ identified with $\mathfrak g$ through $\eta$, the Euler--Arnold field
 $\beta_0(M,NM)$ conserves $\eta(M,M)$ and $\eta(M,GM)$, whereas along the force law, in the form $\dot M=\kappa GM$,
 $\tfrac{d}{d\tau}\eta(M,M)=2\kappa\,\eta(M,GM)$ and $\tfrac{d}{d\tau}\eta(M,GM)=-2\kappa\,\eta(M,M)$. No Hamiltonian flow on $(V,\beta_L)^*$ coincides
-with the force law on an open set, and this remains true with a state-dependent rate.
+with a nontrivial force law ($\kappa\neq0$) on an open set $U$, and this remains true with a continuous state-dependent rate that does not vanish
+identically on $U$.
 \end{theorem}
 
 \begin{proof}
 The two quadratic forms are the Casimirs of $(V,\beta_L)^*$ and are conserved by every Hamiltonian flow, while the force law rotates them into
 each other. Equality on an open set would make both vanish there, that is $z\cdot z=0$ on an open set, which no nonzero polynomial does. For a
-state-dependent rate, the equations $\beta_0(M_s,NM_s)=f_s\,GM_s$ at twelve rational null vectors already force every $f_s=0$ and
-$N\in\operatorname{span}\{\id,G\}$, for which $\beta_0(M,NM)\equiv0$.
+state-dependent rate $f$ not identically zero on $U$, continuity gives an open $W\subset U$ on which $f\neq0$, and the same argument applies on $W$.
+(On the null cone, where both Casimirs vanish, the equations $\beta_0(M_s,NM_s)=f_s\,GM_s$ at twelve rational null vectors force every $f_s=0$ and
+$N\in\operatorname{span}\{\id,G\}$, for which $\beta_0(M,NM)\equiv0$; this sampled computation is a check, not part of the proof.)
 \end{proof}
 
 A closure therefore needs a direction beyond the frame. Adjoin one generator $\hat g$, the \emph{rotor}, on which $\lG$ acts trivially; the rate
@@ -857,7 +881,8 @@ free rotor, a constant rate and a bounded frame coexist exactly on null data.
 Let one rotor act on $n$ constituents with $N_k=(a_k\eta^{-1}+b_kG\eta^{-1})/m_k$ and $w_k=w(p^{(k)})$. Then $\dot w_k=2i(h/I_0)w_k$ for every $k$, all
 forces carry the common phase $e^{2i\theta}$, and with $R_{\rm eff}e^{i\varphi_{\rm eff}}:=\sum_k(a_k+ib_k)w_k(0)/m_k$ the rotor obeys
 $I_0\ddot\theta=R_{\rm eff}\sin(2\theta+\varphi_{\rm eff})$. The \emph{balance surface} $R_{\rm eff}=0$ is preserved by the flow; on it the rate is exactly
-constant although no $w_k$ need vanish, and every frame moves on a bounded orbit. With equal inertias, $p^{(2)}=-Gp^{(1)}$ gives $w_2=-w_1$.
+constant although no $w_k$ need vanish, and if $h(0)\neq0$ every frame moves on a bounded orbit; with $h(0)=0$ the frames drift linearly. With
+equal inertias, $p^{(2)}=-Gp^{(1)}$ gives $w_2=-w_1$.
 \end{proposition}
 
 The Clifford data $\eta$, $G$, $G\eta^{-1}$ and $\beta_0$ are integer matrices. The rescaling $(I_0,m)\mapsto(sI_0,tm)$ preserves admissibility and,
@@ -886,7 +911,8 @@ compact part consists of the paired rotations.
 \end{theorem}
 
 In the field-strength reading $V_3\cong\C^9$ carries three field strengths, and $\so{9,\C}$ consists of the complex orthogonal transformations of
-$\sum_kz^{(k)}\cdot z^{(k)}$.
+$\sum_kz^{(k)}\cdot z^{(k)}$. The identification of the centraliser of an anti-isometric complex structure with a complex orthogonal algebra is
+the inherited linear algebra of Norden geometry \cite{BorowiecFrancavigliaVolovich00}.
 
 \begin{theorem}[No common Lorentz algebra]
 \label{thm:nocommon}
@@ -1000,9 +1026,10 @@ selects the inertia.
 % --- source: tex/s17_closure#8 (Brackets supplied by hand)
 \subsection{Brackets supplied by hand}
 
-The closure above is derived; one may also supply a bracket on the frame by hand and ask what the arena's own inertias do with it. A quadratic Lie
-algebra whose invariant form is $\eta$ must have a maximal compact subalgebra of exactly half its dimension, and such \emph{balanced} simple real forms
-are rare: a complex simple algebra regarded as real, $\su{p,q}$ with $|p-q|=1$, or $\so{p,q}$ with $(p,q)=\bigl(\tfrac{k(k+1)}2,\tfrac{k(k-1)}2\bigr)$, and
+The closure above is derived; one may also supply a bracket on the frame by hand and ask what the arena's own inertias do with it. A simple
+quadratic Lie algebra whose invariant form is $\eta$ must have a maximal compact subalgebra of exactly half its dimension. For algebras that
+are not simple this fails: $\so4$ with invariant forms of opposite sign on its two factors is compact and has signature $(3,3)$. Such
+\emph{balanced} simple real forms are rare: a complex simple algebra regarded as real, $\su{p,q}$ with $|p-q|=1$, or $\so{p,q}$ with $(p,q)=\bigl(\tfrac{k(k+1)}2,\tfrac{k(k-1)}2\bigr)$, and
 no exceptional form. At the first rung $\R^{3,3}$ admits exactly three semisimple quadratic structures, $\so{1,3}$, $\so4$ and $\so{2,2}$, and only
 $\so{1,3}$ if $\eta$ is to be proportional to the Killing form. For $n\le20$ a simple closure exists exactly at $n=1,4,5,6,7,8,12,15,16,20$.
 
@@ -1065,10 +1092,10 @@ For $H=h^2/(2I_0)+\tfrac12p^{\!\top}Np$ these are the equations \eqref{eq:LProto
 \label{cl:frozen}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item A function $f(p)$ is a Casimir of $\mathfrak s^*$ if and only if it is invariant under $p\mapsto e^{tG}p$, that is under the duality rotations
-$z(\pi)\mapsto e^{-it}z(\pi)$ of the momentum field. Hence $E_6(\pi)$, $E_0(\pi)$ and the vector $\mathbf S(\pi)$ are Casimirs, while $\Re w$ and
-$\Im w$ are not.
+$z(\pi)\mapsto e^{-it}z(\pi)$ of the momentum field. Hence $E_6(\pi)$, $E_0(\pi)^2$ and the vector $\mathbf S(\pi)$ are smooth Casimirs, while $\Re w$
+and $\Im w$ are not; $E_0=|w|/2$ is conserved as well but is not smooth at $w=0$.
 \item At $p\neq0$ the symplectic leaves are two-dimensional, so there are five independent local Casimirs. The real and imaginary parts of the
-products $\bar z_jz_k$, $z=z(\pi)$, provide five, and $E_6(\pi)$, $E_0(\pi)$, $\mathbf S(\pi)$ account for four of them, subject to
+products $\bar z_jz_k$, $z=z(\pi)$, provide five, and $E_6(\pi)$, $E_0(\pi)^2$, $\mathbf S(\pi)$ account generically for four of them, subject to
 $E_6(\pi)^2=E_0(\pi)^2+|\mathbf S(\pi)|^2$.
 \item Along the flow of every Hamiltonian, $p(\tau)=e^{-\theta(\tau)G}p_0$ with $\dot\theta=H_h$ and $\theta(0)=0$; so
 $z(\pi(\tau))=e^{i\theta(\tau)}z(\pi_0)$ and $w(p(\tau))=e^{2i\theta(\tau)}w(p_0)$.
@@ -1500,7 +1527,7 @@ rotor angle, and the six frame coordinates are cyclic.
 \item \emph{Inertia.} For duality-class inertia, $[N,G]=0$, the rotor and the frame decouple: $\dot h=0$ for all data. For Lorentz-class
 inertia, $N=(\nu_1\eta^{-1}+\nu_2G\eta^{-1})/m$, they exchange angular momentum at the rate $\dot h=\Im(\nu w(p))/m$, and $N$ has the eigenvalues
 $\pm|\nu|/m$, three of each: no nonzero Lorentz-class inertia is positive definite.
-\item \emph{Energy.} With Lorentz-class inertia $H$ is unbounded below on $\mathfrak s^*$, and on each leaf it is bounded below by
+\item \emph{Energy.} With nonzero Lorentz-class inertia ($\nu\neq0$) $H$ is unbounded below on $\mathfrak s^*$, and on each leaf it is bounded below by
 $-|\nu w(p_0)|/(2m)$.
 \end{enumerate}
 \end{theorem}
@@ -1516,12 +1543,12 @@ two-dimensional subalgebra, since for independent $\mathbf a,\mathbf b$ the vect
 (iii) $\dot p=-\dot\theta Gp$ gives $\tfrac{d}{d\tau}(e^{\theta G}p)=0$. With $\dot x=e^{\theta G}Np$ and $p_s^{\!\top}Ge^{\theta G}=p^{\!\top}G$, since $G$
 commutes with $e^{\theta G}$ and $(e^{\theta G})^{\!\top}=e^{-\theta G}$, one has $\dot J_s=-p^{\!\top}GNp+p^{\!\top}GNp=0$ (rb2-5). (iv) Count from (ii)
 (rb2-13). (v) If $[N,G]=0$ then $GN$ is antisymmetric and $p^{\!\top}GNp=0$. For the Lorentz class, $-p^{\!\top}GNp=\Im(\nu w(p))/m$ and
-$\tfrac12p^{\!\top}Np=\Re(\nu w(p))/(2m)$, and the characteristic polynomial of $N$ is $(\lambda^2-|\nu|^2/m^2)^3$ (rb2-6, rb2-7). (vi) Along an
-eigenvector of the eigenvalue $-|\nu|/m$, $H\to-\infty$. On a leaf $w(p)=e^{2i\theta}w(p_0)$, and $\Re(\nu w)\ge-|\nu w(p_0)|$ (rb2-8).
+$\tfrac12p^{\!\top}Np=\Re(\nu w(p))/(2m)$, and the characteristic polynomial of $N$ is $(\lambda^2-|\nu|^2/m^2)^3$ (rb2-6, rb2-7). (vi) For $\nu\neq0$, along an
+eigenvector of $-|\nu|/m$, $H\to-\infty$ (at $\nu=0$, $H=h^2/(2I_0)$). On a leaf $w(p)=e^{2i\theta}w(p_0)$, and $\Re(\nu w)\ge-|\nu w(p_0)|$ (rb2-8).
 \end{proof}
 
-The theorem is fixed. Items (i) and (iii) restate \cref{prop:LP,prop:groupred,thm:drift} in the language of \cref{sec:rigidbody}, the
-identification of $J_s$ is new, and items (ii), (iv), (v) and (vi) are new. A numerical integration of the full closure, rotor, momentum and
+The theorem is fixed. Items (i) and (iii) restate \cref{prop:LP,prop:groupred,thm:drift} in the language of \cref{sec:rigidbody}. The conserved $J_s$ is the momentum map
+of semidirect-product mechanics \cite{HolmMarsdenRatiu98,MarsdenRatiu99}; it and items (ii), (iv), (v) and (vi) are computed here for this closure. A numerical integration of the full closure, rotor, momentum and
 frame, with Lorentz-class inertia keeps $H$, $|p|^2$, $|w(p)|$, $p_s$ and $J_s$ to $2.4\times10^{-10}$ or better over $\tau\in[0,200]$, while $h$
 varies over a range $0.737$: the rotor and the frame exchange angular momentum, and their total is conserved (rb2-15; \cref{tab:numerics}).
 
@@ -1582,7 +1609,9 @@ potential is assumed. The checks are rb3-1 to rb3-13, and the numerical runs are
 \item The \emph{orbit map} reads the interior configuration in one pairing plane, $z=x+iy$ for $X=x\,e_1+y\,e_4$, as the relative position of
 two bodies in their orbital plane, and the interior parameter $\tau$ as their time.
 \item The \emph{spin map} reads the rotor angle $\theta$ of the closure as the spin angle of a rigid body turning about an axis normal to its
-orbital plane, measured from the line to the primary, $h$ as its spin angular momentum and $I_0$ as its moment of inertia $C$ about that axis.
+orbital plane, measured from the line to the primary, and $I_0$ as its moment of inertia $C$ about that axis. The rotor momentum $h=I_0\dot\theta$
+is then the spin angular momentum relative to the rotating line to the primary; the spin angular momentum itself is $h+Cn$ on a circular
+orbit of mean motion $n$, and $h+C\dot f$ on an eccentric one, with $f$ the true anomaly.
 \end{enumerate}
 \end{definition}
 
@@ -1635,11 +1664,12 @@ force at a focus, and its period scales as $a^{3/2}$.
 $(e_1,e_4)$. The Euclidean rotation of that plane carries solutions to solutions but does not leave the Lagrangian invariant. The conserved
 energy $\tfrac m2[(\dot x^2+\kappa^2x^2)-(\dot y^2+\kappa^2y^2)]$ is indefinite.
 \item The arena's complex invariant $q(z)=z\cdot z$, which is $z^2$ in one plane, carries the orbit $z=c_-e^{-i\kappa\tau}+c_+e^{i\kappa\tau}$ onto an
-ellipse with one focus at the origin, the other at $4c_-c_+$, semi-major axis $a_K=|c_-|^2+|c_+|^2$ and eccentricity $2|c_-||c_+|/a_K$. With the new
-time $dt=\lambda|z|^2d\tau$, $\lambda>0$, the image $Q(t)=z(\tau)^2$ solves
+ellipse with one focus at the origin, the other at $4c_-c_+$, semi-major axis $a_K=|c_-|^2+|c_+|^2$ and eccentricity $2|c_-||c_+|/a_K$. Away from
+collisions, $z\neq0$, and with the new time $dt=\lambda|z|^2d\tau$, $\lambda>0$, the image $Q(t)=z(\tau)^2$ solves
 \[
 \frac{d^2Q}{dt^2}=-\mu_K\frac{Q}{|Q|^3},\qquad \mu_K=\frac{4\kappa^2a_K}{\lambda^2},\qquad E_K=-\frac{2\kappa^2}{\lambda^2} .
 \]
+For $|c_-|=|c_+|$ the orbit passes through the origin, and its image, of eccentricity one, is a regularised collision orbit.
 \item The coupling $\mu_K$ depends on the orbit: at fixed $\lambda$ the images form a family of Kepler problems of one energy, one coupling per
 orbit, not one Kepler problem with its family of orbits. Beyond one plane the image of an orbit is an ellipse with foci
 $2c_-\cdot c_+\pm2\bigl((c_-\cdot c_-)(c_+\cdot c_+)\bigr)^{1/2}$. The origin is a focus only when $(c_-\cdot c_+)^2=(c_-\cdot c_-)(c_+\cdot c_+)$. For
@@ -1681,8 +1711,8 @@ circular-orbit equation \eqref{eq:spinorbit}. Its stable point $\psi=\pi$ is $\g
 \cref{cl:omega} is the libration frequency $\bigl(3(GM/a^3)(B-A)/C\bigr)^{1/2}$. The librating solutions are synchronous rotation with a libration,
 and the rotating ones are non-synchronous spin with a modulated rate.
 \item $R_0=0$ and duality-class inertia, under which the rotor decouples from the frame, correspond to $B=A$, under which the spin decouples from
-the orbit. The closure conserves $J_s=h+p_s^{\!\top}Gx$ while $h$ varies, as the full two-body problem conserves the sum of spin and orbital angular
-momentum.
+the orbit. The closure conserves $J_s=h+p_s^{\!\top}Gx$ while $h$ varies, as the full two-body problem conserves the sum of the spin angular
+momentum $h+Cn$ and the orbital angular momentum.
 \item The correspondence holds only on the circular orbit. On an eccentric orbit the spin--orbit equation is not autonomous: at $e=0.2$ the
 resonance strengths are $H_{1/2}(e)=-0.0995$, $H_1(e)=0.9013$, $H_{3/2}(e)=0.6397$ and $H_2(e)=0.3101$, against $H_j(0)=\delta_{j,1}$. The
 duality pendulum is autonomous and has one family of equilibria.
@@ -1703,8 +1733,9 @@ the closure from the inertia and the rest energy of the momentum field, $R_0=2|\
 orbit. In the closure the angular momentum $h$ is exchanged with the frame, whose motion is the drift of \cref{thm:freedrift}, a translation in
 $\R^{3,3}$ and not an orbit. Two numerical runs make the boundary visible (\cref{tab:numerics}, \cref{fig:orbital}). On a circular orbit the
 spin--orbit angle and the rotor of the closure, integrated independently from corresponding data, agree to $5.1\times10^{-10}$ rad over $50$ orbits
-(rb3-12). On an orbit of eccentricity $0.2$, a body started at pericentre with spin rate $1.52\,n$ is captured in the $3{:}2$ resonance, with mean
-spin rate $1.49988\,n$ over orbits $200$ to $1000$. The duality pendulum with the same initial data keeps its own mean rate $1.51855\,n$, which is the
+(rb3-12). On an orbit of eccentricity $0.2$, a body started at pericentre with spin rate $1.52\,n$ librates in the $3{:}2$ resonance for these
+initial data, with mean spin rate $1.49988\,n$ over orbits $200$ to $1000$; the model has no tidal dissipation, so this is libration, not
+capture. The duality pendulum with the same initial data keeps its own mean rate $1.51855\,n$, which is the
 closed-form value for the circular orbit (rb3-13).
 
 \subsection{Numerical examples}
@@ -1713,7 +1744,7 @@ closed-form value for the circular orbit (rb3-13).
 \Cref{tab:numerics} collects the numerical runs of this chapter: each tests an equivalence or its failure. Units are dimensionless. The orbital
 runs take $GM=a=1$, so that the mean motion is $n=1$ and the orbital period $2\pi$; the closure takes $m=I_0=1$. The solver is the explicit
 Runge--Kutta method DOP853 of order eight \cite{HairerNorsettWanner93}, as implemented in SciPy \cite{Virtanen2020}, with the tolerances shown.
-The environment is recorded with the run outputs in \path{reproducibility/selected-results/v1.0.0/} (Python 3.13, NumPy 2.5, SciPy 1.18), and the
+The environment is recorded with the run outputs in \path{reproducibility/selected-results/v1.0.1/} (Python 3.13, NumPy 2.5, SciPy 1.18), and the
 checks are listed in \cref{app:manifest}. The commands are
 \texttt{python3} \path{verification/ch04_rigid_body/rb2_es_map.py} and \texttt{python3} \path{verification/ch04_rigid_body/rb3_orbital.py} \texttt{-{}-write-data}, which also writes
 the data of \cref{fig:orbital}(b).
@@ -1728,7 +1759,7 @@ rb2-15 & closure, $\nu=1+\tfrac i2$; $\theta=0$, $h=1.1$, $p=(1,0.3,-0.2,0.1,0.4
 rb3-10 & Kepler, $\mu=a=1$, $e=0.5$, pericentre; $100$ periods & $10^{-12}$ & $E$: $4.5\times10^{-10}$; $|\mathbf L|$: $1.6\times10^{-10}$; $\mathbf A$: $1.9\times10^{-10}$ & return to pericentre within $3.3\times10^{-7}$; no apsidal precession\\
 rb3-11 & interior orbit $(c_-,c_+)=(1,\tfrac25)$, $\kappa=\lambda=1$, with $dt=\lambda|z|^2d\tau$; Kepler orbit, $\mu_K=4.64$, of its image; $10$ periods & $10^{-12}$ & -- & images agree to $2.5\times10^{-9}$; $\tau=10\pi$ is $t=10\times2\pi(a_K^3/\mu_K)^{1/2}$\\
 rb3-12 & spin--orbit, $e=0$, $(B-A)/C=0.01$, $\gamma(0)=0.5$, $\dot\gamma(0)=0$; closure, $N=0.015\,\eta^{-1}$, $p_0=e^1$; $50$ orbits & $10^{-11}$ & closure $H$: $1.1\times10^{-12}$ & angles agree to $5.1\times10^{-10}$ rad (libration)\\
-rb3-13 & spin--orbit, $e=0.2$, $(B-A)/C=10^{-3}$, $\theta(0)=f(0)=0$, $\dot\theta(0)=1.52\,n$; closure from the same data; $1000$ orbits & $10^{-11}$ & orbital energy: $4.0\times10^{-8}$ & spin--orbit captured at $3{:}2$, mean rate $1.49988\,n$; closure $1.51855\,n$ (closed form $1.51855\,n$)\\
+rb3-13 & spin--orbit, $e=0.2$, $(B-A)/C=10^{-3}$, $\theta(0)=f(0)=0$, $\dot\theta(0)=1.52\,n$; closure from the same data; $1000$ orbits & $10^{-11}$ & orbital energy: $4.0\times10^{-8}$ & spin--orbit librates in $3{:}2$, mean rate $1.49988\,n$; closure $1.51855\,n$ (closed form $1.51855\,n$)\\
 \bottomrule
 \end{tabular}
 \caption{Numerical runs of \cref{sec:esmap,sec:orbital}: DOP853, relative and absolute tolerance as shown, dimensionless units with $GM=a=1$ for the
@@ -1751,7 +1782,7 @@ orbits and $m=I_0=1$ for the closure. Drifts are maximal deviations over the run
 \end{axis}
 \begin{axis}[at={(left.north east)},anchor=north west,xshift=1.8cm,width=7.0cm,height=5.4cm,xmin=0,xmax=200,ymin=1.47,ymax=1.565,
   xlabel={orbits $t/2\pi$},ylabel={spin rate$/n$},
-  title={\small (b) $e=0.2$: captured and not captured},
+  title={\small (b) $e=0.2$: libration in $3{:}2$ and not},
   legend style={font=\scriptsize,at={(0.98,0.97)},anchor=north east,draw=none,fill=white,fill opacity=0.8,text opacity=1},legend cell align=left]
 \addplot[scol,thick] table[x index=0,y index=1] {figures/ch04/spinrate_so.dat};
 \addplot[tcol,thick] table[x index=0,y index=1] {figures/ch04/spinrate_es.dat};

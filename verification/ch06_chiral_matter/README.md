@@ -4,11 +4,11 @@ These scripts were written in Phase 3 (1 November 2026). They adjudicate the COR
 audit. They do not import any other verification script. Each prints one `PASS` or `FAIL` line per check and exits 0 iff all pass.
 
 ```bash
-python3 verification/core/z3_core.py
+python3 verification/ch06_chiral_matter/z3_core_structures.py
 ```
 
 ```bash
-python3 verification/core/z4_invariants.py
+python3 verification/ch07_mass_vacuum/z4_invariant_counts.py
 ```
 
 | script | checks | what it tests | review items |
@@ -22,3 +22,13 @@ python3 verification/core/z4_invariants.py
 planned for the Phase 9 verification package.
 
 The outputs of the Phase 3 runs are in `reproducibility/phase3_runs/`.
+
+## Corrections audit (v1.0.1)
+
+```bash
+python3 verification/ch06_chiral_matter/a10_chiral_certificates.py
+```
+
+a10-1 to a10-3, exact (about 30 minutes): the 23-generator basis of thm:PSalg and its completeness (every internal bivector blade commutes or
+anticommutes with each involution of P_*), the centre and derived-algebra dimensions of every row of thm:table, and the colour volume, not
+the quadratic Casimir, as the invariant that distinguishes 4 from 4bar in cor:PSfamily.
