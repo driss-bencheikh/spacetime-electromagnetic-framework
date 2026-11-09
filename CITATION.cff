@@ -11,6 +11,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.23900465"
     description: "DOI of version 1.0.0"
+  - type: url
+    value: "https://hal.science/hal-05858096"
+    description: "HAL deposit of version 1.0.1 (hal-05858096)"
 license:
   - CC-BY-4.0
   - MIT
