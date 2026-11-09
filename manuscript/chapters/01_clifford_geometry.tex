@@ -1,9 +1,11 @@
 \chapter{Split-Signature Clifford Geometry}
 \label{ch:ch01_clifford}
 
-This chapter fixes the algebra and makes no physical reading. We work with the real Clifford algebra $\Cl(3,3)\cong M_8(\R)$ of
-$\R^{3,3}$ in an explicit realisation, with the blade rules and the signature rule, which separates compact bivectors from boosts. The
-trace form on an orbit splits by the Cartan involution (\cref{thm:ghost}); this decides the sign of every kinetic term later on. The
+This chapter fixes the algebra and makes no physical reading, with two forward references: \cref{r3:prop:clock} uses the Fisher--Rao clock
+of \cref{ch:ch02_lorentz}, and \eqref{r3:eq:Xfock} writes a vector in the electric and magnetic components of \cref{ch:ch03_readings}. We work
+with the real Clifford algebra $\Cl(3,3)\cong M_8(\R)$ of $\R^{3,3}$ in an explicit realisation, with the blade rules and the signature rule,
+which separates compact bivectors from boosts. The trace form on an orbit splits by the Cartan involution (\cref{thm:ghost}); for actions built
+on this trace metric, this decides the sign of the kinetic terms later on. The
 spinor module is then described as the forms on a null three-plane, with its octants and Fock grading, and the tower $\Cl(3n,3n)$ is
 defined. Every statement is algebra, proved in the text and checked exactly (\cref{app:manifest}). \Cref{ch:ch02_lorentz} introduces
 the Lorentz structures and the clock; \cref{ch:ch03_readings} the two readings of a vector of the arena.
@@ -33,7 +35,7 @@ e_4&=\varepsilon\otimes\id\otimes\id, & e_5&=\sigma_z\otimes\varepsilon\otimes\i
 with $\sigma_x=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$,
 $\sigma_z=\left(\begin{smallmatrix}1&0\\0&-1\end{smallmatrix}\right)$ and
 $\varepsilon=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right)$. All six matrices are signed permutation
-matrices. For a subset $I=\{a_1<\dots<a_r\}$ we write $e_I=e_{a_1}\cdots e_{a_r}$ for the corresponding blade of grade $r$;
+matrices. For a subset $I=\{a_1<\dots<a_r\}$ we write $e_I=e_{a_1}\cdots e_{a_r}$ for the corresponding coordinate blade of grade $r$;
 the $64$ blades form a basis of $M_8(\R)$.
 
 The tower is built by graded tensor products. At $n$ constituents the spinor module is $S_n=(\R^8)^{\otimes n}$ and the
@@ -52,17 +54,17 @@ Two elementary rules carry most of the finite-dimensional arguments of this pape
 
 \begin{lemma}[Blade rules]
 \label{lem:blade}
-For blades $e_I,e_J$ of grades $|I|,|J|$,
+For coordinate blades $e_I,e_J$ of grades $|I|,|J|$,
 \begin{equation}
 \label{eq:bladecomm}
 e_Ie_J=(-1)^{|I||J|-|I\cap J|}\,e_Je_I ,
 \end{equation}
-and for a blade $B$ of grade $r$
+and for a coordinate blade $B$ of grade $r$
 \begin{equation}
 \label{eq:transpose}
 B^{\!\top}=(-1)^{r(r-1)/2}\Bigl(\prod_{a\in I}\eta_{aa}\Bigr)B=B^2B .
 \end{equation}
-In particular a blade is antisymmetric if and only if it squares to $-\id$, and symmetric if and only if it squares to $+\id$.
+In particular a coordinate blade is antisymmetric if and only if it squares to $-\id$, and symmetric if and only if it squares to $+\id$.
 \end{lemma}
 
 \begin{proof}
@@ -86,7 +88,7 @@ rotation $e_1e_2$ share the index $1$, $|I||J|-|I\cap J|=4-1=3$ is odd, and they
 \subsection{The signature rule}
 \label{sec:sigrule}
 
-\begin{theorem}[Gauging versus grading]
+\begin{theorem}[The signature rule for coordinate bivectors]
 \label{thm:sig}
 For $a\neq b$, $(e_ae_b)^2=-e_a^2e_b^2$. A bivector therefore squares to $-\id$ when its two directions have the same
 sign and to $+\id$ when they have opposite signs, and by \cref{lem:blade} the first kind are exactly the antisymmetric
@@ -94,17 +96,24 @@ bivectors. The three time--time and three space--space bivectors span the maxima
 $\so3\oplus\so3\subset\so{3,3}$, and the nine mixed bivectors are boosts.
 \end{theorem}
 
-\begin{corollary}[No gauge boson is a boost]
+\begin{corollary}[A mixed bivector generates no compact $U(1)$]
 \label{cor:noboost}
 For a mixed bivector $B$, $\exp(\theta B)=\cosh\theta\,\id+\sinh\theta\,B$ generates $\R$ and not $U(1)$: it carries no
 phase and defines no compact charge.
 \end{corollary}
 
-The title is used throughout in this sense: for Yang--Mills fields with a positive-definite kinetic metric on the gauge algebra, which requires a
-compact real form (inherited), a boost cannot carry a gauge field. The corollary does not exclude non-compact gauge algebras in theories that accept
-an indefinite kinetic metric, at the price of ghosts.
+The obstruction to a boost as a gauge generator lies in its action on the module, not in the kinetic metric of the gauge field. For an
+abelian algebra that metric decides nothing: on $\R B$ every scalar product is invariant, and $A_\mu=a_\mu B$ has the ordinary, healthy
+abelian kinetic term. What fails is unitarity. No positive-definite $H$ on $S$ satisfies $B^{\!\top}H+HB=0$, since an eigenvector $Bv=\pm v$
+would give $v^{\!\top}Hv=0$. A boost is therefore not unitary for any fixed positive form on the module, and the gauge form $-\Tr$ has the
+wrong sign on it. Relative to the chosen positive matter metric $H$, we call an internal generator $X$ \emph{gauge-admissible} when
+$X^{\!\top}H+HX=0$; in the orthonormal realisation used here, $H=\id$, this is $X^{\!\top}=-X$, that is, $X$ is compact. This is the sense in which the corollary is used later (\cref{e1:thm:Nrule}, \cref{ch:ch09_bfield,ch:ch13_compatibility}),
+and the conclusions drawn there hold under it. Allowing an indefinite invariant matter form removes this positive-metric obstruction.
+Whether physical ghosts then occur depends on the chosen action and its constraint reduction (an invariant constraint can remove the
+negative direction); an unconstrained quadratic kinetic term with propagating negative-sign directions is unacceptable. The present model
+therefore imposes a fixed positive matter metric and restricts its internal gauge generators accordingly.
 
-The criterion that matters for a gauge generator is antisymmetry with respect to the positive form that a kinetic term
+The criterion that matters for a gauge generator is antisymmetry with respect to the positive form on the module that a kinetic term
 supplies, equivalently membership of the $+1$ eigenspace of the Cartan involution $\theta(X)=-X^{\!\top}$
 \cite{Knapp,Helgason}. For a single blade this coincides with $X^2=-\id$ by \eqref{eq:transpose}, which is why the rule is
 decisive for bivectors. For general elements it is not: $\operatorname{diag}(J_2,2J_2)$, with $J_2$ the standard $2\times2$
@@ -150,7 +159,8 @@ rotation generator, generates a group of period $2\pi$ although its square is $\
 \caption{The fifteen bivectors $e_ae_b$, $a<b$, of $\Cl(3,3)$. Blue cells pair two directions of the same sign and generate
 compact rotations; red cells pair a temporal with a spatial direction and generate boosts (\cref{thm:sig}). The diagonal of
 the red block holds the three pole operators, which grade the algebra (\cref{prop:grading}); the cell $(2,3)$ holds the
-bivector $J$ that will become the electromagnetic charge and the imaginary unit.}
+bivector $J$, the compact rotation that commutes with the interior Lorentz algebra (\cref{prop:6plus8plus1}) and is used as the imaginary unit
+in \cref{ch:ch02_lorentz}. It is not identified with electromagnetism: the electromagnetic generator is constructed in \cref{ch:ch08_photon}.}
 \label{fig:bivectors}
 \end{figure}
 
@@ -162,8 +172,10 @@ The mixed bivectors are not idle. The three \emph{pole operators}
 \[
 \omega_i:=e_ie_{i+3}\qquad(i=1,2,3)
 \]
-are boosts, so $\omega_i^2=+\id$, and they commute pairwise by \eqref{eq:bladecomm}, since any two share no index. Square
-$-\id$ gauges and square $+\id$ grades, and no bivector does both.
+are boosts, so $\omega_i^2=+\id$, and they commute pairwise by \eqref{eq:bladecomm}, since any two share no index. As operators on $S$ the
+two kinds of bivector differ: one of square $-\id$ is a complex structure, while each $\omega_i$ has real $\pm1$ eigenspaces, which grade the
+module. By conjugation on the algebra either kind induces an involution: conjugation by $J=e_2e_3$, of square $-\id$, has $\pm1$ eigenspaces of
+dimension $32$ each.
 
 \begin{proposition}[A $\Z_2^3$ grading of $\Cl(3,3)$]
 \label{prop:grading}
@@ -194,25 +206,28 @@ $\so{3,3}$.
 
 The three characters are grading weights, not metric signatures: $e_1$ and $e_4$ carry the same weight and opposite squares,
 so nothing in the grading tells a temporal from a spatial direction. The decomposition in (iii) is the root decomposition of
-$\slr{4,\R}$ with respect to a split Cartan subalgebra, grouped by the root lattice modulo two; gradings of Clifford and
+$\slr{4,\R}$ with respect to a split Cartan subalgebra, grouped by the coordinate parity of the roots, $Q(D_3)/2\Z^3$, a group of order four
+(not the root lattice modulo twice itself, $Q(D_3)/2Q(D_3)$, which has order eight); gradings of Clifford and
 classical Lie algebras by $\Z_2^n$ are well known \cite{MosnaMirallesVaz}, and we use this one because the pole operators will
-reappear in the field-strength reading as the six planes $(e_i,e_{i+3})$ that carry one complex component each.
+reappear in the field-strength reading as the three paired planes $(e_i,e_{i+3})$, $i=1,2,3$, that carry one complex component each.
 
 \begin{example}[The paired-mode projector]
 \label{ex:pairedmode}
-Let $\varpi=\omega_1+\omega_2+\omega_3$ be the sum of the pole operators and $\mathcal V=e_1e_2\cdots e_6$. On the joint
-eigenline of signs $(\varepsilon_1,\varepsilon_2,\varepsilon_3)$, $\varpi=\varepsilon_1+\varepsilon_2+\varepsilon_3\in\{3,1,-1,-3\}$
+Let $\varpi=\omega_1+\omega_2+\omega_3$ be the sum of the pole operators and $\omega=e_1e_2\cdots e_6$ the volume element of
+\eqref{eq:tower}. On the joint eigenline of signs $(\varepsilon_1,\varepsilon_2,\varepsilon_3)$, $\varpi=\varepsilon_1+\varepsilon_2+\varepsilon_3\in\{3,1,-1,-3\}$
 with multiplicities $1,3,3,1$. Reordering $\omega_1\omega_2\omega_3=e_1e_4e_2e_5e_3e_6$ into $e_1\cdots e_6$ costs three
-transpositions, so $\mathcal V=-\varepsilon_1\varepsilon_2\varepsilon_3$ on that line. Hence $\tfrac12(\varpi+\mathcal V)$ takes the
+transpositions, so $\omega=-\omega_1\omega_2\omega_3=-\varepsilon_1\varepsilon_2\varepsilon_3$ on that line. Hence $\tfrac12(\varpi+\omega)$ takes the
 values $1,1,-1,-1$ on the four strata: it is the sign of $\varpi$, and equals the polynomial $(13\varpi-\varpi^3)/12$.
 The operator
 \begin{equation}
 \label{eq:Piclosed}
-\Pi:=\tfrac12\id-\tfrac14(\varpi+\mathcal V)
+\Pi:=\tfrac12\id-\tfrac14(\varpi+\omega)
 \end{equation}
 is therefore the orthogonal projector of rank four onto the strata with $\varpi<0$. We call it the paired-mode projector; it
 is a natural candidate for an observation projector at one constituent and we test it against the photon in
-\cref{sec:photon}.
+\cref{sec:photon}. It is not Lorentz invariant: of the six interior Lorentz generators $e_1e_4,e_1e_5,e_1e_6,e_4e_5,e_4e_6,e_5e_6$ only
+$e_1e_4$ commutes with $\Pi$ (the commutators have ranks $0,4,4,4,4,4$), and $[\Pi,J]$ has rank four. Its stabiliser in $\so{3,3}$ is
+nine-dimensional, a count of linear combinations, not of commuting basis bivectors.
 \end{example}
 
 % --- source: tex/s02_arena#5 (The interior four-plane and the surplus plane)
@@ -300,7 +315,7 @@ $a^+_{i_1}\cdots a^+_{i_r}|\mathrm{vac}\rangle=|b_I\rangle$ for $i_1<\dots<i_r$,
 $|\mathrm{full}\rangle:=|111\rangle$, of signs $(-,-,-)$ and $N=3$.
 \item The octant $\sigma$ is the pure spinor line of the maximal isotropic plane $N_\sigma:=\operatorname{span}\{e_i-\sigma_ie_{i+3}\}$: the
 vectors $v\in V$ with $v|b\rangle=0$ are exactly those of $N_\sigma$.
-\item $\Gamma=-\omega_1\omega_2\omega_3$, so $(-1)^N=\omega_1\omega_2\omega_3=-\Gamma$, which is the chirality $\gamma_5$ of \cref{sec:discrete}; on the octant with $w=3-N$ plus signs $\Gamma=(-1)^w$.
+\item $\Gamma=\omega=-\omega_1\omega_2\omega_3$, so $(-1)^N=\omega_1\omega_2\omega_3=-\Gamma$; the element $\Gamma$ is, up to the sign fixed by the choice $i=\pm J$, the chirality $\gamma_5$ of \cref{sec:discrete}. On the octant with $w=3-N$ plus signs, $\Gamma=(-1)^w$.
 \end{enumerate}
 \end{proposition}
 
@@ -315,7 +330,7 @@ factors $(-1)^{b_1+\dots+b_{i-1}}$ taken while all bits before $i$ are still zer
 costs three transpositions (\cref{ex:pairedmode}).
 \end{proof}
 
-All five items are restated from \cref{sec:arena} or fixed here (r3-1, r3-2, r3-3). Item (v) gives $I=-\omega_1\omega_2\omega_3$ with eigenvalue $(-1)^w$, where the temporal weight $w=3-N$ counts plus signs.
+All five items are restated from \cref{sec:arena} or fixed here (r3-1, r3-2, r3-3). Item (v) gives $\Gamma=-\omega_1\omega_2\omega_3$ with eigenvalue $(-1)^w$, where the temporal weight $w=3-N$ counts plus signs. The element $\omega=e_1\cdots e_6$ of \eqref{eq:tower}, the $\Gamma$ of (v) and of \cref{thm:i}, and the volume element used in \cref{ex:pairedmode} are one and the same.
 
 \begin{proposition}[The octant group]
 \label{r3:prop:octgroup}
@@ -332,7 +347,7 @@ it acts through $\Z_2^3$, simply transitively.
 $\Cl(3,3)\cong M_8(\R)$ is central simple, so every automorphism is inner and its implementing element is unique up to a real factor
 (Skolem--Noether). Since $\omega$ anticommutes with every generator, $g_ae_bg_a^{-1}=-e_ae_be_a^{-1}$, which is $-e_b$ for $b=a$ and $e_b$
 otherwise. Hence $g_a\omega_ig_a^{-1}=R_a(e_i)R_a(e_{i+3})$. Further $g_i^2=-e_i^2\omega^2=-\id$, and $g_ig_j=-e_ie_j$ anticommutes with
-$g_jg_i=-e_je_i$. Moving $g_i$ past the other two lifts costs two signs, so $g_1g_2g_3=-T\omega=e_4e_5e_6$ commutes with every $g_i$; it is
+$g_jg_i=-e_je_i$. Moving $g_i$ past the other two lifts costs two signs, so $g_1g_2g_3=-e_1e_2e_3\,\omega=e_4e_5e_6$ commutes with every $g_i$; it is
 not $\pm\id$, and it reverses all three signs. The images of $|\mathrm{vac}\rangle$ under the eight sign classes are the eight octants
 (r3-4, r3-5).
 \end{proof}
@@ -347,9 +362,11 @@ For a dimensionless $x\in V^+$ the conversion operator of \cref{thm:spectrumBC} 
 $B_x=\sum_ix_ie_ie_{i+3}=\sum_ix_i\omega_i$. It has eigenvalue $\sum_i\sigma_ix_i$ on the octant $\sigma$; if no $x_i$ vanishes, its unique top
 eigenline is the octant $\operatorname{sign}(x)$; and $g_iB_xg_i^{-1}=B_{R_ix}$. The Fisher--Rao octant of clocks of \cref{sec:clocksimplex},
 the closed positive octant $x_i=2\sqrt{w_i}\ge0$ of the sphere of radius two, therefore corresponds to the Fock vacuum: for $x$ in its
-interior the top eigenline of $B_x$ is $|\mathrm{vac}\rangle$, and for the symmetric clock $B_{\widehat W}=\varpi/\sqrt3$ has top eigenvalue
-$\sqrt3$ on $|\mathrm{vac}\rangle$. The weights $w_i=x_i^2/4$ do not see the signs of the amplitudes: the eight octants of the clock sphere are
-the eight lifts of the clock simplex, which is their quotient by the octant group.
+interior the top eigenline of $B_x$ is $|\mathrm{vac}\rangle$. At the symmetric point the radius-two coordinates $x_i=2/\sqrt3$ give
+$B_x=2\varpi/\sqrt3$, twice the unit clock $B_{\widehat W}=\varpi/\sqrt3$, whose top eigenvalue $\sqrt3$ lies on $|\mathrm{vac}\rangle$; the top
+eigenspaces agree. The weights $w_i=x_i^2/4$ do not see the signs of the amplitudes, and the clock simplex is the quotient of the clock sphere by
+the octant group. The quotient has boundary stabilisers: if $k$ coordinates of $x$ vanish, the top eigenspace of $B_x$ has dimension $2^k$
+($8$ at $x=0$), and a point on such a face of the simplex has $2^{3-k}$ preimages. The map is not an eight-sheeted covering.
 \end{proposition}
 
 \begin{proof}
@@ -370,7 +387,7 @@ physically, the correspondence is interpretive.
 \label{r3:prop:fock}
 $L:=\operatorname{span}\{e_i+e_{i+3}\}$ and $L':=\operatorname{span}\{e_i-e_{i+3}\}$ are maximal isotropic, transverse, and dual to each other
 under $\eta$. The map $\Lambda^r(L)\to S$, $\ell_1\wedge\dots\wedge\ell_r\mapsto2^{-r}\ell_1\cdots\ell_r|\mathrm{vac}\rangle$, is an isomorphism
-$\Lambda^*(L)\cong S$ carrying the degree to $N$, with $\dim\Lambda^w=1,3,3,1$ for $w=N=0,1,2,3$: the weights of the octants. Writing
+$\Lambda^*(L)\cong S$ carrying the degree to $N$, with $\dim\Lambda^r=1,3,3,1$ for $r=N=0,1,2,3$: the weights of the octants. Writing
 $X=X_L+X_{L'}$, a vector acts as exterior multiplication by $2X_L$ plus contraction with the form $\eta(X_{L'},\cdot)$ on $L$,
 \begin{equation}
 \label{r3:eq:Xfock}
@@ -399,10 +416,12 @@ The module $\Lambda^*(L)$ is shared; the physical identification is not.
 
 \begin{proposition}[The commutant of the grading root]
 \label{r3:prop:gl3}
-The elements of $\so{3,3}$ commuting with $\cK$ form a subalgebra of dimension nine, the adjoint image of the bivectors
+The elements of $\so{3,3}$ commuting with the grading root $\cK=\tfrac12\ad_{\varpi}|_V$ (\cref{prop:twoK}) form a subalgebra of dimension nine, the adjoint image of the bivectors
 $E_{ij}:=a^+_ia^-_j-\tfrac12\delta_{ij}\id$ (so $E_{ij}=a^+_ia^-_j$ for $i\neq j$ and $E_{ii}=-\tfrac12\omega_i$). They commute with $N$; $\ad E_{ij}$ acts
 on $L$ by the matrix unit $e_{ij}$ and on $L'$ by $-e_{ji}$, so the subalgebra is $\mathfrak{gl}(L)\cong\mathfrak{gl}(3,\R)$; and the spin lift of
-$A\in\mathfrak{gl}(3)$ acts on $\Lambda^w(L)$ as $\Lambda^w(A)-\tfrac12\tr A$. As a $\mathfrak{gl}(3)$-module, $S\cong\Lambda^*(L)\otimes(\det L)^{-1/2}$.
+$A\in\mathfrak{gl}(3)$ acts on $\Lambda^r(L)$ as $d\Lambda^r(A)-\tfrac12\tr A$, where $d\Lambda^r(A)$ is the derived action, extending $A$ to
+$\Lambda^r(L)$ as a derivation (for $A=\id$ the eigenvalue on degree $r$ is $r-\tfrac32$). On $GL^+(L)$ the integrated action is
+$\rho(g)=(\det g)^{-1/2}\Lambda^*(g)$. As a $\mathfrak{gl}(3)$-module, $S\cong\Lambda^*(L)\otimes(\det L)^{-1/2}$.
 \end{proposition}
 
 \begin{proof}
@@ -414,18 +433,18 @@ $[a^+_ia^-_j,a^-_k]=-\delta_{ik}a^-_j$, and $a^+_ia^-_j$ acts on $a^+_K|\mathrm{
 \end{proof}
 
 The statement is standard (Example~2.12 of \cite{Gualtieri03} gives $\Lambda^*V^*\otimes(\det V)^{1/2}$ with $V^*$ in the role of $L$); it is fixed
-here in the realisation. It shows that $\mathfrak{gl}(3)$ does not act on $\Lambda^w$ as the bare exterior power: the density factor
-$-\tfrac12\tr A$, the same on all weights, is part of the spin representation.
+here in the realisation. It shows that $\mathfrak{gl}(3)$ does not act on $\Lambda^r$ by the bare derived action: the density factor
+$-\tfrac12\tr A$, the same on all degrees, is part of the spin representation.
 
 \subsection{The trace form splits by the Cartan involution}
 \label{sec:cartansplit}
 
 \begin{theorem}[The trace form splits by the Cartan involution]
 \label{thm:ghost}
-Let $P=P^{\!\top}=P^2$, let $B$ be a bivector and $T=[B,P]$. Then $T^{\!\top}=PB^{\!\top}-B^{\!\top}P$, and
+Let $P=P^{\!\top}=P^2$, let $B$ be a bivector and $\Delta=[B,P]$. Then $\Delta^{\!\top}=PB^{\!\top}-B^{\!\top}P$, and
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item if $B$ is compact, $B^{\!\top}=-B$, then $T$ is symmetric and $\Tr(T^2)=\Tr(T^{\!\top}T)>0$ unless $T=0$;
-\item if $B$ is a boost, $B^{\!\top}=B$, then $T$ is antisymmetric and $\Tr(T^2)=-\Tr(T^{\!\top}T)<0$ unless $T=0$.
+\item if $B$ is compact, $B^{\!\top}=-B$, then $\Delta$ is symmetric and $\Tr(\Delta^2)=\Tr(\Delta^{\!\top}\Delta)>0$ unless $\Delta=0$;
+\item if $B$ is a boost, $B^{\!\top}=B$, then $\Delta$ is antisymmetric and $\Tr(\Delta^2)=-\Tr(\Delta^{\!\top}\Delta)<0$ unless $\Delta=0$.
 \end{enumerate}
 Symmetric and antisymmetric matrices are trace-orthogonal, so on an orbit the trace form is an orthogonal sum of a positive
 definite piece on the directions generated by compact bivectors and a negative definite piece on those generated by boosts. Only
@@ -433,8 +452,14 @@ the former are tangent to the manifold of orthogonal projectors.
 \end{theorem}
 
 \begin{proof}
-$T^{\!\top}=(BP-PB)^{\!\top}=PB^{\!\top}-B^{\!\top}P$, which is $T$ when $B^{\!\top}=-B$ and $-T$ when $B^{\!\top}=B$. The trace of the
+$\Delta^{\!\top}=(BP-PB)^{\!\top}=PB^{\!\top}-B^{\!\top}P$, which is $\Delta$ when $B^{\!\top}=-B$ and $-\Delta$ when $B^{\!\top}=B$. The trace of the
 product of a symmetric and an antisymmetric matrix vanishes. A curve of orthogonal projectors has symmetric velocity, so the
 antisymmetric directions leave that manifold.
 \end{proof}
+
+\Cref{thm:sig} and \cref{thm:ghost} classify bivectors relative to the fixed Cartan decomposition, compact meaning antisymmetric for the
+chosen positive form. A general element $X=X_a+X_s$ of $\so{3,3}$, split into antisymmetric and symmetric parts, gives a tangent to the
+manifold of orthogonal projectors exactly when $[X_s,P]=0$, so generators are to be counted modulo the stabiliser of $P$. The theorem fixes the
+sign of the trace form on an orbit; it fixes the sign of a kinetic term only for actions built on this trace metric, not that of an arbitrary
+action, spacetime contraction, constraint or propagator residue.
 

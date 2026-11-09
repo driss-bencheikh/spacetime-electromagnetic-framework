@@ -1,0 +1,38 @@
+PASS d6-0: conventions: tower at n=2 (12 anticommuting generators, eta_2 of signature (6,6)); G acts as i; w = q(z(pi)); E = eps(x)1_6 commutes with G_2, preserves eta_2; ad of (1/2)sum eta_aa e^(1)_a e^(2)_a is -E
+PASS d6-1a: n=1, Lorentz class: p^T N p/2 = Re(nu w(p))/(2m) (exact); with nu != 0 a constant nonzero rate forces w(p0) = 0, i.e. E0(pi) = 0 (Cor. 17.14 of ES17)
+PASS d6-1b: n>=2: Sum c_k w_k = 0 is a smooth codim-2 set away from 0 (dF of real rank 2 at random points, n=1,2,3), the all-null part has dim 4n < 6n-2, so massive balanced data are open dense in it; at n=1 it is the null cone
+PASS d6-1c: the Lorentz requirement is essential: n=1 with the non-Lorentz anticommuting N=diag(1,-1,0,-1,1,0), p0=e^1+e^2 (E0(pi)=1): rate constant to 0.0e+00, frame bounded (max |x| = 1.286)
+PASS d6-2a: equal inertias, p2=-Gp1 (E0(pi^(k))=4.953 each): |h-h0| <= 1.6e-14 on [0,60], frames on the closed-form circles to 3.9e-12
+PASS d6-2b: equal inertias, generic balanced pair (a.b=0, a,b != 0; equal E0, unequal E6): |h-h0| <= 6.7e-14
+PASS d6-2c: unequal inertias (m=1, 2.5; nu=1+0.3i, 0.4-0.7i), z2 = rho Lambda z1: R_eff=1.1e-15, |h-h0| <= 1.4e-14, frames within their circles; |c1|E0^(1) = |c2|E0^(2)
+PASS d6-2d: off the balance surface (R_eff=0.0752, rotating, eps=0.093): theta agrees with I0 theta''=R_eff sin(2theta+phi_eff) to 1.9e-10; U = (R_eff/2)cos(2theta+phi_eff) to 3.5e-13, H to 7.4e-13, K_rot sweeps R_eff (to 1.2e-10); frame 1 drifts 0.1795 per half turn (x2, x4 after 2, 4)
+PASS d6-3: one rotor, generic copy-coupling Hamiltonian on s_2^*: per-copy E0, E6, S of pi^(k), the Hermitian Gram matrix and |Q_kl| constant to 2.2e-13; Q -> e^(2i theta) Q to 2.1e-13 (max |theta| = 1.76); H to 5.3e-12
+PASS d6-4a: equal inertias: with a=(z1-iz2)/2, b=(z1+iz2)/2, q1+q2 = 4 a.b and q1 = a.a+2a.b+b.b (exact): balance <=> a.b = 0, and then q2 = -q1, E0^(1) = E0^(2) = |a.a+b.b|/2
+PASS d6-4b: E G_2 = eps(x)G is an eta_2-antisymmetric involution (noncompact generator of so(2,C)); its eigenspaces V_pm = {X2 = pm G X1} are 6-dim and totally eta_2-null; E = -+G_2 on V_pm; pi in V_+ <=> p2 = -G p1 (exact)
+PASS d6-4c: p2=-Gp1: z2 = i z1, w2 = -w1, equal E6, S, E0, T(z2) = T(z1) (summed tensor 2T(z1)), so M_pair = 2E0 although q_tot = 0; for q1 > 0 (magnetic type) q2 < 0 (electric type)
+PASS d6-4d: unequal inertias: z2 = rho Lambda z1 (Lambda in SO(3,C), rho^2 = -c1/c2) is balanced, E0^(2)/E0^(1) = |c1/c2|
+PASS d6-4e: invariant symmetric forms on V_2^* (all of Lorentz class): 2 under Cent(G_2) cap so(6,6), 4 under lG^(1)+lG^(2), 6 under the diagonal lG_Delta (n=2 analogue of Thm 17.24)
+PASS d6-5a: commutant of lG_Delta: 8-dim in End(V_2), all commuting with G_2 (= M_2(C)(x)1_3); in so(6,6) it is span{E, EG_2} = so(2,C) = g(0,2,0) of Thm 10.8 (Prop. 13.14), compact part SO(2)_cop = {R_phi}
+PASS d6-5b: R_phi preserves H_sum = sum z_k z_k^dagger (hence every summed density sum_k T_k t), q_tot, det Q and the singular values of Q; it changes q_1, q_2
+PASS d6-5c: Stab_so(3,C)(null z) = C z and its fixed vectors are C z (exact): every lG_Delta-covariant map sends (z,0), q(z)=0, to two null constituents; A(x)1 (A in M_2(C)) checked; U(2)(x)1 keeps H_sum and sing(Q), moves q_tot; u(2) cap so(6,6) = R E (end of Sec. 13.5 of ES17)
+PASS d6-6a: exact: T(z1).T(z2) = |z1.z2|^2 and (T(z1)+T(z2))^2 = (1/4)||Q||_F^2 + T(z1 x z2) as mixed tensors, with (z1 x z2).(z1 x z2) = det Q
+PASS d6-6b: M_pair := inf_t |P_sum(t)| = (s1+s2)/2 (s_i singular values of Q), attained in the rest frame of z1 x z2 (1e-10); 300 random observers see more
+PASS d6-6c: max over the copy rotation of E0^(1)+E0^(2) = (s1+s2)/2 = M_pair (8 random pairs, rel. dev. 4.9e-16)
+PASS d6-6d: E6_tot >= |P_sum(t0)| >= M_pair >= E0^(1)+E0^(2), M_pair >= |q_tot|/2 (20 random pairs); two null fields: M_pair = |z1.z2| = sqrt(E6^(1)E6^(2))(1 - cos angle(S1,S2)); one null field and an empty copy: M_pair = 0
+PASS d6-7: exact: counter-propagating null fields (1,i,0),(1,-i,0) (S_sum=0, E6_tot=2, M_pair=|z1.z2|=2) -> R_(pi/4) -> pure electric (0,sqrt2 i,0) and pure magnetic (sqrt2,0,0), both at rest, q=-2,+2: E0^(1)+E0^(2) = M_pair = E6_tot = 2
+PASS d6-8: exact: the paired rotation of the e_1/e_4 directions of the two copies (compact, in Cent(G_2) cap so(6,6)) maps ((1,i,0),0) to ((cos,i,0),(sin,0,0)): q = -+sin^2, E6_tot = 1, q_tot = 0, S_sum = -cos(phi) e3, M_pair 0 -> |sin(phi)| (1 at phi = -pi/2); it does not commute with lG_Delta and lies in neither g(0,2,0) nor g(0,1,1) (dim 15)
+PASS d6-9a: Cent(G_2) cap so(6,6) has dim 30 (= so(6,C), n=2 analogue of Thm 17.19), compact part 15 (= so(6)); it preserves the equal Lorentz-class inertia, so it is a symmetry of the equal-inertia two-constituent closure
+PASS d6-9b: a compact symmetry of the equal-inertia closure (integer, det 1) maps the balanced pair (e1, i e1) (E0 = 1/2 each, M_pair = 1) to ((1,i,0), 0) (one null constituent, M_pair = 0) at the same E6_tot; random balanced pairs likewise (SO(6) is transitive on {q_tot = 0, |Z| = r})
+PASS d6-9c: the copy algebra g(0,2,0) preserves Lorentz-class inertias diag(c1,c2) exactly when c1 = c2 (dimension 2 at c1=c2, 0 at c2/c1 = 5/2, -1/6)
+PASS d6-10: spin lift of the copy rotation (Prop. 10.9 of ES17): U_(pi/2) = (1/8) prod_a (1 + eta_aa e^(1)_a e^(2)_a) is orthogonal, carries e^(1)_a to -+e^(2)_a and J^(1) <-> J^(2); U_(2pi) = +1; generator eigenvalues i{-3,...,3}
+PASS d6-11: interior with b = beta E: from (null,0) both copies stay null for every (kappa1,kappa2,beta); for kappa=(1,3), beta=0.4 the per-copy E0(pi^(k)) of a counter-propagating null pair oscillate as |r||U11 U12| (Rabi max 0.6897, E6_tot fixed); at kappa1=kappa2 the oscillation is the gauge rotation R_(-beta tau)
+PASS d6-12: a second rotor acting by E (lG_Delta-equivariant): with equal inertias h_c is conserved (1e-11), the summed momentum tensor, M_pair and |q_tot| are constant (1e-9) while the per-copy E0(pi^(k)) move; ((1,i,0),0) stays null-null
+PASS d6-13a: J^(1) = J(x)1 and J^(2) = 1(x)J exactly (the Klein factors cancel), commuting, both commuting with the 8 interior gammas; (J^(1)+J^(2))^2 = -4P, rank P = 32: Q_tot = -i(J^(1)+J^(2)) has spectrum {-2,0,2} with multiplicities 16,32,16
+PASS d6-13b: exact: Psi = psi (x) C phi (psi, phi particles at rest, C = e2 of Thm 5.1) has (Q1,Q2) = (+1,-1), Q_tot = 0, and two-particle energy -i(JH(x)1 + 1(x)JH) Psi = 2m Psi
+PASS d6-13c: C^(1)C^(2) = e^(1)_2 e^(2)_2 anticommutes with J^(1), J^(2) but squares to -1 (no state is mapped to +-itself); the Klein-corrected C(x)C = -omega^(1) C^(1)C^(2) squares to +1 and Psi_pm = psi(x)Cpsi +- Cpsi(x)psi have C(x)C = +-1, Q_tot = 0
+PASS d6-13d: the tower's mass terms anticommute: (e^(1)_1 + e^(2)_1)^2 = 2, spectrum m(e^(1)_1+e^(2)_1) = {+-sqrt2 m} (one particle, masses in quadrature); the two-particle m(e1(x)1 + 1(x)e1) = m(e^(1)_1 + omega^(1)e^(2)_1) has {-2m, 0, 2m} (16, 32, 16)
+PASS d6-13e: interior rotation generators of the two copies square to -1/4 (in units of Sigma) and commute: the diagonal rotation through 2pi is (-1)(-1) = +1 on S_2, integer spin of the pair (Prop. 10.9, k_I = 2)
+PASS d6-14a: two binding manifolds without b: Krein signature (3,3) at each rate kappa_k, zero-point energy sum_k (hbar kappa_k/2)(3-3) = 0 for unequal rates and masses (Thm 18.6 of ES17 per copy)
+PASS d6-14b: with b = beta E: lines mu_pm = (k1+k2)/2 +- sqrt((k1-k2)^2/4+beta^2), Krein (3,3) each, zero-point energy 0 (1e-8); seesaw line at (0,5,1/2): 0.0495097600 ~ beta^2/kappa2 = 0.05
+PASS d6-14c: exact (rationals): at beta^2 = kappa1 kappa2 with kappa1 != kappa2 (1,4,2) the lower line vanishes and M is not semisimple (Jordan block, linear growth; ker S^dagger is 6-dim and not eta_2-null); (1,4,1), (2,2,2), (1,3,2/5) semisimple
+all d6 claims verified

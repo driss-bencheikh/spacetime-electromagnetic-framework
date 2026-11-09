@@ -583,14 +583,12 @@ h = 0.674
 Oc_h2 = 0.120                                                # Planck 2018: Omega_c h^2 = 0.120 +- 0.001
 rho_dm = Oc_h2 / h ** 2 * rho_crit                           # kg/m^3, cosmic mean cold dark matter density
 u_dm_ev = rho_dm * C.c ** 2 / EV * CM3                       # eV/cm^3
-ratio_gal = table["galactic field 6 muG"][1] / EV * CM3 / u_dm_ev
 ratio_cmb = u0_cmb / (rho_dm * C.c ** 2)
-info(f"rho_dm = {rho_dm:.3e} kg/m^3 = {u_dm_ev:.4e} eV/cm^3; galactic 6 muG / rho_dm c^2 = {ratio_gal:.2e}; "
-     f"CMB <u0> / rho_dm c^2 = {ratio_cmb:.2e}")
-ok = 1.2e3 < u_dm_ev < 1.3e3 and ratio_gal < 1e-3 and ratio_cmb < 2e-4
-report("e7-26", ok, f"cosmic mean dark-matter energy density Omega_c h^2=0.120: {u_dm_ev:.0f} eV/cm^3; the local galactic "
-       f"field (6 muG) is {ratio_gal:.1e} of it and the CMB mean rest-energy density {ratio_cmb:.1e} "
-       "(arithmetic on cited inputs)")
+info(f"rho_dm = {rho_dm:.3e} kg/m^3 = {u_dm_ev:.4e} eV/cm^3; CMB <u0> / rho_dm c^2 = {ratio_cmb:.2e} (mean with mean)")
+ok = 1.2e3 < u_dm_ev < 1.3e3 and ratio_cmb < 2e-4
+report("e7-26", ok, f"cosmic mean dark-matter energy density Omega_c h^2=0.120: {u_dm_ev:.0f} eV/cm^3; the CMB mean rest-energy density is "
+       f"{ratio_cmb:.1e} of it (mean with mean). The local galactic field is compared with the local dark-matter density in z5-1 (local with local), "
+       "not with this cosmic mean; the comparison of version 1.0.0 between the two is superseded (arithmetic on cited inputs)")
 
 # ------------------------------------------------- Schwinger rate is not a function of the rest energy (e7-27)
 def schwinger_first(eps, beta):

@@ -98,21 +98,16 @@ Python~3 with \texttt{numpy}, \texttt{scipy}, \texttt{sympy} and \texttt{mpmath}
 per script, a summary and the software environment;
 \item \texttt{python3} \path{verification/tools/make_manifest.py} \texttt{-{}-runs} \path{<directory>} rebuilds \path{verification/MANIFEST.tsv} from
 the outputs; \path{verification/tools/coverage.py} maps statements to cited checks; \path{verification/tools/make_appendix_d.py} regenerates
-\cref{tab:theoremcode,tab:scripts}; and \path{verification/tools/make_reproducibility_index.py} writes \path{reproducibility/manifest.json} and
+the theorem-to-code table \path{verification/THEOREM_CODE.tsv} and the list of scripts \path{verification/SCRIPTS.tsv}; and \path{verification/tools/make_reproducibility_index.py} writes \path{reproducibility/manifest.json} and
 the indexes of exact and numerical checks in \path{reproducibility/selected-results/};
 \item the manuscript is built from \path{manuscript/} with \texttt{pdflatex}, \texttt{bibtex} and two further passes of \texttt{pdflatex} on
 \path{main.tex}.
 \end{itemize}\par}
-The run records of this version are in \path{reproducibility/selected-results/v1.0.0/}.
+The run records of this version are in \path{reproducibility/selected-results/v1.0.1/}; those of version 1.0.0 are kept in
+\path{reproducibility/selected-results/v1.0.0/}.
 
-\section{Theorem-to-code table}
-\label{app:repro:table}
-
-In \cref{tab:theoremcode} the column \emph{kind} is the environment; \emph{checks} lists the identifiers that test the statement (cited
-in its text, added by the audit, or related without citation); \emph{evidence} is \emph{exact}, \emph{numerical} or \emph{exact+numerical}
-when checks exist, and otherwise \emph{proof in text}, \emph{inherited}, \emph{conjecture} or \emph{argument in text}. The last means that the
-statement is argued in the surrounding text without a proof environment or a check; the final assessment lists these.
-
-\input{chapters/appendix_d_scripts}
-
-\input{chapters/appendix_d_table}
+The theorem-to-code table is kept in the repository, not printed: \path{verification/THEOREM_CODE.tsv} lists every labelled statement with
+its environment, the checks that test it (cited in its text, added by the audit, or related without citation) and its evidence, which is
+\emph{exact}, \emph{numerical} or \emph{exact+numerical} when checks exist and otherwise \emph{proof in text}, \emph{inherited}, \emph{conjecture}
+or \emph{argument in text} (argued in the surrounding text without a proof environment or a check). \path{verification/SCRIPTS.tsv} lists the
+scripts with their numbers of exact and numerical checks.

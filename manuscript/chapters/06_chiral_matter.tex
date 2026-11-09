@@ -44,7 +44,8 @@ closure forces $f^2=f$, that is $a^2+b^2=a$ and $2ab=b$, so $f\in\{0,\id,P_L,P_R
 % --- source: tex/s07_projectors#3 (A family of projectors at three constituents)
 \subsection{A family of projectors at three constituents}
 
-To obtain chiral matter one must project. At $n=3$ write $J^{(k)}=e^{(k)}_2e^{(k)}_3$ for the surplus bivector and
+For the undressed internal bivector action of \cref{prop:vectorlike,prop:axialtriple}, chiral matter requires a projection; with dressing and
+spectator states, \cref{thm:p1chiral} obtains a chiral interaction otherwise. At $n=3$ write $J^{(k)}=e^{(k)}_2e^{(k)}_3$ for the surplus bivector and
 $\omega^{(k)}=e^{(k)}_1\cdots e^{(k)}_6$ for the volume of constituent $k$, and $K^{(3)}_{14}=e^{(3)}_1e^{(3)}_4$ for the pole bivector
 joining the first temporal and the first spatial direction of constituent three. The three operators
 \[
@@ -96,6 +97,8 @@ Here a projector is axial when $P\gamma^\mu P=0$. Factors are identified by dime
 $(15,3)=\so6\cong\su4$; a six-dimensional semisimple compact factor is necessarily $\su2\oplus\su2$. The centres have dimensions
 $3,3,1,0,0$ and the derived algebras $3,6,13,12,24$.
 \end{theorem}
+
+\noindent Executable check: a4-4 and a10-2 (exact; \cref{app:methods}).
 
 \begin{corollary}[No colour on the axial members]
 \label{cor:nocolour}
@@ -213,8 +216,11 @@ q_A=e^{(1)}_2e^{(1)}_3 .
 \node[anchor=west,align=left] at (5.0,1.2) {\small temporal rows above the line, spatial below};
 \end{tikzpicture}
 \caption{The eighteen generators of $\Cl(9,9)$ arranged by constituent, and the grouping that defines the Pati--Salam block. The
-interior four-plane carries the Lorentz action; the weak, colour and auxiliary groups enter $P_*$ only through their volumes, which
-is why every rotation inside each group survives the projection (\cref{thm:PS,thm:PSalg}).}
+interior four-plane carries the Lorentz action. The weak and colour groups enter $P_*$ only through their volumes, so every rotation
+inside each of them survives the projection. The auxiliary group enters through the two-plane volume $q_A=e^{(1)}_2e^{(1)}_3$, not through the
+volume of its four directions, and of its rotations only $E_2E_3$ and $E_8E_9$ survive ($E_2E_8$ anticommutes with $-Jq_A$, and
+$P_*E_2E_8P_*=0$). The surviving bivectors, $15$ colour, $6$ weak, $E_2E_3$ and $E_8E_9$, span the $23$-dimensional algebra of
+\cref{thm:PSalg} (\cref{thm:PS}).}
 \label{fig:pstar}
 \end{figure}
 
@@ -268,6 +274,8 @@ bivectors: the nullspace is $23$-dimensional, entirely compact, has trivial anni
 dimension $21$.
 \end{proof}
 
+\noindent Executable check: a10-1 (exact; \cref{app:methods}).
+
 \begin{corollary}[One Pati--Salam family]
 \label{cor:PSfamily}
 The colour volume is not an involution: $\chi_C$ is a grade-six blade on six negative directions, so $\chi_C^2=-\id$. The
@@ -283,6 +291,18 @@ multiplicity $4=2\times2$, a weak doublet times a Weyl spinor, and the two block
 one Pati--Salam family including a right-handed neutrino \cite{PatiSalam}. Which of the two conjugate four-dimensional representations
 is called $\mathbf4$ is a convention.
 \end{corollary}
+
+The decisive steps of \cref{thm:table,thm:PSalg} and of this corollary are statements that nullspaces have the stated dimensions. They are
+certified exactly, in integer arithmetic: the $23$-generator basis of \cref{thm:PSalg} together with the completeness argument that every
+blade commutes or anticommutes with each of the three involutions (a10-1); the centre and derived-algebra dimensions of every row of
+\cref{thm:table} (a10-2); and the sign of the colour volume, rather than the quadratic Casimir, as what tells $\mathbf4$ from $\bar{\mathbf4}$
+(a10-3).
+
+The content is prior art. Embeddings of one chiral family together with the Lorentz group in a single orthogonal algebra are due to Maraner
+\cite{Maraner04}, Nesti and Percacci \cite{NestiPercacci10} and Krasnov \cite[\S\S6.4--6.7]{Krasnov18}, and the same family is the fermion
+content of the spectral Pati--Salam model \cite{ChamseddineConnesVanSuijlekom13}. What this realisation adds is the projector $P_*$ built from
+three commuting involutions, with the normal charge on an extra positive four-plane, and the computations inside $V_*$; the comparison is
+made in \cref{ch:ch14_related}.
 
 % --- source: tex/s08_pstar#4 (Charges)
 \subsection{Charges}
@@ -340,14 +360,17 @@ SU(2)_L^2:\ 2(a-b),\qquad SU(2)_R^2:\ -2(a+b),\qquad SU(4)^2:\ -2b,\\
 \]
 and the mixed anomalies with two central and one Pati--Salam generator vanish. All vanish only for $a=b=0$. The Pati--Salam algebra itself
 is anomaly free on the block: the $SU(4)^3$ anomaly cancels between two fundamentals and two antifundamentals in the all-left convention,
-and each weak $SU(2)$ sees four doublets, so the global anomaly is absent \cite{Witten82}. Hence, with the block as the matter content,
-$\su4\oplus\su2_L\oplus\su2_R$ is the largest anomaly-free gauge algebra containing Pati--Salam, and the two central directions remain
-global symmetries.
+and each weak $SU(2)$ sees four doublets, so the global anomaly is absent \cite{Witten82}. Hence, with the block as the matter content and
+within the $23$-dimensional effective algebra of \cref{thm:PSalg}, $\su4\oplus\su2_L\oplus\su2_R$ is the largest anomaly-free gauge algebra
+containing Pati--Salam, and the two central directions remain global symmetries. This is not a classification of all algebras acting on the
+block.
 \end{proposition}
 
 The obstruction is stated for this matter content; additional matter or another cancellation mechanism is not excluded. The two central
-symmetries are fermion number $J$, anomalous only through $SU(2)_L$ and $SU(2)_R$ and hence exact in perturbation theory and violated by
-their instantons \cite{tHooft76}, and the chiral charge $J\Gamma$.
+directions, fermion number $J$ and the chiral charge $J\Gamma$, are classical global symmetries with mixed anomalies, not exact quantum
+symmetries. The fermion-number current has a triangle anomaly with $SU(2)_L$ and $SU(2)_R$ already in perturbation theory \cite{Adler69}; what
+holds to all orders of perturbation theory is the corresponding charge selection rule in the trivial topological sector, which instantons
+violate \cite{tHooft76}.
 
 \begin{proposition}[Two rank-64 projectors, two orbits]
 \label{prop:orbits}
@@ -434,7 +457,8 @@ $\keff(\Pfam)$; let $\varepsilon=\pm1$ be an orientation sign, and put $t^a_{L,R
 \[
 B_0=\frac\varepsilon6\,\Gamma(q_1+q_2+q_3),\qquad Y=B_0+t^3_R,\qquad Q_{\rm em}=t^3_L+Y .
 \]
-The cell sums $\varepsilon\sum_aq_a$ are $\{-1,-1,-1,3\}$ on the $\Gamma=-1$ half and $\{-3,1,1,1\}$ on the other, which gives
+For the displayed charge table we choose $\varepsilon=+1$ in the stated orientation; reversing $\varepsilon$ reverses the $B_0$ charges, and the
+conventions must then be changed before the Standard-Model identification below is reused. The cell sums $\varepsilon\sum_aq_a$ are then $\{-1,-1,-1,3\}$ on the $\Gamma=-1$ half and $\{-3,1,1,1\}$ on the other, which gives
 $B_0|_{\Gamma=-1}=\{\tfrac16,\tfrac16,\tfrac16,-\tfrac12\}$ and, after adding $t^3_R=\pm\tfrac12$ on the right-handed cells,
 $Y\in\{0,-1,\tfrac23,-\tfrac13\}$ there. Over the sixteen left-handed Weyl components $\Tr Y=\Tr Y^3=\Tr T_3^2Y=0$ with four doublets, so all
 four anomaly conditions hold, and $\Tr T_3^2/\Tr Q^2=3/8$. This hypercharge is adopted, not derived.
@@ -447,9 +471,10 @@ which abelian charges can be gauged changes, and no-go results proved in the und
 search must say which Clifford grades are permitted alongside $Y^\dagger=Y$, $[Y,t_{La}]=0$ and $[Y,C_A]=0$.
 \end{proposition}
 
-Since $P_L+P_R=\id$, $Q_{\rm em}=t^3+B_0$: the chirality dressing cancels identically in the electric charge when the same axis is used in
-both terms and is visible only in the split into $T_3$ and $Y$. The value $3/8$ is arithmetic on a charge table; it becomes $\sin^2\theta_W$
-only after a common normalisation of the gauge kinetic terms and a matching scale, neither of which is supplied. Five choices enter the
+Since $P_L+P_R=\id$, the chirality projectors on the weak axis cancel in $Q_{\rm em}=t^3+B_0$ when the same axis is used in both terms. The
+dressing of $B_0=\tfrac\varepsilon6\Gamma(q_1+q_2+q_3)$ does not cancel, so $Q_{\rm em}$ still contains $\Gamma$. The value $3/8$ is arithmetic on a
+charge table; it becomes $\sin^2\theta_W$ only after the equality of the normalised couplings is imposed at a matching scale, as a boundary
+condition, which this chapter does not supply (the adopted action of \cref{ch:ch07_vacuum} supplies it by choice, \cref{thm:compat}). Five choices enter the
 benchmark: the projector, the dressing, which abelian direction is $Y$, which right-handed axis, and the overall sign.
 
 % --- source: tex/s09_charges#4 (A model-independent layer)
@@ -458,9 +483,10 @@ benchmark: the projector, the dressing, which abelian direction is $Y$, which ri
 
 The following uses nothing from the arena. It calibrates how much of the hypercharge problem is generic.
 
-\begin{theorem}[The anomaly variety of one family]
+\begin{theorem}[The perturbative hypercharge-anomaly variety of one family]
 \label{thm:variety}
-For one family with $N_c$ colours and a right-handed neutrino, with left-handed hypercharges $q,l$ and right-handed $y_u,y_d,y_\nu,y_e$,
+For one family with $N_c\ge2$ colours and a right-handed neutrino (for $N_c=1$ there is no colour mixed condition), with left-handed
+hypercharges $q,l$ and right-handed $y_u,y_d,y_\nu,y_e$,
 the three linear conditions give $l=-N_cq$, $y_d=2q-y_u$, $y_e=2l-y_\nu$. With $h_q=y_u-q$ and $h_\ell=y_\nu-l$ the cubic condition
 factorises,
 \[
@@ -477,7 +503,7 @@ $\Pi_C$ either: at $N_c=3$ the point $(q,l,y_u,y_d,y_\nu,y_e)=(0,0,\tfrac12,-\tf
 anomalies and permits both quark Yukawas, yet $h_q=\tfrac12\neq h_\ell=1$. What excludes it is integrality: with $q=0$ the left-handed quarks
 carry $\pm\tfrac12$ and a three-quark singlet has half-integral charge.
 
-\begin{theorem}[Without $\nu_R$ hypercharge is quantised]
+\begin{theorem}[Without $\nu_R$ hypercharge is quantised on the generic branch]
 \label{thm:nonu}
 Deleting $\nu_R$ gives $y_e=2l$ and $\mathcal A_{Y^3}=6N_cq(N_c^2q^2-h_q^2)$, so on the generic branch $h_q=\pm N_cq$ is locked and
 hypercharge is fixed up to scale and relabelling: at $N_c=3$, $q=\tfrac16$ gives the Standard-Model values with no residual $\BmL$ direction.
@@ -493,7 +519,9 @@ On $\Pi_A$ with $Q_{\rm em}=T^3_L+Y$, the leptons carry $Q_\nu=-\lambda$ and $Q_
 $\lambda\in\Z$, and colour triality then gives integral charge to every colour singlet. It does not fix the fractional part of the quark
 charges, since $Q_u=\tfrac23+\lambda/3$, and neutrality does not close the argument for composites: $Q(ddd)=\lambda-1$ and $Q(uuu)=\lambda+2$, so
 neutral colour-singlet operators of odd fermion parity exist at $\lambda=1$ and $\lambda=-2$. A neutral \emph{elementary} colour-singlet
-fermion exists if and only if $\lambda\in\{0,-1\}$, and those two values are exchanged by $\nu\leftrightarrow e$.
+fermion exists if and only if $\lambda\in\{0,-1\}$. These give $(Q_u,Q_d,Q_\nu,Q_e)=(\tfrac23,-\tfrac13,0,-1)$ and $(\tfrac13,-\tfrac23,1,0)$;
+exchanging $\nu$ and $e$ alone does not map one to the other, but charge conjugation together with $u\leftrightarrow d$ and
+$\nu\leftrightarrow e$ does.
 \end{proposition}
 
 Three other routes fail to single out the Standard Model. The kernel of the representation is not a selection principle: its order
@@ -501,8 +529,12 @@ depends on $\lambda$ through the integer normalisation of the weights. Nor is a 
 $\nu_R$ the kernel is $\Z_{2N_c}$ for odd $N_c$ and $\Z_{N_c}$ for even $N_c$. And integrality does not select three either: on the standard
 branch every $N_c$-quark colour singlet has integral charge exactly for odd $N_c$, and the number $N_c+1$ of weak doublets per family, which
 the global $SU(2)$ anomaly requires to be even \cite{Witten82}, is even exactly for odd $N_c$. All three facts hold at every odd $N_c$. With
-$N_g$ generations the standard branch has $2N_g$ parameters, and the anomaly-free directions include $L_e-L_\mu$ and $L_\mu-L_\tau$
-\cite{HeJoshiLewVolkas}, so family universality is an input that grows with $N_g$. The global structure of the gauge group is a separate
+$N_g$ generations the parameter count depends on how the family is specified. If anomalies cancel only after summing over generations, the
+perturbative anomaly variety of unnormalised hypercharges has local dimension $6N_g-4$ at the Standard-Model point ($14$ for three
+generations), before an overall normalisation is fixed. A $2N_g$-dimensional family is obtained
+with one common Yukawa difference $h$, $y_u=q_i+h$, $y_d=q_i-h$, $y_\nu=l_i+h$, $y_e=l_i-h$ with $\sum_i(N_cq_i+l_i)=0$, and it contains $L_e-L_\mu$;
+imposing the one-family branch generation by generation also gives $2N_g$ parameters but excludes $L_e-L_\mu$. The anomaly-free directions
+include $L_e-L_\mu$ and $L_\mu-L_\tau$ \cite{HeJoshiLewVolkas}, so family universality is an input that grows with $N_g$. The global structure of the gauge group is a separate
 datum \cite{Tong,GaiottoKapustinSeibergWillett}.
 
 % --- source: tex/s09_charges#5 (Charge at one constituent)
@@ -515,8 +547,10 @@ $(\nu,\bar\nu,e^+,e^-)$.
 \begin{theorem}[No unique charge at one constituent]
 \label{thm:fock}
 The condition $\spec Q=\{0,0,+1,-1\}$ on the even half, for $Q=\sum_iq_iN_i+c$, has exactly twelve solutions, forming two orbits of
-$S_3\times\{\pm1\}$: $Q=N_i-N_j$ with $c=0$, and $Q=N_i+N_j-1$ with $c=-1$. The antiparticle condition $CQC^{-1}=-Q$, with $C$ the Hodge
-conjugation, holds on both orbits and does not separate them.
+$S_3\times\{\pm1\}$: the six differences $Q=N_i-N_j$, with $c=0$, and the six signed sums $Q=\pm(N_i+N_j-1)$, with $c=\mp1$. Hodge
+conjugation $C$ maps exterior degree $k$ to $3-k$ and so exchanges the even and odd halves; the relation $CQC^{-1}=-Q$, equivalent to
+$\sum_iq_i+2c=0$, holds on the whole exterior algebra for both orbits, not as an operation inside the even four-state sector, and does not
+separate them.
 \end{theorem}
 
 \begin{proof}
@@ -524,7 +558,8 @@ Summing the four values gives $4c+2\sum_iq_i=0$. If the neutral pair is $\{|0\ra
 the third coefficient to vanish; if it is $\{|ij\rangle,|ik\rangle\}$ then $q_j=q_k$, $c=-q_j$ and $q_i=0$.
 \end{proof}
 
-The further step, $Q|0\rangle=0$ and hence $c=0$, is the separate assumption that the state identified with the neutrino is the Fock vacuum.
+The charge skeleton alone does not identify neutrinos and electrons. The further step, $Q|0\rangle=0$ and hence $c=0$, is the separate
+assumption that the state identified with the neutrino is the Fock vacuum.
 Choosing between the orbits is an identification, not a derivation, and it has the same shape as the hypercharge problem two rungs up,
 differing in size and not in kind.
 
@@ -535,7 +570,9 @@ Krasnov describes one generation, with the right-handed neutrino, as a real Weyl
 on $\R^7$; the Pati--Salam group appears as the compact part of the commutant $\mathrm{SO}(4,6)$ of the Lorentz group \cite{Krasnov18}.
 The block $V_*$ has the same real dimension, $64$, but it is not a module of $\mathfrak{so}(4,6)$: of the $45$ bivectors of
 $\mathfrak{so}(4,6)$ on the weak and colour directions, only the $21$ compact ones preserve $P_*$, and each of the $24$ non-compact ones
-maps the block to its complement (check z3-9). No representation map between the two constructions has been constructed. The comparison
-is made in \cref{ch:ch14_related}.
+maps the block to its complement (check z3-9). As representations of the common algebra $\so{1,3}\oplus\so4\oplus\so6$ the two modules are
+nevertheless equivalent: both are the underlying real representation (the realification) of $(\mathbf2,\mathbf1)\otimes[(\mathbf4,\mathbf2,\mathbf1)\oplus(\bar{\mathbf4},\mathbf1,\mathbf2)]$ (\cref{cor:PSfamily}),
+so an intertwiner exists by complete reducibility. It has not been written down, and whether it carries the kinetic structures is open; the
+non-compact generators of $\so{4,6}$ obstruct only its extension to the ambient action. The comparison is made in \cref{ch:ch14_related}.
 \end{remark}
 

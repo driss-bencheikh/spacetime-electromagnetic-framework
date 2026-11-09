@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate verification/MANIFEST.tsv, the check-level manifest of the verification package.
 
-    python3 verification/tools/make_manifest.py [--runs reproducibility/selected-results/v1.0.0]
+    python3 verification/tools/make_manifest.py [--runs reproducibility/selected-results/v1.0.1]
 
 For every PASS/FAIL line in the run record <runs>/<chapter_dir>__<stem>.out of each script verification/<chapter_dir>/<stem>.py it
 writes one row: check id, status, script, command, exact or numerical, the manuscript chapters and labels that cite the check, the run
@@ -14,7 +14,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 import sys
-RUNS = ROOT / (sys.argv[sys.argv.index("--runs") + 1] if "--runs" in sys.argv else "reproducibility/selected-results/v1.0.0")
+RUNS = ROOT / (sys.argv[sys.argv.index("--runs") + 1] if "--runs" in sys.argv else "reproducibility/selected-results/v1.0.1")
 LINE = re.compile(r"^(PASS|FAIL) ([A-Za-z0-9]+-[0-9A-Za-z.,+-]*|[A-Za-z0-9]+):\s*(.*)$")
 
 
@@ -24,7 +24,7 @@ def latest_outputs():
 
 def manuscript_index():
     files = sorted((ROOT / "manuscript").glob("chapters/*.tex"))  # chapters and appendices
-    files = [f for f in files if f.stem not in ("appendix_d_table", "appendix_d_scripts")]  # generated from this manifest: not citations
+    files = [f for f in files if f.stem not in ("appendix_d_table", "appendix_d_scripts")]  # generated tables of version 1.0.0 (no longer printed): not citations
     return [(f, f.read_text()) for f in files]
 
 

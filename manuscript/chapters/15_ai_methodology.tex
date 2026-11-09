@@ -69,9 +69,9 @@ above; it is not itself evidence.
 \subsection{The scripts}
 
 Each script prints one line \texttt{PASS <id>: <claim>} or \texttt{FAIL <id>: <claim>} per check and exits with status zero only if every check
-passes. They need Python~3 with NumPy, SciPy, SymPy and mpmath and run from any directory, for example
+passes; in version 1.0.0 one script, \texttt{p2\_alignment.py}, did not yet enforce this, and it does since version 1.0.1. They need Python~3 with NumPy, SciPy, SymPy and mpmath and run from any directory, for example
 \begin{center}
-\texttt{python3 verification/run\_all.py --out reproducibility/selected-results/v1.0.0 -j 3}
+\small\mbox{\texttt{python3 verification/run\_all.py -{}-out reproducibility/selected-results/v1.0.1 -j~3}}
 \end{center}
 which runs all of them and writes one record per script. The scripts are kept by chapter in \path{verification/chNN_<topic>/}; by origin they are:
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
@@ -83,10 +83,12 @@ and the random part of r2-18; s1-15, s1-31, s1-38; s2-10b, the random part of s2
 referee scripts \texttt{x1}--\texttt{x7}. Spectra and Jordan structure are checked with rational data, since floating-point inputs give false
 negatives in semisimplicity tests; dynamics is integrated with relative tolerances $10^{-11}$ to $10^{-12}$, and elliptic and Mathieu quantities
 use \texttt{mpmath} and \texttt{scipy.special}. The referee findings of the second part, fifty in number, were each re-examined by a second
-referee session: forty confirmed, ten in part, none rejected, and no theorem refuted.
+referee session: forty confirmed, ten in part, none rejected, and no theorem refuted. This describes the internal review step of these
+scripts only; the external reviews of version 1.0.0 later found false statements in the same chapters (among them \cref{prop:howmuch} and three
+statements of \cref{ch:ch09_bfield}), which are corrected in this version.
 \item \emph{Emergence} (\cref{ch:ch05_tower,ch:ch09_bfield,ch:ch10_classical}): derivation scripts \texttt{e1}--\texttt{e7}; referee scripts
-\texttt{y1}, \texttt{y2}, \texttt{y5}, \texttt{y6} for four of the seven sections; the review adjudications \texttt{z1} and \texttt{z5}, which also hold the
-exact rank certificate for LAD-02 in place of an earlier floating-point rank. Two sections were refereed by reading only. The classical section
+\texttt{y1}, \texttt{y2}, \texttt{y5}, \texttt{y6} for four of the seven sections; the review adjudications \texttt{z1} and \texttt{z5}, which also hold an
+exact rank certificate in place of an earlier floating-point rank. Two sections were refereed by reading only. The classical section
 was corrected and reviewed in two passes; its observational inputs were checked against the primary papers where these were reachable, and the
 others were not rechecked.
 \item \emph{Photon selection} (\cref{ch:ch08_photon}): derivation scripts \texttt{p1}--\texttt{p3} and the adjudication script \texttt{z2}, which
@@ -100,13 +102,22 @@ their inputs, solver and tolerances.
 that the audit of \cref{app:repro} had left without a recomputation. \texttt{a6} and \texttt{a7} are exact (blade parity, integer arithmetic on the
 $512$-dimensional module, exact modular ranks, Molien--Weyl integrals); \texttt{a8} is numerical, on the kernel space of \cref{ch:ch07_vacuum}, and
 asserts a spectral gap at every rank it reads.
+\item \emph{Corrections audit} (\cref{ch:ch04_rigidbody,ch:ch05_tower,ch:ch06_chiral,ch:ch07_vacuum,ch:ch09_bfield,ch:ch12_causal}): written for version 1.0.1 in
+answer to the external reviews. \texttt{a9} and \texttt{a10} are exact certificates for statements whose decisive step had been asserted
+(\cref{thm:blockgamma,thm:table,thm:PSalg,cor:PSfamily}); \texttt{a11} is numerical, for the corrected complex structure of the kernel space and
+the strata of \cref{thm:axion}; the checks a3-9 and a3-10 became exact, c1-12 was added, c1-4 now samples $S^+$, and c2-8 derives the mass shell
+instead of inserting it. \texttt{a12} and the checks a3-11 and d7-4c record, exactly, the boundary cases and counterexamples found by a review of
+this version (\cref{prop:howmuch,d7:prop:boost,e4:prop:rotor,e5:prop:carry}), d6-8 now states $M_{\rm pair}=|\sin\varphi|$, and a11-3 adds the
+condensate stratum of \cref{thm:axion}. \texttt{a13} is exact: it builds the isomorphism $\iota$ of \cref{prop:tensor} and certifies the constant $\tfrac38$
+of \cref{thm:potential}(ii).
 \end{enumerate}
 The independent review checks (\path{verification/ch15_ai_methodology}) add $22$ checks, the vacuum checks (\path{verification/ch07_mass_vacuum},
-v1--v3) $31$, the gravity and causality checks (g1--g3, c1--c2) $43$, the adversarial audit (a1--a5, \cref{app:repro}) $58$ and the release audit
-(a6--a8) $20$, of which $9$ are numerical. The complete suite, $61$ scripts, is run by \path{verification/run_all.py}; in the runs of
-\path{reproducibility/selected-results/v1.0.0/} the manifest of \cref{app:manifest} lists $1389$ checks, all passing, of which $169$ are numerical, and
-every script with an earlier recorded run reproduces its identifiers and outcomes. The runs record the interpreter and library versions. Of the
-$1389$ checks, $643$ are cited in the manuscript by identifier; \cref{tab:theoremcode} maps the others to the statements they test.
+v1--v3) $31$, the gravity and causality checks (g1--g3, c1--c2) $44$, the adversarial audit (a1--a5, \cref{app:repro}) $59$, the release audit
+(a6--a8) $20$, of which $9$ are numerical, and the corrections audit (a9--a13) $13$, of which $3$ are numerical. The complete suite, $66$ scripts, is
+run by \path{verification/run_all.py}; in the runs of \path{reproducibility/selected-results/v1.0.1/} the manifest of \cref{app:manifest} lists
+$1405$ checks, all passing, of which $171$ are numerical, and every script with an earlier recorded run reproduces its identifiers and outcomes. The
+runs record the interpreter and library versions. Of the $1405$ checks, $662$ are cited in the manuscript by identifier; \path{verification/THEOREM_CODE.tsv}
+maps the others to the statements they test.
 
 \paragraph{What a passing check shows.} A \texttt{PASS} line shows that the coded assertion holds: exactly, for identities, ranks and symbolic
 derivations, and within the printed tolerance at the sampled inputs, for numerical checks. It validates a statement of the text only to the
@@ -119,7 +130,7 @@ since derivation and referee scripts check many statements twice.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item \emph{Statements without a cited check.} Of the $438$ theorems, propositions, lemmas and corollaries of the manuscript, the
 claim-by-claim map \path{verification/COVERAGE.tsv} lists those that cite a current check, those with a written proof in the text, and those
-that rest on the argument given where they are stated, on the review adjudications of \cref{ch:ch13_compatibility}, or on a check that the
+that rest on the argument given where they are stated, on the review adjudication scripts \texttt{z1}--\texttt{z5}, or on a check that the
 text does not yet cite. The algebraic identities and the explicit reductions of \cref{ch:ch11_curvature,ch:ch12_causal} are checked exactly by
 the scripts of \path{verification/ch11_curvature_gravity} and \path{verification/ch12_causality} (g1--g3, c1--c2); their gravitational and causal
 readings are not, since no gravitational action, interacting causal theory or stability analysis is constructed.
@@ -129,8 +140,9 @@ Hessian, the random-start minimisations on $\mathcal T$ and on $\mathcal M$ and 
 \cref{thm:secondvar}. The minimisations remain numerical experiments, and the global statements that rest on them remain conjectures
 (\cref{prop:randomstart}). The invariant-theory multiplicities quoted after \cref{thm:potential} are certified exactly by z4-4.
 \item \emph{What the release audit leaves.} The electroweak statements of \cref{ch:ch07_vacuum} (\cref{prop:tensor,prop:EW,prop:rankfive,prop:bidoublet}
-and the structural part of \cref{thm:mA}) are recomputed numerically (a8), not certified exactly. In \cref{prop:tensor} the identification of the
-spectrum of $\Phi^{\!\top}\Phi$ with that of $S^\dagger S$ uses an explicit isomorphism that no check reproduces; the one-loop formula of
+and the structural part of \cref{thm:mA}) are recomputed numerically (a8), not certified exactly, except that the isomorphism $\iota$ of
+\cref{prop:tensor} and the spectral identity it carries are now certified exactly (a13-2), as is the constant $\tfrac38$ of \cref{thm:potential}(ii)
+(a13-1); the one-loop formula of
 \cref{prop:coupled3} is inherited; and \cref{ex:subC} has no check.
 \item \emph{Literature.} Bibliographic data were confirmed on publisher, repository or citing pages; where only secondary confirmation was
 possible, the author's literature record says so. One attribution, the precise theorem for Howe's skew duality, could
@@ -139,9 +151,10 @@ not be checked against the primary source.
 
 \subsection{Corrections found by the checks}
 
-The checks changed the mathematics, not only its presentation. Examples, each recorded with its evidence in the review register: the
-surplus-time constraints remove every surplus mode, not only the unstable band (CORE-07); the ordering in the bilinear identity
-$Y^{\!\top}TY=-TY^2$ (LAD-01); the binding gap is not a binding energy, and an earlier deficit formula was false (LAD-04); two false statements
-about which duplications preserve $|q_2|$; a proposed sign change of the copy-rotation convention was rejected (z1-1d); the factor between
-the vector-mass conventions (CORE-01); the counterexample to the vacuum-minimum hypotheses (CORE-02); and the local-stability exception in the
-photon family (PH-02). A list of this kind is evidence that the procedure finds errors; it is not evidence that none remain.
+The checks changed the mathematics, not only its presentation. Examples, each recorded with its evidence by the author: the
+surplus-time constraints remove every surplus mode, not only the unstable band; the ordering in the bilinear identity
+$Y^{\!\top}TY=-TY^2$; the binding gap is not a binding energy, and an earlier deficit formula was false; two false statements
+about which duplications preserve $|q_2|$; a proposed sign change of the copy-rotation convention was rejected; the factor between
+the vector-mass conventions; the counterexample to the vacuum-minimum hypotheses; and the local-stability exception in the
+photon family. A list of this kind is evidence that the procedure finds errors; it is not evidence that none remain. The external reviews of
+version 1.0.0 found further errors that the checks had not caught; they are listed in \path{docs/errata.md} and corrected in this version.

@@ -39,7 +39,9 @@ which has $3n-1$ positive and $3n-3$ negative directions. All bivectors of $W_n$
 \begin{corollary}[The photon at one constituent]
 \label{cor:photon1}
 At $n=1$, $W_1=U$ and $\gint^{(1)}=\R J$. The electromagnetic $\uu1$ is not a symmetry of the interior structure but the
-symmetry, by exhaustion. In agreement with \cref{prop:gauge1}, no other charge direction gauges at $n=1$.
+symmetry, by exhaustion within the Lorentz-commuting grade-two connection algebra. In agreement with \cref{prop:gauge1}, no other charge
+direction of that algebra gauges at $n=1$. This does not by itself select a gauging, a Maxwell kinetic term or the electromagnetic
+identification, and it says nothing about symmetries of a larger endomorphism algebra.
 \end{corollary}
 
 \begin{proposition}[One frame, and nesting]
@@ -228,8 +230,11 @@ $C_{\rm cop}=\binom n2d/4+\tfrac12\mathsf S$ with $\mathsf S=\sum_{k<l}\sum_{a<b
 constituents interact. It cancels in the sum.
 \end{proof}
 
-At $n=3$, $d=4$ the constant is $3\cdot4\cdot3/8+3\cdot4/4=\tfrac92+3=\tfrac{15}2$. The proof is half a page and the identity is exact; it is
-the cleanest result of the diagonal sector.
+At $n=3$, $d=4$ the constant is $3\cdot4\cdot3/8+3\cdot4/4=\tfrac92+3=\tfrac{15}2$. The identity is inherited: its general form $nd(d+n-2)/8$ is the
+case $d_{\rm N}=n$, $k_{\rm N}=d/2$ of the relation $C_{\mathfrak o(d_{\rm N})}+C_{\mathfrak o(2k_{\rm N})}=\tfrac14k_{\rm N}d_{\rm N}(d_{\rm N}+2k_{\rm N}-2)$ between the
+Casimirs of the $\mathfrak o(d_{\rm N})$--$\mathfrak o(2k_{\rm N})$ dual pair on a fermionic Fock space of $k_{\rm N}$ species \cite[eq.~(73)]{Neergard19}, an
+integer $k_{\rm N}$ ($2$ for $d=4$, $3$ for $d=6$) at every rung, odd ones included (see also \cite{Neergard20,Howe89}). The proof given here is an independent derivation in the
+real Clifford realisation.
 
 \begin{corollary}[A dual pair]
 \label{cor:howe}
@@ -303,6 +308,8 @@ Reordering $\gamma^{(\sigma1)}\gamma^{(\sigma2)}\gamma^{(\sigma3)}$ into copy or
 constituents anticommute; against the factor $\varepsilon$ this gives $(\operatorname{sign}\sigma)^2=1$, so antisymmetry in the copies is symmetry
 in the Lorentz labels. Block preservation follows because a copy singlet commutes with $C_{\rm cop}$ and hence, by \eqref{eq:casid}, with
 $C_\Delta$. Finally $\omega_{\mathcal S}$ commutes with $Q_\mu$ and $\omega_{\mathcal S}^2=-\id$, so $\{G_\mu,G_\nu\}=\tfrac1{36}(-\id)(-72\eta_{\mu\nu})$.
+The two restricted identities $\{Q_\mu,Q_\nu\}|_{\mathcal D}=-72\,\eta_{\mu\nu}$ and $\tfrac14[G_a,G_b]=\Delta_{ab}|_{\mathcal D}$ are not derived by hand here;
+they are certified by exact integer computation on the $160$-dimensional block (a9-1, a9-2).
 \end{proof}
 
 The sign flip is not cosmetic. $\Cl(1,3)\cong M_2(\HH)$ has minimal real module of dimension eight, so the four-dimensional Majorana module
@@ -360,6 +367,9 @@ $\Lambda^2U=(\Lambda^2\R^{k_I}\otimes S^2\R^4)\oplus(S^2\R^{k_I}\otimes\Lambda^2
 $\Lambda^2\R^4$ vanish, leaving $\so{k_I}$. On $V_f$ the invariant symmetric forms are spanned by $\eta$ and $\eta(\cdot,G\cdot)$ and there is no invariant
 antisymmetric form, leaving $\Lambda^2\R^{k_B}\otimes\operatorname{span}\{\id,G\}\cong\so{k_B,\C}$.
 \end{proof}
+
+Here ``compact'' means contained in the chosen compact orthogonal subgroup, the one compatible with a positive kinetic form, in the stated
+embedding; it is not a statement about abstract Lie algebras. A compact candidate centraliser is not by itself a gauge theory.
 
 \begin{proposition}[Orthogonal against spin actions]
 \label{prop:orthospin}
@@ -681,9 +691,10 @@ $\sum_kE_0^{(k)}$, $E_{\rm pair}$) is preserved by the whole three-sphere, the h
 point where duplication changes the meaning of ``rest energy'' is interpretive. Which one deserves the name depends on the group. The invariants of a pair
 under the diagonal $\so{3,\C}$ are the entries of the complex Gram matrix $Q_{kl}=z_k\cdot z_l$; the copy algebra $\so{2,\C}$ preserves
 $\Tr Q=q_2$ and $\det Q$ but not $Q_{11}$ (d5-3f); and the closure sees $|q_2|$ of the momentum field (\cref{d5:prop:balance}). Two
-counter-propagating null fields, $z_1=(1,i,0)$ and $z_2=(1,-i,0)$, have $E_0^{(k)}=0$ and $q_2=0$, yet $E_{\rm pair}^2=2$ (d5-3i). Their rest energy as a pair is the invariant mass $M_{\rm pair}=2$ of \cref{d6:thm:pair}, not
+counter-propagating null fields, $z_1=(1,i,0)$ and $z_2=(1,-i,0)$, have $E_0^{(k)}=0$ and $q_2=0$, yet $E_{\rm pair}^2=2$ (d5-3i). Their rest energy as a pair is the rest-energy density $M_{\rm pair}=2$ of the summed stress tensor (\cref{d6:thm:pair}), not
 $E_{\rm pair}=\sqrt2$: $E_{\rm pair}$ is positive exactly when $M_{\rm pair}$ is, and equals it only when $\det Q=0$, as on every duplicate of one field
-(\cref{d6:thm:pair}). A nonzero $M_{\rm pair}$ is the field-point analogue of the invariant mass of two photons, which permits $\gamma\gamma\to e^+e^-$ \cite{BreitWheeler34}. A single null field
+(\cref{d6:thm:pair}). A nonzero $M_{\rm pair}$ is a kinematic analogue, at one field point, of the invariant mass of two photons, which permits $\gamma\gamma\to e^+e^-$
+\cite{BreitWheeler34}; it is a local rest-energy density, not an invariant mass, and the analogy describes no production process. A single null field
 duplicated by any $\iota_{\alpha,\beta}$ stays null in each copy, since $q(\alpha z)=\alpha^2q(z)$; that is the analogue of the absence of
 $\gamma\to e^+e^-$ in vacuum (the photon kinematics inherited; both analogies interpretive). No isometric linear map copies the energy, $z\mapsto(z,z)$ has $E_6\oplus E_6=2E_6$, and the
 genuine duplication of a quantum, $z\mapsto z\otimes z$, is quadratic; that is the no-cloning theorem \cite{WoottersZurek82} (inherited; treating the field point $z$ as a quantum state is interpretive). A
@@ -823,8 +834,8 @@ surplus directions and the Koszul signs are included.
 \label{d5:prop:vacuum}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item At $n=1$ the commutant of $\lint$ and $Q=\tfrac12e_2e_3$ in $M_8(\R)$ has dimension four, and its symmetric part is
-spanned by $\id$ and $\mathcal V=e_1\cdots e_6$. The rank-four projectors in it are $\tfrac12(\id\pm\mathcal V)$, and every bivector commutes with
-$\mathcal V$, so they are rigid (\cref{prop:rigid}).
+spanned by $\id$ and $\omega=e_1\cdots e_6$. The rank-four projectors in it are $\tfrac12(\id\pm\omega)$, and every bivector commutes with
+$\omega$, so they are rigid (\cref{prop:rigid}).
 \item (\cref{thm:towervac} and~\cref{thm:S4}) With $a,b=e^{(1)}_2,e^{(1)}_3$ and $c,d,e=e^{(2)}_1,e^{(2)}_2,e^{(2)}_3$: $H=abcd$ has $H^2=\id$, $H^{\!\top}=H$
 and $\Tr H=0$, and $\Pi_0=\tfrac12(\id+H)$ commutes with $Q=\tfrac12ab$, with the four interior gammas and with the internal volume. Moreover
 $\pi=[\tfrac12be,\Pi_0]=-\tfrac12acde$ is symmetric with $\Tr\pi^2=16$ and $[Q,\pi]=\tfrac12bcde$. The $Z_i=I_5v_i$ are symmetric of grade four with
@@ -943,7 +954,7 @@ two neutral copies into one charged field & $C_v$ as $i$, $w=X^{(1)}+iX^{(2)}$ &
 two-body composite & diagonal interior action; exchange $\tau_K$ & integer spin & inherited; restated\\
 pair creation from null energy & linear covariant duplication keeps null copies; two non-collinear null fields have $E_{\rm pair}>0$ & $T$ & inherited; pair-creation reading interpretive\\
 cloning, $z\mapsto z\otimes z$ & quadratic, not isometric and linear & --- & obstructed (inherited)\\
-closure balance & $\pi^{(2)}=G\pi^{(1)}$, $R_{\rm eff}\propto|q_2(\pi)|=0$ & constant rate, $E_0^{(k)}\neq0$ & restated (\cref{prop:several})\\
+closure balance & $\pi^{(2)}=G\pi^{(1)}$, $R_{\rm eff}\propto|q_2(\pi)|=0$ & constant rate, $E_0^{(k)}\neq0$; bounded frames if $h(0)\neq0$ & restated (\cref{prop:several})\\
 inter-copy $b$-field & $S=K\otimes G+\beta C_v$ & bounded iff \cref{d5:thm:bfield2}(v) & fixed; mixing inherited\\
 \bottomrule
 \end{tabular}
@@ -958,8 +969,10 @@ $\eta$ cuts the copy $U(2)$ to $O(2)$ and $U(6)$ to $O(6)$, since $U(n)\cap O(n,
 $O(2)$, is the one connected family that preserves the energy, the metric, the binding root and the diagonal Lorentz group at once; the other
 component contains the swap of the copies and $\operatorname{diag}(1,-1)$. Neither exists on one copy (fixed). Third, the duplicate's rest
 energy splits into a stress-energy part, preserved by every duplication, and a holomorphic part. The complex invariant $q_2$ is preserved only on the circle of the copy rotation. Its modulus $|q_2|$, which is what
-the closure sees, is preserved on that circle composed with the overall duality rotation $G_2$, which multiplies $q_2$ by a phase (fixed). Read literally as a multiplication of the energy, the phrase fails: a linear duplication divides the
-undivided energy, and copying it is impossible (no-cloning, inherited).
+the closure sees, is preserved on that circle composed with the overall duality rotation $G_2$, which multiplies $q_2$ by a phase (fixed). Read literally as a multiplication of the energy, the phrase fails either way: the classical map $z\mapsto(z,z)$ is linear and doubles
+the quadratic energy, $(E_6\oplus E_6)(z,z)=2E_6(z)$ (\cref{d5:rem:twoE0}), and its normalised version $z\mapsto(z,z)/\sqrt2$ preserves the total
+energy and divides it equally between the copies. Copying classical field data is well defined; the no-cloning theorem, which concerns the
+universal copying of an unknown quantum state by a physical quantum operation, is a separate statement (inherited).
 
 \begin{table}[t]
 \centering
@@ -1079,7 +1092,8 @@ frequency $m$ (\cref{sec:firstorder}; \cref{sec:resttworot}).
 \begin{proposition}[Graded and ungraded rest energies]
 \label{e1:prop:rest}
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
-\item $H_g^2=M^2\,\id$ and $\Tr H_g=0$, so $\spec H_g=\{\pm M\}$, each of multiplicity $32$.
+\item $H_g^2=M^2\,\id$ and $\Tr H_g=0$, so $\spec H_g=\{\pm M\}$, each of multiplicity $32$ for $M>0$ (coincident eigenvalues add their
+multiplicities: at $M=0$, $H_g=0$ with the single eigenvalue $0$ on $64$ dimensions).
 \item With $B=E_{(2,1)}E_{(1,1)}$, $B^2=-\id$, and $U_\phi=\cos\phi+\sin\phi\,B$, $\tan2\phi=m_2/m_1$: $U_\phi(ME_{(1,1)})U_\phi^{-1}=H_g$. The graded
 rest Hamiltonian is one Dirac mass along a unit vector of $\R^{6,6}$, turned by a compact element of $\mathrm{Spin}(6,6)$.
 \item $H_u$ has eigenvalue $s_1m_1+s_2m_2$ on the $16$-dimensional joint eigenspace of each sign pair $(s_1,s_2)$, so
@@ -1093,7 +1107,8 @@ $D_k=\sum_\mu p^{(k)}_\mu E_{(k,\mu)}$ anticommute, with $(D_1+D_2)^2=(p^{(1)}\c
 counterparts commute.
 \item Rest flows. $J^{(1)}$ and $J^{(2)}$ commute with $H_g$ and $H_u$. The ungraded generator $Z_u=m_1T^{(1)}+m_2T^{(2)}$ is a sum of two commuting
 complex structures, with eigenvalues $i(\pm m_1\pm m_2)$: $e^{-\lambda Z_u}$ winds a two-torus with angular frequencies $m_1$ and $m_2$. The
-graded generator $Z_g=J^{(1)}H_g$ has $Z_g^2=-M^2\id$, so $e^{-\lambda Z_g}=\cos(M\lambda)-\sin(M\lambda)Z_g/M$ has the single frequency $M$.
+graded generator $Z_g=J^{(1)}H_g$ has $Z_g^2=-M^2\id$, so $e^{-\lambda Z_g}=\cos(M\lambda)-\sin(M\lambda)Z_g/M$ has the single frequency $M$ (at $M=0$,
+$Z_g=0$ and the flow is the identity, the limit of the formula).
 \item At rung $n$ the graded $E_{(k,1)}$ anticommute and the ungraded ones commute, with traceless products over every nonempty subset. Hence
 $\spec\bigl(\sum_km_kE_{(k,1)}\bigr)=\{\pm(\sum_km_k^2)^{1/2}\}$, while the ungraded sum has spectrum $\{\sum_k\pm m_k\}$, each sign
 pattern on $4^n$ dimensions (coinciding values add their multiplicities).
@@ -1113,7 +1128,7 @@ Parts (i) and (iii) at $m_1=m_2$ restate \cref{d6:prop:dirac}(iv). The general m
 (iv), the flows (v) and the ladder (vi) are fixed (e1-2a to e1-2g). The free-particle facts behind (iv) are inherited. A system of two
 particles has two mass-shell conditions, one per particle, imposed simultaneously, as in the two-body Dirac (Breit) equation
 \cite{Breit29}. A single particle in a doubled momentum space has one, $p^{(1)}\cdot p^{(1)}+p^{(2)}\cdot p^{(2)}=M^2$. By (ii) and (iv)
-the graded tower is of the second kind. Its two copies have no joint mass shell, its rest energy is one value $M$, and the second copy
+the graded tower is of the second kind. Its two copies admit no simultaneous nonzero-mass Dirac constraints of the graded form, its rest energy is one value $M$, and the second copy
 enters the one particle as further momentum and mass directions. The ungraded operators are of the first kind: the energies add, and
 the pair threshold is $m_1+m_2$.
 
@@ -1257,9 +1272,11 @@ Let $X\in\Cent(G_n)\cap\so{3n,3n}$, the algebra $\so{3n,\C}$ of binding-compatib
 \item $X$ commutes with $N$ iff $X$ is compact (antisymmetric), that is iff it is a paired rotation $\bigl(\begin{smallmatrix}R&0\\0&R\end{smallmatrix}\bigr)$.
 These form $\so{3n}$, of dimension $\tfrac32n(3n-1)$.
 \item The non-compact part, the paired boosts $\bigl(\begin{smallmatrix}0&S\\-S&0\end{smallmatrix}\bigr)$, anticommutes with $K_n$. A nonzero paired
-boost has nonzero components in both $\Lambda^2L_+$ and $\Lambda^2L_-$, so it changes $N$ by $+2$ and by $-2$ and conserves no part of it.
-\item By \cref{cor:noboost} no gauge boson is a boost. Hence no gauge-admissible, binding-compatible field creates or annihilates a
-pair of quanta, at any rung.
+boost has nonzero components in both $\Lambda^2L_+$ and $\Lambda^2L_-$, so it changes $N$ by $+2$ and by $-2$: it has no component commuting
+with $N$, and $[N,X]\neq0$ for $X\neq0$. It may still conserve partial occupation numbers; for instance $(e_3e_5-e_2e_6)/2$ conserves $N_1$ and
+$N_2-N_3$.
+\item By \cref{cor:noboost} a boost generates no compact $U(1)$, so it is not gauge-admissible in the sense fixed after that corollary.
+Hence no gauge-admissible, binding-compatible field creates or annihilates a pair of quanta, at any rung.
 \end{enumerate}
 \end{theorem}
 
@@ -1398,9 +1415,10 @@ preserves the vectors of $\Cl(6,6)$, and $\tau_K$ is blind to it.
 \subsection{Answer: what makes the second rung carry two particles}
 \label{e1:sec:answer}
 
-\Cref{e1:tab:answer} collects the structures. Read together they answer the question in four sentences. (1) As given by the tower, the second
+\Cref{e1:tab:answer} collects the structures. Read together they answer the question in four sentences; the particle language is an
+interpretation under the stated assumptions, as \cref{e8:sec:main} says. (1) As given by the tower, and read in the Dirac picture, the second
 rung carries one particle. Its vectors $E_{(k,a)}$ give one Dirac clock along a unit vector of $\R^{6,6}$, of mass $M=(m_1^2+m_2^2)^{1/2}$, with
-no joint mass shell of the copies. Under the selected unit $J_{\rm sel}$ copy~2 carries no linear Dirac operator (fixed;
+no simultaneous nonzero-mass Dirac constraint of the graded form on the copies. Under the selected unit $J_{\rm sel}$ copy~2 carries no linear Dirac operator (fixed;
 \cref{e1:prop:rest,e1:prop:select}). Read as particle content, the rung is one particle with a larger internal space (interpretive). (2) The algebra also contains, uniquely up to
 conjugation, a second commuting copy, the generators dressed by the chirality of the first. With it the copies have separate mass shells and
 additive energies (fixed; \cref{e1:prop:copies,e1:prop:rest}). (3) Three further structures make that a two-particle system in the sense of
@@ -1417,7 +1435,7 @@ of the split structure, not Lorentz-invariant particles. No gauge-admissible, bi
 \toprule
 structure & what it does at $n=2$ & class\\
 \midrule
-graded vectors $E_{(2,a)}$ & one Dirac clock of mass $M$; no joint mass shell; $\tau_K$ as exchange & fixed (they define $\Cl(6,6)$)\\
+graded vectors $E_{(2,a)}$ & one Dirac clock of mass $M$; no simultaneous nonzero-mass graded Dirac constraints; $\tau_K$ as exchange & fixed (they define $\Cl(6,6)$)\\
 commuting copy $u_a=\Gamma^{(1)}E_{(2,a)}$ & two mass shells, energies $\pm m_1\pm m_2$ & fixed as an algebra (unique up to $\id\otimes GL(8,\R)$); use as vectors constructed\\
 common complex structure $J|_W$ & $W=S\otimes_\C S$, $32$ dimensions, total charge $\pm2$ & $W\oplus\overline W$ fixed by $\omega_S$; $J|_W$ constructed; selection obstructed ($k_I=2$), copy~2 internal ($k_I=1$)\\
 additive Hamiltonian $H_u$ & threshold $m_1+m_2$; two-torus rest flow & constructed; not a vector (grades $1$ and $7$)\\
@@ -1590,7 +1608,9 @@ $H_g=H^{(1)}(\bp)+H^{(2)}(\mathbf q)$, with $H^{(k)}(\bp)=m_kE_{(k,1)}+\sum_ap_a
 \[
 E_\pm^2=E_1^2+E_2^2\pm2\bigl(E_1^2E_2^2-m_1^2m_2^2\bigr)^{1/2},
 \]
-each on $16$ dimensions when $b>0$, and $E_+$ is the largest eigenvalue. At rest $\spec H_g=\{\pm M\}$, $M=(m_1^2+m_2^2)^{1/2}$, each on $32$
+each on $16$ dimensions when the four values are distinct; when values coincide the multiplicities add, and $E_-=0$ exactly when $m_1m_2=0$
+and $E_1=E_2$ (for $m_1=m_2=0$ and $\bp=\mathbf q=(1,0,0)$ the spectrum is $-2$, $0$, $2$ on $16$, $32$, $16$ dimensions). $E_+$ is the largest
+eigenvalue. At rest $\spec H_g=\{\pm M\}$, $M=(m_1^2+m_2^2)^{1/2}$, each on $32$
 dimensions.
 \item $\max(E_1,E_2)\le E_+\le E_1+E_2$, and $(E_1+E_2)^2-E_+^2=2\bigl((b+m_1^2m_2^2)^{1/2}-b^{1/2}\bigr)$, which is positive iff $m_1m_2\neq0$. If
 $m_1m_2=0$, then $E_\pm=|E_1\pm E_2|$: the graded composite has the additive spectrum.
@@ -1620,7 +1640,7 @@ $\bp=-\mathbf q$, the top level $E_+$ exceeds $m_1+m_2=2m$ as soon as $|\bp|>m/2
 it is $E_+\approx4.45$ (checks y2-8 and z1-2a); at each total momentum only the lowest graded levels lie below $((m_1+m_2)^2+|\mathbf P|^2)^{1/2}$.
 So the inequality is not a bound-state condition, and the graded composite is not shown to be stable against dissociation. Both operators act
 on the same space $S_2$, nothing in the tower turns one into the other, and neither is derived from a common interacting theory with
-asymptotic states; ``binding'' and ``dissociation'' therefore compare two readings and describe no dynamical process (LAD-04). Reading $m_1+m_2-M$
+asymptotic states; ``binding'' and ``dissociation'' therefore compare two readings and describe no dynamical process. Reading $m_1+m_2-M$
 as a binding energy is not supported.
 
 % --- source: emergence/e2_processes#4 (Fields: one null field and two)
@@ -1635,7 +1655,8 @@ At the level of fields three results of the energy analysis (\cref{sec:energy}) 
 \item One null field does not become a massive pair. Every map commuting with the diagonal $SO(3,\C)$ sends $(z,0)$, $z$ null, to
 $(\alpha z,\beta z)$, whose Gram matrix $Q$ vanishes, so $M_{\rm pair}=\half(\sigma_1+\sigma_2)=0$ (\cref{d6:prop:covariant}(iii) and \cref{d6:thm:pair}(ii)).
 \item Two null fields that are not collinear do: $M_{\rm pair}=|z_1\cdot z_2|>0$, and the copy rotation can move the whole of it into rest
-energy of the two constituents, as in $\gamma\gamma\to e^+e^-$ (\cref{d6:thm:pair}(iv),(v) and \cref{d6:ex:bw}; \cite{BreitWheeler34}).
+energy of the two constituents, in kinematic analogy with $\gamma\gamma\to e^+e^-$ (\cref{d6:thm:pair}(iv),(v) and \cref{d6:ex:bw}; \cite{BreitWheeler34});
+$M_{\rm pair}$ is a rest-energy density, not an invariant mass.
 \item The closure moves nothing between constituents: for every Hamiltonian the per-constituent invariants of the momentum fields are
 constant, so no closure dynamics fills an empty constituent or makes a null one massive (\cref{d6:cor:nopair}).
 \end{enumerate}
@@ -1655,7 +1676,7 @@ has matrix elements with $\Delta N=\pm2$, or that its exponential gives the Fock
 fixed finite-dimensional space at one momentum label. They are not statements about observable particle production: that would need a
 physical vacuum, a positive inner product preserved by the evolution, a particle-number observable defined from a Poincar\'e-invariant
 state space, and a dynamics that generates the transformation. None of these is specified here, and boosts are not unitary in the
-realisation (LAD-05). The first lemma refines \cref{e1:prop:Nbiv} and \cref{e1:thm:Nrule}.
+realisation. The first lemma refines \cref{e1:prop:Nbiv} and \cref{e1:thm:Nrule}.
 
 \begin{lemma}[The number and the split structure]
 \label{e2:lem:N}
@@ -1778,7 +1799,7 @@ commutes with $(-1)^N$ and not with $N$, and its compression to every sector $\{
 
 \begin{proof}
 (i) $S\otimes\C$ contains only spin $\half$. $\omega$ is $-(-1)^N$ (\cref{e2:lem:N}(i)). With $\varpi=\sum_ie_ie_{i+3}=\sum_i(1-2N_i)$ and
-$\mathcal V=\omega$, the projector $\half\id-\tfrac14(\varpi+\mathcal V)$ of \cref{ex:pairedmode} vanishes exactly where at most one mode is occupied, by the
+the volume element $\omega$, the projector $\half\id-\tfrac14(\varpi+\omega)$ of \cref{ex:pairedmode} vanishes exactly where at most one mode is occupied, by the
 table of signs given there. (ii) and (iii) are exact kernel computations; the weights are traces of the orthogonal projector onto the
 kernel. $H=E_{(1,2)}E_{(1,3)}E_{(2,1)}E_{(2,2)}$ is a blade of even grade, so it commutes with the volume element $(-1)^N$. It shares one
 index with each of the pole operators of the modes $(1,2)$, $(1,3)$, $(2,1)$, $(2,2)$ and none with the other two, so it anticommutes with
@@ -1858,7 +1879,7 @@ $S\to S\otimes E$, $S\otimes\Lambda^2E$; $S\to S\otimes V^{(2)}$ (mixed) & modul
 free particle of mass $M$ $\to$ two & mass shell & only if $M\ge m_1+m_2$ & inherited\\
 graded composite $\to$ free pair & mass shell & $E_+<E_1+E_2$ iff $m_1m_2\neq0$ at equal labels; above threshold at large relative momentum & fixed; binding not supported\\
 one null field $\to$ massive pair & field & no covariant map; closure moves nothing & obstructed (restated)\\
-two null fields $\to$ massive pair & field & $M_{\rm pair}=|z_1\cdot z_2|$ & inherited (restated)\\
+two null fields $\to$ pair with $M_{\rm pair}>0$ & field & $M_{\rm pair}=|z_1\cdot z_2|$, a rest-energy density & inherited (restated)\\
 boosts ($\lint$, $\lG$, copy) & quanta & pairs, fermionic Bogoliubov amplitudes & fixed; form inherited\\
 compact, outside $\Cent(G_n)$ ($S_k$, $J$) & quanta & pairs, unitarily & fixed\\
 compact, inside $\Cent(G_n)$ (paired rotations) & quanta & $N$ conserved & fixed\\
@@ -1933,7 +1954,7 @@ constructed, as in \cref{d6:prop:dirac}(i); on fields the same matrix acts with 
 rest energies of \cref{d6:sec:gauge}. Read as one and two: one quantum can be shared between constituents, in any proportion at equal
 rates and up to the fraction $s$ at unequal rates, but it is never doubled, because $\hat C$ commutes with $N$. At equal rates the
 coupling is removable (\cref{d5:thm:bfield2}(iii)), so which constituent carries the quantum is gauge dependent if the copy rotation is
-gauged, as the per-copy rest energy is (\cref{d6:prop:gauge}). At unequal rates the partial transfer is physical. Up the ladder the
+gauged, as the per-copy rest energy is (\cref{d6:prop:gauge}). At unequal rates the partial transfer cannot be removed while the rates are kept fixed. Up the ladder the
 copy rotations $\so n$ hop quanta among $n$ constituents and the copy boosts create pairs across them (e2-24).
 
 % --- source: emergence/e2_processes#8 (Answer: which processes take one to two)
@@ -1951,8 +1972,9 @@ $\so{3n,3n}$ changes $N$ by an odd number, so one quantum never becomes two. The
 Euclidean-symmetric element outside $\Cent(K_n)$: the boosts of $\lint$ other than the pole boost, the boosts of $\lG$, the copy boost, and the
 compact generators outside $\Cent(G_n)$, including the spatial rotations of the interior four-plane and the charge $J$ (fixed). The compact binding-compatible generators, and the copy rotation among them, never create quanta; the copy rotation
 moves one (fixed). The number of Fock quanta is therefore not Lorentz invariant under any action of the tower, since every action
-contains, on some constituent, the boosts of $\lint$ or of $\lG$, and a Lorentz-invariant
-number exists only for the common binding action at even rungs, where its quanta belong to two constituents at once (fixed). Whether a
+contains, on some constituent, the boosts of $\lint$ or of $\lG$. Under the common binding action an invariant number operator of the
+specified polarisation type exists exactly at even rungs, where its quanta belong to two constituents at once (fixed); other actions with
+spectator constituents can also admit one, as \cref{e2:thm:invnumber}(iii) shows. Whether a
 dynamical mechanism of the arena supplies the non-binding-compatible or non-compact generator that creates a pair is open.
 
 \paragraph{Up the ladder.} Rung by rung the following changes, each fixed. Under the common interior action $e^{2\pi S_3}=(-1)^n$, so a fermion
@@ -1981,8 +2003,8 @@ cannot, and it needs no $b$-field. (2) The closure never creates a pair (\cref{d
 manifolds, the copy rotation, duplicates a field literally, and no Lorentz-covariant operation makes a massive pair out of a single null
 field (\cref{d6:prop:covariant}); a natural candidate that rotates a single direction between the copies is a different, non-covariant
 element (\cref{d6:ex:R1}).
-(4) The rest energy of a duplicated field point is $M_{\rm pair}=\half(\sigma_1+\sigma_2)$, and the copy rotation can move all of it into the two
-copies (\cref{d6:thm:pair,d6:ex:bw}): the kinematics of $\gamma\gamma\to e^+e^-$, inherited. (5) The rest energy of each copy separately is
+(4) The rest-energy density of a duplicated field point is $M_{\rm pair}=\half(\sigma_1+\sigma_2)$, and the copy rotation can move all of it into
+the two copies (\cref{d6:thm:pair,d6:ex:bw}); the kinematics of $\gamma\gamma\to e^+e^-$ is an analogy only. (5) The rest energy of each copy separately is
 not invariant under the copy rotation, hence gauge dependent if that rotation is gauged, and with equal inertias the closure's own symmetry maps every balanced pair to one null constituent
 (\cref{d6:prop:gauge}): pair creation is physical only where the copies are distinguished. (6) On the Dirac side the graded duplication adds
 Dirac masses in quadrature (\cref{d6:prop:dirac}). (7) The zero-point energy stays zero, but an inter-manifold $b$ at unequal rates can
@@ -2000,7 +2022,7 @@ directions; $E^2=-\id$, $[E,G_2]=0$, $E$ is antisymmetric for $\eta_2$ and for t
 \[
 M_{\rm pair}:=\inf_t|P_{\rm sum}(t)|,
 \]
-the rest energy of the duplicated field point. In the closure the per-copy quantities are those of the momentum fields
+the rest-energy density of the duplicated field point: a local invariant of the summed stress tensor, not the invariant mass of two photons. In the closure the per-copy quantities are those of the momentum fields
 $\pi^{(k)}=\eta^{-1}p^{(k)}$, $w_k=q(z(\pi^{(k)}))$; inertias are of Lorentz class, $N_k=(\nu_{k,1}\eta^{-1}+\nu_{k,2}G\eta^{-1})/m_k$, with
 $c_k:=\nu_k/m_k\in\C$ and $R_{\rm eff}e^{i\varphi_{\rm eff}}:=\sum_kc_kw_k(0)$ (\cref{prop:several}). Two Lorentz actions occur: the
 per-copy algebras $\lG^{(1)}\oplus\lG^{(2)}$, and the diagonal $\mathfrak l_{G,\Delta}$ ($k_B=2$ in \cref{thm:algebra}). Each $E_0^{(k)}$ is invariant under both; $M_{\rm pair}$, defined with one observer for both copies, is invariant under the diagonal action but not under the per-copy one, since a boost of one copy alone changes it. A constituent is called \emph{massive} when its momentum field is not null, $E_0(\pi^{(k)})\neq0$:
@@ -2155,7 +2177,7 @@ and it duplicates a field literally: the undivided energy and the rest energy of
 $\cos^2\varphi:\sin^2\varphi$, a null field becomes two null fields and a massive one two massive replicas. It cannot produce a balanced massive
 pair from a single null field, and no other Lorentz-covariant operation can.
 
-\begin{theorem}[The rest energy of a duplicated field point]
+\begin{theorem}[The rest-energy density of a duplicated field point]
 \label{d6:thm:pair}
 Let $z_1,z_2\in\C^3$, with Gram matrix $Q$ of singular values $\sigma_1\ge\sigma_2$.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
@@ -2185,14 +2207,17 @@ segment through $0$, so such $\varphi$ exists. (v) $Q=\bigl(\begin{smallmatrix}0
 $T(z_k)=k_k\otimes k_k$ with $k_k$ future null, $k_k^0=(E_6^{(k)})^{1/2}$, so $|r|=k_1\cdot k_2$ by (i), and $|\mathbf S^{(k)}|=E_6^{(k)}$.
 \end{proof}
 
-Items (i), (iii) and (v) are inherited: ordinary electrodynamics of two field strengths, with the reverse triangle inequality as the kinematics
-of invariant mass. The closed form of $M_{\rm pair}$ in (ii) and its saturation by the copy rotation in (iv) are fixed and new; (i), (ii) and
-(iv) are not stated elsewhere in this manuscript. Checked symbolically (i), at the rest frames of $z_1\times z_2$ to $10^{-10}$ against $300$ random
+Items (i), (iii) and (v) are inherited: ordinary electrodynamics of two field strengths, with the reverse triangle inequality for future
+causal momentum densities. The closed form of $M_{\rm pair}$ in (ii) and its saturation by the copy rotation in (iv) are fixed; their priority is
+not established (compare Kaiser's local invariants \cite{Kaiser11} and Thompson's results on complex symmetric matrices \cite{Thompson79}). Checked symbolically (i), at the rest frames of $z_1\times z_2$ to $10^{-10}$ against $300$ random
 observers (ii), by maximising over $\varphi$ (relative deviation $5\times10^{-16}$) (iv), and on random and null pairs (iii), (v) (d6-6a--d).
 Since $T(z_1\times z_2)$ is traceless, the trace of (i) gives the pair invariant of \cref{d5:rem:twoE0},
 $E_{\rm pair}=(\tfrac14\tr T_{\rm tot}^2)^{1/2}=\half\|Q\|_F$, and (ii) gives $M_{\rm pair}^2=E_{\rm pair}^2+\half|\det Q|$. The two agree exactly when
 $\det Q=0$, which holds on every duplicate $(\alpha z,\beta z)$ of a single field (\cref{d5:thm:dup}); for the counter-propagating null pair of
-\cref{d6:ex:bw}, $E_{\rm pair}=\sqrt2$ while $M_{\rm pair}=2$. The invariant mass of the pair is $M_{\rm pair}$, not $E_{\rm pair}$ (inherited).
+\cref{d6:ex:bw}, $E_{\rm pair}=\sqrt2$ while $M_{\rm pair}=2$. $M_{\rm pair}$ is the local rest-energy density of the summed stress tensor at a point,
+not the invariant mass of two photons. For two null fields it equals $(u_1u_2)^{1/2}(1-\cos\vartheta_{12})$ by (v), whereas two photons of
+energies $E_1,E_2$ have invariant mass $\bigl(2E_1E_2(1-\cos\vartheta_{12})\bigr)^{1/2}$; for $z_1=(1,i,0)$ and $z_2=(0,1,i)$ the values are $1$ and
+$\sqrt2$, and the counter-propagating example of \cref{d6:ex:bw} agrees only by coincidence.
 
 \begin{example}[Two counter-propagating null fields]
 \label{d6:ex:bw}
@@ -2200,8 +2225,11 @@ $z_1=(1,i,0)$ and $z_2=(1,-i,0)$ are null with $\mathbf S^{(1)}=-e_3=-\mathbf S^
 $Q=\bigl(\begin{smallmatrix}0&2\\2&0\end{smallmatrix}\bigr)$ and $M_{\rm pair}=2$. The rotation $R_{\pi/4}$ gives $z_1'=(0,\sqrt2\,i,0)$ and
 $z_2'=(\sqrt2,0,0)$: a pure electric and a pure magnetic field, both at rest, with $q=-2,+2$ and $E_0=1$ each. In this frame, the centre-of-momentum frame, the chain of
 \cref{d6:thm:pair}(iii) holds with equality for the rotated pair, $E_0^{(1)}+E_0^{(2)}=M_{\rm pair}=|P_{\rm sum}|=E_6^{\rm tot}=2$, while
-$M_{\rm pair}=2>\half|q_{\rm tot}|=0$: the balanced pair is produced at rest in the centre-of-momentum frame and takes the whole invariant mass
-(d6-7). Inherited: the kinematics of $\gamma\gamma\to e^+e^-$ \cite{BreitWheeler34}; the same superposition is the standing wave of
+$M_{\rm pair}=2>\half|q_{\rm tot}|=0$: the rotated pair is at rest in the centre-of-momentum frame and takes the whole of $M_{\rm pair}$ (d6-7).
+The kinematics of $\gamma\gamma\to e^+e^-$ \cite{BreitWheeler34} is an analogy, not a production process. \Cref{d6:thm:pair} adds the two stress
+tensors, $T(z_1)+T(z_2)$, which differs in general from the tensor $T(z_1+z_2)$ of the coherent superposition (here $\operatorname{diag}(2,0,0,2)$ against
+$\operatorname{diag}(2,-2,2,2)$); the coherent superposition is, by analogy, the standing
+wave of
 \cref{en:whole}(3).
 \end{example}
 
@@ -2210,8 +2238,8 @@ $M_{\rm pair}=2>\half|q_{\rm tot}|=0$: the balanced pair is produced at rest in 
 Let $R^{(1)}_\varphi$ rotate the planes $(e^{(1)}_1,e^{(2)}_1)$ and $(e^{(1)}_4,e^{(2)}_4)$ through $\varphi$. It is compact, commutes with $G_2$ and lies in
 $\Cent(G_2)\cap\so{6,6}\cong\so{6,\C}$, the $n=2$ analogue of \cref{thm:so9C}. On $((1,i,0),0)$ it gives $z_1'=(\cos\varphi,i,0)$,
 $z_2'=(\sin\varphi,0,0)$: $q_1'=-\sin^2\varphi$, $q_2'=\sin^2\varphi$, a balanced pair with $E_0=\half\sin^2\varphi$ each. $E_6^{\rm tot}=1$ and $q_{\rm tot}=0$
-are conserved, $\mathbf S_{\rm sum}$ goes from $-e_3$ to $-\cos\varphi\,e_3$ and $M_{\rm pair}$ from $0$ to $\sin\varphi$, so
-$E_6^{\rm tot}=1\ge M_{\rm pair}=\sin\varphi\ge\sum_kE_0^{(k)}=\sin^2\varphi$, with equality throughout at $\varphi=\pi/2$ (a magnetic field along $e_1$ and
+are conserved, $\mathbf S_{\rm sum}$ goes from $-e_3$ to $-\cos\varphi\,e_3$ and $M_{\rm pair}$ from $0$ to $|\sin\varphi|$, so
+$E_6^{\rm tot}=1\ge M_{\rm pair}=|\sin\varphi|\ge\sum_kE_0^{(k)}=\sin^2\varphi$, with equality throughout at $\varphi=\pi/2$ (a magnetic field along $e_1$ and
 an electric one along $e_2$, at rest). $R^{(1)}$ does not commute with $\mathfrak l_{G,\Delta}$, and lies neither in $\mathfrak g(0,2,0)$ nor in
 $\mathfrak g(0,1,1)=\so{3,3}$ (Lorentz algebra on copy~1, copy~2 a spectator): it is a candidate gauge transformation under no Lorentz action of
 \cref{thm:algebra} with $k_I=0$ (d6-8), and under none with $k_I>0$ either: it lies outside $\mathfrak g(2,0,0)$ and
@@ -2262,7 +2290,7 @@ arithmetic (d6-9a, d6-9b, d6-9c, d6-10). This decides whether ``mass creation in
 each copy is not an observable: \cref{d6:ex:bw} is a change of gauge, not a process, and two counter-propagating null fields and an
 electric--magnetic pair at rest are one physical state, whose gauge-invariant content $M_{\rm pair}=2$ was there before. \emph{In the
 equal-inertia closure alone}, its own compact symmetry maps every balanced pair to one null constituent, changing $M_{\rm pair}$ as it does so (by (iii)), and the rotor sees only
-$\half|q_{\rm tot}|=0$; the mass of the pair is invisible to the rate. $M_{\rm pair}$ becomes an invariant only through the diagonal Lorentz action, and the per-copy rest energies only through a per-copy one,
+$\half|q_{\rm tot}|=0$; the rest-energy density $M_{\rm pair}$ of the pair is invisible to the rate. $M_{\rm pair}$ becomes an invariant only through the diagonal Lorentz action, and the per-copy rest energies only through a per-copy one,
 neither of which the closure selects (the Lorentz action at several constituents is left open, \cref{tab:choices}; at $n=3$ the closure symmetry meets the interior Lorentz algebra of the first constituent in $0$, \cref{thm:nocommon}, and \cref{d5:prop:so6C}(iv) is the $n=2$ analogue). \emph{If the copies are
 distinguished} --- by unequal inertias, which by (iv) break $\mathfrak g(0,2,0)$, by unequal binding rates, by a projector, or by a Lorentz
 action on one copy only, whose algebra $\mathfrak g(0,1,1)$ contains no copy mixing --- the per-copy rest energies are observables, but then the
@@ -2340,11 +2368,14 @@ ungraded operators: duplication in the tower's sense is not pair creation.
 signature $(3,3)$; with positive-norm quantisation the zero-point energy is $\sum_k\frac{\hbar\kappa_k}2(3-3)=0$ for all $\kappa_1,\kappa_2>0$ and $m_1,m_2\neq0$. At $\kappa_k=0$ the copy is free, its phase-space generator is not semisimple, and no zero-point energy is defined.
 \item With an inter-manifold $b=\beta E$ ($m_1=m_2$, $\kappa_k\ge0$ not both zero), $S=\operatorname{diag}(\kappa_1,\kappa_2)\otimes G+\beta E$ has spectrum
 $\pm i\omega_\pm$, $\omega_\pm=\half(\kappa_1+\kappa_2)\pm\bigl(\tfrac14(\kappa_1-\kappa_2)^2+\beta^2\bigr)^{1/2}$, each three times; these are the lines of \cref{d5:thm:bfield2}(ii). Every solution is
-bounded unless $\beta^2=\kappa_1\kappa_2$ and $\kappa_1\neq\kappa_2$; when bounded, each line has Krein signature $(3,3)$ and the zero-point energy
-vanishes. At $\kappa_1=0$, $|\omega_-|\approx\beta^2/\kappa_2$.
+bounded unless $\beta^2=\kappa_1\kappa_2$ and $\kappa_1\neq\kappa_2$; when bounded, each nonzero-frequency line (coincident lines combined) has
+Krein signature $(3,3)$ and their zero-point energy vanishes. At $\kappa_1=\kappa_2=|\beta|>0$ the zero line is semisimple and the motion
+bounded, but it is not an oscillator line. At $\kappa_1=0$, $|\omega_-|\approx\beta^2/\kappa_2$.
 \item At $\beta^2=\kappa_1\kappa_2$, $\kappa_1\neq\kappa_2$, $\omega_-=0$ and the phase-space generator is not semisimple: some solutions grow linearly
-in $\tau$.
+in $\tau$, and on that line there is no oscillator vacuum.
 \end{enumerate}
+The cancellation in (i) and (ii) concerns the nonzero-frequency lines of a Hamiltonian that is unbounded below; no vacuum-energy conclusion
+follows from it (compare \cref{thm:EBsplit}).
 \end{proposition}
 
 \begin{proof}
@@ -2365,7 +2396,7 @@ $(3,3)$ of each line and the vanishing zero-point energy at $n=2$, fixed by \cre
 of \cref{d5:thm:bfield2}(v) (fixed there); it is the inter-manifold analogue of the exceptional ratio of \cref{bf:screen}. Checked numerically for the signatures (d6-14a,b) and with rational
 data for semisimplicity: not semisimple at $(1,4,2)$, semisimple at $(1,4,1)$, $(2,2,2)$ and $(1,3,\tfrac25)$ (d6-14c). Read with the added
 identification $mc^2=\hbar\kappa$ applied to the lines: an inter-manifold $b$ can give an unbound manifold the line $\beta^2/\kappa_2$ borrowed from the
-binding of the other, or bring a line to zero exactly at the price of unbounded motion; it never changes a rate, the spectrum of the
+binding of the other, or bring a line to zero, at unequal rates exactly at the price of unbounded motion; it never changes a rate, the spectrum of the
 self-adjoint part of the shift (\cref{d7:thm:schr}(iii)), and never produces a line without an existing binding, since at
 $\kappa_1=\kappa_2=0$ the lines $\pm\beta$ are removed by $X\mapsto e^{-\beta E\tau}X$.
 
@@ -2380,22 +2411,22 @@ $\kappa_1=\kappa_2=0$ the lines $\pm\beta$ are removed by $X\mapsto e^{-\beta E\
 \toprule
 claim & statement & class & check\\
 \midrule
-Thm.~\ref{d6:thm:balance}(i) & rate constant iff $R_{\rm eff}=0$; frames on circles & fixed (restated, \cref{prop:several}) & d6-2a--d\\
-Thm.~\ref{d6:thm:balance}(ii) & $n=1$: constant rate forces $E_0(\pi)=0$ & fixed (restated, \cref{cor:constrate}) & d6-1a\\
+Thm.~\ref{d6:thm:balance}(i) & rate constant and nonzero iff $R_{\rm eff}=0$ and $h(0)\neq0$; frames then on circles & fixed (restated, \cref{prop:several}) & d6-2a--d\\
+Thm.~\ref{d6:thm:balance}(ii) & $n=1$: a constant nonzero rate with nonzero Lorentz-class inertia requires $E_0(\pi)=0$ & fixed (restated, \cref{cor:constrate}) & d6-1a\\
 Thm.~\ref{d6:thm:balance}(iii) & $n\ge2$: codimension-two balance set, massive data dense & fixed & d6-1b\\
 Rem.~\ref{d6:rem:lorentzreq} & without the Lorentz requirement $n=1$ suffices & fixed (counterexample) & d6-1c\\
 Cor.~\ref{d6:cor:nopair} & no closure Hamiltonian creates or moves a pair & obstructed & d6-3\\
 Prop.~\ref{d6:prop:pairs} & $a\cdot b=0$; $V_\pm$ null, $E=\mp G_2$; magnetic--electric pair, $M_{\rm pair}=2E_0$, $q_{\rm tot}=0$ & fixed (part restated); readings interpretive & d6-4a--e\\
 Prop.~\ref{d6:prop:covariant}(i,ii) & commutant $M_2(\C)$, $\mathfrak g(0,2,0)$, invariants of $R_\varphi$ and $U(2)$ & restated / inherited & d6-5a,b\\
 Prop.~\ref{d6:prop:covariant}(iii) & no covariant map makes a pair from one null field & obstructed & d6-5c\\
-Thm.~\ref{d6:thm:pair} & $M_{\rm pair}=\half(\sigma_1+\sigma_2)$, the chain, $\max_\varphi$ & (i), (iii), (v) inherited; (ii), (iv) fixed (new) & d6-6a--d\\
+Thm.~\ref{d6:thm:pair} & $M_{\rm pair}=\half(\sigma_1+\sigma_2)$, the chain, $\max_\varphi$ & (i), (iii), (v) inherited; (ii), (iv) derived here, priority unestablished & d6-6a--d\\
 Ex.~\ref{d6:ex:bw} & two null fields $\to$ electric and magnetic at rest & inherited & d6-7\\
 Ex.~\ref{d6:ex:R1} & rotation of one direction: balanced pair from a null field, covariant under none of the five Lorentz actions at $n=2$; third body & fixed (numbers, non-covariance); agent constructed; reading interpretive & d6-8; x6-8a,b\\
 Prop.~\ref{d6:prop:gauge} & $R_\varphi$ admissible; per-copy $E_0$ not invariant; $O(6,\C)$ maps pairs to null fields & fixed (part restated) & d6-9a--c, 10\\
 interior & distinguished copies: per-copy rest energy changed by two-level mixing, sum $\le M_{\rm pair}$ & inherited & d6-11\\
 Rem.~\ref{d6:rem:copyrotor} & a dynamical copy rotor changes $E_0^{(k)}$ and their sum at fixed pair invariants & constructed & d6-12\\
 Prop.~\ref{d6:prop:dirac} & Klein signs, $C$-parity, masses in quadrature & inherited & d6-13a--e\\
-Prop.~\ref{d6:prop:zpe} & zero-point energy $0$; exceptional ratio $\beta^2=\kappa_1\kappa_2$ & fixed ((i) restated; lines, boundedness and (iii) restate \cref{d5:thm:bfield2}) & d6-14a--c\\
+Prop.~\ref{d6:prop:zpe} & formal cancellation of the zero-point energy of the nonzero lines of the indefinite Hamiltonian; exceptional ratio $\beta^2=\kappa_1\kappa_2$ & fixed ((i) restated; lines, boundedness and (iii) restate \cref{d5:thm:bfield2}) & d6-14a--c\\
 answers & duplication as copy rotation, pair creation and balance & interpretive & ---\\
 \bottomrule
 \end{tabular}
@@ -2439,8 +2470,8 @@ modes, one frame and one copy direction; the commuting copy of the new constitue
 rung $n$ (fixed; \cref{e3:sec:rung}). (2) For $n$ equal masses the graded rest Hamiltonian is one clock of mass $\sqrt n\,m$, and the
 ungraded one is $n$ clocks of mass $m$, with spectrum $m(n-2j)$ of multiplicity $\binom nj4^n$ (fixed, partly restated from
 \cref{e1:prop:rest}; \cref{e3:sec:mass}). (3) A rotation through $2\pi$ of the diagonal interior Lorentz action is $(-1)^n$ on $S_n$, and one
-of the diagonal field-strength action is $+\id$. The interior composite is a fermion exactly at odd $n$, and the field-strength composite
-has integer spin at every rung (restated from \cref{prop:orthospin}, with the second half fixed; \cref{e3:sec:spin}). (4) On vectors
+of the diagonal field-strength action is $+\id$. The interior composite has half-integer spin exactly at odd $n$, a fermion under the
+spin--statistics reading, and the field-strength composite has integer spin at every rung (restated from \cref{prop:orthospin}, with the second half fixed; \cref{e3:sec:spin}). (4) On vectors
 the copy rotations of all six directions span the commutant of the diagonal $\so{3,3}$, and the copy group $O(n)$ has the diagonal $\so{3,3}$
 as its commutant. On $S_n$ the Casimirs satisfy $C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$. This is Howe's skew duality $(O(n),\so6)$ on the spinor module of $\so{6n}$, and at
 $n=2,3$ the joint decomposition has the predicted multiplicity-free form (fixed; the duality inherited; \cref{e3:sec:dual}). (5) The Koszul
@@ -2649,7 +2680,9 @@ with the same cross term $\mathsf S=\sum_{k<l}\sum_{a<b}\eta^{aa}\eta^{bb}B^{kl}
 
 Part (i) is fixed (e3-4a, exact over $\Q$ at $n\le5$); at $n=3$ its interior analogue is \cref{thm:diagcent}. Part (ii) restates
 \cref{d5:prop:cmrel}(ii) at $n=2$ and \cref{d7:prop:isospin}(i), and is fixed at $n\le4$ (e3-4b, e3-4f); the Fock form at $n=2$ is
-\cref{e2:prop:hop}(i) with the opposite orientation. Part (iii) is fixed: the constant $\tfrac34n(n+4)$ is new, and the identity was checked exactly
+\cref{e2:prop:hop}(i) with the opposite orientation. Part (iii) is inherited: the constant $\tfrac34n(n+4)$ is the case $d_{\rm N}=n$, $k_{\rm N}=3$ of Neerg{\aa}rd's
+relation $C_{\mathfrak o(d_{\rm N})}+C_{\mathfrak o(2k_{\rm N})}=\tfrac14k_{\rm N}d_{\rm N}(d_{\rm N}+2k_{\rm N}-2)$ \cite[eq.~(73)]{Neergard19}, and the Clifford-algebra proof is an independent
+derivation in the real realisation. The identity was checked exactly
 as matrices on $S_n$ at $n\le4$ and blade by blade in the abstract Clifford algebra at $n\le6$; the interior identity is restated and checked in
 the same two ways (e3-4c). Part (iv) is fixed (e3-4e; nullity in floating point with gap $>1$, rank exact). The $\eta$-weighting is where the
 signature enters: a copy rotation pairs two generators of the same square, so it is compact (\cref{thm:diagcent}), and $C_{\rm cop}\ge0$.
@@ -2797,7 +2830,7 @@ antisymmetry imposed, rung $n$ on $W_n$ has the content of $n$ identical Dirac f
 four, since a Dirac spinor has four states, so there is no antisymmetric state at $n\ge5$ (exclusion inherited \cite{Pauli40}). The scope is
 narrow. The vanishing of $\Lambda^n_\C\C^4$ is a statement about one mode of a finite construction; it is not a limit on the number of fermions in
 physical space, which would need a continuum of momenta. The antisymmetry is imposed, not derived: neither exchange of the tower proves a
-spin--statistics connection, which needs a local relativistic field theory with positive energy (LAD-06). The two exchanges therefore differ at
+spin--statistics connection, which needs a local relativistic field theory with positive energy. The two exchanges therefore differ at
 every rung, not only at $n=2$ (\cref{e1:prop:swap}). The Koszul exchange is the one the algebra supplies, since it permutes the vectors of
 $\Cl(3n,3n)$. Its antisymmetric sector has dimension $88$ at $n=3$ and contains all three Lorentz types, and at $n=5$ it has dimension $360$
 where the plain one is empty. It is not a statistics label. The plain exchange is a statistics label, but only on the constructed space $W_n$,
@@ -2827,7 +2860,7 @@ its vectors, every rung carries one Dirac mass $\sqrt n\,m$ along a unit vector 
 components of a vector of the copy group $O(n)$ (fixed); read as particle content, this is one particle (interpretive). None of the tests
 used here, mass shells, complex structures, exchanges or counting operators, is a particle count by itself: a particle interpretation needs a
 state space with a positive inner product, a positive-energy representation of the Poincar\'e group and asymptotic states, and none is
-constructed here (LAD-03). That group is the Howe dual of the diagonal $\so{3,3}$, its type is locked to
+constructed here. That group is the Howe dual of the diagonal $\so{3,3}$, its type is locked to
 the $\so{3,3}$ type by $C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$, and its Lie algebra moves quanta between constituents without creating any. So
 the copy index behaves as a flavour index of one particle, and going up the ladder adds a flavour direction and three modes to that particle
 (fixed statements, read interpretively; \cref{e3:prop:mass,e3:thm:dual}). (2) The Lorentz content does not decide. The parity $(-1)^n$ under
@@ -2864,7 +2897,7 @@ statement & class & checks\\
 \cref{e3:rem:copyparity}: spin parity against copy-invariant four-vectors & restated (\cref{thm:blockgamma}, \cref{thm:copyparity}); comparison interpretive & e3-6b\\
 \cref{e3:thm:dual}(i): mutual commutants on vectors; $\eta$-weighting forced & fixed & e3-4a\\
 \cref{e3:thm:dual}(ii): spin lifts, $\so n$, single-valued, Fock form & fixed; restated at $n=2,3$ (\cref{d5:prop:cmrel}, \cref{d7:prop:isospin}) & e3-4b, e3-4f\\
-\cref{e3:thm:dual}(iii): $C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$; interior identity & fixed (constant new); interior restated (\cref{thm:casid}) & e3-4c, z1-3a\\
+\cref{e3:thm:dual}(iii): $C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$; interior identity & inherited (Neerg{\aa}rd, eq.~(73)); independent proof; interior restated (\cref{thm:casid}) & e3-4c, z1-3a\\
 \cref{e3:thm:dual}(iv): commutant at $n=2$ is the image of $\R[O(2)]$ & fixed & e3-4e\\
 Howe's skew duality $(O(n),\so6)$ on $\Lambda(\C^n\otimes\C^3)$ & inherited \cite{Howe89} & e3-4f\\
 \cref{e3:prop:joint}, \cref{e3:tab:joint}: joint decomposition at $n=2,3,4$ & fixed; $n=3$ copy spectrum restated (\cref{d7:prop:isospin}) & e3-4d\\
@@ -3021,8 +3054,8 @@ for commuting real fields
 \end{equation}
 the real form of $-\tfrac14F^2+\bar\psi(i\gamma^\mu D_\mu-m)\psi$ with $J_1$ in the place of $i$. Then the field equations are Maxwell's
 equations $\partial_\mu F^{\mu\nu}=q\,j^\nu$ with $j^\nu=\psi^{\!\top}U^\nu\psi$ and $j^0=|\psi|^2$, and the Dirac equation
-$J_1\hat\gamma^\mu D_\mu\psi=m\psi$; the identity $\partial_\mu j^\mu+\psi^{\!\top}J_1\mathcal E_\psi=0$ holds with $\mathcal E_\psi$ the Dirac
-expression; the Lagrangian is exactly invariant under $\psi\mapsto e^{-q\lambda J_1}\psi$, $A\mapsto A+\partial\lambda$; and its flavour
+$J_1\hat\gamma^\mu D_\mu\psi=m\psi$; the identity $\partial_\mu j^\mu+\psi^{\!\top}J_1\mathcal E_\psi=0$ holds with $\mathcal E_\psi$ the Euler--Lagrange
+derivative of the action, $\mathcal E_\psi=2\hat\gamma^0(J_1\hat\gamma^\mu D_\mu\psi-m\psi)$, and not with the Dirac expression itself; the Lagrangian is exactly invariant under $\psi\mapsto e^{-q\lambda J_1}\psi$, $A\mapsto A+\partial\lambda$; and its flavour
 symmetry is the $\uu2$ spanned by $J\otimes1$, $1\otimes\epsilon$, $J\otimes\sigma_x$, $J\otimes\sigma_z$. The potential carries two
 polarisations of helicity $\pm1$ and no massive mode, and each momentum carries two flavours, two helicities and two signs of frequency.
 \end{theorem}
@@ -3068,13 +3101,15 @@ restatements of fixed results), \emph{conditional or constructed structures}, \e
 \begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
 \item \emph{What is proved.} Every rung is $M_{8^n}(\R)$, and the step embeds rung $n$ in rung $n+1$ with multiplicity eight. A second, commuting copy
 of each constituent exists and is unique up to conjugation; its generators are the graded ones dressed by the volume elements of the
-earlier constituents. The graded masses add in quadrature to one Dirac mass $(\sum_km_k^2)^{1/2}$, with no joint mass shell, while the
+earlier constituents. The graded masses add in quadrature to one Dirac mass $(\sum_km_k^2)^{1/2}$, with no simultaneous nonzero-mass Dirac constraints of the graded form, while the
 commuting copies have additive spectra $\{\sum_k\pm m_k\}$. A common complex structure for all copies exists only on the subspace
 $W_n=\{J^{(1)}=\cdots=J^{(n)}\}$, of real dimension $2\cdot4^n$. The diagonal interior action selects an imaginary unit exactly at odd $n$, and none
 at even $n$. The Fock number $N$ is conserved exactly by $\mathfrak{gl}(3n,\R)$. Within the maximal compact subalgebra, it is conserved exactly
 by the paired rotations, the compact binding-compatible fields. No element of $\so{3n,3n}$ changes it by an odd number. $N$ is invariant
 under no Lorentz action of the tower, and a Lorentz-invariant number of quanta exists, under the common binding action, exactly at even
-$n$. The copy algebra and the diagonal $\so{3,3}$ are mutual commutants with $C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$. The compact field
+$n$. On vectors, the copy algebra with the copy permutations adjoined and the diagonal $\so{3,3}$ are mutual centralisers
+(\cref{e3:thm:dual}(i)); on $S_n$ the Casimirs satisfy $C_{\rm cop}+C_{\rm diag}=\tfrac34n(n+4)$, and the dual-pair statement there concerns the full
+$O(n)$ action, reflections included \cite{Neergard20}. The compact field
 between constituents is a one-body operator: it moves quanta and never creates one.
 \item \emph{What is constructed, not selected.} A reading with $n$ particles in the sense of ordinary quantum mechanics needs three
 structures together: the subspace $W_n$ with the complex structure $J|_{W_n}$, the additive Hamiltonian $H_u$ built from the commuting copies,
@@ -3082,11 +3117,13 @@ and the plain exchange $P$ with antisymmetry imposed. Each exists. None is selec
 With them, rung $n$ has the content of $n$ identical Dirac fermions at one momentum label, with exclusion $n\le4$ at that label.
 \item \emph{What is obstructed.} At $n=2$ no selection principle of the paper gives a complex structure under which both copies are complex
 Dirac spinors. Under the diagonal action none exists, and under the spectator action copy~2 carries no linear Dirac operator. No
-gauge-admissible, binding-compatible field changes $N$. Pairs of quanta appear only under paired boosts, which are not gauge fields, or
-under compact generators outside $\Cent(G_n)$. The Clifford exchange $\tau_K$ is not a statistics label. At $n=2$ none of the compact parts of
+gauge-admissible, binding-compatible field changes $N$. Within the binding-compatible algebra the number-changing directions are the
+paired boosts, which are not gauge fields; outside it, compact generators and non-compact ones, the interior boosts of \cref{e2:prop:bogo}
+among them, also mix sectors differing by two quanta. The Clifford exchange $\tau_K$ is not a statistics label. At $n=2$ none of the compact parts of
 the five candidate gauge algebras contains the Pati--Salam algebra.
 \item \emph{What is missing.} No state space with a positive inner product carrying a positive-energy representation of the Poincar\'e
-group is constructed. There are no asymptotic states, no interacting theory, no dynamics that selects $W_n$, $H_u$, an exchange or a rung,
+group is constructed. There are no asymptotic states, no derived quantum theory of tower-changing processes (\cref{thm:coupled} is a classical
+interacting model), no dynamics that selects $W_n$, $H_u$, an exchange or a rung,
 and no proof of a spin--statistics connection. Without these, ``one particle with a larger internal space'' and ``$n$ particles'' are two
 readings of the same algebra, and the tower does not decide between them.
 \end{enumerate}

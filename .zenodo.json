@@ -2,8 +2,8 @@
   "title": "The Spacetime–Electromagnetic Framework: Mathematical Structures and Obstructions in Split-Signature Clifford Geometry",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "version": "1.0.0",
-  "publication_date": "2026-11-02",
+  "version": "1.0.1",
+  "publication_date": "2026-11-08",
   "language": "eng",
   "creators": [
     {
@@ -11,7 +11,7 @@
       "affiliation": "Independent Researcher"
     }
   ],
-  "description": "<p><strong>Version 1.0.0 — Preprint, not peer reviewed.</strong></p><p>A study of the real Clifford algebra Cl(3,3) of the split space R<sup>3,3</sup> — three temporal directions paired with three spatial ones — and of its graded tower Cl(3n,3n): which ingredients of relativistic field theory the algebra fixes, which it merely admits, and which it obstructs. The manuscript states every selection beyond the algebra (clock, projector, potential, couplings, gauge principle) as an assumption, proves the obstructions it finds, and is accompanied by a chapter-organized verification package of 61 scripts with 1389 exact or numerical checks. It is a mathematical research manuscript, not a completed unified physical theory: no gravitational dynamics is derived and no experimental confirmation is claimed.</p>",
+  "description": "<p><strong>Version 1.0.1 — Preprint, not peer reviewed.</strong> Corrections of version 1.0.0 (doi:10.5281/zenodo.23900465); the changes are listed in release/README.md and docs/errata.md of the repository.</p><p>We investigate the real split-signature Clifford algebra Cl(3,3) ≅ M<sub>8</sub>(R) and its graded extensions Cl(3n,3n) as a common setting for spacetime, electromagnetic and matter constructions. The aim is to distinguish consequences of specified algebraic data from additional assumptions, physical interpretations and compatibility obstructions. For a chosen Lorentz embedding and stated commutation requirements, the complex structure is fixed up to sign, and the associated real Dirac formulation is equivalent to ordinary complex Dirac theory. We construct distinct displacement and field-strength representations on R<sup>3,3</sup>, with no nonzero Lorentz-equivariant linear intertwiner between the specified modules. We analyse factorised interior dynamics and a Lie–Poisson closure within a restricted ansatz, including bounded motions in a neutral-signature model whose Hamiltonian is unbounded below. In Cl(9,9), a chosen rank-64 projector realises one chiral Pati–Salam family with a right-handed neutrino; its Lorentz-invariant mass kernels form a 272-dimensional real space. Vacuum-selection results are established under explicit assumptions for specified potentials and sectors, while global claims for the full radiative model remain conjectural. Electric-charge identification depends on selected vacua, and the normal-plane charge is anomalous on the chosen matter block. Curvature identities recover the Einstein tensor of a prescribed four-metric. We also analyse obstructions to causal selection within an invariant adjoint-scalar ansatz and formulate surplus-time constraints at the test-worldline level. The resulting constructions identify mathematical relationships and limits of compatibility. A common action, a general interacting causal reduction and empirical predictions remain open.</p><p>The manuscript is accompanied by a chapter-organized verification package of 66 scripts with 1405 exact or numerical checks. It is a mathematical research manuscript, not a completed unified physical theory.</p>",
   "keywords": [
     "split-signature Clifford algebra",
     "Cl(3,3)",
@@ -23,7 +23,7 @@
     "vacuum selection",
     "curvature identities",
     "obstructions",
-    "computer-verified mathematics"
+    "computer-assisted algebra"
   ],
   "license": "cc-by-4.0",
   "access_right": "open",

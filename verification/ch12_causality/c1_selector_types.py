@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """c1: the selector, the light cone, type selection and kinetic signatures of Chapter 12 (Phase 9C).
 
-    python3 verification/ch12_causal/c1_selector_types.py
+    python3 verification/ch12_causality/c1_selector_types.py
 
 thm:selector, the pairing omega_S, thm:cone, thm:selector3, prop:types, thm:degree, thm:flat, prop:kineticB, prop:positivealt. Exact arithmetic
 (sympy) in the 8x8 realisation of Appendix A; the three-constituent statements use the 512x512 signed-permutation realisation with integer
@@ -183,8 +183,11 @@ ok &= inv_ok and sym_tw["odd"] == W3 and sym_tw["even"] == W3
 ok &= all(np.allclose((bodd @ E[a]).T, bodd @ E[a]) for a in range(1, 19))
 rng = np.random.default_rng(9)
 nonnull = 0
+w_, V_ = np.linalg.eigh(Pg)
+Sp3 = V_[:, w_ > 0.5]                       # an orthonormal basis of S+ = {Gamma = +1}, 256-dimensional
+ok &= Sp3.shape[1] == 256
 for _ in range(5):
-    s = rng.normal(size=512)
+    s = Sp3 @ rng.normal(size=256)          # random spinors of S+ (v1.0.1: the sample is restricted to S+)
     vA = np.array([s @ bodd @ E[a] @ s for a in range(1, 19)])
     nonnull += abs(sum(sq[a] * vA[a - 1] ** 2 for a in range(1, 19))) > 1e-6
 ok &= nonnull == 5
@@ -192,7 +195,7 @@ report("4", ok, f"thm:selector3: at n = 3, J^2 = Omega^2 = -1, [J,Omega] = 0, Ga
        f"four-planes J_E'^2 = Omega_E'^2 = prod_{{i in E'}} e_i^2 (so the complement volume is a complex structure exactly for the {lor} Lorentzian ones); the "
        "centraliser of J among the 153 bivectors has dimension 97 = 6 + 91 (56-dimensional choices); beta_odd (antisymmetric) and beta_even (symmetric) are "
        "Spin(9,9)-invariant, beta e_A J is symmetric exactly for the 14 directions of W_3, and beta_odd e_A is symmetric for all 18 (exact); at 5 random spinors "
-       "(seed 9) the untwisted square is not null (numerical)")
+       "of S+ (seed 9) the untwisted square is not null (numerical)")
 
 # Dirac current at n = 3: future causal (numerical sample) and the matrix argument
 g0 = E[1]; gs = [E[4], E[5], E[6]]
@@ -204,9 +207,29 @@ for _ in range(20):
     j0 = s @ s; jv = np.array([s @ M @ s for M in Ms])
     caus += j0 >= np.linalg.norm(jv) - 1e-9
 ok &= caus == 20
+# product states psi = phi1 (x) phi2 (x) phi3: null when the first factor is chiral, timelike for |000> + |100> in the first factor
+om8 = om.astype(float)
+chi1 = np.kron(np.kron(om8, np.eye(8)), np.eye(8))      # chirality of the first constituent (volume element of its Cl(3,3))
+cur = lambda p: (p @ p, np.array([p @ M @ p for M in Ms]))  # noqa: E731
+b = np.eye(8)
+psi_c = np.kron(np.kron(b[0], b[0]), b[0])
+psi_n = np.kron(np.kron(b[0] + b[4], b[0]), b[0])
+j0c, jvc = cur(psi_c)
+j0n, jvn = cur(psi_n)
+chiral_first = abs(abs(psi_c @ chi1 @ psi_c) - psi_c @ psi_c) < 1e-12 and abs(psi_n @ chi1 @ psi_n) < 1e-12
+ok &= chiral_first and abs(j0c ** 2 - jvc @ jvc) < 1e-12 and abs(j0n - 2) < 1e-12 and np.allclose(jvn, 0)
+w8, V8 = np.linalg.eigh(om8)
+nulls = 0
+for _ in range(5):
+    f1 = V8[:, w8 > 0] @ rng.normal(size=int(np.sum(w8 > 0)))
+    p = np.kron(np.kron(f1, rng.normal(size=8)), rng.normal(size=8))
+    j0, jv = cur(p)
+    nulls += abs(j0 ** 2 - jv @ jv) < 1e-8 * j0 ** 2
+ok &= nulls == 5
 report("5", ok, "n = 3 Dirac current j_mu = psi^T gamma^0 gamma_mu psi: the three matrices gamma^0 gamma^k are symmetric and anticommute with square 1, so "
        "j^0 = |psi|^2 >= |j| for every psi (future causal; exact argument from the matrix identities, checked on 512x512 matrices) and 20 random spinors "
-       "confirm it (numerical). It uses gamma^0 and the transpose, i.e. the positive inner product, as the text says")
+       "confirm it (numerical). It uses gamma^0 and the transpose, i.e. the positive inner product, as the text says. On product states the current is null "
+       "when the first factor is chiral (|000>, and 5 random states with a chiral first factor), and (2,0,0,0), timelike, for |000> + |100> in the first factor")
 
 # ---------------------------------------------------------------- prop:types, thm:degree on S+ = sl(4,R)
 def restrict(X):
@@ -269,7 +292,7 @@ Xg = sum((bs[i] * restrict(biv[i]) for i in range(15)), sp.zeros(4, 4))
 f = (T(Jc + Xg, 2) + 4) ** 2 + T(Jc + Xg, 3) ** 2 + (T(Jc + Xg, 4) - 4) ** 2
 Hf = sp.hessian(f, bs).subs({b: 0 for b in bs})
 ok = Hf.rank() == 1 and f.subs({b: 0 for b in bs}) == 0
-report("8", ok, "thm:degree (iv): f = (t2+4)^2 + t3^2 + (t4-4)^2 vanishes at J and its Hessian at J on the 15-dimensional so(3,3) has rank one (exact)")
+report("8", ok, "thm:degree (iv): F = (t2+4)^2 + t3^2 + (t4-4)^2 vanishes at J and its Hessian at J on the 15-dimensional so(3,3) has rank one (exact)")
 
 # ---------------------------------------------------------------- thm:flat
 nn = (e[1] + e[4]) * e[5]
@@ -362,6 +385,24 @@ ok &= all(ad(biv[BIVS.index(p)]).T != -ad(biv[BIVS.index(p)]) for p in [(1, 4), 
 report("11", ok, "prop:positivealt: <X,Y> = tr(XY^T)/8 is the identity on the 15 bivectors and its invariance algebra is the 6 compact rotations so3_T + so3_S; "
        "V_+ = (|B_T|^2 - 1)^2 + |B_S|^2 + |B_p|^2 vanishes at J = e2e3 with Hessian eigenvalues 8, 0 (x2), 2 (x12); J = gamma^0 omega_T with gamma^0 = e1; the "
        "boosts e1e4, e1e5, e1e6 are not in the invariance algebra (exact)")
+
+# ---------------------------------------------------------------- thm:selector (iii): the degenerate stratum (v1.0.1)
+a_null = vec([1, 0, 0, 1, 0, 0]); b_null = vec([0, 1, 0, 0, 1, 0])
+C0 = a_null * b_null
+ok = (C0 * C0 == Z8) and (a_null * b_null + b_null * a_null == Z8)
+cs = sp.symbols("x0:15")
+X = sum((c * bv for c, bv in zip(cs, biv)), Z8)
+eqs = [x for x in comm(X, C0)]
+sol = sp.linsolve(eqs, cs)
+(vec_sol,) = list(sol)
+free = set().union(*[sp.sympify(v).free_symbols for v in vec_sol])
+cent_null = len(free)
+Xj = sum((c * bv for c, bv in zip(cs, biv)), Z8)
+(vj,) = list(sp.linsolve([x for x in comm(Xj, e[2] * e[3])], cs))
+cent_J = len(set().union(*[sp.sympify(v).free_symbols for v in vj]))
+ok &= cent_null == 9 and cent_J == 7
+report("12", ok, f"thm:selector (iii), degenerate stratum: for the totally null plane <e1+e4, e2+e5>, C0 = (e1+e4)(e2+e5) has C0^2 = 0 and its centraliser "
+       f"in so(3,3) has dimension {cent_null}, against {cent_J} for the nondegenerate C = J (exact)")
 
 print(f"{NPASS[0]}/{NPASS[0] + len(FAILS)} checks passed")
 sys.exit(0 if not FAILS else 1)

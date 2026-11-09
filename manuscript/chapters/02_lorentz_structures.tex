@@ -95,7 +95,7 @@ $-\cK(S e_i)=-\cK(e_i)=e_{i+3}=Ge_i$ and $-\cK(Se_{i+3})=\cK(e_{i+3})=-e_i=Ge_{i
 \end{proof}
 
 So the root that grades is $\tfrac12\ad_{\varpi}$, the adjoint action of the sum of the pole operators, and the root that binds
-is the same map composed with the Cartan involution $S=\Ad_{e_1e_2e_3}$. That the two roots are distinguished exactly by the
+is the same map composed with the orthogonal involution $S=\Ad_{e_1e_2e_3}$ of $V$, which induces the Cartan involution $A\mapsto SAS^{-1}$ of $\so{3,3}$. That the two roots are distinguished exactly by the
 Cartan involution is the cleanest single statement the flat and the curved analyses below jointly support.
 
 \paragraph{Shift operators.} A clock coordinate $\lambda$ has dimension $T$, the operator $G$ is dimensionless, and their sum
@@ -118,9 +118,11 @@ $\sum_ix_i^2=4$ in the closed positive octant, and since $dx_i=dw_i/\sqrt{w_i}$ 
 \[
 \sum_idx_i^2=\sum_i\frac{dw_i^2}{w_i},
 \]
-the Fisher--Rao metric. \emph{Given} that a clock is described by probability weights on the three axes, the metric is not a further
-choice: by \v{C}encov's theorem it is, up to scale, the only metric on a finite simplex invariant under Markov morphisms
-\cite{Cencov,AmariNagaoka}. That description is itself a modelling choice, not a consequence of the algebra. It restricts the clocks to
+the Fisher--Rao metric. Probability weights alone do not fix it: a permutation-invariant metric such as
+$(1+\varepsilon\sum_iw_i^2)\sum_idw_i^2/w_i$, $\varepsilon>0$, is not a multiple of it. If the clock metric is required to belong to a family
+compatible with congruent Markov embeddings, between simplices of every size, \v{C}encov's characterisation fixes it up to scale to
+Fisher--Rao \cite{Cencov,AmariNagaoka,AyJostLeSchwachhofer15}; we adopt this compatibility requirement. It fails for arbitrary stochastic maps. It is a smooth metric on the open simplex, and the closed octant is
+its metric completion. That description is itself a modelling choice, not a consequence of the algebra. It restricts the clocks to
 the closed positive octant of a round sphere of radius two, and the octant is preserved by the permutations of the axes but not by the
 rotations of $V^+$, under which every unit vector of $V^+$ is equivalent to every other (\cref{rem:clockcov}).
 
@@ -205,7 +207,7 @@ the entropy maximum, corresponds to the symmetric clock $\widehat W=(e_1+e_2+e_3
 
 An operator that converts times into lengths is a mixed bivector $B_C=\sum_{i,a}C_{ia}\,e_ie_{a+3}$, symmetric by
 \cref{thm:sig}. Its square controls the factorised interior dynamics of \cref{sec:shifted}, where the equation of motion becomes
-$\ddot X=\kappa^2B_C^2X$, so its spectrum is worth knowing exactly.
+$\ddot X=\kappa^2B_C^2X$ for $X\in S\cong\R^8$, so its spectrum is worth knowing exactly.
 
 \begin{theorem}[Spectrum of a conversion operator]
 \label{thm:spectrumBC}
@@ -218,7 +220,9 @@ Consequently
 \[
 \spec\bigl(B_C^2\bigr)=\bigl\{(\eta_1\sigma_1+\eta_2\sigma_2+\eta_3\sigma_3)^2:\ \eta\in\{\pm1\}^3\bigr\},
 \]
-four values, each of multiplicity two on $\R^8$.
+and the characteristic polynomial of $B_C^2$ on $\R^8$ is $\prod_{\epsilon_2,\epsilon_3=\pm1}\bigl[t-(\sigma_1+\epsilon_2\sigma_2+\epsilon_3\sigma_3)^2\bigr]^2$.
+When the four values are distinct each has multiplicity two; when values coincide their multiplicities add (for $C=\id_3$ the spectrum is
+$9$ twice and $1$ six times).
 \end{theorem}
 
 \begin{proof}
@@ -243,9 +247,9 @@ exponentially and do not oscillate, and the conversion operator does not appear 
 $e_1$ and the symmetric $\widehat W$ alike, so it does not single out $\widehat W$: the blindness is a property of converting along a single
 temporal direction, forced by the rank. A conversion visible in the equations of motion needs at least two independent temporal directions
 in $C$, that is, a relative time with respect to the clock used. Raising the rank does not
-produce oscillation either: the eigenvalues $(\eta\cdot\sigma)^2$ are real and non-negative at every rank, so higher rank makes the
-instability anisotropic, with four rates $\kappa|\eta\cdot\sigma|$ instead of one, and can create flat directions, but never a bounded
-oscillation. Bounded motion has to come from elsewhere, and \cref{sec:neutral} shows where.
+produce oscillation either: the eigenvalues $(\eta\cdot\sigma)^2$ are real and non-negative at every rank, so the factorised equation has
+growing or affine modes, never bounded oscillations. Higher rank makes the instability anisotropic, with up to four rates $\kappa|\eta\cdot\sigma|$
+instead of one, and can create flat directions, along which the motion is affine. Bounded motion has to come from elsewhere, and \cref{sec:neutral} shows where.
 \end{example}
 
 \section{The observational four-plane of a clock}
@@ -341,7 +345,8 @@ Let $I_T=e_1e_2e_3$.
 \item $J(\hat n):=I_T\hat n=\hat n_1e_2e_3+\hat n_2e_3e_1+\hat n_3e_1e_2$ satisfies $J(\hat n)^2=-|\hat n|^2\id$ and commutes with $\hat n$ and with $s_1,s_2,s_3$, hence with all of $\lint(\hat n)$.
 \item For every oriented orthonormal frame $(\hat n,u_1,u_2)$ of $V^+$, $nu_1u_2=I_T$; hence $J(\hat n)=u_1u_2$ is the oriented unit bivector of $U_{\hat n}$, and
 $J(e_1)=e_2e_3=J$.
-\item Under time reversal $\hat n\mapsto-\hat n$: $\pr_{-\hat n}=\pr_{\hat n}$, $\pr^{\perp}_{-\hat n}=\pr^{\perp}_{\hat n}$, $E(-\hat n)=-E(\hat n)$ for the energy
+\item Under the clock reversal $\hat n\mapsto-\hat n$ at fixed six-momentum, a reversal of the clock's orientation distinct from the physical
+time reversal of \cref{thm:PT}: $\pr_{-\hat n}=\pr_{\hat n}$, $\pr^{\perp}_{-\hat n}=\pr^{\perp}_{\hat n}$, $E(-\hat n)=-E(\hat n)$ for the energy
 $E(\hat n):=c\,\eta(\hat n,K^\sharp)$ read by the clock, $J(-\hat n)=-J(\hat n)$ and
 $\Omega_{-\hat n}=-\Omega_{\hat n}$ for $\Omega_{\hat n}:=ns_1s_2s_3$, so that $\Gamma_{\hat n}=J(\hat n)\Omega_{\hat n}$ is unchanged.
 \end{enumerate}
@@ -469,15 +474,17 @@ and every uniqueness statement in this paper is made with them.
 \end{remark}
 
 That the imaginary unit is not adjoined but read off the algebra is the cleanest structural result at one constituent. It has an
-independent counterpart: on a real Hilbert space, Poincar\'e symmetry alone can force the complex structure \cite{MorettiOppio}.
+independent counterpart: on a real Hilbert space, for an elementary relativistic system described by a locally faithful, irreducible,
+continuous unitary representation of the Poincar\'e group with nonnegative squared mass, the complex structure is forced \cite{MorettiOppio}.
+That is an analogy between different selection results under different hypotheses, not a proof of the finite-dimensional one.
 
 % --- source: tex/s04_dirac#3 (Real Dirac theory is complex Dirac theory)
 \subsection{Real Dirac theory is complex Dirac theory}
 
 \begin{theorem}[Exactness of the realification]
 \label{thm:realification}
-The $\C$-linear algebra generated by the interior gamma matrices on $(S,J)\cong\C^4$ is all of $M_4(\C)$. Consequently the real
-Maxwell--Dirac system on $\Cl(3,3)$ is ordinary complex Maxwell--Dirac theory written in real variables.
+The $\C$-linear algebra generated by the interior gamma matrices on $(S,J)\cong\C^4$ is all of $M_4(\C)$. Consequently, with the standard Maxwell--Dirac action and its field structures transported through this identification,
+the real classical Maxwell--Dirac system on $\Cl(3,3)$ is ordinary complex Maxwell--Dirac theory written in real variables.
 \end{theorem}
 
 \begin{proof}
@@ -488,8 +495,9 @@ dimension thirty-two.
 
 \begin{corollary}
 \label{cor:nopredict}
-Anything derivable from the real formulation alone was derivable from the complex one, and conversely. The gauged system is quantum
-electrodynamics in real variables, and no prediction can follow from the rewriting.
+Anything derivable from the real formulation alone was derivable from the complex one, and conversely, and no prediction can follow
+from the rewriting. Transporting the standard quantisation yields a real-variable presentation of quantum electrodynamics; the algebra
+identification itself does not construct that quantisation. Real geometric formulations of Dirac theory have a long precedent \cite{Hestenes67}.
 \end{corollary}
 
 This is the deflationary principle of the introduction. It does not make the arena uninteresting; it says where its content can
@@ -532,7 +540,7 @@ central element $\Omega$ will reappear in \cref{sec:discrete} as the axial $U(1)
 \label{eq:Hp}
 H(p)=\gamma^0\gamma^ap_a+m\gamma^0,\qquad H(p)^2=E^2\id,\qquad E^2=|\bp|^2+m^2 ,
 \end{equation}
-with spectral projectors $\Lambda_\pm(p)=\tfrac12(\id\pm H(p)/E)$. Both $\gamma^0=e_1$ and $\gamma^0\gamma^a=e_1e_{a+3}$ are symmetric, so
+with spectral projectors $\Lambda_\pm(p)=\tfrac12(\id\pm H(p)/E)$, defined for $E>0$ (at $E=0$ they are undefined). Both $\gamma^0=e_1$ and $\gamma^0\gamma^a=e_1e_{a+3}$ are symmetric, so
 $H(p)$ is a symmetric matrix that commutes with $J$; its eigenvalues are $\pm E$, each with real multiplicity four.
 
 \begin{example}
@@ -647,8 +655,8 @@ reversal antilinear, and each must satisfy $XH(p)X^{-1}=H(-p)$ for every $p$ and
 
 \begin{theorem}[Charge conjugation is the surplus plane]
 \label{thm:C}
-The antilinear operators that intertwine the Dirac operator form exactly the two-dimensional space $U$. Every unit vector $C\in U$
-satisfies
+The antilinear operators that intertwine the Dirac operator form exactly the two-dimensional space $U$. Every unit vector $C\in U$,
+normalised by $C^2=\id$, satisfies
 \[
 CH(p)C^{-1}=-H(-p),\qquad CJC^{-1}=-J,\qquad C\Gamma C^{-1}=-\Gamma,\qquad C\Lambda_+(p)C^{-1}=\Lambda_-(-p),
 \]
@@ -674,23 +682,28 @@ neutral.
 
 \begin{theorem}[Parity and time reversal]
 \label{thm:PT}
-The admissible parities form the space $\langle\gamma^0,\gamma^0J\rangle$, and $P^2=+\id$ holds only at $P=\pm\gamma^0$, while $P=\pm\gamma^0J$
-gives $P^2=-\id$. The admissible time reversals form $U\cdot\gamma^1\gamma^2\gamma^3$, so $T=C\gamma^1\gamma^2\gamma^3$ with
+The admissible parities form the space $\langle\gamma^0,\gamma^0J\rangle$. Normalised by $P^2=\pm\id$, they are $P=\pm\gamma^0$, with $P^2=+\id$,
+and $P=\pm\gamma^0J$, with $P^2=-\id$. The admissible time reversals form $U\cdot\gamma^1\gamma^2\gamma^3$, so $\mathsf T=C\gamma^1\gamma^2\gamma^3$
+with $C\in U$; normalised by $\|C\|=1$,
 \[
-T^2=-\id .
+\mathsf T^2=-\id .
 \]
-The sign is not a convention: $B=\gamma^1\gamma^2\gamma^3$ has $B^2=+\id$ and anticommutes with every vector $C$ of the clock plane, so
-$T^2=CBCB=-C^2B^2=-\|C\|^2\id$ for every choice of clock in the positive triple.
+The sign is not a convention: $B=\gamma^1\gamma^2\gamma^3$ has $B^2=+\id$ and anticommutes with every vector $C$ of the surplus plane $U$, so
+$\mathsf T^2=CBCB=-C^2B^2=-\|C\|^2\id$ for every choice of clock in the positive triple.
 \end{theorem}
+
+The time-reversal operator is written $\mathsf T$ because the letter $T$ denotes the temporal trivector $e_1e_2e_3$ (\cref{rem:ambient}), and the
+two meet here: the parity $P=\gamma^0J$ is that trivector.
 
 \begin{theorem}[$CPT$ lies on a circle]
 \label{thm:CPT}
 The product of the three operators depends on the parity chosen:
 \[
-P=\gamma^0:\quad CPT=-\Omega,\ (CPT)^2=-\id;\qquad\qquad P=\gamma^0J:\quad CPT=+\Gamma,\ (CPT)^2=+\id .
+P=\gamma^0:\quad CP\mathsf T=-\Omega,\ (CP\mathsf T)^2=-\id;\qquad\qquad P=\gamma^0J:\quad CP\mathsf T=+\Gamma,\ (CP\mathsf T)^2=+\id .
 \]
-What is convention-free is the orbit of $\Omega$ under $U(1)_J$, $\theta\mapsto\cos\theta\,\Omega+\sin\theta\,J\Omega$, whose four real points
-$\pm\Omega,\pm\Gamma$ are the spacetime pseudoscalar and the chirality.
+What is convention-free is the orbit of $\Omega$ under left multiplication by $U(1)_J$, $\theta\mapsto e^{\theta J}\Omega=\cos\theta\,\Omega+\sin\theta\,J\Omega$,
+a choice of phase (conjugation by $e^{\theta J}$ fixes $\Omega$, since $[J,\Omega]=0$). Its four distinguished points $\pm\Omega,\pm\Gamma$ are the
+spacetime pseudoscalar and the chirality.
 \end{theorem}
 
 \begin{figure}[t]
@@ -703,12 +716,13 @@ $\pm\Omega,\pm\Gamma$ are the spacetime pseudoscalar and the chirality.
 }
 \draw[->,thick] (20:0.75) arc (20:70:0.75);
 \node at (45:0.42) {\small $e^{\theta J}$};
-\node[align=left,anchor=west] at (2.7,0.55) {\small $P=\gamma^0$: \quad $CPT=-\Omega$,\ $(CPT)^2=-\id$};
-\node[align=left,anchor=west] at (2.7,-0.05) {\small $P=\gamma^0J$: \ $CPT=+\Gamma$,\ $(CPT)^2=+\id$};
-\node[align=left,anchor=west] at (2.7,-0.65) {\small both lie on the $U(1)_J$ orbit of $\Omega$};
+\node[align=left,anchor=west] at (2.7,0.55) {\small $P=\gamma^0$: \quad $CP\mathsf T=-\Omega$,\ $(CP\mathsf T)^2=-\id$};
+\node[align=left,anchor=west] at (2.7,-0.05) {\small $P=\gamma^0J$: \ $CP\mathsf T=+\Gamma$,\ $(CP\mathsf T)^2=+\id$};
+\node[align=left,anchor=west] at (2.7,-0.65) {\small both lie on the orbit of $\Omega$ under left multiplication by $U(1)_J$};
 \end{tikzpicture}
 \caption{The $CPT$ circle at one constituent (\cref{thm:CPT}). The product of the three discrete operators is the spacetime
-pseudoscalar or the chirality according to the parity chosen; the two lie on one orbit of the gauge rotation $e^{\theta J}$.}
+pseudoscalar or the chirality according to the parity chosen; the two lie on one orbit of left multiplication by the rotation $e^{\theta J}$,
+a choice of phase.}
 \label{fig:cpt}
 \end{figure}
 
@@ -716,12 +730,12 @@ These are statements about explicitly constructed operators of the free theory; 
 theory is not constructed.
 
 % --- source: tex/s05_discrete#3 (The massless gauge algebra at one constituent)
-\subsection{The massless gauge algebra at one constituent}
+\subsection{The symmetry algebra of the massless kinetic forms}
 
-A gauge generator must leave the kinetic form invariant. Solving that condition over all of $\End_\R(S)$, with no ansatz, gives the
-following.
+A gauge generator must in particular leave the kinetic form invariant. Solving that condition over all of $\End_\R(S)$, with no ansatz,
+gives the following.
 
-\begin{proposition}[Gauge algebra from the kinetic forms]
+\begin{proposition}[Symmetry algebra of the kinetic forms]
 \label{prop:gauge1}
 The solutions of $X^{\!\top}K^\mu+K^\mu X=0$ for $\mu=0,\dots,3$ form
 \[
@@ -733,13 +747,18 @@ compact. Adding invariance of the mass form, $X^{\!\top}(\gamma^0J)+(\gamma^0J)X
 pole operators in zero.
 \end{proposition}
 
+The algebra computed is the internal symmetry algebra of the free kinetic action. It becomes a gauge algebra only once a connection is
+introduced and quantum consistency is checked; the next paragraph does the second for its factors.
+
 The $\su2$ factor contains the fermion-number direction $J$ and two generators that anticommute with $J$; it therefore mixes a field with
 its conjugate and is the Pauli--G\"ursey algebra of a massless Dirac field \cite{Pauli57,Gursey58}. It is a symmetry of the free massless
 theory, not a gauge candidate on this matter: its two Weyl components form a single doublet, and gauging $SU(2)$ on an odd number of
 doublets is forbidden by the global anomaly \cite{Witten82}. The central factor is the axial one. Since $\Gamma=J\Omega$, $\Omega=-J\Gamma$,
 which with $i=J$ and the chirality $\gamma_5=-\Gamma$ of \cref{thm:i} is the real form of $i\gamma_5$, as in \cref{prop:massangle}; $U(1)_\Omega$ is broken by a Dirac mass and is anomalous on this matter content \cite{Bilal,AlvarezGaumeWitten}.
-The electromagnetic $\uu1$ is therefore singled out twice at one constituent: as the whole internal centraliser
-(\cref{prop:6plus8plus1}) and as what survives of the massless gauge algebra once a mass is admitted.
+The $\uu1$ of $J$, the charge of the Dirac reading, is therefore singled out twice at one constituent: as the whole internal centraliser
+(\cref{prop:6plus8plus1}) and as what survives of the massless symmetry algebra once a mass is admitted. Whether it is the electromagnetic
+$\uu1$ is a separate question, which needs a connection, a kinetic term, a matter coupling and physical degrees of freedom
+(\cref{ch:ch08_photon}).
 
 % --- source: tex/s05_discrete#4 (The state space)
 \subsection{The state space}
@@ -754,11 +773,14 @@ from outside, as $\mathcal F=\C\otimes_\R\R^{16}$, with charge $Q=-i\rho(J)$ and
 $\rho(A)=-\tfrac14\sum_{ij}A_{ij}\theta_i\theta_j$ lifts an antisymmetric $8\times8$ matrix to the module.
 \end{theorem}
 
+The absence of a commuting complex structure is a statement about the chosen real representation of the field algebra and the observables
+built in it. The convention for the anticommutation relations is that of the $\chi_i:=i\theta_i$, which satisfy $\{\chi_i,\chi_j\}=2\delta_{ij}$.
+
 It is the complex structure, not the reality, that is missing, which is the lesson of \cref{rem:ambient} arriving one level up.
 
 \begin{theorem}[The free spectrum of one momentum]
 \label{thm:spectra}
-The lifted generators have characteristic polynomials
+Let $E>0$ (at $E=0$ all sixteen energies coincide). The lifted generators have characteristic polynomials
 \[
 \chi_{2\rho(J)}(x)=x^6(x^2+4)^4(x^2+16),\qquad \chi_{2\rho(JH)}(x)=x^6(x^2+4E^2)^4(x^2+16E^2),
 \]
@@ -820,9 +842,11 @@ produced the table: squaring loses the sign of the energy and conflates the vacu
 
 \begin{proposition}[Conjugation on states]
 \label{prop:Cstates}
-$C\in SO(8)$ lifts to $\mathrm{Spin}(8)$ as a product of four integral reflections. The lift is unitary on $\mathcal F$, anticommutes with
+$C\in SO(8)$ lifts to $\mathrm{Spin}(8)$; for the representative $C=e_2$ the lift is a product of four integral reflections, and for a
+general $C=\cos\theta\,e_2+\sin\theta\,e_3$ four orthogonal reflections suffice. The lift is unitary on $\mathcal F$, anticommutes with
 $Q$ and carries $H(p)$ to $H(-p)$, so $\langle\psi|Q|\psi\rangle=0$ for every $C$-eigenstate. The stronger statement $Q|\psi\rangle=0$ is
-false: the $+1$ eigenspace of $C$ has real dimension eight and $Q$ annihilates only a three-dimensional part of it.
+false: the $+1$ eigenspace of $C$ has dimension eight and $Q$ annihilates only a three-dimensional part of it (real dimensions on $\R^{16}$,
+complex dimensions on $\mathcal F$).
 \end{proposition}
 
 \begin{remark}[Many-body chirality is a group lift]

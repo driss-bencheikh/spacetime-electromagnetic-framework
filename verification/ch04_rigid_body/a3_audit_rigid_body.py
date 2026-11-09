@@ -9,8 +9,12 @@ import itertools
 import sys
 from functools import reduce
 
+from fractions import Fraction
+
 import numpy as np
 import sympy as sp
+from sympy.polys.domains import QQ, ZZ
+from sympy.polys.matrices import DomainMatrix
 
 NPASS, FAILS = [0], []
 
@@ -466,73 +470,114 @@ report("8", ok, f"thm:survive: the parts of Cent(G3) commuting with P_fam and P_
        "either projector; the kinetic condition (X^T K^mu + K^mu X = 0 on the block) holds for rot(8,9), rot(14,15) and fails for bst(14,15) on "
        f"P_fam (rot(2,3): {'holds' if kin_rot23 else 'fails'}), holds for so4_Delta + R rot(8,9) on P_*, which acts faithfully (rank 7) (exact)")
 
-# thm:closurechiral (numerical spectra of exact integer matrices)
-Q1 = -(Jn @ biv512(rot(8, 9))) / 2
-Q2 = -(Jn @ biv512(rot(14, 15))) / 2
-Pf = Pfam8 / 8.0
-w_, V_ = np.linalg.eigh(Pf)
-B_ = V_[:, w_ > 0.5]
-ok = B_.shape[1] == 64 and all(np.allclose(Jn @ x, x @ Jn) for x in [Q1, Q2])
-Mix = B_.T @ (Q1 + np.pi * Q2 + np.sqrt(2) * 7 * Gam) @ B_
-wv, Vv = np.linalg.eigh(Mix)
-basis = B_ @ Vv
-qv1 = np.einsum("ij,ij->j", basis, Q1 @ basis)
-qv2 = np.einsum("ij,ij->j", basis, Q2 @ basis)
-gv = np.einsum("ij,ij->j", basis, Gam @ basis)
+# thm:closurechiral: exact (v1.0.1). Joint eigenspace dimensions are traces of products of exact spectral projectors (Lagrange polynomials in
+# commuting integer matrices), computed in float64 with every entry an integer below 2^53 (asserted), and anomaly coefficients are exact traces.
+def fmat(A):
+    return np.asarray(A, dtype=np.float64)
+
+
+def exact_int(x, bound=2 ** 52):
+    assert abs(x) < bound and abs(x - round(x)) < 1e-6, x
+    return int(round(x))
+
+
+def lagrange(Mi, vals, v):
+    """numerator and denominator of the spectral projector of the integer matrix Mi onto eigenvalue v (eigenvalues vals)"""
+    num, den = np.eye(512), 1
+    for u in vals:
+        if u != v:
+            num = num @ (Mi - u * np.eye(512))
+            den *= (v - u)
+    return num, den
+
+
+Q1i = fmat(-(Jn @ biv512(rot(8, 9))))          # 2 Q1
+Q2i = fmat(-(Jn @ biv512(rot(14, 15))))        # 2 Q2
+Gf, Pf8 = fmat(Gam), fmat(Pfam8)
+ok = all(np.array_equal(x @ y, y @ x) for x, y in itertools.combinations([Q1i, Q2i, Gf, Pf8], 2))
+for Mi in (Q1i, Q2i):                           # (2Q)(2Q - 2)(2Q + 2) P = 0: eigenvalues of Q in {-1, 0, 1} on the block
+    ok &= not np.any((Mi @ (Mi - 2 * np.eye(512)) @ (Mi + 2 * np.eye(512))) @ Pf8)
+proj = {}
+for name, Mi, vals in (("q1", Q1i, (-2, 0, 2)), ("q2", Q2i, (-2, 0, 2)), ("g", Gf, (-1, 1))):
+    for v in vals:
+        proj[(name, v)] = lagrange(Mi, vals, v)
 content = {}
-for a, b_, c in zip(qv1, qv2, gv):
-    key = (int(round(a)), int(round(b_)), int(round(c)))
-    ok &= abs(a - key[0]) < 1e-9 and abs(b_ - key[1]) < 1e-9 and abs(c - key[2]) < 1e-9
-    content[key] = content.get(key, 0) + 1
+for a_ in (-2, 0, 2):
+    for b_ in (-2, 0, 2):
+        Na, da = proj[("q1", a_)]
+        Nb, db = proj[("q2", b_)]
+        AB = Na @ Nb @ Pf8
+        for c_ in (-1, 1):
+            Nc, dc = proj[("g", c_)]
+            tr = exact_int(np.trace(AB @ Nc))
+            dimq, rem = divmod(tr, da * db * dc * 8)
+            ok &= rem == 0
+            content[(a_ // 2, b_ // 2, c_)] = dimq
 table_L = {(-1, -1): 1, (-1, 0): 0, (-1, 1): 1, (0, -1): 1, (0, 0): 2, (0, 1): 1, (1, -1): 0, (1, 0): 2, (1, 1): 0}
 table_R = {(-1, -1): 0, (-1, 0): 2, (-1, 1): 0, (0, -1): 1, (0, 0): 2, (0, 1): 1, (1, -1): 1, (1, 0): 0, (1, 1): 1}
-gotL = {k: content.get((k[0], k[1], -1), 0) / 4 for k in table_L}
-gotR = {k: content.get((k[0], k[1], 1), 0) / 4 for k in table_R}
-ok &= gotL == table_L and gotR == table_R
+gotL = {k: Fraction(content[(k[0], k[1], -1)], 4) for k in table_L}
+gotR = {k: Fraction(content[(k[0], k[1], 1)], 4) for k in table_R}
+ok &= gotL == table_L and gotR == table_R and sum(content.values()) == 64
 al, be, ga = sp.symbols("alpha beta gamma")
 anom3 = sp.expand(sum(n * (al * q1 + be * q2) ** 3 for (q1, q2), n in table_L.items()) - sum(n * (al * q1 + be * q2) ** 3 for (q1, q2), n in table_R.items()))
 anom1 = sp.expand(sum(n * (al * q1 + be * q2) for (q1, q2), n in table_L.items()) - sum(n * (al * q1 + be * q2) for (q1, q2), n in table_R.items()))
 ok &= anom3 == -12 * al * be ** 2 and anom1 == 0
-# P_*: su2_+ + su2_- from so4_Delta ('t Hooft combinations of R_ab = rot(w_a, w_b)/2), Q = -J rot(8,9)/2
-R_ = {(a, b): biv512(rot(W[a], W[b])) / 2 for a, b in itertools.combinations(range(4), 2)}
-Rf = lambda a, b: R_[(a, b)] if a < b else -R_[(b, a)]  # noqa: E731
-Xp = [(Rf(1, 2) + Rf(0, 3)) / 2, (Rf(2, 0) + Rf(1, 3)) / 2, (Rf(0, 1) + Rf(2, 3)) / 2]
-Xm = [(Rf(1, 2) - Rf(0, 3)) / 2, (Rf(2, 0) - Rf(1, 3)) / 2, (Rf(0, 1) - Rf(2, 3)) / 2]
-ok &= all(np.allclose(x @ y, y @ x) for x in Xp for y in Xm)
-Cp, Cm = -sum(x @ x for x in Xp), -sum(x @ x for x in Xm)
-Qs = -(Jn @ biv512(rot(8, 9))) / 2
-Hp3, Hm3 = -(Jn @ Xp[2]), -(Jn @ Xm[2])
-Ps = Pst8 / 8.0
-w_, V_ = np.linalg.eigh(Ps)
-B_ = V_[:, w_ > 0.5]
-Mix = B_.T @ (Cp + np.e * Cm + np.pi * Qs + 0.1 * np.sqrt(3) * Hp3 + 0.01 * np.sqrt(5) * Hm3 + 11 * Gam) @ B_
-wv, Vv = np.linalg.eigh(Mix)
-basis = B_ @ Vv
-vals = [np.einsum("ij,ij->j", basis, Op @ basis) for Op in (Cp, Cm, Qs, Gam, Hp3, Hm3)]
+# P_*: su2_+ + su2_- of so4_Delta, Q = -J rot(8,9)/2; Casimirs 16 C_+- are integer matrices with eigenvalues 16 j(j+1) in {0, 12, 32}
+R2 = {(a_, b_): fmat(biv512(rot(W[a_], W[b_]))) for a_, b_ in itertools.combinations(range(4), 2)}   # 2 R_ab
+R2f = lambda a_, b_: R2[(a_, b_)] if a_ < b_ else -R2[(b_, a_)]  # noqa: E731
+Xp4 = [R2f(1, 2) + R2f(0, 3), R2f(2, 0) + R2f(1, 3), R2f(0, 1) + R2f(2, 3)]                       # 4 X_+
+Xm4 = [R2f(1, 2) - R2f(0, 3), R2f(2, 0) - R2f(1, 3), R2f(0, 1) - R2f(2, 3)]                       # 4 X_-
+ok &= all(np.array_equal(x @ y, y @ x) for x in Xp4 for y in Xm4)
+Cp16, Cm16 = -sum(x @ x for x in Xp4), -sum(x @ x for x in Xm4)
+Ps8f = fmat(Pst8)
+Jf = fmat(Jn)
+Q2s = fmat(-(Jn @ biv512(rot(8, 9))))          # 2 Q
+for Mi, vals in ((Cp16, (0, 12, 32)), (Cm16, (0, 12, 32))):
+    ok &= not np.any(reduce(np.matmul, [Mi - u * np.eye(512) for u in vals]) @ Ps8f)
+ok &= not np.any((Q2s @ (Q2s - 2 * np.eye(512)) @ (Q2s + 2 * np.eye(512))) @ Ps8f)
+jmap = {0: 0.0, 12: 0.5, 32: 1.0}
 cont = {}
-for cp, cm_, qq, gg in zip(*vals[:4]):
-    jp, jm = (np.sqrt(1 + 4 * cp) - 1) / 2, (np.sqrt(1 + 4 * cm_) - 1) / 2
-    key = (round(2 * jp) / 2, round(2 * jm) / 2, int(round(qq)), int(round(gg)))
-    ok &= abs(jp - key[0]) < 1e-8 and abs(jm - key[1]) < 1e-8 and abs(qq - key[2]) < 1e-9
-    cont[key] = cont.get(key, 0) + 1
+for cp in (0, 12, 32):
+    Np, dp = lagrange(Cp16, (0, 12, 32), cp)
+    for cm in (0, 12, 32):
+        Nm, dm = lagrange(Cm16, (0, 12, 32), cm)
+        PM = Np @ Nm @ Ps8f
+        for qv in (-2, 0, 2):
+            Nq, dq = lagrange(Q2s, (-2, 0, 2), qv)
+            PMQ = PM @ Nq
+            for gv in (-1, 1):
+                Ng, dg = lagrange(Gf, (-1, 1), gv)
+                tr = exact_int(np.trace(PMQ @ Ng))
+                d_, rem = divmod(tr, dp * dm * dq * dg * 8)
+                ok &= rem == 0
+                if d_:
+                    cont[(jmap[cp], jmap[cm], qv // 2, gv)] = d_
 expL = {(0.0, 0.0, 0): 1, (0.5, 0.5, 1): 4, (1.0, 0.0, 0): 3}
 expR = {(0.0, 0.0, 0): 1, (0.5, 0.5, -1): 4, (0.0, 1.0, 0): 3}
-gotL = {k[:3]: v / 4 for k, v in cont.items() if k[3] == -1}
-gotR = {k[:3]: v / 4 for k, v in cont.items() if k[3] == 1}
+gotL = {k[:3]: Fraction(v, 4) for k, v in cont.items() if k[3] == -1}
+gotR = {k[:3]: Fraction(v, 4) for k, v in cont.items() if k[3] == 1}
 ok &= gotL == expL and gotR == expR
-hp, hm, qv = vals[4], vals[5], vals[2]
-gvv = vals[3]
-coef = {}
+# anomaly polynomial from exact traces: A(f) = (1/4) Tr(f (P_L - P_R)) on the block, P_L - P_R = -Gamma P_*
+Hp4 = -(Jf @ Xp4[2])                            # 4 H+_3
+Hm4 = -(Jf @ Xm4[2])                            # 4 H-_3
+LR = -(Gf @ Ps8f)                               # 8 (P_L - P_R) on the block
+A3 = 0
 for mono in [(3, 0, 0), (0, 3, 0), (0, 0, 3), (2, 0, 1), (0, 2, 1), (1, 1, 1), (2, 1, 0), (1, 2, 0), (1, 0, 2), (0, 1, 2)]:
-    t_ = np.sum((hp ** mono[0]) * (hm ** mono[1]) * (qv ** mono[2]) * (-gvv)) / 4  # P_L - P_R = -Gamma
-    coef[mono] = t_
-A3 = sp.nsimplify(sum(sp.Rational(round(coef[mo] * 4), 4) * sp.factorial(3) / (sp.factorial(mo[0]) * sp.factorial(mo[1]) * sp.factorial(mo[2])) * al ** mo[0] * be ** mo[1] * ga ** mo[2] for mo in coef))
-A1 = sp.nsimplify(sum(sp.Rational(round(np.sum(v * (-gvv)) / 4 * 4), 4) * s for v, s in [(hp, al), (hm, be), (qv, ga)]))
+    Mm = reduce(np.matmul, [Hp4] * mono[0] + [Hm4] * mono[1] + [Q2s] * mono[2] + [LR], np.eye(512))
+    tr = exact_int(np.trace(Mm))
+    coeff = Fraction(tr, 4 ** mono[0] * 4 ** mono[1] * 2 ** mono[2] * 8 * 4)
+    mult = sp.factorial(3) / (sp.factorial(mono[0]) * sp.factorial(mono[1]) * sp.factorial(mono[2]))
+    A3 += sp.Rational(coeff.numerator, coeff.denominator) * mult * al ** mono[0] * be ** mono[1] * ga ** mono[2]
+A1 = 0
+for Mi, scale, sym in ((Hp4, 4, al), (Hm4, 4, be), (Q2s, 2, ga)):
+    coeff = Fraction(exact_int(np.trace(Mi @ LR)), scale * 8 * 4)
+    A1 += sp.Rational(coeff.numerator, coeff.denominator) * sym
 ok &= sp.expand(A3 - 2 * ga * (3 * al ** 2 + 3 * be ** 2 + 4 * ga ** 2)) == 0 and sp.expand(A1 - 8 * ga) == 0
-report("9", ok, "thm:closurechiral (i)-(ii) (numerical: float64 spectra of exact integer matrices, eigenvalues within 1e-8 of the stated values): the "
-       "(q1, q2, Gamma) content of the P_fam block is tab:closurecontent (in units of four real dimensions), giving A((aQ1+bQ2)^3) = -12ab^2 and "
-       "A(aQ1+bQ2) = 0; on P_* the halves are L = (0,0)_0 + (1/2,1/2)_{+1} + (1,0)_0 and R = (0,0)_0 + (1/2,1/2)_{-1} + (0,1)_0 under su2_+ + su2_- + "
-       "u(1)_Q, and A(H^3) = 2c(3a^2 + 3b^2 + 4c^2), A(H) = 8c for H = a H+_3 + b H-_3 + c Q")
+report("9", ok, "thm:closurechiral (i)-(ii) (exact: joint eigenspace dimensions as traces of exact spectral projectors of commuting integer matrices, "
+       "minimal polynomials verified on the blocks): the (q1, q2, Gamma) content of the P_fam block is tab:closurecontent (in units of four real "
+       "dimensions), giving A((aQ1+bQ2)^3) = -12ab^2 and A(aQ1+bQ2) = 0; on P_* the halves are L = (0,0)_0 + (1/2,1/2)_{+1} + (1,0)_0 and "
+       "R = (0,0)_0 + (1/2,1/2)_{-1} + (0,1)_0 under su2_+ + su2_- + u(1)_Q, and the exact traces give A(H^3) = 2c(3a^2 + 3b^2 + 4c^2), A(H) = 8c for "
+       "H = a H+_3 + b H-_3 + c Q")
 
 # thm:inertia3 (vector level; integer matrices, ranks modulo two large primes)
 SYMB = [(a, b) for a in range(18) for b in range(a, 18)]
@@ -557,8 +602,11 @@ def inv_forms(sym, cls):
         blocks += [r @ S_ + S_ @ r.T for r in symn]
         cols.append(np.concatenate([x.reshape(-1) for x in blocks]))
     Mx = np.array(cols).T
-    r1, r2 = rank_mod_p(Mx), rank_mod_p(Mx, 2_147_483_587)
-    return 171 - r1 if r1 == r2 else None
+    Gm = Mx.T @ Mx                                                   # rank(M^T M) = rank(M) over Q; integer entries
+    assert np.abs(Gm).max() < 2 ** 62
+    r = DomainMatrix([[ZZ(int(x)) for x in row] for row in Gm.tolist()], Gm.shape, ZZ).convert_to(QQ).rank()
+    r1 = rank_mod_p(Mx)
+    return 171 - r if r == r1 else None
 
 
 lGk = []
@@ -571,8 +619,32 @@ st_alg = [adv(rot(2, 3)), adv(rot(8, 9))] + [adv(rot(i, j)) for i, j in itertool
 rows = [("Cent(G3)", gens, (2, 0)), ("sum lG^(k)", lGk, (6, 0)), ("P_fam-surviving", fam_alg, (18, 13)), ("P_*-surviving", st_alg, (8, 6)), ("none", [], (90, 81))]
 got = {name: (inv_forms(sym, "L"), inv_forms(sym, "D")) for name, sym, _ in rows}
 ok = all(got[name] == exp for name, _, exp in rows)
-report("10", ok, f"thm:inertia3: (Lorentz, duality) dimensions of invariant symmetric forms on V_3^*: {got} (integer matrices; ranks modulo two "
-       "large primes, which agree; the first row is also e5-4b)")
+report("10", ok, f"thm:inertia3: (Lorentz, duality) dimensions of invariant symmetric forms on V_3^*: {got} (exact: ranks over Q of the integer "
+       "Gram matrices M^T M, which equal the ranks of the condition matrices M, and agree with ranks modulo a large prime; the first row is also e5-4b)")
+
+
+# ---------------------------------------------------------------------------- a3-11 prop:howmuch, non-real versus imaginary spectrum
+# (review of version 1.0.1): a diagonalisable eta-self-adjoint G with eigenvalues 1 +- i gives no bounded motion
+tau_ = sp.symbols('tau', real=True)
+eta2 = sp.diag(1, -1)
+Gc = sp.Matrix([[1, -1], [1, 1]])
+ok = (Gc.T * eta2 - eta2 * Gc).is_zero_matrix                       # G^dagger = eta^-1 G^T eta = G
+ok &= set(Gc.eigenvals()) == {1 + sp.I, 1 - sp.I} and Gc.is_diagonalizable()
+Xc = sp.exp(tau_) * sp.Matrix([sp.cos(tau_), sp.sin(tau_)])           # kappa = 1
+ok &= sp.simplify(Xc.diff(tau_, 2) - Gc * Gc * Xc).is_zero_matrix    # solves X'' = kappa^2 G^2 X
+Mph = sp.Matrix(sp.BlockMatrix([[sp.zeros(2), sp.eye(2)], [Gc * Gc, sp.zeros(2)]]))
+ev = Mph.eigenvals()
+ok &= set(ev) == {1 + sp.I, 1 - sp.I, -1 + sp.I, -1 - sp.I} and all(sp.re(e) != 0 for e in ev)
+# with purely imaginary spectrum (G = mu J_2 blocks on (1,1) planes) the subspace is bounded and neutral: G = diag(J2, 2 J2) on eta = diag(1,-1,1,-1)
+J2 = sp.Matrix([[0, -1], [1, 0]])
+eta4 = sp.diag(1, -1, 1, -1)
+Gi = sp.diag(J2, 2 * J2)
+ok &= (Gi.T * eta4 - eta4 * Gi).is_zero_matrix and set(Gi.eigenvals()) == {sp.I, -sp.I, 2 * sp.I, -2 * sp.I}
+Mi = sp.Matrix(sp.BlockMatrix([[sp.zeros(4), sp.eye(4)], [Gi * Gi, sp.zeros(4)]]))
+ok &= Mi.is_diagonalizable() and all(sp.re(e) == 0 for e in Mi.eigenvals())
+report("11", ok, "prop:howmuch: for eta = diag(1,-1), G = [[1,-1],[1,1]] is eta-self-adjoint and diagonalisable with eigenvalues 1 +- i; "
+       "X = e^tau (cos tau, sin tau) solves X'' = G^2 X and the phase-space exponents are +-1 +- i, so a non-real spectrum does not bind; "
+       "for G = diag(J2, 2 J2) (purely imaginary spectrum) the phase-space generator is semisimple with imaginary spectrum (exact)")
 
 print(f"{NPASS[0]}/{NPASS[0] + len(FAILS)} checks passed")
 sys.exit(0 if not FAILS else 1)

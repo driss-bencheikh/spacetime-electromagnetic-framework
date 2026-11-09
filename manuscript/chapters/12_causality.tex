@@ -2,15 +2,41 @@
 \label{ch:ch12_causal}
 
 The question of this chapter is whether the Lorentzian four-plane used in every earlier chapter, and with it the light cone and the
-distinction between past and future, can be obtained from the split geometry rather than postulated. It starts from the free field on
-$\R^{3,3}$, which is ill-posed and has no time orientation (\cref{sec:baseline}); identifies the choice of a four-plane with the choice of a
-complex structure and recovers one nappe of a light cone from twisted squares of spinors (\cref{sec:selector}); shows that no
-$SO(3,3)$-invariant scalar order parameter selects that choice cleanly (\cref{sec:typesel}); and derives the surplus-time constraints from a
+distinction between past and future, can be obtained from the split geometry rather than postulated.
+
+\paragraph{Motivation and scope.} This investigation originated in the intuition that observable causal order might follow from the
+collective dynamics of the underlying system, rather than enter through an independently prescribed choice of a Lorentzian sector. The
+quantum motivation comes from the sum-over-histories formulation, in which complex probability amplitudes associated with admissible
+histories are combined before probabilities are extracted \cite{Feynman48}. Applied to the Spacetime--Electromagnetic Framework, this
+suggests asking whether quantum dynamics and physical-state reduction associated with the split-signature geometry could determine an
+effective Lorentzian causal structure.
+
+This possibility is a research conjecture. Summing amplitudes does not by itself derive a spacetime signature, select a physical four-plane,
+or establish microcausality. A complete realisation would require a specified space of histories, an action and integration prescription,
+a consistent treatment of constraints, and a positive physical state space. In particular, the Lorentzian cone whose emergence is sought
+cannot already be imposed through the admissibility conditions.
+
+The present chapter investigates prerequisites and obstructions to this programme through explicit models. Its distinction between weak
+and strong emergence (\cref{sec:baseline}) separates consistency within a selected Lorentzian sector from a dynamical explanation of that
+selection. The conditional scalar reduction of \cref{cor:weak} achieves the former; the proposed emergence of causal order from the combined
+quantum dynamics remains open, and the obstructions below hold for the models and assumptions in which they are proved.
+
+The chapter starts from the free field on
+$\R^{3,3}$, which for unrestricted data is ill-posed and has no time orientation (\cref{sec:baseline}); identifies the choice of a four-plane with the choice of a
+complex structure and recovers one nappe of a light cone from twisted squares of spinors (\cref{sec:selector}); shows that no unconstrained
+$SO(3,3)$-invariant adjoint scalar order parameter selects that choice cleanly (\cref{sec:typesel}); and derives the surplus-time constraints from a
 gauge symmetry of the worldline that is chosen, not derived (\cref{sec:constraints}). \Cref{sec:tau} then analyses the clock reduction of
 \cref{assum:clockred}, the two parameters called $\tau$ in this manuscript, and what the reduction keeps and removes; \cref{sec:universaltau} states
 the universal-evolution hypothesis as an open hypothesis, with the ingredients a proposal would need. \Cref{sec:causalverdict} collects the
 outcome. The chapter uses the clock and the interior four-plane of \cref{ch:ch02_lorentz} and the normal-plane model of \cref{ch:ch11_curvature};
 the compatibility chapter (\cref{ch:ch13_compatibility}) uses its verdicts in the spacetime chain.
+
+Several letters carry more than one meaning in this chapter, each fixed by its context: $B$ is the order parameter of \cref{sec:typesel}, the
+Kaluza--Klein potentials $B^u,B^v$ of \cref{thm:ghostvec} and, in bold, the magnetic field; $C$ is the selector of \cref{sec:selector} and the
+function $C=A_\mu h^{\mu\nu}k_\nu$ of \cref{thm:wlgauge}; $N$ is the normal plane and the lapse; $n$ is the null rotation of \cref{thm:flat} and a
+lattice vector in \cref{ex:tachyons}; and $K=\tfrac12e_1e_4$ in \cref{thm:flat} is distinct from the grading root $\cK$ and from the kernels $K_{\psi\chi}$.
+The letters $a,\dots,h$, $\kappa$, $\lambda$, $\lambda_2$ and $m$ in \cref{thm:degree} and its proof are coefficients local to that proof, and the
+degree-eight function there is written $F$.
 
 % --- source: tex/s27_baseline#0 ((head))
 
@@ -20,8 +46,7 @@ the compatibility chapter (\cref{ch:ch13_compatibility}) uses its verdicts in th
 \label{sec:baseline}
 
 Every construction so far has used a Lorentzian four-plane chosen inside $\R^{3,3}$: the interior plane $E$ of the Dirac structure, or the slice $\Sigma$
-of the curved model. This part asks whether that choice, and with it the light cone and the distinction between past and future, can be obtained from the
-split geometry rather than postulated. Two levels must be distinguished. \emph{Weak emergence} means that an already selected $3{+}1$ sector carries a
+of the curved model. Two levels must be distinguished. \emph{Weak emergence} means that an already selected $3{+}1$ sector carries a
 consistent quantum causal structure. \emph{Strong emergence} means that the dynamics determine why that sector, with that causal structure, arises from the
 six-dimensional theory. The light cone must not be put into the admissibility conditions and then be said to emerge. We fix the failure conditions in advance:
 uncontrolled growing modes in the six-dimensional theory; a projector onto the four-dimensional sector imposed by hand; ghosts or negative spectral weights in
@@ -39,10 +64,12 @@ For the action $S_6=\tfrac12\int d^6X\,(\eta^{AB}\partial_A\phi\,\partial_B\phi-
 \label{eq:toydisp}
 \omega^2=|\bk|^2+m^2-q^2,\qquad q^2=q_1^2+q_2^2 ;
 \end{equation}
-\item for $q^2>|\bk|^2+m^2$ the growth rate is $\gamma=\sqrt{q^2-|\bk|^2-m^2}$, and $(1+q^2)^{-s/2}e^\gamma\to\infty$ for every $s$: data small in any Sobolev norm
-produce arbitrarily large solutions at $t=1$, so the Cauchy problem with respect to $t$ is ill-posed in the sense of Hadamard \cite{Hadamard23};
-\item the canonical energy density $\tfrac12(\pi^2-\phi_u^2-\phi_v^2+|\nabla_{\mathbf x}\phi|^2+m^2\phi^2)$ averages to $\tfrac14a^2(m^2-q^2)$ on $\phi=a\sin qu$: the
-energy is unbounded below.
+\item for $q^2>|\bk|^2+m^2$ the growth rate is $\gamma=\sqrt{q^2-|\bk|^2-m^2}$, and $(1+q^2)^{-s/2}e^\gamma\to\infty$ for every $s$. Plane waves are not of finite
+norm on the noncompact Cauchy surface, so the argument is applied to wave packets concentrated at large surplus momentum, or to plane waves in a
+periodic box: data small in any Sobolev norm produce arbitrarily large solutions at $t=1$, so the Cauchy problem with respect to $t$ is ill-posed in
+the sense of Hadamard \cite{Hadamard23};
+\item the canonical energy density $\tfrac12(\pi^2-\phi_u^2-\phi_v^2+|\nabla_{\mathbf x}\phi|^2+m^2\phi^2)$ averages to $\tfrac14a^2(m^2-q^2)$ on $\phi=a\sin qu$ in a
+periodic box in $u$, and approximately so on wave packets concentrated near such a mode: the energy is unbounded below.
 \end{enumerate}
 \end{proposition}
 
@@ -76,8 +103,8 @@ does it split into a past and a future component.
 
 \noindent Executable check: c2-2 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
-Causal order is therefore not merely unproven in $\R^{3,3}$; it is absent. Anything called a light cone with a future has to come from a reduction to a single
-time. The arena already contains such a reduction, as an input. For the geodesic test particle of \cref{prop:constraints}, $H=\tfrac12(h^{\mu\nu}k_\mu k_\nu+p_u^2+p_v^2)$
+The split metric therefore supplies no canonical future cone invariant under the identity component $SO^+(3,3)$: a cone, or a causal order, can be
+introduced only by additional data. Anything called a light cone with a future has to come from such data, here a reduction to a single time. The arena already contains such a reduction, as an input. For the geodesic test particle of \cref{prop:constraints}, $H=\tfrac12(h^{\mu\nu}k_\mu k_\nu+p_u^2+p_v^2)$
 with $h=\operatorname{diag}(1,-1,-1,-1)$, the mass shell $2H=m^2$ is $p_0^2=|\mathbf p|^2+m^2-p_u^2-p_v^2$, the relation \eqref{eq:toydisp} with $q=(p_u,p_v)$. The
 first-class constraints $p_u=p_v=0$ remove every mode with nonzero surplus momentum, as \cref{fig:toy} shows: the unstable band
 $q^2>|\mathbf p|^2+m^2$, and with it the stable modes $0<q^2\le|\mathbf p|^2+m^2$, keeping only $q=0$. They are sufficient to remove the instability
@@ -119,9 +146,10 @@ Let $C=a\wedge b$ be a simple bivector of $\R^{3,3}$ and $N=\langle a,b\rangle$.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item $C^2=-\det\mathrm{Gram}(a,b)\,\id$.
 \item For a nondegenerate $N$ with $C$ normalised: $C^2=-\id$ exactly when $N$ is definite, that is exactly when $N^\perp$ is Lorentzian, of signature $(1,3)$
-when $N$ is positive and $(3,1)$ when $N$ is negative; $C^2=+\id$ exactly when $N^\perp$ has signature $(2,2)$; and $C^2=0$ exactly when $N$ is degenerate.
-\item The centraliser of $C$ in $\so{3,3}$ is $\so N\oplus\so{N^\perp}$, of dimension seven, so the choices of $N$ of a given type form an eight-dimensional homogeneous
-space.
+when $N$ is positive and $(3,1)$ when $N$ is negative; and $C^2=+\id$ exactly when $N^\perp$ has signature $(2,2)$. By (i), $C^2=0$ exactly when $N$ is degenerate.
+\item For a nondegenerate $N$, the centraliser of $C$ in $\so{3,3}$ is $\so N\oplus\so{N^\perp}$, of dimension seven, so the choices of $N$ of a given
+nondegenerate type form an eight-dimensional homogeneous space. The degenerate strata differ: for the totally null plane $\langle e_1+e_4,e_2+e_5\rangle$,
+$C_0=(e_1+e_4)(e_2+e_5)$ has $C_0^2=0$ and a nine-dimensional centraliser.
 \item The surplus plane is such an $N$, with $C=J=e_2e_3$ and $N^\perp$ the interior four-plane.
 \end{enumerate}
 \end{theorem}
@@ -129,10 +157,10 @@ space.
 \begin{proof}
 (i) is the Clifford identity $(a\wedge b)^2=(a\cdot b)^2-a^2b^2$. (ii) For an orthonormal pair, $(ab)^2=-a^2b^2$, which is $-1$ when $a^2=b^2$ and $+1$ otherwise, and the
 signature of $N^\perp$ is the complement of that of $N$ in $(3,3)$. (iii) holds for coordinate planes by \eqref{eq:bladecomm}, and every nondegenerate plane is an
-$SO(3,3)$-image of a coordinate plane of the same signature, by Witt's theorem.
+$SO(3,3)$-image of a coordinate plane of the same signature, by Witt's theorem; the centraliser of $C_0$ is computed directly.
 \end{proof}
 
-\noindent Executable check: c1-1 (exact symbolic or integer arithmetic; \cref{app:methods}).
+\noindent Executable check: c1-1, c1-12 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
 For coordinate planes $C$ is moreover antisymmetric on $S$ when $C^2=-\id$, an orthogonal complex structure; for tilted planes it is not. Orthogonality refers to the
 Euclidean structure of $S$, which singles out the temporal triple, while $C^2=-\id$ is invariant. The distinction will matter.
@@ -189,9 +217,12 @@ whose null set has no time orientation.}
 The selector of the reduction is therefore not a new field. Choosing the spacetime $N^\perp$ and choosing the complex structure $C$ are one choice, and in the arena that
 complex structure is the charge $J$, the same $J$ that is the imaginary unit of the Dirac theory (\cref{thm:i}). Null directions are the squares of Weyl spinors twisted
 by $J$, and the time orientation is fixed by the sign of $J$ together with the chirality. The mathematics is the Klein--Penrose correspondence, in which a null vector is
-$\psi\bar\psi$ \cite{PenroseRindler84,WardWells}; what is specific to the arena is that $J$ already plays this role. All of this is kinematics: nothing yet says why $J$,
+$\psi\bar\psi$ \cite{Penrose60,PenroseRindler84,WardWells}; what is specific to the arena is that $J$ already plays this role. All of this is kinematics: nothing yet says why $J$,
 rather than an indefinite or degenerate bivector, is chosen. For degenerate planes $v_C$ is still null with a three-dimensional image, and for the totally null plane
 $\langle e_1+e_4,e_2+e_5\rangle$ it lies in the totally null three-plane $\langle e_i+e_{i+3}\rangle$, an eigenspace of the grading root $\cK$.
+A six-dimensional Dirac model of signature $(3,3)$ with a locally gauged $SO(3,3)$, broken locally to the Lorentz group of a selected time
+direction, was studied by Dartora and Cabrera \cite{DartoraCabrera10}. That general architecture is prior art; what is examined here is the
+identification of the selector with $J$ and the obstructions to its dynamical selection (\cref{sec:rel:times}).
 
 % --- source: tex/s28_selector#3 (Three constituents)
 \subsection{Three constituents}
@@ -207,8 +238,8 @@ structure exactly when $E'$ is Lorentzian, at every $n$.
 \item The centraliser of $J$ among the $153$ bivectors has dimension $97=6+91$, so the choices form a space of dimension $56$.
 \item With either $\mathrm{Spin}(9,9)$-invariant pairing, the product $\beta_{\rm odd}$ of the nine negative generators, which is antisymmetric, or the product $\beta_{\rm even}$
 of the nine positive ones, which is symmetric, $\beta e_AJ$ is symmetric exactly for the fourteen directions of $W_3$: the $J$-twisted square lives on the complement,
-not on $E$. The untwisted $\beta_{\rm odd}e_A$ is symmetric for all eighteen directions, so the vector sits in $\mathrm{Sym}^2S^+$, and at random spinors the untwisted
-square is not null.
+not on $E$. The untwisted $\beta_{\rm odd}e_A$ is symmetric for all eighteen directions, so the vector sits in $\mathrm{Sym}^2S^+$, and the untwisted
+square is not null at random spinors of $S^+$.
 \end{enumerate}
 \end{theorem}
 
@@ -216,7 +247,7 @@ square is not null.
 
 The identification of the selector with $J$ survives at three constituents, but the covariant construction of the cone from spinors is a feature of dimension six. At
 $n=3$ the cone of $E$ is recovered by the Dirac current $j_\mu=\psi^{\!\top}\gamma^0\gamma_\mu\psi$, which is future causal, being a sum of one-constituent currents, and
-null on product states; but it uses the clock $\gamma^0$ and the transpose, that is, the positive inner product of the spinor module.
+null on product states whose first factor is chiral (for the first factor $|000\rangle+|100\rangle$ it is $(2,0,0,0)$, timelike); but it uses the clock $\gamma^0$ and the transpose, that is, the positive inner product of the spinor module.
 
 % --- source: tex/s29_typesel#0 ((head))
 
@@ -226,14 +257,15 @@ null on product states; but it uses the clock $\gamma^0$ and the transpose, that
 \label{sec:typesel}
 
 Kinematics identifies the selector with a complex structure. Dynamics would have to explain why the field that plays this role takes a value of the
-complex-structure type at all, rather than an indefinite or degenerate one. The natural test is a potential: take the order parameter to be a bivector field
-$B\in\so{3,3}$, ask that the potential be invariant under $SO(3,3)$, so that nothing is put in by hand, and require that its minimum set be exactly the orbit of $J$,
+complex-structure type at all, rather than an indefinite or degenerate one. The natural test is a potential: take the order parameter to be an unconstrained bivector field
+$B\in\so{3,3}$, an adjoint scalar, ask that the potential be invariant under $SO(3,3)$, so that nothing is put in by hand, and require that its minimum set be exactly the orbit of $J$,
 over an open set of couplings, with healthy fluctuations. Restriction to $S^+$ is the isomorphism $\so{3,3}\cong\slr{4,\R}$, and the invariant polynomials are the
 polynomials in
 \[
 t_k(B)=\tr\bigl((B|_{S^+})^k\bigr),\qquad k=2,3,4,
 \]
-the coefficients of the characteristic polynomial; a continuous invariant function is constant on orbit closures.
+the coefficients of the characteristic polynomial; a continuous invariant function is constant on orbit closures (for the real orbits and their closures
+see \cite{RichardsonSlodowy90,Jablonski12}).
 
 \begin{proposition}[Invariants of the three types]
 \label{prop:types}
@@ -244,7 +276,8 @@ invariants.
 
 \noindent Executable check: c1-6 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
-So no invariant potential can prefer $(1,3)$ to $(3,1)$. The two are exchanged by the anti-isometries $\cK$ and $G$ and correspond to the two sign conventions for a
+So no invariant polynomial can prefer $(1,3)$ to $(3,1)$. Smooth invariant functions can separate the two orientations, since the orbits
+are distinct; the stronger obstruction is the orbit closure of \cref{thm:flat}(i). The two are exchanged by the anti-isometries $\cK$ and $G$ and correspond to the two sign conventions for a
 Lorentzian metric; physically this is harmless, but it means the selection is never unique. The type itself is harder.
 
 \begin{theorem}[No clean selection below degree eight]
@@ -254,7 +287,7 @@ Let $V$ be an $SO(3,3)$-invariant polynomial on $\so{3,3}$, bounded below.
 \item If $\deg V\le4$, then $V=m\,t_2+\lambda\,t_2^2+\mathrm{const}$.
 \item If $\deg V\le7$, then $V$ restricted to $\{t_3=0\}$ is a polynomial of degree at most two in $t_2$ alone.
 \item Hence if $J$ minimises $V$, so does $B_w=\tfrac35e_2e_3+\tfrac45e_5e_6$, which has $t_2=-4$, $t_3=0$ and $t_4=\tfrac{4804}{625}\neq4$, is not simple, and selects no four-plane.
-\item In degree eight, $f=(t_2+4)^2+t_3^2+(t_4-4)^2$ vanishes exactly on the elements with characteristic polynomial $(y^2+1)^2$, and its Hessian at $J$ has rank one.
+\item In degree eight, $F=(t_2+4)^2+t_3^2+(t_4-4)^2$ vanishes exactly on the elements with characteristic polynomial $(y^2+1)^2$, and its Hessian at $J$ has rank one.
 \end{enumerate}
 \end{theorem}
 
@@ -266,7 +299,7 @@ $(t_2,t_4)=(\mp4,4)$; $D_0=\operatorname{diag}(1,-1,2,-2)$ and two rotations of 
 term $\lambda_2t_4$ would give $\lambda_2t_4s^4$ with both signs of $t_4$, so $\lambda_2=0$ for boundedness; along $sC_0$ a cubic term gives $-120\kappa s^3$, so $\kappa=0$. (ii) The top
 homogeneous part must be non-negative, so an odd top degree vanishes, and in degree six the top part $e\,t_2^3+f\,t_3^2+g\,t_2t_4$ takes the values $\mp(64e+16g)$ on the
 complex and para-complex structures and $\pm(1000e+340g)$ on the last two elements; non-negativity forces $g=-4e$ and then $e=g=0$, with $f\ge0$ from $C_0$. The quartic
-coefficient of $t_4$ must again vanish, leaving $a\,t_2+b\,t_3+c\,t_2^2+h\,t_2t_3+f\,t_3^2$, which on $t_3=0$ is $a\,t_2+c\,t_2^2$. (iii) follows. (iv) $f\ge0$ with equality exactly
+coefficient of $t_4$ must again vanish, leaving $a\,t_2+b\,t_3+c\,t_2^2+h\,t_2t_3+f\,t_3^2$, which on $t_3=0$ is $a\,t_2+c\,t_2^2$. (iii) follows. (iv) $F\ge0$ with equality exactly
 when $(t_2,t_3,t_4)=(-4,0,4)$, which fixes the characteristic polynomial by Newton's identities; at $J$ the gradients of $t_3$ vanish and those of $t_2$ and $t_4$ are
 proportional, so the Hessian has rank one.
 \end{proof}
@@ -308,14 +341,16 @@ lies in the closure of the orbit of $J+n$, and $V(J+n)=V(J)$ whenever $V$ is con
 \item If $V$ is smooth and has a local minimum at $J$, its Hessian vanishes on the six $\so{1,3}$ directions. The $\Stab(J)$-invariant symmetric forms on $\so{1,3}$ are the real
 and imaginary parts of the complex Killing form of $\slr{2,\C}$, and each nonzero one has signature $(3,3)$, so a positive semidefinite one is zero.
 \end{enumerate}
-At best the fluctuations about $J$ are one massive radial mode, eight Goldstone modes and six massless modes that no symmetry protects.
+At best the fluctuations about $J$ are one massive radial mode, eight Goldstone modes and six massless modes that are not Goldstone modes:
+non-Goldstone flat directions, whose vanishing masses are enforced by invariance and stability (ii), not by a broken symmetry.
 \end{theorem}
 
 \noindent Executable check: c1-9 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
 \begin{proposition}[Kinetic terms]
 \label{prop:kineticB}
-$\so{3,3}$ is simple, so every $SO(3,3)$-invariant quadratic kinetic term is a multiple of the Killing form, which on the fifteen bivectors has signature $(9,6)$, boosts with
+Take $B$ an unconstrained adjoint scalar with a factorised kinetic term, a spacetime contraction of $\partial B$ with $\partial B$ times an invariant
+symmetric form on $\so{3,3}$. Since $\so{3,3}$ is simple, that form is a multiple of the Killing form, which on the fifteen bivectors has signature $(9,6)$, boosts with
 one sign and rotations with the other. At $J$ the radial direction is a rotation, the eight Goldstone directions are two rotations and six boosts, and the six $\so{1,3}$
 directions are three of each. Whatever the overall sign, at least six directions are ghosts, and the induced metric on the eight-dimensional space of choices has
 signature $(6,2)$.
@@ -341,9 +376,9 @@ with positive kinetic energy. But the boosts $e_1e_4,e_1e_5,e_1e_6$ of the selec
 
 \noindent Executable check: c1-11 (exact symbolic or integer arithmetic; \cref{app:methods}).
 
-The requirement was a clean selection of the Lorentzian type over an open set of couplings, with every mode healthy and accounted for. An $SO(3,3)$-invariant scalar
+The requirement was a clean selection of the Lorentzian type over an open set of couplings, with every mode healthy and accounted for. An unconstrained $SO(3,3)$-invariant adjoint scalar
 order parameter cannot deliver it: below degree eight it does not isolate the type; at every degree the minimum is degenerate with Lorentz-violating configurations and has
-six unprotected massless modes; and its kinetic term has ghosts. The positive route selects cleanly only by giving up the boosts it was meant to produce.
+six non-Goldstone flat directions; and, with a factorised kinetic term, it has ghosts. The positive route selects cleanly only by giving up the boosts it was meant to produce.
 
 % --- source: tex/s30_constraints#0 ((head))
 
@@ -360,7 +395,7 @@ generates a gauge symmetry, so the question is which symmetry, and whether it is
 \label{thm:wlgauge}
 For arbitrary $A_\mu(x)$ and flat $h$, with $C=A_\mu h^{\mu\nu}k_\nu$, the constraints satisfy $\{p_u,H\}=-Cp_v$, $\{p_v,H\}=Cp_u$, $\{p_u,p_v\}=0$ and $\{\ell,H\}=0$. The extended action
 \[
-\int d\tau\,\bigl(p\cdot\dot x-NH-\lambda_1p_u-\lambda_2p_v\bigr)
+\int d\tau\,\bigl(p\cdot\dot x-N(H-\tfrac12m^2)-\lambda_1p_u-\lambda_2p_v\bigr)
 \]
 is invariant under
 \[
@@ -373,6 +408,10 @@ the potential $A$ drops out.
 \end{theorem}
 
 \noindent Executable check: c2-5, c2-6, c2-7 (exact symbolic or integer arithmetic; \cref{app:methods}).
+
+First-class constraints that remove surplus time directions by generating a worldline gauge symmetry are also the mechanism of two-time physics,
+where a local $Sp(2,\R)$ acts on position and momentum in signature $(d,2)$ \cite{BarsDelidumanAndreev98}; the comparison, and where it ends, is
+made in \cref{sec:rel:times}.
 
 \begin{proposition}[Gauging the isometry is not enough]
 \label{prop:isometryonly}
@@ -387,9 +426,15 @@ The symmetry that removes the instability is therefore the full group of local t
 
 \begin{corollary}[Weak emergence for scalar matter]
 \label{cor:weak}
-If the normal translations are gauged, the scalar sector reduces to the Klein--Gordon field on $(M^4,h)$: its energy is bounded below, its evolution is unitary, and
-$[\phi(x),\phi(y)]=0$ at spacelike separation for the cone of $h$ \cite{WeinbergQFT}. In the free theory the zero modes $\psi$ and the surplus modes $\chi$ do not mix, since
-translation invariance along the normal plane makes the mixed kernel $K_{\psi\chi}$ vanish, so the Schur complement is trivial and $K_{\rm eff}=K_{\psi\psi}$; the content is not in
+If the normal translations are gauged, the scalar sector reduces to the Klein--Gordon field on $(M^4,h)$; the physical states do not depend on
+$u,v$, and they are not normalisable functions on $\R^{3,3}$, on which constants in $u,v$ have infinite norm. For flat $h$ (the setting of
+\cref{prop:isometryonly}), a chosen time orientation and $m^2\ge0$, the one-particle space is that of the positive-frequency solutions with the
+Klein--Gordon inner product, and on its bosonic Fock space the energy is bounded below, the evolution is unitary, and $[\phi(x),\phi(y)]=0$ at
+spacelike separation for the cone of $h$ \cite{WeinbergQFT}. For a globally hyperbolic curved $h$ the algebraic Klein--Gordon construction gives
+microcausality from the support of the advanced-minus-retarded propagator; a preferred positive-frequency ground state and a unitary
+implementation in a chosen Fock representation need further assumptions \cite{FewsterVerch12}. In the free flat product the zero modes $\psi$ and the surplus modes $\chi$ do not
+mix, since translation invariance along the normal plane makes the mixed kernel $K_{\psi\chi}$ vanish, so the Schur complement is trivial and $K_{\rm eff}=K_{\psi\psi}$;
+the rotating normal metric with a general $A$ is not translation invariant, and there the reduced operator itself is needed; the content is not in
 the kernel but in whether $\chi$ is physical, and under the gauge principle it is not. The causal cone is that of $h$, the metric of the selected four-plane: it is inherited
 from the reduction, not derived from the six-dimensional sum.
 \end{corollary}
@@ -401,8 +446,9 @@ What the reduction leaves over is the geometry of the normal plane itself, and i
 For $ds^2=h+\sigma\bigl[(du+B^u)^2+(dv+B^v)^2\bigr]$ with flat $h$, $B^u=b_1x^1dx^2$ and $B^v=b_2x^0dx^3$, one finds $R_6=-\tfrac\sigma4\sum F_{\mu\nu}F^{\mu\nu}$, and for the
 rotation ansatz $B^u=vA$, $B^v=-uA$, $R_6=-\sigma\,r^2F^2/4$, which at $\sigma=+1$ is the ambient scalar curvature of \cref{thm:ein6}. The coefficient is odd in $\sigma$, so the
 healthy sign is that of a normal plane of the sign of space, $\sigma=-1$, the ordinary Kaluza--Klein case. By \cref{thm:selector}(ii) the normal plane of a Lorentzian
-four-plane in $\R^{3,3}$ always has the sign of time. Every Kaluza--Klein vector from the normal plane, from its translations or its rotation, therefore gravitates with the
-wrong sign, and by \cref{thm:wlgauge} none of them couples to spinless matter.
+four-plane in $\R^{3,3}$ always has the sign of time. Relative to the ambient Einstein--Hilbert action and these ans\"atze, every Kaluza--Klein vector from the normal plane, from its
+translations or its rotation, therefore gravitates with the wrong sign, and by \cref{thm:wlgauge} none of them couples to spinless matter in the
+zero-normal-momentum sector. The theorem concerns normal vectors obtained by this Einstein--Hilbert and Kaluza--Klein route.
 \end{theorem}
 
 \noindent Executable check: g2-7 (exact symbolic or integer arithmetic; \cref{app:methods}).
@@ -425,34 +471,39 @@ The assumption is implemented by the first-class constraints $p_u=p_v=0$ of \cre
 qualifications belong to it.
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item It is \emph{imposed}. The gauge principle is consistent but chosen: the multipliers $\lambda_1,\lambda_2$ are added to the worldline action by hand
-(\cref{thm:wlgauge}), and \cref{sec:typesel} shows that no $SO(3,3)$-invariant scalar dynamics selects the four-plane they presuppose.
+(\cref{thm:wlgauge}), and \cref{sec:typesel} shows that no invariant potential for an unconstrained adjoint bivector order parameter has
+the orbit of $J$ as its minimum set, and that the factorised invariant kinetic term has ghosts; other representations, constrained order
+parameters, gauge or soldering constructions and derivative couplings are not excluded.
 \item It is \emph{sufficient, not minimal}. The constraints remove every nonzero surplus momentum, the stable modes $0<q^2\le|\mathbf p|^2+m^2$
-together with the unstable band (\cref{fig:toy}); the minimal restriction depends on the four-momentum and is not of this local form (CORE-07).
+together with the unstable band (\cref{fig:toy}); the minimal restriction depends on the four-momentum and is not of this local form.
 \item Its \emph{preservation} is shown for a test worldline in an arbitrary background $A_\mu$ and a flat $h$ (\cref{thm:wlgauge}). For
-interacting fields with dynamical normal-plane modes it is not established (X-03).
-\item It removes the surplus times and leaves the normal-plane \emph{geometry}: every Kaluza--Klein vector of the normal plane is a ghost
-(\cref{thm:ghostvec}), and none couples to spinless matter.
+interacting fields with dynamical normal-plane modes it is not established.
+\item It removes the surplus times and leaves the normal-plane \emph{geometry}: relative to the ambient Einstein--Hilbert action, every Kaluza--Klein
+vector of the normal plane is a ghost (\cref{thm:ghostvec}), and none couples to spinless matter in the zero-normal-momentum sector.
 \end{enumerate}
 
 \subsection{The worldline parameter}
 
 \begin{proposition}[The worldline parameter is a gauge parameter]
 \label{prop:wltau}
-For the extended action $S=\int d\tau\,(p\cdot\dot x-NH-\lambda_1p_u-\lambda_2p_v)$ of \cref{thm:wlgauge}:
+For the extended action $S=\int d\tau\,(p\cdot\dot x-N(H-\tfrac12m^2)-\lambda_1p_u-\lambda_2p_v)$ of \cref{thm:wlgauge}:
 \begin{enumerate}[label=(\roman*),leftmargin=2.2em]
 \item $S$ is invariant under $\tau\mapsto\tau'=f(\tau)$ with $f'>0$, $x$ and $p$ transforming as scalars and $N,\lambda_1,\lambda_2$ as densities,
-$N'=N/f'$, $\lambda_i'=\lambda_i/f'$. The Hamiltonian $H$ is a first-class constraint, $2H=m^2$, and generates this reparametrisation.
-\item On the reduced shell $p_u=p_v=0$, $h^{\mu\nu}p_\mu p_\nu=m^2>0$, the proper time of $h$ along the worldline is $d\tau_h=Nm\,d\tau$.
+$N'=N/f'$, $\lambda_i'=\lambda_i/f'$. Varying $N$ gives the mass shell $2H=m^2$, a first-class constraint; on shell the reparametrisations are
+generated by the total first-class Hamiltonian $N(H-\tfrac12m^2)+\lambda_1p_u+\lambda_2p_v$, multipliers included.
+\item On the reduced shell $p_u=p_v=0$, $h^{\mu\nu}p_\mu p_\nu=m^2>0$, the proper time of $h$ along the worldline is $d\tau_h=|N|m\,d\tau$.
 \end{enumerate}
-Hence $\tau$ is not an observable. The gauge $N=1/m$ makes it the proper time of $h$, and the time read by the clock is the proper time of the
+Hence $\tau$ is not an observable. For $m>0$, on a segment where the lapse does not vanish, the gauge $N=1/m$ (if $N>0$) or $N=-1/m$
+(if $N<0$; reparametrisations with $f'>0$ preserve the sign of $N$) makes it the proper time of $h$; a lapse crossing zero needs separate treatment, and the time read by the clock is the proper time of the
 selected four-plane, not a seventh coordinate.
 \end{proposition}
 
 \begin{proof}
-(i) Under the reparametrisation $p\cdot\dot x\,d\tau$ is invariant, and $NH\,d\tau=N'H\,d\tau'$, $\lambda_ip_i\,d\tau=\lambda_i'p_i\,d\tau'$. The constraint
-algebra of \cref{thm:wlgauge} contains $\{p_u,H\}=-Cp_v$, $\{p_v,H\}=Cp_u$ and $\{p_u,p_v\}=0$, so $H$, $p_u$, $p_v$ are first class. (ii) With
+(i) Under the reparametrisation $p\cdot\dot x\,d\tau$ is invariant, and $N(H-\tfrac12m^2)\,d\tau=N'(H-\tfrac12m^2)\,d\tau'$, $\lambda_ip_i\,d\tau=\lambda_i'p_i\,d\tau'$.
+The variation of $N$ gives $H-\tfrac12m^2=0$; with $-NH$ alone it would give $H=0$, the massless shell. The constraint
+algebra of \cref{thm:wlgauge} contains $\{p_u,H\}=-Cp_v$, $\{p_v,H\}=Cp_u$ and $\{p_u,p_v\}=0$, so $H-\tfrac12m^2$, $p_u$, $p_v$ are first class. (ii) With
 $k_\mu=p_\mu-A_\mu\ell$ and $\ell=vp_u-up_v$, Hamilton's equation for $x^\mu$ is $\dot x^\mu=Nh^{\mu\nu}k_\nu$. On the reduced shell $\ell=0$, so $k=p$ and
-$h_{\mu\nu}\dot x^\mu\dot x^\nu=N^2h^{\mu\nu}p_\mu p_\nu=N^2m^2$.
+$h_{\mu\nu}\dot x^\mu\dot x^\nu=N^2h^{\mu\nu}p_\mu p_\nu=N^2m^2$, so $d\tau_h=|N|m\,d\tau$.
 \end{proof}
 
 \noindent Executable check: c2-8 (exact symbolic or integer arithmetic; \cref{app:methods}).
@@ -478,7 +529,7 @@ All unit clocks are related by rotations of $V^+$, and the rotor carrying $e_1$ 
 That is a global covariance of free data. A position-dependent rotor $R(x)$ adds the term $R^{-1}\partial_\mu R\in\so3_+$ to the Dirac operator, so a
 local clock symmetry needs a connection with values in the rotations of $V^+$ and its transformation law. Since a rotation of the temporal triple
 alone changes the binding root $G$ (\cref{rem:clockcov}(b)), such a connection would also have to transport $G$, or be restricted to the matched
-rotations of both triples. It is not constructed here (TIME-08). Nor is it the gauge symmetry of \cref{thm:wlgauge}: that symmetry translates
+rotations of both triples. It is not constructed here. Nor is it the gauge symmetry of \cref{thm:wlgauge}: that symmetry translates
 along the normal plane of a fixed four-plane and does not rotate the clock. Global free equivalence therefore establishes neither a local clock
 gauge symmetry, nor a dynamical selection of the clock, nor a well-posed interacting theory with three times.
 
@@ -489,9 +540,10 @@ Under the reduction every momentum lies in $E_{\hat n}=\R\hat n\oplus V^-$, of s
 \item \emph{Kinematics.} The six-dimensional mass equals the mass read by the clock, $M_6=m_4(\hat n)$, and the ordinary four-dimensional
 decay inequality holds: no uphill decay survives (\cref{e7:prop:uphill}(iv)). The uphill decays and the opened channels of
 \cref{e7:prop:uphill}(ii)--(iii) use temporal momenta transverse to the clock, which the reduction removes; they are warnings about the unreduced
-kinematics, not predictions, and the ambient temporal momenta are not observable energies (CLASS-08, \cref{ch:ch10_classical}).
+kinematics, not predictions, and the ambient temporal momenta are not observable energies (\cref{ch:ch10_classical}).
 \item \emph{Scalar matter.} With the normal translations gauged, the scalar sector is the Klein--Gordon field on $(M^4,h)$, with energy bounded
-below, unitary evolution and microcausality for the cone of $h$ (\cref{cor:weak}).
+below, unitary evolution and microcausality for the cone of $h$ for flat $h$; on a globally hyperbolic curved $h$, microcausality of the algebraic
+construction, with a preferred state and unitarity needing further assumptions (\cref{cor:weak}).
 \item \emph{Removed.} Every surplus-momentum mode, stable or not; with compact surplus times the tower of tachyons of \cref{ex:tachyons} is
 removed with them.
 \item \emph{Not removed.} The ghost vectors of the normal plane (\cref{thm:ghostvec}) and the type-selection obstructions of
@@ -501,17 +553,19 @@ removed with them.
 \section{A universal evolution parameter: an open hypothesis}
 \label{sec:universaltau}
 
-No proposal for a universal evolution parameter has been identified in the literature examined within this research programme. The
-concept is therefore introduced here as an original proposal of the author, to be developed and investigated within the
-Spacetime--Electromagnetic Framework. The hypothesis is stated in a limited form, so that its requirements are explicit. It is not a result.
+A universal invariant evolution parameter is not new. In the parametrised relativistic dynamics of Horwitz and Piron \cite{HorwitzPiron73},
+an invariant parameter evolves events in a fixed spacetime, and for a many-body system it is taken to be universal, as Newtonian time is
+\cite{HorwitzPiron73,Horwitz20}. What may be specific to this framework is the connection of
+such a parameter with the clock reduction of \cref{sec:tau}: the parameter would act on the split six-dimensional arena, and the time read
+by a clock would follow from it through the reduction to the selected four-plane. The hypothesis is stated in a limited form, so that its
+requirements are explicit. It is not a result.
 
 \begin{quote}
 \emph{Universal-evolution hypothesis.} There is one parameter $\tau_U$, external to $\R^{3,3}$, along which all fields of the arena evolve, and
 the time read by a clock is obtained from $\tau_U$ through the clock reduction.
 \end{quote}
 
-A parameter of this kind is familiar from the parametrised relativistic dynamics of Horwitz and Piron \cite{HorwitzPiron73}, where an invariant
-parameter evolves events in a fixed spacetime; there the parameter is not a coordinate of spacetime, and the same holds here. An external
+As in the theory of Horwitz and Piron, the parameter is not a coordinate of spacetime. An external
 parameter does not turn $\R^{3,3}$, or its tangent fibres, into a seven-dimensional physical spacetime. A proposal would have to specify the
 following.
 \begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
@@ -520,11 +574,13 @@ them, and in which configuration space.
 \item \emph{The action and the constraint equations}, including the constraints that implement the clock reduction, and their preservation under
 the $\tau_U$-evolution with interactions.
 \item \emph{Reparametrisation properties.} If the action is invariant under $\tau_U\mapsto f(\tau_U)$, its generator is a constraint and $\tau_U$ is
-not observable, as for the worldline parameter of \cref{prop:wltau}. If it is not, $\tau_U$ is a preferred time, and the symmetry it breaks, the
-Lorentz algebra of the selected four-plane or $SO(3,3)$, has to be stated.
+not observable, as for the worldline parameter of \cref{prop:wltau}. If it is not, $\tau_U$ need not be a preferred time that breaks the Lorentz
+algebra of the selected four-plane or $SO(3,3)$: the action $\int d\tau_U\,(p\cdot dX/d\tau_U-\eta^{AB}p_Ap_B/2M)$ is $SO(3,3)$-invariant with $\tau_U$
+a scalar, as in the theory of Horwitz and Piron. Which symmetries are kept, and which broken, has to be stated.
 \item \emph{The relation to measured time}: how the proper time of $h$, which is what a clock reads (\cref{prop:wltau}(ii)), follows from $\tau_U$.
-\item \emph{Causal observables}: microcausality with respect to a stated cone, and an energy bounded below for the generator of the
-$\tau_U$-evolution.
+\item \emph{Causal observables}: microcausality with respect to a stated cone. A self-adjoint generator gives unitary evolution in $\tau_U$
+even when it is unbounded below, so unitarity and the existence of a ground state, which needs a generator bounded below, are separate
+requirements.
 \item \emph{Compatibility with the obstructions of this chapter.} The type-selection results of \cref{sec:typesel} concern potentials and
 $SO(3,3)$-invariant kinetic terms, and they hold whatever the evolution parameter. The ghost vectors of \cref{thm:ghostvec} come from the
 six-dimensional curvature. The ill-posedness of \cref{prop:toy} is a statement about evolution in a temporal coordinate. A first-order evolution
@@ -546,10 +602,10 @@ Until a mechanism meeting these requirements is exhibited, the hypothesis remain
 stage & result & verdict\\
 \midrule
 baseline & growing modes and no ground state; the surplus constraints remove the band together with every stable surplus mode; compactification makes tachyons & obstruction confirmed, sufficient cure located\\
-reduction & kinematics: selector $=J$, cone $=$ twisted squares at one constituent; dynamics: no $SO(3,3)$-invariant scalar mechanism; the positive route breaks the boosts &
+reduction & kinematics: selector $=J$, cone $=$ twisted squares at one constituent; dynamics: no mechanism from an unconstrained $SO(3,3)$-invariant adjoint scalar; the positive route breaks the boosts &
 kinematics exact; dynamical selection fails as posed\\
-effective theory & scalar matter: no mixing, $K_{\rm eff}=K_{\psi\psi}$; normal-plane vectors are ghosts & failure condition met by the vectors\\
-causality & the scalar sector is microcausal for the cone of $h$ & conditional on gauged translations; inherited\\
+effective theory & scalar matter: no mixing in the flat product, $K_{\rm eff}=K_{\psi\psi}$; normal-plane vectors are ghosts (Einstein--Hilbert route) & failure condition met by the vectors\\
+causality & the scalar sector is microcausal for the cone of $h$ (flat $h$; globally hyperbolic $h$ for the algebraic construction) & conditional on gauged translations; inherited\\
 Maxwell & normal-plane vectors excluded as photons & blocked on this route\\
 clock reduction & \cref{assum:clockred} implemented by first-class constraints for a test worldline; removes stable surplus modes too &
 imposed; sufficient, not minimal; interacting case open\\
@@ -557,7 +613,7 @@ parameters & the worldline $\tau$ is a gauge parameter whose content is the prop
 fixed (worldline); open (interior)\\
 uphill decays & none after the reduction; the unreduced examples are warnings & conditional on the reduction\\
 local clock symmetry & needs a connection in $\so3_+$ that also transports $G$ & not constructed\\
-universal $\tau_U$ & no proposal; requirements listed & open hypothesis\\
+universal $\tau_U$ & prior art (Horwitz--Piron); no mechanism in this arena; requirements listed & open hypothesis\\
 \bottomrule
 \end{tabular}
 \caption{The causal analysis against the failure conditions fixed in advance (\cref{sec:baseline,sec:selector,sec:typesel,sec:constraints,sec:tau,sec:universaltau}).}
@@ -565,15 +621,17 @@ universal $\tau_U$ & no proposal; requirements listed & open hypothesis\\
 \end{table}
 
 Weak emergence holds for scalar matter, conditionally on a gauge principle, local translations along the normal plane, that is consistent but chosen rather than derived.
-Strong emergence through a scalar order parameter is excluded. What survives is a sharper statement of the question. The selector is the complex structure $J$, and every
+Strong emergence through an unconstrained $SO(3,3)$-invariant adjoint scalar order parameter is excluded; whether the quantum dynamics of the
+whole system can select the Lorentzian sector, the motivation stated at the opening of the chapter, remains open. What survives is a sharper statement of the question. The selector is the complex structure $J$, and every
 construction here that produced a healthy Lorentzian sector also used one extra datum: a positive inner product, which is the transpose of the realisation, equivalently
 the temporal triple. Within these computations the totality of $SO(3,3)$-invariant dynamics fixes at most the type of the structure, never the instance, and it fixes even
 the type only imperfectly. The datum that singles out time, wherever things worked, is the positivity of an inner product; in quantum mechanics it is the positivity of
-the Hilbert-space norm. That is where a derivation of causal order from the split geometry would have to look.
+the Hilbert-space norm. That this positivity fixes causal order is a conjecture; it indicates where a derivation of causal order from the split
+geometry would have to look.
 
 Several routes remain open. A gauge mechanism for type selection, an $SO(3,3)$ analogue of the MacDowell--Mansouri and Stelle--West breaking
-\cite{MacDowellMansouri77,StelleWest80}, $SO(3,3)\to SO(2)\times SO(1,3)$, would make the would-be ghosts gauge, solder the eight broken directions to the base and remove the six
-flat ones. A principle that makes the normal translations gauge, rather than adding the multipliers by hand, would turn weak emergence from a conditional statement into a
+\cite{MacDowellMansouri77,StelleWest80}, $SO(3,3)\to SO(2)\times SO(1,3)$, might make the would-be ghosts gauge and solder the eight broken directions to the base; the six flat directions are not gauge directions at
+linear order, and removing them would need further constraints or a special action. A principle that makes the normal translations gauge, rather than adding the multipliers by hand, would turn weak emergence from a conditional statement into a
 derived one. At three constituents, a $\mathrm{Spin}(9,9)$-covariant construction of the cone of $E$, for which pure spinors are the natural candidates, or a proof that
 none exists without the positive inner product, would settle whether the cone survives the tower.
 

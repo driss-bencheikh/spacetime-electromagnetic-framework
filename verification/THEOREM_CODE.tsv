@@ -137,7 +137,7 @@ thm:virial	04_rigid_body	theorem	yes				proof in text
 ex:jordan4	04_rigid_body	example	no		a3-1		exact	a3_audit_rigid_body.py
 thm:splitvirial	04_rigid_body	theorem	yes				proof in text	
 thm:neutral	04_rigid_body	theorem	yes				proof in text	
-prop:howmuch	04_rigid_body	proposition	no		a3-2		exact	a3_audit_rigid_body.py
+prop:howmuch	04_rigid_body	proposition	no	a3-11	a3-11 a3-2		exact	a3_audit_rigid_body.py
 ex:oneplane	04_rigid_body	example	no		a3-2		exact	a3_audit_rigid_body.py
 prop:orbitsEM	04_rigid_body	proposition	no		a3-2		exact	a3_audit_rigid_body.py
 thm:EBsplit	04_rigid_body	theorem	yes			r1-11	exact	r1_lagrangians.py
@@ -165,7 +165,7 @@ thm:so9C	04_rigid_body	theorem	no		a3-6		exact	a3_audit_rigid_body.py
 thm:nocommon	04_rigid_body	theorem	no		a3-7a a3-7b	e5-2a	exact	a3_audit_rigid_body.py e5_closure_two.py
 thm:PSbinding	04_rigid_body	theorem	yes				proof in text	
 thm:survive	04_rigid_body	theorem	no		a3-8	p2-19	exact	a3_audit_rigid_body.py p2_alignment.py
-thm:closurechiral	04_rigid_body	theorem	no		a3-9		numerical	a3_audit_rigid_body.py
+thm:closurechiral	04_rigid_body	theorem	no		a3-9		exact	a3_audit_rigid_body.py
 thm:inertia3	04_rigid_body	theorem	no		a3-10		exact	a3_audit_rigid_body.py
 cl:frozen	04_rigid_body	theorem	yes				proof in text	
 cl:nogen	04_rigid_body	corollary	yes				proof in text	
@@ -191,7 +191,7 @@ thm:diagcent	05_clifford_tower	theorem	yes				proof in text
 thm:diagCspec	05_clifford_tower	theorem	yes				proof in text	
 thm:casid	05_clifford_tower	theorem	yes				proof in text	
 cor:howe	05_clifford_tower	corollary	no				argument in text	
-thm:blockgamma	05_clifford_tower	theorem	yes				proof in text	
+thm:blockgamma	05_clifford_tower	theorem	yes	a9-1 a9-2			exact	a9_blockgamma_certificates.py
 thm:diagvectorlike	05_clifford_tower	theorem	yes				proof in text	
 thm:algebra	05_clifford_tower	theorem	yes				proof in text	
 prop:orthospin	05_clifford_tower	proposition	no			d6-10	exact	d6_pair_balance.py
@@ -254,14 +254,14 @@ thm:coupled	05_clifford_tower	theorem	no		a4-3		exact	a4_audit_tower_chiral.py
 prop:vectorlike	06_chiral_matter	proposition	no				argument in text	
 prop:axialtriple	06_chiral_matter	proposition	no				argument in text	
 ex:annihilator	06_chiral_matter	example	no		a4-5		exact	a4_audit_tower_chiral.py
-thm:table	06_chiral_matter	theorem	no		a4-4		exact	a4_audit_tower_chiral.py
+thm:table	06_chiral_matter	theorem	no	a10-2 a4-4	a4-4		exact	a10_chiral_certificates.py a4_audit_tower_chiral.py
 cor:nocolour	06_chiral_matter	corollary	no				argument in text	
 thm:su3	06_chiral_matter	theorem	no		a4-5		exact	a4_audit_tower_chiral.py
 thm:p1	06_chiral_matter	theorem	no		a4-5		exact	a4_audit_tower_chiral.py
 thm:p1chiral	06_chiral_matter	theorem	yes				proof in text	
 thm:PS	06_chiral_matter	theorem	no		a4-6		exact	a4_audit_tower_chiral.py
-thm:PSalg	06_chiral_matter	theorem	yes				proof in text	
-cor:PSfamily	06_chiral_matter	corollary	no		a4-6 a4-7		exact+numerical	a4_audit_tower_chiral.py
+thm:PSalg	06_chiral_matter	theorem	yes	a10-1			exact	a10_chiral_certificates.py
+cor:PSfamily	06_chiral_matter	corollary	no	a10-1 a10-2 a10-3	a4-6 a4-7		exact+numerical	a10_chiral_certificates.py a4_audit_tower_chiral.py
 prop:PSledger	06_chiral_matter	proposition	no		a4-6		exact	a4_audit_tower_chiral.py
 prop:PSanom	06_chiral_matter	proposition	no		a4-7		numerical	a4_audit_tower_chiral.py
 prop:orbits	06_chiral_matter	proposition	no		a4-8		exact	a4_audit_tower_chiral.py
@@ -289,8 +289,8 @@ thm:kernelspace	07_mass_vacuum	theorem	yes			z3-8	numerical	z3_core_structures.p
 thm:symcrit	07_mass_vacuum	theorem	yes				proof in text	
 prop:fermionnumber	07_mass_vacuum	proposition	no		a5-3		exact	a5_audit_vacuum_photon.py
 prop:coupled3	07_mass_vacuum	proposition	no		a6-3		exact	a6_kernels_cp_certificates.py
-prop:tensor	07_mass_vacuum	proposition	no	a8-1	a8-1		numerical	a8_electroweak_numerical.py
-thm:potential	07_mass_vacuum	theorem	no			z4-4	exact	z4_invariant_counts.py
+prop:tensor	07_mass_vacuum	proposition	no	a13-2 a8-1	a13-2 a8-1		exact+numerical	a13_tensor_certificates.py a8_electroweak_numerical.py
+thm:potential	07_mass_vacuum	theorem	no		a13-1	z4-4	exact	a13_tensor_certificates.py z4_invariant_counts.py
 lem:hw	07_mass_vacuum	lemma	no	v1-3			numerical	v1_tensor_model.py
 thm:select0	07_mass_vacuum	theorem	yes	v1-4			numerical	v1_tensor_model.py
 thm:selectk	07_mass_vacuum	theorem	no	v3-1			numerical	v3_minimisation.py
@@ -309,7 +309,7 @@ prop:rankfive	07_mass_vacuum	proposition	no	a8-7	a8-7		numerical	a8_electroweak_
 prop:alignment	07_mass_vacuum	proposition	no			p2-7	numerical	p2_alignment.py
 prop:global	07_mass_vacuum	proposition	no		a5-3		exact	a5_audit_vacuum_photon.py
 thm:nomajoron	07_mass_vacuum	theorem	no			d2-21	exact	d2_symmetry_breaking.py
-thm:axion	07_mass_vacuum	theorem	no			d2-24	exact	d2_symmetry_breaking.py
+thm:axion	07_mass_vacuum	theorem	no	a11-2 a11-3 d2-24	a11-2 a11-3	d2-24	exact+numerical	a11_kernel_structure.py d2_symmetry_breaking.py
 prop:bidoublet	07_mass_vacuum	proposition	no	a8-8	a8-8		numerical	a8_electroweak_numerical.py
 thm:mA	07_mass_vacuum	theorem	yes	a6-5 a8-6	a6-5 a8-6		exact+numerical	a6_kernels_cp_certificates.py a8_electroweak_numerical.py
 thm:fourclasses	07_mass_vacuum	theorem	no		a5-1		exact	a5_audit_vacuum_photon.py
@@ -388,7 +388,7 @@ en:transport	09_b_field	proposition	yes				proof in text
 d7:prop:exist	09_b_field	proposition	no	d7-1a d7-1d			exact+numerical	d7_bfield_between.py
 d7:prop:rotor	09_b_field	proposition	no	d7-2a d7-2b			exact+numerical	d7_bfield_between.py
 d7:thm:schr	09_b_field	theorem	yes	d7-3a d7-3b d7-3c d7-3d d7-3e x7-3d			exact	d7_bfield_between.py x7_bfield_between_referee.py
-d7:prop:boost	09_b_field	proposition	no	d7-4a d7-4b			exact	d7_bfield_between.py
+d7:prop:boost	09_b_field	proposition	no	d7-4a d7-4b d7-4c			exact	d7_bfield_between.py
 d7:thm:three	09_b_field	theorem	yes	d7-5a d7-5b d7-5c d7-5d d7-5e d7-5f			exact	d7_bfield_between.py
 d7:prop:isospin	09_b_field	proposition	no	d7-6a d7-6c			exact	d7_bfield_between.py
 d7:prop:so4unequal	09_b_field	proposition	no	d7-7a d7-7b			exact	d7_bfield_between.py
@@ -399,7 +399,7 @@ e4:prop:jarlskog	09_b_field	proposition	yes	e4-2e			exact	e4_bfield_ladder.py
 e4:thm:so4	09_b_field	theorem	yes	e4-3c			numerical	e4_bfield_ladder.py
 e4:cor:nospinor	09_b_field	corollary	yes	e4-3a e4-3e			exact	e4_bfield_ladder.py
 e4:prop:rates	09_b_field	proposition	yes	e4-4a e4-4b			exact	e4_bfield_ladder.py
-e4:prop:rotor	09_b_field	proposition	yes	e4-5a e4-5b e4-5c e4-5d e4-5e			exact+numerical	e4_bfield_ladder.py
+e4:prop:rotor	09_b_field	proposition	yes	a12-3 e4-5a e4-5b e4-5c e4-5d e4-5e			exact+numerical	a12_review_boundary_cases.py e4_bfield_ladder.py
 e5:prop:so6C	09_b_field	proposition	no	e5-1a			exact	e5_closure_two.py
 e5:prop:quad	09_b_field	proposition	yes	e5-1b			exact	e5_closure_two.py
 e5:thm:pair	09_b_field	theorem	yes	e5-1c e5-1e z1-5b			exact+numerical	e5_closure_two.py z1_emergence_adjudication.py
@@ -413,7 +413,7 @@ e5:prop:rotorlaw	09_b_field	proposition	yes	e5-5a			exact	e5_closure_two.py
 e5:prop:Bgeom	09_b_field	proposition	yes	e5-5f			exact	e5_closure_two.py
 e5:thm:stab	09_b_field	theorem	yes				proof in text	
 e5:prop:exchange	09_b_field	proposition	yes	e5-5g e5-5j			exact	e5_closure_two.py
-e5:prop:carry	09_b_field	proposition	yes	e5-5h			exact	e5_closure_two.py
+e5:prop:carry	09_b_field	proposition	yes	a12-1 e5-5h			exact	a12_review_boundary_cases.py e5_closure_two.py
 e6:prop:Tform	09_b_field	proposition	yes	e6-1a e6-1c			exact	e6_bfield_triples.py
 e6:prop:dirac	09_b_field	proposition	yes	e6-2a e6-2b e6-2c			exact	e6_bfield_triples.py
 e6:prop:twosu2	09_b_field	proposition	yes	e6-2d			exact	e6_bfield_triples.py
@@ -450,7 +450,7 @@ ex:stueckelberg	11_curvature_gravity	example	no	g3-7			exact	g3_projector_transp
 prop:toy	12_causality	proposition	no				inherited	
 prop:orient	12_causality	proposition	no	c2-2		r1-9	exact	c2_dynamics_brackets.py r1_lagrangians.py
 ex:tachyons	12_causality	example	no	c2-3 c2-4			exact	c2_dynamics_brackets.py
-thm:selector	12_causality	theorem	yes	c1-1			exact	c1_selector_types.py
+thm:selector	12_causality	theorem	yes	c1-1 c1-12			exact	c1_selector_types.py
 thm:cone	12_causality	theorem	no	c1-2 c1-3			exact	c1_selector_types.py
 thm:selector3	12_causality	theorem	no	c1-4 c1-5			numerical	c1_selector_types.py
 prop:types	12_causality	proposition	no	c1-6			exact	c1_selector_types.py

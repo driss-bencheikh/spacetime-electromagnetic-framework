@@ -1,0 +1,24 @@
+PASS E1a: Dirac case A=JH, Q=J: ground state (H,Q)=(-4.0, -0.0), unique and neutral; Tr(AQ)=0
+PASS E1b: defect confirmed: A=E e4, Q=e4 meet the hypotheses of Thm 18.7 but the ground state (-4.0, -2.0) carries charge -2
+PASS E1c: over all 256 commuting pairs (A^2=-E^2, Q^2=-1, both antisymmetric) the table of Thm 18.7 holds iff Tr(AQ)=0
+PASS E1d: the charges named after Thm 18.7 (omega_T on T, J on S, omega_W on a (1,2) plane) commute with A and have Tr(AQ)=0
+PASS E2a: defect confirmed: for the tilted (0,3) plane <cosh t e4 + sinh t e1, e5, e6> the square rule holds (omega^2=+1) but omega^T != omega
+PASS E2b: for all 20 coordinate three-planes the square, transpose and (anti)commutation rules of Thm 18.1 hold exactly
+PASS E2c: for 20 random tilted (2,1) planes the square rule and the (anti)commutation with W and W^perp still hold
+PASS E2d: for planes spanned by vectors of V+ and V- (coordinate planes rotated inside the triples) the transpose rule holds: the spin lifts are orthogonal
+PASS E3a: Sym^2 T splits into components of dimensions [20, 35, 100, 135, 175] (expected 175,35,100,20,135)
+PASS E3b: f_k(S0) = [1. 0. 0. 0. 0.], f_k(1x1/sqrt8) = [0.333333 0.166667 0.333333 0.166667 0.      ], d(1x1) = 0.062500
+PASS E3c: |D(1x1)| = (3/8) I_4 at the identity configuration (equality case of Thm 20.2(ii))
+PASS E3d: defect confirmed: Lambda_kappa(1x1) - Lambda(SM) = 0.9 - |kappa|/8 (+0.0250 at 7, -0.0375 at 7.5): the identity orbit is the HIGHER minimum for |kappa|<=7 and the LOWER one for |kappa|>=7.5
+PASS E3e: cross-check against the paper: with these f_k, Theorem 20.9 gives the excess (L/64pi^2) g^4 (48 - 7x/4) of 1x1 over S0, as stated
+PASS E4a: defect confirmed: spacelike constant gradient, omega at zero wave vector = [0, -p, p]: one branch gapped (|omega|=|p|), one gapless
+PASS E4b: timelike constant gradient: omega at zero wave vector = [0]: both branches gapless
+PASS E4c: the gapped branch is not a Proca shell omega^2 = k^2 + m^2 (Lorentz-violating dispersion)
+PASS E5a: tensor normalisation: nonzero squared vector masses at S = |S| S0 are [1. 1. 1. 1. 1. 1. 1. 1. 5.] x g^2 |S|^2: M_WR = M_X = g|S|, M_Z' = sqrt5 g|S|, Tr M_V^4 = 33 g^4|S|^4 (c_1 = 33 of Thm 20.9)
+PASS E5c: Sec. 20.5: (3/16) T(u0) = 99 = 3 x 33, i.e. Tr M_V^4 = (1/16) g^4 v^4 T: M_WR = g v with v = |Phi|/sqrt2, which agrees with E5a for the canonical field S = sqrt2 iota(Phi) (|S| = v): one and the same g
+PASS E5d: Sec. 20.5's x = y^4/(4 g^4) (couplings of eq. Saction and Thm 21.1) equals (M_N/M_WR)^4; Sec. 20.4's x = y'^4/g^4 with y' = y/sqrt2 is the same number
+PASS E6a: defect confirmed: s08's tau_i = -1/2 w_j w_k (cyclic) has tau^2 = -1/4 and closes on su(2); the s19/App. A formula -1/2 eps_ijk w_j w_k summed equals -w_j w_k = 2 tau_i (tau^2 = -1, [tau1,tau2] = 2 tau3)
+PASS E7a: defect confirmed: with i = J, Theorem 4.1 gives gamma_5 = -Gamma, so Omega = -J Gamma = i gamma_5 (Prop 4.6); Sec. 5's 'real form of -i gamma_5' has the sign of i = -J
+PASS E8a: defect confirmed: (I0,m) -> (sI0,tm) multiplies eps by 1/(s*t) at fixed kappa0 but by s/t at fixed h0; the paper's 1/(st) needs kappa0 fixed
+
+ALL CHECKS PASSED

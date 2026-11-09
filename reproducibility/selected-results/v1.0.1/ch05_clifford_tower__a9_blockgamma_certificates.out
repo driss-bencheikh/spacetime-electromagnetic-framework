@@ -1,0 +1,2 @@
+PASS a9-1: 4C has eigenvalues [-30, -22, -6] with multiplicities [64, 288, 160]; the Dirac block D is the eigenspace 4C = -6 of dimension 160 (trace of the exact projector); [Q_mu, C] = 0 and ({Q_mu,Q_nu} + 72 eta_mu nu) P_D = 0 for all mu, nu: {Q_mu,Q_nu}|_D = -72 eta_mu nu (exact integer arithmetic)
+PASS a9-2: omega_S^2 = -1, [omega_S, Q_mu] = 0 and [omega_S, C] = 0, so G_mu = (1/6) omega_S Q_mu|_D satisfies [G_a, G_b] = -(1/36)[Q_a, Q_b] on D; ([Q_a, Q_b] + 144 Delta_ab) P_D = 0 for all a < b: (1/4)[G_a, G_b] = Delta_ab|_D (exact integer arithmetic)
